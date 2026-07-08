@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "count": 5244,
+    "db_response_time_ms": 20,
+    "page": 1,
+    "per_page": 25,
+    "groups_count": null,
+    "x_query": {
+      "oql": "works where it cites (W2014887370)",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "referenced_works",
+            "value": "W2014887370"
+          }
+        ],
+        "sort_by": [
+          {
+            "column_id": "cited_by_count",
+            "direction": "desc"
+          }
+        ],
+        "select": [
+          "id",
+          "doi",
+          "title",
+          "publication_year",
+          "publication_date",
+          "cited_by_count",
+          "is_retracted"
+        ],
+        "per_page": 25
+      },
+      "url": "/works?filter=referenced_works:W2014887370&sort=cited_by_count:desc&select=id,doi,title,publication_year,publication_date,cited_by_count,is_retracted&per_page=25"
+    },
+    "cost_usd": 0.0001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W2177603935",
+      "doi": "https://doi.org/10.1021/acs.chemrev.5b00263",
+      "title": "Aggregation-Induced Emission: Together We Shine, United We Soar!",
+      "publication_year": 2015,
+      "publication_date": "2015-10-22",
+      "cited_by_count": 8140,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2124821727",
+      "doi": "https://doi.org/10.1172/jci21625",
+      "title": "Increased oxidative stress in obesity and its impact on metabolic syndrome",
+      "publication_year": 2004,
+      "publication_date": "2004-12-15",
+      "cited_by_count": 5287,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2150959326",
+      "doi": "https://doi.org/10.1093/eurheartj/ehz486",
+      "title": "2019 ESC Guidelines on diabetes, pre-diabetes, and cardiovascular diseases developed in collaboration with the EASD",
+      "publication_year": 2019,
+      "publication_date": "2019-08-31",
+      "cited_by_count": 4878,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2038018821",
+      "doi": "https://doi.org/10.1038/nature01137",
+      "title": "A central role for JNK in obesity and insulin resistance",
+      "publication_year": 2002,
+      "publication_date": "2002-11-21",
+      "cited_by_count": 3337,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2009886463",
+      "doi": "https://doi.org/10.1038/nrg1879",
+      "title": "The evolution of phosphatidylinositol 3-kinases as regulators of growth and metabolism",
+      "publication_year": 2006,
+      "publication_date": "2006-07-18",
+      "cited_by_count": 3312,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2109728760",
+      "doi": "https://doi.org/10.2337/db09-9028",
+      "title": "From the Triumvirate to the Ominous Octet: A New Paradigm for the Treatment of Type 2 Diabetes Mellitus",
+      "publication_year": 2009,
+      "publication_date": "2009-03-31",
+      "cited_by_count": 3002,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2076310317",
+      "doi": "https://doi.org/10.1172/jci29126",
+      "title": "Adiponectin and adiponectin receptors in insulin resistance, diabetes, and the metabolic syndrome",
+      "publication_year": 2006,
+      "publication_date": "2006-07-03",
+      "cited_by_count": 2832,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2049965571",
+      "doi": "https://doi.org/10.1038/nm724",
+      "title": "Diet-induced insulin resistance in mice lacking adiponectin/ACRP30",
+      "publication_year": 2002,
+      "publication_date": "2002-06-17",
+      "cited_by_count": 2085,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1503760388",
+      "doi": "https://doi.org/10.1002/cphy.c130024",
+      "title": "Energy Metabolism in the Liver",
+      "publication_year": 2014,
+      "publication_date": "2014-01-10",
+      "cited_by_count": 1985,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W3171237122",
+      "doi": "https://doi.org/10.1093/eurheartj/eht108",
+      "title": "ESC Guidelines on diabetes, pre-diabetes, and cardiovascular diseases developed in collaboration with the EASD",
+      "publication_year": 2013,
+      "publication_date": "2013-08-30",
+      "cited_by_count": 1958,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2049481764",
+      "doi": "https://doi.org/10.1073/pnas.1032913100",
+      "title": "Coordinated reduction of genes of oxidative metabolism in humans with insulin resistance and diabetes: Potential role of <i>PGC1</i> and <i>NRF1</i>",
+      "publication_year": 2003,
+      "publication_date": "2003-06-27",
+      "cited_by_count": 1941,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2137720344",
+      "doi": "https://doi.org/10.1126/science.1112766",
+      "title": "Suppression of Aging in Mice by the Hormone Klotho",
+      "publication_year": 2005,
+      "publication_date": "2005-08-25",
+      "cited_by_count": 1932,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1967263394",
+      "doi": "https://doi.org/10.1210/er.2011-1034",
+      "title": "Insulin Resistance and the Polycystic Ovary Syndrome Revisited: An Update on Mechanisms and Implications",
+      "publication_year": 2012,
+      "publication_date": "2012-10-12",
+      "cited_by_count": 1909,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1987120082",
+      "doi": "https://doi.org/10.1038/nrd2589",
+      "title": "Fatty acid-binding proteins: role in metabolic diseases and potential as drug targets",
+      "publication_year": 2008,
+      "publication_date": "2008-05-30",
+      "cited_by_count": 1794,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2107674876",
+      "doi": "https://doi.org/10.1038/nature02866",
+      "title": "Absence of S6K1 protects against age- and diet-induced obesity while enhancing insulin sensitivity",
+      "publication_year": 2004,
+      "publication_date": "2004-08-11",
+      "cited_by_count": 1654,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2165256339",
+      "doi": "https://doi.org/10.1161/01.cir.0000091257.27563.32",
+      "title": "Diabetes and Vascular Disease",
+      "publication_year": 2003,
+      "publication_date": "2003-09-23",
+      "cited_by_count": 1654,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2799410199",
+      "doi": "https://doi.org/10.1038/s41569-018-0007-y",
+      "title": "Mechanisms of physiological and pathological cardiac hypertrophy",
+      "publication_year": 2018,
+      "publication_date": "2018-04-19",
+      "cited_by_count": 1651,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2126412451",
+      "doi": "https://doi.org/10.1161/circulationaha.105.563213",
+      "title": "Reciprocal Relationships Between Insulin Resistance and Endothelial Dysfunction",
+      "publication_year": 2006,
+      "publication_date": "2006-04-17",
+      "cited_by_count": 1636,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2083278580",
+      "doi": "https://doi.org/10.1089/ars.2007.1782",
+      "title": "Endoplasmic Reticulum Stress and Oxidative Stress: A Vicious Cycle or a Double-Edged Sword?",
+      "publication_year": 2007,
+      "publication_date": "2007-11-02",
+      "cited_by_count": 1538,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2339765445",
+      "doi": "https://doi.org/10.1186/s13073-016-0303-2",
+      "title": "Impact of the gut microbiota on inflammation, obesity, and metabolic disease",
+      "publication_year": 2016,
+      "publication_date": "2016-04-20",
+      "cited_by_count": 1448,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2064483915",
+      "doi": "https://doi.org/10.1016/j.freeradbiomed.2010.12.006",
+      "title": "Oxidative stress, insulin signaling, and diabetes",
+      "publication_year": 2010,
+      "publication_date": "2010-12-14",
+      "cited_by_count": 1438,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2158106881",
+      "doi": "https://doi.org/10.1093/eurheartj/eht149",
+      "title": "Diabetes and vascular disease: pathophysiology, clinical consequences, and medical therapy: part I",
+      "publication_year": 2013,
+      "publication_date": "2013-05-02",
+      "cited_by_count": 1415,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2078374645",
+      "doi": "https://doi.org/10.1016/j.cmet.2007.03.006",
+      "title": "The GLUT4 Glucose Transporter",
+      "publication_year": 2007,
+      "publication_date": "2007-04-01",
+      "cited_by_count": 1371,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2086997985",
+      "doi": "https://doi.org/10.1021/cr020607t",
+      "title": "The Chemistry and Biochemistry of Vanadium and the Biological Activities Exerted by Vanadium Compounds",
+      "publication_year": 2004,
+      "publication_date": "2004-01-29",
+      "cited_by_count": 1358,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2048565142",
+      "doi": "https://doi.org/10.1016/j.mcna.2004.04.013",
+      "title": "Pathogenesis of type 2 diabetes mellitus",
+      "publication_year": 2004,
+      "publication_date": "2004-07-01",
+      "cited_by_count": 1332,
+      "is_retracted": false
+    }
+  ],
+  "group_by": []
+}

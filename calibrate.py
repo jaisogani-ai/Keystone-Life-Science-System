@@ -7,27 +7,31 @@ labeled by semantic judgment: does the sentence rely on the cited paper's
 specific experimental result?). Reports accuracy, a confusion matrix, and
 precision/recall.
 
-    python calibrate.py                 # HeuristicReasoner (offline, no key)
+    python calibrate.py                     # GBM (default), offline
+    python calibrate.py --domain insulin    # second domain — same classifier
     KEYSTONE_LIVE=1 ANTHROPIC_API_KEY=... python calibrate.py   # ClaudeReasoner
 
 Target: beat 0.50 (a coin flip) and land near the 0.69-0.75 human-agreement band
-that the load-bearing task itself carries.
+that the load-bearing task itself carries. The payoff of two domains: if the
+insulin number lands near the GBM number, "domain-agnostic" is measured fact.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import sys
 from pathlib import Path
 
-LABELS_PATH = Path(__file__).parent / "keystone" / "calibration" / \
-    "gbm_citing_sentences.jsonl"
+_CAL = Path(__file__).parent / "keystone" / "calibration"
+LABELS = {"gbm": _CAL / "gbm_citing_sentences.jsonl",
+          "insulin": _CAL / "insulin_citing_sentences.jsonl"}
 HUMAN_BAND = (0.69, 0.75)
 
 
-def load_labeled() -> list[dict]:
+def load_labeled(domain: str = "gbm") -> list[dict]:
     rows = []
-    with open(LABELS_PATH) as f:
+    with open(LABELS[domain]) as f:
         for line in f:
             line = line.strip()
             if line:
@@ -70,14 +74,18 @@ def evaluate(reasoner, rows: list[dict]) -> dict:
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--domain", choices=list(LABELS), default="gbm")
+    args = ap.parse_args()
     reasoner = get_reasoner()
-    rows = load_labeled()
+    rows = load_labeled(args.domain)
     res = evaluate(reasoner, rows)
 
     print("=" * 66)
-    print(f"KEYSTONE load-bearing calibration — {getattr(reasoner, 'version', '?')}")
+    print(f"KEYSTONE load-bearing calibration — "
+          f"{getattr(reasoner, 'version', '?')} [{args.domain}]")
     print("=" * 66)
-    print(f"labeled real GBM citing sentences: {res['n']}")
+    print(f"labeled real {args.domain} citing sentences: {res['n']}")
     print(f"\nACCURACY = {res['accuracy']:.3f}   "
           f"(coin flip 0.500 | human-agreement band "
           f"{HUMAN_BAND[0]:.2f}-{HUMAN_BAND[1]:.2f})")

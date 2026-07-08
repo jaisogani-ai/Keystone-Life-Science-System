@@ -25,13 +25,21 @@ _CI_HALF = round((1 - AGREEMENT_MID) / 2, 4)   # ~0.1475
 
 # Inspectable cue lexicons for the load-bearing heuristic. Load cues mark a paper
 # that *relies on a specific result*; incidental cues mark a passing/bundled one.
-_LOAD_CUES = ["inhibition of", "knockdown", "knock-down", "silencing",
-              "attenuated", "abrogated", "suppress", "rnai-mediated",
-              "sirna", "shrna", "resulted in", "demonstrated", "showed that",
-              "we used", "as reported by", "based on the finding"]
+# The cues are deliberately domain-general mechanistic-result language (a specific
+# perturbation or measured effect), NOT one field's jargon — so the same rule
+# generalizes across domains (measured in calibrate.py --domain gbm|insulin).
+_LOAD_CUES = ["inhibition of", "inhibit", "knockdown", "knock-down", "knockout",
+              "knock-out", "silencing", "attenuated", "abrogated", "suppress",
+              "rnai-mediated", "sirna", "shrna", "overexpress", "deletion",
+              "loss-of-function", "phosphoryl", "impair", "activates",
+              "stimulates", "translocation of", "resulted in", "required for",
+              "demonstrated", "showed that", "we found", "we show", "we used",
+              "as reported by", "based on the finding"]
 _INCIDENTAL_CUES = ["moreover", "associated", "reviewed in", "see also",
                     "among", "such as", "for example", "e.g.", "various",
-                    "in general", "et al.,", "], ["]
+                    "in general", "et al.,", "], [", "is a key", "is a critical",
+                    "peptide hormone", "widely distributed",
+                    "traditionally recognised", "traditionally recognized"]
 
 
 class Reasoner(Protocol):

@@ -1,0 +1,1333 @@
+{
+  "Cellosaurus": {
+    "cell-line-list": [
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_0123"
+          }
+        ],
+        "age": "Embryo",
+        "breed": "Swiss albino",
+        "category": "Spontaneously immortalized cell line",
+        "cell-type": {
+          "value": "Fibroblast",
+          "xref": {
+            "accession": "CL_0000057",
+            "category": "Anatomy/cell type resources",
+            "database": "CL",
+            "iri": "http://purl.obolibrary.org/obo/CL_0000057",
+            "label": "fibroblast",
+            "url": "https://www.ebi.ac.uk/ols4/ontologies/cl/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000057"
+          }
+        },
+        "child-list": [
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_D4DA"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "3T3-L1 CAR SNRK KO"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_QZ17"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "3T3-L1 EGFP-ATA2"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_0A20"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "3T3-L1 MBX"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_E6YT"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "3T3-L1-GLUT4myc"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_0122"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "3T3F442A"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F5Q9"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "EDITGENE 3T3-L1-Cas9"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F6A5"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "EDITGENE 3T3-L1-CopGFP"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F5SN"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "EDITGENE 3T3-L1-FLUC"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F6K2"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "EDITGENE Chchd10 Knockout 3T3-L1 Cell Line"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_D6A9"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte 3T3-L1 KO-mAckr3"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_E1IK"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte 3T3-L1 KO-mFasn"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4HK"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte 3T3-L1 KO-mPik3c3"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4IX"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte 3T3-L1 KO-mPpp2r1b"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1LI"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte 3T3-L1 KO-mSfrp5"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4S5"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte 3T3-L1 stable cell line for mGpx4 overexpression"
+            }
+          }
+        ],
+        "comment-list": [
+          {
+            "category": "Miscellaneous",
+            "value": "STR profile from personal communication of Rodriguez-Tarduchy Segovia, Gemma"
+          }
+        ],
+        "created": "2012-04-04",
+        "derived-from": [
+          {
+            "accession": "CVCL_0120",
+            "category": "Cell line databases/resources",
+            "database": "Cellosaurus",
+            "label": "3T3-Swiss albino",
+            "url": "https://www.cellosaurus.org/CVCL_0120"
+          }
+        ],
+        "derived-from-site-list": [
+          {
+            "site": {
+              "site-type": "In situ",
+              "value": "Whole embryo",
+              "xref-list": [
+                {
+                  "accession": "UBERON_0000922",
+                  "category": "Anatomy/cell type resources",
+                  "database": "UBERON",
+                  "iri": "http://purl.obolibrary.org/obo/UBERON_0000922",
+                  "label": "embryo",
+                  "url": "https://www.ebi.ac.uk/ols4/ontologies/uberon/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FUBERON_0000922"
+                }
+              ]
+            }
+          }
+        ],
+        "doubling-time-list": [
+          {
+            "doubling-time-note": "Lot 10082020",
+            "doubling-time-value": "~27 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 04212017",
+            "doubling-time-value": "20-64 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 06012015",
+            "doubling-time-value": "~30 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 032499",
+            "doubling-time-value": "~37 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 10302002",
+            "doubling-time-value": "~3 days",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 06082004",
+            "doubling-time-value": "60-70 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 12162004",
+            "doubling-time-value": "~40 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lots 06122006 and 05252015",
+            "doubling-time-value": "~33 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 02092007",
+            "doubling-time-value": "~1.5 days",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 01252008",
+            "doubling-time-value": "~1 day",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lots 01282009 and 08222016",
+            "doubling-time-value": "~31 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 01142010",
+            "doubling-time-value": "~26 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 02152011",
+            "doubling-time-value": "~23 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 08222011",
+            "doubling-time-value": "~28 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 02132012",
+            "doubling-time-value": "~41 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 11272012",
+            "doubling-time-value": "~43 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "TCM-C702",
+                  "category": "Cell line collections (Providers)",
+                  "database": "Hysigen",
+                  "url": "https://hysigen.com/TCM-C702.html"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 02212018",
+            "doubling-time-value": "~28 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "IFO50416",
+                  "category": "Cell line collections (Providers)",
+                  "database": "JCRB",
+                  "url": "https://cellbank.nibiohn.go.jp//~cellbank/en/search_res_det.cgi?RNO=IFO50416"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 08012016",
+            "doubling-time-value": "~39 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "IFO50416",
+                  "category": "Cell line collections (Providers)",
+                  "database": "JCRB",
+                  "url": "https://cellbank.nibiohn.go.jp//~cellbank/en/search_res_det.cgi?RNO=IFO50416"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 02202015",
+            "doubling-time-value": "~54 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "IFO50416",
+                  "category": "Cell line collections (Providers)",
+                  "database": "JCRB",
+                  "url": "https://cellbank.nibiohn.go.jp//~cellbank/en/search_res_det.cgi?RNO=IFO50416"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 07232012",
+            "doubling-time-value": "~28 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "IFO50416",
+                  "category": "Cell line collections (Providers)",
+                  "database": "JCRB",
+                  "url": "https://cellbank.nibiohn.go.jp//~cellbank/en/search_res_det.cgi?RNO=IFO50416"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 07032008",
+            "doubling-time-value": "31 hours",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "IFO50416",
+                  "category": "Cell line collections (Providers)",
+                  "database": "JCRB",
+                  "url": "https://cellbank.nibiohn.go.jp//~cellbank/en/search_res_det.cgi?RNO=IFO50416"
+                }
+              }
+            ]
+          },
+          {
+            "doubling-time-note": "Lot 12142004",
+            "doubling-time-value": "~2.2 days",
+            "source-list": [
+              {
+                "xref": {
+                  "accession": "IFO50416",
+                  "category": "Cell line collections (Providers)",
+                  "database": "JCRB",
+                  "url": "https://cellbank.nibiohn.go.jp//~cellbank/en/search_res_det.cgi?RNO=IFO50416"
+                }
+              }
+            ]
+          }
+        ],
+        "doubling-time-range": {
+          "max": "72",
+          "min": "20",
+          "unit": "hour"
+        },
+        "entry-version": "37",
+        "last-updated": "2026-06-25",
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "3T3-L1"
+          },
+          {
+            "type": "synonym",
+            "value": "3T3 L1"
+          },
+          {
+            "type": "synonym",
+            "value": "3T3L1"
+          },
+          {
+            "type": "synonym",
+            "value": "3T3-L1 ad"
+          },
+          {
+            "type": "synonym",
+            "value": "NIH-3T3-L1"
+          },
+          {
+            "type": "synonym",
+            "value": "NIH3T3-L1"
+          }
+        ],
+        "reference-list": [
+          {
+            "resource-internal-ref": "DOI=10.1016/0092-8674(74)90126-3"
+          },
+          {
+            "resource-internal-ref": "Patent=US4003789"
+          },
+          {
+            "resource-internal-ref": "PubMed=165899"
+          },
+          {
+            "resource-internal-ref": "PubMed=4426090"
+          },
+          {
+            "resource-internal-ref": "PubMed=6698114"
+          },
+          {
+            "resource-internal-ref": "PubMed=28176856"
+          }
+        ],
+        "sex": "Male",
+        "species-list": [
+          {
+            "accession": "10090",
+            "category": "Taxonomy",
+            "database": "NCBI_TaxID",
+            "iri": "http://purl.obolibrary.org/obo/NCBITaxon_10090",
+            "label": "Mus musculus (Mouse)",
+            "url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10090&lvl=3"
+          }
+        ],
+        "str-list": {
+          "marker-list": [
+            {
+              "conflict": "false",
+              "id": "Mouse STR 1-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "10,15"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 1-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "13"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 11-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "15"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 12-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "19"
+                }
+              ]
+            },
+            {
+              "conflict": "true",
+              "id": "Mouse STR 13-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "15",
+                  "source-list": [
+                    "Direct_author_submission"
+                  ]
+                },
+                {
+                  "marker-alleles": "15.1",
+                  "source-list": [
+                    {
+                      "xref": {
+                        "accession": "TCM-C702",
+                        "category": "Cell line collections (Providers)",
+                        "database": "Hysigen",
+                        "url": "https://hysigen.com/TCM-C702.html"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 15-3",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "20.3"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 17-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "12,15"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 18-3",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "17,21"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 19-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "12"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 2-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "9"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 3-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "14"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 4-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "19.3"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 5-5",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "13,15"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 6-4",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "15.3"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 6-7",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "12,15"
+                }
+              ]
+            },
+            {
+              "conflict": "true",
+              "id": "Mouse STR 7-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "25.2,26.2",
+                  "source-list": [
+                    {
+                      "xref": {
+                        "accession": "TCM-C702",
+                        "category": "Cell line collections (Providers)",
+                        "database": "Hysigen",
+                        "url": "https://hysigen.com/TCM-C702.html"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "marker-alleles": "25.2,29",
+                  "source-list": [
+                    "Direct_author_submission"
+                  ]
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 8-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "15,16"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR X-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "26"
+                }
+              ]
+            }
+          ],
+          "source-list": [
+            {
+              "xref": {
+                "accession": "TCM-C702",
+                "category": "Cell line collections (Providers)",
+                "database": "Hysigen",
+                "url": "https://hysigen.com/TCM-C702.html"
+              }
+            },
+            {
+              "institution": "Direct_author_submission",
+              "value": "Direct_author_submission"
+            }
+          ]
+        },
+        "web-page-list": [
+          {
+            "category": "Info",
+            "institution": "COPE",
+            "specifier": "-",
+            "url": "http://www.cells-talk.com/index.php/page/copelibrary?key=3T3-L1%20cells"
+          },
+          {
+            "category": "Info",
+            "institution": "Thermo Fisher",
+            "specifier": "-",
+            "url": "https://www.thermofisher.com/ch/en/home/technical-resources/cell-lines/n/cell-lines-detail-103.html"
+          },
+          {
+            "category": "Info",
+            "institution": "Thermo Fisher",
+            "specifier": "-",
+            "url": "https://www.thermofisher.com/ch/en/home/technical-resources/cell-lines/n/cell-lines-detail-334.html"
+          },
+          {
+            "category": "Info",
+            "institution": "Thermo Fisher",
+            "specifier": "-",
+            "url": "https://www.thermofisher.com/ch/en/home/technical-resources/cell-lines/n/cell-lines-detail-72.html"
+          },
+          {
+            "category": "Info",
+            "institution": "Wikipedia",
+            "specifier": "-",
+            "url": "https://en.wikipedia.org/wiki/3T3-L1"
+          },
+          {
+            "category": "Provider",
+            "institution": "BRICS",
+            "specifier": "BRICS0073",
+            "url": "http://www.brics.ac.cn/cell/template/cell/cell_detail.html?id=3888"
+          },
+          {
+            "category": "Provider",
+            "institution": "ZenBio",
+            "specifier": "-",
+            "url": "https://www.zen-bio.com/products/cells/3T3L1.php"
+          }
+        ],
+        "xref-list": [
+          {
+            "accession": "BTO_0000011",
+            "category": "Anatomy/cell type resources",
+            "database": "BTO",
+            "iri": "http://purl.obolibrary.org/obo/BTO_0000011",
+            "url": "https://www.ebi.ac.uk/ols4/ontologies/bto/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FBTO_0000011"
+          },
+          {
+            "accession": "CLO_0001352",
+            "category": "Cell line databases/resources",
+            "database": "CLO",
+            "iri": "http://purl.obolibrary.org/obo/CLO_0001352",
+            "url": "https://www.ebi.ac.uk/ols4/ontologies/clo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCLO_0001352"
+          },
+          {
+            "accession": "EFO_0001084",
+            "category": "Experimental variables resources",
+            "database": "EFO",
+            "url": "https://www.ebi.ac.uk/efo/EFO_0001084"
+          },
+          {
+            "accession": "MCC:0000015",
+            "category": "Cell line databases/resources",
+            "database": "MCCL"
+          },
+          {
+            "accession": "cl71",
+            "category": "Cell line databases/resources",
+            "database": "CLDB",
+            "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl71.html"
+          },
+          {
+            "accession": "cl72",
+            "category": "Cell line databases/resources",
+            "database": "CLDB",
+            "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl72.html"
+          },
+          {
+            "accession": "cl73",
+            "category": "Cell line databases/resources",
+            "database": "CLDB",
+            "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl73.html"
+          },
+          {
+            "accession": "P0011002/407",
+            "category": "Cell line collections (Providers)",
+            "database": "AddexBio",
+            "url": "https://www.addexbio.com/productdetail?pid=407"
+          },
+          {
+            "accession": "CCL-92.1",
+            "category": "Cell line collections (Providers)",
+            "database": "ATCC",
+            "discontinued": "true"
+          },
+          {
+            "accession": "CL-173",
+            "category": "Cell line collections (Providers)",
+            "database": "ATCC",
+            "url": "https://www.atcc.org/products/CL-173"
+          },
+          {
+            "accession": "60159",
+            "category": "Cell line collections (Providers)",
+            "database": "BCRC",
+            "url": "https://catalog.bcrc.firdi.org.tw/BcrcContent?bid=60159"
+          },
+          {
+            "accession": "0019",
+            "category": "Cell line collections (Providers)",
+            "database": "BCRJ",
+            "url": "https://bcrj.org.br/pesquisa/?search=0019"
+          },
+          {
+            "accession": "1101MOU-PUMC000155",
+            "category": "Cell line databases/resources",
+            "database": "CCRID",
+            "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=1101MOU-PUMC000155"
+          },
+          {
+            "accession": "3101MOUGNM25",
+            "category": "Cell line databases/resources",
+            "database": "CCRID",
+            "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=3101MOUGNM25"
+          },
+          {
+            "accession": "3101MOUSCSP5038",
+            "category": "Cell line databases/resources",
+            "database": "CCRID",
+            "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=3101MOUSCSP5038"
+          },
+          {
+            "accession": "4201MOU-CCTCC00180",
+            "category": "Cell line databases/resources",
+            "database": "CCRID",
+            "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=4201MOU-CCTCC00180"
+          },
+          {
+            "accession": "5301MOU-KCB92010YJ",
+            "category": "Cell line databases/resources",
+            "database": "CCRID",
+            "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=5301MOU-KCB92010YJ"
+          },
+          {
+            "accession": "GDC0180",
+            "category": "Cell line collections (Providers)",
+            "database": "CCTCC"
+          },
+          {
+            "accession": "CHEMBL3307630",
+            "category": "Chemistry resources",
+            "database": "ChEMBL-Cells",
+            "url": "https://www.ebi.ac.uk/chembldb/cell/inspect/CHEMBL3307630"
+          },
+          {
+            "accession": "CHEMBL614510",
+            "category": "Chemistry resources",
+            "database": "ChEMBL-Targets",
+            "url": "https://www.ebi.ac.uk/chembldb/target/inspect/CHEMBL614510"
+          },
+          {
+            "accession": "400107",
+            "category": "Cell line collections (Providers)",
+            "database": "CLS",
+            "url": "https://www.cytion.com/400107"
+          },
+          {
+            "accession": "86052701",
+            "category": "Cell line collections (Providers)",
+            "database": "ECACC",
+            "url": "https://www.culturecollections.org.uk/products/celllines/detail.jsp?refId=86052701"
+          },
+          {
+            "accession": "EDC00191",
+            "category": "Cell line collections (Providers)",
+            "database": "EDITGENE",
+            "url": "https://www.editxor.com/products/cat/?keyword=EDC00191"
+          },
+          {
+            "accession": "ENCBS366WMO",
+            "category": "Biological sample resources",
+            "database": "ENCODE",
+            "url": "https://www.encodeproject.org/biosamples/ENCBS366WMO/"
+          },
+          {
+            "accession": "ENCBS666CGP",
+            "category": "Biological sample resources",
+            "database": "ENCODE",
+            "url": "https://www.encodeproject.org/biosamples/ENCBS666CGP/"
+          },
+          {
+            "accession": "TCM-C702",
+            "category": "Cell line collections (Providers)",
+            "database": "Hysigen",
+            "url": "https://hysigen.com/TCM-C702.html"
+          },
+          {
+            "accession": "C10152",
+            "category": "Cell line collections (Providers)",
+            "database": "IBRC"
+          },
+          {
+            "accession": "BS CL 100",
+            "category": "Cell line collections (Providers)",
+            "database": "IZSLER"
+          },
+          {
+            "accession": "IFO50416",
+            "category": "Cell line collections (Providers)",
+            "database": "JCRB",
+            "url": "https://cellbank.nibiohn.go.jp//~cellbank/en/search_res_det.cgi?RNO=IFO50416"
+          },
+          {
+            "accession": "JCRB9014",
+            "category": "Cell line collections (Providers)",
+            "database": "JCRB",
+            "url": "https://cellbank.nibiohn.go.jp//~cellbank/en/search_res_det.cgi?RNO=JCRB9014"
+          },
+          {
+            "accession": "KCB 92010YJ",
+            "category": "Cell line collections (Providers)",
+            "database": "KCB"
+          },
+          {
+            "accession": "10092.1",
+            "category": "Cell line collections (Providers)",
+            "database": "KCLB",
+            "url": "https://cellbank.snu.ac.kr/cellline/search?sc=y&q=10092.1"
+          },
+          {
+            "accession": "EF3001",
+            "category": "Cell line collections (Providers)",
+            "database": "Kerafast",
+            "url": "https://www.kerafast.com/Search?SearchTerm=&quot;EF3001&quot;"
+          },
+          {
+            "accession": "677",
+            "category": "Cell line databases/resources",
+            "database": "Lonza",
+            "url": "https://knowledge.lonza.com/cell?id=677"
+          },
+          {
+            "accession": "1083",
+            "category": "Cell line databases/resources",
+            "database": "Lonza",
+            "url": "https://knowledge.lonza.com/cell?id=1083"
+          },
+          {
+            "accession": "D041721",
+            "category": "Medical resources",
+            "database": "MeSH",
+            "url": "https://www.nlm.nih.gov/cgi/mesh/2013/MB_cgi?field=uid&term=D041721"
+          },
+          {
+            "accession": "PXD001063",
+            "category": "Proteomic databases",
+            "database": "PRIDE",
+            "url": "https://www.ebi.ac.uk/pride/archive/projects/PXD001063"
+          },
+          {
+            "accession": "PXD001529",
+            "category": "Proteomic databases",
+            "database": "PRIDE",
+            "url": "https://www.ebi.ac.uk/pride/archive/projects/PXD001529"
+          },
+          {
+            "accession": "PXD003696",
+            "category": "Proteomic databases",
+            "database": "PRIDE",
+            "url": "https://www.ebi.ac.uk/pride/archive/projects/PXD003696"
+          },
+          {
+            "accession": "CVCL_0123",
+            "category": "Chemistry resources",
+            "database": "PubChem_Cell_line",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/cell/CVCL_0123"
+          },
+          {
+            "accession": "331",
+            "category": "Cell line databases/resources",
+            "database": "TOKU-E",
+            "url": "http://cell-lines.toku-e.com/Cell-Lines_331.html"
+          },
+          {
+            "accession": "Q4636414",
+            "category": "Encyclopedic resources",
+            "database": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q4636414"
+          }
+        ]
+      }
+    ],
+    "publication-list": [
+      {
+        "author-list": [
+          {
+            "first-names": "Howard",
+            "last-name": "Green",
+            "name": "Green H.",
+            "type": "person"
+          },
+          {
+            "first-names": "Olaniyi",
+            "last-name": "Kehinde",
+            "name": "Kehinde O.",
+            "type": "person"
+          }
+        ],
+        "date": "1975",
+        "first-page": "19",
+        "internal-id": "PubMed=165899",
+        "journal-name": "Cell",
+        "last-page": "27",
+        "title": "An established preadipose cell line and its differentiation in culture. II. Factors affecting the adipose conversion.",
+        "type": "article",
+        "volume": "5",
+        "xref-list": [
+          {
+            "accession": "10.1016/0092-8674(75)90087-2",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.1016/0092-8674(75)90087-2"
+          },
+          {
+            "accession": "165899",
+            "category": "Reference resources",
+            "database": "PubMed",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/165899"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Howard",
+            "last-name": "Green",
+            "name": "Green H.",
+            "type": "person"
+          },
+          {
+            "first-names": "Mark",
+            "last-name": "Meuth",
+            "name": "Meuth M.",
+            "type": "person"
+          }
+        ],
+        "date": "1974",
+        "first-page": "127",
+        "internal-id": "PubMed=4426090",
+        "journal-name": "Cell",
+        "last-page": "133",
+        "title": "An established pre-adipose cell line and its differentiation in culture.",
+        "type": "article",
+        "volume": "3",
+        "xref-list": [
+          {
+            "accession": "10.1016/0092-8674(74)90116-0",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.1016/0092-8674(74)90116-0"
+          },
+          {
+            "accession": "4426090",
+            "category": "Reference resources",
+            "database": "PubMed",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/4426090"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Howard",
+            "last-name": "Green",
+            "name": "Green H.",
+            "type": "person"
+          },
+          {
+            "first-names": "Olaniyi",
+            "last-name": "Kehinde",
+            "name": "Kehinde O.",
+            "type": "person"
+          }
+        ],
+        "date": "1974",
+        "first-page": "113",
+        "internal-id": "DOI=10.1016/0092-8674(74)90126-3",
+        "journal-name": "Cell",
+        "last-page": "116",
+        "title": "Sublines of mouse 3T3 cells that accumulate lipid.",
+        "type": "article",
+        "volume": "1",
+        "xref-list": [
+          {
+            "accession": "10.1016/0092-8674(74)90126-3",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.1016/0092-8674(74)90126-3"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Jedd F.",
+            "last-name": "Levine",
+            "name": "Levine J.F.",
+            "type": "person"
+          },
+          {
+            "first-names": "Frank E.",
+            "last-name": "Stockdale",
+            "name": "Stockdale F.E.",
+            "type": "person"
+          }
+        ],
+        "date": "1984",
+        "first-page": "112",
+        "internal-id": "PubMed=6698114",
+        "journal-name": "Exp. Cell Res.",
+        "last-page": "122",
+        "title": "3T3-L1 adipocytes promote the growth of mammary epithelium.",
+        "type": "article",
+        "volume": "151",
+        "xref-list": [
+          {
+            "accession": "10.1016/0014-4827(84)90361-6",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.1016/0014-4827(84)90361-6"
+          },
+          {
+            "accession": "6698114",
+            "category": "Reference resources",
+            "database": "PubMed",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/6698114"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Howard",
+            "last-name": "Green",
+            "name": "Green H.",
+            "type": "person"
+          }
+        ],
+        "date": "18-Jan-1977",
+        "internal-id": "Patent=US4003789",
+        "title": "Triglyceride-accumulating clonal cell line.",
+        "type": "patent",
+        "xref-list": [
+          {
+            "accession": "US4003789",
+            "category": "Reference resources",
+            "database": "Patent",
+            "url": "https://patents.google.com/patent/US4003789"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Christopher D.",
+            "last-name": "Kassotis",
+            "name": "Kassotis C.D.",
+            "type": "person"
+          },
+          {
+            "first-names": "Lauren",
+            "last-name": "Masse",
+            "name": "Masse L.",
+            "type": "person"
+          },
+          {
+            "first-names": "Stephanie",
+            "last-name": "Kim",
+            "name": "Kim S.",
+            "type": "person"
+          },
+          {
+            "first-names": "Jennifer Joy",
+            "last-name": "Schlezinger",
+            "name": "Schlezinger J.J.",
+            "type": "person"
+          },
+          {
+            "first-names": "Thomas F.",
+            "last-name": "Webster",
+            "name": "Webster T.F.",
+            "type": "person"
+          },
+          {
+            "first-names": "Heather M.",
+            "last-name": "Stapleton",
+            "name": "Stapleton H.M.",
+            "type": "person"
+          }
+        ],
+        "date": "2017",
+        "first-page": "42104.1",
+        "internal-id": "PubMed=28176856",
+        "journal-name": "Sci. Rep.",
+        "last-page": "42104.17",
+        "title": "Characterization of adipogenic chemicals in three different cell culture systems: implications for reproducibility based on cell source and handling.",
+        "type": "article",
+        "volume": "7",
+        "xref-list": [
+          {
+            "accession": "PMC5296734",
+            "category": "Reference resources",
+            "database": "PMCID",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5296734"
+          },
+          {
+            "accession": "10.1038/srep42104",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.1038/srep42104"
+          },
+          {
+            "accession": "28176856",
+            "category": "Reference resources",
+            "database": "PubMed",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/28176856"
+          }
+        ]
+      }
+    ]
+  }
+}

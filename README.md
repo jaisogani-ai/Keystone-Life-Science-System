@@ -28,17 +28,34 @@ and pinned as offline fixtures:
 - **Target:** cathepsin B ([UniProt P07858](https://www.uniprot.org/uniprotkb/P07858)),
   rendered as a real 3D structure.
 
-## The moat is a number, not a claim
+## The moat is a number, not a claim — on two domains
 
-`calibrate.py` measures the load-bearing classifier against **44 hand-labeled
-real GBM citing sentences**:
+`calibrate.py` measures the load-bearing classifier against hand-labeled real
+citing sentences. The **same classifier**, measured on two unrelated domains:
 
 ```
-ACCURACY = 0.773   (coin flip 0.500 | human-agreement band 0.69-0.75)
-precision=0.889  recall=0.667
+--domain gbm      ACCURACY = 0.818   (44 real GBM citing sentences)
+--domain insulin  ACCURACY = 0.818   (44 real insulin-signalling sentences)
 ```
 
-Offline, no API key. The live `ClaudeReasoner` runs the identical harness.
+Two data points near-identical ⇒ "domain-agnostic by construction" is measured
+fact, not a claim. Offline, no API key. The live `ClaudeReasoner` runs the
+identical harness.
+
+## It measures its own blind spots
+
+`python -m keystone.agents.flaw_catch_eval` plants deterministic flaws (a false
+retraction, a corrupted citing sentence, a hidden post-retraction flag, a hidden
+reagent misidentification) into the graph and asks whether the agents catch them:
+
+```
+accuracy 0.714  precision 1.000  recall 0.500
+caught: false-retraction-of-grounding, context-corruption
+MISSED: hidden temporal + reagent flaws  (the Reviewer reads the flag the flaw
+        clears — catching these needs re-verification against the connector)
+```
+
+An honest map of what the current agents catch and where they are blind.
 
 ## Quickstart
 
@@ -46,7 +63,9 @@ Offline, no API key. The live `ClaudeReasoner` runs the identical harness.
 pip install -e .                       # or: pip install requests
 python -m pytest                        # 17 tests: reproducibility + rules + real data
 python run_workbench.py                 # full loop, offline, no API key -> demo_out/
-python calibrate.py                     # measured load-bearing agreement
+python calibrate.py --domain gbm        # measured load-bearing agreement (GBM)
+python calibrate.py --domain insulin    # ...and on the second domain
+python -m keystone.agents.flaw_catch_eval   # do the agents catch planted flaws?
 
 pip install fastapi uvicorn             # the interactive workbench UI
 python -m keystone.ui.server            # -> http://127.0.0.1:8000
@@ -64,17 +83,21 @@ KEYSTONE_LIVE=1 ANTHROPIC_API_KEY=... python run_workbench.py
 keystone/
   core.py                 data model + rule-3-enforced Hypothesis + Ledger
   workbench.py            orchestrator: the full loop + timeline projection
-  gbm_spec.py             pinned REAL identifiers (single source of truth)
-  data_gbm.py             builds the graph from real connector output
+  gbm_spec.py             pinned REAL identifiers — GBM (single source of truth)
+  insulin_spec.py         pinned REAL identifiers — insulin (second domain)
+  data_gbm.py             builds the GBM graph from real connector output
+  data_insulin.py         builds the insulin graph (same core types)
   reasoning_panel.py      why-panel / future-experiments / honest readiness
   replay.py               session replay (ordered, timestamped)
   agents/
     reasoner.py           HeuristicReasoner (offline, transparent) + interface
     claude_reasoner.py    ClaudeReasoner + PathwayFigureAgent (real API, vision)
+    flaw_catch_eval.py    do the agents catch a planted flaw? (may call Claude)
   deterministic/
     stats.py              power analysis (refuses to fabricate n)
     propagation.py        doubt propagation (graph math)
     protocol.py           protocol completeness validator + checklist
+    flaw_injection.py     plant one grounded flaw, immutably (no LLM)
   connectors/
     registry.py           OpenAlex, RetractionWatch, Cellosaurus, S2, UniProt
     http_cache.py         cache -> live -> fixture (never fabricates)
@@ -84,12 +107,13 @@ keystone/
     render.py             evidence graph / timeline / 3D structure
     reasoning_render.py   why-panel + future-experiments renderers
   calibration/
-    gbm_citing_sentences.jsonl   44 hand-labeled real sentences
+    gbm_citing_sentences.jsonl       44 hand-labeled real GBM sentences
+    insulin_citing_sentences.jsonl   44 hand-labeled real insulin sentences
   ui/
     server.py             FastAPI backend (pure projection of the engine)
     static/index.html     one-page workbench: graph, why-panel, tree,
                           readiness, timeline, 3D, replay, approval gate
-tests/                    test_smoke.py (7) + test_connectors.py (10) + test_ui.py (4)
+tests/                    smoke(7) + connectors(10) + ui(4) + flaw(7) + insulin(6)
 run_workbench.py          end-to-end CLI
 calibrate.py              the moat, measured
 ```

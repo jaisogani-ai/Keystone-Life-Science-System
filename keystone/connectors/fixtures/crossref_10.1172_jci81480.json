@@ -1,0 +1,692 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          14
+        ]
+      ],
+      "date-time": "2026-05-14T18:29:21Z",
+      "timestamp": 1778783361669,
+      "version": "3.51.4"
+    },
+    "reference-count": 45,
+    "publisher": "American Society for Clinical Investigation",
+    "issue": "1",
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [],
+    "published-print": {
+      "date-parts": [
+        [
+          2015,
+          12,
+          14
+        ]
+      ]
+    },
+    "DOI": "10.1172/jci81480",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2015,
+          12,
+          13
+        ]
+      ],
+      "date-time": "2015-12-13T23:00:42Z",
+      "timestamp": 1450047642000
+    },
+    "page": "335-348",
+    "source": "Crossref",
+    "is-referenced-by-count": 65,
+    "title": [
+      "CDK4 is an essential insulin effector in adipocytes"
+    ],
+    "prefix": "10.1172",
+    "volume": "126",
+    "author": [
+      {
+        "given": "Sylviane",
+        "family": "Lagarrigue",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Isabel C.",
+        "family": "Lopez-Mejia",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Pierre-Damien",
+        "family": "Denechaud",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Xavier",
+        "family": "Escot\u00e9",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Judit",
+        "family": "Castillo-Armengol",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Veronica",
+        "family": "Jimenez",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Carine",
+        "family": "Chavey",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Albert",
+        "family": "Giralt",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Qiuwen",
+        "family": "Lai",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Lianjun",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Laia",
+        "family": "Martinez-Carreres",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Brigitte",
+        "family": "Delacuisine",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Jean-S\u00e9bastien",
+        "family": "Annicotte",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Emilie",
+        "family": "Blanchet",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "S\u00e9bastien",
+        "family": "Hur\u00e9",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Anna",
+        "family": "Abella",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Francisco J.",
+        "family": "Tinahones",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Joan",
+        "family": "Vendrell",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Pierre",
+        "family": "Dubus",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Fatima",
+        "family": "Bosch",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "C. Ronald",
+        "family": "Kahn",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Lluis",
+        "family": "Fajas",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "232",
+    "reference": [
+      {
+        "key": "B1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/414799a"
+      },
+      {
+        "key": "B2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1126/science.1092952"
+      },
+      {
+        "key": "B3",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1161/ATVBAHA.111.241919"
+      },
+      {
+        "key": "B4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.arcmed.2008.09.005"
+      },
+      {
+        "key": "B5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1172/JCI31073"
+      },
+      {
+        "key": "B6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/35055575"
+      },
+      {
+        "key": "B7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1172/JCI24867"
+      },
+      {
+        "key": "B8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/0092-8674(92)90360-O"
+      },
+      {
+        "key": "B9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1091/mbc.8.2.287"
+      },
+      {
+        "key": "B10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/nrc2602"
+      },
+      {
+        "key": "B11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/8751"
+      },
+      {
+        "key": "B12",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/366704a0"
+      },
+      {
+        "key": "B13",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/sj.onc.1206506"
+      },
+      {
+        "key": "B14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.cmet.2005.09.003"
+      },
+      {
+        "key": "B15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1128/MCB.25.22.9985-9995.2005"
+      },
+      {
+        "key": "B16",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S1534-5807(02)00190-9"
+      },
+      {
+        "key": "B17",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2337/db13-0311"
+      },
+      {
+        "key": "B18",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/emboj/20.23.6637"
+      },
+      {
+        "key": "B19",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1182/blood-2014-02-555292"
+      },
+      {
+        "key": "B20",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.cmet.2011.12.018"
+      },
+      {
+        "issue": "11",
+        "key": "B21",
+        "doi-asserted-by": "crossref",
+        "first-page": "1427",
+        "DOI": "10.1158/1535-7163.1427.3.11",
+        "article-title": "Specific inhibition of cyclin-dependent kinase 4/6 by PD 0332991 and associated antitumor activity in human tumor xenografts",
+        "volume": "3",
+        "author": "Fry",
+        "year": "2004",
+        "journal-title": "Mol Cancer Ther"
+      },
+      {
+        "key": "B22",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978-1-62703-284-1_21"
+      },
+      {
+        "key": "B23",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.tem.2006.01.005"
+      },
+      {
+        "key": "B24",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.tibs.2005.09.005"
+      },
+      {
+        "key": "B25",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/nm762"
+      },
+      {
+        "key": "B26",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/35060032"
+      },
+      {
+        "key": "B27",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1158/0008-5472.CAN-12-3385"
+      },
+      {
+        "key": "B28",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.yexcr.2008.09.017"
+      },
+      {
+        "key": "B29",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1158/0008-5472.CAN-13-2923"
+      },
+      {
+        "key": "B30",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ccr.2014.05.020"
+      },
+      {
+        "key": "B31",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ccr.2014.06.020"
+      },
+      {
+        "issue": "294",
+        "key": "B32",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1126/scisignal.2004014",
+        "article-title": "Drug synergy screen and network modeling in dedifferentiated liposarcoma identifies CDK4 and IGF1R as synergistic drug targets",
+        "volume": "6",
+        "author": "Miller",
+        "year": "2013",
+        "journal-title": "Sci Signal"
+      },
+      {
+        "key": "B33",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1056/NEJMoa1505270"
+      },
+      {
+        "key": "B34",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/nrd4504"
+      },
+      {
+        "key": "B35",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/nrc2222"
+      },
+      {
+        "key": "B36",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s00125-012-2644-8"
+      },
+      {
+        "key": "B37",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1073/pnas.0607626103"
+      },
+      {
+        "issue": "2",
+        "key": "B38",
+        "doi-asserted-by": "crossref",
+        "first-page": "E307",
+        "DOI": "10.1152/ajpendo.00534.2007",
+        "article-title": "Sequential phosphorylation of insulin receptor substrate-2 by glycogen synthase kinase-3 and c-Jun NH2-terminal kinase plays a role in hepatic insulin signaling",
+        "volume": "294",
+        "author": "Sharfi",
+        "year": "2008",
+        "journal-title": "Am J Physiol Endocrinol Metab"
+      },
+      {
+        "key": "B39",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1152/ajpendo.00409.2010"
+      },
+      {
+        "key": "B40",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1152/ajpendo.90437.2008"
+      },
+      {
+        "key": "B41",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/ncb2309"
+      },
+      {
+        "key": "B42",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/36116"
+      },
+      {
+        "key": "B43",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1128/MCB.21.1.26-38.2001"
+      },
+      {
+        "key": "B44",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1172/JCI41636"
+      },
+      {
+        "key": "B45",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/ncb1915"
+      }
+    ],
+    "updated-by": [
+      {
+        "DOI": "10.1172/jci170315",
+        "type": "retraction",
+        "label": "Retraction",
+        "source": "retraction-watch",
+        "updated": {
+          "date-parts": [
+            [
+              2023,
+              3,
+              15
+            ]
+          ],
+          "date-time": "2023-03-15T00:00:00Z",
+          "timestamp": 1678838400000
+        },
+        "record-id": "43219"
+      },
+      {
+        "DOI": "10.1172/jci162359",
+        "type": "correction",
+        "label": "Correction",
+        "source": "retraction-watch",
+        "updated": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              1
+            ]
+          ],
+          "date-time": "2022-07-01T00:00:00Z",
+          "timestamp": 1656633600000
+        },
+        "record-id": "43220"
+      }
+    ],
+    "container-title": [
+      "Journal of Clinical Investigation"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://www.jci.org/articles/view/81480/files/pdf",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2024,
+          6,
+          13
+        ]
+      ],
+      "date-time": "2024-06-13T01:18:08Z",
+      "timestamp": 1718241488000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.jci.org/articles/view/81480"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          12,
+          14
+        ]
+      ]
+    },
+    "references-count": 45,
+    "journal-issue": {
+      "issue": "1",
+      "published-print": {
+        "date-parts": [
+          [
+            2016,
+            1,
+            4
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.1172/JCI81480"
+    ],
+    "URL": "https://doi.org/10.1172/jci81480",
+    "relation": {},
+    "ISSN": [
+      "0021-9738",
+      "1558-8238"
+    ],
+    "issn-type": [
+      {
+        "value": "0021-9738",
+        "type": "print"
+      },
+      {
+        "value": "1558-8238",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2015,
+          12,
+          14
+        ]
+      ]
+    }
+  }
+}

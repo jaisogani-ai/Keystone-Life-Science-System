@@ -1,0 +1,1947 @@
+{
+  "offset": 0,
+  "next": 120,
+  "data": [
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "af58d661ca27de397786c8fdfef1ff16606c93e6",
+        "externalIds": {
+          "DOI": "10.1016/j.maturitas.2026.109037",
+          "CorpusId": 289832414,
+          "PubMed": "42391935"
+        },
+        "title": "Diagnosis and management of androgen excess presenting after menopause.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "b674c574b39c4017e450e360370ae795d10bc002",
+        "externalIds": {
+          "DOI": "10.1016/j.foodres.2026.119241",
+          "CorpusId": 287812546,
+          "PubMed": "42116490"
+        },
+        "title": "The antidiabetic potential of Leuconostoc mesenteroides strain SB1075 fermented soy yoghurt: Insights from mouse intestinal transcriptomics and metabolite analyses.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "45d79a5a1f29829598fc7c8d5290476935157e52",
+        "externalIds": {
+          "DOI": "10.1016/j.prostaglandins.2026.107092",
+          "CorpusId": 289850079,
+          "PubMed": "42398752"
+        },
+        "title": "A comprehensive review on the mechanistics of free fatty acid-induced insulin resistance and it's therapeutics: Molecular perspectives.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "0ad544ba25f3966c29220831e9f157f4179f44df",
+        "externalIds": {
+          "DOI": "10.3390/ijms27135876",
+          "CorpusId": 289790649
+        },
+        "title": "Multidimensional Classification of Insulin Resistance (MCIR) Focused on Therapeutic Targets and Interventions\u2014A Comprehensive Review",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "In this integrated metabolic and secretory network, adipocytes actively participate in the fine\u2013tuning of insulin sensitivity, appetite regulation, inflammatory state, and whole\u2013body energy balance [72]."
+      ],
+      "citingPaper": {
+        "paperId": "2cda2fd9da069cfa0d37024e36d2fbc48ca4c7c2",
+        "externalIds": {
+          "PubMedCentral": "13294325",
+          "DOI": "10.1007/s13679-026-00733-4",
+          "CorpusId": 289480453,
+          "PubMed": "42340603"
+        },
+        "title": "Adipose Tissue Plasticity and Adipogenesis: From Cellular Mechanisms to Therapeutic Targets in Obesity",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "In vertebrates it is made by the pancreatic \u03b2-cells and released into the blood, where it acts on target tissues through the insulin receptor (Steiner 1969; Saltiel and Kahn 2001)."
+      ],
+      "citingPaper": {
+        "paperId": "45cc679eee229083153719c34b559e8eb478a2c4",
+        "externalIds": {
+          "DOI": "10.64898/2026.06.17.732871",
+          "CorpusId": 289487188
+        },
+        "title": "An aorta-to-insulin producing cell sensor for internal state in Drosophila",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "ede4796681277ec66b408fc06952db3090fa9590",
+        "externalIds": {
+          "DOI": "10.2337/db25-1115",
+          "CorpusId": 289475871,
+          "PubMed": "42330303"
+        },
+        "title": "\u03b2-Hydroxybutyrate Improves Glucose Metabolism in Streptozotocin-Induced Type 1 Diabetes by Inhibiting Gut and Liver Glucose Transporters via GPR109A.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "2a1b7ddfa563dedd56474e45a2a11f62d27c7135",
+        "externalIds": {
+          "DOI": "10.1007/s00125-026-06769-4",
+          "CorpusId": 289460650,
+          "PubMed": "42322376"
+        },
+        "title": "Somatostatin receptors shape insulin and glucagon output within the pancreatic islet in mice through direct and paracrine effects.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "74be23ced930a7bdb8f2548800e5a464e1d4604a",
+        "externalIds": {
+          "DOI": "10.1016/j.biopha.2026.119629",
+          "CorpusId": 289383216,
+          "PubMed": "42308924"
+        },
+        "title": "D-chiro-inositol modulates brain insulin-related signaling and reduces amyloid burden, neuroinflammation and cognitive decline in preclinical models of Alzheimer's disease.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "108ec9e61ae4239d60c5c8c7d20c6ca109bef887",
+        "externalIds": {
+          "DOI": "10.1038/s41366-026-02128-w",
+          "CorpusId": 289385444,
+          "PubMed": "42310385"
+        },
+        "title": "Novel perspectives on PPAR\u03b3 regulation: from SPPARMs to the emerging role of lncRNAs in metabolic disorders.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "b6fd42125cb2a98e9cb24dc71865247d588628a7",
+        "externalIds": {
+          "DOI": "10.3389/fanim.2026.1830041",
+          "CorpusId": 289240241
+        },
+        "title": "CLCN3 regulates adipogenesis and intramuscular fat deposition in pigs",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "1d5b4597c2cd8cb0352eedb45c088405814d28e8",
+        "externalIds": {
+          "DOI": "10.1111/andr.70276",
+          "CorpusId": 289201913,
+          "PubMed": "42286955"
+        },
+        "title": "Metabolic Reprogramming in Male Infertility: Mechanistic Integration and Translational Perspectives From Mouse Models.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "87a549ed626935f71709440c81cb1bd304577c12",
+        "externalIds": {
+          "DOI": "10.1016/j.biopha.2026.119617",
+          "CorpusId": 289191101,
+          "PubMed": "42275690"
+        },
+        "title": "Telomir-Zn restores glucose homeostasis and reduces insulin resistance in a diet-induced zebrafish model of type 2 diabetes.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "The pancreas produces insulin, which regulates blood glucose levels [11, 12], which can be maintained within a certain range after a meal because insulin release enhances the absorption of glucose by muscle and fat and decreases the amount of glucose supplied by the liver."
+      ],
+      "citingPaper": {
+        "paperId": "6cfa5520aead7ff8fdb3d6faa3a99f22e0686c3e",
+        "externalIds": {
+          "DOI": "10.5114/pq/208756",
+          "CorpusId": 289104278
+        },
+        "title": "Effect of whole body vibration on insulin resistance in obese postmenopausal women",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "At the molecular level, insulin resistance is characterized by impaired activation of the PI3K/Akt pathway, which regulates GLUT4 translocation to the plasma membrane and subsequent glucose uptake (96, 97)."
+      ],
+      "citingPaper": {
+        "paperId": "b0df2d179689e0f18c0cda5824cfe886adb45ea2",
+        "externalIds": {
+          "PubMedCentral": "13278863",
+          "DOI": "10.3389/fnut.2026.1849842",
+          "CorpusId": 288980211,
+          "PubMed": "42325523"
+        },
+        "title": "Dietary polyphenols in pediatric obesity and cardiometabolic risk: mechanisms and clinical evidence",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "3929831a6d3d672e659e6245d9022b14c6ce9ee7",
+        "externalIds": {
+          "DOI": "10.1016/j.tvjl.2026.106687",
+          "CorpusId": 287766315,
+          "PubMed": "42034158"
+        },
+        "title": "Diabetic and overweight cats have altered gut microbial diversity and composition.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "b9787c4c304f60195c8efeba33be9f3b44e79f82",
+        "externalIds": {
+          "DOI": "10.1002/age.70141",
+          "CorpusId": 289133956,
+          "PubMed": "42264465"
+        },
+        "title": "Integrative Multi-Omics Analysis Identifies Novel Enhancer Variants on SSC2 Associated With Backfat Thickness in Landrace Pigs.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Insulin signalling is traditionally recognised for its metabolic role, yet numerous studies have shown that the same pathway exerts strong mitogenic and anti-apoptotic effects in malignant cells [21, 22]."
+      ],
+      "citingPaper": {
+        "paperId": "f1509bc2e22bce2afad5930f0c39f3222d91cf9e",
+        "externalIds": {
+          "PubMedCentral": "13263400",
+          "DOI": "10.1111/jcmm.71183",
+          "CorpusId": 289201132,
+          "PubMed": "42286874"
+        },
+        "title": "Insulin Signalling\u2010Inducible IFITM1 Promotes Multiple Myeloma Progression and Bortezomib Resistance",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Insulin re-Int ceptors are widely distributed throughout the brain, particularly in regions involved in learning, memory, and cognition, including the hippocampus, entorhinal cortex, and frontal cortex [1\u20133]."
+      ],
+      "citingPaper": {
+        "paperId": "4793af9e215d80a5caaa20ee85c02120414ff6b7",
+        "externalIds": {
+          "PubMedCentral": "13299582",
+          "DOI": "10.3390/ijms27125565",
+          "CorpusId": 289567397,
+          "PubMed": "42353279"
+        },
+        "title": "Insulin Regulates AKT/GSK-3\u03b2 Signalling, Tau Phosphorylation, and Redox Homeostasis in SH-SY5Y Neuroblastoma Cells",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "This aligns with insulin's established function as a key regulator of glucose homeostasis, modulating the translocation of glucose transporters such as GLUT4 to the plasma membrane in muscle and adipose tissues [33, 34]."
+      ],
+      "citingPaper": {
+        "paperId": "e744eb5df213ce82059010d9c905facba7fb91d2",
+        "externalIds": {
+          "DOI": "10.28991/hef-2026-07-02-011",
+          "CorpusId": 289756519
+        },
+        "title": "Plant-Derived Multi-Target Modulators for Pre-Gestational Diabetes: Systems Insights into Syzygium cumini for Maternal Health",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Insulin resistance (IR), characterized by diminished sensitivity to insulin, disrupts the regulation of glucose and lipid metabolism and serves as a core pathological driver of metabolic disorders such as type 2 diabetes and non-alcoholic fatty liver disease [1,2]."
+      ],
+      "citingPaper": {
+        "paperId": "928be71a9f7c0af8d197862169562f5d44f42de5",
+        "externalIds": {
+          "DOI": "10.3390/microorganisms14061231",
+          "CorpusId": 288877411,
+          "PubMed": "42354856"
+        },
+        "title": "Improvement of Insulin Resistance by Lactobacillus johnsonii-Derived Indole-3-Lactic Acid.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "da8e60d6412927d9686fe5370d812eae2b209ec0",
+        "externalIds": {
+          "DOI": "10.1016/j.metabol.2026.156654",
+          "CorpusId": 288801425,
+          "PubMed": "42214482"
+        },
+        "title": "Hepatic TGF\u03b21 signaling impairs insulin sensitivity via inducing insulin receptor substrate 1 degradation.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Protein hormones such as insulin regulate anabolic pathways via receptor-mediated signaling [34], while intracellular protein complexes such as mTORC1 act as nutrient and energy sensors controlling protein synthesis, autophagy, and mitochondrial metabolism [35,36]."
+      ],
+      "citingPaper": {
+        "paperId": "142ca43a4ef8059da3bf96d4ea56e26014e6cc40",
+        "externalIds": {
+          "PubMedCentral": "13257804",
+          "DOI": "10.3390/nu18111703",
+          "CorpusId": 288773708,
+          "PubMed": "42280346"
+        },
+        "title": "Amino Acids as Metabokines in Hypercatabolic States: Rethinking Nutritional Protein-Based Strategies Beyond Caloric Support",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "The molecular mechanism of these copper( II ) lawsone complexes involves the regulation of p53, along with pro-apoptotic proteins Bad and Bax, leading to apoptotic cell death through the activation of caspases 3, 8, and 9."
+      ],
+      "citingPaper": {
+        "paperId": "fc0ce84a15ea0918c2d05d89af167ba89ac5d6cf",
+        "externalIds": {
+          "PubMedCentral": "13213570",
+          "DOI": "10.1039/d6ra02275h",
+          "CorpusId": 288727475,
+          "PubMed": "42211352"
+        },
+        "title": "Oxovanadium(iv/v) lawsone-based complexes: synthesis, characterization, DFT studies, and multifunctional biological activities",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "51e34e6e2609a5e78f1954e6972e29edea97ec4b",
+        "externalIds": {
+          "DOI": "10.20517/ss.2025.125",
+          "CorpusId": 288517061
+        },
+        "title": "Electrochemical biosensing across microsampled blood and interstitial fluid for metabolic, hormonal, and therapeutic monitoring",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "3736a60c20bb78d15516396cea58a84e9fa11b5f",
+        "externalIds": {
+          "DOI": "10.1016/j.biopha.2026.119531",
+          "CorpusId": 288554138,
+          "PubMed": "42150488"
+        },
+        "title": "10-epi-PDX alleviates high-fat-diet-induced obesity by modulating lipid droplet dynamics and restoring metabolic balance.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "These agents may therefore be preferable from a metabolic-safety perspective when they are clinically suitable for the allergic condition being treated (23)."
+      ],
+      "citingPaper": {
+        "paperId": "7f8f77200aa2f499e4b6029a15125e62d2dc40d5",
+        "externalIds": {
+          "DOI": "10.61919/06h22489",
+          "CorpusId": 288504480
+        },
+        "title": "Impact of Anti-Allergic Drug Therapy on the Incidence of Diabetes Mellitus: A Narrative Review",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "\u041c\u0435\u0445\u0430\u043d\u0438\u0437\u043c\u044b \u0433\u0438\u043f\u0435\u0440\u0433\u043b\u0438\u043a\u0435\u043c\u0438\u0438 \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442 \u0441\u043e\u0447\u0435\u0442\u0430\u043d\u0438\u0435 \u043f\u0435\u0440\u0438\u0444\u0435\u0440\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0438 \u043f\u0435\u0447\u0451\u043d\u043e\u0447\u043d\u043e\u0439 \u0438\u043d\u0441\u0443\u043b\u0438\u043d\u043e\u0440\u0435\u0437\u0438\u0441\u0442\u0435\u043d\u0442\u043d\u043e\u0441\u0442\u0438 \u0438 \u0443\u0441\u0438\u043b\u0435\u043d\u043d\u043e\u0439 \u043f\u0435\u0447\u0451\u043d\u043e\u0447\u043d\u043e\u0439 \u0438 \u043f\u043e\u0447\u0435\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u0438 \u0433\u043b\u044e\u043a\u043e\u0437\u044b [9, 23, 25].",
+        "\u0422\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442 \u0433\u043b\u044e\u043a\u043e\u0437\u044b \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0441\u0435\u043c\u0435\u0439\u0441\u0442\u0432\u043e\u043c \u043f\u0435\u0440\u0435\u043d\u043e\u0441\u0447\u0438\u043a\u043e\u0432 GLUT; \u043a\u043b\u0438\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u043d\u0430\u0438\u0431\u043e\u043b\u044c\u0448\u0435\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0438\u043c\u0435\u044e\u0442 \u0438\u0437\u043e\u0444\u043e\u0440\u043c\u044b GLUT1\u20134 [23, 24].",
+        "\u042d\u0442\u043e \u0432\u0435\u0434\u0451\u0442 \u043a \u0443\u0441\u043a\u043e\u0440\u0435\u043d\u043d\u043e\u043c\u0443 \u043a\u043b\u0435\u0442\u043e\u0447\u043d\u043e\u043c\u0443 \u0437\u0430\u0445\u0432\u0430\u0442\u0443 \u0433\u043b\u044e\u043a\u043e\u0437\u044b, \u043f\u0440\u0435\u0436\u0434\u0435 \u0432\u0441\u0435\u0433\u043e, \u0432 \u0441\u043a\u0435\u043b\u0435\u0442\u043d\u043e\u0439 \u043c\u044b\u0448\u0446\u0435 \u0438 \u0436\u0438\u0440\u043e\u0432\u043e\u0439 \u0442\u043a\u0430\u043d\u0438 [23, 30]."
+      ],
+      "citingPaper": {
+        "paperId": "8cb85942ac61aeb210c7d21ef00e5f5bde824b0b",
+        "externalIds": {
+          "DOI": "10.17816/clinutr705240",
+          "CorpusId": 288207720
+        },
+        "title": "Stress hyperglycemia in the intensive care unit",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "5d6ea35ae73df333fb33d93bc840511f60a15f60",
+        "externalIds": {
+          "DOI": "10.1007/s12034-026-03602-x",
+          "CorpusId": 288165355
+        },
+        "title": "Sustained transdermal delivery of insulin-cyclodextrin through the use of chitosan-based microneedle patches",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "In T2DM, this IRS-1/PI3K/Akt/GLUT4 signaling pathway is significantly impaired due to decreased IRS-1 activity and increased serine phosphorylation mediated by stress kinases such as JNK, IKK\u03b2, and PKC, leading to insulin resistance (4,5)."
+      ],
+      "citingPaper": {
+        "paperId": "449adb45dacdc2de1c7ff294e102a477d387d18d",
+        "externalIds": {
+          "DOI": "10.25258/ijddt.16.26s.102",
+          "CorpusId": 288316479
+        },
+        "title": "Molecular Mechanism To Identify The Effects Of Seendhil Polyherbal Preparation On Irs-1/Akt/Glut4/Nrf2-Keap-1 Mediated Signaling In Sfz-Induced Type-2 Diabetic Adult Male Rats",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "5e4b249bf7dc480f3dcda9feee6cfae21b2691cf",
+        "externalIds": {
+          "DOI": "10.1016/j.mehy.2026.111982",
+          "CorpusId": 287960116
+        },
+        "title": "Insulin resistance as a decision of the cellular living system: From the evolutionary abundance reflex to modern addiction and functional inversion of the human brain hierarchy",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "99ffd760a55676290ad5a31cf301201e3a0e45a1",
+        "externalIds": {
+          "DOI": "10.1016/j.diabres.2026.113320",
+          "CorpusId": 288175150,
+          "PubMed": "42119821"
+        },
+        "title": "Long noncoding RNAs in insulin signaling: mechanisms, metabolic roles, and therapeutic prospects.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "e6d376f914d4f9257c947179821eecc7fa0fca18",
+        "externalIds": {
+          "PubMedCentral": "13158277",
+          "DOI": "10.1111/acel.70541",
+          "CorpusId": 288184165,
+          "PubMed": "42108568"
+        },
+        "title": "Exosome\u2010Delivered eNAMPT From Exercise Activates SIRT1 to Counteract Age\u2010Related Hepatic Steatosis and Fibrosis",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "5fefa05b15768213ed8b1d8b71665b363c15c144",
+        "externalIds": {
+          "DOI": "10.1073/pnas.2601991123",
+          "CorpusId": 287891166,
+          "PubMed": "42048444"
+        },
+        "title": "Lipid metabolism in adipocytes modulates tumor growth at a distance through Nplp2-mediated Wnt5 signal.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "10ffc830c543226baf57cbe4f2048da8b205b1af",
+        "externalIds": {
+          "PubMedCentral": "13287783",
+          "DOI": "10.1038/s41467-026-72333-8",
+          "CorpusId": 287727810,
+          "PubMed": "42020424"
+        },
+        "title": "Host insulin hijacking by a nematode receptor mediates developmental plasticity and sex ratio shifts",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Reduced phosphorylation of insulin receptor substrate-1 (IRS-1) and downstream modulation of phosphatidylinositol-3-kinase (PI3K) and AKT signaling pathways decrease insulin-mediated glucose uptake in peripheral tissues while promoting adipose tissue lipolysis (43, 44)."
+      ],
+      "citingPaper": {
+        "paperId": "ee6e0bb05f96e77249974ab009cfa09f784bbd48",
+        "externalIds": {
+          "PubMedCentral": "13132773",
+          "DOI": "10.3389/fendo.2026.1799702",
+          "CorpusId": 287554836,
+          "PubMed": "42077442"
+        },
+        "title": "Endocrine\u2013metabolic regulation during the transition period in dairy cows: mechanisms, biomarkers, and emerging diagnostics for subclinical ketosis",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "bcdf40eb0347fd0bef42af79d2f2430c1d187369",
+        "externalIds": {
+          "DOI": "10.1097/grf.0000000000001017",
+          "CorpusId": 287588200,
+          "PubMed": "41989028"
+        },
+        "title": "Obesity and Diabetes: A Complex Connection.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Insulin is a key regulator of whole-body glucose homeostasis (Saltiel and Kahn, 2001)."
+      ],
+      "citingPaper": {
+        "paperId": "024a6ad21b6b3dc36d3500a2f4ec92fbe329409b",
+        "externalIds": {
+          "PubMedCentral": "13102864",
+          "DOI": "10.3389/fnagi.2026.1710075",
+          "CorpusId": 287388108,
+          "PubMed": "42038694"
+        },
+        "title": "Dysregulated glucose metabolism in the visual cortex of human subjects with mild cognitive impairment and Alzheimer\u2019s disease",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "\u2026analyses revealed that MWT was primarily influenced by growth and metabolic pathways, notably the insulin receptor signaling and IRS-mediated PI3K/AKT cascade, which regulate glucose uptake, protein synthesis, and lipid metabolism (Saltiel And Kahn 2001; Copps And White 2012; Boucher et al. 2014)."
+      ],
+      "citingPaper": {
+        "paperId": "00f9266e8f207daa7add92a945e2f684213e8f2e",
+        "externalIds": {
+          "PubMedCentral": "13053394",
+          "DOI": "10.1007/s00335-026-10226-3",
+          "CorpusId": 287228180,
+          "PubMed": "41942823"
+        },
+        "title": "Genome-wide association study of mature cow size traits in American Angus cattle",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Insulin acts to guide the incorporation of food glucose into glycogen via glycogen synthase and fatty acids via lipogenesis, thus suppressing hepatic glucose production (HGP) and maintaining systemic glucose homeostasis 3\u20135 ."
+      ],
+      "citingPaper": {
+        "paperId": "b25a0419f0e6e0ee360392646d876acb751bf943",
+        "externalIds": {
+          "DOI": "10.1038/s42255-026-01507-x",
+          "CorpusId": 287181386,
+          "PubMed": "41927796"
+        },
+        "title": "Revitalizing p-GSK-3\u03b2 via cysteine sulfenylation promotes hepatic insulin resistance by differentially regulating glycogenesis and gluconeogenesis",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Many studies have shown that glucose significantly increased in HFD groups, similar to our findings [ 55\u201357]."
+      ],
+      "citingPaper": {
+        "paperId": "f93544f117c7e3bb2e8c31d657f851eb4cd0c807",
+        "externalIds": {
+          "PubMedCentral": "13179173",
+          "DOI": "10.1007/s43032-026-02076-w",
+          "CorpusId": 287094680,
+          "PubMed": "41922818"
+        },
+        "title": "Clove-Chitosan Nanoparticles Alleviate Fertility Impairment and Reproductive Dysfunction in Obese Male Rat Model",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "25dbd360d188bc35346faddf7fb0794a23d45700",
+        "externalIds": {
+          "DOI": "10.1016/j.anifeedsci.2026.116776",
+          "CorpusId": 287222955
+        },
+        "title": "Maternal Chromium Propionate Supplementation in Late Gestation and its Association with Cow Performance and Skeletal Muscle Programming in Beef Calves",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "The enhanced glucose clearance observed here likely reflects upregulated peripheral glucose uptake resulting from prolonged WLE infusion, despite higher insulin responses (Saltiel & Kahn, 2001)."
+      ],
+      "citingPaper": {
+        "paperId": "daf67dd2e263e194083002cd8ff6cf72d32b95a1",
+        "externalIds": {
+          "PubMedCentral": "13121428",
+          "DOI": "10.1016/j.vas.2026.100651",
+          "CorpusId": 287388912,
+          "PubMed": "42057939"
+        },
+        "title": "Intravenous administration of walnut leaf extract attenuates oxidative stress and improves insulin sensitivity and adipose tissue metabolism in feed-restricted fat-tailed ewes",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "a9f22fb2b311753a14e28d2ca8adc6f302617253",
+        "externalIds": {
+          "DOI": "10.1002/arch.70157",
+          "CorpusId": 287464669,
+          "PubMed": "41973973"
+        },
+        "title": "GC-MS Based Study of Haemolymph Metabolomics in Male Spodoptera mauritia Boisduval, on Post-Treatment of Flufenoxuron.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "f0f83ca59f03535b2140006a0c3b02c9fcf7750e",
+        "externalIds": {
+          "DOI": "10.1016/j.ajcnut.2026.101314",
+          "CorpusId": 287500377,
+          "PubMed": "41985675"
+        },
+        "title": "Glycemic and cardiometabolic effects of rare sugars allulose and tagatose: a systematic review and meta-analysis of controlled human intervention trials.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "INSR (insulin receptor) gene encodes a transmembrane tyrosine kinase that mediates insulin signaling and plays a central role in glucose and lipid metabolism (Saltiel and Kahn, 2001)."
+      ],
+      "citingPaper": {
+        "paperId": "4178c03a2ae1aeb3c3e529320619b8f94ca8576d",
+        "externalIds": {
+          "PubMedCentral": "13196557",
+          "DOI": "10.1016/j.psj.2026.106963",
+          "CorpusId": 287569243,
+          "PubMed": "42127848"
+        },
+        "title": "Detection of quantitative trait loci and genetic correlations of lipid reserves and production traits in aging laying hens",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "c9309a66b9ef285521e4469b419d82986ee4a7ce",
+        "externalIds": {
+          "DOI": "10.1016/j.genrep.2026.102511",
+          "CorpusId": 287754659
+        },
+        "title": "Circadian rhythms and impact of time restricted feeding in women with PCOS: A mini review",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "4d7f7710c6454b39b120bc3ea13ae82f34de19e4",
+        "externalIds": {
+          "DOI": "10.1016/j.fbio.2026.109005",
+          "CorpusId": 287944613
+        },
+        "title": "Whey Protein Regulation of Muscle Protein Synthesis: From Molecular Mechanisms to Physiological Effects",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Indeed, increased IGF signaling may also stimulate gluconeogenesis in the liver (Al-Samerria and Radovick 2021 ; Saltiel and Kahn 2001 ), ensuring a steady supply of glucose to vital organs, such as the brain and heart.",
+        "This translocation enhances anabolic processes, favoring alternative pathways to sustain cellular function during hypoxia (Saltiel and Kahn 2001 ; Biddinger and Kahn 2006 )."
+      ],
+      "citingPaper": {
+        "paperId": "0194bb0fc210ce8be83cb12268335b203ed4c77e",
+        "externalIds": {
+          "DOI": "10.1007/s00360-026-01661-4",
+          "CorpusId": 286997933,
+          "PubMed": "41910623"
+        },
+        "title": "IGF-mediated glucose signalling is retained in adult naked mole-rats",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "6fa4df6a77064ef35b49f7c9bb95cf54723b2757",
+        "externalIds": {
+          "PubMedCentral": "13070782",
+          "DOI": "10.3389/fendo.2026.1766186",
+          "CorpusId": 287007497,
+          "PubMed": "41982773"
+        },
+        "title": "Triglyceride-glucose-Body Mass Index is linked to papillary thyroid carcinoma odds in China: a retrospective study",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "84eb3e33ca6d087aa907fbe84bf8d35f815b296e",
+        "externalIds": {
+          "DOI": "10.13005/bbra/3484",
+          "CorpusId": 287471773
+        },
+        "title": "Redox Imbalance and Oxidative Stress in Diabetes Mellitus: Mechanistic Insights into Complications and Antioxidant-Based Therapeutic Perspectives",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "It is a complex disorder with broad etiological roots and diverse biochemical, molecular, and physiological manifestations (Saltiel and Kahn 2001, Shulman 2000)."
+      ],
+      "citingPaper": {
+        "paperId": "2ce3f79de1d40a303f9bfefdba8af3060073c353",
+        "externalIds": {
+          "PubMedCentral": "12988920",
+          "DOI": "10.1007/s12031-026-02501-4",
+          "CorpusId": 286519129,
+          "PubMed": "41831137"
+        },
+        "title": "Chronic High-Carbohydrate And High-Fat Diet-Induced Metabolic Syndrome Leads To Adrenal Dysfunction, Altered Dendritic Morphology In Limbic Regions, And Anxiety-Like Behaviors In Male Rats",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "c02e402a75f956af1486e8e84c130a979ea0949f",
+        "externalIds": {
+          "DOI": "10.1186/s40001-026-04076-7",
+          "CorpusId": 286363640,
+          "PubMed": "41792859"
+        },
+        "title": "Integrated weighted gene co-expression network analysis and machine learning analysis identifies SEC14L5 as a potential biomarker for polycystic ovary syndrome.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Insulin signaling, while classically anabolic in promoting lipid storage and glucose uptake in BAT (84), plays a critical indirect and supportive role in thermogenesis.",
+        "This axis exhibits synergy with the TGF b -PDE3b-cAMP pathway: insulin, via the PI3K-Akt pathway, can inhibit Smad2/3 phosphorylation, indirectly attenuating the TGF b -mediated upregulation of PDE3b and preventing excessive suppression of (84)."
+      ],
+      "citingPaper": {
+        "paperId": "a4495793bd1c476be756a68218e153ef64e98e6b",
+        "externalIds": {
+          "PubMedCentral": "12992056",
+          "DOI": "10.3389/fimmu.2026.1755423",
+          "CorpusId": 286250224,
+          "PubMed": "41853269"
+        },
+        "title": "Current understanding and advances regarding the adipose-immune-metabolic axis in disease tolerance during sepsis",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "052f287a36b0d0d1edfed19dcea77b6b15f3c617",
+        "externalIds": {
+          "DOI": "10.1016/j.fct.2026.116028",
+          "CorpusId": 286280825,
+          "PubMed": "41786119"
+        },
+        "title": "The PI3K/Akt/FOXO1 Signaling Axis Mediates Acetaminophen Hepatotoxicity by Disrupting Metabolic Homeostasis and Oxidative Stress.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "These processes are orchestrated by metabolic enzymes, energy sensors such as AMPK, and hormonal signals like insulin [34,35].",
+        "Core metabolic pathways are essential for normal tissue function, including immune cell activation, hematopoiesis, and hepatic metabolism [31\u201335]."
+      ],
+      "citingPaper": {
+        "paperId": "48edc41c7d6c44537bcd01754a45f8e75120be39",
+        "externalIds": {
+          "PubMedCentral": "13002032",
+          "DOI": "10.3390/ddc5010017",
+          "CorpusId": 286270292,
+          "PubMed": "41869637"
+        },
+        "title": "Cancer Metabolism and Its Historical & Molecular Foundations: An Overview",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Insulin (INS) is a peptide hormone secreted by the \u03b2 -cells of the pancreas in response to elevated blood glucose levels [12]."
+      ],
+      "citingPaper": {
+        "paperId": "4e8bb49c6122fe67d902c827e1e2929860193f67",
+        "externalIds": {
+          "PubMedCentral": "13030445",
+          "DOI": "10.3390/pharmaceutics18030369",
+          "CorpusId": 286598063,
+          "PubMed": "41900855"
+        },
+        "title": "Myrrh Oil-Based Nanoemulsion Loaded with Curcumin and Insulin: Development, Characterization, and Evaluation of Enhanced Antibacterial and Diabetic Wound-Healing Activity",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Beyond its central role in glucose homeostasis, insulin influences lipid metabolism and protein synthesis, cell growth and proliferation, stress responses, and autophagy, as well as\u2014most relevant to the present context\u2014ovarian steroidogenesis and folliculogenesis [6,60].",
+        "Insulin, beyond its classical role in glucose homeostasis, influences lipid metabolism, protein synthesis, cell proliferation [6], and ovarian steroidogenesis [7], while chronic hyperinsulinemia can trigger receptor downregulation and tissue-specific IR [8]."
+      ],
+      "citingPaper": {
+        "paperId": "54c5f2f86e41698c5a5487c1a808f3b7780b3e0f",
+        "externalIds": {
+          "PubMedCentral": "13023667",
+          "DOI": "10.3390/biom16030440",
+          "CorpusId": 286610346,
+          "PubMed": "41897375"
+        },
+        "title": "Physical Activity, Metabolic Dysfunction, and the Kynurenine Pathway in Endometriosis and Polycystic Ovary Syndrome: A Literature Review",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "18492761ae301da88f9cc2fd36db9acf76cb486f",
+        "externalIds": {
+          "PubMedCentral": "13007168",
+          "DOI": "10.1136/bmjopen-2025-109523",
+          "CorpusId": 286644033,
+          "PubMed": "41857869"
+        },
+        "title": "Reference intervals for fasting insulin and insulin-related indices in healthy adults: a cross-sectional study in Gandaki Province, Nepal",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "The activation of insulin signaling likely promotes glucose uptake and lipogenesis [11], while upregulated oxidative phosphorylation supplies the necessary ATP for lipid synthesis [12]."
+      ],
+      "citingPaper": {
+        "paperId": "579486c1b594aef40287d21da869d1f62ffbcbff",
+        "externalIds": {
+          "PubMedCentral": "13023335",
+          "DOI": "10.3390/ani16060975",
+          "CorpusId": 286836390,
+          "PubMed": "41897952"
+        },
+        "title": "ARHGDIB Modulates Subcutaneous Fat Deposition in Ducks",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "fcb35913f57e92331f5d97815305579425e4bf15",
+        "externalIds": {
+          "DOI": "10.1002/anie.202524255",
+          "CorpusId": 286009168,
+          "PubMed": "41738501"
+        },
+        "title": "A Closed-Loop Chemical Reaction Network for Autonomous, Dual-Window Temporal Programming From a Single Fuel Pulse.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "8c96b118ef006fa12799e6ea397e8498fd8f8cf4",
+        "externalIds": {
+          "DOI": "10.25259/jksus_1182_2025",
+          "CorpusId": 285990815
+        },
+        "title": "Zingiber officinale\n extract protects against diabetic hepatopathy via gut-liver axis modulation: Enhanced efficacy with metformin in type 2 diabetic rats",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Dysregulation of insulin signaling is implicated in numerous human diseases, including diabetes, obesity, cancer, and neurodegeneration [5, 6], under-scoring the importance of understanding the molecular mechanisms that govern insulin signaling."
+      ],
+      "citingPaper": {
+        "paperId": "a2c2d398846eaadec1a2c13eceb969976d2cf8bf",
+        "externalIds": {
+          "PubMedCentral": "13019849",
+          "DOI": "10.1186/s12860-026-00577-9",
+          "CorpusId": 285798835,
+          "PubMed": "41714933"
+        },
+        "title": "Insulin signaling engages divergent transcriptional mechanisms in neural and metabolic tissues",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "High BMI contributes signi\ufb01cantly to the burden of CVDs by triggering metabolic disorders, insulin resistance, inflammation, and oxidative stress, which promote atherosclerosis and endothelial damage (34, 35)."
+      ],
+      "citingPaper": {
+        "paperId": "8f0a0820ec641b89dd0cf1b67f39f08b21658c4e",
+        "externalIds": {
+          "PubMedCentral": "12946943",
+          "DOI": "10.3389/fcvm.2026.1689708",
+          "CorpusId": 285628610,
+          "PubMed": "41768589"
+        },
+        "title": "The global burden of cardiovascular diseases attributable to high body mass index, 1990\u20132023",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "121abd82901cfc23d377c19474565df11592875d",
+        "externalIds": {
+          "DOI": "10.1161/ATVBAHA.125.323053",
+          "CorpusId": 285539515,
+          "PubMed": "41674464"
+        },
+        "title": "Systemic Loss of FKBPL Uncovers Diabetes-Dependent Pathways of Myocardial and Vascular Injury.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "3667ab1e810cafa9b88811f42f5902f83ea26ba0",
+        "externalIds": {
+          "DOI": "10.1007/s11030-026-11474-w",
+          "CorpusId": 285538194,
+          "PubMed": "41678083"
+        },
+        "title": "Plant-derived coumarins: emerging natural scaffolds for antidiabetic drug discovery",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "621624ef9ed971ffb9e513015939bd7464e34fae",
+        "externalIds": {
+          "DOI": "10.1016/j.jep.2026.121318",
+          "CorpusId": 285343542,
+          "PubMed": "41651042"
+        },
+        "title": "Supplementation with Lycium barbarum glycopeptide (LbGP) rescues the quality of aged oocytes.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "It drives glucose into cells [47] and inhibits protein breakdown [48] and ketogenesis [49]."
+      ],
+      "citingPaper": {
+        "paperId": "3e0079b5ca64f6e3d28c89726a43e76d5a27fca7",
+        "externalIds": {
+          "PubMedCentral": "12872281",
+          "DOI": "10.1002/jmd2.70073",
+          "CorpusId": 285299386,
+          "PubMed": "41647652"
+        },
+        "title": "Mitochondrial Dysfunction in Propionic Acidemia: A Case\u2010Report and Review of the Literature",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "The storage capacity of glycogen in skeletal muscle is limited because the activity of glycogen synthase is inhibited by Protein Kinase A (PKA) [46] or glycogen synthase kinase 3 \u03b2 (GSK3 \u03b2 ) [47], thus impairing glycogen accumulation."
+      ],
+      "citingPaper": {
+        "paperId": "8acedbd5c9a66abf3b9db90b13e0cf4702565dc4",
+        "externalIds": {
+          "PubMedCentral": "12944736",
+          "DOI": "10.3390/toxics14020146",
+          "CorpusId": 285331470,
+          "PubMed": "41745820"
+        },
+        "title": "Co-Exposure to Bisphenol A and a High-Fat Diet Induces Insulin Resistance via Suppression of Insulin Signaling Molecule Expression and GLUT4 Translocation",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "8b88b06d70c22d124b803968db9fd30a98eb757a",
+        "externalIds": {
+          "DOI": "10.3724/abbs.2026024",
+          "CorpusId": 285516971,
+          "PubMed": "41674235"
+        },
+        "title": "How distinct hormones sculpt a common receptor: ligand-specific conformational pathways of the insulin receptor.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "d835466d9fe0437e1a1228ab2f55b3e0553cf2e2",
+        "externalIds": {
+          "DOI": "10.1016/j.cbpa.2026.111988",
+          "CorpusId": 286147627,
+          "PubMed": "41763525"
+        },
+        "title": "Temporal transcriptional responses of insulin-associated metabolic genes during chilling-induced embryonic diapause termination in Bombyx mori.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "ab215267749fab43e7255d9b7c91ee13ace72ab3",
+        "externalIds": {
+          "DOI": "10.1016/j.chroma.2026.466850",
+          "CorpusId": 286181395,
+          "PubMed": "41780190"
+        },
+        "title": "Research advances in capillary gel electrophoresis for detecting biomacromolecules.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "2,21,28 Concurrently, Akt inhibits glycogen synthase kinase 3 \u03b2 (GSK-3 \u03b2 ) and activates glycogen synthase, thereby promoting glycogen synthesis and intracellular glucose storage.",
+        "21,77,78 In contrast, glucagon mobilizes energy stores during fasting by stimulating hepatic glycogenolysis and gluconeogenesis via cAMP-PKA signaling, elevating circulating glucose levels."
+      ],
+      "citingPaper": {
+        "paperId": "79958d520f90e2102238bbb0f650b721381d48ea",
+        "externalIds": {
+          "PubMedCentral": "12996713",
+          "DOI": "10.1016/j.isci.2026.115024",
+          "CorpusId": 285664283,
+          "PubMed": "41858896"
+        },
+        "title": "Skeletal muscle metabolism in health and disease: Mechanisms, interventions, and clinical perspectives",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "The pancreas is an essential metabolic organ with endocrine and exocrine functions, regulating the intake of exogenous nutrients and glucose and lipid metabolism homeostasis 17,18 ."
+      ],
+      "citingPaper": {
+        "paperId": "0bacb83afbd99fdc273f70355bd7d7a1b1638a40",
+        "externalIds": {
+          "DBLP": "journals/npjdm/DengYPCLWLZWCWHSY26",
+          "PubMedCentral": "12868633",
+          "DOI": "10.1038/s41746-025-02294-7",
+          "CorpusId": 285172772,
+          "PubMed": "41611815"
+        },
+        "title": "Non-invasive liquid biopsy based on metabolomic profiling improves diagnosis and early warning of severe acute pancreatitis",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Therefore, insulin resistance develops in the body [93,94]."
+      ],
+      "citingPaper": {
+        "paperId": "5786247495cc784999e8f0c572e9c937dfada9fd",
+        "externalIds": {
+          "DOI": "10.3390/metabo16020095",
+          "CorpusId": 285162870,
+          "PubMed": "41745578"
+        },
+        "title": "Tissue-Specific Multi-Omics Integration Demonstrates Molecular Signatures Connecting Obesity to Immune Vulnerability.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "It 1 3 data support this, revealing diminished IRS-1, PI3K, and Akt expression correlating with reduced glucose uptake and impaired glycogen synthesis in diabetic models [ 131 ]."
+      ],
+      "citingPaper": {
+        "paperId": "b96c04443acd43fec712206e296d00b553b8cbe7",
+        "externalIds": {
+          "DOI": "10.1007/s11033-026-11474-x",
+          "CorpusId": 284885208,
+          "PubMed": "41563603"
+        },
+        "title": "Biochemical\u2013Cellular crosstalk in diabetes: exploring pathways driving microvascular complications",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Diabetic patients suffer from impaired insulin secretion or action, significantly affecting their quality of life [1]."
+      ],
+      "citingPaper": {
+        "paperId": "54eeb4730ff4284ca9f988fec2e36fbbe9bfb76f",
+        "externalIds": {
+          "DBLP": "journals/corr/abs-2601-14917",
+          "ArXiv": "2601.14917",
+          "DOI": "10.48550/arXiv.2601.14917",
+          "CorpusId": 284917010
+        },
+        "title": "Tailoring Adverse Event Prediction in Type 1 Diabetes with Patient-Specific Deep Learning Models",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Endothelial dysfunction is associated with the activation of stress-related serine/threonine kinases, including PKC and IKK-\u03b2, which reduce GLUT4 translocation on the cell membrane, thereby worsening insulin sensitivity [71, 72]."
+      ],
+      "citingPaper": {
+        "paperId": "15807f2bc55f84ca8d116365e7e0a71e28dee68c",
+        "externalIds": {
+          "PubMedCentral": "12903402",
+          "DOI": "10.1186/s12933-025-03068-x",
+          "CorpusId": 284915565,
+          "PubMed": "41559641"
+        },
+        "title": "Insulin resistance and coronary microvascular dysfunction: a complex interplay",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "\u2026of factors, including a dysregulated metabolic state that limits GLP-1 effectiveness, concomitant use of glucose-lowering agents that may promote weight gain, compensatory eating behaviors with the use of glucose-lowering agents that can cause hypoglycemia, and hyperinsulinemia [4,10,11].",
+        "Furthermore, hyperinsulinemia accompanying insulin resistance in T2D enhances adipocyte lipid uptake and suppresses lipolysis, limiting fat mass loss [11]."
+      ],
+      "citingPaper": {
+        "paperId": "2c7d198fecaf527cb93a114c64d48a9a12531c93",
+        "externalIds": {
+          "DOI": "10.3390/diabetology7010010",
+          "CorpusId": 284574928
+        },
+        "title": "Leveraging the Individualized Metabolic Surgery Score to Predict Weight Loss with Tirzepatide in Adults with Type 2 Diabetes and Obesity",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "12e1d82921d75e57c5fa7e31967ff9ad062aee2e",
+        "externalIds": {
+          "DBLP": "journals/biosystems/Cao26",
+          "DOI": "10.1016/j.biosystems.2026.105693",
+          "CorpusId": 284542852,
+          "PubMed": "41500378"
+        },
+        "title": "Decoding life: A detailed examination of program collection",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "68ea995573d86ad48c4a0659b2f010a06400629f",
+        "externalIds": {
+          "DOI": "10.1016/j.jep.2025.121148",
+          "CorpusId": 284492861,
+          "PubMed": "41490549"
+        },
+        "title": "Parameria laevigata (Juss.) Moldenke Healing Wound via PI3K/AKT/MAPK Pathway.",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "2928674297ab3def8ad37d9220a8072983d0e902",
+        "externalIds": {
+          "DOI": "10.26538/tjnpr/v9i12.5",
+          "CorpusId": 284417148
+        },
+        "title": "Development of 2D-QSAR Models and Molecular Docking of Protein Tyrosine Phosphatase 1B Inhibitors",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "9c2b344d7f9d2c80ecd28e43106ab75f72f15f0b",
+        "externalIds": {
+          "DOI": "10.1002/slct.202506597",
+          "CorpusId": 284518946
+        },
+        "title": "Serendipitous Discovery of a Novel Indole Derivative With Promising Multitarget Inhibitor and Its ADME Properties",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "514b91f02d5aaa48b071b05e501cbfee84dbe262",
+        "externalIds": {
+          "DOI": "10.1155/joch/5568823",
+          "CorpusId": 288051659
+        },
+        "title": "Biological Activities and Metabolomic Profiling of\n Cymbopogon citratus\n (DC.) Stapf Leaf Extract Using LC\u2013MS Analysis",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Compounding this, glut2 suppression across all RGC groups re \ufb02 ected insulin resistance, which may be associated with disrupted PI3K-AKT signaling and diminished igf1 expression in RGC75 [17, 51]."
+      ],
+      "citingPaper": {
+        "paperId": "3b68385bda0fa17e6a3aa137171fb5490471acc8",
+        "externalIds": {
+          "PubMedCentral": "13189470",
+          "DOI": "10.1155/anu/5621022",
+          "CorpusId": 288578076,
+          "PubMed": "42170339"
+        },
+        "title": "Substituting Soybean Meal With Rapeseed Green Cake: A Holistic Assessment of Growth, Metabolic Response, and Intestinal Status in Juvenile Largemouth Bass (Micropterus salmoides)",
+        "year": 2026
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "8023ad9d587293653e67c8ef3596bc67d38e4f0a",
+        "externalIds": {
+          "DOI": "10.1016/j.exer.2025.110814",
+          "CorpusId": 284025968,
+          "PubMed": "41421441"
+        },
+        "title": "Noncoding RNAs regulating the insulin signaling pathway: a new therapeutic approach in diabetic retinopathy.",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "2f88c39512ac953c5351d9fa1a186ba7b7972111",
+        "externalIds": {
+          "DOI": "10.1016/j.aqrep.2025.103148",
+          "CorpusId": 282046935
+        },
+        "title": "Regulation of hepatic glucose metabolism by lipid nanoparticles in largemouth bass (Micropterus salmoides)",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "6c42d2020aa8a7ce99685af04afc60c0db1997e6",
+        "externalIds": {
+          "DOI": "10.1016/j.aqrep.2025.103249",
+          "CorpusId": 283410084
+        },
+        "title": "Paraprobiotic and postbiotic forms of Bacillus altitudinis F7 relieved high starch diet-induced growth retardation, glycolipid metabolism disorders and liver damage in Micropterus salmoides",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "616fd661996cd1290f91c773092bd203e7790a35",
+        "externalIds": {
+          "DOI": "10.3897/pharmacia.72.e174742",
+          "CorpusId": 283463282
+        },
+        "title": "Biochemical parameters and glycation products in chronic experimental type 2 diabetes in rats",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Upon insulin binding, the insulin receptor (IR) on the cell surface activates its intrinsic tyrosine kinase activity, resulting in autophosphorylation and subsequent recruitment and phosphorylation of insulin receptor substrate (IRS) proteins, such as IRS-1 [83,84].",
+        "Insulin receptor substrate 1 (IRS-1) is a critical mediator of insulin signal transduction in insulin-sensitive tissues [83]."
+      ],
+      "citingPaper": {
+        "paperId": "479cfb0c28df58d1763ba3ebe332d4f351523a04",
+        "externalIds": {
+          "PubMedCentral": "12735998",
+          "DOI": "10.3390/ph18121890",
+          "CorpusId": 283959629,
+          "PubMed": "41471379"
+        },
+        "title": "Berberine: A Rising Star in the Management of Type 2 Diabetes\u2014Novel Insights into Its Anti-Inflammatory, Metabolic, and Epigenetic Mechanisms",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Excess glucose molecules are transported into the hepatocytes to be stored either as glycogen via glycogenesis or fat via glycolysis-TCA-lipogenesis flux (29 \u2013 31)."
+      ],
+      "citingPaper": {
+        "paperId": "8c86aef81eb3b570f1b6c33397e8a599ef6aaa25",
+        "externalIds": {
+          "PubMedCentral": "12818132",
+          "DOI": "10.1016/j.jlr.2025.100962",
+          "CorpusId": 283933214,
+          "PubMed": "41407267"
+        },
+        "title": "Deficiency of glycogen synthase promotes lipid accumulation through ChREBP and AKT-mTOR1-SREBP1 axis activation in mice",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "c64712dc5125039165aad6c88ca2572c44dff2bd",
+        "externalIds": {
+          "DOI": "10.1016/j.meatsci.2025.110021",
+          "CorpusId": 284037205,
+          "PubMed": "41455402"
+        },
+        "title": "Assessment of dietary cereal resistant starch on growth performance and slaughter traits of finishing lamb: Insight into plasma diurnal metabolic profile and fatty acid metabolism-related gene expressions.",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "e0a61a8b0fa054f2e6bf3226a8ad9d715294b79f",
+        "externalIds": {
+          "DOI": "10.1016/j.eurpolymj.2025.114466",
+          "CorpusId": 284126299
+        },
+        "title": "Smart pH-responsive hydrogels: A versatile tool for addressing public health challenges in diagnostic and therapeutic applications",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "28b72271cfe2eb7739420611dd8486a5a3afc0ea",
+        "externalIds": {
+          "DOI": "10.1016/j.tice.2025.103293",
+          "CorpusId": 284213285,
+          "PubMed": "41455419"
+        },
+        "title": "Integrated strategies from stem cells to exosomes for amelioration of insulin resistance and promoting \u03b2-cell regeneration in diabesity.",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "This promotes systemic inflammation, impairing insulin receptor signaling pathways and contributing to insulin resistance [180, 185]."
+      ],
+      "citingPaper": {
+        "paperId": "dc847f4e947655ae295d0c9d1049d482588edb4d",
+        "externalIds": {
+          "DOI": "10.1007/s12602-025-10855-1",
+          "CorpusId": 283350866,
+          "PubMed": "41313537"
+        },
+        "title": "Gut Microbiome in Obesity: A Narrative Review of Mechanisms, Interventions, and Future Directions",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Additionally, it plays a key role in inhibiting hepatic gluconeogenesis [5]."
+      ],
+      "citingPaper": {
+        "paperId": "17cd62f42efcc4afbf83e83adfe63cfcd51c0b4e",
+        "externalIds": {
+          "PubMedCentral": "12695723",
+          "DOI": "10.3389/bjbs.2025.15375",
+          "CorpusId": 283396614,
+          "PubMed": "41394217"
+        },
+        "title": "Mitochondrial DNA Mutations and Epigenetic Regulation in Type 2 Diabetes Mellitus Development",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "8e625b4d9af6bd6790968ec9a25201872a89c3fb",
+        "externalIds": {
+          "DOI": "10.1016/j.mam.2025.101426",
+          "CorpusId": 283351190,
+          "PubMed": "41308326"
+        },
+        "title": "Membrane remodeling, ion channels, Ca2+ signaling, and stress pathways as molecular links between type 2 diabetes and cancer.",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "31eb0fb8236599593f949a1ad2e3d2d66f14fbf7",
+        "externalIds": {
+          "DOI": "10.1016/j.phymed.2025.157576",
+          "CorpusId": 283326491,
+          "PubMed": "41317580"
+        },
+        "title": "Sanghuangporus sanghuang targets AKT to rescue nanoplastics-induced lipid accumulation and neurotoxicity.",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Insulin resistance, commonly associated with PCOS, has been reported to decrease AKT activity, thereby inhibiting downstream metabolic processes such as glucose and lipid metabolism [46, 47]."
+      ],
+      "citingPaper": {
+        "paperId": "9514647183a8cd6560e3f6315bceb87ea7283736",
+        "externalIds": {
+          "PubMedCentral": "12628819",
+          "DOI": "10.1186/s13048-025-01837-6",
+          "CorpusId": 283083016,
+          "PubMed": "41257877"
+        },
+        "title": "Single-cell transcriptomics uncovering a critical AKT-LONP1-STAR axis in ovarian hyperandrogenism of PCOS",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "d8a9e0f375db62ae4c887977ef48ffa44bcc4fce",
+        "externalIds": {
+          "PubMedCentral": "12615880",
+          "DOI": "10.1007/s00018-025-05921-4",
+          "CorpusId": 282944797,
+          "PubMed": "41231251"
+        },
+        "title": "Hepatocyte Piezo1 regulates glycogen metabolism via the FGF21-STAT3 pathway",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "a665e0199b3ec1b1b945503df590bedc80132d78",
+        "externalIds": {
+          "DOI": "10.1016/j.pestbp.2025.106580",
+          "CorpusId": 280268028,
+          "PubMed": "40915788"
+        },
+        "title": "The fungicide jinggangmycin stimulates fecundity of Nilaparvata lugens St\u00e5l via ILP/Foxo signaling.",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "64b457c62dea6eab9dec81805fecd8d4a7711225",
+        "externalIds": {
+          "PubMedCentral": "12633795",
+          "DOI": "10.1242/jcs.263816",
+          "CorpusId": 282734348,
+          "PubMed": "41178737"
+        },
+        "title": "Methotrexate alleviates chronic inflammation in a Drosophila model",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Under normal physiological conditions, blood glucose levels are meticulously regulated by endocrine factors such as insulin and glucagon [56,57]."
+      ],
+      "citingPaper": {
+        "paperId": "fdf7046a90e92bde537eaa61d823dcdfd728f391",
+        "externalIds": {
+          "PubMedCentral": "12610123",
+          "DOI": "10.3390/molecules30214286",
+          "CorpusId": 282924140,
+          "PubMed": "41226246"
+        },
+        "title": "Oxidative and Glycation Stress Biomarkers: Advances in Detection Technologies and Point-of-Care Clinical Applications",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "d3fd9860b7c14fc95d1a78e65c153aadb7bc0245",
+        "externalIds": {
+          "DOI": "10.1016/j.jhazmat.2025.140603",
+          "CorpusId": 283336724,
+          "PubMed": "41337970"
+        },
+        "title": "Impact of a UV filter 4-methylbenzylidene camphor (4-MBC) on liver metabolism in clown anemonefish: Disruption of insulin sensitivity, lipid metabolism and endoplasmic reticulum function.",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "INS promotes skeletal muscle protein synthesis by activating the PI3K/AKT/mTOR signaling pathway (88) and can also upregulate the activity of glucose transporters in muscle cells enhancing glucose uptake efficiency to support energy metabolism (89)."
+      ],
+      "citingPaper": {
+        "paperId": "921bf6472c5c1482c118ceecb59c82c0397f24c1",
+        "externalIds": {
+          "PubMedCentral": "12616866",
+          "DOI": "10.3389/fvets.2025.1584236",
+          "CorpusId": 282701304,
+          "PubMed": "41246267"
+        },
+        "title": "Analysis of the differential transcriptome expression profiles during prenatal muscle tissue development in Diqing Tibetan pigs",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "594af3223187755f009abbc667edfeb217442628",
+        "externalIds": {
+          "DOI": "10.1007/s10695-025-01594-9",
+          "CorpusId": 282577593,
+          "PubMed": "41165893"
+        },
+        "title": "Dietary starch levels modulate growth performance, glucose utilization, and lipogenesis in mandarin fish (Siniperca chuatsi)",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "b03c25f55c15d20ddbb8e621cc3914b7b0269418",
+        "externalIds": {
+          "PubMedCentral": "12559285",
+          "DOI": "10.1038/s41598-025-21276-z",
+          "CorpusId": 282396758,
+          "PubMed": "41145601"
+        },
+        "title": "Nardilysin in adipocyte regulates insulin sensitivity via HIF1\u03b1 and PPAR\u03b3",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "These findings align with previous research showing insulin-stimulated amino acid transport in skeletal muscle (Saltiel and Kahn 2001; Huang and Czech 2007) and suppression of leucine release during localized hyperinsulinemia (Fryburg et al. 1990), providing a new insight into refeeding amino acid\u2026"
+      ],
+      "citingPaper": {
+        "paperId": "aa042d7136632aa5d1b1b9ea65ba2bf0e28407a5",
+        "externalIds": {
+          "PubMedCentral": "12686557",
+          "DOI": "10.1111/acel.70270",
+          "CorpusId": 282245135,
+          "PubMed": "41117265"
+        },
+        "title": "The Metabolic Transition Between Fasting and Feeding Alters Aging\u2010Associated Metabolites, Lowers BCAAs, and Stimulates FGF21 Production in Humans",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "6b8673b7ea522bde3dde7fa5612f9fd00a9c8741",
+        "externalIds": {
+          "PubMedCentral": "12417990",
+          "DOI": "10.12998/wjcc.v13.i29.108380",
+          "CorpusId": 281008827,
+          "PubMed": "40933937"
+        },
+        "title": "Mini-review on insulin resistance assessment: Advances in surrogate indices and clinical applications",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "bb6d3a06eace8f47ff7e59c1b7968f47099e6608",
+        "externalIds": {
+          "DOI": "10.1039/d5fo02882e",
+          "CorpusId": 282099204,
+          "PubMed": "41090612"
+        },
+        "title": "Application of the GlucoTRIG index to rank the postprandial metabolic responses to composite meals in healthy adults - a randomized, controlled, crossover trial.",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Dysregulation of metabolic pathways has emerged as a hallmark of various diseases, including cancer ( 2 ), diabetes ( 3 ), neurodegenerative disorders ( 4 ) and metabolic syndromes ( 5 )."
+      ],
+      "citingPaper": {
+        "paperId": "1a74d9ad9bad6291c613b8c0064214a530f1e23c",
+        "externalIds": {
+          "PubMedCentral": "12621983",
+          "DOI": "10.1101/2025.10.02.680014",
+          "CorpusId": 282315571,
+          "PubMed": "41256653"
+        },
+        "title": "A Covalent PFKL Activator Suppresses Tumor Growth",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": true,
+      "contexts": [
+        "The binding of substrates to these SH2 proteins can modulate their enzymatic activities or subcellular localization (Saltiel and Kahn 2001).",
+        "\u2026events, including the phosphorylation of insulin receptor substrate proteins (IRS) and the subsequent activation of two key signaling pathways: the phosphoinositide 3 \u2010 kinase/protein kinase B pathway (PI3K \u2010 Akt) and the mitogen \u2010 activated protein kinase pathway (MAPK) (Saltiel and Kahn 2001).",
+        "Postprandial insulin release to the blood stimulates translocation of the glucose transporter GLUT4 from intracellular storage sites to the plasma membrane in skeletal muscle and adipose tissue, thereby promoting glucose uptake by these cells (Saltiel and Kahn 2001)."
+      ],
+      "citingPaper": {
+        "paperId": "c694cb8b932e5c9a6d657ab1851bbcf09023d7e4",
+        "externalIds": {
+          "DOI": "10.1002/jcp.70104",
+          "CorpusId": 282399631,
+          "PubMed": "41147318"
+        },
+        "title": "Overeating: A Conundrum of Lipid Metabolism and Inflammation in Obesity and Cancer",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "This signalling pathway ultimately results in the translocation of glucose transporter type 4 (GLUT4) from intracellular vesicles to the cell surface, where it can transport glucose into the cell [17]."
+      ],
+      "citingPaper": {
+        "paperId": "fb6c4eec499d7ac1a42cfdad6c437303f1f87b7f",
+        "externalIds": {
+          "DOI": "10.1002/dmrr.70094",
+          "CorpusId": 281889375,
+          "PubMed": "41057221"
+        },
+        "title": "From Obesity to Muscle Insulin Resistance: The Mediating Roles of Intramyocellular Lipids, Inflammation, and Oxidative Stress",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "e227543bb84e6c001717a79ce7c8470bd735c8a3",
+        "externalIds": {
+          "DOI": "10.1016/j.mtcomm.2025.114033",
+          "CorpusId": 282037128
+        },
+        "title": "A Perfusable Human Liver-on-a-Chip Platform for Modeling Non-alcoholic Hepatic Steatosis and Drug Testing",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "da0ef25522398dcb4b7e3a9c72a6ac33bdc40f6e",
+        "externalIds": {
+          "DOI": "10.1016/j.ecoenv.2025.119242",
+          "CorpusId": 282286796,
+          "PubMed": "41125046"
+        },
+        "title": "The fumigant ethyl formate exposure induces metabolic changes in the citrus mealybug, Planococcus citri (Risso) (Hemiptera: Pseudococcidae).",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "GLP-1 also stimulates insulin secretion from \u03b2 -cells [52,53], thereby reducing blood glucose and further suppressing glucagon release via a feedback mechanism [54].",
+        "Together, these actions establish an accelerator-brake system that tightly regulates glycemia [50,51,54]."
+      ],
+      "citingPaper": {
+        "paperId": "22973481d4da5e705706f66ace0b903c24be97eb",
+        "externalIds": {
+          "PubMedCentral": "12665121",
+          "DOI": "10.7759/cureus.95792",
+          "CorpusId": 282696997,
+          "PubMed": "41328144"
+        },
+        "title": "Glucagon-Like Peptide-1 (GLP-1) Receptor Agonists in Diabetes and Obesity: Implications for Periodontology and Family Dentistry",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "For instance, the relationship between obesity, insulin resistance, imbalance in glucose metabolism and increased fat storage in different tissue types (the main cause of obesity, the excess accumulation of fat in different tissues) has been previously reported by numerous studies (5, 6, 7,8)."
+      ],
+      "citingPaper": {
+        "paperId": "9b84e958360b0387095139a9529f3367535a65de",
+        "externalIds": {
+          "DOI": "10.1101/2025.09.23.25336458",
+          "CorpusId": 281676547
+        },
+        "title": "Genetic predisposition to high BMI and changes in BMI during adolescence modulate associations between adult BMI and plasma molecules involved in glucose metabolism",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "The insulin signaling pathway coordinates various cellular responses, regulates glucose metabolic balance, maintains energy balance, and promotes overall metabolic health [63]."
+      ],
+      "citingPaper": {
+        "paperId": "73c375564bc9c6694cda7db7e5353eb0d34517d1",
+        "externalIds": {
+          "DOI": "10.1186/s40538-025-00858-z",
+          "CorpusId": 281629946
+        },
+        "title": "Dietary oregano essential oil supplementation improves intestinal barrier function and modulates the cecal microbiota and metabolites of beef cattle",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [],
+      "citingPaper": {
+        "paperId": "601765368fc076ed61f8e149cf15994d5a72ca6f",
+        "externalIds": {
+          "PubMedCentral": "12567236",
+          "DOI": "10.3390/pharmaceutics17101239",
+          "CorpusId": 281539403,
+          "PubMed": "41155876"
+        },
+        "title": "Emerging Insulin Analogues: A Glimpse into How Insulin Analogues May Look in the near Future",
+        "year": 2025
+      }
+    },
+    {
+      "intents": [],
+      "isInfluential": false,
+      "contexts": [
+        "Together with ROS, the GPX4 pathway ultimately induces ferroptosis. hand, insulin promotes glycolysis, improves glucose utilization, inhibits hepatic glycogenolysis and gluconeogenesis, and suppresses hepatic glucose output (Saltiel and Kahn, 2001; Titchenell et al., 2017)."
+      ],
+      "citingPaper": {
+        "paperId": "05123be8e3f1d163d64b372816a65bbc452482cf",
+        "externalIds": {
+          "PubMedCentral": "12488726",
+          "DOI": "10.3389/fphar.2025.1669805",
+          "CorpusId": 281430206,
+          "PubMed": "41050396"
+        },
+        "title": "Dysregulated bile acid metabolism drives lipid peroxidation and ferroptosis in NAFLD: therapeutic potential for traditional Chinese medicine",
+        "year": 2025
+      }
+    }
+  ]
+}
