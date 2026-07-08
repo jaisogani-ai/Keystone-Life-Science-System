@@ -92,12 +92,29 @@ def _sse(obj: dict) -> str:
 
 @app.get("/")
 def index():
+    return FileResponse(_STATIC / "decision.html")
+
+
+@app.get("/workspace")
+def workspace_page():
     return FileResponse(_STATIC / "os.html")
 
 
 @app.get("/workbench")
 def workbench_page():
     return FileResponse(_STATIC / "index.html")
+
+
+@app.get("/api/decision")
+def decision_api(domain: str = "gbm"):
+    """The Scientific Decision Engine: competing hypotheses, ranked, with the
+    next-experiment recommendation. Deterministic; enriched with why-panel +
+    graph for drill-down."""
+    from keystone.decision_engine import decide
+    d, graph, ledger, hyp, review = decide(domain)
+    d["why_panel"] = why_panel(hyp, review, graph)
+    d["evidence_graph_svg"] = evidence_graph_svg(graph)
+    return d
 
 
 @app.get("/api/workspace")

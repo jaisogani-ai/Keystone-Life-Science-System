@@ -1,13 +1,41 @@
-# Keystone — AI Scientific Research Workbench
+# Keystone — Scientific Decision Engine
 
-A trustworthy AI workbench that accelerates biomedical research while keeping
-scientists fully in control. It runs one loop — **Plan → Collect → Analyze →
-Hypothesize → Design Experiment → Review → Human Approval → Ledger** — over the
-real evidence base, grounds every conclusion in a reproducible provenance graph,
-forces every hypothesis to carry a falsifiable validation experiment, and has an
-independent Reviewer agent challenge every conclusion.
+**Keystone answers one question: what should the scientist do next — and why,
+over every alternative?** It is the reasoning layer that sits on top of a research
+workbench: it generates *competing* hypotheses, scores each on real decision
+dimensions, and ranks the experiments so a PI knows which one to run before
+spending six months and $500k.
 
-**Demo domain:** glioblastoma. The engine is domain-agnostic by construction.
+The trust guarantee that makes the ranking usable: **every score is computed,
+a transparent estimate, or an explicit qualitative label — never fabricated.**
+Expected information gain, cost, duration, and risk are deterministic models with
+their assumptions shown (like the power analysis computes `n` from a stated
+effect size). A ranking built on invented numbers is decoration; this one is
+auditable.
+
+Under the decision engine is the evidence engine — one loop (**Plan → Collect →
+Analyze → Hypothesize → Design → Review → Human Approval → Ledger**) over a
+reproducible, content-hashed provenance graph, with an independent Reviewer that
+challenges every conclusion. **Demo domains:** glioblastoma and insulin
+resistance. Domain-agnostic by construction (measured: 0.818 on both).
+
+## The decision engine
+
+`python -m keystone.decision_engine` (or the UI home `/`) produces, for a
+research question:
+
+- **5–20 competing hypotheses**, each grounded in a real graph element (a
+  retracted node, a contradiction, a doubtful reagent, an undrugged target).
+- a **Scientific Decision Board**: priority, expected information gain, evidence
+  strength, contradiction score, novelty, risk, cost, duration, validation
+  difficulty, reviewer confidence — each tagged computed / estimate / qualitative.
+- an **experiment portfolio** (Quick Win / High Impact / High Risk / Cheap
+  Validation / Mechanism / Clinical Translation / Negative Control).
+- a **scientific debate** per hypothesis (Proponent / Skeptic / Reviewer),
+  resolved by explicit evidence, never by voting.
+- a **knowledge-gap engine** — "what evidence is preventing publication?"
+- a single **recommendation**: which experiment first, why, how to falsify it,
+  and why it beats the runner-up.
 
 ## This is built on *real* evidence
 
@@ -67,9 +95,12 @@ python calibrate.py --domain gbm        # measured load-bearing agreement (GBM)
 python calibrate.py --domain insulin    # ...and on the second domain
 python -m keystone.agents.flaw_catch_eval   # do the agents catch planted flaws?
 
-pip install fastapi uvicorn             # the Scientific Discovery OS + workbench
-python -m keystone.ui.server            # -> http://127.0.0.1:8000  (Discovery OS)
-                                        #    /workbench for the reasoning loop UI
+python -m keystone.decision_engine      # the decision engine (CLI)
+
+pip install fastapi uvicorn             # the UI
+python -m keystone.ui.server            # -> http://127.0.0.1:8000  Decision Engine
+                                        #    /workspace  evidence view
+                                        #    /workbench   reasoning loop
 
 python -m keystone.ui.graph_browser.build --domain gbm   # static graph browser
 python -m http.server -d browser_out/gbm 8010            # -> http://127.0.0.1:8010
@@ -115,8 +146,15 @@ keystone/
     insulin_citing_sentences.jsonl   44 hand-labeled real insulin sentences
   artifacts/
     graph_export.py       lossless EvidenceGraph <-> JSON (projection only)
-  workspace.py            Disease Workspace assembler — 13 Tier-1 tabs of real
-                          data + honest Tier-2 scaffolds (every field tier-tagged)
+  decision_engine.py      THE PRODUCT — competing hypotheses ranked into a
+                          next-experiment recommendation (what to do, and why)
+  deterministic/
+    hypothesis_space.py      generate 5-20 competing hypotheses from the graph
+    decision_metrics.py      score + rank (computed/estimate/qualitative, no fabrication)
+    experiment_portfolio.py  bucket experiments + explain ordering
+    scientific_debate.py     Proponent/Skeptic/Reviewer, resolved by evidence
+    gap_engine.py            categorized "what's preventing publication?"
+  workspace.py            Disease Workspace (evidence view, at /workspace)
   connectors/
     clinical.py           Tier-1 real: ClinicalTrials.gov, ChEMBL, Reactome, ClinVar
   deterministic/
