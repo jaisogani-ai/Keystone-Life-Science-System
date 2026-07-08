@@ -67,8 +67,9 @@ python calibrate.py --domain gbm        # measured load-bearing agreement (GBM)
 python calibrate.py --domain insulin    # ...and on the second domain
 python -m keystone.agents.flaw_catch_eval   # do the agents catch planted flaws?
 
-pip install fastapi uvicorn             # the interactive workbench UI
-python -m keystone.ui.server            # -> http://127.0.0.1:8000
+pip install fastapi uvicorn             # the Scientific Discovery OS + workbench
+python -m keystone.ui.server            # -> http://127.0.0.1:8000  (Discovery OS)
+                                        #    /workbench for the reasoning loop UI
 
 python -m keystone.ui.graph_browser.build --domain gbm   # static graph browser
 python -m http.server -d browser_out/gbm 8010            # -> http://127.0.0.1:8010
@@ -114,10 +115,20 @@ keystone/
     insulin_citing_sentences.jsonl   44 hand-labeled real insulin sentences
   artifacts/
     graph_export.py       lossless EvidenceGraph <-> JSON (projection only)
+  workspace.py            Disease Workspace assembler — 13 Tier-1 tabs of real
+                          data + honest Tier-2 scaffolds (every field tier-tagged)
+  connectors/
+    clinical.py           Tier-1 real: ClinicalTrials.gov, ChEMBL, Reactome, ClinVar
+  deterministic/
+    contradiction_mining.py  named loop stage over EdgeType.CONTRADICTS
+    gap_detection.py         named loop stage (missing evidence + structural gaps)
+    ledger_index.py          Scientific Memory — "has this been tried?" over Ledgers
   ui/
     server.py             FastAPI backend (pure projection of the engine)
-    static/index.html     one-page workbench: graph, why-panel, tree,
-                          readiness, timeline, 3D, replay, approval gate
+    static/os.html        Scientific Discovery OS: research-question home,
+                          Disease Workspace tabs, real trials/drugs/pathways/
+                          variants, dashboard, 3D, scientific memory
+    static/index.html     the reasoning-loop workbench (at /workbench)
     graph_browser/        static, S3-deployable browser: layer filter over
                           NodeType, doubt bands, full-text search (DEPLOY.md)
 tests/                    smoke(7) + connectors(10) + ui(4) + flaw(7) + insulin(6)

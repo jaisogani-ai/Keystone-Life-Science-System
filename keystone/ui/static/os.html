@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Keystone — Scientific Discovery OS</title>
+<script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<style>
+  :root{--bg:#0d0f16;--panel:#151925;--panel2:#1b2130;--line:#27314c;--tx:#e8ecf3;
+    --dim:#8d99ae;--cyan:#4cc9f0;--green:#06d6a0;--red:#ff5d5d;--amber:#ffd166;--violet:#a68bff;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tx);line-height:1.5;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
+  header{padding:14px 22px;border-bottom:1px solid var(--line);display:flex;gap:16px;
+    align-items:center;flex-wrap:wrap;background:linear-gradient(180deg,#141a28,#0d0f16)}
+  .brand{font-size:16px;font-weight:700} .brand span{color:var(--cyan)}
+  .brand small{display:block;color:var(--dim);font-weight:400;font-size:11px}
+  .grow{flex:1}
+  select,button{background:var(--panel2);border:1px solid var(--line);color:var(--tx);
+    border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
+  .q{padding:14px 22px;border-bottom:1px solid var(--line);background:var(--panel)}
+  .q b{color:var(--cyan)} .q .qt{font-size:15px;margin-top:3px}
+  .loop{display:flex;gap:5px;flex-wrap:wrap;padding:10px 22px;border-bottom:1px solid var(--line)}
+  .loop .st{font-size:10.5px;color:var(--dim);padding:4px 9px;border:1px solid var(--line);
+    border-radius:20px;white-space:nowrap}
+  .loop .st.hot{color:var(--violet);border-color:var(--violet)}
+  .dash{display:flex;gap:12px;flex-wrap:wrap;padding:14px 22px;border-bottom:1px solid var(--line)}
+  .metric{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:120px}
+  .metric .k{font-size:10.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.05em}
+  .metric .v{font-size:20px;font-weight:700;margin-top:2px}
+  .mem{padding:10px 22px;font-size:12.5px;border-bottom:1px solid var(--line)}
+  .layout{display:grid;grid-template-columns:230px 1fr;gap:0;min-height:60vh}
+  .side{border-right:1px solid var(--line);padding:12px}
+  .tab{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;cursor:pointer;
+    font-size:13px;color:var(--tx)}
+  .tab:hover{background:var(--panel)} .tab.on{background:var(--panel2);color:var(--cyan)}
+  .tab .b{margin-left:auto;font-size:9px;padding:1px 6px;border-radius:10px;border:1px solid var(--line)}
+  .b.t1{color:var(--green);border-color:var(--green)} .b.t2{color:var(--amber);border-color:var(--amber)}
+  main{padding:18px 22px}
+  h2{font-size:15px;margin:0 0 4px} .sub{color:var(--dim);font-size:12px;margin-bottom:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase}
+  .pill{font-size:10.5px;padding:2px 8px;border-radius:20px;border:1px solid var(--line);color:var(--dim);white-space:nowrap}
+  .pill.g{color:var(--green);border-color:var(--green)} .pill.r{color:var(--red);border-color:var(--red)}
+  .pill.a{color:var(--amber);border-color:var(--amber)}
+  .scaffold{border:1px dashed var(--amber);border-radius:12px;padding:20px;color:var(--amber);background:rgba(255,209,102,.05)}
+  .empty{color:var(--dim);padding:30px;text-align:center}
+  svg{max-width:100%;height:auto}
+  .flex{display:flex;gap:14px;flex-wrap:wrap} .flex>*{flex:1;min-width:260px}
+  ul{margin:6px 0;padding-left:18px} li{font-size:12.5px;margin:3px 0}
+  code{color:var(--amber);font-size:11.5px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Key<span>stone</span> — Scientific Discovery OS
+    <small>evidence-grounded discovery · every field tier-tagged · nothing fabricated</small></div>
+  <div class="grow"></div>
+  <select id="domain" onchange="load()">
+    <option value="gbm">Glioblastoma (cathepsin B axis)</option>
+    <option value="insulin">Insulin resistance (IRS-1 axis)</option>
+  </select>
+  <a href="/workbench"><button>Open reasoning workbench →</button></a>
+</header>
+
+<div class="q"><b>Research question</b><div class="qt" id="question">…</div></div>
+<div class="loop" id="loop"></div>
+<div class="dash" id="dash"></div>
+<div class="mem" id="mem"></div>
+
+<div class="layout">
+  <div class="side" id="side"></div>
+  <main id="main"><div class="empty">Loading Disease Workspace…</div></main>
+</div>
+
+<script>
+let WS=null, TAB='clinical_trials';
+const $=id=>document.getElementById(id);
+const esc=s=>(s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const HOT=new Set(['Contradiction Mining','Gap Detection']);
+const TAB_ORDER=['overview','clinical_trials','known_drugs','pathways','mutations',
+  'proteins','retractions','contradictions','current_hypotheses','future_experiments',
+  'gaps','readiness','knowledge_graph','genes','datasets'];
+const LABEL={overview:'Disease Overview',clinical_trials:'Clinical Trials',known_drugs:'Known Drugs',
+  pathways:'Pathways',mutations:'Mutations',proteins:'Proteins',retractions:'Retractions',
+  contradictions:'Contradictions',current_hypotheses:'Current Hypotheses',
+  future_experiments:'Future Experiments',gaps:'Missing Evidence',readiness:'Research Readiness',
+  knowledge_graph:'Knowledge Graph',genes:'Genes',datasets:'Datasets'};
+
+async function load(){
+  const dom=$('domain').value;
+  $('main').innerHTML='<div class="empty">Assembling real evidence…</div>';
+  WS=await (await fetch('/api/workspace?domain='+dom)).json();
+  $('question').textContent=WS.question;
+  $('loop').innerHTML=WS.reasoning_loop.map(s=>`<span class="st ${HOT.has(s)?'hot':''}">${esc(s)}</span>`).join('');
+  renderDash(); renderMem(); renderSide(); renderTab();
+}
+
+function metric(k,v,cls){return `<div class="metric"><div class="k">${k}</div><div class="v ${cls||''}">${v}</div></div>`;}
+function renderDash(){
+  const rd=WS.tabs.readiness.data, hyp=WS.tabs.current_hypotheses.data[0];
+  const risk=rd.risk, rc={low:'',medium:'amber',high:'red'}[risk]||'';
+  $('dash').innerHTML=
+    metric('Confidence',hyp.confidence.point,'')+
+    metric('Reviewer',hyp.reviewer_verdict+' → '+hyp.adjusted_confidence,'amber')+
+    metric('Contradictions',WS.tabs.contradictions.data.length)+
+    metric('Missing evidence',WS.tabs.gaps.data.count)+
+    metric('Evidence support',rd.evidence_support.value ?? '—')+
+    metric('Risk',risk,rc)+
+    metric('Trials (real)',Number(WS.tabs.clinical_trials.data.total).toLocaleString(),'')+
+    metric('Known drugs',WS.tabs.known_drugs.data.count);
+}
+function renderMem(){
+  const m=WS.scientific_memory;
+  $('mem').innerHTML = m.tried_before
+    ? `🧠 <b>Scientific memory:</b> this evidence base has been investigated before — ${m.matches[0].exact_reproduction?'<span style="color:var(--amber)">exact reproduction of a prior run</span>':'overlapping prior work'} (${m.n_prior} ledger(s) indexed this session).`
+    : `🧠 <b>Scientific memory:</b> no prior run matches this evidence base (${m.n_prior} ledger(s) indexed). Re-run to see the memory fire.`;
+}
+function renderSide(){
+  $('side').innerHTML=TAB_ORDER.map(t=>{
+    const tab=WS.tabs[t]; if(!tab) return '';
+    return `<div class="tab ${t===TAB?'on':''}" onclick="TAB='${t}';renderSide();renderTab()">
+      ${LABEL[t]} <span class="b t${tab.tier}">${tab.tier===2?'not wired':'T1'}</span></div>`;
+  }).join('');
+}
+
+function tierNote(tab){return `<div class="sub">Tier ${tab.tier} · ${esc(tab.note)}</div>`;}
+function renderTab(){
+  const tab=WS.tabs[TAB], d=tab.data;
+  let html=`<h2>${LABEL[TAB]}</h2>`+tierNote(tab);
+  if(tab.tier===2){ $('main').innerHTML=html+`<div class="scaffold"><b>Not yet wired.</b><br>${esc(tab.note)}<br><br>This slot is intentionally empty — Keystone never fabricates a value to fill it.</div>`; return; }
+  html+=(RENDER[TAB]||(()=>`<pre>${esc(JSON.stringify(d,null,2))}</pre>`))(d);
+  $('main').innerHTML=html;
+  if(TAB==='proteins') mountViewer(d);
+  if(TAB==='knowledge_graph') wireGraph();
+}
+
+const RENDER={
+  overview:d=>`<div class="flex">
+    <div class="card"><div class="k">Disease</div><h2>${esc(d.disease)}</h2>
+      <div class="sub">${d.nodes} evidence nodes · ${d.edges} edges · hash <code>${esc(d.graph_hash)}</code></div></div>
+    <div class="card"><b>Provenance — sources cited</b><ul>${d.sources.slice(0,10).map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div></div>`,
+  clinical_trials:d=>`<div class="card"><b>${Number(d.total).toLocaleString()}</b> real trials on ClinicalTrials.gov · showing ${d.trials.length}
+    <table><tr><th>NCT</th><th>Status</th><th>Phase</th><th>Title</th></tr>
+    ${d.trials.map(t=>`<tr><td><a href="${t.url}" target="_blank">${esc(t.nct_id)}</a></td>
+      <td><span class="pill ${/RECRUIT/i.test(t.status)?'g':/TERMIN|WITHDRAWN|SUSPEND/i.test(t.status)?'r':''}">${esc(t.status)}</span></td>
+      <td>${esc(t.phase)}</td><td>${esc(t.title)}</td></tr>`).join('')}</table></div>`,
+  known_drugs:d=> d.count===0
+    ? `<div class="card"><b>${esc(d.target_name)}</b> — <span class="pill a">0 known drugs</span>
+       <p class="sub">ChEMBL resolves the target but no approved drug acts on it. An <b>undrugged target</b> is a real scientific finding, shown honestly — not padded with placeholders.</p></div>`
+    : `<div class="card"><b>${d.count}</b> drugs whose mechanism targets <b>${esc(d.target_name)}</b>
+       <table><tr><th>Drug</th><th>Action</th><th>Mechanism</th></tr>
+       ${d.drugs.map(x=>`<tr><td>${esc(x.name)}</td><td><span class="pill">${esc(x.action||'')}</span></td><td>${esc(x.moa)}</td></tr>`).join('')}</table></div>`,
+  pathways:d=>`<div class="card"><b>${d.count}</b> Reactome pathways containing this protein
+    <table><tr><th>Pathway</th><th>ID</th></tr>${d.pathways.map(p=>`<tr><td><a href="${p.url}" target="_blank">${esc(p.name)}</a></td><td><code>${esc(p.st_id)}</code></td></tr>`).join('')}</table></div>`,
+  mutations:d=>`<div class="card"><b>${Number(d.total).toLocaleString()}</b> ClinVar variants · showing ${d.variants.length}
+    <table><tr><th>Variant</th><th>Clinical significance</th></tr>
+    ${d.variants.map(v=>`<tr><td>${esc(v.title)}</td><td><span class="pill ${/patho/i.test(v.significance)?'r':/benign/i.test(v.significance)?'g':'a'}">${esc(v.significance)}</span></td></tr>`).join('')}</table></div>`,
+  proteins:d=>`<div class="flex"><div class="card"><b>${esc(d.gene)}</b> — ${esc(d.name)}
+      <div class="sub">UniProt ${esc(d.accession)} · PDB ${(d.pdb_ids||[]).slice(0,4).join(', ')}</div></div></div>
+    <div class="card"><b>3D structure</b><div id="viewer" style="height:380px;position:relative"></div></div>`,
+  retractions:d=> d.length? d.map(x=>`<div class="card"><span class="pill r">RETRACTED</span> <b>${esc(x.node)}</b>
+      <div class="sub">${esc(x.source)}</div>${esc(x.text).slice(0,140)}
+      ${x.retraction&&x.retraction.retraction_date?`<div class="sub">Retraction Watch: ${esc(x.retraction.retraction_date)} · record ${esc(x.retraction.record_id||'')}</div>`:''}</div>`).join('')
+      :`<div class="empty">No retracted nodes in this graph.</div>`,
+  contradictions:d=> d.length? d.map(c=>`<div class="card"><b>${esc(c.claim)}</b> contradicts <b>${esc(c.against)}</b>
+      ${c.opportunity?'<span class="pill a">discovery opportunity</span>':''}
+      <div class="sub">against doubt ${c.against_doubt} ${c.against_retracted?'· against a RETRACTED node':''}</div>
+      ${esc(c.context).slice(0,180)}</div>`).join('') : `<div class="empty">No contradictions recorded.</div>`,
+  current_hypotheses:d=>d.map(h=>`<div class="card">${esc(h.statement)}
+    <div class="sub" style="margin-top:8px">confidence ${h.confidence.point} [${h.confidence.low}, ${h.confidence.high}] ·
+    reviewer <span class="pill a">${esc(h.reviewer_verdict)} → ${h.adjusted_confidence}</span> · grounding ${h.grounding.join(', ')}</div>
+    <div style="margin-top:8px"><a href="javascript:showWhy()">Why did Keystone reach this? →</a></div></div>`).join(''),
+  future_experiments:d=>`<div class="card">${d.map(b=>`<div style="border-left:3px solid var(--line);padding:6px 0 6px 12px;margin:6px 0">
+    <b>${esc(b.node_id)}</b> — ${esc(b.description)}
+    <div class="sub">${b.on_positive?`＋ → ${esc(b.on_positive)}`:''} ${b.on_negative?`　－ → ${esc(b.on_negative)}`:''}</div></div>`).join('')}</div>`,
+  gaps:d=>`<div class="card"><b>${d.count}</b> missing-evidence item(s)<ul>${d.gaps.map(g=>`<li>${esc(g)}</li>`).join('')}</ul></div>`,
+  readiness:d=>`<div class="card">
+    <table><tr><th>Dimension</th><th>Value</th><th>Basis</th></tr>
+    <tr><td>Evidence support</td><td>${d.evidence_support.value ?? '—'} ${d.evidence_support.interval?('['+d.evidence_support.interval.join(', ')+']'):''}</td><td>${esc(d.evidence_support.basis||'')}</td></tr>
+    <tr><td>Reproducibility</td><td>${esc(d.reproducibility.value)}</td><td>checklist ratio</td></tr>
+    <tr><td>Risk</td><td>${esc(d.risk)}</td><td>reviewer + CI width</td></tr>
+    <tr><td>Missing evidence</td><td>${d.missing_evidence.count}</td><td>counted gaps</td></tr>
+    <tr><td>Novelty</td><td>${esc(d.novelty.estimate)}</td><td>qualitative — not a fabricated %</td></tr></table>
+    <div class="sub" style="margin-top:8px">${esc(d.disclaimer)}</div></div>`,
+  knowledge_graph:d=>`<div class="card"><div id="kg">${WS.evidence_graph_svg}</div>
+    <div class="sub" id="kgnode">Click a node to inspect its source and doubt.</div></div>
+    <div class="card"><b>Timeline</b>${WS.timeline_svg}</div>`,
+};
+
+function mountViewer(d){
+  const pdb=(d.pdb_ids||['1HUC'])[0];
+  const el=document.getElementById('viewer'); if(!el||!window.$3Dmol) return;
+  const v=$3Dmol.createViewer(el,{backgroundColor:'#0d0f16'});
+  $3Dmol.download('pdb:'+pdb,v,{},()=>{v.setStyle({},{cartoon:{color:'spectrum'}});v.zoomTo();v.render();});
+}
+function wireGraph(){
+  document.querySelectorAll('#kg [data-node]').forEach(el=>el.addEventListener('click',()=>{
+    const n=(WS.tabs.knowledge_graph.data.nodes||[]).find(x=>x.id===el.getAttribute('data-node')); if(!n)return;
+    const src=/^10\./.test(n.source)?`<a href="https://doi.org/${esc(n.source)}" target="_blank">${esc(n.source)}</a>`:esc(n.source);
+    document.getElementById('kgnode').innerHTML=`<b>${esc(n.id)}</b> <span class="pill">${esc(n.node_type)}</span>
+      ${n.retracted?'<span class="pill r">RETRACTED</span>':''} — ${esc(n.text)} · ${src} · doubt ${n.doubt.point} [${n.doubt.low}, ${n.doubt.high}]`;
+  }));
+}
+function showWhy(){
+  const wp=WS.why_panel;
+  $('main').innerHTML=`<h2>Why did Keystone reach this?</h2><div class="card">
+    <i>${esc(wp.hypothesis)}</i>
+    <h3 style="color:var(--green)">Supporting</h3><ul>${wp.supporting_evidence.map(e=>`<li>${esc(e.id)} (doubt ${e.doubt}) — ${esc((e.text||'').slice(0,90))}</li>`).join('')}</ul>
+    <h3 style="color:var(--amber)">Contradicting</h3><ul>${wp.contradicting_evidence.map(e=>`<li>${esc(e.id)} (doubt ${e.doubt}) — ${esc((e.text||'').slice(0,90))}</li>`).join('')}</ul>
+    <h3>Confidence</h3>${wp.confidence.point} [${wp.confidence.interval.join(', ')}]
+    <h3 style="color:var(--red)">Reviewer objection</h3>${esc(wp.reviewer_objection.weakness)} → ${wp.reviewer_objection.adjusted_confidence}
+    <h3>Remaining uncertainty</h3>${esc(wp.remaining_uncertainty)}
+    <h3>Failure modes</h3><ul>${wp.failure_modes.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
+    <h3 style="color:var(--green)">How to disprove it</h3>${esc(wp.suggested_next_experiment.kill_condition)} (n/arm ${wp.suggested_next_experiment.required_n_per_arm})
+    <div style="margin-top:12px"><a href="javascript:renderTab()">← back to workspace</a></div></div>`;
+}
+load();
+</script>
+</body>
+</html>

@@ -29,10 +29,13 @@ from keystone.reasoning_panel import (why_panel, future_experiments_tree,
 from keystone.replay import record_session
 from keystone.artifacts.render import (evidence_graph_svg, timeline_svg,
                                        protein_viewer_html)
+from keystone.workspace import build_workspace
+from keystone.deterministic.ledger_index import LedgerIndex
 
-app = FastAPI(title="Keystone Workbench")
+app = FastAPI(title="Keystone Discovery OS")
 _STATIC = Path(__file__).parent / "static"
 _SESSIONS: dict = {}   # in-memory: session_id -> {graph, ledger, hyp, review}
+_MEMORY = LedgerIndex()   # scientific memory across workspace runs this session
 
 
 def _reasoner():
@@ -89,7 +92,35 @@ def _sse(obj: dict) -> str:
 
 @app.get("/")
 def index():
+    return FileResponse(_STATIC / "os.html")
+
+
+@app.get("/workbench")
+def workbench_page():
     return FileResponse(_STATIC / "index.html")
+
+
+@app.get("/api/workspace")
+def workspace(domain: str = "gbm"):
+    """The Disease Workspace: real connectors + reasoning + scientific memory.
+    Deterministic; enriched with the existing artifacts."""
+    ws, graph, ledger, hyp, review = build_workspace(domain)
+    # scientific memory: check BEFORE recording this run, then remember it
+    prior = _MEMORY.find_prior_work(ledger.sources, ledger.hypothesis_grounding,
+                                    ledger.graph_hash)
+    _MEMORY.add_ledger_dict(json.loads(ledger.to_json()), path=f"{domain}-run")
+    ws["scientific_memory"] = prior
+    ws["why_panel"] = why_panel(hyp, review, graph)
+    ws["evidence_graph_svg"] = evidence_graph_svg(graph)
+    ws["timeline_svg"] = timeline_svg(ledger.timeline)
+    tgt = graph.nodes["N_target"]
+    ws["protein_html"] = protein_viewer_html(tgt.meta.get("pdb", "1HUC"), tgt.text)
+    ws["reasoning_loop"] = ["Planner", "Evidence Collection", "Quality Validation",
+                            "Knowledge Graph", "Contradiction Mining",
+                            "Gap Detection", "Hypothesis", "Reviewer",
+                            "Experiment Design", "Protocol + Statistics",
+                            "Evidence Ledger", "Human Scientist"]
+    return ws
 
 
 @app.get("/api/default-question")
