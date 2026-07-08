@@ -70,6 +70,9 @@ python -m keystone.agents.flaw_catch_eval   # do the agents catch planted flaws?
 pip install fastapi uvicorn             # the interactive workbench UI
 python -m keystone.ui.server            # -> http://127.0.0.1:8000
 
+python -m keystone.ui.graph_browser.build --domain gbm   # static graph browser
+python -m http.server -d browser_out/gbm 8010            # -> http://127.0.0.1:8010
+
 # refresh the pinned real data from the live APIs:
 KEYSTONE_LIVE=1 python -m keystone.connectors.capture
 
@@ -109,10 +112,14 @@ keystone/
   calibration/
     gbm_citing_sentences.jsonl       44 hand-labeled real GBM sentences
     insulin_citing_sentences.jsonl   44 hand-labeled real insulin sentences
+  artifacts/
+    graph_export.py       lossless EvidenceGraph <-> JSON (projection only)
   ui/
     server.py             FastAPI backend (pure projection of the engine)
     static/index.html     one-page workbench: graph, why-panel, tree,
                           readiness, timeline, 3D, replay, approval gate
+    graph_browser/        static, S3-deployable browser: layer filter over
+                          NodeType, doubt bands, full-text search (DEPLOY.md)
 tests/                    smoke(7) + connectors(10) + ui(4) + flaw(7) + insulin(6)
 run_workbench.py          end-to-end CLI
 calibrate.py              the moat, measured

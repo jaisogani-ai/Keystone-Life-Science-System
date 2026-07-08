@@ -41,7 +41,8 @@ def _offline(active: bool):
 
 
 def _band(point: float, width: float = 0.1) -> Interval:
-    return Interval(point, max(0.0, point - width), min(1.0, point + width))
+    return Interval(round(point, 4), round(max(0.0, point - width), 4),
+                    round(min(1.0, point + width), 4))
 
 
 def _year_to_date(year) -> str:

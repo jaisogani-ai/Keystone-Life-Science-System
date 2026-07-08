@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "keystone.ui.server"],
       "port": 8000
+    },
+    {
+      "name": "graph-browser",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8010", "--directory", "browser_out/gbm"],
+      "port": 8010
     }
   ]
 }

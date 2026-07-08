@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Keystone — Evidence Graph Browser</title>
+<style>
+  :root{--bg:#0f1117;--panel:#161a24;--panel2:#1a1f2b;--line:#26304a;--tx:#e6e6e6;
+    --dim:#8d99ae;--cyan:#4cc9f0;--green:#06d6a0;--red:#ff5d5d;--amber:#ffd166;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tx);line-height:1.5;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  header{padding:16px 22px;border-bottom:1px solid var(--line);position:sticky;top:0;
+    background:var(--bg);z-index:5}
+  h1{font-size:17px;margin:0 0 2px} h1 small{color:var(--dim);font-weight:400;font-size:12px}
+  .controls{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:12px}
+  input[type=text]{background:var(--panel2);border:1px solid var(--line);color:var(--tx);
+    border-radius:8px;padding:9px 12px;font-size:13px;min-width:260px;flex:1}
+  .layers{display:flex;gap:6px;flex-wrap:wrap}
+  .layer{font-size:11px;padding:5px 11px;border-radius:20px;border:1px solid var(--line);
+    background:var(--panel);cursor:pointer;user-select:none;white-space:nowrap;color:var(--dim)}
+  .layer.on{color:var(--tx);border-color:var(--cyan)}
+  .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:12.5px}
+  a{color:var(--cyan)}
+  main{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px 22px;
+    max-width:1500px;margin:0 auto}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .card.wide{grid-column:1/-1}
+  h2{font-size:12px;margin:0 0 10px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim)}
+  .node,.edge{border:1px solid var(--line);border-radius:9px;padding:10px 12px;margin-bottom:9px;
+    background:var(--panel2)}
+  .node.hidden,.edge.hidden{display:none}
+  .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .pill{font-size:10.5px;padding:2px 8px;border-radius:20px;border:1px solid var(--line);color:var(--dim)}
+  .pill.red{color:var(--red);border-color:var(--red)} .pill.amber{color:var(--amber);border-color:var(--amber)}
+  .txt{font-size:12.5px;margin-top:5px} .src{font-size:11px;color:var(--dim);margin-top:3px}
+  /* doubt band: purely a render of the exported interval [low, point, high] */
+  .band{position:relative;height:14px;background:#0c0f16;border:1px solid var(--line);
+    border-radius:7px;margin-top:7px;overflow:hidden}
+  .band .range{position:absolute;top:0;bottom:0;opacity:.35}
+  .band .pt{position:absolute;top:-2px;width:2px;height:18px;background:#fff}
+  .band .lab{position:absolute;right:5px;top:-1px;font-size:9.5px;color:var(--tx)}
+  .empty{color:var(--dim);text-align:center;padding:40px}
+  .count{color:var(--dim);font-size:11px;font-weight:400}
+</style>
+</head>
+<body>
+<header>
+  <h1>Evidence Graph Browser <small id="sub">— layers, doubt bands, full-text search</small></h1>
+  <div class="controls">
+    <input id="q" type="text" placeholder="Search node text, source, or citing context…" oninput="render()"/>
+    <div class="layers" id="layers"></div>
+  </div>
+  <div class="links" id="links"></div>
+</header>
+<main id="main">
+  <div class="card"><h2>Nodes <span class="count" id="ncount"></span></h2><div id="nodes"></div></div>
+  <div class="card"><h2>Edges <span class="count" id="ecount"></span></h2><div id="edges"></div></div>
+</main>
+
+<script src="graph.js"></script>
+<script>
+const G = window.KEYSTONE_GRAPH || null;
+const active = new Set();
+const $ = id => document.getElementById(id);
+function esc(s){return (s==null?"":String(s)).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+
+// doubt point -> colour (mirrors the SVG renderer; presentation only, no maths on the value)
+function colour(p){
+  p=Math.max(0,Math.min(1,p));
+  if(p<0.5){const r=Math.round(0x2e+(0xff-0x2e)*(p/0.5));return `rgb(${r},${0xb0+Math.round((0xd1-0xb0)*(p/0.5))},102)`;}
+  return `rgb(255,${Math.round(0xd1*(1-(p-0.5)/0.5))},${Math.round(102*(1-(p-0.5)/0.5))})`;
+}
+function band(iv, label){
+  const c=colour(iv.point);
+  return `<div class="band" title="${label} ${iv.point} (interval ${iv.low}–${iv.high})">
+    <div class="range" style="left:${iv.low*100}%;width:${(iv.high-iv.low)*100}%;background:${c}"></div>
+    <div class="pt" style="left:${iv.point*100}%"></div>
+    <div class="lab">${label} ${iv.point} [${iv.low}, ${iv.high}]</div></div>`;
+}
+
+function init(){
+  if(!G){ document.body.innerHTML='<div class="empty">No graph.js loaded. Run <code>python -m keystone.ui.graph_browser.build</code> and serve the output folder.</div>'; return; }
+  $("sub").textContent = `— ${G.nodes.length} nodes · ${G.edges.length} edges · hash ${G.hash}`;
+  $("links").innerHTML = `<b>${esc(G.question||"")}</b><br>
+    Linked artifacts: <a href="why_panel.html" target="_blank">why this conclusion</a> ·
+    <a href="future_experiments.svg" target="_blank">future experiments</a> ·
+    <a href="evidence_graph.svg" target="_blank">evidence graph</a>`;
+  const present = [...new Set(G.nodes.map(n=>n.node_type))];
+  const ordered = (G.node_types||present).filter(t=>present.includes(t));
+  ordered.forEach(t=>active.add(t));
+  $("layers").innerHTML = ordered.map(t=>`<span class="layer on" data-layer="${t}" onclick="toggle('${t}')">${t}</span>`).join("");
+  render();
+}
+function toggle(t){
+  active.has(t)?active.delete(t):active.add(t);
+  document.querySelector(`[data-layer="${t}"]`).classList.toggle("on");
+  render();
+}
+
+function render(){
+  const q=$("q").value.trim().toLowerCase();
+  const nodeById={}; G.nodes.forEach(n=>nodeById[n.id]=n);
+  const visibleNode=n => active.has(n.node_type) &&
+    (!q || (n.text+" "+n.source+" "+n.id).toLowerCase().includes(q));
+  let nv=0, ev=0;
+  $("nodes").innerHTML = G.nodes.map(n=>{
+    const show=visibleNode(n); if(show) nv++;
+    const doi=/^10\./.test(n.source)?`<a href="https://doi.org/${esc(n.source)}" target="_blank">${esc(n.source)}</a>`:esc(n.source);
+    return `<div class="node ${show?'':'hidden'}">
+      <div class="row"><b>${esc(n.id)}</b>
+        <span class="pill">${esc(n.node_type)}</span>
+        ${n.retracted?'<span class="pill red">RETRACTED</span>':''}
+        ${n.inexcusable?'<span class="pill amber">post-retraction</span>':''}</div>
+      <div class="txt">${esc(n.text)}</div>
+      <div class="src">${doi}</div>
+      ${band(n.doubt, 'doubt')}</div>`;
+  }).join("");
+  $("edges").innerHTML = G.edges.map(e=>{
+    const ends=[nodeById[e.src],nodeById[e.dst]];
+    const layerOk=ends.every(x=>!x||active.has(x.node_type));
+    const match=!q || (e.context+" "+e.src+" "+e.dst).toLowerCase().includes(q);
+    const show=layerOk&&match; if(show) ev++;
+    return `<div class="edge ${show?'':'hidden'}">
+      <div class="row"><b>${esc(e.src)}</b> <span class="pill">${esc(e.edge_type)}</span> <b>${esc(e.dst)}</b>
+        ${e.temporal!=='n/a'?`<span class="pill ${e.temporal==='post_retraction'?'amber':''}">${esc(e.temporal)}</span>`:''}</div>
+      <div class="txt">${esc(e.context)}</div>
+      ${band(e.load_bearing, 'load-bearing')}</div>`;
+  }).join("");
+  $("ncount").textContent=`(${nv}/${G.nodes.length} shown)`;
+  $("ecount").textContent=`(${ev}/${G.edges.length} shown)`;
+}
+init();
+</script>
+</body>
+</html>

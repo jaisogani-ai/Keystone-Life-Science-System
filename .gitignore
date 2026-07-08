@@ -8,6 +8,7 @@ build/
 dist/
 # ephemeral connector HTTP cache (fixtures are the pinned, committed real data)
 keystone/connectors/cache/
-# generated demo artifacts (reproducible via run_workbench.py)
+# generated demo artifacts (reproducible via run_workbench.py / build.py)
 demo_out/
+browser_out/
 .DS_Store
