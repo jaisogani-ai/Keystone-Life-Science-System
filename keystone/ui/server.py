@@ -20,6 +20,7 @@ from pathlib import Path
 from fastapi import FastAPI, Request
 from fastapi.responses import (FileResponse, StreamingResponse, JSONResponse,
                                HTMLResponse)
+from fastapi.staticfiles import StaticFiles
 
 from keystone.data_gbm import build_gbm_graph
 from keystone.gbm_spec import QUESTION
@@ -36,6 +37,9 @@ app = FastAPI(title="Keystone Discovery OS")
 _STATIC = Path(__file__).parent / "static"
 _SESSIONS: dict = {}   # in-memory: session_id -> {graph, ledger, hyp, review}
 _MEMORY = LedgerIndex()   # scientific memory across workspace runs this session
+
+# Serve the modular component library (tokens.css, anim.css, components.js, ...).
+app.mount("/static", StaticFiles(directory=str(_STATIC)), name="static")
 
 
 def _reasoner():
@@ -108,13 +112,42 @@ def workbench_page():
 @app.get("/api/decision")
 def decision_api(domain: str = "gbm"):
     """The Scientific Decision Engine: competing hypotheses, ranked, with the
-    next-experiment recommendation. Deterministic; enriched with why-panel +
-    graph for drill-down."""
+    next-experiment recommendation. Deterministic; enriched with why-panel,
+    graph, and the multi-agent trace + provenance for drill-down."""
     from keystone.decision_engine import decide
+    from keystone.orchestrator import build_trace
+    from keystone.deterministic.provenance import build_provenance
     d, graph, ledger, hyp, review = decide(domain)
     d["why_panel"] = why_panel(hyp, review, graph)
     d["evidence_graph_svg"] = evidence_graph_svg(graph)
+    d["agent_trace"] = build_trace(d["question"], graph, ledger, hyp, review)
+    d["provenance"] = build_provenance(graph, ledger, hyp)["coverage"]
     return d
+
+
+@app.get("/api/pipeline")
+def pipeline_api(domain: str = "gbm"):
+    """The live multi-agent reasoning pipeline (central planner + specialists +
+    deterministic tools), each step provenance-bearing."""
+    from keystone.decision_engine import _spec_and_builder
+    from keystone.orchestrator import orchestrate
+    spec, build = _spec_and_builder(domain)
+    trace, ledger, hyp, review = orchestrate(spec.QUESTION, build(), _reasoner())
+    return {"domain": domain, "question": spec.QUESTION,
+            "graph_hash": ledger.graph_hash, "trace": trace}
+
+
+@app.get("/api/report")
+def report_api(domain: str = "gbm"):
+    """Publication-ready research report (print-ready HTML)."""
+    from keystone.decision_engine import _spec_and_builder
+    from keystone.orchestrator import orchestrate
+    from keystone.artifacts.report import research_report_html
+    spec, build = _spec_and_builder(domain)
+    graph = build()
+    trace, ledger, hyp, review = orchestrate(spec.QUESTION, graph, _reasoner())
+    return HTMLResponse(research_report_html(spec.QUESTION, graph, ledger, hyp,
+                                             review))
 
 
 @app.get("/api/workspace")

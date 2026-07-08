@@ -4,40 +4,43 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Keystone — Scientific Decision Engine</title>
+<link rel="stylesheet" href="/static/lib/tokens.css"/>
+<link rel="stylesheet" href="/static/lib/anim.css"/>
 <style>
-  :root{--bg:#0c0e15;--panel:#141824;--panel2:#1a1f2e;--line:#27304a;--tx:#e8ecf3;
-    --dim:#8a95ad;--cyan:#4cc9f0;--green:#06d6a0;--red:#ff5d5d;--amber:#ffd166;--violet:#a68bff;}
-  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--tx);
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5}
-  a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
   header{padding:14px 22px;border-bottom:1px solid var(--line);display:flex;gap:16px;
-    align-items:center;flex-wrap:wrap;background:linear-gradient(180deg,#131826,#0c0e15)}
+    align-items:center;flex-wrap:wrap;background:linear-gradient(180deg,#131826,#0c0e15);
+    position:sticky;top:0;z-index:10}
   .brand{font-size:16px;font-weight:700} .brand span{color:var(--violet)}
   .brand small{display:block;color:var(--dim);font-weight:400;font-size:11px}
   .grow{flex:1}
   select,button{background:var(--panel2);border:1px solid var(--line);color:var(--tx);
-    border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
+    border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer;transition:border-color .2s}
+  select:hover,button:hover{border-color:var(--violet)}
   main{max-width:1180px;margin:0 auto;padding:18px 22px}
   .flow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
   .fl{font-size:11px;color:var(--dim);padding:5px 10px;border:1px solid var(--line);
-    border-radius:8px;white-space:nowrap} .fl b{color:var(--tx)} .fl.k{color:var(--violet);border-color:var(--violet)}
+    border-radius:8px;max-width:100%;overflow-wrap:anywhere} .fl b{color:var(--tx)} .fl.k{color:var(--violet);border-color:var(--violet)}
   .hero{background:linear-gradient(135deg,#1a2136,#141824);border:1px solid var(--violet);
-    border-radius:16px;padding:20px 22px;margin-bottom:20px}
+    border-radius:16px;padding:20px 22px;margin-bottom:20px;box-shadow:var(--shadow)}
   .hero .tag{color:var(--violet);font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
   .hero h1{font-size:20px;margin:6px 0 4px} .hero .st{font-size:14px;color:var(--tx)}
   .hero .grid{display:flex;gap:22px;flex-wrap:wrap;margin-top:14px}
   .hero .g .k{font-size:10px;color:var(--dim);text-transform:uppercase} .hero .g .v{font-size:17px;font-weight:700}
   .hero .kill{margin-top:12px;padding:10px 12px;background:rgba(6,214,160,.08);border-left:3px solid var(--green);border-radius:6px;font-size:13px}
   .hero .over{margin-top:8px;color:var(--dim);font-size:12.5px}
+  .actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+  .actions button{background:var(--violet);color:#12081f;font-weight:600;border:0}
   h2{font-size:14px;margin:22px 0 10px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim)}
   .weights{font-size:11px;color:var(--dim);margin-bottom:8px}
+  .provbadge{font-size:11.5px;color:var(--dim);margin-bottom:10px}
+  .provbadge b{color:var(--green)}
   .hyp{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
   .hyp.top{border-color:var(--violet)}
   .hrow{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
   .rank{font-size:18px;font-weight:800;color:var(--violet);min-width:34px}
   .kind{font-size:10.5px;padding:2px 8px;border-radius:20px;border:1px solid var(--line);color:var(--dim)}
   .pri{margin-left:auto;font-size:13px} .bar{height:6px;background:#0a0c12;border-radius:4px;overflow:hidden;width:120px;display:inline-block;vertical-align:middle;margin-left:6px}
-  .bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--violet))}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--violet));width:0}
   .stmt{font-size:13.5px;margin:8px 0}
   .mgrid{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
   .m{font-size:12px} .m .k{color:var(--dim)} .m sup{font-size:8px;padding:0 3px;border-radius:3px;margin-left:2px}
@@ -45,6 +48,7 @@
   .why{margin-top:6px;font-size:12px;color:var(--violet)}
   .pill{font-size:10.5px;padding:2px 8px;border-radius:20px;border:1px solid var(--line)}
   .pill.low{color:var(--green);border-color:var(--green)} .pill.medium{color:var(--amber);border-color:var(--amber)} .pill.high{color:var(--red);border-color:var(--red)}
+  .pill.agent{color:var(--violet);border-color:var(--violet)} .pill.tool{color:var(--cyan);border-color:var(--cyan)}
   .exp{margin-top:8px;font-size:12.5px} .exp summary{cursor:pointer;color:var(--cyan)}
   .debate{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px} .debate>div{flex:1;min-width:220px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px}
   .debate h4{margin:0 0 5px;font-size:12px} ul{margin:4px 0;padding-left:16px} li{font-size:11.5px;margin:2px 0}
@@ -52,7 +56,21 @@
   .buckets{display:flex;gap:10px;flex-wrap:wrap} .bucket{flex:1;min-width:210px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}
   .bucket .bt{font-size:11px;color:var(--violet);text-transform:uppercase;font-weight:700}
   .gaps li{font-size:12.5px} .legend{font-size:11px;color:var(--dim);margin:6px 0 14px}
+  /* multi-agent trace */
+  .trace{display:flex;flex-direction:column;gap:0}
+  .tstep{display:flex;gap:12px;padding:8px 0;border-left:2px solid var(--line);padding-left:14px;position:relative;min-width:0}
+  .tnum{position:absolute;left:-11px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--panel2);
+    border:1px solid var(--line);font-size:10px;display:flex;align-items:center;justify-content:center;color:var(--dim)}
+  .tbody{flex:1;min-width:0} .trole{font-size:11.5px;color:var(--dim)} .tout{font-size:12.5px;margin-top:2px;overflow-wrap:anywhere}
+  .tev{font-size:10.5px;color:var(--dim);margin-top:2px;font-family:ui-monospace,monospace;overflow-wrap:anywhere}
+  .hyp,.hero{overflow-wrap:anywhere} .mgrid,.hrow{min-width:0}
   .empty{color:var(--dim);text-align:center;padding:40px}
+  /* responsive: desktop-first, graceful narrow layout */
+  @media (max-width:720px){
+    main{padding:14px} .hero .grid{gap:14px} .hero h1{font-size:18px}
+    .mgrid{gap:8px} .debate>div{min-width:100%} .bucket{min-width:100%}
+    .pri{margin-left:0;width:100%}
+  }
 </style>
 </head>
 <body>
@@ -60,7 +78,7 @@
   <div class="brand">Key<span>stone</span> — Scientific Decision Engine
     <small>what should the scientist do next — and why, over every alternative</small></div>
   <div class="grow"></div>
-  <select id="domain" onchange="load()">
+  <select id="domain">
     <option value="gbm">Glioblastoma (cathepsin B axis)</option>
     <option value="insulin">Insulin resistance (IRS-1 axis)</option>
   </select>
@@ -69,90 +87,73 @@
 </header>
 <main id="main"><div class="empty">Reasoning over the evidence…</div></main>
 
-<script>
-let D=null;
-const $=id=>document.getElementById(id);
-const esc=s=>(s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const KB={computed:'c',estimate:'e',qualitative:'q'};
-const m=(mm)=>`${esc(mm.value)}<sup class="${KB[mm.kind]}" title="${mm.kind}: ${esc(mm.basis)}">${KB[mm.kind]}</sup>`;
+<script type="module">
+import { getDecision, reportUrl } from '/static/lib/api.js';
+import { esc, flowStrip, hypCard, agentTrace } from '/static/lib/components.js';
+
+let D = null;
+const $ = id => document.getElementById(id);
+const domainSel = $('domain');
+domainSel.addEventListener('change', load);
 
 async function load(){
-  $('main').innerHTML='<div class="empty">Generating competing hypotheses, scoring, ranking…</div>';
-  D=await (await fetch('/api/decision?domain='+$('domain').value)).json();
-  render();
+  $('main').innerHTML = '<div class="empty">Generating competing hypotheses, scoring, ranking…</div>';
+  try { D = await getDecision(domainSel.value); render(); }
+  catch(e){ $('main').innerHTML = `<div class="empty" style="color:var(--red)">Engine error: ${esc(e.message)}</div>`; }
 }
-function render(){
-  const rec=D.recommendation;
-  let h=`<div class="flow">`+D.workflow.map(w=>{
-    const hot=/Competing|information gain|ranking|Contradiction|gap/i.test(w.stage);
-    return `<span class="fl ${hot?'k':''}">${esc(w.stage)} <b>${esc(w.value)}</b></span>`;}).join('')+`</div>`;
 
-  // HERO recommendation
-  h+=`<div class="hero"><div class="tag">▶ Run this next</div>
+function render(){
+  const rec = D.recommendation;
+  const cov = D.provenance || {};
+  let h = flowStrip(D.workflow);
+
+  // HERO — run this next
+  h += `<div class="hero reveal"><div class="tag">▶ Run this next</div>
     <h1>${esc(rec.hypothesis_id)} · ${esc(rec.kind)}</h1>
     <div class="st">${esc(rec.statement)}</div>
-    <div class="grid">
-      <div class="g"><div class="k">Priority</div><div class="v">${rec.priority_score}</div></div>
-      <div class="g"><div class="k">Expected info gain</div><div class="v">${rec.information_gain}</div></div>
-      <div class="g"><div class="k">Cost (est)</div><div class="v">$${rec.cost_usd.toLocaleString()}</div></div>
-      <div class="g"><div class="k">Duration (est)</div><div class="v">${rec.duration_weeks} wk</div></div>
-      <div class="g"><div class="k">Risk</div><div class="v">${esc(rec.risk)}</div></div>
+    <div class="grid stagger">
+      <div class="g" style="--i:0"><div class="k">Priority</div><div class="v">${rec.priority_score}</div></div>
+      <div class="g" style="--i:1"><div class="k">Expected info gain</div><div class="v">${rec.information_gain}</div></div>
+      <div class="g" style="--i:2"><div class="k">Cost (est)</div><div class="v">$${rec.cost_usd.toLocaleString()}</div></div>
+      <div class="g" style="--i:3"><div class="k">Duration (est)</div><div class="v">${rec.duration_weeks} wk</div></div>
+      <div class="g" style="--i:4"><div class="k">Risk</div><div class="v">${esc(rec.risk)}</div></div>
     </div>
     <div style="margin-top:12px;font-size:13px"><b>Experiment:</b> ${esc(rec.experiment.perturbation)} — <i>${esc(rec.experiment.system)}</i>, n/arm ${rec.experiment.n_per_arm}</div>
     <div class="kill"><b>How to falsify it:</b> ${esc(rec.how_to_falsify)}</div>
     <div class="over"><b>Why this over the alternatives:</b> ${esc(rec.over_alternatives||'')} · chosen for ${esc((rec.why_first||[]).join(', '))}</div>
+    <div class="actions">
+      <button onclick="window.open('${reportUrl(domainSel.value)}','_blank')">Generate publication report</button>
+    </div>
   </div>`;
+
+  // MULTI-AGENT PIPELINE — the reasoning made visible, provenance per step
+  if (D.agent_trace) {
+    h += `<h2>Multi-agent reasoning pipeline</h2>
+      <div class="legend">A central planner coordinates specialist <span class="pill agent">agent</span>s,
+      each verified by deterministic <span class="pill tool">tool</span>s. The AI reasons; the tools produce the numbers.</div>
+      <div class="hyp reveal">${agentTrace(D.agent_trace)}</div>`;
+  }
 
   // DECISION BOARD
-  h+=`<h2>Scientific Decision Board — ${D.competing_hypotheses.length} competing hypotheses</h2>
+  h += `<h2>Scientific Decision Board — ${D.competing_hypotheses.length} competing hypotheses</h2>
     <div class="weights">Priority = weighted composite · ${Object.entries(D.weights).map(([k,v])=>`${k.replace('_',' ')} ${v}`).join(' · ')} · <sup class="c">c</sup> computed <sup class="e">e</sup> estimate <sup class="q">q</sup> qualitative — nothing fabricated</div>`;
-  const debById={}; D.debates.forEach(d=>debById[d.id]=d);
-  h+=D.competing_hypotheses.map(s=>hypCard(s,debById[s.id])).join('');
+  if (cov.nodes_total) h += `<div class="provbadge">Provenance: <b>${cov.nodes_resolved}/${cov.nodes_total}</b> evidence nodes resolved to a real source (${(cov.source_kinds||[]).map(esc).join(', ')}); ${cov.nodes_unresolved} unresolved, shown as such.</div>`;
+  const debById = {}; (D.debates||[]).forEach(d => debById[d.id] = d);
+  h += D.competing_hypotheses.map((s,i) => hypCard(s, debById[s.id], i)).join('');
 
   // PORTFOLIO
-  const bmap={}; D.portfolio.forEach(p=>{(bmap[p.bucket]=bmap[p.bucket]||[]).push(p);});
-  h+=`<h2>Experiment Portfolio</h2><div class="buckets">`+
-    Object.entries(bmap).map(([b,items])=>`<div class="bucket"><div class="bt">${esc(b)}</div>`+
-      items.map(p=>`<div style="margin-top:6px;font-size:12.5px"><b>${esc(p.id)}</b> — ${esc(p.statement).slice(0,90)}…
-        <div style="color:var(--dim);font-size:11px">${esc(p.comes_before_others_because)}</div></div>`).join('')+`</div>`).join('')+`</div>`;
+  const bmap = {}; D.portfolio.forEach(p => { (bmap[p.bucket] = bmap[p.bucket] || []).push(p); });
+  h += `<h2>Experiment Portfolio</h2><div class="buckets stagger">` +
+    Object.entries(bmap).map(([b,items],i) => `<div class="bucket" style="--i:${i}"><div class="bt">${esc(b)}</div>` +
+      items.map(p => `<div style="margin-top:6px;font-size:12.5px"><b>${esc(p.id)}</b> — ${esc(p.statement).slice(0,90)}…
+        <div style="color:var(--dim);font-size:11px">${esc(p.comes_before_others_because)}</div></div>`).join('') + `</div>`).join('') + `</div>`;
 
   // KNOWLEDGE GAPS
-  h+=`<h2>Knowledge Gap Engine — what evidence is preventing publication?</h2>
-    <div class="hyp"><div class="legend">Blocking publication: ${(D.knowledge_gaps.blocking_publication||[]).map(esc).join(', ')||'none flagged'}</div>
+  h += `<h2>Knowledge Gap Engine — what evidence is preventing publication?</h2>
+    <div class="hyp reveal"><div class="legend">Blocking publication: ${(D.knowledge_gaps.blocking_publication||[]).map(esc).join(', ')||'none flagged'}</div>
     <ul class="gaps">${D.knowledge_gaps.gaps.map(g=>`<li><b>${esc(g.type)}</b> — ${esc(g.detail)}</li>`).join('')}</ul></div>`;
 
-  $('main').innerHTML=h;
-}
-
-function hypCard(s,deb){
-  const pct=Math.round(s.priority_score.value*100);
-  return `<div class="hyp ${s.rank===1?'top':''}">
-    <div class="hrow"><span class="rank">#${s.rank}</span> <b>${esc(s.id)}</b>
-      <span class="kind">${esc(s.kind)}</span>
-      <span class="pri">priority ${s.priority_score.value}<span class="bar"><i style="width:${pct}%"></i></span></span></div>
-    <div class="stmt">${esc(s.statement)}</div>
-    <div class="mgrid">
-      <div class="m"><span class="k">EIG</span> ${m(s.information_gain)}</div>
-      <div class="m"><span class="k">Evidence</span> ${m(s.evidence_strength)}</div>
-      <div class="m"><span class="k">Contradiction</span> ${m(s.contradiction_score)}</div>
-      <div class="m"><span class="k">Novelty</span> ${m(s.novelty)}</div>
-      <div class="m"><span class="k">Risk</span> <span class="pill ${s.risk.value}">${esc(s.risk.value)}</span></div>
-      <div class="m"><span class="k">Difficulty</span> ${m(s.validation_difficulty)}</div>
-      <div class="m"><span class="k">Cost</span> $${s.cost_usd.value.toLocaleString()}<sup class="e" title="${esc(s.cost_usd.basis)}">e</sup></div>
-      <div class="m"><span class="k">Time</span> ${s.duration_weeks.value}wk<sup class="e">e</sup></div>
-      <div class="m"><span class="k">Reviewer</span> ${m(s.reviewer_confidence)}</div>
-    </div>
-    <div class="why">Why #${s.rank}: ${esc((s.why||[]).join(', '))}</div>
-    ${deb?debateBlock(deb):''}
-  </div>`;
-}
-function debateBlock(deb){
-  const R=r=>`<div><h4>${esc(r.role)}</h4><ul>${r.case.map(c=>`<li>${esc(c)}</li>`).join('')}</ul><div style="color:var(--dim);font-size:11px">${esc(r.claim)}</div></div>`;
-  return `<details class="exp"><summary>Scientific debate & resolution</summary>
-    <div class="debate">${R(deb.proponent)}${R(deb.skeptic)}${R(deb.reviewer)}</div>
-    <div class="res"><b>Resolution (${esc(deb.resolution.verdict)}):</b> ${esc(deb.resolution.reason)}
-      <div style="color:var(--dim);font-size:11px;margin-top:3px">${esc(deb.resolution.method)}</div></div>
-  </details>`;
+  $('main').innerHTML = h;
 }
 load();
 </script>

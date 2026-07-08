@@ -1,0 +1,21 @@
+/* Keystone animations — GPU-friendly (transform/opacity only) for 60 FPS.
+   Respects prefers-reduced-motion for accessibility (a real lab requirement). */
+@keyframes ks-fade-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes ks-fade-in{from{opacity:0}to{opacity:1}}
+
+.reveal{opacity:0;animation:ks-fade-up .45s cubic-bezier(.22,.61,.36,1) forwards;will-change:transform,opacity}
+/* stagger children by index via inline --i */
+.stagger>*{opacity:0;animation:ks-fade-up .4s cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay:calc(var(--i,0)*45ms)}
+
+/* priority bar fills smoothly */
+.bar>i{transition:width .7s cubic-bezier(.22,.61,.36,1)}
+.hyp{transition:border-color .2s ease, transform .2s ease}
+.hyp:hover{transform:translateY(-1px)}
+details.exp>*{animation:ks-fade-in .3s ease}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal,.stagger>*{animation:none;opacity:1;transform:none}
+  .bar>i{transition:none}
+  html{scroll-behavior:auto}
+}
