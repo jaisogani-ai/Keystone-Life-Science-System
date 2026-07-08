@@ -125,6 +125,30 @@ def decision_api(domain: str = "gbm"):
     return d
 
 
+@app.get("/api/decision/stream")
+def decision_stream(domain: str = "gbm"):
+    """Stream the reasoning live: each agent/tool step is emitted as it 'completes'
+    (the Reviewer's self-downgrade appears in real time), then the full decision.
+    The DATA is deterministic; only the reveal timing is choreography."""
+    from keystone.decision_engine import decide
+    from keystone.orchestrator import build_trace
+    from keystone.deterministic.provenance import build_provenance
+
+    def gen():
+        d, graph, ledger, hyp, review = decide(domain)
+        trace = build_trace(d["question"], graph, ledger, hyp, review)
+        for step in trace:
+            yield _sse({"type": "step", "step": step})
+            time.sleep(0.28)
+        d["why_panel"] = why_panel(hyp, review, graph)
+        d["evidence_graph_svg"] = evidence_graph_svg(graph)
+        d["agent_trace"] = trace
+        d["provenance"] = build_provenance(graph, ledger, hyp)["coverage"]
+        yield _sse({"type": "done", "data": d})
+
+    return StreamingResponse(gen(), media_type="text/event-stream")
+
+
 @app.get("/api/pipeline")
 def pipeline_api(domain: str = "gbm"):
     """The live multi-agent reasoning pipeline (central planner + specialists +

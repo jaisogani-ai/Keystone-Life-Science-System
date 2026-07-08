@@ -14,6 +14,7 @@ from datetime import date
 
 from keystone.core import EvidenceGraph
 from keystone.deterministic.provenance import build_provenance
+from keystone.artifacts.render import evidence_graph_svg, timeline_svg
 
 
 def _esc(s) -> str:
@@ -76,6 +77,22 @@ def research_report_html(question: str, graph: EvidenceGraph, ledger, hyp,
 <b>Kill-condition (falsifies the hypothesis):</b> {_esc(ep.kill_condition)}<br>
 <b>Sample size:</b> n/arm = {ep.required_n_per_arm} — {_esc(ep.stats_notes)}<br>
 <b>Effect size source:</b> {_esc(ep.effect_size_source)}</p>
+
+<h2>Figures</h2>
+<figure style="margin:0 0 18px">
+  {evidence_graph_svg(graph, width=760, height=460)}
+  <figcaption style="font-size:12px;color:#555;margin-top:4px"><b>Figure 1.</b>
+   Evidence graph — nodes coloured by inherited doubt, edges weighted by
+   load-bearing classification; the retracted foundation is ringed.
+   Source: {_esc(', '.join(prov['coverage']['source_kinds']))} connectors;
+   reproduces from hash <code>{_esc(ledger.graph_hash)}</code>.</figcaption>
+</figure>
+<figure style="margin:0 0 8px">
+  {timeline_svg(ledger.timeline, width=760, height=220)}
+  <figcaption style="font-size:12px;color:#555;margin-top:4px"><b>Figure 2.</b>
+   Research timeline — discovery to retraction to downstream citation, from the
+   real publication and retraction dates in the evidence graph.</figcaption>
+</figure>
 
 <h2>Independent reviewer critique</h2>
 <div class="critique"><b>{_esc(review.verdict.value).upper()}</b> — {_esc(review.weakness)}<br>

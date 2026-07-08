@@ -29,8 +29,15 @@ class AgentStep:
     role: str
     inputs: str
     output: str
-    evidence: list = field(default_factory=list)   # provenance ids / sources
+    evidence: list = field(default_factory=list)     # provenance ids / sources
     confidence: float | None = None
+    # the same structured schema every seat exposes (Hypothesis/ReviewResult) —
+    # narration of real objects, no second schema per agent type
+    sources: list = field(default_factory=list)
+    contradictions: list = field(default_factory=list)
+    assumptions: list = field(default_factory=list)
+    failure_modes: list = field(default_factory=list)
+    artifacts: list = field(default_factory=list)
 
 
 def build_trace(question, graph, ledger, hyp, review) -> list[dict]:
@@ -75,12 +82,20 @@ def build_trace(question, graph, ledger, hyp, review) -> list[dict]:
         AgentStep(7, "Hypothesis Agent", "agent",
                   "generate a rule-3-complete, falsifiable hypothesis",
                   "contradictions + grounding", hyp.statement[:80],
-                  evidence=list(hyp.mechanism_path),
-                  confidence=hyp.confidence.point),
+                  evidence=list(hyp.supporting_evidence),
+                  confidence=hyp.confidence.point,
+                  sources=[graph.nodes[n].source for n in hyp.mechanism_path
+                           if n in graph.nodes],
+                  contradictions=list(hyp.contradicting_evidence),
+                  assumptions=[hyp.uncertainty_notes],
+                  failure_modes=list(hyp.failure_modes),
+                  artifacts=["Hypothesis", "ExperimentPlan"]),
         AgentStep(8, "Experiment Design Agent", "agent",
                   "propose a design with a named kill-condition",
                   "hypothesis", hyp.validation_experiment.perturbation[:70],
-                  evidence=[hyp.validation_experiment.kill_condition[:60]]),
+                  evidence=[hyp.validation_experiment.kill_condition[:60]],
+                  assumptions=[hyp.validation_experiment.effect_size_source],
+                  artifacts=["ExperimentPlan (falsifiable kill-condition)"]),
         AgentStep(9, "Statistics + Protocol", "tool",
                   "power analysis + protocol validation (refuses to fabricate n)",
                   "experiment design",
@@ -90,9 +105,12 @@ def build_trace(question, graph, ledger, hyp, review) -> list[dict]:
         AgentStep(10, "Reviewer Agent", "agent",
                   "independently challenge the hypothesis (rule 4)",
                   "hypothesis + grounding doubt",
-                  f"{review.verdict.value}: {review.weakness[:60]}",
+                  f"{review.verdict.value}: confidence "
+                  f"{hyp.confidence.point} -> {review.adjusted_confidence.point}",
                   evidence=review.objections,
-                  confidence=review.adjusted_confidence.point),
+                  confidence=review.adjusted_confidence.point,
+                  contradictions=[review.weakness],
+                  artifacts=["ReviewResult"]),
         AgentStep(11, "Evidence Ledger", "tool",
                   "emit the reproducible, content-hashed artifact",
                   "the whole run", f"hash={ledger.graph_hash}",

@@ -63,6 +63,10 @@
     border:1px solid var(--line);font-size:10px;display:flex;align-items:center;justify-content:center;color:var(--dim)}
   .tbody{flex:1;min-width:0} .trole{font-size:11.5px;color:var(--dim)} .tout{font-size:12.5px;margin-top:2px;overflow-wrap:anywhere}
   .tev{font-size:10.5px;color:var(--dim);margin-top:2px;font-family:ui-monospace,monospace;overflow-wrap:anywhere}
+  .tmeta{font-size:10.5px;color:var(--dim);margin-top:1px;overflow-wrap:anywhere} .tmeta .k{color:var(--violet)}
+  .tstep.downgrade{background:rgba(255,93,93,.07);border-left-color:var(--red);border-radius:0 8px 8px 0}
+  .tstep.downgrade .tout{color:var(--red);font-weight:600}
+  .livehint{color:var(--violet);font-size:12px;margin-bottom:8px}
   .hyp,.hero{overflow-wrap:anywhere} .mgrid,.hrow{min-width:0}
   .empty{color:var(--dim);text-align:center;padding:40px}
   /* responsive: desktop-first, graceful narrow layout */
@@ -88,18 +92,26 @@
 <main id="main"><div class="empty">Reasoning over the evidence…</div></main>
 
 <script type="module">
-import { getDecision, reportUrl } from '/static/lib/api.js';
-import { esc, flowStrip, hypCard, agentTrace } from '/static/lib/components.js';
+import { streamDecision, reportUrl } from '/static/lib/api.js';
+import { esc, flowStrip, hypCard, agentTrace, traceStep } from '/static/lib/components.js';
 
 let D = null;
 const $ = id => document.getElementById(id);
 const domainSel = $('domain');
 domainSel.addEventListener('change', load);
 
-async function load(){
-  $('main').innerHTML = '<div class="empty">Generating competing hypotheses, scoring, ranking…</div>';
-  try { D = await getDecision(domainSel.value); render(); }
-  catch(e){ $('main').innerHTML = `<div class="empty" style="color:var(--red)">Engine error: ${esc(e.message)}</div>`; }
+// Live: stream the agents reasoning; the Reviewer's self-downgrade appears in
+// real time. When the run completes, render the full decision board.
+function load(){
+  $('main').innerHTML = `<h2>Multi-agent reasoning pipeline <span class="livehint">● live</span></h2>
+    <div class="livehint">A central planner coordinates specialist agents; watch the Reviewer challenge and downgrade the hypothesis in real time.</div>
+    <div class="hyp"><div class="trace" id="livetrace"></div></div>`;
+  const lt = $('livetrace');
+  streamDecision(domainSel.value,
+    step => { lt.insertAdjacentHTML('beforeend', traceStep(step, 0));
+              lt.lastElementChild.scrollIntoView({ block: 'nearest' }); },
+    data => { D = data; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+    () => { $('main').innerHTML = '<div class="empty" style="color:var(--red)">Stream error — is the server running?</div>'; });
 }
 
 function render(){

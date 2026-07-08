@@ -53,15 +53,29 @@ export const debateBlock = deb => {
   </details>`;
 };
 
-// the multi-agent orchestration trace (central planner + specialists + tools)
-export const agentTrace = trace => `<div class="trace stagger">` + trace.map((s, i) => `
-  <div class="tstep" style="--i:${i}">
+// one orchestration step — the same structured schema every seat exposes
+// (Evidence, Confidence, Sources, Contradictions, Assumptions, Failure modes,
+// Artifacts). Reused for the static trace and the live stream. Reviewer steps
+// that carry a downgrade are highlighted (the winning beat).
+export const traceStep = (s, i = 0) => {
+  const isRev = /Reviewer/i.test(s.actor);
+  const dg = isRev && /downgraded|rejected/i.test(s.output);
+  const chip = (label, arr) => (arr && arr.length)
+    ? `<div class="tmeta"><span class="k">${label}:</span> ${arr.slice(0, 3).map(esc).join(' · ')}</div>` : '';
+  return `<div class="tstep reveal ${dg ? 'downgrade' : ''}" style="--i:${i};animation-delay:${i * 40}ms">
     <span class="tnum">${s.step}</span>
     <div class="tbody">
       <div><b>${esc(s.actor)}</b> <span class="pill ${s.actor_type === 'agent' ? 'agent' : 'tool'}">${esc(s.actor_type)}</span>
-        ${s.confidence != null ? `<span class="pill">conf ${s.confidence}</span>` : ''}</div>
+        ${s.confidence != null ? `<span class="pill ${dg ? 'high' : ''}">conf ${s.confidence}</span>` : ''}</div>
       <div class="trole">${esc(s.role)}</div>
       <div class="tout">→ ${esc(s.output)}</div>
       ${(s.evidence && s.evidence.length) ? `<div class="tev">provenance: ${s.evidence.slice(0, 4).map(esc).join(' · ')}</div>` : ''}
+      ${chip('sources', s.sources)}${chip('contradictions', s.contradictions)}
+      ${chip('assumptions', s.assumptions)}${chip('failure modes', s.failure_modes)}
+      ${chip('artifacts', s.artifacts)}
     </div>
-  </div>`).join('') + `</div>`;
+  </div>`;
+};
+
+export const agentTrace = trace =>
+  `<div class="trace">` + trace.map((s, i) => traceStep(s, i)).join('') + `</div>`;
