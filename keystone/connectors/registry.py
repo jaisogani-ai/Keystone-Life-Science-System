@@ -23,6 +23,14 @@ CATALOGUE = [
     "reactome", "clinicaltrials",
 ]
 
+# Tier-1 wired (real API, cache->live->fixture, keyless public endpoints):
+#   openalex, retraction_watch (crossref), cellosaurus, semantic_scholar,
+#   uniprot, clinicaltrials, chembl, reactome, clinvar  (see connectors/clinical.py)
+# Still declared-only (Tier 2, honest _unresolved): pdb-structure-search, pubmed,
+#   geo, sra.
+WIRED = ["openalex", "retraction_watch", "cellosaurus", "semantic_scholar",
+         "uniprot", "clinicaltrials", "chembl", "reactome", "clinvar"]
+
 
 def _unresolved(kind: str, query: str) -> dict:
     return {"resolved": False, "kind": kind, "query": query,

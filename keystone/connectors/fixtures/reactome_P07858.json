@@ -1,0 +1,155 @@
+[
+  {
+    "dbId": 1442490,
+    "displayName": "Collagen degradation",
+    "stId": "R-HSA-1442490",
+    "stIdVersion": "R-HSA-1442490.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Collagen degradation"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/REACT_150401.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2020-03-16",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 1679131,
+    "displayName": "Trafficking and processing of endosomal TLR",
+    "stId": "R-HSA-1679131",
+    "stIdVersion": "R-HSA-1679131.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Trafficking and processing of endosomal TLR"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2019-03-25",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 2022090,
+    "displayName": "Assembly of collagen fibrils and other multimeric structures",
+    "stId": "R-HSA-2022090",
+    "stIdVersion": "R-HSA-2022090.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 3,
+    "name": [
+      "Assembly of collagen fibrils and other multimeric structures"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/REACT_150180.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2017-04-20",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 2132295,
+    "displayName": "MHC class II antigen presentation",
+    "stId": "R-HSA-2132295",
+    "stIdVersion": "R-HSA-2132295.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "MHC class II antigen presentation"
+    ],
+    "releaseDate": "2012-06-12",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/REACT_121399.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2017-04-20",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 6798695,
+    "displayName": "Neutrophil degranulation",
+    "stId": "R-HSA-6798695",
+    "stIdVersion": "R-HSA-6798695.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Neutrophil degranulation"
+    ],
+    "releaseDate": "2016-09-19",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-6798695.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9766229,
+    "displayName": "Degradation of CDH1",
+    "stId": "R-HSA-9766229",
+    "stIdVersion": "R-HSA-9766229.1",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Degradation of CDH1"
+    ],
+    "releaseDate": "2025-06-18",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9958810,
+    "displayName": "SRC activates STAT3 in a quantitative manner, through Cadherin-11 (CDH11), RAC1 and gp130 (IL6ST)",
+    "stId": "R-HSA-9958810",
+    "stIdVersion": "R-HSA-9958810.1",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "SRC activates STAT3 in a quantitative manner, through Cadherin-11 (CDH11), RAC1 and gp130 (IL6ST)"
+    ],
+    "releaseDate": "2026-03-25",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9979719,
+    "displayName": "Processing of antigen in germinal center B cells",
+    "stId": "R-HSA-9979719",
+    "stIdVersion": "R-HSA-9979719.1",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Processing of antigen in germinal center B cells"
+    ],
+    "releaseDate": "2026-06-17",
+    "releaseStatus": "NEW",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  }
+]

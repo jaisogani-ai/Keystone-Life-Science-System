@@ -19,6 +19,7 @@ import sys
 import requests
 
 from keystone.connectors.http_cache import USER_AGENT, save_fixture
+from keystone.connectors.clinical import _slug, _CHEMBL, _EUTILS
 from keystone import gbm_spec, insulin_spec
 
 _SPECS = {"gbm": gbm_spec, "insulin": insulin_spec}
@@ -78,6 +79,53 @@ def capture(spec, s2_limit: int = 120) -> None:
     print("  uniprot target...")
     save_fixture(f"uniprot_{spec.TARGET['uniprot']}.json",
                  _get(f"https://rest.uniprot.org/uniprotkb/{spec.TARGET['uniprot']}.json"))
+
+    _capture_clinical(spec)
+
+
+def _capture_clinical(spec) -> None:
+    """Pin the Tier-1 clinical connectors (ClinicalTrials / ChEMBL / Reactome /
+    ClinVar). Two-hop APIs pin each hop under the exact fixture name the connector
+    will look up offline."""
+    print("  clinicaltrials.gov...")
+    save_fixture(f"trials_{_slug(spec.DISEASE)}.json", _get(
+        "https://clinicaltrials.gov/api/v2/studies",
+        {"query.cond": spec.DISEASE, "pageSize": "8", "countTotal": "true",
+         "format": "json"}))
+
+    print("  chembl drugs...")
+    ts = _get(f"{_CHEMBL}/target/search",
+              {"q": spec.CHEMBL_QUERY, "format": "json"})
+    save_fixture(f"chembl_target_{_slug(spec.CHEMBL_QUERY)}.json", ts)
+    human = [t for t in ts.get("targets", []) if t.get("organism") == "Homo sapiens"]
+    if human:
+        tid = human[0]["target_chembl_id"]
+        mech = _get(f"{_CHEMBL}/mechanism",
+                    {"target_chembl_id": tid, "format": "json"})
+        save_fixture(f"chembl_mechanism_{tid}.json", mech)
+        mol_ids = list(dict.fromkeys(m.get("molecule_chembl_id")
+                                     for m in mech.get("mechanisms", [])
+                                     if m.get("molecule_chembl_id")))[:8]
+        if mol_ids:
+            save_fixture(f"chembl_molecule_{tid}.json", _get(
+                f"{_CHEMBL}/molecule",
+                {"molecule_chembl_id__in": ",".join(mol_ids), "format": "json"}))
+
+    print("  reactome pathways...")
+    save_fixture(f"reactome_{spec.TARGET['uniprot']}.json", _get(
+        f"https://reactome.org/ContentService/data/mapping/UniProt/"
+        f"{spec.TARGET['uniprot']}/pathways", {"species": "9606"}))
+
+    print("  clinvar variants...")
+    es = _get(f"{_EUTILS}/esearch.fcgi",
+              {"db": "clinvar", "term": f"{spec.GENE}[gene]",
+               "retmode": "json", "retmax": "6"})
+    save_fixture(f"clinvar_esearch_{_slug(spec.GENE)}.json", es)
+    ids = es.get("esearchresult", {}).get("idlist", [])
+    if ids:
+        save_fixture(f"clinvar_esummary_{_slug(spec.GENE)}.json", _get(
+            f"{_EUTILS}/esummary.fcgi",
+            {"db": "clinvar", "id": ",".join(ids), "retmode": "json"}))
 
 
 def main() -> int:

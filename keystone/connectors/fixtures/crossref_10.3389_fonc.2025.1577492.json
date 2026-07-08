@@ -1,0 +1,850 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ],
+      "date-time": "2026-06-11T16:51:37Z",
+      "timestamp": 1781196697324,
+      "version": "3.54.1"
+    },
+    "reference-count": 46,
+    "publisher": "Frontiers Media SA",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              7
+            ]
+          ],
+          "date-time": "2026-01-07T00:00:00Z",
+          "timestamp": 1767744000000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "frontiersin.org"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Front. Oncol."
+    ],
+    "abstract": "<jats:sec>\n                    <jats:title>Purpose</jats:title>\n                    <jats:p>Matrix metalloproteinase 9 (MMP-9) has been shown to promote glioblastoma invasion and the spread of brain metastases (BM). However, the current literature on its link to patient survival is inconsistent. This study examines intra-tumoral and sera MMP-9 levels and their correlation with overall survival (OS) in patients with glioblastoma and BM.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Methods</jats:title>\n                    <jats:p>A total of 69 tumor and pre-operative serum samples were collected from the brain tumor bank at the neurosurgery department of Soroka University Medical Center. These samples were obtained from patients who underwent tumor resection between 2015 and 2021. Clinical and imaging data from 27 glioblastoma patients and 30 individuals with brain metastases were analyzed, measuring and comparing their intra-tumoral and sera MMP-9 levels and activity against those of 12 meningioma patients and 23 healthy controls. Survival analyses were performed to examine the relationship between MMP-9 levels, activity, and clinical parameters.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Results</jats:title>\n                    <jats:p>Patients with glioblastoma and BM showed higher median intra-tumoral MMP-9 levels (8 ng/ml and 4 ng/ml, respectively, p&amp;lt;0.001), increased intra-tumoral MMP-9 activity, and pre-operative serum MMP-9 levels (2.8-fold and 1.8-fold higher than controls, respectively, p&amp;lt;0.001). MMP-9 was found within and between glioblastoma cells. Elevated intra-tumoral and serum MMP-9 levels, but not its activity, were associated with reduced overall survival in glioblastoma and BM patients (15.8 versus 8.4 months, p=0.022). Notably, MMP-9 was easily detectable in the patients\u2019 sera.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Conclusions</jats:title>\n                    <jats:p>This study shows that high intra-tumoral and/or sera MMP-9 levels at diagnosis are linked to significantly worse patient OS. Additionally, intra-tumoral and sera MMP-9 may help identify glioblastoma and BM recurrence or progression. Importantly, sera MMP-9 levels can be monitored over time non-invasively, and an increase might indicate tumor progression.</jats:p>\n                  </jats:sec>",
+    "DOI": "10.3389/fonc.2025.1577492",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          7
+        ]
+      ],
+      "date-time": "2026-01-07T06:56:49Z",
+      "timestamp": 1767769009000
+    },
+    "update-policy": "https://doi.org/10.3389/crossmark-policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 1,
+    "title": [
+      "High intra-tumoral and serum matrix metalloproteinase 9 levels are associated with reduced survival of patients with glioblastoma and brain metastases"
+    ],
+    "prefix": "10.3389",
+    "volume": "15",
+    "author": [
+      {
+        "given": "Tehila",
+        "family": "Kaisman-Elbaz",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Snir",
+        "family": "Haddad-Shlaifshtein",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yael",
+        "family": "Eskira",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vladimir",
+        "family": "Merkin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Guy",
+        "family": "Dumanis",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sivan",
+        "family": "Turiel",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Maya",
+        "family": "Atar-Vardi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Romi",
+        "family": "Bari",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Adi",
+        "family": "Alt",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Tali",
+        "family": "Zamed",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Noa",
+        "family": "Rotem-Dai",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Konstantin",
+        "family": "Lavrenkov",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yarden",
+        "family": "Kezerle",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Victor",
+        "family": "Dyomin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ronit",
+        "family": "Razon",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Moumita",
+        "family": "Chakraborty",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Hila",
+        "family": "Asraf",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Michal",
+        "family": "Hershfinkel",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Israel",
+        "family": "Melamed",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "1965",
+    "published-online": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          7
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "B1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/neuonc/nou147",
+        "article-title": "Targeting adaptive glioblastoma: an overview of proliferation and invasion",
+        "volume": "16",
+        "author": "Xie",
+        "year": "2014",
+        "journal-title": "Neuro-oncology"
+      },
+      {
+        "key": "B2",
+        "doi-asserted-by": "publisher",
+        "first-page": "e0145393",
+        "DOI": "10.1371/journal.pone.0145393",
+        "article-title": "Serum-induced differentiation of glioblastoma neurospheres leads to enhanced migration/invasion capacity that is associated with increased MMP9",
+        "volume": "10",
+        "author": "Joseph",
+        "year": "2015",
+        "journal-title": "PloS One"
+      },
+      {
+        "key": "B3",
+        "doi-asserted-by": "publisher",
+        "first-page": "12773",
+        "DOI": "10.3390/ijms252312773",
+        "article-title": "Is fluoride blameless?\u2014The influence of fluorine compounds on the invasiveness of the human glioma-like cell line U-87",
+        "volume": "25",
+        "author": "\u017bwiere\u0142\u0142o",
+        "year": "2024",
+        "journal-title": "Int J Mol Sci"
+      },
+      {
+        "key": "B4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/35036374",
+        "article-title": "Matrix metalloproteinase-9 triggers the angiogenic switch during carcinogenesis",
+        "volume": "2",
+        "author": "Bergers",
+        "year": "2000",
+        "journal-title": "Nat Cell Biol"
+      },
+      {
+        "key": "B5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s13277-013-0842-8",
+        "article-title": "Matrix metalloproteinases in cancer: their value as diagnostic and prognostic markers and therapeutic targets",
+        "volume": "34",
+        "author": "Hadler-Olsen",
+        "year": "2013",
+        "journal-title": "Tumour Biol"
+      },
+      {
+        "key": "B6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s11060-016-2297-4",
+        "article-title": "Evaluation of matrix metalloproteinase type IV-collagenases in serum of patients with tumors of the central nervous system",
+        "volume": "131",
+        "author": "Ricci",
+        "year": "2017",
+        "journal-title": "J Neuro-oncology"
+      },
+      {
+        "key": "B7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s00401-015-1399-y",
+        "article-title": "Liquid biopsies in patients with diffuse glioma",
+        "volume": "129",
+        "author": "Best",
+        "year": "2015",
+        "journal-title": "Acta neuropathologica"
+      },
+      {
+        "key": "B8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s11060-013-1144-0",
+        "article-title": "Blood-based biomarkers for Malignant gliomas",
+        "volume": "113",
+        "author": "Holdhoff",
+        "year": "2013",
+        "journal-title": "J Neurooncol"
+      },
+      {
+        "key": "B9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1097/PPO.0000000000000541",
+        "article-title": "Circulating biomarkers in glioblastoma: ready for prime time",
+        "volume": "27",
+        "author": "Mathios",
+        "year": "2021",
+        "journal-title": "Cancer J"
+      },
+      {
+        "key": "B10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1158/1078-0432.CCR-05-0774",
+        "article-title": "Measurement of matrix metalloproteinases in serum of patients with melanoma: snarled in technical pitfalls",
+        "volume": "11",
+        "author": "Zucker",
+        "year": "2005",
+        "journal-title": "Clin Cancer Res"
+      },
+      {
+        "key": "B11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1200/JCO.2002.20.5.1383",
+        "article-title": "Phase II trial of temozolomide plus the matrix metalloproteinase inhibitor, marimastat, in recurrent and progressive glioblastoma multiforme",
+        "volume": "20",
+        "author": "Groves",
+        "year": "2002",
+        "journal-title": "J Clin Oncol"
+      },
+      {
+        "key": "B12",
+        "doi-asserted-by": "publisher",
+        "first-page": "1",
+        "DOI": "10.1186/s40478-021-01305-4",
+        "article-title": "Plasmatic MMP9 released from tumor-infiltrating neutrophils is predictive for bevacizumab efficacy in glioblastoma patients: an AVAglio ancillary study",
+        "volume": "10",
+        "author": "Jiguet-Jiglaire",
+        "year": "2022",
+        "journal-title": "Acta Neuropathol Commun"
+      },
+      {
+        "key": "B13",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3760/cma.j.issn.0366-6999.20131765",
+        "article-title": "Plasma levels of tissue inhibitor of matrix metalloproteinase-1 correlate with diagnosis and prognosis of glioma patients",
+        "volume": "126",
+        "author": "Yi",
+        "year": "2013",
+        "journal-title": "Chin Med J"
+      },
+      {
+        "key": "B14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1158/1078-0432.CCR-06-0181",
+        "article-title": "YKL-40 and matrix metalloproteinase-9 as potential serum biomarkers for patients with high-grade gliomas",
+        "volume": "12",
+        "author": "Hormigo",
+        "year": "2006",
+        "journal-title": "Clin Cancer Res"
+      },
+      {
+        "key": "B15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/neuonc/not226",
+        "article-title": "Association of matrix metalloproteinase 2 plasma level with response and survival in patients treated with bevacizumab for recurrent high-grade glioma",
+        "volume": "16",
+        "author": "Tabouret",
+        "year": "2014",
+        "journal-title": "Neuro-oncology"
+      },
+      {
+        "key": "B16",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s11060-011-0628-z",
+        "article-title": "Longitudinal prospective study of matrix metalloproteinase-9 as a serum marker in gliomas",
+        "volume": "105",
+        "author": "Iwamoto",
+        "year": "2011",
+        "journal-title": "J neuro-oncology"
+      },
+      {
+        "key": "B17",
+        "doi-asserted-by": "publisher",
+        "first-page": "99",
+        "DOI": "10.1093/neuonc/noq170",
+        "article-title": "Serum angiogenic profile of patients with glioblastoma identifies distinct tumor subtypes and shows that TIMP-1 is a prognostic factor",
+        "volume": "13",
+        "author": "Crocker",
+        "year": "2010",
+        "journal-title": "Neuro-oncology"
+      },
+      {
+        "key": "B18",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.18632/oncotarget.19622",
+        "article-title": "EGF stimulates glioblastoma metastasis by induction of matrix metalloproteinase-9 in an EGFR-dependent mechanism",
+        "volume": "8",
+        "author": "Chen",
+        "year": "2017",
+        "journal-title": "Oncotarget"
+      },
+      {
+        "key": "B19",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.crad.2017.10.013",
+        "article-title": "Regional specificity of matrix metalloproteinase-9 expression in the brain: voxel-level mapping in primary glioblastomas",
+        "volume": "73",
+        "author": "Fan",
+        "year": "2018",
+        "journal-title": "Clin Radiol"
+      },
+      {
+        "key": "B20",
+        "doi-asserted-by": "publisher",
+        "first-page": "106537",
+        "DOI": "10.1016/j.clineuro.2021.106537",
+        "article-title": "Perifocal edema volume is not associated with immunohistochemical features reflecting proliferation potential, microvessel density, neoangiogenesis and invasiveness in brain metastasis",
+        "volume": "202",
+        "author": "Meyer",
+        "year": "2021",
+        "journal-title": "Clin Neurol Neurosurg"
+      },
+      {
+        "key": "B21",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/jcu.23402",
+        "article-title": "Diagnostic performance of perfusion-weighted imaging combined with serum MMP-2 and -9 levels in tumor recurrence after postoperative concomitant chemoradiotherapy of glioblastoma",
+        "volume": "51",
+        "author": "Liu",
+        "year": "2023",
+        "journal-title": "J Clin Ultrasound"
+      },
+      {
+        "key": "B22",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s11060-017-2385-0",
+        "article-title": "Relationship between magnetic resonance imaging characteristics and plasmatic levels of MMP2 and MMP9 in patients with recurrent high-grade gliomas treated by Bevacizumab and Irinotecan",
+        "volume": "132",
+        "author": "Farina",
+        "year": "2017",
+        "journal-title": "J Neurooncol"
+      },
+      {
+        "key": "B23",
+        "doi-asserted-by": "publisher",
+        "first-page": "13043",
+        "DOI": "10.3390/ijms252313043",
+        "article-title": "Clinicopathological parameters and immunohistochemical profiles in correlation with MRI characteristics in glioblastomas",
+        "volume": "25",
+        "author": "Sipos",
+        "year": "2024",
+        "journal-title": "Int J Mol Sci"
+      },
+      {
+        "key": "B24",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3892/ol.2011.384",
+        "article-title": "Expression of VEGF and MMP-9 and MRI imaging changes in cerebral glioma",
+        "volume": "2",
+        "author": "Liu",
+        "year": "2011",
+        "journal-title": "Oncol Lett"
+      },
+      {
+        "key": "B25",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/1097-0215(200002)9999:9999<::AID-IJC1135>3.0.CO;2-M",
+        "article-title": "Quantification of matrix metalloproteinase activity in plasma of patients enrolled in a BAY 12\u20139566 phase I study",
+        "volume": "91",
+        "author": "Duivenvoorden",
+        "year": "2001",
+        "journal-title": "Int J Cancer"
+      },
+      {
+        "key": "B26",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/0271678X16655551",
+        "article-title": "Matrix metalloproteinases in the brain and blood-brain barrier: Versatile breakers and makers",
+        "volume": "36",
+        "author": "Rempe",
+        "year": "2016",
+        "journal-title": "J Cereb Blood Flow Metab"
+      },
+      {
+        "key": "B27",
+        "article-title": "Differential expression of membrane-type matrix metalloproteinase and its correlation with gelatinase A activation in human Malignant brain tumors in vivo and in vitro",
+        "volume": "56",
+        "author": "Yamamoto",
+        "year": "1996",
+        "journal-title": "Cancer Res"
+      },
+      {
+        "key": "B28",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/sj.onc.1207616",
+        "article-title": "Inhibition of cathepsin B and MMP-9 gene expression in glioblastoma cell line via RNA interference reduces tumor cell invasion, tumor growth and angiogenesis",
+        "volume": "23",
+        "author": "Lakka",
+        "year": "2004",
+        "journal-title": "Oncogene"
+      },
+      {
+        "key": "B29",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/jcp.21754",
+        "article-title": "Cell death induced by zinc and cadmium is mediated by clusterin in cultured mouse seminiferous tubules",
+        "volume": "220",
+        "author": "Kaisman-Elbaz",
+        "year": "2009",
+        "journal-title": "J Cell Physiol"
+      },
+      {
+        "key": "B30",
+        "doi-asserted-by": "publisher",
+        "first-page": "18531",
+        "DOI": "10.18632/oncotarget.7612",
+        "article-title": "MMP2 and MMP9 serum levels are associated with favorable outcome in patients with inflammatory breast cancer treated with bevacizumab-based neoadjuvant chemotherapy in the BEVERLY-2 study",
+        "volume": "7",
+        "author": "Tabouret",
+        "year": "2016",
+        "journal-title": "Oncotarget"
+      },
+      {
+        "key": "B31",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/ar.24188",
+        "article-title": "Metalloproteinases and their roles in human cancer",
+        "volume": "303",
+        "author": "Roy",
+        "year": "2020",
+        "journal-title": "Anatomical Rec"
+      },
+      {
+        "key": "B32",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/ijc.23337",
+        "article-title": "Prognostic significance of MMP-9 and TIMP-1 serum and tissue expression in breast cancer",
+        "volume": "122",
+        "author": "Wu",
+        "year": "2008",
+        "journal-title": "Int J Cancer"
+      },
+      {
+        "key": "B33",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.7314/APJCP.2012.13.6.2903",
+        "article-title": "Matrix metalloproteinase-9 as a prognostic factor in gastric cancer: a meta-analysis",
+        "volume": "13",
+        "author": "Zhang",
+        "year": "2012",
+        "journal-title": "Asian Pacific J Cancer Prev"
+      },
+      {
+        "key": "B34",
+        "doi-asserted-by": "publisher",
+        "first-page": "18458",
+        "DOI": "10.18632/oncotarget.7607",
+        "article-title": "Prognostic impact of serum and tissue MMP-9 in non-small cell lung cancer: a systematic review and meta-analysis",
+        "volume": "7",
+        "author": "Gong",
+        "year": "2016",
+        "journal-title": "Oncotarget"
+      },
+      {
+        "key": "B35",
+        "doi-asserted-by": "publisher",
+        "first-page": "e0151815",
+        "DOI": "10.1371/journal.pone.0151815",
+        "article-title": "Comparative analysis of matrix metalloproteinase family members reveals that MMP9 predicts survival and response to temozolomide in patients with primary glioblastoma",
+        "volume": "11",
+        "author": "Li",
+        "year": "2016",
+        "journal-title": "PloS One"
+      },
+      {
+        "key": "B36",
+        "doi-asserted-by": "publisher",
+        "first-page": "15065",
+        "DOI": "10.1038/s41598-024-66105-x",
+        "article-title": "Matrix metalloproteinase 9 expression and glioblastoma survival prediction using machine learning on digital pathological images",
+        "volume": "14",
+        "author": "Wu",
+        "year": "2024",
+        "journal-title": "Sci Rep"
+      },
+      {
+        "key": "B37",
+        "doi-asserted-by": "publisher",
+        "first-page": "14341",
+        "DOI": "10.1038/s41598-024-65398-2",
+        "article-title": "Temozolomide promotes matrix metalloproteinase 9 expression through p38 MAPK and JNK pathways in glioblastoma cells",
+        "volume": "14",
+        "author": "Duong Thanh",
+        "year": "2024",
+        "journal-title": "Sci Rep"
+      },
+      {
+        "key": "B38",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1158/1078-0432.CCR-07-1253",
+        "article-title": "Urinary biomarkers predict brain tumor presence and response to therapy",
+        "volume": "14",
+        "author": "Smith",
+        "year": "2008",
+        "journal-title": "Clin Cancer Res"
+      },
+      {
+        "key": "B39",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/cancers15030712",
+        "article-title": "MMP-9 as prognostic marker for brain tumours: A comparative study on serum-derived small extracellular vesicles",
+        "volume": "15",
+        "author": "Dobra",
+        "year": "2023",
+        "journal-title": "Cancers (Basel)"
+      },
+      {
+        "key": "B40",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/ijms21165809",
+        "article-title": "Glioblastoma: is there any blood biomarker with true clinical relevance",
+        "volume": "21",
+        "author": "Linhares",
+        "year": "2020",
+        "journal-title": "Int J Mol Sci"
+      },
+      {
+        "key": "B41",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S1470-2045(24)00190-6",
+        "article-title": "A brave new framework for glioma drug development",
+        "volume": "25",
+        "author": "Hotchkiss",
+        "year": "2024",
+        "journal-title": "Lancet Oncol"
+      },
+      {
+        "key": "B42",
+        "doi-asserted-by": "publisher",
+        "first-page": "492",
+        "DOI": "10.1111/j.1440-1789.2011.01279.x",
+        "article-title": "Matrix metalloproteinase-9 expression in the nuclear compartment of neurons and glial cells in aging and stroke",
+        "volume": "32",
+        "author": "Pirici",
+        "year": "2012",
+        "journal-title": "Neuropathology"
+      },
+      {
+        "key": "B43",
+        "doi-asserted-by": "publisher",
+        "first-page": "162",
+        "DOI": "10.1186/s40478-024-01861-5",
+        "article-title": "Metabolic remodeling in glioblastoma: a longitudinal multi-omics study",
+        "volume": "12",
+        "author": "Fontanilles",
+        "year": "2024",
+        "journal-title": "Acta Neuropathol Commun"
+      },
+      {
+        "key": "B44",
+        "doi-asserted-by": "publisher",
+        "first-page": "109369",
+        "DOI": "10.1016/j.biopha.2019.109369",
+        "article-title": "Increased expression of MMP-2 and MMP-9 indicates poor prognosis in glioma recurrence",
+        "volume": "118",
+        "author": "Zhou",
+        "year": "2019",
+        "journal-title": "Biomedicine Pharmacotherapy"
+      },
+      {
+        "key": "B45",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1186/s40478-021-01156-z",
+        "article-title": "Urokinase plasminogen activator, uPAR, MMP-2, and MMP-9 in the C6-glioblastoma rat model",
+        "volume": "26",
+        "author": "Schuler",
+        "year": "2012",
+        "journal-title": "Vivo"
+      },
+      {
+        "key": "B46",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/cancers15082196",
+        "article-title": "High VEGFA expression is associated with improved progression-free survival after bevacizumab treatment in recurrent glioblastoma",
+        "volume": "15",
+        "author": "Alves",
+        "year": "2023",
+        "journal-title": "Cancers (Basel)"
+      }
+    ],
+    "container-title": [
+      "Frontiers in Oncology"
+    ],
+    "original-title": [],
+    "link": [
+      {
+        "URL": "https://www.frontiersin.org/articles/10.3389/fonc.2025.1577492/full",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          7
+        ]
+      ],
+      "date-time": "2026-01-07T06:56:50Z",
+      "timestamp": 1767769010000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.frontiersin.org/articles/10.3389/fonc.2025.1577492/full"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          7
+        ]
+      ]
+    },
+    "references-count": 46,
+    "alternative-id": [
+      "10.3389/fonc.2025.1577492"
+    ],
+    "URL": "https://doi.org/10.3389/fonc.2025.1577492",
+    "relation": {},
+    "ISSN": [
+      "2234-943X"
+    ],
+    "issn-type": [
+      {
+        "value": "2234-943X",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          7
+        ]
+      ]
+    },
+    "article-number": "1577492"
+  }
+}

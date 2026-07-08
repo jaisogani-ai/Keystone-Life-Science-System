@@ -1,0 +1,30 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "325",
+    "retmax": "6",
+    "retstart": "0",
+    "idlist": [
+      "4838848",
+      "4755349",
+      "4682730",
+      "4682718",
+      "4682715",
+      "4657554"
+    ],
+    "translationset": [],
+    "translationstack": [
+      {
+        "term": "CTSB[gene]",
+        "field": "gene",
+        "count": "325",
+        "explode": "N"
+      },
+      "GROUP"
+    ],
+    "querytranslation": "CTSB[gene]"
+  }
+}

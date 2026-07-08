@@ -61,5 +61,7 @@ def run(question: str, graph: EvidenceGraph, reasoner):
         question=question, reasoner_version=getattr(reasoner, "version", "?"),
         graph_hash=graph.snapshot_hash(), plan=plan,
         contradictions=contradictions, timeline=_build_timeline(graph),
-        protocol_warnings=warnings, sources=sources)
+        protocol_warnings=warnings, sources=sources,
+        hypothesis_statement=hyp.statement,
+        hypothesis_grounding=list(hyp.mechanism_path))
     return ledger, hyp, review

@@ -16,6 +16,11 @@ for one cited 8 months after the retraction — inexcusable.
 """
 from __future__ import annotations
 
+# Disease-workspace anchors for the Tier-1 clinical connectors.
+DISEASE = "glioblastoma"          # -> ClinicalTrials.gov
+GENE = "CTSB"                     # -> ClinVar
+CHEMBL_QUERY = "cathepsin B"     # -> ChEMBL (honestly returns 0 drugs: undrugged)
+
 # The retracted foundation.
 FOUNDATION = {
     "node_id": "N_foundation",

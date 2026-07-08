@@ -1,0 +1,531 @@
+{
+  "mechanisms": [
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 531,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "label/2015/022472s006s008lbl.pdf",
+          "ref_type": "FDA",
+          "ref_url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/022472s006s008lbl.pdf"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201540",
+      "parent_molecule_chembl_id": "CHEMBL1201540",
+      "record_id": 3130887,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 532,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "label/2015/022472s006s008lbl.pdf",
+          "ref_type": "FDA",
+          "ref_url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/022472s006s008lbl.pdf"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201629",
+      "parent_molecule_chembl_id": "CHEMBL1201629",
+      "record_id": 2793535,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 533,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "label/2015/022472s006s008lbl.pdf",
+          "ref_type": "FDA",
+          "ref_url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/022472s006s008lbl.pdf"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201644",
+      "parent_molecule_chembl_id": "CHEMBL1201644",
+      "record_id": 3130889,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 537,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "setid=457531f0-9331-47fe-90b5-b31f284044dc",
+          "ref_type": "DailyMed",
+          "ref_url": "http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=457531f0-9331-47fe-90b5-b31f284044dc"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201631",
+      "parent_molecule_chembl_id": "CHEMBL1201631",
+      "record_id": 1696747,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 542,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "label/2015/022472s006s008lbl.pdf",
+          "ref_type": "FDA",
+          "ref_url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/022472s006s008lbl.pdf"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201630",
+      "parent_molecule_chembl_id": "CHEMBL1201630",
+      "record_id": 2792870,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 543,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "label/2015/022472s006s008lbl.pdf",
+          "ref_type": "FDA",
+          "ref_url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/022472s006s008lbl.pdf"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201545",
+      "parent_molecule_chembl_id": "CHEMBL1201545",
+      "record_id": 3130924,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 545,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "setid=c8ecbd7a-0e22-4fc7-a503-faa58c1b6f3f",
+          "ref_type": "DailyMed",
+          "ref_url": "http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c8ecbd7a-0e22-4fc7-a503-faa58c1b6f3f"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201611",
+      "parent_molecule_chembl_id": "CHEMBL1201611",
+      "record_id": 3131752,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 547,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "setid=c8ecbd7a-0e22-4fc7-a503-faa58c1b6f3f",
+          "ref_type": "DailyMed",
+          "ref_url": "http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c8ecbd7a-0e22-4fc7-a503-faa58c1b6f3f"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201538",
+      "parent_molecule_chembl_id": "CHEMBL1201538",
+      "record_id": 1696740,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 548,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "setid=e7af6a7a-8046-4fb4-9979-4ec4230b23aa",
+          "ref_type": "DailyMed",
+          "ref_url": "http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e7af6a7a-8046-4fb4-9979-4ec4230b23aa"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201613",
+      "parent_molecule_chembl_id": "CHEMBL1201613",
+      "record_id": 1696819,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 550,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "setid=b861fdd9-e134-436e-8c0c-a60dd0006dd3",
+          "ref_type": "DailyMed",
+          "ref_url": "http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b861fdd9-e134-436e-8c0c-a60dd0006dd3"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201497",
+      "parent_molecule_chembl_id": "CHEMBL1201497",
+      "record_id": 1696744,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 551,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "label/2015/022472s006s008lbl.pdf",
+          "ref_type": "FDA",
+          "ref_url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/022472s006s008lbl.pdf"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201539",
+      "parent_molecule_chembl_id": "CHEMBL1201539",
+      "record_id": 3130922,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 556,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "label/2015/022472s006s008lbl.pdf",
+          "ref_type": "FDA",
+          "ref_url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2015/022472s006s008lbl.pdf"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201627",
+      "parent_molecule_chembl_id": "CHEMBL1201627",
+      "record_id": 3130888,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 559,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "setid=3a1e73a2-3009-40d0-876c-b4cb2be56fc5",
+          "ref_type": "DailyMed",
+          "ref_url": "http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3a1e73a2-3009-40d0-876c-b4cb2be56fc5"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201496",
+      "parent_molecule_chembl_id": "CHEMBL1201496",
+      "record_id": 1697254,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 560,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "setid=3a1e73a2-3009-40d0-876c-b4cb2be56fc5",
+          "ref_type": "DailyMed",
+          "ref_url": "http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3a1e73a2-3009-40d0-876c-b4cb2be56fc5"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1201664",
+      "parent_molecule_chembl_id": "CHEMBL1201664",
+      "record_id": 3130921,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 561,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "setid=2b8d9730-686b-444b-9941-7b5877255924",
+          "ref_type": "DailyMed",
+          "ref_url": "http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2b8d9730-686b-444b-9941-7b5877255924"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL2104391",
+      "parent_molecule_chembl_id": "CHEMBL2104391",
+      "record_id": 1700814,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 4,
+      "mec_id": 2409,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "setid=456c5e87-3dfd-46fa-8ac0-c6128d4c97c6",
+          "ref_type": "DailyMed",
+          "ref_url": "http://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=456c5e87-3dfd-46fa-8ac0-c6128d4c97c6"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL2107869",
+      "parent_molecule_chembl_id": "CHEMBL2107869",
+      "record_id": 1695958,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "INHIBITOR",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 2,
+      "mec_id": 4675,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor inhibitor",
+      "mechanism_refs": [
+        {
+          "ref_id": "19996272",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/19996272"
+        },
+        {
+          "ref_id": "21875414",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/21875414"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL575448",
+      "parent_molecule_chembl_id": "CHEMBL575448",
+      "record_id": 2473713,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "INHIBITOR",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 2,
+      "mec_id": 4750,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor inhibitor",
+      "mechanism_refs": [
+        {
+          "ref_id": "10.1158/1538-7445.AM2013-920",
+          "ref_type": "DOI",
+          "ref_url": "http://cancerres.aacrjournals.org/content/73/8_Supplement/920"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL5283463",
+      "parent_molecule_chembl_id": "CHEMBL5315324",
+      "record_id": 2473153,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "INHIBITOR",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 3,
+      "mec_id": 5310,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor inhibitor",
+      "mechanism_refs": [
+        {
+          "ref_id": "17671083",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/17671083"
+        },
+        {
+          "ref_id": "21425998",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/21425998"
+        },
+        {
+          "ref_id": "25208878",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/25208878"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL1091644",
+      "parent_molecule_chembl_id": "CHEMBL1091644",
+      "record_id": 1702601,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "AGONIST",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 3,
+      "mec_id": 5566,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Insulin receptor agonist",
+      "mechanism_refs": [
+        {
+          "ref_id": "26988411",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/26988411"
+        },
+        {
+          "ref_id": "27723227",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/27723227"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL2108569",
+      "parent_molecule_chembl_id": "CHEMBL2108569",
+      "record_id": 1697417,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL1981",
+      "variant_sequence": null
+    }
+  ],
+  "page_meta": {
+    "limit": 20,
+    "next": "/chembl/api/data/mechanism.json?limit=20&offset=20&target_chembl_id=CHEMBL1981",
+    "offset": 0,
+    "previous": null,
+    "total_count": 30
+  }
+}

@@ -236,6 +236,10 @@ class Ledger:
     sources: list = field(default_factory=list)
     human_decision: Optional[str] = None
     human_signoff: Optional[str] = None
+    # Additive (Tier-0 extend-by-addition): lets ledger_index answer "has this
+    # hypothesis, or one grounded in the same evidence, been tried before?"
+    hypothesis_statement: Optional[str] = None
+    hypothesis_grounding: list = field(default_factory=list)
 
     def to_json(self) -> str:
         return json.dumps(asdict(self), indent=2, default=str)

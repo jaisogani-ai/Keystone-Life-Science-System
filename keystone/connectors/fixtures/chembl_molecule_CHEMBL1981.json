@@ -1,0 +1,999 @@
+{
+  "molecules": [
+    {
+      "atc_classifications": [
+        "A10AB04",
+        "A10AC04"
+      ],
+      "availability_type": 1,
+      "biotherapeutic": {
+        "biocomponents": [
+          {
+            "component_id": 29818,
+            "component_type": "Protein",
+            "description": "Light chain",
+            "organism": null,
+            "sequence": "GIVEQCCTSICSLYQLENYCN",
+            "tax_id": null
+          },
+          {
+            "component_id": 29817,
+            "component_type": "Protein",
+            "description": "Heavy chain",
+            "organism": null,
+            "sequence": "FVNQHLCGSHLVEALYLVCGERGFFYTKPT",
+            "tax_id": null
+          }
+        ],
+        "description": "Insulin lispro recombinant",
+        "helm_notation": null,
+        "molecule_chembl_id": "CHEMBL1201538"
+      },
+      "black_box_warning": 0,
+      "chemical_probe": 0,
+      "chirality": 1,
+      "cross_references": [
+        {
+          "xref_id": "human/EPAR/liprolog",
+          "xref_name": "liprolog",
+          "xref_src": "EMA"
+        },
+        {
+          "xref_id": "insulin%20lispro",
+          "xref_name": "insulin lispro",
+          "xref_src": "DailyMed"
+        },
+        {
+          "xref_id": "human/EPAR/insulin-lispro-sanofi",
+          "xref_name": "insulin-lispro-sanofi",
+          "xref_src": "EMA"
+        },
+        {
+          "xref_id": "insulin%20lispro-aabc",
+          "xref_name": "insulin lispro-aabc",
+          "xref_src": "DailyMed"
+        },
+        {
+          "xref_id": "human/EPAR/lyumjev-previously-liumjev",
+          "xref_name": "lyumjev-previously-liumjev",
+          "xref_src": "EMA"
+        },
+        {
+          "xref_id": "human/EPAR/humalog",
+          "xref_name": "humalog",
+          "xref_src": "EMA"
+        },
+        {
+          "xref_id": "insulin%20lispro%20recombinant",
+          "xref_name": "insulin lispro recombinant",
+          "xref_src": "DailyMed"
+        },
+        {
+          "xref_id": "human/EPAR/liprolog-0",
+          "xref_name": "liprolog-0",
+          "xref_src": "EMA"
+        }
+      ],
+      "dosed_ingredient": true,
+      "first_approval": 1996,
+      "first_in_class": 0,
+      "helm_notation": null,
+      "inorganic_flag": 0,
+      "max_phase": "4.0",
+      "molecule_chembl_id": "CHEMBL1201538",
+      "molecule_hierarchy": {
+        "active_chembl_id": "CHEMBL1201538",
+        "molecule_chembl_id": "CHEMBL1201538",
+        "parent_chembl_id": "CHEMBL1201538"
+      },
+      "molecule_properties": null,
+      "molecule_structures": null,
+      "molecule_synonyms": [
+        {
+          "molecule_synonym": "Humalog",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "HUMALOG"
+        },
+        {
+          "molecule_synonym": "Ins humalog",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "INS HUMALOG"
+        },
+        {
+          "molecule_synonym": "Insulina lispro",
+          "syn_type": "INN_SPANISH",
+          "synonyms": "INSULINA LISPRO"
+        },
+        {
+          "molecule_synonym": "Insuline lispro",
+          "syn_type": "INN_FRENCH",
+          "synonyms": "INSULINE LISPRO"
+        },
+        {
+          "molecule_synonym": "Insulin lispro",
+          "syn_type": "ATC",
+          "synonyms": "INSULIN LISPRO"
+        },
+        {
+          "molecule_synonym": "Insulin lispro",
+          "syn_type": "BAN",
+          "synonyms": "INSULIN LISPRO"
+        },
+        {
+          "molecule_synonym": "Insulin lispro",
+          "syn_type": "BNF",
+          "synonyms": "INSULIN LISPRO"
+        },
+        {
+          "molecule_synonym": "Insulin lispro",
+          "syn_type": "EMA",
+          "synonyms": "INSULIN LISPRO"
+        },
+        {
+          "molecule_synonym": "Insulin lispro",
+          "syn_type": "INN",
+          "synonyms": "INSULIN LISPRO"
+        },
+        {
+          "molecule_synonym": "Insulin lispro",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN LISPRO"
+        },
+        {
+          "molecule_synonym": "Insulin lispro",
+          "syn_type": "USAN",
+          "synonyms": "INSULIN LISPRO"
+        },
+        {
+          "molecule_synonym": "Insulin lispro",
+          "syn_type": "USP",
+          "synonyms": "INSULIN LISPRO"
+        },
+        {
+          "molecule_synonym": "Insulin lispro sanofi",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "INSULIN LISPRO SANOFI"
+        },
+        {
+          "molecule_synonym": "Liprolog",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "LIPROLOG"
+        },
+        {
+          "molecule_synonym": "Lyumjev",
+          "syn_type": "OTHER",
+          "synonyms": "LYUMJEV"
+        },
+        {
+          "molecule_synonym": "Lyumjev (previously liumjev)",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "LYUMJEV (PREVIOUSLY LIUMJEV)"
+        }
+      ],
+      "molecule_type": "Protein",
+      "natural_product": 0,
+      "oral": false,
+      "orphan": 0,
+      "parenteral": true,
+      "polymer_flag": 0,
+      "pref_name": "INSULIN LISPRO",
+      "prodrug": 0,
+      "structure_type": "SEQ",
+      "therapeutic_flag": true,
+      "topical": false,
+      "usan_stem": null,
+      "usan_stem_definition": null,
+      "usan_substem": null,
+      "usan_year": 1994,
+      "veterinary": 0,
+      "withdrawn_flag": false
+    },
+    {
+      "atc_classifications": [],
+      "availability_type": 0,
+      "biotherapeutic": {
+        "biocomponents": [],
+        "description": "Bovine insulin isophane suspension",
+        "helm_notation": null,
+        "molecule_chembl_id": "CHEMBL1201545"
+      },
+      "black_box_warning": 0,
+      "chemical_probe": 0,
+      "chirality": 1,
+      "cross_references": [],
+      "dosed_ingredient": true,
+      "first_approval": 1982,
+      "first_in_class": 0,
+      "helm_notation": null,
+      "inorganic_flag": 0,
+      "max_phase": "4.0",
+      "molecule_chembl_id": "CHEMBL1201545",
+      "molecule_hierarchy": {
+        "active_chembl_id": "CHEMBL1201545",
+        "molecule_chembl_id": "CHEMBL1201545",
+        "parent_chembl_id": "CHEMBL1201545"
+      },
+      "molecule_properties": null,
+      "molecule_structures": null,
+      "molecule_synonyms": [
+        {
+          "molecule_synonym": "Insulin susp isophane beef",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN SUSP ISOPHANE BEEF"
+        }
+      ],
+      "molecule_type": "Protein",
+      "natural_product": 0,
+      "oral": false,
+      "orphan": 0,
+      "parenteral": true,
+      "polymer_flag": 0,
+      "pref_name": "INSULIN SUSP ISOPHANE BEEF",
+      "prodrug": 0,
+      "structure_type": "SEQ",
+      "therapeutic_flag": true,
+      "topical": false,
+      "usan_stem": null,
+      "usan_stem_definition": null,
+      "usan_substem": null,
+      "usan_year": null,
+      "veterinary": 0,
+      "withdrawn_flag": false
+    },
+    {
+      "atc_classifications": [],
+      "availability_type": 1,
+      "biotherapeutic": {
+        "biocomponents": [
+          {
+            "component_id": 29817,
+            "component_type": "Protein",
+            "description": "Heavy chain",
+            "organism": null,
+            "sequence": "FVNQHLCGSHLVEALYLVCGERGFFYTKPT",
+            "tax_id": null
+          },
+          {
+            "component_id": 29818,
+            "component_type": "Protein",
+            "description": "Light chain",
+            "organism": null,
+            "sequence": "GIVEQCCTSICSLYQLENYCN",
+            "tax_id": null
+          }
+        ],
+        "description": "Insulin lispro protamine recombinant",
+        "helm_notation": null,
+        "molecule_chembl_id": "CHEMBL1201611"
+      },
+      "black_box_warning": 0,
+      "chemical_probe": 0,
+      "chirality": 1,
+      "cross_references": [],
+      "dosed_ingredient": true,
+      "first_approval": 1999,
+      "first_in_class": 0,
+      "helm_notation": null,
+      "inorganic_flag": 0,
+      "max_phase": "4.0",
+      "molecule_chembl_id": "CHEMBL1201611",
+      "molecule_hierarchy": {
+        "active_chembl_id": "CHEMBL1201611",
+        "molecule_chembl_id": "CHEMBL1201611",
+        "parent_chembl_id": "CHEMBL1201611"
+      },
+      "molecule_properties": null,
+      "molecule_structures": null,
+      "molecule_synonyms": [
+        {
+          "molecule_synonym": "Insulin lispro protamine recombinant",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN LISPRO PROTAMINE RECOMBINANT"
+        }
+      ],
+      "molecule_type": "Protein",
+      "natural_product": 0,
+      "oral": false,
+      "orphan": 0,
+      "parenteral": true,
+      "polymer_flag": 0,
+      "pref_name": "INSULIN LISPRO PROTAMINE RECOMBINANT",
+      "prodrug": 0,
+      "structure_type": "SEQ",
+      "therapeutic_flag": true,
+      "topical": false,
+      "usan_stem": null,
+      "usan_stem_definition": null,
+      "usan_substem": null,
+      "usan_year": null,
+      "veterinary": 0,
+      "withdrawn_flag": false
+    },
+    {
+      "atc_classifications": [
+        "A10AD02",
+        "A10AC02",
+        "A10AB02",
+        "A10AE02"
+      ],
+      "availability_type": 0,
+      "biotherapeutic": {
+        "biocomponents": [
+          {
+            "component_id": 29282,
+            "component_type": "Protein",
+            "description": "Light chain",
+            "organism": null,
+            "sequence": "GIVEQCCASVCSLYQLENYCN",
+            "tax_id": null
+          },
+          {
+            "component_id": 29283,
+            "component_type": "Protein",
+            "description": "Heavy chain",
+            "organism": null,
+            "sequence": "FVNQHLCGSHLVEALYLVCGERGFFYTPKA",
+            "tax_id": null
+          }
+        ],
+        "description": "Purified bovine insulin",
+        "helm_notation": null,
+        "molecule_chembl_id": "CHEMBL1201629"
+      },
+      "black_box_warning": 0,
+      "chemical_probe": 0,
+      "chirality": 1,
+      "cross_references": [],
+      "dosed_ingredient": true,
+      "first_approval": 1980,
+      "first_in_class": 0,
+      "helm_notation": null,
+      "inorganic_flag": 0,
+      "max_phase": "4.0",
+      "molecule_chembl_id": "CHEMBL1201629",
+      "molecule_hierarchy": {
+        "active_chembl_id": "CHEMBL1201629",
+        "molecule_chembl_id": "CHEMBL1201629",
+        "parent_chembl_id": "CHEMBL1201629"
+      },
+      "molecule_properties": null,
+      "molecule_structures": null,
+      "molecule_synonyms": [
+        {
+          "molecule_synonym": "(beef) insulin",
+          "syn_type": "OTHER",
+          "synonyms": "(BEEF) INSULIN"
+        },
+        {
+          "molecule_synonym": "Bovine insulin highly purified",
+          "syn_type": "OTHER",
+          "synonyms": "BOVINE INSULIN HIGHLY PURIFIED"
+        },
+        {
+          "molecule_synonym": "Bovine insulinum",
+          "syn_type": "OTHER",
+          "synonyms": "BOVINE INSULINUM"
+        },
+        {
+          "molecule_synonym": "Insulin (beef)",
+          "syn_type": "ATC",
+          "synonyms": "INSULIN (BEEF)"
+        },
+        {
+          "molecule_synonym": "Insulin beef",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN BEEF"
+        },
+        {
+          "molecule_synonym": "Insulin (bison bonasus)",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN (BISON BONASUS)"
+        },
+        {
+          "molecule_synonym": "Insulin bovine",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN BOVINE"
+        },
+        {
+          "molecule_synonym": "Insulin bovine insulin",
+          "syn_type": "MERCK_INDEX",
+          "synonyms": "INSULIN BOVINE INSULIN"
+        },
+        {
+          "molecule_synonym": "Insulin,lente,beef",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN,LENTE,BEEF"
+        },
+        {
+          "molecule_synonym": "Insulin,nph,beef",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN,NPH,BEEF"
+        },
+        {
+          "molecule_synonym": "Insulin purified beef",
+          "syn_type": "FDA",
+          "synonyms": "INSULIN PURIFIED BEEF"
+        },
+        {
+          "molecule_synonym": "Insulin, regular, beef",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN, REGULAR, BEEF"
+        },
+        {
+          "molecule_synonym": "Insulin,semilente,beef",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN,SEMILENTE,BEEF"
+        },
+        {
+          "molecule_synonym": "Insulin,ultralente,beef",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN,ULTRALENTE,BEEF"
+        }
+      ],
+      "molecule_type": "Protein",
+      "natural_product": 0,
+      "oral": false,
+      "orphan": 0,
+      "parenteral": true,
+      "polymer_flag": 0,
+      "pref_name": "INSULIN PURIFIED BEEF",
+      "prodrug": 0,
+      "structure_type": "SEQ",
+      "therapeutic_flag": true,
+      "topical": false,
+      "usan_stem": null,
+      "usan_stem_definition": null,
+      "usan_substem": null,
+      "usan_year": null,
+      "veterinary": 0,
+      "withdrawn_flag": false
+    },
+    {
+      "atc_classifications": [
+        "A10AF01",
+        "A10AC01",
+        "A10AD01",
+        "A10AB01",
+        "A10AE01"
+      ],
+      "availability_type": 2,
+      "biotherapeutic": {
+        "biocomponents": [
+          {
+            "component_id": 29816,
+            "component_type": "Protein",
+            "description": "Heavy chain",
+            "organism": null,
+            "sequence": "FVNQHLCGSHLVEALYLVCGERGFFYTPKT",
+            "tax_id": null
+          },
+          {
+            "component_id": 29818,
+            "component_type": "Protein",
+            "description": "Light chain",
+            "organism": null,
+            "sequence": "GIVEQCCTSICSLYQLENYCN",
+            "tax_id": null
+          }
+        ],
+        "description": "Recombinant human insulin",
+        "helm_notation": null,
+        "molecule_chembl_id": "CHEMBL1201631"
+      },
+      "black_box_warning": 1,
+      "chemical_probe": 0,
+      "chirality": 1,
+      "cross_references": [
+        {
+          "xref_id": "human/EPAR/insuman",
+          "xref_name": "insuman",
+          "xref_src": "EMA"
+        },
+        {
+          "xref_id": "insulin%20human",
+          "xref_name": "insulin human",
+          "xref_src": "DailyMed"
+        },
+        {
+          "xref_id": "human/EPAR/actrapid",
+          "xref_name": "actrapid",
+          "xref_src": "EMA"
+        },
+        {
+          "xref_id": "human/EPAR/velosulin",
+          "xref_name": "velosulin",
+          "xref_src": "EMA"
+        },
+        {
+          "xref_id": "insulin%20recombinant%20human",
+          "xref_name": "insulin recombinant human",
+          "xref_src": "DailyMed"
+        },
+        {
+          "xref_id": "human/EPAR/exubera",
+          "xref_name": "exubera",
+          "xref_src": "EMA"
+        },
+        {
+          "xref_id": "human/EPAR/inpremzia",
+          "xref_name": "inpremzia",
+          "xref_src": "EMA"
+        }
+      ],
+      "dosed_ingredient": true,
+      "first_approval": 1982,
+      "first_in_class": 0,
+      "helm_notation": null,
+      "inorganic_flag": 0,
+      "max_phase": "4.0",
+      "molecule_chembl_id": "CHEMBL1201631",
+      "molecule_hierarchy": {
+        "active_chembl_id": "CHEMBL1201631",
+        "molecule_chembl_id": "CHEMBL1201631",
+        "parent_chembl_id": "CHEMBL1201631"
+      },
+      "molecule_properties": null,
+      "molecule_structures": null,
+      "molecule_synonyms": [
+        {
+          "molecule_synonym": "Actrapid",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "ACTRAPID"
+        },
+        {
+          "molecule_synonym": "Afrezza",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "AFREZZA"
+        },
+        {
+          "molecule_synonym": "Biosulin r",
+          "syn_type": "OTHER",
+          "synonyms": "BIOSULIN R"
+        },
+        {
+          "molecule_synonym": "Capsulin",
+          "syn_type": "OTHER",
+          "synonyms": "CAPSULIN"
+        },
+        {
+          "molecule_synonym": "Exubera",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "EXUBERA"
+        },
+        {
+          "molecule_synonym": "Exubera (inhaled insulin human)",
+          "syn_type": "OTHER",
+          "synonyms": "EXUBERA (INHALED INSULIN HUMAN)"
+        },
+        {
+          "molecule_synonym": "High molecular weight insulin human",
+          "syn_type": "USP",
+          "synonyms": "HIGH MOLECULAR WEIGHT INSULIN HUMAN"
+        },
+        {
+          "molecule_synonym": "Human insulin",
+          "syn_type": "OTHER",
+          "synonyms": "HUMAN INSULIN"
+        },
+        {
+          "molecule_synonym": "Humulin",
+          "syn_type": "OTHER",
+          "synonyms": "HUMULIN"
+        },
+        {
+          "molecule_synonym": "Humulin br",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "HUMULIN BR"
+        },
+        {
+          "molecule_synonym": "Humulin r",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "HUMULIN R"
+        },
+        {
+          "molecule_synonym": "Inpremzia",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "INPREMZIA"
+        },
+        {
+          "molecule_synonym": "Ins humulin r",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "INS HUMULIN R"
+        },
+        {
+          "molecule_synonym": "Insulin",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN"
+        },
+        {
+          "molecule_synonym": "Insulina humana",
+          "syn_type": "INN_SPANISH",
+          "synonyms": "INSULINA HUMANA"
+        },
+        {
+          "molecule_synonym": "Insuline humaine",
+          "syn_type": "INN_FRENCH",
+          "synonyms": "INSULINE HUMAINE"
+        },
+        {
+          "molecule_synonym": "Insulin (human)",
+          "syn_type": "ATC",
+          "synonyms": "INSULIN (HUMAN)"
+        },
+        {
+          "molecule_synonym": "Insulin human",
+          "syn_type": "BAN",
+          "synonyms": "INSULIN HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin human",
+          "syn_type": "BNF",
+          "synonyms": "INSULIN HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin human",
+          "syn_type": "EMA",
+          "synonyms": "INSULIN HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin human",
+          "syn_type": "INN",
+          "synonyms": "INSULIN HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin human",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin human",
+          "syn_type": "USAN",
+          "synonyms": "INSULIN HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin human",
+          "syn_type": "USP",
+          "synonyms": "INSULIN HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin, human",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN, HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin human (biosynthesis)",
+          "syn_type": "JAN",
+          "synonyms": "INSULIN HUMAN (BIOSYNTHESIS)"
+        },
+        {
+          "molecule_synonym": "Insulin human lente",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN HUMAN LENTE"
+        },
+        {
+          "molecule_synonym": "Insulin human nph",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN HUMAN NPH"
+        },
+        {
+          "molecule_synonym": "Insulin human (rdna)",
+          "syn_type": "EMA",
+          "synonyms": "INSULIN HUMAN (RDNA)"
+        },
+        {
+          "molecule_synonym": "Insulin human rdna",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN HUMAN RDNA"
+        },
+        {
+          "molecule_synonym": "Insulin human, rdna origin",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN HUMAN, RDNA ORIGIN"
+        },
+        {
+          "molecule_synonym": "Insulin human regular",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN HUMAN REGULAR"
+        },
+        {
+          "molecule_synonym": "Insulin human regular (rdna)",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN HUMAN REGULAR (RDNA)"
+        },
+        {
+          "molecule_synonym": "Insulin human semisynthetic",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN HUMAN SEMISYNTHETIC"
+        },
+        {
+          "molecule_synonym": "Insulin human (synthesis)",
+          "syn_type": "JAN",
+          "synonyms": "INSULIN HUMAN (SYNTHESIS)"
+        },
+        {
+          "molecule_synonym": "Insulin recombinant human",
+          "syn_type": "FDA",
+          "synonyms": "INSULIN RECOMBINANT HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin recombinant purified human",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN RECOMBINANT PURIFIED HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin reconbinanet human",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN RECONBINANET HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin,regular,human buffered",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN,REGULAR,HUMAN BUFFERED"
+        },
+        {
+          "molecule_synonym": "Insulin semi synthetic human",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN SEMI SYNTHETIC HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin semisynthetic human",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN SEMISYNTHETIC HUMAN"
+        },
+        {
+          "molecule_synonym": "Insulin,ultralente,human",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN,ULTRALENTE,HUMAN"
+        },
+        {
+          "molecule_synonym": "Insuman",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "INSUMAN"
+        },
+        {
+          "molecule_synonym": "Insuman infusat",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "INSUMAN INFUSAT"
+        },
+        {
+          "molecule_synonym": "Myxredlin",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "MYXREDLIN"
+        },
+        {
+          "molecule_synonym": "Regular insulin, human",
+          "syn_type": "OTHER",
+          "synonyms": "REGULAR INSULIN, HUMAN"
+        },
+        {
+          "molecule_synonym": "Velosulin",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "VELOSULIN"
+        },
+        {
+          "molecule_synonym": "Viatab",
+          "syn_type": "OTHER",
+          "synonyms": "VIATAB"
+        }
+      ],
+      "molecule_type": "Protein",
+      "natural_product": 0,
+      "oral": false,
+      "orphan": 0,
+      "parenteral": true,
+      "polymer_flag": 0,
+      "pref_name": "INSULIN HUMAN",
+      "prodrug": 0,
+      "structure_type": "SEQ",
+      "therapeutic_flag": true,
+      "topical": true,
+      "usan_stem": null,
+      "usan_stem_definition": null,
+      "usan_substem": null,
+      "usan_year": 1983,
+      "veterinary": 0,
+      "withdrawn_flag": false
+    },
+    {
+      "atc_classifications": [
+        "A10AB03",
+        "A10AE03",
+        "A10AD03",
+        "A10AC03"
+      ],
+      "availability_type": 0,
+      "biotherapeutic": {
+        "biocomponents": [
+          {
+            "component_id": 29818,
+            "component_type": "Protein",
+            "description": "Light chain",
+            "organism": null,
+            "sequence": "GIVEQCCTSICSLYQLENYCN",
+            "tax_id": null
+          },
+          {
+            "component_id": 29283,
+            "component_type": "Protein",
+            "description": "Heavy chain",
+            "organism": null,
+            "sequence": "FVNQHLCGSHLVEALYLVCGERGFFYTPKA",
+            "tax_id": null
+          }
+        ],
+        "description": "Purified porcine insulin",
+        "helm_notation": null,
+        "molecule_chembl_id": "CHEMBL1201630"
+      },
+      "black_box_warning": 0,
+      "chemical_probe": 0,
+      "chirality": 1,
+      "cross_references": [],
+      "dosed_ingredient": true,
+      "first_approval": 1979,
+      "first_in_class": 0,
+      "helm_notation": null,
+      "inorganic_flag": 0,
+      "max_phase": "4.0",
+      "molecule_chembl_id": "CHEMBL1201630",
+      "molecule_hierarchy": {
+        "active_chembl_id": "CHEMBL1201630",
+        "molecule_chembl_id": "CHEMBL1201630",
+        "parent_chembl_id": "CHEMBL1201630"
+      },
+      "molecule_properties": null,
+      "molecule_structures": null,
+      "molecule_synonyms": [
+        {
+          "molecule_synonym": "Insulin (pork)",
+          "syn_type": "ATC",
+          "synonyms": "INSULIN (PORK)"
+        }
+      ],
+      "molecule_type": "Protein",
+      "natural_product": 0,
+      "oral": false,
+      "orphan": 0,
+      "parenteral": true,
+      "polymer_flag": 0,
+      "pref_name": "INSULIN PURIFIED PORK",
+      "prodrug": 0,
+      "structure_type": "SEQ",
+      "therapeutic_flag": true,
+      "topical": false,
+      "usan_stem": null,
+      "usan_stem_definition": null,
+      "usan_substem": null,
+      "usan_year": null,
+      "veterinary": 0,
+      "withdrawn_flag": false
+    },
+    {
+      "atc_classifications": [],
+      "availability_type": 2,
+      "biotherapeutic": {
+        "biocomponents": [],
+        "description": "Recombinant human insulin isoprene suspension",
+        "helm_notation": null,
+        "molecule_chembl_id": "CHEMBL1201540"
+      },
+      "black_box_warning": 0,
+      "chemical_probe": 0,
+      "chirality": 1,
+      "cross_references": [
+        {
+          "xref_id": "insulin%20susp%20isophane%20recombinant%20human",
+          "xref_name": "insulin susp isophane recombinant human",
+          "xref_src": "DailyMed"
+        }
+      ],
+      "dosed_ingredient": true,
+      "first_approval": 1982,
+      "first_in_class": 0,
+      "helm_notation": null,
+      "inorganic_flag": 0,
+      "max_phase": "4.0",
+      "molecule_chembl_id": "CHEMBL1201540",
+      "molecule_hierarchy": {
+        "active_chembl_id": "CHEMBL1201540",
+        "molecule_chembl_id": "CHEMBL1201540",
+        "parent_chembl_id": "CHEMBL1201540"
+      },
+      "molecule_properties": null,
+      "molecule_structures": null,
+      "molecule_synonyms": [
+        {
+          "molecule_synonym": "Insulin susp isophane recombinant human",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN SUSP ISOPHANE RECOMBINANT HUMAN"
+        },
+        {
+          "molecule_synonym": "Isophane insulin human suspension",
+          "syn_type": "OTHER",
+          "synonyms": "ISOPHANE INSULIN HUMAN SUSPENSION"
+        },
+        {
+          "molecule_synonym": "Nph human insulin",
+          "syn_type": "OTHER",
+          "synonyms": "NPH HUMAN INSULIN"
+        }
+      ],
+      "molecule_type": "Protein",
+      "natural_product": 0,
+      "oral": false,
+      "orphan": 0,
+      "parenteral": true,
+      "polymer_flag": 0,
+      "pref_name": "INSULIN SUSP ISOPHANE RECOMBINANT HUMAN",
+      "prodrug": 0,
+      "structure_type": "SEQ",
+      "therapeutic_flag": true,
+      "topical": false,
+      "usan_stem": null,
+      "usan_stem_definition": null,
+      "usan_substem": null,
+      "usan_year": null,
+      "veterinary": 0,
+      "withdrawn_flag": false
+    },
+    {
+      "atc_classifications": [],
+      "availability_type": 0,
+      "biotherapeutic": {
+        "biocomponents": [],
+        "description": "Recombinant human insulin zinc suspension",
+        "helm_notation": null,
+        "molecule_chembl_id": "CHEMBL1201644"
+      },
+      "black_box_warning": 0,
+      "chemical_probe": 0,
+      "chirality": 1,
+      "cross_references": [],
+      "dosed_ingredient": true,
+      "first_approval": 1985,
+      "first_in_class": 0,
+      "helm_notation": null,
+      "inorganic_flag": 0,
+      "max_phase": "4.0",
+      "molecule_chembl_id": "CHEMBL1201644",
+      "molecule_hierarchy": {
+        "active_chembl_id": "CHEMBL1201644",
+        "molecule_chembl_id": "CHEMBL1201644",
+        "parent_chembl_id": "CHEMBL1201644"
+      },
+      "molecule_properties": null,
+      "molecule_structures": null,
+      "molecule_synonyms": [
+        {
+          "molecule_synonym": "Insulin zinc susp recombinant human",
+          "syn_type": "OTHER",
+          "synonyms": "INSULIN ZINC SUSP RECOMBINANT HUMAN"
+        }
+      ],
+      "molecule_type": "Protein",
+      "natural_product": 0,
+      "oral": false,
+      "orphan": 0,
+      "parenteral": true,
+      "polymer_flag": 0,
+      "pref_name": "INSULIN ZINC SUSP RECOMBINANT HUMAN",
+      "prodrug": 0,
+      "structure_type": "SEQ",
+      "therapeutic_flag": true,
+      "topical": false,
+      "usan_stem": null,
+      "usan_stem_definition": null,
+      "usan_substem": null,
+      "usan_year": null,
+      "veterinary": 0,
+      "withdrawn_flag": false
+    }
+  ],
+  "page_meta": {
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total_count": 8
+  }
+}

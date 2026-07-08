@@ -1,11 +1,11 @@
 {
   "offset": 0,
-  "next": 40,
+  "next": 120,
   "data": [
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "4906b943464676accd7b3814c54bf8db68b96610",
         "externalIds": {
@@ -19,9 +19,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "21538c761d0973879c62305942576384032abb85",
         "externalIds": {
@@ -35,11 +35,11 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [
         "\u2026expressions of matrix Hsin-Hung Chen and Jim Jinn-Chyuan Sheu contributed equally to this work. metalloproteinases (MMPs) in GBM cells and tissues also suggest their significant role in malignant progression (Levi\u010dar et al. 2003; Nakada et al. 2003; Lakka et al. 2004; Kargiotis et al. 2008)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "f008fab9759adc67700829d224d5d48f5defed35",
         "externalIds": {
@@ -52,9 +52,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "1ebd2940f99a67924c3d4aa9208991eb5362abb2",
         "externalIds": {
@@ -68,11 +68,11 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [
         "Included are various factors, TGF-\u03b2 for tumor invasion via epithelial-to-mesenchymal transition (EMT) as well as immunosuppressive microenvironment [10, 11], MMPs and Cathepsins for extracellular matrix (ECM) remodeling to aid invasion and angiogenesis [12]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "8119739481d72caa4eec12f009b0eccf099e2720",
         "externalIds": {
@@ -86,9 +86,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "8e41fc4aadfb9ba2624d65883370b1304b96df57",
         "externalIds": {
@@ -101,9 +101,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "427db454c74afe27bb54751c568d4f8a02493c5b",
         "externalIds": {
@@ -116,13 +116,13 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [
-        "background"
-      ],
       "contexts": [
         "The activation mechanism of cysteine cathepsins has been extensively studied in procathepsin B, which is a cysteine peptidase involved in intracellular catabolism, the regulation of angiogenesis [18], neurogenesis [19], and also tumor growth and invasion [20,21]."
       ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "94348a06761220977c19960c1f8a5037936fe2cc",
         "externalIds": {
@@ -136,9 +136,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "487f11fd32d0281073aef6637331b29c6917d811",
         "externalIds": {
@@ -151,9 +151,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "00e3bc2cf228086e62640c6eda8c048acfb502e5",
         "externalIds": {
@@ -165,9 +165,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "1deca787a3c676763e5776f091bfd9ad6e6080fa",
         "externalIds": {
@@ -181,11 +181,11 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [
         "Inhibiting MMP9 expression resulted in attenuation of angiogenesis and tumor growth in GBM-bearing xenograft mouse models (Ezhilarasan et al., 2009; Lakka et al., 2004)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "8c32c1d95d7acfdb84c331108a7c6ebc90cc4291",
         "externalIds": {
@@ -198,13 +198,13 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [
-        "background"
-      ],
       "contexts": [
         "Cathepsin B is involved in many physiological processes, such as cancer migration, angiogenesis, and metastasis [2,3]."
       ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "2fda1cf703241b05ff36efe607d09003f43a4a2a",
         "externalIds": {
@@ -218,13 +218,13 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [
-        "background"
-      ],
       "contexts": [
         "[53] 2004 In vitro human cell culture and siRNA 1 cell line Simultaneous RNAi-mediated targeting of MMP-9 and cathepsin B has potential application in the treatment of human gliomas."
       ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "60a1b1d71444cfac3606d3e77beb8aa69c125308",
         "externalIds": {
@@ -238,9 +238,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "99f6de6fab91938ebe74dcde2cad83e812ae2e1a",
         "externalIds": {
@@ -253,9 +253,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "2c39c4c8450f8a1fc36433394deff289ad0e0def",
         "externalIds": {
@@ -269,9 +269,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "fe567f8bcd972986c04c9efae1b83c60225d1f14",
         "externalIds": {
@@ -284,9 +284,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "590deb21d729cca6ccf9e5332967ec3e36b9f11b",
         "externalIds": {
@@ -299,9 +299,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "3d74cec200e670e3d27b4d224d196190f39d9dae",
         "externalIds": {
@@ -313,9 +313,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "00a8aa74d35a15d1854b0250cfe61a6c10b7f2b1",
         "externalIds": {
@@ -329,9 +329,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "c6c2556557f8086825d0df08d9d1bd84eaf232e2",
         "externalIds": {
@@ -345,9 +345,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "29de65260d5baa1532d6b6fc66e43fc56299cd3c",
         "externalIds": {
@@ -362,9 +362,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "e64f00267a1964edd8289473da9c55ac4a3792a3",
         "externalIds": {
@@ -378,13 +378,13 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [
-        "background"
-      ],
       "contexts": [
         "Moreover, MMPs expression is associated to GB invasion, growth and angiogenesis (Lakka et al. 2004; Rome et al. 2007)."
       ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "af23f8790d946665466b8ea65bda32c5f4393537",
         "externalIds": {
@@ -397,9 +397,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "2295783da317020de4fb20c6d34cdc29bb2bd834",
         "externalIds": {
@@ -414,9 +414,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "dc85498e5d6f95c422a604b5ec4886c064b3a880",
         "externalIds": {
@@ -430,9 +430,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "710cfc54854c75af21480061c14b542df4919583",
         "externalIds": {
@@ -447,13 +447,13 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [
-        "background"
-      ],
       "contexts": [
         "Inhibition of the gene expression of Cts B in glioblastoma cells attenuated their migration and invasion while reducing cell\u2013cell interaction in human microvascular endothelial cells in both in vitro and in vivo models [160]."
       ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "9b7a497deac3e2d988b240db40938b291e1fe0bf",
         "externalIds": {
@@ -468,9 +468,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "df2894c2715a0e62279d813d3263b4b5aee8fa24",
         "externalIds": {
@@ -484,9 +484,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "0ec90f95ff602542a59505a5c3e888888a201566",
         "externalIds": {
@@ -500,9 +500,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "a458a9e51c6cf02c23e5f522e5904a31e85e92ff",
         "externalIds": {
@@ -517,14 +517,14 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [
-        "background"
-      ],
       "contexts": [
         "However, other functions may include regulation of angiogenesis[16, 17], invasion[16, 18], tumor proliferation[18] and immune resistance[19], neurogenesis[20] cellular differentiation[21, 22], tumor response to hypoxia [23, 24].",
         "An earlier study on human glioblastoma cells showed that simultaneous inhibition of Cathepsin B and MMP-9 via RNA interference reduced tumor invasion, growth, and angiogenesis [16]."
       ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "e5a2d012294a0fc552d46c612431513fb58ecef7",
         "externalIds": {
@@ -539,9 +539,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "71132c0c8b6b586426e6837f9a29b3c477d51fb5",
         "externalIds": {
@@ -554,13 +554,13 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [
-        "background"
-      ],
       "contexts": [
         "Moreover, MMPs expression is associated to GB invasion, growth and angiogenesis [70, 71]."
       ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "b133eaaf9ddca9a1aae7c453c8c7ac489de1a25e",
         "externalIds": {
@@ -573,13 +573,13 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [
-        "background"
-      ],
       "contexts": [
         "CTSB may play two opposing roles in malignancy: as an executioner of apoptosis in cytotoxic signalling cascades and a mediator of tumour invasion.(34,35) In this study, we provided a novel mechanism for the pro\u2010apoptotic action of CTSB."
       ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "dae60be4b3f04865ea7ccb6e75a7c251f9704aa2",
         "externalIds": {
@@ -594,13 +594,13 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [
-        "background"
-      ],
       "contexts": [
         "GBM are characterized by extensive proliferation and dissemination of the tumor cells within the brain that hinders complete surgical resection (41, 42)."
       ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "ab42ee2dbe6f5124c5527b120a50785141d49da0",
         "externalIds": {
@@ -615,13 +615,13 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [
-        "background"
-      ],
       "contexts": [
         "19 Breast cancer (MDA MB 231), [35] shRNA plasmid intra thecal urokinase plasminogen activator receptor+ matrix metalloproteinase 9 Orthotopic breast"
       ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "cdea4a3b604dd2a621919a7f9773eb15df1a644e",
         "externalIds": {
@@ -633,9 +633,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "37ed6af3ec69b5ae6dde49e41e870b83733eb37b",
         "externalIds": {
@@ -650,9 +650,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "ef7343aad7a38478488a35347ccd2b9aa1aff36e",
         "externalIds": {
@@ -664,9 +664,9 @@
       }
     },
     {
-      "isInfluential": false,
-      "intents": [],
       "contexts": [],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "54b0e52e01ea96e84bc533b8e6c5b3d6c8a17bb8",
         "externalIds": {
@@ -678,6 +678,1450 @@
         },
         "title": "Immunostimulatory CpG on Carbon Nanotubes Selectively Inhibits Migration of Brain Tumor Cells",
         "year": 2018
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "5641c1e01be01138b02b41f596aa5dea8cf091e8",
+        "externalIds": {
+          "MAG": "2781860009",
+          "PubMedCentral": "5796096",
+          "DOI": "10.3390/ijms19010147",
+          "CorpusId": 4978066,
+          "PubMed": "29300332"
+        },
+        "title": "Role of Microenvironment in Glioma Invasion: What We Learned from In Vitro Models",
+        "year": 2018
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "73469f8788d8903022aff192723b513c754a0420",
+        "externalIds": {
+          "MAG": "2769277476",
+          "DOI": "10.1016/j.crad.2017.10.013",
+          "CorpusId": 24716822,
+          "PubMed": "29187298"
+        },
+        "title": "Regional specificity of matrix metalloproteinase-9 expression in the brain: voxel-level mapping in primary glioblastomas.",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [
+        "Inhibiting the expression of MMP9 through RNA interference represses the malignancy of glioma cells, indicating that it can be applied in the treatment of malignant gliomas (25-27)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "1e194e8083431920f96e77fee28fc54b414e032d",
+        "externalIds": {
+          "PubMedCentral": "5865802",
+          "MAG": "2754374889",
+          "DOI": "10.3892/mmr.2017.7471",
+          "CorpusId": 4383481,
+          "PubMed": "28901452"
+        },
+        "title": "Screening critical genes associated with malignant glioma using bioinformatics analysis",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "bc398b3914338033d6a41d9dd23bcf30a720c080",
+        "externalIds": {
+          "PubMedCentral": "5629629",
+          "MAG": "2749156769",
+          "DOI": "10.1038/cddiscovery.2017.52",
+          "CorpusId": 23318466,
+          "PubMed": "29018571"
+        },
+        "title": "TRAIL DR5-CTSB crosstalk participates in breast cancer autophagy initiated by SAHA",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "76db65312bc9ce4d35de757b89b1062939eb6e0d",
+        "externalIds": {
+          "MAG": "2585047035",
+          "DOI": "10.1016/j.ijpharm.2017.01.056",
+          "CorpusId": 20965157,
+          "PubMed": "28163221"
+        },
+        "title": "Targeted si-RNA with liposomes and exosomes (extracellular vesicles): How to unlock the potential.",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [
+        "Moreover, the combinational inhibition of cathepsin B expression and MMP-9 expression via RNA interference lead to reduced glioma tumor growth, invasion, and angiogenesis [112]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "5fd053b80cd8d347459588cc5716934920fcbaeb",
+        "externalIds": {
+          "MAG": "2625826824",
+          "PubMedCentral": "5486116",
+          "DOI": "10.3390/ijms18061295",
+          "CorpusId": 4060878,
+          "PubMed": "28629170"
+        },
+        "title": "EGFR and EGFRvIII Promote Angiogenesis and Cell Invasion in Glioblastoma: Combination Therapies for an Effective Treatment",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "85c8c4fc0d2f340fd6b92e0757997651b9ac0de4",
+        "externalIds": {
+          "MAG": "2628676876",
+          "DOI": "10.1177/1010428317714624",
+          "CorpusId": 26650226,
+          "PubMed": "28639899"
+        },
+        "title": "TWEAK/Fn14 signaling in tumors",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "559b3c353d0f6b51a0ecce2b67709cdd34d38341",
+        "externalIds": {
+          "MAG": "2592478616",
+          "DOI": "10.1016/j.actbio.2017.02.047",
+          "CorpusId": 3610728,
+          "PubMed": "28259838"
+        },
+        "title": "Enzyme-responsive peptide dendrimer-gemcitabine conjugate as a controlled-release drug delivery vehicle with enhanced antitumor efficacy.",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "39f97a69f4b54b228bb4c72d185faf035f0bbd5f",
+        "externalIds": {
+          "MAG": "2605852379",
+          "DOI": "10.1007/s13402-017-0320-1",
+          "CorpusId": 10430459,
+          "PubMed": "28401486"
+        },
+        "title": "Dual treatment with shikonin and temozolomide reduces glioblastoma tumor growth, migration and glial-to-mesenchymal transition",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "39ff02bbef7b7a6abeca4efdcc4e0931f69f4bc7",
+        "externalIds": {
+          "MAG": "2602907732",
+          "PubMedCentral": "5583655",
+          "DOI": "10.4155/fsoa-2016-0094",
+          "CorpusId": 9791644,
+          "PubMed": "28883992"
+        },
+        "title": "Integrating the glioblastoma microenvironment into engineered experimental models",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [
+        "\u2026with a poor patient survival and increased invasiveness of GBM cells and its depletion interrupts GBM growth, invasion and angiogenesis 69\u201371 . uPA transcript, protein and enzymatic levels correlate with tumour grade and its inhibition decreases GBM growth and invasion in vitro and\u2026"
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "f7646bb6ec6addf862575f3ffbf4a04a03d611a2",
+        "externalIds": {
+          "MAG": "2596065061",
+          "PubMedCentral": "5347040",
+          "DOI": "10.1038/srep44075",
+          "CorpusId": 40461826,
+          "PubMed": "28287096"
+        },
+        "title": "Blockade of vascular endothelial growth factor receptors by tivozanib has potential anti-tumour effects on human glioblastoma cells",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "18bc0ffe7e6634c2337b0a4949bbb35d4f4ce46a",
+        "externalIds": {
+          "MAG": "2553948338",
+          "DOI": "10.1016/j.biotechadv.2016.11.002",
+          "CorpusId": 3579684,
+          "PubMed": "27845258"
+        },
+        "title": "3D tumor spheroids: an overview on the tools and techniques used for their analysis.",
+        "year": 2016
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "6cf044c76192c46557a22dee099916d69ca84d5b",
+        "externalIds": {
+          "MAG": "2523582617",
+          "DOI": "10.1007/s13277-016-5314-5",
+          "CorpusId": 1200141,
+          "PubMed": "27651158"
+        },
+        "title": "Targeting Netrin-1 in glioblastoma stem-like cells inhibits growth, invasion, and angiogenesis",
+        "year": 2016
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "3a40ace1289f8c78df371e6ad76ed810d3fefa75",
+        "externalIds": {
+          "MAG": "2465929875",
+          "DOI": "10.1152/physrev.00035.2015",
+          "CorpusId": 24322063,
+          "PubMed": "27335445"
+        },
+        "title": "The Function of V-ATPases in Cancer.",
+        "year": 2016
+      }
+    },
+    {
+      "contexts": [
+        "In experimental mouse models targeting MMP9 with siRNAs resulted in the inhibition of tumor initiation and progression [112], and seems to be a promising strategy for future therapeutic selective MMP inhibition [25]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "c6caea18d496504ec07a8c3cade2b541547d494b",
+        "externalIds": {
+          "MAG": "2341354361",
+          "DOI": "10.4172/2324-9293.S1-004",
+          "CorpusId": 75695482
+        },
+        "title": "Transforming Growth Factor-Beta and Matrix Metalloproteinases Functional Interplay in Cancer; Implications in Epithelial to Mesenchymal Transition",
+        "year": 2016
+      }
+    },
+    {
+      "contexts": [
+        "Recognition of the dependence of angiogenesis on proteolytic enzymes has raised interest in the evaluation of proteases as potential targets to disrupt tumor angiogenesis [5, 6]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "9e1cd58a1b8188b71fc6cad02d7b89e1babe9e55",
+        "externalIds": {
+          "MAG": "2319603117",
+          "PubMedCentral": "5378387",
+          "DOI": "10.1007/s10585-016-9790-1",
+          "CorpusId": 14051754,
+          "PubMed": "27055649"
+        },
+        "title": "Cathepsin L in tumor angiogenesis and its therapeutic intervention by the small molecule inhibitor KGP94",
+        "year": 2016
+      }
+    },
+    {
+      "contexts": [
+        "For example, when transfected to overexpress TPFR-2, which inhibits MMP activity, PANC-1 pancreatic cancer cells show no reduction in migration but a 60% reduction in invasion (Tang et\u00a0al., 2010).",
+        "Other studies have focused on factors that induce or inhibit angiogenesis, such as MMP-9 which plays a key role in endothelial network\nFebruary 2016 | Volume 4 | Article 127\nFrontiers in Bioengineering and Biotechnology | www.frontiersin.org\norganization (Jadhav et\u00a0al., 2004).",
+        ", collagen type I) and measuring their invasiveness, as well as analyzing factors involved in matrix degradation and tumor invasion, such as cathepsin-B and matrix metalloproteinases (MMP) (Tamaki et al., 1997; Lakka et al., 2004; Wolf et al., 2007; Ilina et al., 2011).",
+        "Invasion studies are performed by placing spheroids on coated surfaces (i.e., vitronectin-coated) or embedding in gels (i.e., collagen type I) and measuring their invasiveness, as well as analyzing factors involved in matrix degradation and tumor invasion, such as cathepsin-B and matrix metalloproteinases (MMP) (Tamaki et\u00a0al., 1997; Lakka et\u00a0al., 2004; Wolf et\u00a0al., 2007; Ilina et\u00a0al., 2011)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": true,
+      "citingPaper": {
+        "paperId": "a21c72350e553ba4d2a7a9d81216a561fad88583",
+        "externalIds": {
+          "PubMedCentral": "4751256",
+          "MAG": "2275816640",
+          "DOI": "10.3389/fbioe.2016.00012",
+          "CorpusId": 8145067,
+          "PubMed": "26904541"
+        },
+        "title": "In Vitro Tumor Models: Advantages, Disadvantages, Variables, and Selecting the Right Platform",
+        "year": 2016
+      }
+    },
+    {
+      "contexts": [
+        "Gliomas are highly invasive brain cancers and their invasiveness is dependent on lysosome trafficking toward the plasma membrane [37,38]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "df6d27d79a78a21b82c2d5b2845939514c3f9b10",
+        "externalIds": {
+          "MAG": "2248022122",
+          "PubMedCentral": "4718621",
+          "DOI": "10.1371/journal.pone.0146931",
+          "CorpusId": 15423294,
+          "PubMed": "26784896"
+        },
+        "title": "A Novel High Content Imaging-Based Screen Identifies the Anti-Helminthic Niclosamide as an Inhibitor of Lysosome Anterograde Trafficking and Prostate Cancer Cell Invasion",
+        "year": 2016
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "4d93f588017c51bc86ee2016c26181ccdef4a0e6",
+        "externalIds": {
+          "PubMedCentral": "4707368",
+          "MAG": "2213546011",
+          "DOI": "10.1155/2016/8257238",
+          "CorpusId": 5541339,
+          "PubMed": "26823953"
+        },
+        "title": "Hericium erinaceus Inhibits TNF-\u03b1-Induced Angiogenesis and ROS Generation through Suppression of MMP-9/NF-\u03baB Signaling and Activation of Nrf2-Mediated Antioxidant Genes in Human EA.hy926 Endothelial Cells",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [
+        "5] exocytosis from glioma cells attenuated their migration and invasion [11,12]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "2ac85710fa3fc377d9a328cb671711125e9cb8fd",
+        "externalIds": {
+          "MAG": "2198890887",
+          "PubMedCentral": "4684495",
+          "DOI": "10.1371/journal.pone.0145067",
+          "CorpusId": 7159420,
+          "PubMed": "26674348"
+        },
+        "title": "An Active 32-kDa Cathepsin L Is Secreted Directly from HT 1080 Fibrosarcoma Cells and Not via Lysosomal Exocytosis",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "2b26075145a79fe713f1f82c925853708a8ec0c8",
+        "externalIds": {
+          "MAG": "2037338633",
+          "DOI": "10.1016/j.biotechadv.2015.04.008",
+          "CorpusId": 1190753,
+          "PubMed": "25916823"
+        },
+        "title": "Achieving successful delivery of oligonucleotides--From physico-chemical characterization to in vivo evaluation.",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "468d58b880232d7af60064b75e49733bdb95159c",
+        "externalIds": {
+          "MAG": "1255162558",
+          "DOI": "10.1016/j.bcp.2015.09.003",
+          "CorpusId": 25046431,
+          "PubMed": "26348871"
+        },
+        "title": "Anti-angiogenic properties of coenzyme Q0 through downregulation of MMP-9/NF-\u03baB and upregulation of HO-1 signaling in TNF-\u03b1-activated human endothelial cells.",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "263d7a025a9a22bf4bc720ae11674b47d8d7da22",
+        "externalIds": {
+          "MAG": "2463979336",
+          "DOI": "10.1021/acs.jproteome.5b00765",
+          "CorpusId": 21917154,
+          "PubMed": "26464075"
+        },
+        "title": "Transcriptomic and Proteomic Data Integration and Two-Dimensional Molecular Maps with Regulatory and Functional Linkages: Application to Cell Proliferation and Invasion Networks in Glioblastoma.",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [
+        "There are data supporting the premise that secreted cathepsins, working in collaboration with matrix metalloproteases and the plasminogen activator system, can degrade the ECM, thereby promoting cellular motility, invasion, and angiogenesis.(50,61)"
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "aad9091965b4160983e1bfee35758fda9aaecc93",
+        "externalIds": {
+          "MAG": "1786812680",
+          "DOI": "10.2147/RRB.S83999",
+          "CorpusId": 4496134
+        },
+        "title": "Role of lysosomes in cancer therapy",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "092477ee15a13da69a9533ee56345ccfe548cf67",
+        "externalIds": {
+          "MAG": "1960117778",
+          "DOI": "10.1039/c5mb00278h",
+          "CorpusId": 36662514,
+          "PubMed": "26135606"
+        },
+        "title": "RNAi therapeutics for brain cancer: current advancements in RNAi delivery strategies.",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [
+        "Inhibition of the expression of MMP\u20119 by MMP\u20119 antisense and small interfering RNA constructs suppresses the invasiveness and metastatic ability of tumor cells (5,6)."
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "401dea19a6fd17bc10c94be6f6f5c7157d6250b1",
+        "externalIds": {
+          "MAG": "1969613845",
+          "DOI": "10.3892/mmr.2015.3304",
+          "CorpusId": 146103,
+          "PubMed": "25650742"
+        },
+        "title": "Dibenzoylmethane, hydroxydibenzoylmethane and hydroxymethyldibenzoylmethane inhibit phorbol-12-myristate\u00a013-acetate\u2011induced breast carcinoma cell invasion.",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [
+        "AP-1 is a major transcription factor that regulates MMP-9 expression, which may contribute to the lower invasiveness and growth potential of cancer cells (34,35)."
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "95b68bc6574f8006182519d58dad3ce894e504f9",
+        "externalIds": {
+          "PubMedCentral": "4438971",
+          "MAG": "1991416812",
+          "DOI": "10.3892/mmr.2015.3471",
+          "CorpusId": 15398770,
+          "PubMed": "25760437"
+        },
+        "title": "RNA silencing of integrin-linked kinase increases the sensitivity of the A549 lung cancer cell line to cisplatin and promotes its apoptosis",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "40336787bb012a9c3aa746e4525e1abccac55702",
+        "externalIds": {
+          "MAG": "1560328293",
+          "DOI": "10.1002/9781118670613.CH8",
+          "CorpusId": 82098305
+        },
+        "title": "Isolation and Identification of Neural Cancer Stem/Progenitor Cells",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [
+        "In GBM, increased activity of matrix metalloproteinases (MMPs), MMP-2 and MMP-9 play a key role in invasion [32]."
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "07ac023ffc8b6755cd53e32c140b88c06c83cb0d",
+        "externalIds": {
+          "MAG": "2280165845",
+          "PubMedCentral": "4351301",
+          "DOI": "10.1016/j.neo.2015.01.001",
+          "CorpusId": 19759481,
+          "PubMed": "25748242"
+        },
+        "title": "Oncostatin-M Differentially Regulates Mesenchymal and Proneural Signature Genes in Gliomas via STAT3 Signaling",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "5bb472f61be619dc45ab240e7ca0521cddf9b4b1",
+        "externalIds": {
+          "MAG": "2115038568",
+          "DOI": "10.1016/j.wneu.2012.11.059",
+          "CorpusId": 42089303,
+          "PubMed": "23178919"
+        },
+        "title": "Monocyte-derived cells of the brain and malignant gliomas: the double face of Janus.",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "ec63de8a30daa76a704bd6b14de4632f75c8eec6",
+        "externalIds": {
+          "MAG": "2038058215",
+          "DOI": "10.4155/tde.14.58",
+          "CorpusId": 21576104,
+          "PubMed": "25375341"
+        },
+        "title": "Chimeric adeno-associated virus and bacteriophage: a potential targeted gene therapy vector for malignant glioma.",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [
+        "genesis can lead to incompetent, leaky, and blunted blood vessels [4\u20136]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "1a53814941d25ae497b49bd986fde66b6eb52ce0",
+        "externalIds": {
+          "PubMedCentral": "4211739",
+          "MAG": "2067478716",
+          "DOI": "10.1371/journal.pone.0111199",
+          "CorpusId": 18920891,
+          "PubMed": "25350400"
+        },
+        "title": "Sustained Radiosensitization of Hypoxic Glioma Cells after Oxygen Pretreatment in an Animal Model of Glioblastoma and In Vitro Models of Tumor Hypoxia",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [
+        "A recent study has shown that hairpin RNAi can silence both MMP9 and cathepsin and completely suppress the growth of established tumors in a glioma tumor model when this antisense molecule is injected directly into the tumor [47]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "a71373feab969ce4a31fb13e7d0517664ada2dbd",
+        "externalIds": {
+          "MAG": "1966190840",
+          "DOI": "10.1007/s13277-014-2477-9",
+          "CorpusId": 12402388,
+          "PubMed": "25149153"
+        },
+        "title": "Therapeutic potential of siRNA and DNAzymes in cancer",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "eb10d61bf622edb01b0eb1771cc95822cf9938db",
+        "externalIds": {
+          "MAG": "2095464204",
+          "DOI": "10.1080/09168451.2014.921550",
+          "CorpusId": 11111555,
+          "PubMed": "25130744"
+        },
+        "title": "Unripe Rubus coreanus Miquel suppresses migration and invasion of human prostate cancer cells by reducing matrix metalloproteinase expression",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "bb20526f8ed1898a73df9c19080f490b0a6298d9",
+        "externalIds": {
+          "MAG": "1985758769",
+          "DOI": "10.3892/ijo.2014.2446",
+          "CorpusId": 22687919,
+          "PubMed": "24841638"
+        },
+        "title": "miR-451: potential role as tumor suppressor of human hepatoma cell growth and invasion.",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [
+        "In other approach, a double siRNA structure with a single construct called hairpin RNA (hpRNA)\u2014produced by a cytomegalovirus promoter-driven DNA template\u2014was used to block expression of matrix metalloproteases (MMP)-9 and cathepsin B genes (Lakka et al., 2004).",
+        "Withrapid advancement in chemical synthesis and modi\ufb01-cation methods, chemically synthetized siRNAs other than Gondi et al., 2004; Lakka et al., 2004, 2005; Tummalapalli et al., 2007; Kunigal et al., 2007; Gondi et al., 2007; Kargiotis et al., vector-based siRNAs have been widely used for\u2026"
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "3ebcdc82e6b55d6346e3f52f157f5232753499be",
+        "externalIds": {
+          "MAG": "2081900817",
+          "DOI": "10.1089/nat.2014.0480",
+          "CorpusId": 21939208,
+          "PubMed": "24796432"
+        },
+        "title": "Development of RNA Interference\u2013Based Therapeutics and Application of Multi-Target Small Interfering RNAs",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [
+        "They are characterized by highly invasive behavior and aberrant neovascularization (Bian et al., 2007; Lakka et al., 2004)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "f6bb876ca5488243375b65fe3a9eefcf1b82d5ff",
+        "externalIds": {
+          "MAG": "1600432148",
+          "DOI": "10.1002/glia.22669",
+          "CorpusId": 20504892,
+          "PubMed": "24715652"
+        },
+        "title": "The role of CXCR4 in highly malignant human gliomas biology: Current knowledge and future directions",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [
+        "This type of therapy allows for a multitude of capabilities that can influence prodrug conversion [64,65], disruption of tumor vasculature signaling [66], and interference with invasion and growth [67]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "21cf8ba5f7965aff50269fc0115ad86e90aeccf3",
+        "externalIds": {
+          "MAG": "2166047812",
+          "DOI": "10.1517/17425247.2014.912629",
+          "CorpusId": 32016536,
+          "PubMed": "24766329"
+        },
+        "title": "The art of attraction: applications of multifunctional magnetic nanomaterials for malignant glioma",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "47d9d169a898acd22c4e4560fc89e5a622e5ae72",
+        "externalIds": {
+          "MAG": "2314178054",
+          "DOI": "10.4161/cbt.29185",
+          "CorpusId": 10075848,
+          "PubMed": "24842165"
+        },
+        "title": "A Salmonella Typhimurium mutant strain capable of RNAi delivery",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "ee82704c56d0d93e7b7a9d0170f47aa0ab37d708",
+        "externalIds": {
+          "MAG": "2127745150",
+          "PubMedCentral": "4519695",
+          "DOI": "10.1002/ijc.28908",
+          "CorpusId": 22239670,
+          "PubMed": "24752463"
+        },
+        "title": "Glioma associated microglial MMP9 expression is up regulated by TLR2 signalling and sensitive to minocycline",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [
+        "Stereotactic implantation of 5310 and 4910 non-GICs and GICs was carried out as described previously (Lakka et al., 2004).",
+        "Immunohistochemical analysis\nStereotactic implantation of 5310 and 4910 non-GICs and GICs was carried out as described previously (Lakka et al., 2004)."
+      ],
+      "intents": [
+        "methodology"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "cb672cce1ce13daff804fa61adb44162866aa5cf",
+        "externalIds": {
+          "MAG": "1997541914",
+          "PubMedCentral": "4061617",
+          "DOI": "10.1016/j.scr.2014.02.008",
+          "CorpusId": 3042581,
+          "PubMed": "24699410"
+        },
+        "title": "uPAR and cathepsin B-mediated compartmentalization of JNK regulates the migration of glioma-initiating cells",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "4285172b5c21e7851548d3812023c32b0ffc36fc",
+        "externalIds": {
+          "MAG": "1558842575",
+          "CorpusId": 54700561
+        },
+        "title": "Role of ERK in Modulating MMP 2 and MMP 9 with Respect to Tumour Invasiveness in Human Cancer Cell Line MCF-7 and MDA-MB-231",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [
+        "Furthermore, enhanced Cathepsin B expression correlates with significant shorter overall survival of GBM patients [73,93] and downregulation of Cathepsin B expression impairs invasive and tumorigenic potential of human glioblastoma cell lines [80,94,95].",
+        "Furthermore, its activity and expression increase with tumor grade [73,99,101,110\u2013112] and downregulation of the MMP-9 protein inhibits glioblastoma infiltration in vitro [113] and in nude mice [94,114] suggesting a major role of MMP-9 for glioblastoma tumor growth [115]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "d539ab6db8bc4dbcd389b62ca39bc8e42de39ea5",
+        "externalIds": {
+          "MAG": "2060147931",
+          "DOI": "10.1016/j.bbcan.2013.07.001",
+          "CorpusId": 33282215,
+          "PubMed": "23891970"
+        },
+        "title": "Invasion as target for therapy of glioblastoma multiforme.",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "a511d25a18ce25a685e5b68044dc3a9d2781347a",
+        "externalIds": {
+          "MAG": "2034661956",
+          "DOI": "10.1007/s12035-013-8593-5",
+          "CorpusId": 17761296,
+          "PubMed": "24271659"
+        },
+        "title": "Systematic Review of Protein Biomarkers of Invasive Behavior in Glioblastoma",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "Moreover, when MMP-9 was downregulated with antisense gene transfer of RNA interference, glioblastoma cells showed decreased invasion potential (Kondraganti et al., 2000; Lakka et al., 2004)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "cd5cef9e8d590f2ce87eb4aa712a077c1275b9dc",
+        "externalIds": {
+          "MAG": "2017782438",
+          "DOI": "10.3109/15419061.2013.833192",
+          "CorpusId": 39458299,
+          "PubMed": "24004256"
+        },
+        "title": "The shaping of invasive glioma phenotype by the ubiquitin\u2013proteasome system",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "97f292bc559995d482587d53b488861b3e75a505",
+        "externalIds": {
+          "MAG": "1980239925",
+          "PubMedCentral": "4139469",
+          "DOI": "10.1038/onc.2013.395",
+          "CorpusId": 20321046,
+          "PubMed": "24077280"
+        },
+        "title": "Cell type-dependent pathogenic functions of overexpressed human cathepsin B in murine breast cancer progression",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "RNAi inhibition of MMP9 and the protease cathepsin B dramatically reduced tumor pathogenicity of gliomas both in vitro and in vivo (Lakka et al., 2004)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "7c2198bf9f93db9136be1ef3296d423263dde212",
+        "externalIds": {
+          "MAG": "2056412577",
+          "PubMedCentral": "3814515",
+          "DOI": "10.3389/fphys.2013.00316",
+          "CorpusId": 18582362,
+          "PubMed": "24198789"
+        },
+        "title": "Involvement of tumor acidification in brain cancer pathophysiology",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "An important potential application for RNAi in mammals is the simultaneous inhibition of multiple genes in somatic cells (Lakka et al., 2004).",
+        "RNAi-mediated strategies for targeting MMPs as a novel treatment have achieved some success (Lakka et al., 2004; Yuan et al., 2005; Gondi et al., 2009; Gencer et al., 2011)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "212f4f6e3d0b084345377c5220919d09d0b3cada",
+        "externalIds": {
+          "MAG": "1952485984",
+          "DOI": "10.1002/cbin.10107",
+          "CorpusId": 22534708,
+          "PubMed": "23554050"
+        },
+        "title": "RNAi\u2010mediated MMP\u20109 silencing inhibits mouse melanoma cell invasion and migration in vitro and in vivo",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "Furthermore, There are some RNAi studies performed in one cell line [37,38,39]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "4a7057b87763077e738937af6ec00cc584ff0cb8",
+        "externalIds": {
+          "MAG": "2038401981",
+          "PubMedCentral": "3726385",
+          "DOI": "10.1371/journal.pone.0070303",
+          "CorpusId": 5554287,
+          "PubMed": "23922972"
+        },
+        "title": "Gene Silencing of Porcine MUC13 and ITGB5: Candidate Genes towards Escherichia coli F4ac Adhesion",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "3cea3183e67d31ce45c451329eca73e8179cc8e7",
+        "externalIds": {
+          "MAG": "2038425042",
+          "DOI": "10.1134/S1819712413020098",
+          "CorpusId": 17813025
+        },
+        "title": "Glutamate treatment and preconditioning differently affect cathepsin B release and intracellular proteases in primary cultures of cerebellar granular cells",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "MMP-9, a member of MMP superfamily, elevated expression and activity allow tumor cells to degrade and penetrate extracellular matrix (31,32)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "0e0430d1cdad98927005def1a4e7cffc05a270b0",
+        "externalIds": {
+          "MAG": "2048283358",
+          "DOI": "10.3892/ijo.2013.1847",
+          "CorpusId": 207591243,
+          "PubMed": "23467707"
+        },
+        "title": "Stromal protein periostin identified as a progression associated and prognostic biomarker in glioma via inducing an invasive and proliferative phenotype.",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "The technique showed potential for use as glioma therapy by inhibition of cancer cell invasiveness and of development of cancer-associated vascular structures (Lakka et al., 2004)."
+      ],
+      "intents": [
+        "methodology"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "d6a26e4ef20cb7e35d96a5298e3aa0f3065e5934",
+        "externalIds": {
+          "MAG": "2016859011",
+          "DOI": "10.3109/10409238.2013.770819",
+          "CorpusId": 33781725,
+          "PubMed": "23547785"
+        },
+        "title": "Biochemistry and molecular biology of gelatinase B or matrix metalloproteinase-9 (MMP-9): The next decade",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "Furthermore, glioblastoma cells transfected with antisense CatB cDNA exhibit reduced invasion capacity and motility in vitro [56] and tumor growth invasion in vivo [20,57] compared to the nontreated cells."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "afb8fbba0551147ca4c1786e55c94727cc3d8f06",
+        "externalIds": {
+          "MAG": "1863804530",
+          "DOI": "10.1593/NEO.13212",
+          "CorpusId": 19453321,
+          "PubMed": "23633927"
+        },
+        "title": "IGFBP-4 anti-angiogenic and anti-tumorigenic effects are associated with anti-cathepsin B activity.",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "protease, and MMP-9 have been shown to participate in tumor growth, invasion, and angiogenesis in GBM; RNA interference was effective in suppressing this phenotype, suggesting a potential therapeutic application [39]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "99c27e0827a533a9fa73f7bc64024a408e025073",
+        "externalIds": {
+          "MAG": "2009392213",
+          "PubMedCentral": "3637305",
+          "DOI": "10.1371/journal.pone.0062765",
+          "CorpusId": 17825193,
+          "PubMed": "23658650"
+        },
+        "title": "Overexpression of CD97 Confers an Invasive Phenotype in Glioblastoma Cells and Is Associated with Decreased Survival of Glioblastoma Patients",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "Glioblastoma MMp9 i catepsina B shRNA Intratumoral [152]"
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "f0f2ec75b689e3729f1c4c704451024dd2a7f826",
+        "externalIds": {
+          "MAG": "582350883",
+          "CorpusId": 68601914
+        },
+        "title": "Silenciament g\u00e8nic de CD40 en al\u2022lo i autoimmunitat. Estudi de la resposta immuno inflamat\u00f2ria en models animals",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "Experimental reduction of cathepsin B inhibited glioblastoma growth and invasion in rodent glioblastoma models [93]."
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "4a74e6a6ace1a3edf2c0664d6b8783326ada4df3",
+        "externalIds": {
+          "PubMedCentral": "3720600",
+          "MAG": "2112740677",
+          "DOI": "10.18632/oncotarget.969",
+          "CorpusId": 7252706,
+          "PubMed": "23594434"
+        },
+        "title": "A conceptually new treatment approach for relapsed glioblastoma: Coordinated undermining of survival paths with nine repurposed drugs (CUSP9) by the International Initiative for Accelerated Improvement of Glioblastoma Care",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "8f4e642d232fd120e0518adf4465187abe75536b",
+        "externalIds": {
+          "MAG": "2136875995",
+          "DOI": "10.1093/carcin/bgs375",
+          "CorpusId": 5974680,
+          "PubMed": "23222817"
+        },
+        "title": "Cathepsin B and uPAR regulate self-renewal of glioma-initiating cells through GLI-regulated Sox2 and Bmi1 expression.",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "c84188e2892f4541d1e3fcca5f404ac03e34b7be",
+        "externalIds": {
+          "MAG": "2055988323",
+          "DOI": "10.1016/j.bcp.2012.11.005",
+          "CorpusId": 19510237,
+          "PubMed": "23159669"
+        },
+        "title": "TGF-\u03b2 as a therapeutic target in high grade gliomas - promises and challenges.",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "We observed that this approach significantly inhibited established glioma tumor growth and invasion in intracranial tumors in vivo [111]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "76d78108b4ded2c4ae1037df51e90ccc96d8c0c2",
+        "externalIds": {
+          "MAG": "2128779315",
+          "DOI": "10.1517/14728222.2013.740461",
+          "CorpusId": 37638243,
+          "PubMed": "23293836"
+        },
+        "title": "Cathepsin B as a cancer target",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "the control of a CMV promoter.(38) For the scrambled vector control, we used a pcDNA3 vector with an imperfect sequence that does not form a perfect hairpin structure (pSV)."
+      ],
+      "intents": [
+        "methodology"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "41277aba5d80d230c4d7b6b42423ce5c75994381",
+        "externalIds": {
+          "PubMedCentral": "3542612",
+          "MAG": "2031689534",
+          "DOI": "10.1038/cddis.2012.170",
+          "CorpusId": 11834669,
+          "PubMed": "23222509"
+        },
+        "title": "uPAR and cathepsin B shRNA impedes TGF-\u03b21-driven proliferation and invasion of meningioma cells in a XIAP-dependent pathway",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "13755fcbbf6e77475481584fd457ae9567cd8765",
+        "externalIds": {
+          "MAG": "2075306542",
+          "DOI": "10.1016/j.wneu.2011.09.005",
+          "CorpusId": 205709375,
+          "PubMed": "22120277"
+        },
+        "title": "Novel animal glioma models that separately exhibit two different invasive and angiogenic phenotypes of human glioblastomas.",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "429430edfdde33128dd3c922941b4340f44ff9e8",
+        "externalIds": {
+          "MAG": "2081012076",
+          "DOI": "10.1002/cbic.201200389",
+          "CorpusId": 36630801,
+          "PubMed": "23125066"
+        },
+        "title": "A Novel Photoaffinity\u2010Based Probe for Selective Detection of Cathepsin L Active Form",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [
+        "The upregulation of MMP-9 is particularly important for the induction of cancer cell invasion and migration [37, 38], and suppression of MMP-9 in GBM cells significantly inhibits the invasion, migration and metastatic ability of these cells [17, 39].",
+        "The migration of CSC neurospheres and Matrigel invasion were carried out using previously established protocols [39, 52]."
+      ],
+      "intents": [
+        "background",
+        "methodology"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "8b4a4c437a2b0e98ec79fdbbc3828cb2591974fb",
+        "externalIds": {
+          "PubMedCentral": "3717804",
+          "MAG": "1851044857",
+          "DOI": "10.18632/oncotarget.683",
+          "CorpusId": 1469076,
+          "PubMed": "23183822"
+        },
+        "title": "Epigenetic Regulation of miRNA-211 by MMP-9 Governs Glioma Cell Apoptosis, Chemosensitivity and Radiosensitivity",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "20fb91f30f44e50de8e0cf337a10594f5fba1db8",
+        "externalIds": {
+          "MAG": "2033999514",
+          "PubMedCentral": "3578089",
+          "DOI": "10.1007/s10544-012-9721-0",
+          "CorpusId": 12377660,
+          "PubMed": "23104156"
+        },
+        "title": "Proliferation and Migration of Tumor Cells in Tapered Channels",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "a93a53f2827db2cb8f014b1dbb31d5c7d55bb316",
+        "externalIds": {
+          "MAG": "2089613976",
+          "DOI": "10.1002/ijc.27453",
+          "CorpusId": 12455335,
+          "PubMed": "22287159"
+        },
+        "title": "The regulation of cysteine cathepsins and cystatins in human gliomas",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [
+        "Lysosomes play a pivotal role in the degradation of extracellular matrix (ECM) proteins, cell invasion, and cell migration into the ECM because several of the proteases that contribute to ECM degradation are directly or indirectly associated with lysosome exocytosis [3], [4]."
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "a307a8d4b62d75b09996245e18487ef5497b9e68",
+        "externalIds": {
+          "MAG": "2041257044",
+          "PubMedCentral": "3461042",
+          "DOI": "10.1371/journal.pone.0045910",
+          "CorpusId": 18042473,
+          "PubMed": "23029308"
+        },
+        "title": "Inhibition of Glioma Cell Lysosome Exocytosis Inhibits Glioma Invasion",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "188b18e5085ea4c61aad4c096074382728c71a00",
+        "externalIds": {
+          "MAG": "1551234355",
+          "DOI": "10.1002/9783527649327.CH8",
+          "CorpusId": 82322922
+        },
+        "title": "Experimental Approaches for Understanding the Role of Matrix Metalloproteinases in Cancer Invasion",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "68cf39a6e83b9e17506c60bcec54d3316fe2833b",
+        "externalIds": {
+          "MAG": "2092169604",
+          "DOI": "10.4161/cc.20766",
+          "CorpusId": 39731020,
+          "PubMed": "22684297"
+        },
+        "title": "The homing of human cord blood stem cells to sites of inflammation",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "07d74528abd4f8f718549fb17e5accc751fc1e9d",
+        "externalIds": {
+          "MAG": "2289009903",
+          "DOI": "10.22059/JSCIENCES.2012.25064",
+          "CorpusId": 56018237
+        },
+        "title": "Study of Antimetastatic Effect of Genistein Through Inhibition of Expression of Matrix Metalloproteinase in A-549 Cell Line",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "2904d2bac2525b75386b46f35df02b6022d40d4e",
+        "externalIds": {
+          "MAG": "2016833687",
+          "DOI": "10.4161/cc.20400",
+          "CorpusId": 30793663,
+          "PubMed": "22580456"
+        },
+        "title": "Cellular and molecular evidence for malignancy-inhibitory functions of p15RS",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [
+        "\u2026or on the recipient site has been modulated by RNA interference, knock-out technology, or overexpression (Berchem et al., 2002; Gondi et al., 2004; Lakka et al., 2004; Li et al., 2005; Alvarez-Diaz et al., 2009; Burden et al., 2009; Ward et al., 2010; Malla et al., 2011; Withana et al., 2012)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "5e43f3aa635378392d0bfcf6c1c80ad74a4e7af5",
+        "externalIds": {
+          "PubMedCentral": "3394080",
+          "MAG": "2169587235",
+          "DOI": "10.3389/fphar.2012.00133",
+          "CorpusId": 11025102,
+          "PubMed": "22798952"
+        },
+        "title": "Differential Impact of Cysteine Cathepsins on Genetic Mouse Models of De novo Carcinogenesis: Cathepsin B as Emerging Therapeutic Target",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [
+        "25 mL/h was carried out as previously described [18,19]."
+      ],
+      "intents": [
+        "methodology"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "3eaf438cb4a1a7330ed908fed75b4db172dedf41",
+        "externalIds": {
+          "MAG": "2029301637",
+          "PubMedCentral": "3525767",
+          "DOI": "10.1002/mc.21915",
+          "CorpusId": 41850951,
+          "PubMed": "22495828"
+        },
+        "title": "Knockdown of Cathepsin B and uPAR Inhibits CD151 and \u03b13\u03b21 Integrin-mediated Cell Adhesion and Invasion in Glioma",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "c31296278328280cf61ac5369a9bbfaf7e4a0d6f",
+        "externalIds": {
+          "MAG": "1996629339",
+          "DOI": "10.1007/s11060-011-0692-4",
+          "CorpusId": 24503496,
+          "PubMed": "21912938"
+        },
+        "title": "Knockdown of cyclin\u00a0D1 inhibits proliferation, induces apoptosis, and attenuates the invasive capacity of human glioblastoma cells",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "28ef791e356e58d9a033540ca99846f8211724e8",
+        "externalIds": {
+          "MAG": "2104420419",
+          "PubMedCentral": "3481542",
+          "DOI": "10.1016/j.cellsig.2011.10.008",
+          "CorpusId": 15165878,
+          "PubMed": "22024282"
+        },
+        "title": "MMP-9 Induces CD44 Cleavage and CD44 mediated Cell Migration in Glioblastoma Xenograft Cells",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [
+        "Plasmid constructs containing bicistronic shRNAs pMU, pMC and scrambled vector (pSV) with an imperfect sequence designed in our laboratory [22,23] were used to transfect the xenograft cells."
+      ],
+      "intents": [
+        "methodology"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "c303e62a1c644e6776410e09367f3ae14949d1b2",
+        "externalIds": {
+          "MAG": "2090050412",
+          "PubMedCentral": "3193530",
+          "DOI": "10.1371/journal.pone.0026191",
+          "CorpusId": 14245951,
+          "PubMed": "22022560"
+        },
+        "title": "Regulation of DNA Repair Mechanism in Human Glioma Xenograft Cells both In Vitro and In Vivo in Nude Mice",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [
+        "25 ll/hr was carried out as previously described [18, 19]."
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "71790b6ef439f37298f4c5ad4d4df2750da025bf",
+        "externalIds": {
+          "PubMedCentral": "3286222",
+          "MAG": "1986599845",
+          "DOI": "10.1007/s11060-011-0727-x",
+          "CorpusId": 23154042,
+          "PubMed": "21964739"
+        },
+        "title": "uPAR and Cathepsin B Downregulation Induces Apoptosis by Targeting Calcineurin A to BAD via Bcl-2 in Glioma",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "3bc07ed70d4b1b6374effea4b6c197b3a092f2da",
+        "externalIds": {
+          "MAG": "2045292924",
+          "PubMedCentral": "3205329",
+          "DOI": "10.1016/j.cellsig.2011.09.011",
+          "CorpusId": 6370370,
+          "PubMed": "21946432"
+        },
+        "title": "Integrin \u03b19\u03b21-mediated cell migration in glioblastoma via SSAT and Kir4.2 potassium channel pathway",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "dcad16ecd4f4d1d0e37972365afd9fb9aa329517",
+        "externalIds": {
+          "MAG": "2083386797",
+          "PubMedCentral": "3184383",
+          "DOI": "10.1016/j.cellsig.2011.08.001",
+          "CorpusId": 37664711,
+          "PubMed": "21855630"
+        },
+        "title": "MMP-9 Silencing Regulates hTERT Expression via \u03b21 Integrin-mediated FAK Signaling and Induces Senescence in Glioma Xenograft Cells",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "1dfd02f95dcc9edcec0d5ac868c813ff3d5f2e68",
+        "externalIds": {
+          "MAG": "2059158610",
+          "PubMedCentral": "3183416",
+          "DOI": "10.1016/j.molonc.2011.07.004",
+          "CorpusId": 19602837,
+          "PubMed": "21840777"
+        },
+        "title": "Mechanism of p27 Upregulation Induced by Downregulation of Cathepsin B and uPAR in Glioma",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "1451ba1083706cd3819dbfa5aec40d4b441794df",
+        "externalIds": {
+          "MAG": "2087628740",
+          "DOI": "10.1002/jez.b.21402",
+          "CorpusId": 32090654,
+          "PubMed": "21319298"
+        },
+        "title": "Potential role of cathepsin B in the embryonic and larval development of clam Meretrix meretrix.",
+        "year": 2011
       }
     }
   ]

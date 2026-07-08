@@ -1,0 +1,2488 @@
+{
+  "totalCount": 4987,
+  "studies": [
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06568146",
+          "orgStudyIdInfo": {
+            "id": "20432"
+          },
+          "organization": {
+            "fullName": "Love Wellness",
+            "class": "INDUSTRY"
+          },
+          "briefTitle": "A Single Group Study to Evaluate the Effects of a Multivitamin on a Range of Health and Wellbeing Outcomes.",
+          "officialTitle": "A Single Group Study to Evaluate the Effects of a Multivitamin on a Range of Health and Wellbeing Outcomes."
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2024-10",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2024-05-23",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2024-10-23",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2024-10-23",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2024-07-11",
+          "studyFirstSubmitQcDate": "2024-08-20",
+          "studyFirstPostDateStruct": {
+            "date": "2024-08-23",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-10-25",
+          "lastUpdatePostDateStruct": {
+            "date": "2024-10-29",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "Love Wellness",
+            "class": "INDUSTRY"
+          },
+          "collaborators": [
+            {
+              "name": "Citruslabs",
+              "class": "INDUSTRY"
+            }
+          ]
+        },
+        "oversightModule": {
+          "oversightHasDmc": false,
+          "isFdaRegulatedDrug": false,
+          "isFdaRegulatedDevice": false,
+          "isUsExport": false
+        },
+        "descriptionModule": {
+          "briefSummary": "This is a hybrid single-group clinical trial that will last 12 weeks. Participants will take 2 capsules daily with the first meal of the day in the morning. Participants will undertake blood tests at Baseline and Week 12. Study-specific questionnaires will be completed at Baseline, Week 4, Week 8, and Week 12. Cognitive Battery Testing will take place at Baseline, Week 4, Week 8, and Week 12."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Health and Wellbeing"
+          ],
+          "keywords": [
+            "Multivitamin",
+            "Cognitive Function",
+            "Iron",
+            "Vitamin D",
+            "Vitamin B12",
+            "Insulin"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "NA"
+          ],
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "interventionModelDescription": "This is a hybrid single-group clinical trial designed to evaluate the effects of a multivitamin on a range of health and wellbeing outcomes over a 12-week period.",
+            "primaryPurpose": "HEALTH_SERVICES_RESEARCH",
+            "maskingInfo": {
+              "masking": "NONE",
+              "maskingDescription": "This is an open-label study where no masking will be implemented."
+            }
+          },
+          "enrollmentInfo": {
+            "count": 40,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Multivitamin Supplement Group",
+              "type": "EXPERIMENTAL",
+              "description": "Participants in this arm will take 2 capsules of the multivitamin supplement daily with the first meal of the day in the morning.",
+              "interventionNames": [
+                "Dietary Supplement: Multivitamin Supplement"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DIETARY_SUPPLEMENT",
+              "name": "Multivitamin Supplement",
+              "description": ": Participants will take 2 capsules of the multivitamin supplement daily with the first meal of the day in the morning.",
+              "armGroupLabels": [
+                "Multivitamin Supplement Group"
+              ],
+              "otherNames": [
+                "Daily Love Multivitamin"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Changes in Blood Levels of Vitamin B12",
+              "description": "This outcome measure will assess the effect of the multivitamin supplement on serum levels of Vitamin B12.",
+              "timeFrame": "Baseline and Week 12"
+            },
+            {
+              "measure": "Changes in Blood Levels of Insulin",
+              "description": "This outcome measure will assess the effect of the multivitamin supplement on serum levels of Insulin.",
+              "timeFrame": "Baseline and Week 12"
+            },
+            {
+              "measure": "Changes in Blood Levels of Vitamin D",
+              "description": "This outcome measure will assess the effect of the multivitamin supplement on serum levels of Vitamin D.",
+              "timeFrame": "Baseline and Week 12"
+            },
+            {
+              "measure": "Changes in Blood Levels of Iron",
+              "description": "This outcome measure will assess the effect of the multivitamin supplement on serum levels of Iron.",
+              "timeFrame": "Baseline and Week 12"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Participants' Perceptions of Health and Wellbeing",
+              "description": "Evaluation of participants' perceptions via a questionnaire exploring the convenience and efficacy of the multivitamin supplement in supporting overall health and wellbeing.",
+              "timeFrame": "Baseline, Week 4, Week 8, and Week 12"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Female at birth.\n* Aged 18+.\n* Interested in supporting their health and wellbeing.\n* Not planning to introduce or change prescription medications, vitamins, minerals, or supplements one month prior to and during the study.\n* Generally healthy with no uncontrolled chronic conditions.\n\nExclusion Criteria:\n\n* Recent surgeries or invasive treatments.\n* Introduction of new health-related products in the last 12 weeks.\n* Allergies to product ingredients or use of Epi-Pen.\n* Chronic health conditions affecting participation.\n* Endocrine or glucose-related disorders, including diabetes.\n* Hematological disorders, including anemia.\n* Pregnant, breastfeeding, or planning to conceive.\n* History of substance abuse or recent smoking.\n* Unwillingness to follow the study protocol.\n* Participation in other clinical trials.",
+          "healthyVolunteers": true,
+          "sex": "FEMALE",
+          "minimumAge": "18 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Citruslabs",
+              "city": "Santa Monica",
+              "state": "California",
+              "zip": "90404",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 34.01949,
+                "lon": -118.49138
+              }
+            }
+          ]
+        },
+        "ipdSharingStatementModule": {
+          "ipdSharing": "NO"
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D007333",
+              "term": "Insulin Resistance"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D006946",
+              "term": "Hyperinsulinism"
+            },
+            {
+              "id": "D044882",
+              "term": "Glucose Metabolism Disorders"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05469503",
+          "orgStudyIdInfo": {
+            "id": "VCT-009"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2022-A00131-42",
+              "type": "OTHER",
+              "domain": "ID-RCB"
+            }
+          ],
+          "organization": {
+            "fullName": "Valbiotis",
+            "class": "INDUSTRY"
+          },
+          "briefTitle": "Effect of TOTUM-854 on Blood Pressure in Subjects With Moderately Elevated Blood Pressure",
+          "officialTitle": "A Randomized, Placebo-controlled, Double-blind Study to Assess the Effect of TOTUM-854 on Blood Pressure in Subjects With Moderately Elevated Blood Pressure",
+          "acronym": "INSIGHT"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2024-04",
+          "overallStatus": "UNKNOWN",
+          "lastKnownStatus": "ACTIVE_NOT_RECRUITING",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2022-07-15",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2024-09-01",
+            "type": "ESTIMATED"
+          },
+          "completionDateStruct": {
+            "date": "2024-12-01",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2022-07-18",
+          "studyFirstSubmitQcDate": "2022-07-18",
+          "studyFirstPostDateStruct": {
+            "date": "2022-07-21",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-04-22",
+          "lastUpdatePostDateStruct": {
+            "date": "2024-04-23",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "Valbiotis",
+            "class": "INDUSTRY"
+          },
+          "collaborators": [
+            {
+              "name": "Excelya",
+              "class": "INDUSTRY"
+            }
+          ]
+        },
+        "oversightModule": {
+          "oversightHasDmc": true,
+          "isFdaRegulatedDrug": false,
+          "isFdaRegulatedDevice": false
+        },
+        "descriptionModule": {
+          "briefSummary": "This clinical study aims to assess the efficacy of TOTUM-854, a mix of 6 plant extracts, consumed twice a day on automated office blood pressure in subjects with moderately elevated blood pressure. The hypothesis is that TOTUM-854 is superior to placebo for decrease of automated office blood pressure after 12 weeks of consumption."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Prehypertension",
+            "Elevated Blood Pressure",
+            "Blood Pressure",
+            "Metabolic Syndrome"
+          ],
+          "keywords": [
+            "Diet supplement",
+            "Plant extracts",
+            "Hygiene and dietary recommendations"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "NA"
+          ],
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "primaryPurpose": "PREVENTION",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            }
+          },
+          "enrollmentInfo": {
+            "count": 410,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "TOTUM-854",
+              "type": "EXPERIMENTAL",
+              "description": "Experimental active diet supplement TOTUM-854 3.71-g dose. Seven capsules per day to consume orally in two intakes",
+              "interventionNames": [
+                "Dietary Supplement: TOTUM-854"
+              ]
+            },
+            {
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR",
+              "description": "Placebo comparator Seven capsules per day to consume orally in two intakes",
+              "interventionNames": [
+                "Dietary Supplement: Placebo"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DIETARY_SUPPLEMENT",
+              "name": "TOTUM-854",
+              "description": "12 weeks of TOTUM-854 supplementation",
+              "armGroupLabels": [
+                "TOTUM-854"
+              ]
+            },
+            {
+              "type": "DIETARY_SUPPLEMENT",
+              "name": "Placebo",
+              "description": "12 weeks of placebo supplementation",
+              "armGroupLabels": [
+                "Placebo"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Systolic Blood Pressure at V4",
+              "description": "Automated Office Blood Pressure (in mmHg), TOTUM-854 vs placebo",
+              "timeFrame": "V4 (12 weeks of intervention)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Evolution of Systolic Blood Pressure",
+              "description": "Automated Office Blood Pressure (in mmHg), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of Diastolic Blood Pressure",
+              "description": "Automated Office Blood Pressure (in mmHg), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the fasting blood glycemia",
+              "description": "Glycemia (in mg/dL), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the fasting blood concentration of triglycerides",
+              "description": "Triglycerides (in g/L), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the fasting blood concentration of total cholesterol",
+              "description": "Total cholesterol (in g/L), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the fasting blood concentration of HDL cholesterol",
+              "description": "HDL cholesterol (in g/L), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the fasting blood concentration of non-HDL cholesterol",
+              "description": "non-HDL cholesterol (in g/L), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the fasting blood concentration of LDL cholesterol (Friedewald method)",
+              "description": "LDL cholesterol (in g/L, Friedewald method), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the fasting blood hsCRP concentration",
+              "description": "hsCRP (in mg/L), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the body weight",
+              "description": "Body weight (in kg), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the waist circumference",
+              "description": "Waist circumference (in cm), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the hip circumference",
+              "description": "Hip circumference (in cm), TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Evolution of the cardiovascular disease risk (SCORE value)",
+              "description": "Systematic Coronary Risk Estimation value from Heartscore calculator, TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            },
+            {
+              "measure": "Delay of occurence of pharmacological treatment requirement for hypertension from V1",
+              "description": "Delay between V1 and the date at which the investigator will decide to withdraw the subject from the study because he needs a pharmacological treatment to treat his hypertension, TOTUM-854 vs placebo",
+              "timeFrame": "V1 (baseline), V2 (4 weeks of intervention), V3 (8 weeks), V4 (12 weeks) and V5 (4 weeks after the stop of intervention)"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Main Inclusion Criteria:\n\n* Office Systolic Blood Pressure between 130 and 159 mmHg and Diastolic Blood Pressure \\< 100 mmHg\n* Body Mass Index (BMI) between 18.5 and 35 kg/m\u00b2\n* Weight stable within \u00b1 5 % in the last three months\n* No significant change in food habits or in physical activity in the 3 months before the randomization and agreeing to keep them unchanged throughout the study\n\nMain Exclusion Criteria:\n\n* Known or suspected secondary hypertension\n* Subjects with a very high Cardio Vascular risk SCORE2 or SCORE2-OP according to their risk regions: (Subjects \\<50 years old: \u22657.5%; Subjects between 50 and 69 years old: \u226510%; Subjects \u226570 years old: \u226515%)\n* Known hypertensive retinopathy and/or hypertensive encephalopathy\n* History of spontaneous or drug-induced angioedema\n* Clinically significant valvular heart disease or severe aortic stenosis\n* History of an acute coronary syndrome (non-ST elevation myocardial infarction, ST-elevation myocardial infarction, and unstable angina pectoris), stroke, or transient ischemic attack within 6 months prior to inclusion\n* Newly diagnosed or suffering from a non-treated or uncontrolled metabolic disorder such as diabetes, dyslipidemia, thyroidal dysfunction or other metabolic disorder\n* Suffering from a severe chronic disease or gastrointestinal disorders found to be inconsistent with the conduct of the study by the investigator",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "75 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Katarzyna Pa\u0142ka, Dr",
+              "affiliation": "Centrum Medyczne Linden",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "Multiprofile Hospital for Active Treatment Cardiology Department",
+              "city": "Haskovo",
+              "country": "Bulgaria",
+              "geoPoint": {
+                "lat": 41.93415,
+                "lon": 25.55557
+              }
+            },
+            {
+              "facility": "Multiprofile Hospital for Active Treatment - Uni Hospital OOD, Cardiology Department",
+              "city": "Panagyurishte",
+              "country": "Bulgaria",
+              "geoPoint": {
+                "lat": 42.49518,
+                "lon": 24.19021
+              }
+            },
+            {
+              "facility": "Diagnostic Consultative Center VII-Plovdiv South district EOOD, Cabinet of Endocrinology",
+              "city": "Plovdiv",
+              "country": "Bulgaria",
+              "geoPoint": {
+                "lat": 42.15387,
+                "lon": 24.75001
+              }
+            },
+            {
+              "facility": "Multiprofile Hospital for Active Treatment Sveta Karidad EAD, Cardiology Department",
+              "city": "Plovdiv",
+              "country": "Bulgaria",
+              "geoPoint": {
+                "lat": 42.15387,
+                "lon": 24.75001
+              }
+            },
+            {
+              "facility": "Diagnostic Consultative Center XX- Sofia EOOD",
+              "city": "Sofia",
+              "country": "Bulgaria",
+              "geoPoint": {
+                "lat": 42.69751,
+                "lon": 23.32415
+              }
+            },
+            {
+              "facility": "CHU Clermont Ferrand PIC/CIC Inserm 1405",
+              "city": "Clermont-Ferrand",
+              "country": "France",
+              "geoPoint": {
+                "lat": 45.77969,
+                "lon": 3.08682
+              }
+            },
+            {
+              "facility": "Vitamed Ga\u0142aj i Cichomski sp.j",
+              "city": "Bydgoszcz",
+              "country": "Poland",
+              "geoPoint": {
+                "lat": 53.1235,
+                "lon": 18.00762
+              }
+            },
+            {
+              "facility": "Centrum Medyczne Linden",
+              "city": "Krakow",
+              "country": "Poland",
+              "geoPoint": {
+                "lat": 50.06143,
+                "lon": 19.93658
+              }
+            },
+            {
+              "facility": "Przychodnia Zespo\u0142u Lekarza Rodzinnego \"Medyk\"",
+              "city": "S\u0142upca",
+              "country": "Poland",
+              "geoPoint": {
+                "lat": 52.28733,
+                "lon": 17.87192
+              }
+            },
+            {
+              "facility": "Centrum Medyczne Opor\u00f3w",
+              "city": "Wroclaw",
+              "country": "Poland",
+              "geoPoint": {
+                "lat": 51.10286,
+                "lon": 17.03006
+              }
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D058246",
+              "term": "Prehypertension"
+            },
+            {
+              "id": "D006973",
+              "term": "Hypertension"
+            },
+            {
+              "id": "D024821",
+              "term": "Metabolic Syndrome"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D014652",
+              "term": "Vascular Diseases"
+            },
+            {
+              "id": "D002318",
+              "term": "Cardiovascular Diseases"
+            },
+            {
+              "id": "D007333",
+              "term": "Insulin Resistance"
+            },
+            {
+              "id": "D006946",
+              "term": "Hyperinsulinism"
+            },
+            {
+              "id": "D044882",
+              "term": "Glucose Metabolism Disorders"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07096505",
+          "orgStudyIdInfo": {
+            "id": "SINEM_TRE_2025"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "KA23/107",
+              "type": "OTHER",
+              "domain": "Ba\u015fkent University Medical and Health Sciences Research Ethics Committee"
+            }
+          ],
+          "organization": {
+            "fullName": "Baskent University",
+            "class": "OTHER"
+          },
+          "briefTitle": "The Effects of Early vs. Delayed Time-Restricted Eating on Metabolic Syndrome Parameters",
+          "officialTitle": "The Effects of Early vs. Delayed Time-Restricted Eating on Metabolic Syndrome Parameters in Obese Women: A Randomized Controlled Trial"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2025-07",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2023-07-21",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2024-10-15",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2024-12-15",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2025-07-17",
+          "studyFirstSubmitQcDate": "2025-07-24",
+          "studyFirstPostDateStruct": {
+            "date": "2025-07-31",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-07-24",
+          "lastUpdatePostDateStruct": {
+            "date": "2025-07-31",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR_INVESTIGATOR",
+            "investigatorFullName": "SINEM BAYRAM",
+            "investigatorTitle": "Assoc. Prof.",
+            "investigatorAffiliation": "Baskent University"
+          },
+          "leadSponsor": {
+            "name": "SINEM BAYRAM",
+            "class": "OTHER"
+          }
+        },
+        "oversightModule": {
+          "oversightHasDmc": true,
+          "isFdaRegulatedDrug": false,
+          "isFdaRegulatedDevice": false
+        },
+        "descriptionModule": {
+          "briefSummary": "This study aims to compare the effects of early and delayed time-restricted eating on metabolic syndrome parameters in obese women.",
+          "detailedDescription": "This randomized controlled trial investigates the effects of time-restricted eating with different timing windows on metabolic syndrome parameters. A total of 36 sedentary obese women aged between 20-49 years were randomly assigned to one of three groups: Early Time-Restricted Eating (eTRE; 08:00-16:00), Delayed Time-Restricted Eating (dTRE; 12:00-20:00), and a Control group (08:00-20:00). Participants' physical activity levels were assessed using a one-day physical activity log. Total energy expenditure was calculated, and a 25% energy restriction was applied to create individualized medical nutrition therapy. Anthropometric measurements, body composition, and biochemical parameters were collected before and after the 8-week intervention."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Obesity and Metabolic Syndrome"
+          ],
+          "keywords": [
+            "time restricted eating",
+            "obesity",
+            "intermittent fasting",
+            "randomized controlled trial"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "NA"
+          ],
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "interventionModelDescription": "A total of 36 obese women aged between 20-49 years were randomly assigned to one of three groups: Early Time-Restricted Eating (eTRE; 08:00-16:00), Delayed Time-Restricted Eating (dTRE; 12:00-20:00), and a Control group (08:00-20:00). A one-day physical activity log was used to assess the participants' physical activity levels. Total energy expenditure was calculated for all participants, and a 25% energy restriction was applied to design individualized medical nutrition therapy.",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 36,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Early Time-Restricted Eating with Calorie Restriction",
+              "type": "EXPERIMENTAL",
+              "description": "Participants ate all meals between 08:00 and 16:00 daily with calorie restriction diet for 8 weeks.",
+              "interventionNames": [
+                "Behavioral: Early time restricted eating with calorie restriction"
+              ]
+            },
+            {
+              "label": "Delayed Time-Restricted Eating with Calorie Restriction",
+              "type": "EXPERIMENTAL",
+              "description": "Participants ate all meals between 12:00 and 20:00 daily with calorie restriction diet for 8 weeks.",
+              "interventionNames": [
+                "Behavioral: Delayed Time Restricted Eating with calorie restriction"
+              ]
+            },
+            {
+              "label": "control",
+              "type": "ACTIVE_COMPARATOR",
+              "description": "Participants ate all meals between 08:00 and 20:00 daily with calorie restriction diet for 8 weeks.",
+              "interventionNames": [
+                "Behavioral: Control group with calorie restriction"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "BEHAVIORAL",
+              "name": "Early time restricted eating with calorie restriction",
+              "description": "Participants followed a diet with 25% energy restriction and an 8-hour eating window from 08:00 to 16:00. Dietary compliance was monitored by dietitian through food consumption records.",
+              "armGroupLabels": [
+                "Early Time-Restricted Eating with Calorie Restriction"
+              ]
+            },
+            {
+              "type": "BEHAVIORAL",
+              "name": "Delayed Time Restricted Eating with calorie restriction",
+              "description": "Participants followed a diet with 25% energy restriction and an 8-hour eating window from 12:00 to 20:00. Dietary compliance was monitored by dietitian through food consumption records.",
+              "armGroupLabels": [
+                "Delayed Time-Restricted Eating with Calorie Restriction"
+              ]
+            },
+            {
+              "type": "BEHAVIORAL",
+              "name": "Control group with calorie restriction",
+              "description": "Participants followed a diet with 25% energy restriction and a usual eating window from 08:00 to 20:00. Dietary compliance was monitored by dietitian through food consumption records.",
+              "armGroupLabels": [
+                "control"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Change in Body Weight (kg)",
+              "description": "Body weight will be measured in kilograms using standardized procedures at baseline and at the end of the 8-week intervention.",
+              "timeFrame": "from enrollment to the end of treatment at 8 weeks"
+            },
+            {
+              "measure": "Change in Body Mass Index (BMI) (kg/m\u00b2)",
+              "description": "Body Mass Index (BMI), calculated as weight (kg) divided by height squared (m\u00b2), will be recorded at baseline and at the end of the 8-week intervention.",
+              "timeFrame": "from enrollment to the end of treatment at 8 weeks"
+            },
+            {
+              "measure": "Change in Waist Circumference (cm)",
+              "description": "Waist circumference will be measured in centimeters at baseline and at the end of the 8-week intervention using standardized anthropometric procedures.",
+              "timeFrame": "from enrollment to the end of treatment at 8 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Change in Fasting Glucose (mg/dL)",
+              "description": "Fasting blood glucose levels will be measured in mg/dL at baseline and after the 8-week intervention.",
+              "timeFrame": "From enrollment to the end of the treatment at 8 weeks"
+            },
+            {
+              "measure": "Change in Fasting Insulin (\u03bcIU/mL)",
+              "description": "Fasting serum insulin levels will be measured in \u03bcIU/mL at baseline and after the 8-week intervention.",
+              "timeFrame": "From enrollment to the end of the treatment at 8 weeks"
+            },
+            {
+              "measure": "Change in HOMA-IR",
+              "description": "Homeostatic Model Assessment of Insulin Resistance (HOMA-IR) will be calculated using fasting glucose and insulin values at baseline and after the 8-week intervention.",
+              "timeFrame": "From enrollment to the end of the treatment at 8 weeks"
+            },
+            {
+              "measure": "Change in Total Cholesterol (mg/dL)",
+              "description": "Serum Total Cholesterol will be measured in mg/dL at baseline and after the intervention.",
+              "timeFrame": "From enrollment to the end of the treatment at 8 weeks"
+            },
+            {
+              "measure": "Change in Systolic and Diastolic Blood Pressure (mmHg)",
+              "description": "Systolic and diastolic blood pressure will be measured using a standardized sphygmomanometer at baseline and after 8 weeks.",
+              "timeFrame": "From enrollment to the end of the treatment at 8 weeks"
+            },
+            {
+              "measure": "Change in LDL Cholesterol (mg/dL)",
+              "description": "Serum LDL cholesterol will be measured in mg/dL at baseline and after the intervention.",
+              "timeFrame": "From enrollment to the end of the treatment at 8 weeks"
+            },
+            {
+              "measure": "Change in HDL Cholesterol (mg/dL)",
+              "description": "Serum HDL cholesterol will be measured in mg/dL at baseline and after the intervention.",
+              "timeFrame": "From enrollment to the end of the treatment at 8 weeks"
+            },
+            {
+              "measure": "Change in Triglycerides (mg/dL)",
+              "description": "Serum triglyceride levels will be measured in mg/dL at baseline and after the intervention.",
+              "timeFrame": "From enrollment to the end of the treatment at 8 weeks"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* BMI \\> 30 kg/m\u00b2\n* Able to follow dietary protocols\n* No chronic disease (T1DM, T2DM, cardiovascular disease, cancer)\n* Not on a weight loss diet in the past 6 months\n* No psychiatric disorder\n* Sedentary lifestyle\n\nExclusion Criteria:\n\n* Menopausal women\n* Cardiovascular disease\n* Type 1 or Type 2 Diabetes\n* Use of weight loss medications\n* Pregnant or breastfeeding\n* Smoking\n* Shift workers",
+          "healthyVolunteers": true,
+          "sex": "FEMALE",
+          "minimumAge": "20 Years",
+          "maximumAge": "49 Years",
+          "stdAges": [
+            "ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Sinem Bayram, Assoc. Prof.",
+              "affiliation": "Baskent University",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "Baskent University",
+              "city": "Ankara",
+              "country": "Turkey (T\u00fcrkiye)",
+              "geoPoint": {
+                "lat": 39.91987,
+                "lon": 32.85427
+              }
+            }
+          ]
+        },
+        "ipdSharingStatementModule": {
+          "ipdSharing": "YES",
+          "description": "Data obtained through this study may be provided to qualified researchers with academic interest in time-restricted eating and metabolic syndrome. Data or samples shared will be coded, with no PHI included. Approval of the request and execution of all applicable agreements (i.e. a material transfer agreement) are prerequisites to the sharing of data with the requesting party.",
+          "infoTypes": [
+            "STUDY_PROTOCOL",
+            "ICF",
+            "CSR"
+          ],
+          "timeFrame": "Data requests can be submitted starting 9 months after article publication and the data will be made accessible for up to 24 months. Extensions will be considered on a case-by-case basis.",
+          "accessCriteria": "Access to trial IPD can be requested by qualified researchers engaging in independent scientific research, and will be provided following review and approval of a research proposal and Statistical Analysis Plan (SAP) and execution of a Data Sharing Agreement (DSA)."
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D009765",
+              "term": "Obesity"
+            },
+            {
+              "id": "D024821",
+              "term": "Metabolic Syndrome"
+            },
+            {
+              "id": "D000093763",
+              "term": "Intermittent Fasting"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D050177",
+              "term": "Overweight"
+            },
+            {
+              "id": "D044343",
+              "term": "Overnutrition"
+            },
+            {
+              "id": "D009748",
+              "term": "Nutrition Disorders"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            },
+            {
+              "id": "D001835",
+              "term": "Body Weight"
+            },
+            {
+              "id": "D012816",
+              "term": "Signs and Symptoms"
+            },
+            {
+              "id": "D013568",
+              "term": "Pathological Conditions, Signs and Symptoms"
+            },
+            {
+              "id": "D007333",
+              "term": "Insulin Resistance"
+            },
+            {
+              "id": "D006946",
+              "term": "Hyperinsulinism"
+            },
+            {
+              "id": "D044882",
+              "term": "Glucose Metabolism Disorders"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            },
+            {
+              "id": "D005215",
+              "term": "Fasting"
+            },
+            {
+              "id": "D005247",
+              "term": "Feeding Behavior"
+            },
+            {
+              "id": "D001519",
+              "term": "Behavior"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D035061",
+              "term": "Control Groups"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D015340",
+              "term": "Epidemiologic Research Design"
+            },
+            {
+              "id": "D004812",
+              "term": "Epidemiologic Methods"
+            },
+            {
+              "id": "D008919",
+              "term": "Investigative Techniques"
+            },
+            {
+              "id": "D012107",
+              "term": "Research Design"
+            },
+            {
+              "id": "D008722",
+              "term": "Methods"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06226194",
+          "orgStudyIdInfo": {
+            "id": "IRBLleida"
+          },
+          "organization": {
+            "fullName": "Institut de Recerca Biom\u00e8dica de Lleida",
+            "class": "OTHER"
+          },
+          "briefTitle": "Genetic Susceptibility to Predict Weight Loss After Bariatric Surgery",
+          "officialTitle": "Genetic Susceptibility to Predict Weight Loss After Bariatric Surgery",
+          "acronym": "GENBASU"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2024-03",
+          "overallStatus": "RECRUITING",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2024-03-15",
+            "type": "ESTIMATED"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2027-03-15",
+            "type": "ESTIMATED"
+          },
+          "completionDateStruct": {
+            "date": "2028-11-29",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2024-01-17",
+          "studyFirstSubmitQcDate": "2024-01-17",
+          "studyFirstPostDateStruct": {
+            "date": "2024-01-26",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-03-05",
+          "lastUpdatePostDateStruct": {
+            "date": "2024-03-06",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "PRINCIPAL_INVESTIGATOR",
+            "investigatorFullName": "Albert Lecube Torello",
+            "investigatorTitle": "Head of Endocrinology Department Arnau de Vilanova University Hospital",
+            "investigatorAffiliation": "Institut de Recerca Biom\u00e8dica de Lleida"
+          },
+          "leadSponsor": {
+            "name": "Institut de Recerca Biom\u00e8dica de Lleida",
+            "class": "OTHER"
+          },
+          "collaborators": [
+            {
+              "name": "ISCIII",
+              "class": "UNKNOWN"
+            }
+          ]
+        },
+        "oversightModule": {
+          "oversightHasDmc": false,
+          "isFdaRegulatedDrug": false,
+          "isFdaRegulatedDevice": false
+        },
+        "descriptionModule": {
+          "briefSummary": "Obesity is a complex chronic disease, in which both genetic and environmental factors are involved, that shows a great heterogeneity in the response to different weight loss programs. Identifying patients as responder or no responder to the different obesity treatment options is a concept of great interest, both due to the high prevalence of obesity and its high consumption of resources. More than 500,000 surgeries are performed every year around the world, of which approximately 30% will present unsatisfactory results.\n\nThe general objective is to carry out a multi-omics approach for the discovery and validation of markers of weight response to bariatric surgery (BS) in a large sample of people with severe obesity (n=6,966 men and women who underwent sleeve gastrectomy or gastric bypass, including an additional external validation set). Thus, the investigators want to know the integrated contribution of several genomic markers (Genome Wide Association study, GWAs), new clinical and analytical variables (human exposome concept) and gender perspective to the prediction of response to the intervention at 12 month and its long-term longitudinal maintenance (3 years). The investigators intend, therefore, to provide new evidence to advance towards precision medicine. The investigators will focus our attention also on identifying those patients who, after being classified at the weight loss nadir as responders experienced weight regain."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Bariatric Surgery Candidate",
+            "Obesity, Morbid",
+            "Genetic Predisposition",
+            "Metabolic Syndrome",
+            "Weight Loss"
+          ]
+        },
+        "designModule": {
+          "studyType": "OBSERVATIONAL",
+          "patientRegistry": true,
+          "targetDuration": "3 Years",
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "bioSpec": {
+            "retention": "SAMPLES_WITH_DNA",
+            "description": "Saliva and peripheral blood"
+          },
+          "enrollmentInfo": {
+            "count": 6966,
+            "type": "ESTIMATED"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Lleida",
+              "description": "Saliva sample collection and questionnaire"
+            },
+            {
+              "label": "Barcelona",
+              "description": "Saliva sample collection and questionnaire"
+            },
+            {
+              "label": "Madrid",
+              "description": "Saliva sample collection and questionnaire"
+            },
+            {
+              "label": "M\u00e1laga",
+              "description": "Saliva sample collection and questionnaire"
+            },
+            {
+              "label": "Santiago de Compostela",
+              "description": "Saliva sample collection and questionnaire"
+            },
+            {
+              "label": "Pamplona",
+              "description": "Saliva sample collection and questionnaire"
+            },
+            {
+              "label": "Le\u00f3n",
+              "description": "Saliva sample collection and questionnaire"
+            },
+            {
+              "label": "A Coru\u00f1a",
+              "description": "Saliva sample collection and questionnaire"
+            },
+            {
+              "label": "Mallorca",
+              "description": "Saliva sample collection and questionnaire"
+            },
+            {
+              "label": "Tenerife",
+              "description": "Saliva sample collection and questionnaire"
+            },
+            {
+              "label": "Las Palmas",
+              "description": "Saliva sample collection and questionnaire"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Genomic markers that can predict the weight change response to bariatric surgery",
+              "description": "Percentage of initial weight change",
+              "timeFrame": "3 years"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Genomic markers that can predict comorbidities response to bariatric surgery",
+              "description": "Type 2 diabetes mellitus, sleep apnea, fatty liver",
+              "timeFrame": "3 years"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Men and women between the ages of 18 and 65 at the time of surgery\n* SG or RYBP as bariatric procedure.\n* With a BMI\u226535.0 kg/m2 with one or more comorbidities or a BMI\\>40.0 kg/m2 at the time of surgery.\n* Provision of an informed consent form signed and personally dated by the patient.\n* With available baseline data (anthropometric, analytical, surgical procedure, pharmacological therapies, and obesity-related comorbidities).\n\nExclusion Criteria:\n\n* Any previous gastrointestinal surgery\n* Treatment with any approved antiobesity drug in Spain (orlistat, liraglutide 3.0 mg and/or naltrexone/bupropion extended release) or systemic glucocorticoids for more than 4 consecutive weeks during the 3 years following BS\n* End stage kidney disease (eGFR \\<15 ml/min/1.73m2) or liver cirrhosis at baseline\n* Patients who developed any major medical conditions that limits the practice of a healthy life within normal limits (advanced cardiovascular disease or heart failure, stroke with neurological sequelae, chronic pulmonary obstructive disease with dyspnea at minimal exertion, severe joint pathology, end stage renal failure, or active cancer)\n* Known type 1 diabetes or LADA diabetes\n* Women who become pregnant during the follow-up period\n* Current drug or alcohol abuse\n* Uncontrolled psychiatric illness or eating disorders developed during the follow-up period.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "65 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ],
+          "studyPopulation": "This multicenter retrospective study will be aimed at 6,966 obese patients undergoing BS, whose surgical technique (sleeve gastrectomy vs gastric bypass) has been performed at least 3 years before, evaluating the best combination of genetic and exposomal characteristics (clinical and analytical) that will predict which patients will be responders and non-responders in terms of weight loss.",
+          "samplingMethod": "NON_PROBABILITY_SAMPLE"
+        },
+        "contactsLocationsModule": {
+          "centralContacts": [
+            {
+              "name": "Albert Lecube Torell\u00f3, PhD",
+              "role": "CONTACT",
+              "phone": "0034973705183",
+              "email": "alecube@gmail.com"
+            },
+            {
+              "name": "Eva L\u00f3pez",
+              "role": "CONTACT",
+              "phone": "0034973706636",
+              "email": "elopez@irblleida.cat"
+            }
+          ],
+          "overallOfficials": [
+            {
+              "name": "Albert Lecube Torell\u00f3, PhD",
+              "affiliation": "Institut de Recerca Biom\u00e8dica de Lleida",
+              "role": "STUDY_CHAIR"
+            },
+            {
+              "name": "Rafael Simo, PhD",
+              "affiliation": "Hospital Universitari Vall d'Hebron Research Institute",
+              "role": "STUDY_DIRECTOR"
+            },
+            {
+              "name": "Miguel Angel Rubio, PhD",
+              "affiliation": "Instituto de Investigaci\u00f3n Sanitaria Hospital Cl\u00ednico San Carlos",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            },
+            {
+              "name": "Francisco Tinahones, PhD",
+              "affiliation": "Instituto de Investigaci\u00f3n Biom\u00e9dica de M\u00e1laga",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            },
+            {
+              "name": "Javier Escalada, PhD",
+              "affiliation": "Cl\u00ednica Universidad de Navarra Institute",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "IRBLleida",
+              "status": "RECRUITING",
+              "city": "Lleida",
+              "state": "Leida",
+              "zip": "25198",
+              "country": "Spain",
+              "contacts": [
+                {
+                  "name": "Albert Lecube Torell\u00f3, PhD",
+                  "role": "CONTACT",
+                  "phone": "973702201",
+                  "email": "alecube@gmail.com"
+                }
+              ],
+              "geoPoint": {
+                "lat": 41.61674,
+                "lon": 0.62218
+              }
+            }
+          ]
+        },
+        "referencesModule": {
+          "references": [
+            {
+              "pmid": "34872641",
+              "type": "BACKGROUND",
+              "citation": "Breton I, de Hollanda A, Vilarrasa N, Rubio Herrera MA, Lecube A, Salvador J, Garcia-Luna PP, Tinahones FJ, Sanchez Santos R, Gomez Huelgas R, Carretero Gomez J, Moize V, Polo Garcia J, Tranche Iparraguirre S, Fernandez-Pro Ledesma A, Escalada J; representing SEEN, SEEDO, SECO, SEMI, SEDYN, SEMERGEN, semFYC and SEMG. Obesity and COVID-19. A necessary position statement. Endocrinol Diabetes Nutr (Engl Ed). 2021 Oct;68(8):573-576. doi: 10.1016/j.endien.2021.02.004. Epub 2021 Nov 18. No abstract available."
+            },
+            {
+              "pmid": "32933882",
+              "type": "BACKGROUND",
+              "citation": "Ballesteros Pomar MD, Vilarrasa Garcia N, Rubio Herrera MA, Barahona MJ, Bueno M, Caixas A, Calanas Continente A, Ciudin A, Cordido F, de Hollanda A, Diaz MJ, Flores L, Garcia Luna PP, Garcia Perez-Sevillano F, Goday A, Lecube A, Lopez Gomez JJ, Minambres I, Morales Gorria MJ, Morinigo R, Nicolau J, Pellitero S, Salvador J, Valdes S, Breton Lesmes I. The SEEN comprehensive clinical survey of adult obesity: Executive summary. Endocrinol Diabetes Nutr (Engl Ed). 2021 Feb;68(2):130-136. doi: 10.1016/j.endinu.2020.05.003. Epub 2020 Sep 12. English, Spanish."
+            },
+            {
+              "pmid": "33398625",
+              "type": "BACKGROUND",
+              "citation": "Beisani M, Sabench Pereferrer F, Vilallonga R, Gonzalez Lopez O, Molina Lopez A, Del Castillo Dejardin D, Garcia Ruiz de Gordejuela A, Fort Lopez-Barajas JM, Armengol Carrasco M; Members of the Obesity Section of the Spanish Surgical Association Collaborative Group. Seeking an Initial-Weight-Independent Metric in a Mediterranean Cohort of Gastric Bypass Patients: the %AWL Revisited. Obes Surg. 2021 Apr;31(4):1524-1532. doi: 10.1007/s11695-020-05154-3. Epub 2021 Jan 4."
+            },
+            {
+              "pmid": "32081378",
+              "type": "BACKGROUND",
+              "citation": "Caixas A, Villaro M, Arraiza C, Montalva JC, Lecube A, Fernandez-Garcia JM, Corio R, Bellido D, Llisterri JL, Tinahones FJ. SEEDO-SEMERGEN consensus document on continuous care of obesity between Primary Care and Specialist Hospital Units 2019. Med Clin (Barc). 2020 Sep 25;155(6):267.e1-267.e11. doi: 10.1016/j.medcli.2019.10.014. Epub 2020 Feb 17. English, Spanish."
+            },
+            {
+              "pmid": "32640531",
+              "type": "BACKGROUND",
+              "citation": "Martinez-Ortega AJ, Olveira G, Pereira-Cunill JL, Arraiza-Irigoyen C, Garcia-Almeida JM, Irles Rocamora JA, Molina-Puerta MJ, Molina Soria JB, Rabat-Restrepo JM, Rebollo-Perez MI, Serrano-Aguayo MP, Tenorio-Jimenez C, Vilches-Lopez FJ, Garcia-Luna PP. Recommendations Based on Evidence by the Andalusian Group for Nutrition Reflection and Investigation (GARIN) for the Pre- and Postoperative Management of Patients Undergoing Obesity Surgery. Nutrients. 2020 Jul 6;12(7):2002. doi: 10.3390/nu12072002."
+            },
+            {
+              "pmid": "31342249",
+              "type": "BACKGROUND",
+              "citation": "Vilallonga R, Pereira-Cunill JL, Morales-Conde S, Alarcon I, Breton I, Dominguez-Adame E, Ferrer JV, Ruiz-de-Gordejuela AG, Goday A, Lecube A, Garcia-Almenta EM, Rubio MA, Tinahones FJ, Garcia-Luna PP. A Spanish Society joint SECO and SEEDO approach to the Post-operative management of the patients undergoing surgery for obesity. Obes Surg. 2019 Dec;29(12):3842-3853. doi: 10.1007/s11695-019-04043-8."
+            },
+            {
+              "pmid": "27543006",
+              "type": "BACKGROUND",
+              "citation": "Lecube A, Monereo S, Rubio MA, Martinez-de-Icaya P, Marti A, Salvador J, Masmiquel L, Goday A, Bellido D, Lurbe E, Garcia-Almeida JM, Tinahones FJ, Garcia-Luna PP, Palacio E, Gargallo M, Breton I, Morales-Conde S, Caixas A, Menendez E, Puig-Domingo M, Casanueva FF. Prevention, diagnosis, and treatment of obesity. 2016 position statement of the Spanish Society for the Study of Obesity. Endocrinol Diabetes Nutr. 2017 Mar;64 Suppl 1:15-22. doi: 10.1016/j.endonu.2016.07.002. Epub 2016 Aug 16. No abstract available. English, Spanish."
+            },
+            {
+              "pmid": "35514242",
+              "type": "BACKGROUND",
+              "citation": "Yarnoz-Esquiroz P, Olazaran L, Aguas-Ayesa M, Perdomo CM, Garcia-Goni M, Silva C, Fernandez-Formoso JA, Escalada J, Montecucco F, Portincasa P, Fruhbeck G. 'Obesities': Position statement on a complex disease entity with multifaceted drivers. Eur J Clin Invest. 2022 Jul;52(7):e13811. doi: 10.1111/eci.13811. Epub 2022 May 12."
+            },
+            {
+              "pmid": "35342930",
+              "type": "BACKGROUND",
+              "citation": "Linares-Pineda TM, Boughanem H, Gutierrez-Repiso C, Macias-Gonzalez M, Andres-Leon E, Rojo-Martinez G, Valdes S, Tinahones FJ, Morcillo S. Epigenetic changes in the metabolically healthy obese: A case-control versus a prospective study. Eur J Clin Invest. 2022 Aug;52(8):e13783. doi: 10.1111/eci.13783. Epub 2022 Apr 11. No abstract available."
+            },
+            {
+              "pmid": "34846686",
+              "type": "BACKGROUND",
+              "citation": "Martinez MC, Meli EF, Candia FP, Filippi F, Vilallonga R, Cordero E, Hernandez I, Eguinoa AZ, Burgos R, Vila A, Simo R, Ciudin A. The Impact of Bariatric Surgery on the Muscle Mass in Patients with Obesity: 2-Year Follow-up. Obes Surg. 2022 Mar;32(3):625-633. doi: 10.1007/s11695-021-05815-x. Epub 2021 Nov 30."
+            },
+            {
+              "pmid": "34253348",
+              "type": "BACKGROUND",
+              "citation": "Lecube A, Ciudin A. A long and stony road to the correct treatment of obesity. Med Clin (Barc). 2021 Aug 27;157(4):176-177. doi: 10.1016/j.medcli.2021.06.004. Epub 2021 Jul 10. No abstract available. English, Spanish."
+            },
+            {
+              "pmid": "34146246",
+              "type": "BACKGROUND",
+              "citation": "Torrego-Ellacuria M, Barabash A, Larrad-Sainz A, Hernandez-Nunez GM, Matia-Martin P, Perez-Ferre N, Marcuello C, Sanchez-Pernaute A, Torres AJ, Calle-Pascual AL, Rubio MA. Weight Regain Outcomes After Bariatric Surgery in the Long-term Follow-up: Role of Preoperative Factors. Obes Surg. 2021 Sep;31(9):3947-3955. doi: 10.1007/s11695-021-05497-5. Epub 2021 Jun 19."
+            },
+            {
+              "pmid": "34638758",
+              "type": "BACKGROUND",
+              "citation": "Gutierrez-Repiso C, Linares-Pineda TM, Gonzalez-Jimenez A, Aguilar-Lineros F, Valdes S, Soriguer F, Rojo-Martinez G, Tinahones FJ, Morcillo S. Epigenetic Biomarkers of Transition from Metabolically Healthy Obesity to Metabolically Unhealthy Obesity Phenotype: A Prospective Study. Int J Mol Sci. 2021 Sep 27;22(19):10417. doi: 10.3390/ijms221910417."
+            },
+            {
+              "pmid": "34683180",
+              "type": "BACKGROUND",
+              "citation": "Ciudin A, Fidilio E, Gutierrez-Carrasquilla L, Caixas A, Vilarrasa N, Pellitero S, Simo-Servat A, Vilallonga R, Ruiz A, de la Fuente M, Luna A, Sanchez E, Rigla M, Hernandez C, Salas E, Simo R, Lecube A. A Clinical-Genetic Score for Predicting Weight Loss after Bariatric Surgery: The OBEGEN Study. J Pers Med. 2021 Oct 17;11(10):1040. doi: 10.3390/jpm11101040."
+            },
+            {
+              "pmid": "33601956",
+              "type": "BACKGROUND",
+              "citation": "Nicolau J, Dotres K, Ayala L, Rodriguez I, Pascual S, Sanchis P, Bonet A, Tamayo MI, Arteaga M, Fortuny R, Cifuentes A, Masmiquel L. Long-Term Prevalence of Food Addiction Among Bariatric Surgery Patients: Influence on Metabolic and Psychological Outcomes. Metab Syndr Relat Disord. 2021 Apr;19(3):152-158. doi: 10.1089/met.2020.0079. Epub 2021 Feb 18."
+            },
+            {
+              "pmid": "34345955",
+              "type": "BACKGROUND",
+              "citation": "Fidilio E, Comas M, Giribes M, Cardenas G, Vilallonga R, Palma F, Pelaez RB, Simo R, Ciudin A. Evaluation of Resting Energy Expenditure in Subjects with Severe Obesity and Its Evolution After Bariatric Surgery. Obes Surg. 2021 Oct;31(10):4347-4355. doi: 10.1007/s11695-021-05578-5. Epub 2021 Aug 3."
+            },
+            {
+              "pmid": "33923789",
+              "type": "BACKGROUND",
+              "citation": "Cornejo-Pareja I, Molina-Vega M, Gomez-Perez AM, Damas-Fuentes M, Tinahones FJ. Factors Related to Weight Loss Maintenance in the Medium-Long Term after Bariatric Surgery: A Review. J Clin Med. 2021 Apr 16;10(8):1739. doi: 10.3390/jcm10081739."
+            },
+            {
+              "pmid": "33147793",
+              "type": "BACKGROUND",
+              "citation": "Alvarez-Bermudez MD, Martin-Reyes F, Ocana-Wilhelmi L, Moreno-Ruiz FJ, Torres JA, Fernandez-Garcia D, Valdes S, Moreno-Morales N, Garcia-Fuentes E, Tinahones FJ, Garrido-Sanchez L. Variables Associated with Short-Term Weight Loss in a Cohort of Patients with Morbid Obesity According to Age and Three Types of Bariatric Surgery. J Clin Med. 2020 Nov 2;9(11):3537. doi: 10.3390/jcm9113537."
+            },
+            {
+              "pmid": "32283783",
+              "type": "BACKGROUND",
+              "citation": "Hollanda A, Lecube A, Rubio MA, Sanchez E, Vilarrasa N, Oliva JG, Fernandez-Soto ML, Salas-Salvado J, Ballesteros-Pomar MD, Ciudin A, Torres F, Vidal C, Morales MJ, Valdes S, Pellitero S, Minambres I, Masmiquel L, Goday A, Suarez L, Flores L, Bueno M, Caixas A, Breton I, Camara R, Olbeyra R, Penso R, Jose de la Cruz M, Simo-Servat A, Pereyra-Garcia FM, Lopez-Mezquita ET, Gils A, Fidilio E, Bandres O, Martinez A, Abuin J, Marques-Pamies M, Tuneu L, Arteaga M, Castaner O, Goni F, Arrizabalaga C, Botana MA, Calanas A, Rebollo A. New Metrics to Assess Type 2 Diabetes After Bariatric Surgery: The \"Time-Within-Remission Range\". J Clin Med. 2020 Apr 9;9(4):1070. doi: 10.3390/jcm9041070."
+            },
+            {
+              "pmid": "30862367",
+              "type": "BACKGROUND",
+              "citation": "Palau-Rodriguez M, Garcia-Aloy M, Minarro A, Bernal-Lopez MR, Brunius C, Gomez-Huelgas R, Landberg R, Tinahones FJ, Andres-Lacueva C. Effects of a long-term lifestyle intervention on metabolically healthy women with obesity: Metabolite profiles according to weight loss response. Clin Nutr. 2020 Jan;39(1):215-224. doi: 10.1016/j.clnu.2019.01.018. Epub 2019 Feb 16."
+            },
+            {
+              "pmid": "31112015",
+              "type": "BACKGROUND",
+              "citation": "Serrano JCE, Baena-Fustegueras JA, Martin-Gari M, Rassendren H, Cassanye A, Naudi A, Lopez-Cano C, Sanchez E, de la Fuente-Juarez MC, Herrerias Gonzalez F, Olsina Kissler JJ, Lecube A, Portero-Otin M. Adipose Tissue Protein Glycoxidation is Associated with Weight-Loss Potential. Obesity (Silver Spring). 2019 Jul;27(7):1133-1140. doi: 10.1002/oby.22501. Epub 2019 May 21."
+            },
+            {
+              "pmid": "31277226",
+              "type": "BACKGROUND",
+              "citation": "Ciudin A, Fidilio E, Ortiz A, Pich S, Salas E, Mesa J, Hernandez C, Simo-Servat O, Lecube A, Simo R. Genetic Testing to Predict Weight Loss and Diabetes Remission and Long-Term Sustainability after Bariatric Surgery: A Pilot Study. J Clin Med. 2019 Jul 3;8(7):964. doi: 10.3390/jcm8070964."
+            },
+            {
+              "pmid": "31608009",
+              "type": "BACKGROUND",
+              "citation": "Cornejo-Pareja I, Clemente-Postigo M, Tinahones FJ. Metabolic and Endocrine Consequences of Bariatric Surgery. Front Endocrinol (Lausanne). 2019 Sep 19;10:626. doi: 10.3389/fendo.2019.00626. eCollection 2019."
+            },
+            {
+              "pmid": "30121853",
+              "type": "BACKGROUND",
+              "citation": "Arteaga-Gonzalez IJ, Martin-Malagon AI, Ruiz de Adana JC, de la Cruz Vigo F, Torres-Garcia AJ, Carrillo-Pallares AC. Bariatric Surgery Waiting Lists in Spain. Obes Surg. 2018 Dec;28(12):3992-3996. doi: 10.1007/s11695-018-3453-z."
+            },
+            {
+              "pmid": "28244776",
+              "type": "BACKGROUND",
+              "citation": "Nicolau J, Simo R, Sanchis P, Ayala L, Fortuny R, Rivera R, Masmiquel L. Effects of depressive symptoms on clinical outcomes, inflammatory markers and quality of life after a significant weight loss in a bariatric surgery sample. Nutr Hosp. 2017 Feb 1;34(1):81-87. doi: 10.20960/nh.979."
+            },
+            {
+              "pmid": "28393901",
+              "type": "BACKGROUND",
+              "citation": "Morcillo S, Martin-Nunez GM, Garcia-Serrano S, Gutierrez-Repiso C, Rodriguez-Pacheco F, Valdes S, Gonzalo M, Rojo-Martinez G, Moreno-Ruiz FJ, Rodriguez-Canete A, Tinahones F, Garcia-Fuentes E. Changes in SCD gene DNA methylation after bariatric surgery in morbidly obese patients are associated with free fatty acids. Sci Rep. 2017 Apr 10;7:46292. doi: 10.1038/srep46292."
+            }
+          ]
+        },
+        "ipdSharingStatementModule": {
+          "ipdSharing": "UNDECIDED"
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D009767",
+              "term": "Obesity, Morbid"
+            },
+            {
+              "id": "D020022",
+              "term": "Genetic Predisposition to Disease"
+            },
+            {
+              "id": "D024821",
+              "term": "Metabolic Syndrome"
+            },
+            {
+              "id": "D015431",
+              "term": "Weight Loss"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D009765",
+              "term": "Obesity"
+            },
+            {
+              "id": "D050177",
+              "term": "Overweight"
+            },
+            {
+              "id": "D044343",
+              "term": "Overnutrition"
+            },
+            {
+              "id": "D009748",
+              "term": "Nutrition Disorders"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            },
+            {
+              "id": "D001835",
+              "term": "Body Weight"
+            },
+            {
+              "id": "D012816",
+              "term": "Signs and Symptoms"
+            },
+            {
+              "id": "D013568",
+              "term": "Pathological Conditions, Signs and Symptoms"
+            },
+            {
+              "id": "D004198",
+              "term": "Disease Susceptibility"
+            },
+            {
+              "id": "D020969",
+              "term": "Disease Attributes"
+            },
+            {
+              "id": "D010335",
+              "term": "Pathologic Processes"
+            },
+            {
+              "id": "D007333",
+              "term": "Insulin Resistance"
+            },
+            {
+              "id": "D006946",
+              "term": "Hyperinsulinism"
+            },
+            {
+              "id": "D044882",
+              "term": "Glucose Metabolism Disorders"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            },
+            {
+              "id": "D001836",
+              "term": "Body Weight Changes"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT00145379",
+          "orgStudyIdInfo": {
+            "id": "006"
+          },
+          "organization": {
+            "fullName": "Odense University Hospital",
+            "class": "OTHER"
+          },
+          "briefTitle": "The Effect of Metformin in Overweight Patients With Dysregulated Type 1 Diabetes Mellitus",
+          "officialTitle": "The Effect of Metformin in Overweight Patients With Dysregulated Type 1 Diabetes Mellitus"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2013-05",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2003-03"
+          },
+          "completionDateStruct": {
+            "date": "2006-06",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2005-09-02",
+          "studyFirstSubmitQcDate": "2005-09-02",
+          "studyFirstPostDateStruct": {
+            "date": "2005-09-05",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2013-05-17",
+          "lastUpdatePostDateStruct": {
+            "date": "2013-05-20",
+            "type": "ESTIMATED"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {
+            "name": "Odense University Hospital",
+            "class": "OTHER"
+          }
+        },
+        "descriptionModule": {
+          "briefSummary": "Patients suffering from diabetes through many years have a risk of developing late diabetic complications including changes in eyes, kidney, vessels and nerves. Late complications can be postponed or avoided when assuring a good diabetes control, i.e. sensible diet, exercise, frequent blood glucose measurements and a good medical treatment.\n\nBlood glucose regulation depends on two different factors i.e. the insulin need of the body and the amount of insulin in the body. The amount of insulin, in blood, is decided by the amount of insulin infused daily, whereas the insulin need depends on the patient's weight, physical activity and diet. Overweight type 2 diabetes patients have a large insulin need and especially this need is decisive for their development of diabetes. If these patients are treated with Metformin, blood glucose decreases and the result is an easier weight loss for the patient. Especially, when these patients take this drug, the development of late diabetic complications, especially arteriosclerosis, can be avoided or postponed.\n\nWhether these favourable effects of Metformin are also present in type 1 diabetic patients remains to be fully clarified, but some studies have indicated that this is the case. This results in a better regulation of diabetes on a smaller insulin dose than the one given to the patients before.\n\nMetformin probably takes effect by increasing the glucose uptake in muscles and by reducing the hepatic glucose production. The drug usually has no side-effects, but some patients do, however, suffer from abdominal pain, small tendency to nausea, loose defaecation and a metallic taste in the mouth. These side-effects are often temporary.\n\nProject description\n\nIn total, 50 type 1 diabetic patients are offered to participate in the project. All are from the outpatient clinic at the Department of Endocrinology. The project lasts 7 months divided as follows:\n\n1. An introductory period of one month introducing an optimisation of the insulin treatment\n2. A 6 month period (in which neither the patients nor the treating doctor know which medication is given) with either T. Metformin treatment twice daily or T. Placebo (lime) twice daily together with the usual insulin treatment four times daily.\n\nChoice of either T. Metformin or T. Placebo will be made by draw, and as stated above, the drug type will be unknown for both the patient and the treating doctor in order to make sure that the investigation is as objective as possible.\n\nThroughout the examination period, the patients are asked to measure blood glucose four times daily, i.e. before main meals and before bed time. These values will be used for regulating the fasting insulin dose with help from the treating doctor, and for adjusting the daily insulin dose. During the first and the last two days of the examination period we will also ask the patients to measure blood glucose at 03h00 for two days. Those diurnal profiles will be included in the evaluation of the blood glucose control during the treatment period. Furthermore, the patients' blood pressures are determined during 24 hours before and after the 6 months' treatment period. This will be carried out automatically by means of a blood pressure cuff around the arm connected to a small apparatus registering the values during 24 hours. The apparatus can be taken home after installation at the outpatient clinic and can be carried around in a belt around the waist until next day where the apparatus will be dismantled.\n\nAt the first and the last of 5 outpatient visits, blood tests will be taken (for evaluation of the long-term blood glucose, kidney, liver, insulin and fat in blood) and nocturnal urine must be collected and disposed in order to evaluate protein secretion and thereby kidney function."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Type 1 Diabetes Mellitus"
+          ],
+          "keywords": [
+            "type 1 diabetes mellitus",
+            "insulin resistance",
+            "metformin",
+            "randomized, controlled study"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE4"
+          ],
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "primaryPurpose": "PREVENTION",
+            "maskingInfo": {
+              "masking": "DOUBLE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 42,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Metformin",
+              "type": "EXPERIMENTAL",
+              "interventionNames": [
+                "Drug: Tablet Metformin 500 mg"
+              ]
+            },
+            {
+              "label": "Placebo comparator",
+              "type": "PLACEBO_COMPARATOR",
+              "interventionNames": [
+                "Drug: Placebo"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Tablet Metformin 500 mg",
+              "armGroupLabels": [
+                "Metformin"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "armGroupLabels": [
+                "Placebo comparator"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "HbA1c after the two intervention periods"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Insulin need, hypoglycaemia frequence, body weight, lipid profile, blood pressure after the two intervention periods"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Patients with type 1 diabetes mellitus treated with insulin 4 times daily.\n* Age: 18-60 years\n* Fertile women use adequate contraception, e.g. contraceptive pills\n* C-peptide \\<300 pmol/L\n* BMI \\>/= 25\n* HbA1c \\>/=8%\n\nExclusion Criteria:\n\n* Pregnant and patients planning to become pregnant during the investigation period\n* Reduced eyesight\n* Known kidney disease, s-creatinin \\>100\n* Liver disease, Alat \\> 50\n* Neuropathic patients diagnosed by clinical examination",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "60 Years",
+          "stdAges": [
+            "ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Iben Brock Jacobsen, MD",
+              "affiliation": "Odense University Hospital",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "Diabetes Research Center",
+              "city": "Odense",
+              "state": "Funen",
+              "zip": "5000",
+              "country": "Denmark",
+              "geoPoint": {
+                "lat": 55.39594,
+                "lon": 10.38831
+              }
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003922",
+              "term": "Diabetes Mellitus, Type 1"
+            },
+            {
+              "id": "D007333",
+              "term": "Insulin Resistance"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D003920",
+              "term": "Diabetes Mellitus"
+            },
+            {
+              "id": "D044882",
+              "term": "Glucose Metabolism Disorders"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            },
+            {
+              "id": "D004700",
+              "term": "Endocrine System Diseases"
+            },
+            {
+              "id": "D001327",
+              "term": "Autoimmune Diseases"
+            },
+            {
+              "id": "D007154",
+              "term": "Immune System Diseases"
+            },
+            {
+              "id": "D006946",
+              "term": "Hyperinsulinism"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT02240966",
+          "orgStudyIdInfo": {
+            "id": "H-3-2013-1 75"
+          },
+          "organization": {
+            "fullName": "Rigshospitalet, Denmark",
+            "class": "OTHER"
+          },
+          "briefTitle": "Symptoms and Clinical Signs of Hypogonadism in Testicular Cancer Survivors",
+          "officialTitle": "Symptoms and Clinical Signs of Hypogonadism in Testicular Cancer Survivors"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2016-07",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2014-08"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2016-07",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2016-07",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2014-09-08",
+          "studyFirstSubmitQcDate": "2014-09-12",
+          "studyFirstPostDateStruct": {
+            "date": "2014-09-16",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-07-13",
+          "lastUpdatePostDateStruct": {
+            "date": "2016-07-14",
+            "type": "ESTIMATED"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "PRINCIPAL_INVESTIGATOR",
+            "investigatorFullName": "Mikkel Bandak",
+            "investigatorTitle": "MD",
+            "investigatorAffiliation": "Rigshospitalet, Denmark"
+          },
+          "leadSponsor": {
+            "name": "Rigshospitalet, Denmark",
+            "class": "OTHER"
+          }
+        },
+        "oversightModule": {
+          "oversightHasDmc": false
+        },
+        "descriptionModule": {
+          "briefSummary": "The purpose of this study is to investigate the prevalence of signs and symptoms of hypogonadism in three groups of testicular cancer survivors.",
+          "detailedDescription": "Recent studies have shown that metabolic syndrome is common among testicular cancer. Patients with low levels of testosterone appear to be at higher risk of metabolic syndrome.\n\nA substantial number of testicular cancer survivors might be in a state of \"compensated hypogonadism\" with testosterone levels low in the normal range due to an increased LH-drive from the pituitary gland.\n\nWhether this specific groups of testicular cancer survivors are at increased risk of cardio-vascular disease and might benefit from testosterone substitution is yet to be clarified."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Metabolic Syndrome",
+            "Hypogonadism",
+            "Cardio-vascular Disease"
+          ],
+          "keywords": [
+            "Testicular Neoplasms",
+            "Hypogonadism",
+            "Metabolic Syndrome",
+            "Treatment related late effects"
+          ]
+        },
+        "designModule": {
+          "studyType": "OBSERVATIONAL",
+          "patientRegistry": false,
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "CROSS_SECTIONAL"
+          },
+          "enrollmentInfo": {
+            "count": 200,
+            "type": "ACTUAL"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Prevalence of Metabolic Syndrome in the three groups of testicular cancer survivors according to International Diabetes Federation Guidelines and US National Cholesterol Education Program Adult Treatment Panel III criteria",
+              "timeFrame": "Up to 12 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Lean body mass (Kilogram)",
+              "description": "Lean body mass assessed by DXA-scan",
+              "timeFrame": "Up to 12 months"
+            },
+            {
+              "measure": "Bone Mineral Density (Gram/cm2)",
+              "description": "Bone mineral density assessed by DXA-scan",
+              "timeFrame": "Up to 12 months"
+            },
+            {
+              "measure": "Pulmonary Function: Total lung capacity, Forced vital capacity, FEV1, Diffusing capacity or of the lung for carbon monoxide",
+              "timeFrame": "Up to 12 months"
+            },
+            {
+              "measure": "Renal function (Glomerular Filtration Rate ml/min)",
+              "description": "Renal function is assessed with 51Cr-EDTA",
+              "timeFrame": "Up to 12 months"
+            },
+            {
+              "measure": "Fasting Blood Glucose",
+              "timeFrame": "Up to 12 months"
+            },
+            {
+              "measure": "plasma-insulin",
+              "timeFrame": "Up to 12 months"
+            },
+            {
+              "measure": "Adiponectin and leptin",
+              "timeFrame": "Up to 12 months"
+            },
+            {
+              "measure": "Ultrasonic appearance and size of the remaining testicle",
+              "description": "Ultrasonic appearance and size of the remaining of testicle assessed by ultrasound",
+              "timeFrame": "Up to 12 months"
+            },
+            {
+              "measure": "Quality of life",
+              "description": "Quality of Life is assessed by the EORTC QLQ-30 Questionnaire",
+              "timeFrame": "Up to 12 months"
+            },
+            {
+              "measure": "Anxiety and depression",
+              "description": "Anxiety and depression is assessed by the questionnaire: Hospital Anxiety and Depression Scale (HADS)",
+              "timeFrame": "Up to 12 months"
+            },
+            {
+              "measure": "Fatigue",
+              "description": "Fatigue is assessed by the questionnaire: Multidimensional Fatigue Inventory (MFI-20)",
+              "timeFrame": "Up to 12 months"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Earlier treatment of testicular germ cell cancer\n* No sign of relapse \\> 1 year since latest treatment\n* Testosterone \\< 12 nmol/L and luteinizing hormone \\> 8 IE/L OR\n* Testosterone \\> 12 nmol/L and LH \\> 8 IE/L OR\n* Testosterone and LH within their normal ranges\n\nExclusion Criteria:\n\n* Testosterone substitution",
+          "healthyVolunteers": true,
+          "sex": "MALE",
+          "minimumAge": "18 Years",
+          "maximumAge": "65 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ],
+          "studyPopulation": "Testicular cancer survivors",
+          "samplingMethod": "PROBABILITY_SAMPLE"
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Gedske Daugaard, DMSc",
+              "affiliation": "Rigshospitalet, Denmark",
+              "role": "STUDY_DIRECTOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "Rigshospitalet",
+              "city": "Copenhagen",
+              "zip": "2100",
+              "country": "Denmark",
+              "geoPoint": {
+                "lat": 55.67594,
+                "lon": 12.56553
+              }
+            }
+          ]
+        },
+        "referencesModule": {
+          "references": [
+            {
+              "pmid": "28772110",
+              "type": "DERIVED",
+              "citation": "Bandak M, Jorgensen N, Juul A, Lauritsen J, Oturai PS, Mortensen J, Hojman P, Helge JW, Daugaard G. Leydig cell dysfunction, systemic inflammation and metabolic syndrome in long-term testicular cancer survivors. Eur J Cancer. 2017 Oct;84:9-17. doi: 10.1016/j.ejca.2017.07.006. Epub 2017 Jul 31."
+            },
+            {
+              "pmid": "28598554",
+              "type": "DERIVED",
+              "citation": "Bandak M, Jorgensen N, Juul A, Lauritsen J, Kier MGG, Mortensen MS, Oturai PS, Mortensen J, Hojman P, Helge JW, Daugaard G. Reproductive hormones and metabolic syndrome in 24 testicular cancer survivors and their biological brothers. Andrology. 2017 Jul;5(4):718-724. doi: 10.1111/andr.12355. Epub 2017 Jun 9."
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D024821",
+              "term": "Metabolic Syndrome"
+            },
+            {
+              "id": "D007006",
+              "term": "Hypogonadism"
+            },
+            {
+              "id": "D013736",
+              "term": "Testicular Neoplasms"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D007333",
+              "term": "Insulin Resistance"
+            },
+            {
+              "id": "D006946",
+              "term": "Hyperinsulinism"
+            },
+            {
+              "id": "D044882",
+              "term": "Glucose Metabolism Disorders"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            },
+            {
+              "id": "D006058",
+              "term": "Gonadal Disorders"
+            },
+            {
+              "id": "D004700",
+              "term": "Endocrine System Diseases"
+            },
+            {
+              "id": "D004701",
+              "term": "Endocrine Gland Neoplasms"
+            },
+            {
+              "id": "D009371",
+              "term": "Neoplasms by Site"
+            },
+            {
+              "id": "D009369",
+              "term": "Neoplasms"
+            },
+            {
+              "id": "D005834",
+              "term": "Genital Neoplasms, Male"
+            },
+            {
+              "id": "D014565",
+              "term": "Urogenital Neoplasms"
+            },
+            {
+              "id": "D005832",
+              "term": "Genital Diseases, Male"
+            },
+            {
+              "id": "D000091662",
+              "term": "Genital Diseases"
+            },
+            {
+              "id": "D000091642",
+              "term": "Urogenital Diseases"
+            },
+            {
+              "id": "D052801",
+              "term": "Male Urogenital Diseases"
+            },
+            {
+              "id": "D013733",
+              "term": "Testicular Diseases"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT00374218",
+          "orgStudyIdInfo": {
+            "id": "UTREB17491"
+          },
+          "organization": {
+            "fullName": "University of Toronto",
+            "class": "OTHER"
+          },
+          "briefTitle": "Effect of Replacing HFCS With Sucromalt in Subjects With Raised Waist Circumference",
+          "officialTitle": "Effect of Replacing HFCS With Sucromalt on Glucose Tolerance, Blood Lipids and Inflammatory Markers in Subjects With Raised Waist Circumference"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2007-08",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2006-09"
+          },
+          "completionDateStruct": {
+            "date": "2007-04",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2006-09-08",
+          "studyFirstSubmitQcDate": "2006-09-08",
+          "studyFirstPostDateStruct": {
+            "date": "2006-09-11",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2007-08-13",
+          "lastUpdatePostDateStruct": {
+            "date": "2007-08-14",
+            "type": "ESTIMATED"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "leadSponsor": {
+            "name": "University of Toronto",
+            "class": "OTHER"
+          }
+        },
+        "oversightModule": {
+          "oversightHasDmc": false
+        },
+        "descriptionModule": {
+          "briefSummary": "Weight gain is linked to a high consumption of soft-drinks and other beverages sweetened with high fructose corn syrup. Being overweight increases risk for diabetes and heart disease. These problems may be due to high blood glucose and insulin responses caused by high fructose corn syrup. Sucromalt is a sweetener which contains the same amount of carbohydrate at high fructose corn syrup, but causes lower glucose and insulin responses. The purpose of this study is to see if consuming soft-drinks and other foods sweetened with sucromalt instead of high fructose corn syrup will result in lower levels of blood glucose, insulin, cholesterol and other markers of risk. We are including in this study people who are overweight and normally consume soft-drinks because they are the ones most likely to benefit from this change.",
+          "detailedDescription": "Diets with a high glycemic load (GL) are associated with increased risk of diabetes and cardiovascular disease, possibly because of their association with the metabolic syndrome, dyslipidemia and increased markers of chronic inflammation. Since GL is the product of glycemic index (GI) times the amount of carbohydrate in the diet, GL can be reduced either by reducing GI or by reducing carbohydrate intake, and the effect of these maneuvers on health biomarkers may not necessarily be the same.\n\nA high consumption of sugars in regular soft drinks has been associated with increased weight gain in adolescents, and, in adults, replacing starch with sucrose in the diet has been shown to result in weight gain and an increase in blood pressure and certain inflammatory markers. However, in the latter studies, the effects of sucrose in sucrose-sweetened beverages and foods were compared to those of aspartame-sweetened beverages and foods. Since aspartame contains no energy, the sucrose and control diets differed not only in sucrose, but also in energy, fat and protein; with more energy and less fat and protein as a % of energy on the sucrose than the control diet. This results in a problem in interpretation of the results because it is not possible to know what dietary change was responsible for the changes in biomarkers - indeed some changes due to increased sucrose intake may have been offset by opposite changes in, for example, saturated fat intake.\n\nAnother approach to studying the effect of reducing the GL of the diet is to reduce the GI of the diet without changing the amounts of energy, carbohydrate, fat or protein. Such an approach may be more scientifically desirable because it is possible to study the effect of changing only one dietary variable. Recently, the development of sucromalt allows the replacement of high fructose corn syrup (HFCS) in foods and beverages with a nutritive carbohydrate sweetener that has a reduced GI. Sucromalt is an enzymatically modified carbohydrate which we have shown elicits lower glucose and insulin responses than HFCS without apparent malabsorption. Therefore, the purpose of this study is to conduct a pilot study to see if exchanging HFCS with sucromalt has any effect on glucose tolerance and fasting blood lipids and inflammatory biomarkers in subjects with a high waist circumference."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Abdominal Obesity"
+          ],
+          "keywords": [
+            "Carbohydrate",
+            "Glycemic index",
+            "Randomized",
+            "Double-blind",
+            "Glucose",
+            "Insulin",
+            "C-reactive protein"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE2"
+          ],
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "DOUBLE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 28,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "High Fructose Corn Syrup"
+            },
+            {
+              "type": "DRUG",
+              "name": "Sucromalt"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Fasting and 2h glucose after 75g oral glucose tolerance test",
+              "timeFrame": "4 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Fasting and 2h insulin after 75g oral glucose",
+              "timeFrame": "4 weeks"
+            },
+            {
+              "measure": "Gut hormone responses (eg. GLP-1) after 75g oral glucose",
+              "timeFrame": "4 weeks"
+            },
+            {
+              "measure": "Postprandial glucose and insulin elicited by control and test foods/drinks",
+              "timeFrame": "Baseline"
+            },
+            {
+              "measure": "Fasting blood lipids (total, HDL and LDL cholesterol and triglycerides)",
+              "timeFrame": "Baseline and 4 weeks"
+            },
+            {
+              "measure": "Fasting C-reactive protein",
+              "timeFrame": "Baseline and 4 weeks"
+            },
+            {
+              "measure": "Fasting apolipoproteins A1 and B100",
+              "timeFrame": "Baseline and 4 weeks"
+            },
+            {
+              "measure": "Body weight",
+              "timeFrame": "Weekly for 4 weeks"
+            },
+            {
+              "measure": "Waist circumference",
+              "timeFrame": "4 weeks"
+            },
+            {
+              "measure": "Blood pressure",
+              "timeFrame": "4 weeks"
+            },
+            {
+              "measure": "Symptoms",
+              "timeFrame": "4 weeks"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* males or non-pregnant and non-lactating females\n* aged 20-50\n* normally drink at least 2 cans (680ml) regular soft-drinks or sugar sweetened drinks per day\n* high waist circumference (\u2265102cm (40in) in men or \u226588cm (34.5in) in women)\n\nExclusion Criteria:\n\n* Body mass index \\>35.0kg/m\u00b2\n* Subjects whose weight is not stable (varied by \\>5% of current weight over the past 6 months).\n* Subject who regularly undertake \\>30min vigorous physical activity per week.\n* Diabetes based on current treatment with insulin or an oral hypoglycemic agent or fasting glucose \u22657.0mmol/L on screening\n* Fasting triglycerides \u226510.0mmol/L\n* Severe liver dysfunction (transaminase \\>180% of upper limit of normal)\n* Severe renal impairment (serum creatinine \\>140% of upper limit of normal)\n* Any major medical or surgical event within 6 months\n* History of inflammatory bowel disease, malabsorption, or other disorder or drug use affecting gastrointestinal motility or the absorption of nutrients\n* Use of drugs which affect glucose or lipids except: stable doses (3 months) of statins, fibrates, beta-blockers, diuretics.\n* Substance abuse\n* Simultaneous participation in another clinical trial\n* Any other condition which, in the opinion of Dr. Wolever, might make the subject's participating harmful to him(her)self or others or affect the results\n* Inability to understand spoken and written English\n* Unwilling or unable to consume the test foods (drinks and nutrition bars) and/or to undergo the test procedures\n* Unwilling or unable to give informed consent and/or sign the consent form",
+          "healthyVolunteers": true,
+          "sex": "ALL",
+          "minimumAge": "20 Years",
+          "maximumAge": "50 Years",
+          "stdAges": [
+            "ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Thomas MS Wolever, MD, PhD",
+              "affiliation": "University of Toronto",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "Glycemic Index Laboratories",
+              "city": "Toronto",
+              "state": "Ontario",
+              "zip": "M5C 2X3",
+              "country": "Canada",
+              "geoPoint": {
+                "lat": 43.70643,
+                "lon": -79.39864
+              }
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D056128",
+              "term": "Obesity, Abdominal"
+            },
+            {
+              "id": "D007333",
+              "term": "Insulin Resistance"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D009765",
+              "term": "Obesity"
+            },
+            {
+              "id": "D050177",
+              "term": "Overweight"
+            },
+            {
+              "id": "D044343",
+              "term": "Overnutrition"
+            },
+            {
+              "id": "D009748",
+              "term": "Nutrition Disorders"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            },
+            {
+              "id": "D001835",
+              "term": "Body Weight"
+            },
+            {
+              "id": "D012816",
+              "term": "Signs and Symptoms"
+            },
+            {
+              "id": "D013568",
+              "term": "Pathological Conditions, Signs and Symptoms"
+            },
+            {
+              "id": "D006946",
+              "term": "Hyperinsulinism"
+            },
+            {
+              "id": "D044882",
+              "term": "Glucose Metabolism Disorders"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D066248",
+              "term": "High Fructose Corn Syrup"
+            },
+            {
+              "id": "C524563",
+              "term": "sucromalt"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D000073417",
+              "term": "Dietary Sugars"
+            },
+            {
+              "id": "D004040",
+              "term": "Dietary Carbohydrates"
+            },
+            {
+              "id": "D002241",
+              "term": "Carbohydrates"
+            },
+            {
+              "id": "D000073893",
+              "term": "Sugars"
+            },
+            {
+              "id": "D064427",
+              "term": "Nutritive Sweeteners"
+            },
+            {
+              "id": "D013549",
+              "term": "Sweetening Agents"
+            },
+            {
+              "id": "D005421",
+              "term": "Flavoring Agents"
+            },
+            {
+              "id": "D005503",
+              "term": "Food Additives"
+            },
+            {
+              "id": "D000074385",
+              "term": "Food Ingredients"
+            },
+            {
+              "id": "D020313",
+              "term": "Specialty Uses of Chemicals"
+            },
+            {
+              "id": "D020164",
+              "term": "Chemical Actions and Uses"
+            },
+            {
+              "id": "D005502",
+              "term": "Food"
+            },
+            {
+              "id": "D000066888",
+              "term": "Diet, Food, and Nutrition"
+            },
+            {
+              "id": "D010829",
+              "term": "Physiological Phenomena"
+            },
+            {
+              "id": "D019602",
+              "term": "Food and Beverages"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT01236222",
+          "orgStudyIdInfo": {
+            "id": "Cycling"
+          },
+          "organization": {
+            "fullName": "University of Southern Denmark",
+            "class": "OTHER"
+          },
+          "briefTitle": "Health Effects of Commuter Cycling",
+          "officialTitle": "Health Effects of Commuter Cycling"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2011-08",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2011-03"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2011-06",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2011-06",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2010-11-04",
+          "studyFirstSubmitQcDate": "2010-11-05",
+          "studyFirstPostDateStruct": {
+            "date": "2010-11-08",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2011-08-08",
+          "lastUpdatePostDateStruct": {
+            "date": "2011-08-09",
+            "type": "ESTIMATED"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "oldNameTitle": "Lars \u00d8stergaard",
+            "oldOrganization": "University of Southern Denmark"
+          },
+          "leadSponsor": {
+            "name": "University of Southern Denmark",
+            "class": "OTHER"
+          },
+          "collaborators": [
+            {
+              "name": "TrygFonden, Denmark",
+              "class": "INDUSTRY"
+            }
+          ]
+        },
+        "descriptionModule": {
+          "briefSummary": "The purpose of this study is to determine whether cycling to school is effective in the prevention of the metabolic syndrome.",
+          "detailedDescription": "Physical activity plays a crucial role in relation to prevent a clustering of risk factors. In adults a lower all-cause mortality has been found in those cycling to work compared to inactive commuters. It thus seems possible that cycling to school will entail health beneficial effects for children."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Prevention"
+          ],
+          "keywords": [
+            "commuter cycling",
+            "fitness",
+            "metabolic syndrome",
+            "children"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "NA"
+          ],
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "primaryPurpose": "PREVENTION",
+            "maskingInfo": {
+              "masking": "SINGLE",
+              "whoMasked": [
+                "INVESTIGATOR"
+              ]
+            }
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ESTIMATED"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Control group",
+              "type": "NO_INTERVENTION"
+            },
+            {
+              "label": "Cycling to school",
+              "type": "EXPERIMENTAL",
+              "interventionNames": [
+                "Behavioral: Cycling to school"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "BEHAVIORAL",
+              "name": "Cycling to school",
+              "description": "Regular cycling to school",
+              "armGroupLabels": [
+                "Cycling to school"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Fitness",
+              "description": "Difference in VO2max determined by use of a metabolic cart",
+              "timeFrame": "Day 0, Day 120"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Metabolic syndrome",
+              "description": "Metabolic syndrome as defined by the international diabetes federation based upon: obesity(from age and gender adjusted BMI),TG,HDL,blood pressure,glucose (fasting)",
+              "timeFrame": "Day 0, Day 120"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* passive commuted to school last 6 months, own a bike\n\nExclusion Criteria:\n\n* less than 2 km to school",
+          "healthyVolunteers": true,
+          "sex": "ALL",
+          "minimumAge": "10 Years",
+          "maximumAge": "13 Years",
+          "stdAges": [
+            "CHILD"
+          ]
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "University of Southern Denmark",
+              "city": "Odense",
+              "state": "Denmark",
+              "zip": "5230",
+              "country": "Denmark",
+              "geoPoint": {
+                "lat": 55.39594,
+                "lon": 10.38831
+              }
+            }
+          ]
+        },
+        "referencesModule": {
+          "references": [
+            {
+              "pmid": "23117560",
+              "type": "DERIVED",
+              "citation": "Ostergaard L, Borrestad LA, Tarp J, Andersen LB. Bicycling to school improves the cardiometabolic risk factor profile: a randomised controlled trial. BMJ Open. 2012 Oct 31;2(6):e001307. doi: 10.1136/bmjopen-2012-001307. Print 2012."
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D024821",
+              "term": "Metabolic Syndrome"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D007333",
+              "term": "Insulin Resistance"
+            },
+            {
+              "id": "D006946",
+              "term": "Hyperinsulinism"
+            },
+            {
+              "id": "D044882",
+              "term": "Glucose Metabolism Disorders"
+            },
+            {
+              "id": "D008659",
+              "term": "Metabolic Diseases"
+            },
+            {
+              "id": "D009750",
+              "term": "Nutritional and Metabolic Diseases"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    }
+  ],
+  "nextPageToken": "ZVNj7o2Elu8o3lp3Xsygu6b2mpOQJJxpYPWs0A"
+}

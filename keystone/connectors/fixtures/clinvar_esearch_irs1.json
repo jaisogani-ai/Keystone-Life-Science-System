@@ -1,0 +1,30 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "236",
+    "retmax": "6",
+    "retstart": "0",
+    "idlist": [
+      "4851091",
+      "4827851",
+      "4821723",
+      "4821719",
+      "4796248",
+      "4682551"
+    ],
+    "translationset": [],
+    "translationstack": [
+      {
+        "term": "IRS1[gene]",
+        "field": "gene",
+        "count": "236",
+        "explode": "N"
+      },
+      "GROUP"
+    ],
+    "querytranslation": "IRS1[gene]"
+  }
+}

@@ -21,6 +21,11 @@ exercised — just with a clean foundation and a compromised citer.
 """
 from __future__ import annotations
 
+# Disease-workspace anchors for the Tier-1 clinical connectors.
+DISEASE = "insulin resistance"       # -> ClinicalTrials.gov
+GENE = "IRS1"                        # -> ClinVar
+CHEMBL_QUERY = "insulin receptor"   # -> ChEMBL (the druggable receptor of the axis)
+
 # Foundational insulin-signalling paper — Saltiel & Kahn, Nature 2001. NOT retracted.
 FOUNDATION = {
     "node_id": "N_foundation",

@@ -1,0 +1,2755 @@
+{
+  "totalCount": 2237,
+  "studies": [
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06477939",
+          "orgStudyIdInfo": {
+            "id": "2020-008"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2024-515666-13-00",
+              "type": "CTIS"
+            }
+          ],
+          "organization": {
+            "fullName": "Institut de canc\u00e9rologie Strasbourg Europe",
+            "class": "OTHER"
+          },
+          "briefTitle": "Study of Adding or Not Liposomal Transcrocetin (L-TC) With Concomitant HypoFractionated Radiation ThErapy and TEmozolomide in Newly Diagnosed GLioblastoma (GBM) Patients",
+          "officialTitle": "Phase III Randomized Study of Adding or Not Liposomal Transcrocetin (L-TC) With Concomitant HypoFractionated Radiation ThErapy and TEmozolomide in Newly Diagnosed GLioblastoma (GBM) Patients to Evaluate Efficacy and Safety",
+          "acronym": "THREE-GLEES"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2024-06",
+          "overallStatus": "NOT_YET_RECRUITING",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2025-01-01",
+            "type": "ESTIMATED"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2032-12-31",
+            "type": "ESTIMATED"
+          },
+          "completionDateStruct": {
+            "date": "2032-12-31",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2024-06-21",
+          "studyFirstSubmitQcDate": "2024-06-26",
+          "studyFirstPostDateStruct": {
+            "date": "2024-06-27",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-06-26",
+          "lastUpdatePostDateStruct": {
+            "date": "2024-06-27",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "Institut de canc\u00e9rologie Strasbourg Europe",
+            "class": "OTHER"
+          },
+          "collaborators": [
+            {
+              "name": "LEAF4Life, Inc.",
+              "class": "INDUSTRY"
+            }
+          ]
+        },
+        "oversightModule": {
+          "oversightHasDmc": true,
+          "isFdaRegulatedDrug": true,
+          "isFdaRegulatedDevice": false,
+          "isUsExport": true
+        },
+        "descriptionModule": {
+          "briefSummary": "This is phase III randomized, multicenter study adding or not intra-venous Liposomal Trasncrocetin (L-TC) to hypofractionated radiotherapy and concomitant Temozolomide followed by adjuvant Temozolomide in patients with histologically confirmed diagnosis of glioblastoma (GBM).",
+          "detailedDescription": "During this trial the L-TC will be administered with the hypofractionated chemoradiation treatment to two cohorts:\n\n* Cohort 1 - Non-operable population defined as patients with age less than 70-year-old and with biopsy alone, Karnofski index we propose to use the L-TC with the hypofractionated chemoradiation treatment to two cohorts:\n* Cohort 2 - Elderly population defined as patients aged of more than 70-year-old and with Balducci score 1 or with low Balducci score 2 with Karnofski index \u2265 70% but whatever the quality of the surgery. For patients classified with a score of Balducci II, the geriatric assessment is essential. Although we are aware of the heterogeneity of patients in this group, we hope that the geriatric assessment will make it possible to reduce this heterogeneity by including only patients with a Charlson score \\<4 and a score of autonomy IADL = 4\n\nThe eligible population will be randomized this combination with the treatment reference according to Perry et al publication"
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Glioblastoma"
+          ],
+          "keywords": [
+            "Brain tumors",
+            "Hypoxia",
+            "Liposomal transcrocetin"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE3"
+          ],
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 554,
+            "type": "ESTIMATED"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Radiotherapy plus Temozolomide",
+              "type": "ACTIVE_COMPARATOR",
+              "interventionNames": [
+                "Drug: Administration of L-TC"
+              ]
+            },
+            {
+              "label": "Administration of L-TC on top of Radiotherapy plus Temozolomide",
+              "type": "EXPERIMENTAL",
+              "interventionNames": [
+                "Other: Radiotherapy plus Temozolomide"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Administration of L-TC",
+              "description": "Administration of L-TC (300 mg) as an IV perfusion, before each radiotion session\n\nRadiotherapy : delivered at 40.5 Gy in 15 fractions of 2.7 Gy - One fraction a day 5 fractions per week\n\n\\+ Temozolomide delivered at a dose of 75 mg per square meter per day, given 7 days per week from the first day of radiotherapy until the last day of radiotherapy, but for no longer than 25 days.",
+              "armGroupLabels": [
+                "Radiotherapy plus Temozolomide"
+              ]
+            },
+            {
+              "type": "OTHER",
+              "name": "Radiotherapy plus Temozolomide",
+              "description": "Radiotherapy : delivered at 40.5 Gy in 15 fractions of 2.7 Gy - One fraction a day 5 fractions per week\n\n\\+ Temozolomide delivered at a dose of 75 mg per square meter per day, given 7 days per week from the first day of radiotherapy until the last day of radiotherapy, but for no longer than 25 days.",
+              "armGroupLabels": [
+                "Administration of L-TC on top of Radiotherapy plus Temozolomide"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Overall Survival",
+              "description": "Overall Survival (OS) is defined as the length of time from the date of tumor resection surgery or definitive biopsy to the date of death.",
+              "timeFrame": "Up to 24 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Progression-Free Survival (PFS)",
+              "description": "RANO criteria will be used to evaluate response",
+              "timeFrame": "Up to 24 months"
+            },
+            {
+              "measure": "Evaluation of hypoxia markers",
+              "description": "Hypoxia imaging markers between two groups: comparison of volumetric metrics",
+              "timeFrame": "Up to 24 months"
+            },
+            {
+              "measure": "Quality of life",
+              "description": "European Organisation for Research and Treatment of Cancer (EORTC) 30-Item Core Quality of Life Questionnaire (QLQ-C30)",
+              "timeFrame": "Up to 24 months"
+            },
+            {
+              "measure": "Quality of life (GBM module)",
+              "description": "EORTC 20-Item QOL-Brain Neoplasm (QLQ-BN20)",
+              "timeFrame": "Up to 24 months"
+            },
+            {
+              "measure": "Quality of life (specific for elderly population)",
+              "description": "Quality-of-Life Questionnaire EORTC Elderly Cancer Patients (EORTC QLQ-ELD14)",
+              "timeFrame": "Up to 24 months"
+            },
+            {
+              "measure": "Tolerance",
+              "description": "EORTC Elderly Cancer Patients (EORTC QLQ-ELD14)",
+              "timeFrame": "Up to 24 months"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Cohort 1 - Non-operable patients\n\n  * Patients aged at least 18 years old and \u2264 70 years old; male or female.\n  * AND available biopsy\n  * AND Karnofsky index \u2265 50% at Screening\n* Cohort 2 - Elderly patients\n\n  * Patients aged \\> 70 years old; male or female\n  * AND Balducci score I or II. For patients classified in Balducci II, only light Balducci II will be included, as defined by a Charlson score \\<4 and a score of autonomy IADL = 4. In the oncogeriatric evaluation, symptoms related to brain cancer disease have not to be considered for this criterion.\n  * Karnofsky score (KPS) of \u2265 70% at Screening\n  * Regardless resection\n  * MRI at maximum 48h00 after surgery if partial, subtotal or macroscopically complete or supra-total resection\n* For both cohorts\n\n  * Histologically confirmed diagnosis of glioblastoma (GBM) (2016 OMS classification) (Louis et al., 2016).\n  * Contrast enhancing disease on MRI within 14 days prior to screening.\n  * Within 2 weeks of baseline visit, hematologic and renal functions as specified: Absolute neutrophil count \u2265 1500/mm3, platelets \u2265 100,000/mm3, Hgb \u2265 9.0g/dL, creatinine \u2264 1.7mg/dl, total bilirubin \u2264 1.5mg/dL, blood urea nitrogen (BUN) within 2 times the upper limit of normal, transaminases \u2264 4 times above the upper limits of the institutional norm.\n  * Sexually active patients must use an acceptable method of contraception while receiving doses of study medication.\n  * Females of childbearing potential must have a negative serum or urine pregnancy test at screening and have additional pregnancy tests during study.\n\nExclusion Criteria:\n\n\u2022 For both cohorts\n\n* Any previous radiotherapy (RT) of the brain whatever the interval between previous brain RT and diagnoses of GBM)\n* Any previous treatment of the GBM (except surgery) such as chemotherapy (including Gliadel wafer or gliasite application), immunotherapy, therapy with a biologic agent, hormonal therapy or Carmustine implant for brain tumors or immunotherapy, including vaccination (whatever the interval between previous treatment and diagnoses of GBM). Glucocorticoid therapy is allowed.\n* Previous digestive disease with mis-absorption such as Crohn disease or chronic colitis\n* Ongoing diarrhea grade \u2265 2 in the NCI CTCAE V5.0 (whatever the cause)\n* Inclusion in another trial in the 30 previous days\n* Patient who cannot undergo MRI\n* Pregnant or lactating woman.\n* Serious concurrent infection or medical illness that would jeopardize the ability of the patient to receive study treatment with reasonable safety.\n* Patients with previous cancer (\\< 5 years) except basocellular skin tumors and in situ cervix tumor\n* Patient has a known hypersensitivity to crocetins, L-TC or any of its excipients.\n* Contraindication of temozolomide as described in the Summary of product characteristics.\n* Patient who cannot understand French language.\n* Patient without French National Health insurance\n* Patient who cannot be reliable for follow-up\n* Patient under law protection",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "centralContacts": [
+            {
+              "name": "Manon VOEGELIN",
+              "role": "CONTACT",
+              "phone": "368767360",
+              "phoneExt": "+33",
+              "email": "promotion-rc@icans.eu"
+            }
+          ],
+          "overallOfficials": [
+            {
+              "name": "Georges NOEL, MD, PhD",
+              "affiliation": "Institut de canc\u00e9rologie Strasbourg Europe",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "Institut de canc\u00e9rologie Strasbourg Europe",
+              "city": "Strasbourg",
+              "zip": "67033",
+              "country": "France",
+              "contacts": [
+                {
+                  "name": "Manon VOEGELIN",
+                  "role": "CONTACT",
+                  "phone": "368339523",
+                  "phoneExt": "+33",
+                  "email": "promotion-rc@icans.eu"
+                }
+              ],
+              "geoPoint": {
+                "lat": 48.58392,
+                "lon": 7.74553
+              }
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D005909",
+              "term": "Glioblastoma"
+            },
+            {
+              "id": "D001932",
+              "term": "Brain Neoplasms"
+            },
+            {
+              "id": "D000860",
+              "term": "Hypoxia"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D001254",
+              "term": "Astrocytoma"
+            },
+            {
+              "id": "D005910",
+              "term": "Glioma"
+            },
+            {
+              "id": "D018302",
+              "term": "Neoplasms, Neuroepithelial"
+            },
+            {
+              "id": "D017599",
+              "term": "Neuroectodermal Tumors"
+            },
+            {
+              "id": "D009373",
+              "term": "Neoplasms, Germ Cell and Embryonal"
+            },
+            {
+              "id": "D009370",
+              "term": "Neoplasms by Histologic Type"
+            },
+            {
+              "id": "D009369",
+              "term": "Neoplasms"
+            },
+            {
+              "id": "D009375",
+              "term": "Neoplasms, Glandular and Epithelial"
+            },
+            {
+              "id": "D009380",
+              "term": "Neoplasms, Nerve Tissue"
+            },
+            {
+              "id": "D016543",
+              "term": "Central Nervous System Neoplasms"
+            },
+            {
+              "id": "D009423",
+              "term": "Nervous System Neoplasms"
+            },
+            {
+              "id": "D009371",
+              "term": "Neoplasms by Site"
+            },
+            {
+              "id": "D001927",
+              "term": "Brain Diseases"
+            },
+            {
+              "id": "D002493",
+              "term": "Central Nervous System Diseases"
+            },
+            {
+              "id": "D009422",
+              "term": "Nervous System Diseases"
+            },
+            {
+              "id": "D012818",
+              "term": "Signs and Symptoms, Respiratory"
+            },
+            {
+              "id": "D012816",
+              "term": "Signs and Symptoms"
+            },
+            {
+              "id": "D013568",
+              "term": "Pathological Conditions, Signs and Symptoms"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D011878",
+              "term": "Radiotherapy"
+            },
+            {
+              "id": "D000077204",
+              "term": "Temozolomide"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D013812",
+              "term": "Therapeutics"
+            },
+            {
+              "id": "D003606",
+              "term": "Dacarbazine"
+            },
+            {
+              "id": "D014226",
+              "term": "Triazenes"
+            },
+            {
+              "id": "D009930",
+              "term": "Organic Chemicals"
+            },
+            {
+              "id": "D007093",
+              "term": "Imidazoles"
+            },
+            {
+              "id": "D001393",
+              "term": "Azoles"
+            },
+            {
+              "id": "D006573",
+              "term": "Heterocyclic Compounds, 1-Ring"
+            },
+            {
+              "id": "D006571",
+              "term": "Heterocyclic Compounds"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT00238277",
+          "orgStudyIdInfo": {
+            "id": "J0498"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "P30CA006973",
+              "type": "NIH",
+              "link": "https://reporter.nih.gov/quickSearch/P30CA006973"
+            },
+            {
+              "id": "CDR0000445270"
+            },
+            {
+              "id": "04-12-16-03",
+              "type": "OTHER",
+              "domain": "JHM IRB"
+            }
+          ],
+          "organization": {
+            "fullName": "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
+            "class": "OTHER"
+          },
+          "briefTitle": "Temozolomide During and After Radiation Therapy in Treating Patients Who Have Undergone Previous Surgery and Placement of Gliadel Wafers for Newly Diagnosed Glioblastoma Multiforme",
+          "officialTitle": "Phase II Study of Temozolomide and Radiation in Newly Diagnosed GBM Patients After Resection and Insertion of Gliadel\u00ae Wafers"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2018-06",
+          "overallStatus": "TERMINATED",
+          "whyStopped": "Terminated - due to low accrual",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2005-02-15",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2007-12-11",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2007-12-11",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2005-10-12",
+          "studyFirstSubmitQcDate": "2005-10-12",
+          "studyFirstPostDateStruct": {
+            "date": "2005-10-13",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2018-06-25",
+          "lastUpdatePostDateStruct": {
+            "date": "2018-06-27",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
+            "class": "OTHER"
+          },
+          "collaborators": [
+            {
+              "name": "National Cancer Institute (NCI)",
+              "class": "NIH"
+            }
+          ]
+        },
+        "oversightModule": {
+          "isFdaRegulatedDrug": true,
+          "isFdaRegulatedDevice": false
+        },
+        "descriptionModule": {
+          "briefSummary": "RATIONALE: Drugs used in chemotherapy, such as temozolomide, work in different ways to stop the growth of tumor cells, either by killing the cells or by stopping them from dividing. Radiation therapy uses high-energy x-rays to kill tumor cells. Giving temozolomide during and after radiation therapy may kill any tumor cells that remain after surgery and placement of Gliadel wafers.\n\nPURPOSE: This phase II trial is studying how well giving temozolomide during and after radiation therapy works in treating patients who have undergone previous surgery and placement of Gliadel wafers for newly diagnosed glioblastoma multiforme.",
+          "detailedDescription": "OBJECTIVES:\n\n* Determine the efficacy of adjuvant temozolomide when administered during and after external beam radiotherapy, in terms of survival, in patients with newly diagnosed glioblastoma multiforme who have undergone prior total surgical resection and placement of polifeprosan 20 with carmustine implant (Gliadel\u00ae wafers).\n\nOUTLINE: This is an open-label study.\n\nPatients undergo external beam radiotherapy 5 days a week for 6 weeks and concurrently receive oral temozolomide once daily for 6 weeks. No more than 28 days later, patients receive additional oral temozolomide once daily on days 1-5. Treatment with temozolomide repeats every 28 days for up to 6 courses in the absence of disease progression or unacceptable toxicity.\n\nAfter completion of study treatment, patients are followed every 2 months for survival.\n\nPROJECTED ACCRUAL: A total of 72 patients will be accrued for this study within 18 months."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Brain and Central Nervous System Tumors"
+          ],
+          "keywords": [
+            "adult glioblastoma",
+            "adult giant cell glioblastoma",
+            "adult gliosarcoma"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE2"
+          ],
+          "designInfo": {
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 15,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "temozolomide"
+            },
+            {
+              "type": "PROCEDURE",
+              "name": "adjuvant therapy"
+            },
+            {
+              "type": "PROCEDURE",
+              "name": "chemotherapy"
+            },
+            {
+              "type": "PROCEDURE",
+              "name": "radiation therapy"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Death"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "DISEASE CHARACTERISTICS:\n\n* Histologically confirmed supratentorial grade IV astrocytoma (glioblastoma multiforme)\n* Underwent gross total resection within the past 6 weeks\n\n  * Postoperative contrast-enhancing tumor extends \u2264 1 cm from the margin of the surgical cavity\n  * 6-8 polifeprosan 20 with carmustine implants (Gliadel\u00ae wafers) were placed in the surgical resection cavity at time of surgery\n\nPATIENT CHARACTERISTICS:\n\nAge\n\n* 18 and over\n\nPerformance status\n\n* Karnofsky 60-100%\n\nLife expectancy\n\n* Not specified\n\nHematopoietic\n\n* Absolute neutrophil count \u2265 1,500/mm\\^3\n* Platelet count \u2265 100,000/mm\\^3\n\nHepatic\n\n* Bilirubin \u2264 1.5 mg/dL\n* Transaminases \u2264 4 times upper limit of normal\n\nRenal\n\n* Creatinine \u2264 1.7 mg/dL\n\nOther\n\n* Not pregnant or nursing\n* Negative pregnancy test\n* Fertile patients must use effective contraception\n* No known hypersensitivity reaction to temozolomide\n* No other malignancy within the past 5 years except curatively treated carcinoma in situ or basal cell skin cancer\n\nPRIOR CONCURRENT THERAPY:\n\nBiologic therapy\n\n* No prior immunotherapy for the brain tumor\n* No prior biologic agents (e.g., immunotoxins, immunoconjugates, antisense agents, peptide-receptor agonists, interferons, interleukins, tumor-infiltrating lymphocyte therapy, lymphokine-activated killer cell therapy, or gene therapy) for the brain tumor\n\nChemotherapy\n\n* See Disease Characteristics\n* No other prior chemotherapy for the brain tumor\n\nEndocrine therapy\n\n* No prior hormonal therapy for the brain tumor\n* Prior glucocorticoid therapy allowed\n\nRadiotherapy\n\n* No prior radiotherapy for the brain tumor\n\nSurgery\n\n* See Disease Characteristics",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "120 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Stuart A. Grossman, MD",
+              "affiliation": "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "Sidney Kimmel Comprehensive Cancer Center at Johns Hopkins",
+              "city": "Baltimore",
+              "state": "Maryland",
+              "zip": "21231-2410",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 39.29038,
+                "lon": -76.61219
+              }
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D016543",
+              "term": "Central Nervous System Neoplasms"
+            },
+            {
+              "id": "D005909",
+              "term": "Glioblastoma"
+            },
+            {
+              "id": "D018316",
+              "term": "Gliosarcoma"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D009423",
+              "term": "Nervous System Neoplasms"
+            },
+            {
+              "id": "D009371",
+              "term": "Neoplasms by Site"
+            },
+            {
+              "id": "D009369",
+              "term": "Neoplasms"
+            },
+            {
+              "id": "D009422",
+              "term": "Nervous System Diseases"
+            },
+            {
+              "id": "D001254",
+              "term": "Astrocytoma"
+            },
+            {
+              "id": "D005910",
+              "term": "Glioma"
+            },
+            {
+              "id": "D018302",
+              "term": "Neoplasms, Neuroepithelial"
+            },
+            {
+              "id": "D017599",
+              "term": "Neuroectodermal Tumors"
+            },
+            {
+              "id": "D009373",
+              "term": "Neoplasms, Germ Cell and Embryonal"
+            },
+            {
+              "id": "D009370",
+              "term": "Neoplasms by Histologic Type"
+            },
+            {
+              "id": "D009375",
+              "term": "Neoplasms, Glandular and Epithelial"
+            },
+            {
+              "id": "D009380",
+              "term": "Neoplasms, Nerve Tissue"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D000077204",
+              "term": "Temozolomide"
+            },
+            {
+              "id": "D017024",
+              "term": "Chemotherapy, Adjuvant"
+            },
+            {
+              "id": "D004358",
+              "term": "Drug Therapy"
+            },
+            {
+              "id": "D011878",
+              "term": "Radiotherapy"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D003606",
+              "term": "Dacarbazine"
+            },
+            {
+              "id": "D014226",
+              "term": "Triazenes"
+            },
+            {
+              "id": "D009930",
+              "term": "Organic Chemicals"
+            },
+            {
+              "id": "D007093",
+              "term": "Imidazoles"
+            },
+            {
+              "id": "D001393",
+              "term": "Azoles"
+            },
+            {
+              "id": "D006573",
+              "term": "Heterocyclic Compounds, 1-Ring"
+            },
+            {
+              "id": "D006571",
+              "term": "Heterocyclic Compounds"
+            },
+            {
+              "id": "D003131",
+              "term": "Combined Modality Therapy"
+            },
+            {
+              "id": "D013812",
+              "term": "Therapeutics"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT00365222",
+          "orgStudyIdInfo": {
+            "id": "MCC-14714"
+          },
+          "organization": {
+            "fullName": "H. Lee Moffitt Cancer Center and Research Institute",
+            "class": "OTHER"
+          },
+          "briefTitle": "Phase II Study of Temozolomide in Newly Diagnosed Glioblastoma",
+          "officialTitle": "Phase II Study of Dose Intensive Temozolomide in Elderly Adults With Newly Diagnosed Glioblastoma"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2009-01",
+          "overallStatus": "TERMINATED",
+          "whyStopped": "IRB Study Closure",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2006-07"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2007-06",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2007-06",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2006-08-15",
+          "studyFirstSubmitQcDate": "2006-08-15",
+          "studyFirstPostDateStruct": {
+            "date": "2006-08-17",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2009-01-21",
+          "lastUpdatePostDateStruct": {
+            "date": "2009-01-22",
+            "type": "ESTIMATED"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "oldNameTitle": "Marc Chamberlain, M.D.",
+            "oldOrganization": "H. Lee Moffitt Cancer Center and Research Institute"
+          },
+          "leadSponsor": {
+            "name": "H. Lee Moffitt Cancer Center and Research Institute",
+            "class": "OTHER"
+          },
+          "collaborators": [
+            {
+              "name": "Schering-Plough",
+              "class": "INDUSTRY"
+            }
+          ]
+        },
+        "oversightModule": {
+          "oversightHasDmc": true
+        },
+        "descriptionModule": {
+          "briefSummary": "A single arm Phase 2 trial with the study drug temozolomide (temodar) for newly diagnosed glioblastoma in elderly patients (defined as greater than or equal to 70 years old). Following surgical resection, and confirmation of glioblastoma, patients will proceed to primary chemotherapy with temozolomide (temodar). Temodar is given for 42 consecutive days on and 14 days off occurring every 56 days.\n\nProcedures prior to initial study treatment (\\<14 Days) are: Neurological/Oncological History, Neurological Examination, Height, Weight, and Body Surface Area, Performance Status, Quality Of Life FACT-BR, Labs, MGMT tissue analysis, and Cranial CT/MRI with and without contrast.\n\nThe same procedures are repeated on Day 1 of each treatment cycle with the addition of an adverse event assessment. And the off study procedures for patients are performance status, Quality Of Life FACT-BR, MGMT tissue analysis, and cranial CT/MRI with and without contrast.\n\nPatients may continue with each temodar daily dose therapy if clinical and neuroradiographical exams are stable or improving.",
+          "detailedDescription": "A single arm Phase 2 trial with the study drug temozolomide (temodar) for newly diagnosed glioblastoma in elderly patients (defined as greater than or equal to 70 years old). Temozolomide will be administered orally (a capsule) at approximately the same time daily (bedtime) for 42 days on and then 14 days off; cycles may be repeated every 56 days. Complete blood counts will be obtained bi-weekly, evaluations monthly and MRI's every 2 months after a cycle of therapy.\n\nProcedures prior to initial study treatment (\\<14 Days) are: Neurological/Oncological History, Neurological Examination, Height, Weight, and Body Surface Area, Performance Status, Quality Of Life FACT-BR, Labs, MGMT tissue analysis, and Cranial CT/MRI with and without contrast (all disease found at staging must be followed using the same modality used at Pre-treatment. Tumor assessments are to be repeated every 56 days thereafter until progression). The same procedures are repeated on Day 1 of each treatment cycle with the addition of an adverse event assessment.\n\nPatients may continue on therapy unless one of the following occurs:\n\n* Documented or clinical progressive disease at any time\n* Unacceptable toxicity\n* Treatment delay of \\> 2 weeks for any reason\n* Study data or other data indicate that the study treatment is not beneficial for the patients; defined as at least one response in the first 12 patients within each tumor histology strata\n* Non-compliance by the patient with protocol requirements (follow-up, treatment, administration of disallowed therapy)\n* Changes in medical status of the patient such that the patient no longer meets eligibility requirements (leptomeningeal spread, change in mental competency) or the investigator believes that patient safety will be compromised.\n* Patient withdrawal of consent for treatment\n* Occurrence of one toxic death\n\nPatients with CR, PR, or stable disease (SD) will be treated for a minimum of 3 cycles \\[6 months\\] or until disease progression. For patients responding to treatment, continuation of therapy beyond 3 cycles is at the discretion of the investigator. Response parameters will include the MacDonald criteria for evaluating brain tumors. Response is measured by a reduction in tumor size.\n\nAfter cessation of protocol therapy, patients will continue to be followed for survival at 2-month intervals for up to three years from start of treatment. And the off study procedures for patients are performance status, Quality Of Life FACT-BR, MGMT tissue analysis, and cranial CT/MRI with and without contrast."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Glioblastoma",
+            "Gliosarcoma"
+          ],
+          "keywords": [
+            "Temozolomide",
+            "Temodar",
+            "Glioblastoma",
+            "Gliosarcoma",
+            "Brain Tumor",
+            "Quality of Life",
+            "Neurological"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE2"
+          ],
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "SINGLE_GROUP",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 1,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "1",
+              "type": "EXPERIMENTAL",
+              "interventionNames": [
+                "Drug: Temozolomide"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Temozolomide",
+              "description": "temozolomide 75 mg/m2 /d",
+              "armGroupLabels": [
+                "1"
+              ],
+              "otherNames": [
+                "Temodar"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Evaluate overall survival",
+              "timeFrame": "dependent upon results"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Progression-free survival at six and nine months",
+              "timeFrame": "9 months"
+            },
+            {
+              "measure": "Response rate measured by a reduction in tumor size",
+              "timeFrame": "9 months"
+            },
+            {
+              "measure": "Frequency and severity of adverse events",
+              "timeFrame": "9 months"
+            },
+            {
+              "measure": "Quality of life measured at each cycle utilizing the QOL FACT-BR",
+              "timeFrame": "9 months"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Patients must have histological documented glioblastoma or gliosarcoma. All patients must have had prior pathologic confirmation of tumor histology.\n* Patients must be \\> than or equal to 70 years old.\n* Patients must have a Karnofsky performance status of \\> 50.\n* Nonmeasurable disease or measurable disease per MacDonald criteria\n* Patients must have a predicted life expectancy of at least 12 weeks.\n* Required initial laboratory data: ANC \\>1,500, Platelets \\>100,000, Serum Creatinine \\<2.0, Serum Bilirubin \\<2.0, and AST/ALT \\<3x normal\n* Patients must sign and date an IRB approved informed consent form stating he or she is aware of the neoplastic nature of the disease. Patient must willingly provide written consent after being informed of the procedure to be followed, the experimental nature of the therapy, alternatives, potential benefits, side effects, risks, and discomforts. (Human protection committee approval of this protocol and consent form is required).\n* Patients must be willing and able to comply with scheduled visits, treatment plan, and laboratory tests and accessible for follow-up.\n* Patients must have been previously treated with surgery.\n* No prior adjuvant or salvage chemotherapy regimen is permitted.\n* Prior radiotherapy is not permitted.\n\nExclusion Criteria:\n\n* Patients have evidence of leptomeningeal spread of disease.\n* Patients having been treated with prior chemotherapy or radiotherapy.\n* Patients with a second active malignancy or diagnosis of other cancer within -3 years of enrollment, except for surgically cured basal cell carcinoma, or in situ carcinoma of the cervix.\n* Mentally incapacitated patients or psychiatric illness that would prevent the patient from giving informed consent.\n* Patients with poorly controlled diabetes, hepatitis infection, uncontrolled high blood pressure, unstable angina, symptomatic congestive heart failure, and myocardial infarction within the previous six months, or serious uncontrolled cardiac arrhythmia.\n* Known to be HIV positive or to have an AIDS-related illness.\n* Patients with an active infection that is not adequately controlled with antibiotics.\n* Patients with other severe concurrent disease, which, in the judgment of the investigator, would make the patient inappropriate for entry into this study.\n* Patients with a known sensitivity to any of the products to be administered during treatment.\n* Patients currently enrolled in another clinical trial or patients who have participated in a trial of an investigational device or drug within the last 30 days.\n* Patients previously treated with temozolomide.\n* Concurrent radiotherapy.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "70 Years",
+          "stdAges": [
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Marc Chamberlain, MD",
+              "affiliation": "H. Lee Moffitt Cancer Center and Research Institute",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "H. Lee Moffitt Cancer Center & Research Institute",
+              "city": "Tampa",
+              "state": "Florida",
+              "zip": "33612",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 27.94752,
+                "lon": -82.45843
+              }
+            }
+          ]
+        },
+        "referencesModule": {
+          "seeAlsoLinks": [
+            {
+              "label": "Moffitt Cancer Center Clinical Trials Website",
+              "url": "http://www.moffitt.org"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D005909",
+              "term": "Glioblastoma"
+            },
+            {
+              "id": "D018316",
+              "term": "Gliosarcoma"
+            },
+            {
+              "id": "D001932",
+              "term": "Brain Neoplasms"
+            },
+            {
+              "id": "D009461",
+              "term": "Neurologic Manifestations"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D001254",
+              "term": "Astrocytoma"
+            },
+            {
+              "id": "D005910",
+              "term": "Glioma"
+            },
+            {
+              "id": "D018302",
+              "term": "Neoplasms, Neuroepithelial"
+            },
+            {
+              "id": "D017599",
+              "term": "Neuroectodermal Tumors"
+            },
+            {
+              "id": "D009373",
+              "term": "Neoplasms, Germ Cell and Embryonal"
+            },
+            {
+              "id": "D009370",
+              "term": "Neoplasms by Histologic Type"
+            },
+            {
+              "id": "D009369",
+              "term": "Neoplasms"
+            },
+            {
+              "id": "D009375",
+              "term": "Neoplasms, Glandular and Epithelial"
+            },
+            {
+              "id": "D009380",
+              "term": "Neoplasms, Nerve Tissue"
+            },
+            {
+              "id": "D016543",
+              "term": "Central Nervous System Neoplasms"
+            },
+            {
+              "id": "D009423",
+              "term": "Nervous System Neoplasms"
+            },
+            {
+              "id": "D009371",
+              "term": "Neoplasms by Site"
+            },
+            {
+              "id": "D001927",
+              "term": "Brain Diseases"
+            },
+            {
+              "id": "D002493",
+              "term": "Central Nervous System Diseases"
+            },
+            {
+              "id": "D009422",
+              "term": "Nervous System Diseases"
+            },
+            {
+              "id": "D012816",
+              "term": "Signs and Symptoms"
+            },
+            {
+              "id": "D013568",
+              "term": "Pathological Conditions, Signs and Symptoms"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D000077204",
+              "term": "Temozolomide"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D003606",
+              "term": "Dacarbazine"
+            },
+            {
+              "id": "D014226",
+              "term": "Triazenes"
+            },
+            {
+              "id": "D009930",
+              "term": "Organic Chemicals"
+            },
+            {
+              "id": "D007093",
+              "term": "Imidazoles"
+            },
+            {
+              "id": "D001393",
+              "term": "Azoles"
+            },
+            {
+              "id": "D006573",
+              "term": "Heterocyclic Compounds, 1-Ring"
+            },
+            {
+              "id": "D006571",
+              "term": "Heterocyclic Compounds"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT03033524",
+          "orgStudyIdInfo": {
+            "id": "PMC_TTAC-0001_02"
+          },
+          "organization": {
+            "fullName": "PharmAbcine",
+            "class": "INDUSTRY"
+          },
+          "briefTitle": "Trial to Evaluate the Safety of TTAC-0001(Tanibirumab) in Recurrent Glioblastoma",
+          "officialTitle": "A Multicenter, 3-Arm, Open-Label, Phase \u2161a Clinical Trial to Evaluate the Safety and Efficacy of TTAC-0001, a Fully Human Monoclonal Antibody in Patients With Recurrent Glioblastoma"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2021-01",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2016-02-04",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2017-06-02",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2017-06-02",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2017-01-09",
+          "studyFirstSubmitQcDate": "2017-01-25",
+          "studyFirstPostDateStruct": {
+            "date": "2017-01-26",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2021-01-26",
+          "lastUpdatePostDateStruct": {
+            "date": "2021-01-27",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "PharmAbcine",
+            "class": "INDUSTRY"
+          }
+        },
+        "oversightModule": {
+          "oversightHasDmc": true
+        },
+        "descriptionModule": {
+          "briefSummary": "Study Design - Multicenter, open-label, 3 arms, stepwise, phase \u2161a clinical trial\n\nStudy objective:\n\n1. Primary - To evaluate the safety of TTAC-0001 in patients with recurrent glioblastoma.\n2. Secondary - To determine the efficacy of TTAC-0001 in patients with recurrent glioblastoma.\n3. Exploratory\n\n   * To evaluate pharmacokinetic (PK) parameters of TTAC-0001 in patients with recurrent glioblastoma\n   * To evaluate pharmacodynamic (PD) parameters by clinical biomarker test\n\nStudy Methodology\n\nPatients will be sequentially enrolled from the 1st arm. An enrollment criterion to the next arm is defined as no patients in the previous treatment arm showing grade \u22653 of hemangioma or other Dose Limiting Toxicities (DLT). A safety review committee (SRC) will convene to determine the patient's safety with a decision on enrollment into the next arm or change in dosing frequency of study drug in the above case.\n\nA patient who is withdrawn from the study before the completion of the 1st cycle can be replaced with another patient. Patients will be treated for up to 1 year, unless a cause for termination occurs, such as progression of disease (PD) or the withdrawal of consent."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Recurrent Glioblastoma"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE2"
+          ],
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 12,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Cohort 1",
+              "type": "EXPERIMENTAL",
+              "description": "Patients will be treated with 8mg/kg of TTAC-0001 on day 1, day 8 and day 15 in every 4 weeks of cycle.",
+              "interventionNames": [
+                "Drug: TTAC-0001"
+              ]
+            },
+            {
+              "label": "Cohort 2",
+              "type": "EXPERIMENTAL",
+              "description": "Patients will be treated with 12mg/kg of TTAC-0001 on day 1, day 8 and day 15 in every 4 weeks of cycle.",
+              "interventionNames": [
+                "Drug: TTAC-0001"
+              ]
+            },
+            {
+              "label": "Cohort 3",
+              "type": "EXPERIMENTAL",
+              "description": "Patients will be treated with 12mg/kg of TTAC-0001 weekly in every 4 weeks of cycle.",
+              "interventionNames": [
+                "Drug: TTAC-0001"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "TTAC-0001",
+              "description": "Calculated amount of drug will be diluted with normal saline and administered intravenously.",
+              "armGroupLabels": [
+                "Cohort 1",
+                "Cohort 2",
+                "Cohort 3"
+              ],
+              "otherNames": [
+                "Tanibirumab"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Adverse events",
+              "timeFrame": "up to 1 year"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "PFS at 6-month time point",
+              "timeFrame": "6 months"
+            },
+            {
+              "measure": "Objective response rate (ORR)",
+              "description": "The rate of complete response and partial response assessed according to RANO criteria.",
+              "timeFrame": "up to 1 year"
+            },
+            {
+              "measure": "Disease control rate(DCR)",
+              "description": "The rate of complete response(CR), partial response(PR) and stable disease(SD) assessed according to RANO criteria.",
+              "timeFrame": "up to 1 year"
+            },
+            {
+              "measure": "Overall survival(OS)",
+              "timeFrame": "up to 1 year"
+            }
+          ],
+          "otherOutcomes": [
+            {
+              "measure": "Area under the concentration-time curve (AUC)",
+              "description": "Pharmacokinetics profile",
+              "timeFrame": "up to 1 year"
+            },
+            {
+              "measure": "Maximum plasma concentration (Cmax)",
+              "description": "Pharmacokinetics profile",
+              "timeFrame": "up to 1 year"
+            },
+            {
+              "measure": "Minimum plasma concentration (Cmin)",
+              "description": "Pharmacokinetics profile",
+              "timeFrame": "up to 1 year"
+            },
+            {
+              "measure": "Clearance (CL)",
+              "description": "Pharmacokinetics profile",
+              "timeFrame": "up to 1 year"
+            },
+            {
+              "measure": "Volume of distribution (Vd)",
+              "description": "Pharmacokinetics profile",
+              "timeFrame": "up to 1 year"
+            },
+            {
+              "measure": "Half-life (t1/2)",
+              "description": "Pharmacokinetics profile",
+              "timeFrame": "up to 1 year"
+            },
+            {
+              "measure": "Angiogenic factors in serum or changes in concentration",
+              "description": "Pharmacodynamics profile",
+              "timeFrame": "up to 1 year"
+            },
+            {
+              "measure": "Perfusion parameter assessed by DCE-MRI",
+              "description": "Pharmacodynamics profile",
+              "timeFrame": "every 2 cycles(each cycle is 4 weeks), up to 1year"
+            },
+            {
+              "measure": "Expression of angiogenic factors in endothelial cells",
+              "description": "Analyzed by IHC of tumor tissue",
+              "timeFrame": "At screening"
+            },
+            {
+              "measure": "Immunogenicity",
+              "description": "Anti-drug (TTAC-0001) antibody (ADA) test for evaluation of immunogenicity",
+              "timeFrame": "Day 1 of every cycle(each cycle is 4 weeks), up to 1 year"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Both male and female patients \u226519 years old\n* Diagnosed with primary glioblastoma by histopathological examination and confirmed recurrent glioblastoma by magnetic resonance imaging (MRI) scans after concomitant temozolomide chemotherapy with radiotherapy (CCRT). One previous recurrence/progression of glioblastoma with reintroduction/altered schedule of temozolomide is allowable.\n* At least one confirmed measurable lesion or non measurable lesion by response assessment in neuro-oncology (RANO) criteria\n* Karnofsky Performance Status (KPS) \u2265 80\n* A person who satisfies the following criteria in hematologic, renal, and hepatic function tests\n* At least 12 weeks of expected survival time\n* Signed informed consent\n\nExclusion Criteria:\n\n* Diagnosed with other malignant tumor within 2years\n* Uncontrolled HT or seizure, class III or IV heart failure, oxygen dependent disease, active psychiatric disorder\n* Not recovered grade 2 AE due to previous CCRT\n* Major surgery or other investigational drug treatment within 4 weeks\n* Pregnant/lactating female and female/male potential childbearing without contraception\n* Severe drug hypersensitivity or hypersensitivity to a therapy similar to the study drug\n* Expectation of poor compliance\n* Previous therapy with VEGF targeted agent",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "19 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "ipdSharingStatementModule": {
+          "ipdSharing": "UNDECIDED"
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D005909",
+              "term": "Glioblastoma"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D001254",
+              "term": "Astrocytoma"
+            },
+            {
+              "id": "D005910",
+              "term": "Glioma"
+            },
+            {
+              "id": "D018302",
+              "term": "Neoplasms, Neuroepithelial"
+            },
+            {
+              "id": "D017599",
+              "term": "Neuroectodermal Tumors"
+            },
+            {
+              "id": "D009373",
+              "term": "Neoplasms, Germ Cell and Embryonal"
+            },
+            {
+              "id": "D009370",
+              "term": "Neoplasms by Histologic Type"
+            },
+            {
+              "id": "D009369",
+              "term": "Neoplasms"
+            },
+            {
+              "id": "D009375",
+              "term": "Neoplasms, Glandular and Epithelial"
+            },
+            {
+              "id": "D009380",
+              "term": "Neoplasms, Nerve Tissue"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "C570591",
+              "term": "olinvacimab"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT00613223",
+          "orgStudyIdInfo": {
+            "id": "Pro00001919"
+          },
+          "organization": {
+            "fullName": "Duke University",
+            "class": "OTHER"
+          },
+          "briefTitle": "Ph I Dose Escalation Trial of Vandetanib in Combo w Etoposide for Malignant Gliomas",
+          "officialTitle": "Phase I Dose Escalation of Vandetanib (Zactima, ZD6474) in Combination With Etoposide for Malignant Gliomas"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2013-02",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2008-02"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2010-10",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2011-05",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2008-01-29",
+          "studyFirstSubmitQcDate": "2008-02-11",
+          "studyFirstPostDateStruct": {
+            "date": "2008-02-12",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2013-02-19",
+          "lastUpdatePostDateStruct": {
+            "date": "2013-02-20",
+            "type": "ESTIMATED"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR_INVESTIGATOR",
+            "investigatorFullName": "Annick Desjardins",
+            "investigatorTitle": "Assist Professor of Medicine",
+            "investigatorAffiliation": "Duke University"
+          },
+          "leadSponsor": {
+            "name": "Annick Desjardins",
+            "class": "OTHER"
+          },
+          "collaborators": [
+            {
+              "name": "AstraZeneca",
+              "class": "INDUSTRY"
+            }
+          ]
+        },
+        "oversightModule": {
+          "oversightHasDmc": true
+        },
+        "descriptionModule": {
+          "briefSummary": "Primary Objective: To determine maximum tolerated dose \\& dose limiting toxicity of vandetanib when combined with standard dosing of etoposide among patients with recurrent malignant glioma who are on \\& not on enzyme-inducing anti-epileptic drugs (EIAEDs) Secondary Objectives: To assess safety \\& tolerability of vandetanib + etoposide in this population; To evaluate pharmacokinetics of vandetanib among malignant glioma patients on \\& not on EIAEDs when combined with etoposide.\n\nExploratory Objective: To evaluate for evidence of anti-tumor activity of study regimen among recurrent malignant glioma patients including radiographic response rate, 6-month progression free survival (PFS) rate \\& median PFS.",
+          "detailedDescription": "This is open-label, single center, 2-cohort phase I dose-escalation study of vandetanib administered orally on continuous daily dosing schedule + oral etoposide among adult patients with recurrent or relapsing malignant glioma. Patients will be stratified based on whether they are receiving EIAEDs \\& each stratum will independently dose escalate. Dose of vandetanib will be increased in successive cohorts of patients. Etoposide will be given daily at a dose of 50mg/day for 21 days followed by 7 days with no etoposide. Cohorts of 3-6 subjects will accrue at each dose level until maximum tolerated dose (MTD) is defined. Subjects will be adult patients with histologically confirmed malignant glioma who are presenting at time of recurrence/relapse. Up to 48 subjects will be enrolled.\n\nSample size will be based on modified, classical \"3+3\" dose escalation design. Primary safety \\& efficacy analysis will be conducted on all subject data at time all subjects who are still receiving study drug will have completed at least 4 cycles of treatment. Most common adverse events (AEs) associated with vandetanib are rash, diarrhea, \\& asymptomatic QTc prolongation. Protracted oral dosing of etoposide is associated with toxicity that is mild in most patients \\& consists mainly of myelosuppression \\& diarrhea. Less commonly, protracted etoposide dosing has been associated w more significant hematologic toxicity."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Gliosarcoma",
+            "Glioblastoma"
+          ],
+          "keywords": [
+            "Malignant Gliomas",
+            "Etopophos",
+            "Toposar",
+            "VePesid",
+            "Etoposide",
+            "Vandetanib",
+            "Zactima",
+            "ZD6474",
+            "VP-16",
+            "Brain Tumor",
+            "Recurring Malignant Brain Tumor",
+            "Gliosarcoma",
+            "Glioblastoma",
+            "Glioma",
+            "Malignant Glioma",
+            "GBM"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE1"
+          ],
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 49,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Vandetanib and Etoposide",
+              "type": "EXPERIMENTAL",
+              "description": "Patients will be stratified based on whether they are receiving an enzyme-inducing anti-epileptic drug (EIAED). The dose level of vandetanib will be increased in successive cohorts of subjects. Etoposide will be given daily at a dose of 50 mg/ day for 21 days followed by 7 days with no etoposide.",
+              "interventionNames": [
+                "Drug: Vandetanib and Etoposide"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Vandetanib and Etoposide",
+              "description": "Vandetanib will be given orally once day. Swallow tablet with 240 ml of non-carbonated water. Initial dose is 100 mg/day for stratum 1 \\& 200 mg/day for stratum 2. Etoposide will be taken by mouth in capsule form at a flat dose of 50 mg/day for 1st 21 days of 28-day cycle. You will not take etoposide for following 7 days of the cycle.",
+              "armGroupLabels": [
+                "Vandetanib and Etoposide"
+              ],
+              "otherNames": [
+                "Vandetanib - Zactima (ZD 6474)",
+                "Etoposide - VP-16, Etopophos, Toposar, VePesid"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Safety, tolerability, biologic activity, & pharmacokinetic profile of vandetanib when used in combo w etoposide",
+              "timeFrame": "6-month progression free survival"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\nPatients have baseline evaluations \u226414days prior to 1st dose of study drug unless otherwise specified\n\n* Patients with confirmed malignant glioma (MG) who are recurrence/relapse\n* Patients may not have stereotactic tumor biopsy \\< 1 week or surgical resection or open biopsy \\< 4 weeks before starting study drug\n* For stratum of non-EIAED patients, each patient must be off all EIAEDs for \\> 2 weeks prior to starting study drug; similarly for stratum of EIAED patients, each patient must be on EIAED for \\>2 weeks prior to starting study drug\n* Patients should be on non-increasing dose of steroids for \\>7 days prior to obtaining baseline MRI with gadolinium (Gd-MRI) of brain\n* Patients should be on non-increasing dose of steroids for \\>7 days prior to starting study drug\n* Multifocal disease is eligible\n* Age \u2265 18 years\n* Karnofsky Performance Status (KPS) \u226570\n* Absolute Neutrophil Count \u22651.0 x 10 9/L\n* Hemoglobin (Hgb) \u22659 g/dL\n* Platelets \u2265100 x 10 9/L\n* Serum creatinine \u22641.5 x ULRR or measured 24-hr CrCl \u226550mL/min/1.73m2\n* Life expectancy \u2265 12 weeks\n* Written informed consent obtained prior to screening procedures\n* Negative Beta-HCG pregnancy test for women of child-bearing potential\n\nExclusion Criteria:\n\n* Laboratory Results:\n* Serum direct bilirubin \\>1.5 x upper limit of normal (ULN) of reference range\n* Serum creatinine \\>1.5 x ULRR \\& CrCl \\<30 mL/min\n* Potassium, \\<4.0 mmol/L despite supplementation; serum calcium, magnesium out of normal range despite supplementation\n* ALT or AST \\> 2.5 x ULRR\n* Evidence of severe/uncontrolled systemic disease or any concurrent condition which in Investigator's opinion makes it undesirable for patient to participate in trial or which would jeopardize compliance with protocol\n* Clinically significant cardiovascular event such as myocardial infarction, superior vena cava syndrome, New York Heart Association classification of heart disease \\>2 within 3 months before entry; or presence of cardiac disease that, in opinion of Investigator, increases risk of ventricular arrhythmia\n* History of arrhythmia which is symptomatic/requires treatment/asymptomatic sustained ventricular tachycardia. Atrial fibrillation, controlled on medication is not excluded.\n* Previous history of QTc prolongation as result from other medication that required discontinuation of that medication\n* Congenital long QT syndrome, or 1st degree relative with unexplained sudden death \\<40 years\n* Presence of left bundle branch block\n* QTc with Bazett's correction that's unmeasureable, or \u2265 480msec on screening EEG.\n* Any concomitant medication that may cause QTc prolongation, induce Torsades de Pointes/induce CYP3A4 function except for EIAEDs\n* Hypertension not controlled by medical therapy\n* Currently active diarrhea that may affect ability of patient to absorb study regimen/tolerate diarrhea\n* Women who are currently pregnant/breast feeding\n* Previous or current malignancies of other histologies the last year, with exception of cervical carcinoma in situ \\& adequately treated basal cell or squamous cell carcinoma of skin\n* Receipt of any investigational agents \\<30 days prior to commencing study treatment unless pt has recovered from all anticipated toxicities of investigational agent\n* Last dose of prior chemo discontinued \\< 4 weeks before start of study therapy unless pt has recovered from all anticipated toxicities of chemo\n* Last XRT \\< 4 weeks before start of study therapy, unless patient has recovered from all anticipated toxicities of XRT\n* Any unresolved toxicity \\>CTC gr1 from previous anti-cancer therapy\n* Previous enrollment/randomization of treatment in present study\n* Major surgery \\< 4 weeks/incompletely healed surgical incision before starting study therapy\n* Patients who have received prior oral VEGFR, EGFR or PDGFR-directed therapies. Patients who received prior Avastin will be eligible as long as at least 6 weeks has elapsed since last dose.\n* Patients taking warfarin sodium",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Annick Desjardins, MD",
+              "affiliation": "Duke Health",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "Duke University Health System",
+              "city": "Durham",
+              "state": "North Carolina",
+              "zip": "27710",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 35.99403,
+                "lon": -78.89862
+              }
+            }
+          ]
+        },
+        "referencesModule": {
+          "seeAlsoLinks": [
+            {
+              "label": "The Preston Robert Tisch Brain Tumor Center at DUKE",
+              "url": "http://www.cancer.duke.edu/btc/"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D018316",
+              "term": "Gliosarcoma"
+            },
+            {
+              "id": "D005909",
+              "term": "Glioblastoma"
+            },
+            {
+              "id": "D005910",
+              "term": "Glioma"
+            },
+            {
+              "id": "D001932",
+              "term": "Brain Neoplasms"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D018302",
+              "term": "Neoplasms, Neuroepithelial"
+            },
+            {
+              "id": "D017599",
+              "term": "Neuroectodermal Tumors"
+            },
+            {
+              "id": "D009373",
+              "term": "Neoplasms, Germ Cell and Embryonal"
+            },
+            {
+              "id": "D009370",
+              "term": "Neoplasms by Histologic Type"
+            },
+            {
+              "id": "D009369",
+              "term": "Neoplasms"
+            },
+            {
+              "id": "D009375",
+              "term": "Neoplasms, Glandular and Epithelial"
+            },
+            {
+              "id": "D009380",
+              "term": "Neoplasms, Nerve Tissue"
+            },
+            {
+              "id": "D001254",
+              "term": "Astrocytoma"
+            },
+            {
+              "id": "D016543",
+              "term": "Central Nervous System Neoplasms"
+            },
+            {
+              "id": "D009423",
+              "term": "Nervous System Neoplasms"
+            },
+            {
+              "id": "D009371",
+              "term": "Neoplasms by Site"
+            },
+            {
+              "id": "D001927",
+              "term": "Brain Diseases"
+            },
+            {
+              "id": "D002493",
+              "term": "Central Nervous System Diseases"
+            },
+            {
+              "id": "D009422",
+              "term": "Nervous System Diseases"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "C452423",
+              "term": "vandetanib"
+            },
+            {
+              "id": "D005047",
+              "term": "Etoposide"
+            },
+            {
+              "id": "C061400",
+              "term": "etoposide phosphate"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D011034",
+              "term": "Podophyllotoxin"
+            },
+            {
+              "id": "D013764",
+              "term": "Tetrahydronaphthalenes"
+            },
+            {
+              "id": "D009281",
+              "term": "Naphthalenes"
+            },
+            {
+              "id": "D011084",
+              "term": "Polycyclic Aromatic Hydrocarbons"
+            },
+            {
+              "id": "D006841",
+              "term": "Hydrocarbons, Aromatic"
+            },
+            {
+              "id": "D006844",
+              "term": "Hydrocarbons, Cyclic"
+            },
+            {
+              "id": "D006838",
+              "term": "Hydrocarbons"
+            },
+            {
+              "id": "D009930",
+              "term": "Organic Chemicals"
+            },
+            {
+              "id": "D011083",
+              "term": "Polycyclic Compounds"
+            },
+            {
+              "id": "D005960",
+              "term": "Glucosides"
+            },
+            {
+              "id": "D006027",
+              "term": "Glycosides"
+            },
+            {
+              "id": "D002241",
+              "term": "Carbohydrates"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT01999270",
+          "orgStudyIdInfo": {
+            "id": "201303069"
+          },
+          "organization": {
+            "fullName": "Washington University School of Medicine",
+            "class": "OTHER"
+          },
+          "briefTitle": "Evaluation of FDOPA-PET/MRI in Pediatric Patients With CNS Tumors",
+          "officialTitle": "Evaluation of FDOPA-PET/MRI in Pediatric Patients With CNS Tumors, A Feasibility Study"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2016-10",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2013-04"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2016-05",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2016-05",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2013-11-25",
+          "studyFirstSubmitQcDate": "2013-12-02",
+          "studyFirstPostDateStruct": {
+            "date": "2013-12-03",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-10-19",
+          "lastUpdatePostDateStruct": {
+            "date": "2016-10-21",
+            "type": "ESTIMATED"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "Washington University School of Medicine",
+            "class": "OTHER"
+          }
+        },
+        "oversightModule": {
+          "oversightHasDmc": false
+        },
+        "descriptionModule": {
+          "briefSummary": "To determine if FDOPA-PET/MRI imaging can predict response to treatment of bevacizumab.",
+          "detailedDescription": "Evaluate the feasibility of using FDOPA-PET/MRI pediatric patients with CNS tumors. Positive results in this small study would provide the data needed to expand the study to validate the use in a larger population of pediatric patients. Validating the use of FDOPA-PET imaging as an early predictor for response to anti-angiogenic therapy could greatly impact the standard of care for treating and evaluating pediatric brain tumors and provide a useful biomarker for assessing experimental therapeutics."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Astrocytoma, Oligoastrocytoma, Mixed",
+            "Ganglioneuroma",
+            "Glioma",
+            "Ganglioglioma",
+            "Glioblastoma Multiforme Glioma"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "PHASE1"
+          ],
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "primaryPurpose": "TREATMENT",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 6,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Irinotecan, Bevacizumab and FDOPA-PET/MRI imaging",
+              "type": "EXPERIMENTAL",
+              "description": "Irinotecan can be removed from the treatment plan at the discretion of the healthcare provider.",
+              "interventionNames": [
+                "Drug: Irinotecan",
+                "Drug: Bevacizumab",
+                "Device: FDOPA-PET/MRI imaging"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Irinotecan",
+              "description": "Irinotecan IV over 90 minutes on Days 1, 15, and 29 of each cycle (except Cycle 1, when it will be started on Day 29)\n\nNote: Irinotecan can be removed from the treatment plan at the discretion of the healthcare provider.",
+              "armGroupLabels": [
+                "Irinotecan, Bevacizumab and FDOPA-PET/MRI imaging"
+              ],
+              "otherNames": [
+                "Camptosar\u00ae",
+                "CPT-11"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Bevacizumab",
+              "description": "Bevacizumab will be given intravenously AFTER the irinotecan infusion is complete on Days 1, 15, and 29 of each cycle. The first dose will be given over 90 minutes, but doses after that may be given over 30-60 minutes.",
+              "armGroupLabels": [
+                "Irinotecan, Bevacizumab and FDOPA-PET/MRI imaging"
+              ],
+              "otherNames": [
+                "Avastin\u00ae"
+              ]
+            },
+            {
+              "type": "DEVICE",
+              "name": "FDOPA-PET/MRI imaging",
+              "description": "FDOPA-PET/MRI imaging Baseline (before beginning Cycle 1 treatment) Cycle 1, Day 29 (before receiving your treatment with bevacizumab) and end of treatment or time of relapse",
+              "armGroupLabels": [
+                "Irinotecan, Bevacizumab and FDOPA-PET/MRI imaging"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "FDOPA-PET/MRI imaging",
+              "description": "The imaging is evaluated: (a) the uptake of PET tracer FDOPA measured by average and maximal standardized uptake values (SUVs) as well as tumor to normal brain ratios; and (b) tumor volumes defined by MRI signal abnormality.",
+              "timeFrame": "1 year"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Patient must have histological verification of one of the eligible diagnosis listed below. Biopsy is required at time of diagnosis, with the exception of optic pathway tumors. Patients with spinal cord disease are eligible if they have a lesion \\>1 cm in 2 dimensions. The following histologies are eligible:\n\n  * Astrocytoma variants: fibrillary, protoplasmic, mixed\n  * Pilocytic astrocytoma, including pilomyxoid variants\n  * Pleomorphic xanthoastrocytoma\n  * Infantile desmoplastic astrocytoma\n  * Ganglioneuroma\n  * Oligodendroglial tumor\n  * Mixed glioma (including oligoastrocytoma)\n  * Anaplastic astrocytoma\n  * Anaplastic oligoastrocytoma\n  * Anaplastic oligodendroglioma\n  * Anaplastic ganglioglioma\n  * Glioblastoma multiforme (including giant cell and gliosarcoma types)\n  * Medulloblastoma\n  * Ependymoma\n  * Other rare malignant CNS tumors (i.e., pineal blastoma, small cell astrocytoma, etc.)\n* Patient must be \u2264 21 years of age at time of study enrollment.\n* Patient must have measurable residual disease, defined as tumor that is measurable in two perpendicular diameters on MRI. Diffuse leptomeningeal disease is not considered measurable.\n* Patient must have a Lansky or Karnofsky performance of \\>40% corresponding to ECOG categories 0, 1, or 2. Karnofsky will be used for patients \\>16 years of age and Lansky for patients \\<16 years of age. Patients who are unable to walk because of paralysis, but who are up in a wheelchair, will be considered ambulatory for the purpose of assessing the performance score.\n* Patient must have a life expectancy of \\>8 weeks.\n* Patient must have fully recovered from the acute toxic effects of all prior chemotherapy or radiation prior to entering this study.\n* Patient must have recovered from any surgical procedure before enrolling on this study.\n* Hypertensive patients are eligible provided the hypertension is well controlled (95th percentile for age and height if patient \u226417 years) on stable doses of medication. (See Appendices I and II for tables of blood pressure based on age and gender).\n* Patients receiving corticosteroids are eligible provided the dose is stable or decreasing for at least 7 days.\n* Patient must have adequate bone marrow function (including status post-SCT) defined as:\n\n  1. Peripheral absolute neutrophil count (ANC) \u22651000/uL (must not have received G-CSF within the prior 7 days)\n  2. Platelet count \u2265 100,000/uL (transfusion independent)\n  3. Hemoglobin \u2265 8.0 gm/dL (may receive pRBC transfusions)\n* Patient must have adequate renal function defined as:\n\n  1. Creatinine clearance or radioisotope GFR \u226570ml/min/1.73 m2 or\n  2. A serum creatinine based on age/gender as follows:\n\n     * 1 month to \\< 6 months, male max 0.4, female max 0.4\n     * 6 months to \\< 1 year, male max 0.5, female max 0.5\n     * 1 to \\<2 years, male max 0.6, female max 0.6\n     * 2 to \\< 6 years, male max 0.8, female max 0.8\n     * 6 to \\<10 years, male max 1.0, female max 1.0\n     * 10 to \\<13 years, male max 1.2, female max 1.2\n     * 13 to \\<16 years, male max 1.5, female max 1.4\n\n       * 16 years, male max 1.7, female max 1.4\n* Urine protein should be screened by dipstick analysis. If protein \u2265 2+ on dipstick, then Urine Protein Creatinine (UPC) ratio should be calculated. If UPC ratio \\>1, 24-hour urine protein should be obtained and the level should be \\<1000 mg/24 hours for patient enrollment.\n\nNote: UPC ratio of spot urine is an estimation of the 24 hour urine protein excretion- a UPC ratio of 1 is roughly equivalent to a 24-hour urine protein of 1 gm. UPC ratio is calculated using of the following formulae:\n\n\\[urine protein\\]/\\[urine creatinine\\] - if both protein and creatinine are reported in mg/dL \\[(urine protein x 0.088\\]/\\[urine creatinine\\] - if urine creatinine is reported in mmol/L\n\n* Patient must have adequate liver function defined as:\n\n  1. Total bilirubin \u22641.5x upper limit of normal for age (ULN)\n  2. SGPT (ALT) \u2264 2.5 x the upper limit of normal (ULN) for age\n* Patients with a seizure disorder are eligible if well-controlled on anticonvulsants. If on a non-enzyme inducing anticonvulsant, the irinotecan dose will be adjusted as outline in treatment plan.\n* Sexually active patients of childbearing potential must agree to use an effective method of contraception during the study and for at least 6 months after the completion of bevacizumab therapy.\n* Patient or legally authorized representative must be able to understand and willing to sign a written informed consent document.\n\nExclusion Criteria:\n\n* Patient must not have had myelosuppressive chemotherapy \u2264 3 weeks prior to entry onto this study (or 6 weeks if prior nitrosourea).\n* Patient must not have had any anti-neoplastic biologic agent \u22647 days prior to entry onto this study (or at least 3 half-lives for biologic agents with a long half-life).\n* Patient must not have received craniospinal radiotherapy or involved field radiotherapy to the local tumor (and/or tumor designated as \"measurable\" for protocol purposes) \u2264 24 weeks prior to study entry; focal radiation to areas of symptomatic metastatic disease must not be given within 14 days of study entry.\n* Patient must not have received bevacizumab, or other anti-VEGF inhibitor in the last 3 months.\n* Patient must not require a major surgical procedure \u2264 21 days prior to beginning therapy.\n* Patient must not require an intermediate surgical procedure \u226414 days prior to beginning therapy.\n* Patient must not require a minor surgical procedure (i.e., Broviac line or infusaport placement) \u2264 7 days prior to beginning therapy, and the wound must be healed prior to initiation of therapy.\n* There should be no anticipation of need for major surgical procedures during the course of the study.\n* Patient must not have received any growth factors \u22647 days of entry onto this study.\n* Patient must not be taking NSAIDS, clopidogrel, dipyridamole, or aspirin therapy \\>81 mg/day.\n* Patient must not have a serious or non-healing wound, ulcer, or bone fracture.\n* Patient must not require sedation for imaging purposes.\n* Patient must not be receiving an investigational drug.\n* Patient must not be receiving any other anti-cancer agent.\n* Patient must not have an uncontrolled infection.\n* Patient must not have a history of abdominal fistula, gastrointestinal perforation or intra-abdominal abscess \u2264 6 months prior to study entry.\n* Patient must not have a known bleeding diathesis or coagulopathy.\n* Patient must not have had significant vascular disease (e.g., Moya-Moya, aortic aneurysm requiring surgical repair, deep venous or arterial thrombosis) \u2264 6 months prior to study entry.\n* Patient must not have a known thrombophilic condition (i.e. protein S, protein C or antithrombin III deficiency, Factor V Leiden, Factor II G20210A mutation, homocysteinemia, or antiphospholipid antibody syndrome). Testing is not required in patients without a thrombophilic history.\n* Patient must not have evidence of a new CNS hemorrhage greater than 0.5cm on baseline MRI obtained \u2264 14 days prior to study enrollment.\n* Patient must not have a history of stroke, myocardial infarction, transient ischemic attack (TIA), severe or unstable angina, peripheral vascular disease, or grade II or greater congestive heart failure \u2264 6 months prior to study entry.\n* Patient must not have serious and inadequately controlled cardiac arrhythmia\n* Patient must not be pregnant or breastfeeding.\n* Patient must not have a known hypersensitivity to Chinese hamster ovary cell products or other recombinant human antibodies.\n* Patient must not be known to be HIV-positive on combination antiretroviral therapy because of the potential for pharmacokinetic interactions with study therapy. In addition, these patients are at increased risk of lethal infections when treated with marrow-suppressive therapy.\n* Patient must not have any contraindications to MRI imaging including implanted medical devices and metal objects which may be adversely affected by MRI imaging. All subjects will be required to complete a standard MRI screening form prior to imaging.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "maximumAge": "21 Years",
+          "stdAges": [
+            "CHILD",
+            "ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "overallOfficials": [
+            {
+              "name": "Karen Gauvain, M.D.",
+              "affiliation": "Washington University School of Medicine",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "Washington University School of Medicine",
+              "city": "St Louis",
+              "state": "Missouri",
+              "zip": "63110",
+              "country": "United States",
+              "geoPoint": {
+                "lat": 38.62727,
+                "lon": -90.19789
+              }
+            }
+          ]
+        },
+        "referencesModule": {
+          "seeAlsoLinks": [
+            {
+              "label": "Alvin J. Siteman Cancer Center at Barnes-Jewish Hospital and Washington University School of Medicine",
+              "url": "http://www.siteman.wustl.edu"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001254",
+              "term": "Astrocytoma"
+            },
+            {
+              "id": "D005729",
+              "term": "Ganglioneuroma"
+            },
+            {
+              "id": "D005910",
+              "term": "Glioma"
+            },
+            {
+              "id": "D018303",
+              "term": "Ganglioglioma"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D018302",
+              "term": "Neoplasms, Neuroepithelial"
+            },
+            {
+              "id": "D017599",
+              "term": "Neuroectodermal Tumors"
+            },
+            {
+              "id": "D009373",
+              "term": "Neoplasms, Germ Cell and Embryonal"
+            },
+            {
+              "id": "D009370",
+              "term": "Neoplasms by Histologic Type"
+            },
+            {
+              "id": "D009369",
+              "term": "Neoplasms"
+            },
+            {
+              "id": "D009375",
+              "term": "Neoplasms, Glandular and Epithelial"
+            },
+            {
+              "id": "D009380",
+              "term": "Neoplasms, Nerve Tissue"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D000077146",
+              "term": "Irinotecan"
+            },
+            {
+              "id": "D000068258",
+              "term": "Bevacizumab"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D002166",
+              "term": "Camptothecin"
+            },
+            {
+              "id": "D000470",
+              "term": "Alkaloids"
+            },
+            {
+              "id": "D006571",
+              "term": "Heterocyclic Compounds"
+            },
+            {
+              "id": "D061067",
+              "term": "Antibodies, Monoclonal, Humanized"
+            },
+            {
+              "id": "D000911",
+              "term": "Antibodies, Monoclonal"
+            },
+            {
+              "id": "D000906",
+              "term": "Antibodies"
+            },
+            {
+              "id": "D007136",
+              "term": "Immunoglobulins"
+            },
+            {
+              "id": "D007162",
+              "term": "Immunoproteins"
+            },
+            {
+              "id": "D001798",
+              "term": "Blood Proteins"
+            },
+            {
+              "id": "D011506",
+              "term": "Proteins"
+            },
+            {
+              "id": "D000602",
+              "term": "Amino Acids, Peptides, and Proteins"
+            },
+            {
+              "id": "D012712",
+              "term": "Serum Globulins"
+            },
+            {
+              "id": "D005916",
+              "term": "Globulins"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT04810182",
+          "orgStudyIdInfo": {
+            "id": "IOV-GB-1-2020 REGOMA-OSS"
+          },
+          "organization": {
+            "fullName": "Istituto Oncologico Veneto IRCCS",
+            "class": "OTHER"
+          },
+          "briefTitle": "Regorafenib in Patients With Relapsed Glioblastoma. IOV-GB-1-2020 REGOMA-OSS",
+          "officialTitle": "Regorafenib in Relapsed Glioblastoma. An Observational, Multicentric and Prospective Study. IOV-GB-1-2020 REGOMA-OSS"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2024-02",
+          "overallStatus": "COMPLETED",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2020-09-10",
+            "type": "ACTUAL"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2023-12-31",
+            "type": "ACTUAL"
+          },
+          "completionDateStruct": {
+            "date": "2023-12-31",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-03-15",
+          "studyFirstSubmitQcDate": "2021-03-19",
+          "studyFirstPostDateStruct": {
+            "date": "2021-03-22",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-02-07",
+          "lastUpdatePostDateStruct": {
+            "date": "2024-02-08",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "Istituto Oncologico Veneto IRCCS",
+            "class": "OTHER"
+          }
+        },
+        "oversightModule": {
+          "oversightHasDmc": false
+        },
+        "descriptionModule": {
+          "briefSummary": "This study aims to analyze the role the of Regorafenib in prolonging the Overall Survival of glioblastoma multiforme patients who progressed after surgery and a first-line chemo-radiotherapy treatment in the setting of \"real world life\".",
+          "detailedDescription": "The primary aim of the study"
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Glioblastoma Multiforme"
+          ]
+        },
+        "designModule": {
+          "studyType": "OBSERVATIONAL",
+          "patientRegistry": false,
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 192,
+            "type": "ACTUAL"
+          }
+        },
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Glioblastoma Patients treated with Regorafenib",
+              "description": "Patients with a confirmed diagnosis of Glioblastoma for whom a decision to treat with regorafenib has been made (by the treating physician).",
+              "interventionNames": [
+                "Drug: Regorafenib 40 MG Oral Tablet [STIVARGA]"
+              ]
+            }
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Regorafenib 40 MG Oral Tablet [STIVARGA]",
+              "description": "As per the treating physicians discretion",
+              "armGroupLabels": [
+                "Glioblastoma Patients treated with Regorafenib"
+              ]
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Overall Survival (OS)",
+              "description": "Overall Survival is defined as the time from date of enrolment to the date of death due to any cause",
+              "timeFrame": "From the enrolment date to the date of death, for any cause, or to the last follow-up, assessed up to 18 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Progression free survival (PFS)",
+              "description": "from the date of enrolment to the date of disease progression determined using RANO criteria or to the date of death, whichever occurs first.",
+              "timeFrame": "From the date of enrolment to the date of disease progression or to the date of death, assessed up to 18 months"
+            },
+            {
+              "measure": "Objective response rate (ORR)",
+              "description": "As percentage of patients achieving a complete response plus partial response",
+              "timeFrame": "Approximately 24 months"
+            },
+            {
+              "measure": "Disease control rate (DCR)",
+              "description": "As percentage of patients achieving a complete response plus partial response plus stable disease.",
+              "timeFrame": "Approximately 24 months"
+            },
+            {
+              "measure": "Toxicity (Graded according to the NCI-Common Terminology Criteria for Adverse Events-CTCAE v5.0)",
+              "description": "Toxicity during the treatment will be recorded and graded according to the NCICommon Terminology Criteria for Adverse Events (CTCAE) v.4.. , related to severity of the adverse event from Grade 1 to Grade 5",
+              "timeFrame": "From the start of Regorafenib treatment up to 30 days after the end of treatment"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Male or female \u2265 18 years of age\n* Histologically confirmed glioblastoma (grade IV)\n* First recurrence after adjuvant treatment (surgery followed by radiotherapy and temozolomide chemotherapy) in patients who have not received further therapeutic interventions\n* World Health Organization (WHO) Performance status \u2264 1 (or Karnofsky performance status (KPS) \u226570)) before the start of the treatment\n* Documented progression of disease as defined by RANO criteria at least 12 weeks after completion of radiotherapy, unless the recurrence is outside the radiation field or has been histologically documented.\n* Documented progression of disease by a brain MRI scan done within 14 days before the start of treatment with Regorafenib.\n* Stable or decreasing dosage of steroids for 7 days prior to the baseline MRI scan.\n* Have adequate bone marrow function, liver function, and renal function, as measured by the following laboratory assessments conducted within 7 days prior to the initiation of study treatment:\n* Hemoglobin \\>9.0 g/dl\n* Absolute neutrophil count (ANC) \\>1500/mm3 without transfusions or granulocyte colony stimulating factor and other hematopoietic growth factors\n* Platelet count \u2265100,000/\u03bcl\n* White blood cell count (WBC) \\>3.0 x 109/L\n* Total bilirubin \\<1.5 times the upper limit of normal\n* ALT and AST \\<3 x upper limit of normal\n* Serum creatinine \\<1.5 x upper limit of normal\n* Alkaline phosphatase \\<2.5 x ULN (\\<5 x upper limit of normal value)\n* PT-INR/PTT \\<1.5 x upper limit of normal\n* Lipase \u2264 1.5 x the ULN\n* Glomerular filtration rate \u2265 30 mL/min/1.73 m2\n* TSH, fT3,fT4 within normal limits\n* Patients may have undergone surgery for the recurrence; the histological report must document a glioblastoma recurrence. If operated:\n* at least 28 days from the surgery is required prior to Regorafenib administration and patients should have fully recovered.\n\nExclusion Criteria:\n\n* Have had prior treatment with regorafenib or any other VEGFR-targeting kinase inhibitor\n* Have had systemic anticancer therapy including cytotoxic therapy, signal transduction inhibitors, immunotherapy, and/or hormonal therapy within 4 weeks prior to initiation of treatment\n* Recurrent disease located outside of the brain\n* Have uncontrolled hypertension (systolic blood pressure \\[SBP\\] \\> 140 mmHg or diastolic blood pressure \\[DBP\\] \\> 90 mmHg) despite optimal medical management\n* Have had a myocardial infarction \\< 6 months prior to initiation of treatment with Regorafenib\n* Have had arterial thrombotic or embolic events such as cerebrovascular accident (including transient ischemic attacks), or pulmonary embolism within 6 months prior to the initiation of treatment with Regorafenib\n* Have either active or chronic hepatitis B or C requiring treatment with antiviral therapy\n* Are taking strong cytochrome P (CYP) CYP3A4 inhibitors (eg, clarithromycin, indinavir, itraconazole, ketoconazole, nefazodone, nelfinavir, posaconazole, ritonavir, saquinavir, telithromycin, voriconazole) or strong CYP3A4 inducers (eg, carbamazepine, phenobarbital, phenytoin, rifampin, St. John's Wort)",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "70 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ],
+          "studyPopulation": "Patients with relapse of glioblastoma (grade IV) after surgery and radio-chemotherapy first line treatment, treated with Regorafenib until disease progression or the appearance of unacceptable toxicity.",
+          "samplingMethod": "PROBABILITY_SAMPLE"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Ospedale Generale Regionale \" F.Miulli \"",
+              "city": "Acquaviva delle Fonti",
+              "state": "BA",
+              "zip": "70021",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 40.89704,
+                "lon": 16.8433
+              }
+            },
+            {
+              "facility": "Policlinico Universitario di Bari",
+              "city": "Bari",
+              "state": "BA",
+              "zip": "70124",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 41.12066,
+                "lon": 16.86982
+              }
+            },
+            {
+              "facility": "IRCCS \"Saverio de Bellis\"",
+              "city": "Castellana Grotte",
+              "state": "BA",
+              "zip": "70013",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 40.88643,
+                "lon": 17.16549
+              }
+            },
+            {
+              "facility": "Ospedlae S. Martino",
+              "city": "Belluno",
+              "state": "BL",
+              "zip": "32100",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 46.14262,
+                "lon": 12.2156
+              }
+            },
+            {
+              "facility": "Ospedale Bellaria",
+              "city": "Bologna",
+              "state": "BO",
+              "zip": "40124",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 44.49381,
+                "lon": 11.33875
+              }
+            },
+            {
+              "facility": "Ospedale Perrino",
+              "city": "Brindisi",
+              "state": "BR",
+              "zip": "72100",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 40.63215,
+                "lon": 17.93607
+              }
+            },
+            {
+              "facility": "Universit\u00e0 e ASST Spedali Civili",
+              "city": "Brescia",
+              "state": "BS",
+              "zip": "25123",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 45.53558,
+                "lon": 10.21472
+              }
+            },
+            {
+              "facility": "Irst-Irccs",
+              "city": "Meldola",
+              "state": "FC",
+              "zip": "47014",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 44.12775,
+                "lon": 12.0626
+              }
+            },
+            {
+              "facility": "Ospedale Santa Maria Annunziata",
+              "city": "Bagno a Ripoli",
+              "state": "FI",
+              "zip": "50012",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 43.75115,
+                "lon": 11.32252
+              }
+            },
+            {
+              "facility": "Azienda Ospedaliera Universitaria Careggi",
+              "city": "Florence",
+              "state": "FI",
+              "zip": "50134",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 43.77925,
+                "lon": 11.24626
+              }
+            },
+            {
+              "facility": "Ospedale Civile di Livorno",
+              "city": "Livorno",
+              "state": "LO",
+              "zip": "57100 -",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 43.54427,
+                "lon": 10.32615
+              }
+            },
+            {
+              "facility": "Ospedale Generale Provinciale",
+              "city": "Province of Macerata",
+              "state": "MC",
+              "zip": "62100",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 43.29789,
+                "lon": 13.45293
+              }
+            },
+            {
+              "facility": "AOU Policlinico \"G.Martino\"",
+              "city": "Messina",
+              "state": "ME",
+              "zip": "98122",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 38.19394,
+                "lon": 15.55256
+              }
+            },
+            {
+              "facility": "Istituto Neurologico C. Besta IRCCS",
+              "city": "Milan",
+              "state": "MI",
+              "zip": "20133",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 42.78235,
+                "lon": 12.59836
+              }
+            },
+            {
+              "facility": "Ospedale Humanitas",
+              "city": "Rozzano",
+              "state": "MI",
+              "zip": "20089",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 45.38193,
+                "lon": 9.1559
+              }
+            },
+            {
+              "facility": "Ospedale del Mare",
+              "city": "Naples",
+              "state": "NL",
+              "zip": "80145",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 40.85216,
+                "lon": 14.26811
+              }
+            },
+            {
+              "facility": "Fondazione Istiuto Giglio Cefal\u00f9",
+              "city": "Cefal\u00f9",
+              "state": "PA",
+              "zip": "90015",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 38.03856,
+                "lon": 14.02285
+              }
+            },
+            {
+              "facility": "Aulss6 Euganea Padova Sud Ospedali Riuniti",
+              "city": "Piove di Sacco",
+              "state": "PD",
+              "zip": "35131",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 45.29665,
+                "lon": 12.03683
+              }
+            },
+            {
+              "facility": "Azienda Ospedaliero Universitaria di Pisa",
+              "city": "Pisa",
+              "state": "PI",
+              "zip": "56126",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 43.70853,
+                "lon": 10.4036
+              }
+            },
+            {
+              "facility": "Istituto Nazionale Tumori Regina Elena -IFO",
+              "city": "Roma",
+              "state": "RM",
+              "zip": "00144",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 44.99364,
+                "lon": 11.10642
+              }
+            },
+            {
+              "facility": "Policlinico Universitario Gemelli",
+              "city": "Roma",
+              "state": "RM",
+              "zip": "00168",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 44.99364,
+                "lon": 11.10642
+              }
+            },
+            {
+              "facility": "Ospedale di Rovigo",
+              "city": "Rovigo",
+              "state": "RO",
+              "zip": "45100",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 45.06982,
+                "lon": 11.79022
+              }
+            },
+            {
+              "facility": "Azienda Ospedaliero Universitaria di Siena",
+              "city": "Siena",
+              "state": "SI",
+              "zip": "53100",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 43.31822,
+                "lon": 11.33064
+              }
+            },
+            {
+              "facility": "Azienda Ospedaliero Universitaria della Citt\u00e0 della Salute e della Scienza",
+              "city": "Torino",
+              "state": "TO",
+              "zip": "10126",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 44.88856,
+                "lon": 11.99138
+              }
+            },
+            {
+              "facility": "Azienda Ospedaliera Santa Maria",
+              "city": "Terni",
+              "state": "TR",
+              "zip": "05100",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 42.56335,
+                "lon": 12.64329
+              }
+            },
+            {
+              "facility": "Ospedale San Don\u00e0 di Piave _Azienda ULSS 4 \" Veneto Orientale\"",
+              "city": "San Don\u00e0 di Piave",
+              "state": "VE",
+              "zip": "30027",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 45.63019,
+                "lon": 12.5681
+              }
+            },
+            {
+              "facility": "AULSS 7 Distretto 2 Ospedale Santorso",
+              "city": "Santorso",
+              "state": "VI",
+              "zip": "36014",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 45.73383,
+                "lon": 11.38785
+              }
+            },
+            {
+              "facility": "AULSS 9 Scaligera Ospedale Mater Salutis",
+              "city": "Legnago",
+              "state": "VR",
+              "zip": "37045",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 45.19365,
+                "lon": 11.30227
+              }
+            },
+            {
+              "facility": "Azienda Sanitaria Universitaria Friuli Centrale",
+              "city": "Udine",
+              "zip": "33100",
+              "country": "Italy",
+              "geoPoint": {
+                "lat": 46.0693,
+                "lon": 13.23715
+              }
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D005909",
+              "term": "Glioblastoma"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D001254",
+              "term": "Astrocytoma"
+            },
+            {
+              "id": "D005910",
+              "term": "Glioma"
+            },
+            {
+              "id": "D018302",
+              "term": "Neoplasms, Neuroepithelial"
+            },
+            {
+              "id": "D017599",
+              "term": "Neuroectodermal Tumors"
+            },
+            {
+              "id": "D009373",
+              "term": "Neoplasms, Germ Cell and Embryonal"
+            },
+            {
+              "id": "D009370",
+              "term": "Neoplasms by Histologic Type"
+            },
+            {
+              "id": "D009369",
+              "term": "Neoplasms"
+            },
+            {
+              "id": "D009375",
+              "term": "Neoplasms, Glandular and Epithelial"
+            },
+            {
+              "id": "D009380",
+              "term": "Neoplasms, Nerve Tissue"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "C559147",
+              "term": "regorafenib"
+            },
+            {
+              "id": "D013607",
+              "term": "Tablets"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D004304",
+              "term": "Dosage Forms"
+            },
+            {
+              "id": "D004364",
+              "term": "Pharmaceutical Preparations"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07211841",
+          "orgStudyIdInfo": {
+            "id": "PI2024_843_0123"
+          },
+          "organization": {
+            "fullName": "Centre Hospitalier Universitaire, Amiens",
+            "class": "OTHER"
+          },
+          "briefTitle": "Correlative Analysis Between Magnetic Resonance Spectroscopy (MRS) and Essential Clinicobiological Data in Glioblatoma Multiforme (GBM)",
+          "officialTitle": "Correlative Analysis Between Magnetic Resonance Spectroscopy (MRS) and Essential Clinicobiological Data in Glioblatoma Multiforme (GBM)",
+          "acronym": "GLIOMIT"
+        },
+        "statusModule": {
+          "statusVerifiedDate": "2025-11",
+          "overallStatus": "NOT_YET_RECRUITING",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "startDateStruct": {
+            "date": "2025-12",
+            "type": "ESTIMATED"
+          },
+          "primaryCompletionDateStruct": {
+            "date": "2027-04",
+            "type": "ESTIMATED"
+          },
+          "completionDateStruct": {
+            "date": "2029-04",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2025-09-04",
+          "studyFirstSubmitQcDate": "2025-09-30",
+          "studyFirstPostDateStruct": {
+            "date": "2025-10-08",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-11-17",
+          "lastUpdatePostDateStruct": {
+            "date": "2025-11-19",
+            "type": "ACTUAL"
+          }
+        },
+        "sponsorCollaboratorsModule": {
+          "responsibleParty": {
+            "type": "SPONSOR"
+          },
+          "leadSponsor": {
+            "name": "Centre Hospitalier Universitaire, Amiens",
+            "class": "OTHER"
+          }
+        },
+        "oversightModule": {
+          "oversightHasDmc": false,
+          "isFdaRegulatedDrug": false,
+          "isFdaRegulatedDevice": false
+        },
+        "descriptionModule": {
+          "briefSummary": "Glioblastoma multiforme (GBM) is the most common primary brain tumor, and it is well-known to be associated with a poor prognosis. MRI is the key medical technique for the diagnosis and the follow-up of GBM. By allowing for MRS studies, MRI permits a non-invasive characterization of the TME of GBM, including their metabolic characterization. The investigators propose to address the link between the MRS profile of GBM and basic clinical and biological parameters, with the aim of : i) identifying correlations between these parameters, ii) attempting to integrate clinical, biological and spectroscopic profiles of GBM. The investigators plan to recruit 30 newly diagnosed GBM patients for which surgery / radiochemotherapy will be proposed in the Medical oncology unit of Amiens University Hospital. Following inclusion of patients with probable GBM, MRS study will be performed during the first (pre-therapeutic) MRI examination. Basic clinical and biological parameters of the blood (CRP, complete blood count, fibrinogen, lactate and choline) will be assessed. A metabolomic study will also be performed on the plasma of GBM patients before any therapeutics. A second biological, post-therapeutic assesment (one month after surgery/radiochemotherapy) will allow the same analyses (basic biological parameters + plasma metabolomics), in order to examine the stability of the blood parameters."
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Glioblastoma",
+            "MRI Spectroscopy",
+            "Tumor Microenvironment",
+            "Biomarkers / Blood"
+          ],
+          "keywords": [
+            "Glioblastoma",
+            "MRI spectroscopy",
+            "Tumor microenvironment",
+            "biomarkers"
+          ]
+        },
+        "designModule": {
+          "studyType": "INTERVENTIONAL",
+          "phases": [
+            "NA"
+          ],
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "primaryPurpose": "OTHER",
+            "maskingInfo": {
+              "masking": "NONE"
+            }
+          },
+          "enrollmentInfo": {
+            "count": 30,
+            "type": "ESTIMATED"
+          }
+        },
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "type": "DEVICE",
+              "name": "MRS study",
+              "description": "Thirty patients newly diagnosed with GBM will be included in this study. The study will be conducted without any major modification of the standard management of GBM.\n\nThe MRS study will be performed at the time of the initial MRI examination (morphological MRI sequences performed on 3T Philipps). The MRS will be performed on the most agressive part of the tumor : monovoxel PRESS MRS sequence with 3 echo times : 35, 144 and 288 ms. Spectra processing with Philipps software returns relative quantifications \\> 7 ratios (choline/creatin, Glucose/creatin, glutamine/creatin, N-Acetyl aspartate/creatin, myoinositol/creatin, phsopholipids/creatin, lactate/creatin, acetate/creatin). With this experimental design, the additional time required for MRS acquisition is 10 min /patient."
+            },
+            {
+              "type": "BIOLOGICAL",
+              "name": "blood samples",
+              "description": "Routine basic clinical and biological analyses will be collected during the project. In addition, 2 blood samples (5 mL each time) will be obtained at the time of inclusion (pre-therapeutic) and one month after completion of the initial therapeutic cycle (surgery + radiochemotherapy). The plasma samples will be used to measure fibrinogen, lactate and choline concentrations. In addition, a metabolomic study of plasma will be performed w"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Correlations between initial spectroscopic parameters, basic clinical and biological informations",
+              "description": "correlations between initial spectroscopic parameters of the tumor, basic clinical information and biological assessment of the blood in a cohort of newly-diagnosed GBM\n\nBlood parameters are choline, creatinine, lactate, glutamate/glutamine, alanine, glycine. For each parameter, absolute concentrations will be measured. A Z transformation will be used as a preliminary step ahead of all analyses (heat map construction, testing correlations).",
+              "timeFrame": "12 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Variation from baseline of blood parameters",
+              "description": "Variation from baseline of blood parameters at one month after surgery/radiochemotherapy in each patient. Blood parameters are choline, creatinine, lactate, glutamate/glutamine, alanine, glycine. For each parameter, absolute concentrations will be measured. A Z transformation will be used as a preliminary step ahead of all analyses (heat map construction, testing correlations).",
+              "timeFrame": "at 1 month"
+            },
+            {
+              "measure": "Progression-free survival",
+              "timeFrame": "at 12 months"
+            },
+            {
+              "measure": "Overall survival",
+              "timeFrame": "at 12 months"
+            },
+            {
+              "measure": "Correlation of biological and metabolomic data with progression-free survival",
+              "description": "Blood parameters are choline, creatinine, lactate, glutamate/glutamine, alanine, glycine. For each parameter, absolute concentrations will be measured. A Z transformation will be used as a preliminary step ahead of all analyses (heat map construction, testing correlations).",
+              "timeFrame": "at 12 months"
+            },
+            {
+              "measure": "Correlation of biological and metabolomic data with overall survival",
+              "description": "Blood parameters are choline, creatinine, lactate, glutamate/glutamine, alanine, glycine. For each parameter, absolute concentrations will be measured. A Z transformation will be used as a preliminary step ahead of all analyses (heat map construction, testing correlations).",
+              "timeFrame": "at 12 months"
+            }
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Patients consecutively identified in the multidisciplinary consultation meeting of neurooncology with a new diagnosis of GBM / a probable diagnosis of GBM. - Patients that have not started radiochemotherapy ;\n* Adult \\> 18 yrs\n* socially-insured,\n* having given consent.\n\nExclusion Criteria:\n\n* minor patients,\n* pregnant/lactating women,\n* patients under guardianship,\n* curatorship,\n* protection of justice or deprived of liberty",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "stdAges": [
+            "ADULT",
+            "OLDER_ADULT"
+          ]
+        },
+        "contactsLocationsModule": {
+          "centralContacts": [
+            {
+              "name": "Antoine GALMICHE, PR",
+              "role": "CONTACT",
+              "phone": "33+ 322087017",
+              "email": "galmiche.antoine@chu-amiens.fr"
+            }
+          ],
+          "locations": [
+            {
+              "facility": "CHU Amiens",
+              "city": "Amiens",
+              "zip": "80054",
+              "country": "France",
+              "contacts": [
+                {
+                  "name": "Antoine Galmiche, Pr",
+                  "role": "CONTACT"
+                },
+                {
+                  "name": "Mathieu Boone, MD",
+                  "role": "SUB_INVESTIGATOR"
+                },
+                {
+                  "name": "Jean-Marc CONSTANS CONSTANS, Pr",
+                  "role": "SUB_INVESTIGATOR"
+                },
+                {
+                  "name": "Ismail NAJJAR, MD",
+                  "role": "SUB_INVESTIGATOR"
+                }
+              ],
+              "geoPoint": {
+                "lat": 49.9,
+                "lon": 2.3
+              }
+            }
+          ]
+        },
+        "ipdSharingStatementModule": {
+          "ipdSharing": "NO"
+        }
+      },
+      "derivedSection": {
+        "miscInfoModule": {
+          "versionHolder": "2026-07-08"
+        },
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D005909",
+              "term": "Glioblastoma"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D001254",
+              "term": "Astrocytoma"
+            },
+            {
+              "id": "D005910",
+              "term": "Glioma"
+            },
+            {
+              "id": "D018302",
+              "term": "Neoplasms, Neuroepithelial"
+            },
+            {
+              "id": "D017599",
+              "term": "Neuroectodermal Tumors"
+            },
+            {
+              "id": "D009373",
+              "term": "Neoplasms, Germ Cell and Embryonal"
+            },
+            {
+              "id": "D009370",
+              "term": "Neoplasms by Histologic Type"
+            },
+            {
+              "id": "D009369",
+              "term": "Neoplasms"
+            },
+            {
+              "id": "D009375",
+              "term": "Neoplasms, Glandular and Epithelial"
+            },
+            {
+              "id": "D009380",
+              "term": "Neoplasms, Nerve Tissue"
+            }
+          ]
+        },
+        "interventionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001800",
+              "term": "Blood Specimen Collection"
+            }
+          ],
+          "ancestors": [
+            {
+              "id": "D013048",
+              "term": "Specimen Handling"
+            },
+            {
+              "id": "D019411",
+              "term": "Clinical Laboratory Techniques"
+            },
+            {
+              "id": "D019937",
+              "term": "Diagnostic Techniques and Procedures"
+            },
+            {
+              "id": "D003933",
+              "term": "Diagnosis"
+            },
+            {
+              "id": "D011677",
+              "term": "Punctures"
+            },
+            {
+              "id": "D013514",
+              "term": "Surgical Procedures, Operative"
+            },
+            {
+              "id": "D008919",
+              "term": "Investigative Techniques"
+            }
+          ]
+        }
+      },
+      "hasResults": false
+    }
+  ],
+  "nextPageToken": "ZVNj7o2Elu8o3lp3Xsygu6b2mpOQJJxuY_Cj2Pg"
+}
