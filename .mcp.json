@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "keystone": {
+      "command": "python3",
+      "args": ["-m", "keystone.mcp_server"],
+      "env": { "PYTHONPATH": ".", "KEYSTONE_OFFLINE": "1" }
+    }
+  }
+}

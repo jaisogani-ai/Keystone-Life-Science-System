@@ -28,7 +28,9 @@ from keystone.deterministic.stats import sample_size_two_arm
 from keystone.deterministic.protocol import REPRO_CHECKLIST
 from keystone.agents.reasoner import HeuristicReasoner, AGREEMENT_MID, _CI_HALF
 
-DEFAULT_MODEL = os.environ.get("KEYSTONE_MODEL", "claude-fable-5")
+# Default to a strong reasoning model; the moat/classification calls are cheap and
+# could be pointed at Haiku via KEYSTONE_MODEL to cut cost.
+DEFAULT_MODEL = os.environ.get("KEYSTONE_MODEL", "claude-sonnet-5")
 _MAX_RETRIES = 3
 # Leniency correction: LLM load-bearing scores skew high; shrink toward the mean
 # so the classifier is calibrated to the human-agreement band, not over-eager.
