@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "keystone-workbench"
+version = "0.1.0"
+description = "Keystone — an AI Scientific Research Workbench (glioblastoma demo)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Keystone" }]
+dependencies = [
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+live = ["anthropic>=0.39"]
+dev = ["pytest>=7", "pytest-cov>=4"]
+ui = ["fastapi>=0.110", "uvicorn>=0.27"]
+
+[project.scripts]
+keystone = "run_workbench:main"
+
+[tool.setuptools]
+packages = [
+    "keystone",
+    "keystone.agents",
+    "keystone.deterministic",
+    "keystone.connectors",
+    "keystone.artifacts",
+    "keystone.calibration",
+]
+
+[tool.setuptools.package-data]
+"keystone.connectors" = ["fixtures/*.json"]
+"keystone.calibration" = ["*.jsonl"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+# ephemeral connector HTTP cache (fixtures are the pinned, committed real data)
+keystone/connectors/cache/
+# generated demo artifacts (reproducible via run_workbench.py)
+demo_out/
+.DS_Store

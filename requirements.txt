@@ -1,0 +1,12 @@
+# Runtime (offline workbench + real connectors)
+requests>=2.28
+
+# Live semantic layer (optional — only for KEYSTONE_LIVE=1)
+# anthropic>=0.39
+
+# Dev / test
+# pytest>=7
+
+# UI (optional — only for the local workbench UI)
+# fastapi>=0.110
+# uvicorn>=0.27

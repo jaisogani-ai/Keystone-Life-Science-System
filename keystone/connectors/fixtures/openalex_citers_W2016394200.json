@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "count": 293,
+    "db_response_time_ms": 22,
+    "page": 1,
+    "per_page": 25,
+    "groups_count": null,
+    "x_query": {
+      "oql": "works where it cites (W2016394200)",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "referenced_works",
+            "value": "W2016394200"
+          }
+        ],
+        "sort_by": [
+          {
+            "column_id": "cited_by_count",
+            "direction": "desc"
+          }
+        ],
+        "select": [
+          "id",
+          "doi",
+          "title",
+          "publication_year",
+          "publication_date",
+          "cited_by_count",
+          "is_retracted"
+        ],
+        "per_page": 25
+      },
+      "url": "/works?filter=referenced_works:W2016394200&sort=cited_by_count:desc&select=id,doi,title,publication_year,publication_date,cited_by_count,is_retracted&per_page=25"
+    },
+    "cost_usd": 0.0001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W2090985686",
+      "doi": "https://doi.org/10.1038/nrc1949",
+      "title": "multifunctional enzymes in cancer",
+      "publication_year": 2006,
+      "publication_date": "2006-09-22",
+      "cited_by_count": 1246,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2092409918",
+      "doi": "https://doi.org/10.1016/j.ccr.2008.01.034",
+      "title": "HIF1\u03b1 Induces the Recruitment of Bone Marrow-Derived Vascular Modulatory Cells to Regulate Tumor Angiogenesis and Invasion",
+      "publication_year": 2008,
+      "publication_date": "2008-03-01",
+      "cited_by_count": 1109,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2553948338",
+      "doi": "https://doi.org/10.1016/j.biotechadv.2016.11.002",
+      "title": "3D tumor spheroids: an overview on the tools and techniques used for their analysis",
+      "publication_year": 2016,
+      "publication_date": "2016-11-11",
+      "cited_by_count": 920,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2016859011",
+      "doi": "https://doi.org/10.3109/10409238.2013.770819",
+      "title": "Biochemistry and molecular biology of gelatinase B or matrix metalloproteinase-9 (MMP-9): The next decade",
+      "publication_year": 2013,
+      "publication_date": "2013-04-02",
+      "cited_by_count": 761,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2275816640",
+      "doi": "https://doi.org/10.3389/fbioe.2016.00012",
+      "title": "In Vitro Tumor Models: Advantages, Disadvantages, Variables, and Selecting the Right Platform",
+      "publication_year": 2016,
+      "publication_date": "2016-02-12",
+      "cited_by_count": 748,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2121317746",
+      "doi": "https://doi.org/10.1183/09031936.00146510",
+      "title": "Biological role of matrix metalloproteinases: a critical balance",
+      "publication_year": 2010,
+      "publication_date": "2010-12-22",
+      "cited_by_count": 739,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1988692970",
+      "doi": "https://doi.org/10.1215/s1152851704001115",
+      "title": "Hypoxia and the hypoxia-inducible-factor pathway in glioma growth andangiogenesis",
+      "publication_year": 2005,
+      "publication_date": "2005-03-30",
+      "cited_by_count": 692,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2119212619",
+      "doi": "https://doi.org/10.1016/j.addr.2009.04.004",
+      "title": "siRNA vs. shRNA: Similarities and differences",
+      "publication_year": 2009,
+      "publication_date": "2009-04-21",
+      "cited_by_count": 649,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1984166243",
+      "doi": "https://doi.org/10.1007/s00401-007-0293-7",
+      "title": "Diffuse glioma growth: a guerilla war",
+      "publication_year": 2007,
+      "publication_date": "2007-09-05",
+      "cited_by_count": 643,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2025851689",
+      "doi": "https://doi.org/10.1093/rheumatology/kel065",
+      "title": "Synovial fibroblasts: key players in rheumatoid arthritis",
+      "publication_year": 2006,
+      "publication_date": "2006-03-27",
+      "cited_by_count": 613,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2128779315",
+      "doi": "https://doi.org/10.1517/14728222.2013.740461",
+      "title": "Cathepsin B as a cancer target",
+      "publication_year": 2013,
+      "publication_date": "2013-01-08",
+      "cited_by_count": 388,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2058239698",
+      "doi": "https://doi.org/10.1161/01.atv.0000209518.58252.17",
+      "title": "Pericellular Proteases in Angiogenesis and Vasculogenesis",
+      "publication_year": 2006,
+      "publication_date": "2006-02-10",
+      "cited_by_count": 383,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2039233803",
+      "doi": "https://doi.org/10.1007/s00018-007-6342-5",
+      "title": "Molecular targets of glioma invasion",
+      "publication_year": 2007,
+      "publication_date": "2007-01-26",
+      "cited_by_count": 382,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W3162818643",
+      "doi": "https://doi.org/10.1186/s13045-021-01087-1",
+      "title": "Role of lysosomes in physiological activities, diseases, and therapy",
+      "publication_year": 2021,
+      "publication_date": "2021-05-14",
+      "cited_by_count": 348,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1938785803",
+      "doi": "https://doi.org/10.1158/0008-5472.can-05-0476",
+      "title": "Lysosomes as Targets for Cancer Therapy",
+      "publication_year": 2005,
+      "publication_date": "2005-04-15",
+      "cited_by_count": 326,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2051433821",
+      "doi": "https://doi.org/10.1515/bc.2004.132",
+      "title": "Cysteine cathepsins in human cancer",
+      "publication_year": 2004,
+      "publication_date": "2004-11-01",
+      "cited_by_count": 307,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2465929875",
+      "doi": "https://doi.org/10.1152/physrev.00035.2015",
+      "title": "The Function of V-ATPases in Cancer",
+      "publication_year": 2016,
+      "publication_date": "2016-06-23",
+      "cited_by_count": 289,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1598733586",
+      "doi": "https://doi.org/10.1074/jbc.m503111200",
+      "title": "RNA Interference-directed Knockdown of Urokinase Plasminogen Activator and Urokinase Plasminogen Activator Receptor Inhibits Prostate Cancer Cell Invasion, Survival, and Tumorigenicity in Vivo",
+      "publication_year": 2005,
+      "publication_date": "2005-08-27",
+      "cited_by_count": 283,
+      "is_retracted": true
+    },
+    {
+      "id": "https://openalex.org/W2049644040",
+      "doi": "https://doi.org/10.1074/jbc.m509134200",
+      "title": "Cathepsin S Controls Angiogenesis and Tumor Growth via Matrix-derived Angiogenic Factors",
+      "publication_year": 2005,
+      "publication_date": "2005-12-20",
+      "cited_by_count": 280,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2933057727",
+      "doi": "https://doi.org/10.1088/1361-6633/ab1628",
+      "title": "The matrix environmental and cell mechanical properties regulate cell migration and contribute to the invasive phenotype of cancer cells",
+      "publication_year": 2019,
+      "publication_date": "2019-04-04",
+      "cited_by_count": 269,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2105164395",
+      "doi": "https://doi.org/10.1038/sj.onc.1210683",
+      "title": "Microglia-derived TGF-\u03b2 as an important regulator of glioblastoma invasion\u2014an inhibition of TGF-\u03b2-dependent effects by shRNA against human TGF-\u03b2 type II receptor",
+      "publication_year": 2007,
+      "publication_date": "2007-08-06",
+      "cited_by_count": 257,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W4223515068",
+      "doi": "https://doi.org/10.3390/cancers14071847",
+      "title": "MMP9: A Tough Target for Targeted Therapy for Cancer",
+      "publication_year": 2022,
+      "publication_date": "2022-04-06",
+      "cited_by_count": 243,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2062991743",
+      "doi": "https://doi.org/10.1111/j.1349-7006.2006.00234.x",
+      "title": "Therapeutic potential of RNA interference against cancer",
+      "publication_year": 2006,
+      "publication_date": "2006-06-09",
+      "cited_by_count": 237,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2123114542",
+      "doi": "https://doi.org/10.1016/j.bbamcr.2009.09.017",
+      "title": "Pleiotropic roles of matrix metalloproteinases in tumor angiogenesis: Contrasting, overlapping and compensatory functions",
+      "publication_year": 2009,
+      "publication_date": "2009-10-04",
+      "cited_by_count": 232,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2916664436",
+      "doi": "https://doi.org/10.1016/j.canlet.2019.02.035",
+      "title": "Cathepsin B: A sellsword of cancer progression",
+      "publication_year": 2019,
+      "publication_date": "2019-02-21",
+      "cited_by_count": 202,
+      "is_retracted": false
+    }
+  ],
+  "group_by": []
+}
