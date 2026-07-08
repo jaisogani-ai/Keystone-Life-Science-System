@@ -110,6 +110,15 @@ class EvidenceGraph:
     def add_edge(self, edge: Edge) -> None:
         self.edges.append(edge)
 
+    def copy(self) -> "EvidenceGraph":
+        """A new container over the same immutable Nodes/Edges. Mutating the copy
+        (via replace_node/replace_edge) leaves the original untouched — the basis
+        for non-destructive flaw injection."""
+        g = EvidenceGraph()
+        g.nodes = dict(self.nodes)
+        g.edges = list(self.edges)
+        return g
+
     def replace_node(self, node_id: str, **changes) -> None:
         self.nodes[node_id] = replace(self.nodes[node_id], **changes)
 
