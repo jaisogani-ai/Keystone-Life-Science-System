@@ -15,7 +15,7 @@ Exact endpoints (nameable, per the Tier-1 rule):
 """
 from __future__ import annotations
 
-from keystone.connectors.http_cache import cached_get_json
+from keystone.connectors.http_cache import cached_get_json, cached_get_text
 from keystone.connectors.registry import _unresolved
 
 _CHEMBL = "https://www.ebi.ac.uk/chembl/api/data"
@@ -131,7 +131,41 @@ def clinvar_variants(gene: str, limit: int = 6) -> dict:
         if not v:
             continue
         sig = (v.get("germline_classification", {}) or {}).get("description")
+        # structured GRCh38 genomic coordinates (for the genome track), when present
+        coord = None
+        vset = v.get("variation_set") or []
+        if vset:
+            for loc in (vset[0].get("variation_loc") or []):
+                if loc.get("assembly_name") == "GRCh38" and loc.get("start"):
+                    coord = {"chr": loc.get("chr"), "start": int(loc["start"]),
+                             "stop": int(loc.get("stop") or loc["start"]),
+                             "band": loc.get("band")}
+                    break
         variants.append({"id": vid, "title": (v.get("title") or "")[:90],
-                         "significance": sig or "not provided"})
+                         "significance": sig or "not provided", "coord": coord})
     return {"resolved": True, "source": "clinvar", "gene": gene,
-            "total": total, "variants": variants}
+            "total": total, "variants": variants,
+            "has_coordinates": any(x["coord"] for x in variants)}
+
+
+# ---------------------------------------------------------------------------
+# ChEMBL 2D chemical structure (SMILES + rendered SVG) for a named small molecule
+# ---------------------------------------------------------------------------
+def chembl_structure(drug_name: str) -> dict:
+    ms = cached_get_json(f"{_CHEMBL}/molecule/search",
+                         params={"q": drug_name, "format": "json"},
+                         fixture_name=f"chembl_structsearch_{_slug(drug_name)}.json")
+    mols = [m for m in (ms or {}).get("molecules", [])
+            if (m.get("molecule_structures") or {}).get("canonical_smiles")]
+    if not mols:
+        return _unresolved("chembl_structure", drug_name)
+    m = mols[0]
+    cid = m.get("molecule_chembl_id")
+    smiles = m["molecule_structures"]["canonical_smiles"]
+    svg = cached_get_text(f"{_CHEMBL}/image/{cid}.svg",
+                          fixture_name=f"chembl_image_{cid}.svg")
+    return {"resolved": True, "source": "chembl", "chembl_id": cid,
+            "name": m.get("pref_name") or drug_name, "smiles": smiles,
+            "max_phase": m.get("max_phase"),
+            "svg": svg, "svg_available": bool(svg),
+            "url": f"https://www.ebi.ac.uk/chembl/web_components/#compound_report_card/{cid}"}

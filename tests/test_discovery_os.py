@@ -103,6 +103,41 @@ def test_workspace_is_tier_tagged_and_never_fabricates(tmp_path):
     json.dumps(ws)          # fully JSON-serializable for the UI
 
 
+# --- new Tier-1 visualizations: chemical structure + genome track ----------
+def test_chembl_structure_is_real_small_molecule():
+    st = C.chembl_structure("temozolomide")
+    assert st["resolved"] and st["chembl_id"] == "CHEMBL810"
+    assert st["smiles"] and st["svg"] and "<svg" in st["svg"]     # real SMILES + 2D
+
+
+def test_clinvar_returns_grch38_coordinates():
+    v = C.clinvar_variants("CTSB")
+    assert v["has_coordinates"]
+    coord = next(x["coord"] for x in v["variants"] if x["coord"])
+    assert coord["chr"] and coord["start"] > 0
+
+
+def test_genome_track_only_plots_variants_with_coordinates():
+    from keystone.artifacts.render import genome_track_svg
+    v = C.clinvar_variants("CTSB")
+    svg = genome_track_svg(v["variants"], "CTSB")
+    assert svg.startswith("<svg") and "GRCh38" in svg
+    # a variant with no coordinate is never plotted at a fabricated position
+    empty = genome_track_svg([{"title": "x", "significance": "?", "coord": None}], "X")
+    assert "no genomic coordinates" in empty
+
+
+def test_workspace_surfaces_chemistry_notebook_and_genome_track():
+    ws, *_ = build_workspace("gbm")
+    tabs = ws["tabs"]
+    assert tabs["chemistry"]["tier"] == 1 and tabs["chemistry"]["data"]["svg"]
+    assert tabs["mutations"]["data"]["genome_track_svg"].startswith("<svg")
+    # notebook entries ARE the Ledger's ordered stages (replay.py), not free text
+    stages = [s["stage"] for s in tabs["notebook"]["data"]["steps"]]
+    assert stages == ["PLAN", "COLLECT", "ANALYZE", "HYPOTHESIS", "EXPERIMENT",
+                      "REVIEW", "LEDGER"]
+
+
 if __name__ == "__main__":
     import tempfile, pathlib
     for name, fn in sorted(globals().items()):

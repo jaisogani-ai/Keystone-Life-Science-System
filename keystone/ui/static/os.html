@@ -81,14 +81,14 @@ let WS=null, TAB='clinical_trials';
 const $=id=>document.getElementById(id);
 const esc=s=>(s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const HOT=new Set(['Contradiction Mining','Gap Detection']);
-const TAB_ORDER=['overview','clinical_trials','known_drugs','pathways','mutations',
+const TAB_ORDER=['overview','clinical_trials','known_drugs','chemistry','pathways','mutations',
   'proteins','retractions','contradictions','current_hypotheses','future_experiments',
-  'gaps','readiness','knowledge_graph','genes','datasets'];
+  'gaps','readiness','knowledge_graph','notebook','genes','datasets'];
 const LABEL={overview:'Disease Overview',clinical_trials:'Clinical Trials',known_drugs:'Known Drugs',
-  pathways:'Pathways',mutations:'Mutations',proteins:'Proteins',retractions:'Retractions',
+  chemistry:'Chemical Structure',pathways:'Pathways',mutations:'Mutations',proteins:'Proteins',retractions:'Retractions',
   contradictions:'Contradictions',current_hypotheses:'Current Hypotheses',
   future_experiments:'Future Experiments',gaps:'Missing Evidence',readiness:'Research Readiness',
-  knowledge_graph:'Knowledge Graph',genes:'Genes',datasets:'Datasets'};
+  knowledge_graph:'Knowledge Graph',notebook:'Lab Notebook',genes:'Genes',datasets:'Datasets'};
 
 async function load(){
   const dom=$('domain').value;
@@ -157,8 +157,20 @@ const RENDER={
   pathways:d=>`<div class="card"><b>${d.count}</b> Reactome pathways containing this protein
     <table><tr><th>Pathway</th><th>ID</th></tr>${d.pathways.map(p=>`<tr><td><a href="${p.url}" target="_blank">${esc(p.name)}</a></td><td><code>${esc(p.st_id)}</code></td></tr>`).join('')}</table></div>`,
   mutations:d=>`<div class="card"><b>${Number(d.total).toLocaleString()}</b> ClinVar variants · showing ${d.variants.length}
-    <table><tr><th>Variant</th><th>Clinical significance</th></tr>
-    ${d.variants.map(v=>`<tr><td>${esc(v.title)}</td><td><span class="pill ${/patho/i.test(v.significance)?'r':/benign/i.test(v.significance)?'g':'a'}">${esc(v.significance)}</span></td></tr>`).join('')}</table></div>`,
+    ${d.genome_track_svg?`<div style="margin:8px 0">${d.genome_track_svg}</div>`:''}
+    <table><tr><th>Variant</th><th>Coordinates (GRCh38)</th><th>Clinical significance</th></tr>
+    ${d.variants.map(v=>`<tr><td>${esc(v.title)}</td>
+      <td class="sub">${v.coord?`chr${esc(v.coord.chr)}:${Number(v.coord.start).toLocaleString()} ${esc(v.coord.band||'')}`:'—'}</td>
+      <td><span class="pill ${/patho/i.test(v.significance)?'r':/benign/i.test(v.significance)?'g':'a'}">${esc(v.significance)}</span></td></tr>`).join('')}</table></div>`,
+  chemistry:d=> d.resolved?`<div class="flex">
+      <div class="card"><b>${esc(d.name)}</b> <span class="pill">${esc(d.chembl_id)}</span>
+        <div class="sub" style="margin-top:6px">SMILES</div><code style="font-size:12px;word-break:break-all">${esc(d.smiles)}</code>
+        <div class="sub" style="margin-top:8px"><a href="${esc(d.url)}" target="_blank">ChEMBL compound card →</a></div></div>
+      <div class="card"><b>2D structure</b><div style="background:#fff;border-radius:8px;padding:8px;margin-top:6px">${d.svg||'<span class="sub">structure image unavailable offline</span>'}</div></div>
+    </div>`:`<div class="empty">No small-molecule structure resolved.</div>`,
+  notebook:d=>`<div class="card"><div class="sub">Lab notebook = the Ledger's ordered, timestamped stages (replay.py). Not a free-text tool — every entry is a real reasoning step.</div>
+    ${d.steps.map(s=>`<div style="border-left:2px solid var(--line);padding:6px 0 6px 12px;margin:6px 0">
+      <b>[${s.index}] ${esc(s.stage)}</b> <span class="sub">${esc(s.summary)}</span></div>`).join('')}</div>`,
   proteins:d=>`<div class="flex"><div class="card"><b>${esc(d.gene)}</b> — ${esc(d.name)}
       <div class="sub">UniProt ${esc(d.accession)} · PDB ${(d.pdb_ids||[]).slice(0,4).join(', ')}</div></div></div>
     <div class="card"><b>3D structure</b><div id="viewer" style="height:380px;position:relative"></div></div>`,

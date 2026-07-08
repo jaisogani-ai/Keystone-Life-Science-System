@@ -125,6 +125,47 @@ def timeline_svg(timeline: list, width: int = 860, height: int = 240) -> str:
     return "\n".join(parts)
 
 
+def genome_track_svg(variants: list, gene: str, width: int = 820) -> str:
+    """A linear genome track: real ClinVar variants plotted at their GRCh38
+    coordinates, coloured by clinical significance. Deterministic; the same
+    variant set renders identically. Variants without coordinates are omitted
+    (never plotted at a fabricated position)."""
+    placed = [v for v in variants if v.get("coord")]
+    if not placed:
+        return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 60">'
+                '<text x="12" y="34" fill="#8d99ae" font-size="12">'
+                'no genomic coordinates returned for these variants</text></svg>')
+    starts = [v["coord"]["start"] for v in placed]
+    lo, hi = min(starts), max(starts)
+    span = max(hi - lo, 1)
+    chrom = placed[0]["coord"]["chr"]
+    band = placed[0]["coord"].get("band") or ""
+    x0, x1, y = 60, width - 30, 70
+    def px(pos): return x0 + (x1 - x0) * (pos - lo) / span
+    sig_color = lambda s: ("#ff5d5d" if "patho" in (s or "").lower()
+                           else "#06d6a0" if "benign" in (s or "").lower()
+                           else "#ffd166")
+    parts = [f'<svg viewBox="0 0 {width} 120" xmlns="http://www.w3.org/2000/svg" '
+             'font-family="system-ui,sans-serif">',
+             f'<rect width="{width}" height="120" fill="#0f1117"/>',
+             f'<text x="12" y="24" fill="#e6e6e6" font-size="13">'
+             f'{html.escape(gene)} — chr{html.escape(str(chrom))} {html.escape(band)} '
+             f'(GRCh38)</text>',
+             f'<line x1="{x0}" y1="{y}" x2="{x1}" y2="{y}" stroke="#5b6b8c" '
+             'stroke-width="3"/>',
+             f'<text x="{x0}" y="{y+26}" fill="#8d99ae" font-size="9">{lo:,}</text>',
+             f'<text x="{x1}" y="{y+26}" fill="#8d99ae" font-size="9" '
+             f'text-anchor="end">{hi:,}</text>']
+    for v in placed:
+        x = px(v["coord"]["start"])
+        c = sig_color(v.get("significance"))
+        parts.append(f'<line x1="{x:.0f}" y1="{y-14}" x2="{x:.0f}" y2="{y+14}" '
+                     f'stroke="{c}" stroke-width="2"/>')
+        parts.append(f'<circle cx="{x:.0f}" cy="{y-14}" r="4" fill="{c}"/>')
+    parts.append('</svg>')
+    return "\n".join(parts)
+
+
 def protein_viewer_html(pdb_id: str, gene: str = "target") -> str:
     """3Dmol.js viewer, rendered because a hypothesis points at this target.
     Loads the structure from RCSB by PDB id."""

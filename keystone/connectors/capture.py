@@ -18,7 +18,8 @@ import sys
 
 import requests
 
-from keystone.connectors.http_cache import USER_AGENT, save_fixture
+from keystone.connectors.http_cache import (USER_AGENT, save_fixture,
+                                            save_text_fixture)
 from keystone.connectors.clinical import _slug, _CHEMBL, _EUTILS
 from keystone import gbm_spec, insulin_spec
 
@@ -126,6 +127,19 @@ def _capture_clinical(spec) -> None:
         save_fixture(f"clinvar_esummary_{_slug(spec.GENE)}.json", _get(
             f"{_EUTILS}/esummary.fcgi",
             {"db": "clinvar", "id": ",".join(ids), "retmode": "json"}))
+
+    print("  chembl 2D structure (standard-of-care small molecule)...")
+    drug = getattr(spec, "CHEMBL_STRUCTURE", None)
+    if drug:
+        ss = _get(f"{_CHEMBL}/molecule/search", {"q": drug, "format": "json"})
+        save_fixture(f"chembl_structsearch_{_slug(drug)}.json", ss)
+        with_struct = [m for m in ss.get("molecules", [])
+                       if (m.get("molecule_structures") or {}).get("canonical_smiles")]
+        if with_struct:
+            cid = with_struct[0]["molecule_chembl_id"]
+            r = _S.get(f"{_CHEMBL}/image/{cid}.svg", timeout=40)
+            if r.status_code == 200:
+                save_text_fixture(f"chembl_image_{cid}.svg", r.text)
 
 
 def main() -> int:

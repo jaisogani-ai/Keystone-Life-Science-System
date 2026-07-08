@@ -23,6 +23,8 @@ from keystone.connectors import clinical as C
 from keystone.deterministic.contradiction_mining import mine_contradictions
 from keystone.deterministic.gap_detection import detect_gaps
 from keystone.artifacts.graph_export import graph_to_dict
+from keystone.artifacts.render import genome_track_svg
+from keystone.replay import record_session
 from keystone.reasoning_panel import future_experiments_tree, research_readiness
 
 
@@ -57,6 +59,8 @@ def build_workspace(domain: str = "gbm", reasoner=None):
     drugs = C.chembl_drugs(spec.CHEMBL_QUERY)
     pathways = C.reactome_pathways(spec.TARGET["uniprot"])
     variants = C.clinvar_variants(spec.GENE)
+    structure = C.chembl_structure(getattr(spec, "CHEMBL_STRUCTURE", ""))
+    session = record_session(spec.QUESTION, graph, ledger, hyp, review)
 
     retractions = [
         {"node": n.id, "text": n.text, "source": n.source,
@@ -72,7 +76,19 @@ def build_workspace(domain: str = "gbm", reasoner=None):
             "sources": ledger.sources}, "projection of the EvidenceGraph"),
         "proteins": _tier1(target, "uniprot_protein"),
         "pathways": _tier1(pathways, "Reactome UniProt->pathways (now wired)"),
-        "mutations": _tier1(variants, "ClinVar via NCBI eutils (now wired)"),
+        "mutations": _tier1(
+            {**variants, "genome_track_svg": genome_track_svg(
+                variants.get("variants", []), spec.GENE)},
+            "ClinVar via NCBI eutils — GRCh38 coordinates on a genome track"),
+        "chemistry": _tier1(structure, "ChEMBL 2D structure of the standard-of-care "
+                            "small molecule (real SMILES + rendered structure)")
+        if structure.get("resolved") else _tier2(
+            "no small-molecule structure resolved for this axis"),
+        "notebook": _tier1(
+            {"steps": [{"index": s.index, "stage": s.stage, "summary": s.summary,
+                        "detail": s.detail} for s in session.steps]},
+            "session replay (replay.py) — the Ledger's ordered stages ARE the "
+            "notebook entries; no free-text tool"),
         "known_drugs": _tier1(drugs, "ChEMBL target->mechanism (now wired); a "
                               "zero result means an undrugged target, not empty"),
         "clinical_trials": _tier1(trials, "ClinicalTrials.gov v2 (now wired)"),

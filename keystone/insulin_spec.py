@@ -23,8 +23,9 @@ from __future__ import annotations
 
 # Disease-workspace anchors for the Tier-1 clinical connectors.
 DISEASE = "insulin resistance"       # -> ClinicalTrials.gov
-GENE = "IRS1"                        # -> ClinVar
+GENE = "IRS1"                        # -> ClinVar (GRCh38 coords -> genome track)
 CHEMBL_QUERY = "insulin receptor"   # -> ChEMBL (the druggable receptor of the axis)
+CHEMBL_STRUCTURE = "metformin"      # -> ChEMBL 2D structure (first-line SoC)
 
 # Foundational insulin-signalling paper — Saltiel & Kahn, Nature 2001. NOT retracted.
 FOUNDATION = {

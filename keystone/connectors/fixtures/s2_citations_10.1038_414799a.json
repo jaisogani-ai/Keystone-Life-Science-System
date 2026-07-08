@@ -3,9 +3,9 @@
   "next": 120,
   "data": [
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "af58d661ca27de397786c8fdfef1ff16606c93e6",
         "externalIds": {
@@ -18,9 +18,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "b674c574b39c4017e450e360370ae795d10bc002",
         "externalIds": {
@@ -33,9 +33,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "45d79a5a1f29829598fc7c8d5290476935157e52",
         "externalIds": {
@@ -48,9 +48,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "0ad544ba25f3966c29220831e9f157f4179f44df",
         "externalIds": {
@@ -62,11 +62,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "In this integrated metabolic and secretory network, adipocytes actively participate in the fine\u2013tuning of insulin sensitivity, appetite regulation, inflammatory state, and whole\u2013body energy balance [72]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "2cda2fd9da069cfa0d37024e36d2fbc48ca4c7c2",
         "externalIds": {
@@ -80,11 +80,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "In vertebrates it is made by the pancreatic \u03b2-cells and released into the blood, where it acts on target tissues through the insulin receptor (Steiner 1969; Saltiel and Kahn 2001)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "45cc679eee229083153719c34b559e8eb478a2c4",
         "externalIds": {
@@ -96,9 +96,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "ede4796681277ec66b408fc06952db3090fa9590",
         "externalIds": {
@@ -111,9 +111,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "2a1b7ddfa563dedd56474e45a2a11f62d27c7135",
         "externalIds": {
@@ -126,9 +126,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "74be23ced930a7bdb8f2548800e5a464e1d4604a",
         "externalIds": {
@@ -141,9 +141,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "108ec9e61ae4239d60c5c8c7d20c6ca109bef887",
         "externalIds": {
@@ -156,9 +156,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "b6fd42125cb2a98e9cb24dc71865247d588628a7",
         "externalIds": {
@@ -170,9 +170,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "1d5b4597c2cd8cb0352eedb45c088405814d28e8",
         "externalIds": {
@@ -185,9 +185,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "87a549ed626935f71709440c81cb1bd304577c12",
         "externalIds": {
@@ -200,11 +200,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "The pancreas produces insulin, which regulates blood glucose levels [11, 12], which can be maintained within a certain range after a meal because insulin release enhances the absorption of glucose by muscle and fat and decreases the amount of glucose supplied by the liver."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "6cfa5520aead7ff8fdb3d6faa3a99f22e0686c3e",
         "externalIds": {
@@ -216,11 +216,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "At the molecular level, insulin resistance is characterized by impaired activation of the PI3K/Akt pathway, which regulates GLUT4 translocation to the plasma membrane and subsequent glucose uptake (96, 97)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "b0df2d179689e0f18c0cda5824cfe886adb45ea2",
         "externalIds": {
@@ -234,9 +234,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "3929831a6d3d672e659e6245d9022b14c6ce9ee7",
         "externalIds": {
@@ -249,9 +249,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "b9787c4c304f60195c8efeba33be9f3b44e79f82",
         "externalIds": {
@@ -264,11 +264,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Insulin signalling is traditionally recognised for its metabolic role, yet numerous studies have shown that the same pathway exerts strong mitogenic and anti-apoptotic effects in malignant cells [21, 22]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "f1509bc2e22bce2afad5930f0c39f3222d91cf9e",
         "externalIds": {
@@ -282,11 +282,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Insulin re-Int ceptors are widely distributed throughout the brain, particularly in regions involved in learning, memory, and cognition, including the hippocampus, entorhinal cortex, and frontal cortex [1\u20133]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "4793af9e215d80a5caaa20ee85c02120414ff6b7",
         "externalIds": {
@@ -300,11 +300,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "This aligns with insulin's established function as a key regulator of glucose homeostasis, modulating the translocation of glucose transporters such as GLUT4 to the plasma membrane in muscle and adipose tissues [33, 34]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "e744eb5df213ce82059010d9c905facba7fb91d2",
         "externalIds": {
@@ -316,11 +316,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Insulin resistance (IR), characterized by diminished sensitivity to insulin, disrupts the regulation of glucose and lipid metabolism and serves as a core pathological driver of metabolic disorders such as type 2 diabetes and non-alcoholic fatty liver disease [1,2]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "928be71a9f7c0af8d197862169562f5d44f42de5",
         "externalIds": {
@@ -333,9 +333,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "da8e60d6412927d9686fe5370d812eae2b209ec0",
         "externalIds": {
@@ -348,11 +348,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Protein hormones such as insulin regulate anabolic pathways via receptor-mediated signaling [34], while intracellular protein complexes such as mTORC1 act as nutrient and energy sensors controlling protein synthesis, autophagy, and mitochondrial metabolism [35,36]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "142ca43a4ef8059da3bf96d4ea56e26014e6cc40",
         "externalIds": {
@@ -366,11 +366,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "The molecular mechanism of these copper( II ) lawsone complexes involves the regulation of p53, along with pro-apoptotic proteins Bad and Bax, leading to apoptotic cell death through the activation of caspases 3, 8, and 9."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "fc0ce84a15ea0918c2d05d89af167ba89ac5d6cf",
         "externalIds": {
@@ -384,9 +384,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "51e34e6e2609a5e78f1954e6972e29edea97ec4b",
         "externalIds": {
@@ -398,9 +398,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "3736a60c20bb78d15516396cea58a84e9fa11b5f",
         "externalIds": {
@@ -413,11 +413,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "These agents may therefore be preferable from a metabolic-safety perspective when they are clinically suitable for the allergic condition being treated (23)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "7f8f77200aa2f499e4b6029a15125e62d2dc40d5",
         "externalIds": {
@@ -429,13 +429,13 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "\u041c\u0435\u0445\u0430\u043d\u0438\u0437\u043c\u044b \u0433\u0438\u043f\u0435\u0440\u0433\u043b\u0438\u043a\u0435\u043c\u0438\u0438 \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0442 \u0441\u043e\u0447\u0435\u0442\u0430\u043d\u0438\u0435 \u043f\u0435\u0440\u0438\u0444\u0435\u0440\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0438 \u043f\u0435\u0447\u0451\u043d\u043e\u0447\u043d\u043e\u0439 \u0438\u043d\u0441\u0443\u043b\u0438\u043d\u043e\u0440\u0435\u0437\u0438\u0441\u0442\u0435\u043d\u0442\u043d\u043e\u0441\u0442\u0438 \u0438 \u0443\u0441\u0438\u043b\u0435\u043d\u043d\u043e\u0439 \u043f\u0435\u0447\u0451\u043d\u043e\u0447\u043d\u043e\u0439 \u0438 \u043f\u043e\u0447\u0435\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u0438 \u0433\u043b\u044e\u043a\u043e\u0437\u044b [9, 23, 25].",
         "\u0422\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442 \u0433\u043b\u044e\u043a\u043e\u0437\u044b \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0441\u0435\u043c\u0435\u0439\u0441\u0442\u0432\u043e\u043c \u043f\u0435\u0440\u0435\u043d\u043e\u0441\u0447\u0438\u043a\u043e\u0432 GLUT; \u043a\u043b\u0438\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u043d\u0430\u0438\u0431\u043e\u043b\u044c\u0448\u0435\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0438\u043c\u0435\u044e\u0442 \u0438\u0437\u043e\u0444\u043e\u0440\u043c\u044b GLUT1\u20134 [23, 24].",
         "\u042d\u0442\u043e \u0432\u0435\u0434\u0451\u0442 \u043a \u0443\u0441\u043a\u043e\u0440\u0435\u043d\u043d\u043e\u043c\u0443 \u043a\u043b\u0435\u0442\u043e\u0447\u043d\u043e\u043c\u0443 \u0437\u0430\u0445\u0432\u0430\u0442\u0443 \u0433\u043b\u044e\u043a\u043e\u0437\u044b, \u043f\u0440\u0435\u0436\u0434\u0435 \u0432\u0441\u0435\u0433\u043e, \u0432 \u0441\u043a\u0435\u043b\u0435\u0442\u043d\u043e\u0439 \u043c\u044b\u0448\u0446\u0435 \u0438 \u0436\u0438\u0440\u043e\u0432\u043e\u0439 \u0442\u043a\u0430\u043d\u0438 [23, 30]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "8cb85942ac61aeb210c7d21ef00e5f5bde824b0b",
         "externalIds": {
@@ -447,9 +447,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "5d6ea35ae73df333fb33d93bc840511f60a15f60",
         "externalIds": {
@@ -461,11 +461,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "In T2DM, this IRS-1/PI3K/Akt/GLUT4 signaling pathway is significantly impaired due to decreased IRS-1 activity and increased serine phosphorylation mediated by stress kinases such as JNK, IKK\u03b2, and PKC, leading to insulin resistance (4,5)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "449adb45dacdc2de1c7ff294e102a477d387d18d",
         "externalIds": {
@@ -477,9 +477,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "5e4b249bf7dc480f3dcda9feee6cfae21b2691cf",
         "externalIds": {
@@ -491,9 +491,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "99ffd760a55676290ad5a31cf301201e3a0e45a1",
         "externalIds": {
@@ -506,9 +506,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "e6d376f914d4f9257c947179821eecc7fa0fca18",
         "externalIds": {
@@ -522,9 +522,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "5fefa05b15768213ed8b1d8b71665b363c15c144",
         "externalIds": {
@@ -537,9 +537,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "10ffc830c543226baf57cbe4f2048da8b205b1af",
         "externalIds": {
@@ -553,11 +553,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Reduced phosphorylation of insulin receptor substrate-1 (IRS-1) and downstream modulation of phosphatidylinositol-3-kinase (PI3K) and AKT signaling pathways decrease insulin-mediated glucose uptake in peripheral tissues while promoting adipose tissue lipolysis (43, 44)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "ee6e0bb05f96e77249974ab009cfa09f784bbd48",
         "externalIds": {
@@ -571,9 +571,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "bcdf40eb0347fd0bef42af79d2f2430c1d187369",
         "externalIds": {
@@ -586,11 +586,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Insulin is a key regulator of whole-body glucose homeostasis (Saltiel and Kahn, 2001)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "024a6ad21b6b3dc36d3500a2f4ec92fbe329409b",
         "externalIds": {
@@ -604,11 +604,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "\u2026analyses revealed that MWT was primarily influenced by growth and metabolic pathways, notably the insulin receptor signaling and IRS-mediated PI3K/AKT cascade, which regulate glucose uptake, protein synthesis, and lipid metabolism (Saltiel And Kahn 2001; Copps And White 2012; Boucher et al. 2014)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "00f9266e8f207daa7add92a945e2f684213e8f2e",
         "externalIds": {
@@ -622,11 +622,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Insulin acts to guide the incorporation of food glucose into glycogen via glycogen synthase and fatty acids via lipogenesis, thus suppressing hepatic glucose production (HGP) and maintaining systemic glucose homeostasis 3\u20135 ."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "b25a0419f0e6e0ee360392646d876acb751bf943",
         "externalIds": {
@@ -639,11 +639,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Many studies have shown that glucose significantly increased in HFD groups, similar to our findings [ 55\u201357]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "f93544f117c7e3bb2e8c31d657f851eb4cd0c807",
         "externalIds": {
@@ -657,9 +657,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "25dbd360d188bc35346faddf7fb0794a23d45700",
         "externalIds": {
@@ -671,11 +671,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "The enhanced glucose clearance observed here likely reflects upregulated peripheral glucose uptake resulting from prolonged WLE infusion, despite higher insulin responses (Saltiel & Kahn, 2001)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "daf67dd2e263e194083002cd8ff6cf72d32b95a1",
         "externalIds": {
@@ -689,9 +689,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "a9f22fb2b311753a14e28d2ca8adc6f302617253",
         "externalIds": {
@@ -704,9 +704,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "f0f83ca59f03535b2140006a0c3b02c9fcf7750e",
         "externalIds": {
@@ -719,11 +719,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "INSR (insulin receptor) gene encodes a transmembrane tyrosine kinase that mediates insulin signaling and plays a central role in glucose and lipid metabolism (Saltiel and Kahn, 2001)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "4178c03a2ae1aeb3c3e529320619b8f94ca8576d",
         "externalIds": {
@@ -737,9 +737,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "c9309a66b9ef285521e4469b419d82986ee4a7ce",
         "externalIds": {
@@ -751,9 +751,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "4d7f7710c6454b39b120bc3ea13ae82f34de19e4",
         "externalIds": {
@@ -765,12 +765,12 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Indeed, increased IGF signaling may also stimulate gluconeogenesis in the liver (Al-Samerria and Radovick 2021 ; Saltiel and Kahn 2001 ), ensuring a steady supply of glucose to vital organs, such as the brain and heart.",
         "This translocation enhances anabolic processes, favoring alternative pathways to sustain cellular function during hypoxia (Saltiel and Kahn 2001 ; Biddinger and Kahn 2006 )."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "0194bb0fc210ce8be83cb12268335b203ed4c77e",
         "externalIds": {
@@ -783,9 +783,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "6fa4df6a77064ef35b49f7c9bb95cf54723b2757",
         "externalIds": {
@@ -799,9 +799,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "84eb3e33ca6d087aa907fbe84bf8d35f815b296e",
         "externalIds": {
@@ -813,11 +813,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "It is a complex disorder with broad etiological roots and diverse biochemical, molecular, and physiological manifestations (Saltiel and Kahn 2001, Shulman 2000)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "2ce3f79de1d40a303f9bfefdba8af3060073c353",
         "externalIds": {
@@ -831,9 +831,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "c02e402a75f956af1486e8e84c130a979ea0949f",
         "externalIds": {
@@ -846,12 +846,12 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Insulin signaling, while classically anabolic in promoting lipid storage and glucose uptake in BAT (84), plays a critical indirect and supportive role in thermogenesis.",
         "This axis exhibits synergy with the TGF b -PDE3b-cAMP pathway: insulin, via the PI3K-Akt pathway, can inhibit Smad2/3 phosphorylation, indirectly attenuating the TGF b -mediated upregulation of PDE3b and preventing excessive suppression of (84)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "a4495793bd1c476be756a68218e153ef64e98e6b",
         "externalIds": {
@@ -865,9 +865,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "052f287a36b0d0d1edfed19dcea77b6b15f3c617",
         "externalIds": {
@@ -880,12 +880,12 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "These processes are orchestrated by metabolic enzymes, energy sensors such as AMPK, and hormonal signals like insulin [34,35].",
         "Core metabolic pathways are essential for normal tissue function, including immune cell activation, hematopoiesis, and hepatic metabolism [31\u201335]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "48edc41c7d6c44537bcd01754a45f8e75120be39",
         "externalIds": {
@@ -899,11 +899,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Insulin (INS) is a peptide hormone secreted by the \u03b2 -cells of the pancreas in response to elevated blood glucose levels [12]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "4e8bb49c6122fe67d902c827e1e2929860193f67",
         "externalIds": {
@@ -917,12 +917,12 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Beyond its central role in glucose homeostasis, insulin influences lipid metabolism and protein synthesis, cell growth and proliferation, stress responses, and autophagy, as well as\u2014most relevant to the present context\u2014ovarian steroidogenesis and folliculogenesis [6,60].",
         "Insulin, beyond its classical role in glucose homeostasis, influences lipid metabolism, protein synthesis, cell proliferation [6], and ovarian steroidogenesis [7], while chronic hyperinsulinemia can trigger receptor downregulation and tissue-specific IR [8]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "54c5f2f86e41698c5a5487c1a808f3b7780b3e0f",
         "externalIds": {
@@ -936,9 +936,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "18492761ae301da88f9cc2fd36db9acf76cb486f",
         "externalIds": {
@@ -952,11 +952,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "The activation of insulin signaling likely promotes glucose uptake and lipogenesis [11], while upregulated oxidative phosphorylation supplies the necessary ATP for lipid synthesis [12]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "579486c1b594aef40287d21da869d1f62ffbcbff",
         "externalIds": {
@@ -970,9 +970,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "fcb35913f57e92331f5d97815305579425e4bf15",
         "externalIds": {
@@ -985,9 +985,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "8c96b118ef006fa12799e6ea397e8498fd8f8cf4",
         "externalIds": {
@@ -999,11 +999,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Dysregulation of insulin signaling is implicated in numerous human diseases, including diabetes, obesity, cancer, and neurodegeneration [5, 6], under-scoring the importance of understanding the molecular mechanisms that govern insulin signaling."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "a2c2d398846eaadec1a2c13eceb969976d2cf8bf",
         "externalIds": {
@@ -1017,11 +1017,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "High BMI contributes signi\ufb01cantly to the burden of CVDs by triggering metabolic disorders, insulin resistance, inflammation, and oxidative stress, which promote atherosclerosis and endothelial damage (34, 35)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "8f0a0820ec641b89dd0cf1b67f39f08b21658c4e",
         "externalIds": {
@@ -1035,9 +1035,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "121abd82901cfc23d377c19474565df11592875d",
         "externalIds": {
@@ -1050,9 +1050,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "3667ab1e810cafa9b88811f42f5902f83ea26ba0",
         "externalIds": {
@@ -1065,9 +1065,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "621624ef9ed971ffb9e513015939bd7464e34fae",
         "externalIds": {
@@ -1080,11 +1080,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "It drives glucose into cells [47] and inhibits protein breakdown [48] and ketogenesis [49]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "3e0079b5ca64f6e3d28c89726a43e76d5a27fca7",
         "externalIds": {
@@ -1098,11 +1098,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "The storage capacity of glycogen in skeletal muscle is limited because the activity of glycogen synthase is inhibited by Protein Kinase A (PKA) [46] or glycogen synthase kinase 3 \u03b2 (GSK3 \u03b2 ) [47], thus impairing glycogen accumulation."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "8acedbd5c9a66abf3b9db90b13e0cf4702565dc4",
         "externalIds": {
@@ -1116,9 +1116,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "8b88b06d70c22d124b803968db9fd30a98eb757a",
         "externalIds": {
@@ -1131,9 +1131,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "d835466d9fe0437e1a1228ab2f55b3e0553cf2e2",
         "externalIds": {
@@ -1146,9 +1146,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "ab215267749fab43e7255d9b7c91ee13ace72ab3",
         "externalIds": {
@@ -1161,12 +1161,12 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "2,21,28 Concurrently, Akt inhibits glycogen synthase kinase 3 \u03b2 (GSK-3 \u03b2 ) and activates glycogen synthase, thereby promoting glycogen synthesis and intracellular glucose storage.",
         "21,77,78 In contrast, glucagon mobilizes energy stores during fasting by stimulating hepatic glycogenolysis and gluconeogenesis via cAMP-PKA signaling, elevating circulating glucose levels."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "79958d520f90e2102238bbb0f650b721381d48ea",
         "externalIds": {
@@ -1180,11 +1180,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "The pancreas is an essential metabolic organ with endocrine and exocrine functions, regulating the intake of exogenous nutrients and glucose and lipid metabolism homeostasis 17,18 ."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "0bacb83afbd99fdc273f70355bd7d7a1b1638a40",
         "externalIds": {
@@ -1199,11 +1199,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Therefore, insulin resistance develops in the body [93,94]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "5786247495cc784999e8f0c572e9c937dfada9fd",
         "externalIds": {
@@ -1216,11 +1216,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "It 1 3 data support this, revealing diminished IRS-1, PI3K, and Akt expression correlating with reduced glucose uptake and impaired glycogen synthesis in diabetic models [ 131 ]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "b96c04443acd43fec712206e296d00b553b8cbe7",
         "externalIds": {
@@ -1233,11 +1233,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Diabetic patients suffer from impaired insulin secretion or action, significantly affecting their quality of life [1]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "54eeb4730ff4284ca9f988fec2e36fbbe9bfb76f",
         "externalIds": {
@@ -1251,11 +1251,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Endothelial dysfunction is associated with the activation of stress-related serine/threonine kinases, including PKC and IKK-\u03b2, which reduce GLUT4 translocation on the cell membrane, thereby worsening insulin sensitivity [71, 72]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "15807f2bc55f84ca8d116365e7e0a71e28dee68c",
         "externalIds": {
@@ -1269,12 +1269,12 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "\u2026of factors, including a dysregulated metabolic state that limits GLP-1 effectiveness, concomitant use of glucose-lowering agents that may promote weight gain, compensatory eating behaviors with the use of glucose-lowering agents that can cause hypoglycemia, and hyperinsulinemia [4,10,11].",
         "Furthermore, hyperinsulinemia accompanying insulin resistance in T2D enhances adipocyte lipid uptake and suppresses lipolysis, limiting fat mass loss [11]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "2c7d198fecaf527cb93a114c64d48a9a12531c93",
         "externalIds": {
@@ -1286,9 +1286,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "12e1d82921d75e57c5fa7e31967ff9ad062aee2e",
         "externalIds": {
@@ -1302,9 +1302,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "68ea995573d86ad48c4a0659b2f010a06400629f",
         "externalIds": {
@@ -1317,9 +1317,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "2928674297ab3def8ad37d9220a8072983d0e902",
         "externalIds": {
@@ -1331,9 +1331,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "9c2b344d7f9d2c80ecd28e43106ab75f72f15f0b",
         "externalIds": {
@@ -1345,9 +1345,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "514b91f02d5aaa48b071b05e501cbfee84dbe262",
         "externalIds": {
@@ -1359,11 +1359,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Compounding this, glut2 suppression across all RGC groups re \ufb02 ected insulin resistance, which may be associated with disrupted PI3K-AKT signaling and diminished igf1 expression in RGC75 [17, 51]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "3b68385bda0fa17e6a3aa137171fb5490471acc8",
         "externalIds": {
@@ -1377,9 +1377,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "8023ad9d587293653e67c8ef3596bc67d38e4f0a",
         "externalIds": {
@@ -1392,9 +1392,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "2f88c39512ac953c5351d9fa1a186ba7b7972111",
         "externalIds": {
@@ -1406,9 +1406,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "6c42d2020aa8a7ce99685af04afc60c0db1997e6",
         "externalIds": {
@@ -1420,9 +1420,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "616fd661996cd1290f91c773092bd203e7790a35",
         "externalIds": {
@@ -1434,12 +1434,12 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Upon insulin binding, the insulin receptor (IR) on the cell surface activates its intrinsic tyrosine kinase activity, resulting in autophosphorylation and subsequent recruitment and phosphorylation of insulin receptor substrate (IRS) proteins, such as IRS-1 [83,84].",
         "Insulin receptor substrate 1 (IRS-1) is a critical mediator of insulin signal transduction in insulin-sensitive tissues [83]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "479cfb0c28df58d1763ba3ebe332d4f351523a04",
         "externalIds": {
@@ -1453,11 +1453,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Excess glucose molecules are transported into the hepatocytes to be stored either as glycogen via glycogenesis or fat via glycolysis-TCA-lipogenesis flux (29 \u2013 31)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "8c86aef81eb3b570f1b6c33397e8a599ef6aaa25",
         "externalIds": {
@@ -1471,9 +1471,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "c64712dc5125039165aad6c88ca2572c44dff2bd",
         "externalIds": {
@@ -1486,9 +1486,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "e0a61a8b0fa054f2e6bf3226a8ad9d715294b79f",
         "externalIds": {
@@ -1500,9 +1500,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "28b72271cfe2eb7739420611dd8486a5a3afc0ea",
         "externalIds": {
@@ -1515,11 +1515,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "This promotes systemic inflammation, impairing insulin receptor signaling pathways and contributing to insulin resistance [180, 185]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "dc847f4e947655ae295d0c9d1049d482588edb4d",
         "externalIds": {
@@ -1532,11 +1532,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Additionally, it plays a key role in inhibiting hepatic gluconeogenesis [5]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "17cd62f42efcc4afbf83e83adfe63cfcd51c0b4e",
         "externalIds": {
@@ -1550,9 +1550,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "8e625b4d9af6bd6790968ec9a25201872a89c3fb",
         "externalIds": {
@@ -1565,9 +1565,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "31eb0fb8236599593f949a1ad2e3d2d66f14fbf7",
         "externalIds": {
@@ -1580,11 +1580,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Insulin resistance, commonly associated with PCOS, has been reported to decrease AKT activity, thereby inhibiting downstream metabolic processes such as glucose and lipid metabolism [46, 47]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "9514647183a8cd6560e3f6315bceb87ea7283736",
         "externalIds": {
@@ -1598,9 +1598,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "d8a9e0f375db62ae4c887977ef48ffa44bcc4fce",
         "externalIds": {
@@ -1614,9 +1614,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "a665e0199b3ec1b1b945503df590bedc80132d78",
         "externalIds": {
@@ -1629,9 +1629,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "64b457c62dea6eab9dec81805fecd8d4a7711225",
         "externalIds": {
@@ -1645,11 +1645,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Under normal physiological conditions, blood glucose levels are meticulously regulated by endocrine factors such as insulin and glucagon [56,57]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "fdf7046a90e92bde537eaa61d823dcdfd728f391",
         "externalIds": {
@@ -1663,9 +1663,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "d3fd9860b7c14fc95d1a78e65c153aadb7bc0245",
         "externalIds": {
@@ -1678,11 +1678,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "INS promotes skeletal muscle protein synthesis by activating the PI3K/AKT/mTOR signaling pathway (88) and can also upregulate the activity of glucose transporters in muscle cells enhancing glucose uptake efficiency to support energy metabolism (89)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "921bf6472c5c1482c118ceecb59c82c0397f24c1",
         "externalIds": {
@@ -1696,9 +1696,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "594af3223187755f009abbc667edfeb217442628",
         "externalIds": {
@@ -1711,9 +1711,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "b03c25f55c15d20ddbb8e621cc3914b7b0269418",
         "externalIds": {
@@ -1727,11 +1727,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "These findings align with previous research showing insulin-stimulated amino acid transport in skeletal muscle (Saltiel and Kahn 2001; Huang and Czech 2007) and suppression of leucine release during localized hyperinsulinemia (Fryburg et al. 1990), providing a new insight into refeeding amino acid\u2026"
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "aa042d7136632aa5d1b1b9ea65ba2bf0e28407a5",
         "externalIds": {
@@ -1745,9 +1745,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "6b8673b7ea522bde3dde7fa5612f9fd00a9c8741",
         "externalIds": {
@@ -1761,9 +1761,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "bb6d3a06eace8f47ff7e59c1b7968f47099e6608",
         "externalIds": {
@@ -1776,11 +1776,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Dysregulation of metabolic pathways has emerged as a hallmark of various diseases, including cancer ( 2 ), diabetes ( 3 ), neurodegenerative disorders ( 4 ) and metabolic syndromes ( 5 )."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "1a74d9ad9bad6291c613b8c0064214a530f1e23c",
         "externalIds": {
@@ -1794,13 +1794,13 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": true,
       "contexts": [
         "The binding of substrates to these SH2 proteins can modulate their enzymatic activities or subcellular localization (Saltiel and Kahn 2001).",
         "\u2026events, including the phosphorylation of insulin receptor substrate proteins (IRS) and the subsequent activation of two key signaling pathways: the phosphoinositide 3 \u2010 kinase/protein kinase B pathway (PI3K \u2010 Akt) and the mitogen \u2010 activated protein kinase pathway (MAPK) (Saltiel and Kahn 2001).",
         "Postprandial insulin release to the blood stimulates translocation of the glucose transporter GLUT4 from intracellular storage sites to the plasma membrane in skeletal muscle and adipose tissue, thereby promoting glucose uptake by these cells (Saltiel and Kahn 2001)."
       ],
+      "intents": [],
+      "isInfluential": true,
       "citingPaper": {
         "paperId": "c694cb8b932e5c9a6d657ab1851bbcf09023d7e4",
         "externalIds": {
@@ -1813,11 +1813,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "This signalling pathway ultimately results in the translocation of glucose transporter type 4 (GLUT4) from intracellular vesicles to the cell surface, where it can transport glucose into the cell [17]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "fb6c4eec499d7ac1a42cfdad6c437303f1f87b7f",
         "externalIds": {
@@ -1830,9 +1830,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "e227543bb84e6c001717a79ce7c8470bd735c8a3",
         "externalIds": {
@@ -1844,9 +1844,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "da0ef25522398dcb4b7e3a9c72a6ac33bdc40f6e",
         "externalIds": {
@@ -1859,12 +1859,12 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "GLP-1 also stimulates insulin secretion from \u03b2 -cells [52,53], thereby reducing blood glucose and further suppressing glucagon release via a feedback mechanism [54].",
         "Together, these actions establish an accelerator-brake system that tightly regulates glycemia [50,51,54]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "22973481d4da5e705706f66ace0b903c24be97eb",
         "externalIds": {
@@ -1878,11 +1878,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "For instance, the relationship between obesity, insulin resistance, imbalance in glucose metabolism and increased fat storage in different tissue types (the main cause of obesity, the excess accumulation of fat in different tissues) has been previously reported by numerous studies (5, 6, 7,8)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "9b84e958360b0387095139a9529f3367535a65de",
         "externalIds": {
@@ -1894,11 +1894,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "The insulin signaling pathway coordinates various cellular responses, regulates glucose metabolic balance, maintains energy balance, and promotes overall metabolic health [63]."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "73c375564bc9c6694cda7db7e5353eb0d34517d1",
         "externalIds": {
@@ -1910,9 +1910,9 @@
       }
     },
     {
+      "contexts": [],
       "intents": [],
       "isInfluential": false,
-      "contexts": [],
       "citingPaper": {
         "paperId": "601765368fc076ed61f8e149cf15994d5a72ca6f",
         "externalIds": {
@@ -1926,11 +1926,11 @@
       }
     },
     {
-      "intents": [],
-      "isInfluential": false,
       "contexts": [
         "Together with ROS, the GPX4 pathway ultimately induces ferroptosis. hand, insulin promotes glycolysis, improves glucose utilization, inhibits hepatic glycogenolysis and gluconeogenesis, and suppresses hepatic glucose output (Saltiel and Kahn, 2001; Titchenell et al., 2017)."
       ],
+      "intents": [],
+      "isInfluential": false,
       "citingPaper": {
         "paperId": "05123be8e3f1d163d64b372816a65bbc452482cf",
         "externalIds": {

@@ -91,3 +91,38 @@ def save_fixture(name: str, data: dict) -> Path:
     path = FIXTURE_DIR / name
     path.write_text(json.dumps(data, indent=2))
     return path
+
+
+def cached_get_text(url: str, params: Optional[dict] = None,
+                    fixture_name: Optional[str] = None) -> Optional[str]:
+    """Like cached_get_json but for text payloads (e.g. an SVG 2D structure).
+    cache -> live -> fixture; returns None on miss (never fabricated)."""
+    key = "TEXT:" + url + "?" + json.dumps(params or {}, sort_keys=True)
+    cache_path = CACHE_DIR / f"{_slug(key)}.txt"
+    if cache_path.exists():
+        try:
+            return cache_path.read_text()
+        except OSError:
+            pass
+    if not _is_offline():
+        try:
+            import requests
+            _throttle()
+            resp = requests.get(url, params=params,
+                                headers={"User-Agent": USER_AGENT}, timeout=30)
+            if resp.status_code == 200:
+                cache_path.write_text(resp.text)
+                return resp.text
+        except Exception:
+            pass
+    if fixture_name:
+        p = FIXTURE_DIR / fixture_name
+        if p.exists():
+            return p.read_text()
+    return None
+
+
+def save_text_fixture(name: str, text: str) -> Path:
+    path = FIXTURE_DIR / name
+    path.write_text(text)
+    return path

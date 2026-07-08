@@ -18,8 +18,9 @@ from __future__ import annotations
 
 # Disease-workspace anchors for the Tier-1 clinical connectors.
 DISEASE = "glioblastoma"          # -> ClinicalTrials.gov
-GENE = "CTSB"                     # -> ClinVar
+GENE = "CTSB"                     # -> ClinVar (returns GRCh38 coords -> genome track)
 CHEMBL_QUERY = "cathepsin B"     # -> ChEMBL (honestly returns 0 drugs: undrugged)
+CHEMBL_STRUCTURE = "temozolomide"  # -> ChEMBL 2D structure (GBM standard of care)
 
 # The retracted foundation.
 FOUNDATION = {
