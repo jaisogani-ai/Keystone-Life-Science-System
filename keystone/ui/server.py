@@ -174,6 +174,79 @@ def report_api(domain: str = "gbm"):
                                              review))
 
 
+# --- Life-science surfaces (additive; existing surfaces unchanged) ---------
+_NB_COMMENTS: dict = {}   # in-memory notebook comments, keyed by (domain, hash)
+
+
+@app.get("/labs")
+def labs_page():
+    return FileResponse(_STATIC / "labs.html")
+
+
+@app.get("/api/integrity")
+def integrity_api(domain: str = "gbm"):
+    from keystone.integrity_center import run_integrity_center
+    return run_integrity_center(domain)
+
+
+@app.get("/api/notebook")
+def notebook_api(domain: str = "gbm"):
+    from keystone.notebook import build_notebook
+    prior = len(_MEMORY)
+    nb = build_notebook(domain, comments=_NB_COMMENTS.get(domain, []),
+                        prior_runs=prior)
+    return nb
+
+
+@app.post("/api/notebook/comment")
+async def notebook_comment(request: Request):
+    from keystone.notebook import make_comment
+    body = await request.json()
+    domain = body.get("domain", "gbm")
+    c = make_comment(body.get("author", ""), body.get("text", ""),
+                     body.get("graph_hash", ""))
+    if not c["text"]:
+        return JSONResponse({"error": "empty comment"}, status_code=400)
+    _NB_COMMENTS.setdefault(domain, []).append(c)
+    return c
+
+
+@app.get("/api/biology_chain")
+def biology_chain_api(domain: str = "gbm"):
+    from keystone.biology_chain import build_biology_chain
+    return build_biology_chain(domain)
+
+
+@app.get("/api/cv/catalogue")
+def cv_catalogue_api():
+    from keystone.cv_lab import modality_catalogue
+    return {"modalities": modality_catalogue()}
+
+
+@app.post("/api/cv/analyze")
+async def cv_analyze_api(request: Request):
+    """Analyze an uploaded scientific image. Refuses measurement-extraction
+    modalities; pathway-figure reading runs on live Claude vision."""
+    from keystone.cv_lab import analyze
+    ct = request.headers.get("content-type", "")
+    if ct.startswith("multipart/form-data"):
+        form = await request.form()
+        modality = form.get("modality", "")
+        claim = form.get("claim", "")
+        up = form.get("image")
+        data = await up.read() if up is not None else None
+        media = getattr(up, "content_type", "image/png") if up else "image/png"
+        return analyze(modality, claim, data, media)
+    body = await request.json()
+    return analyze(body.get("modality", ""), body.get("claim", ""))
+
+
+@app.get("/api/debate")
+def debate_api(domain: str = "gbm"):
+    from keystone.live_debate import run_debate
+    return run_debate(domain)
+
+
 @app.get("/api/workspace")
 def workspace(domain: str = "gbm"):
     """The Disease Workspace: real connectors + reasoning + scientific memory.

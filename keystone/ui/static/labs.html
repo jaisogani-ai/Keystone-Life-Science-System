@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Keystone — Life-Science Labs</title>
+<link rel="stylesheet" href="/static/lib/tokens.css"/>
+<link rel="stylesheet" href="/static/lib/anim.css"/>
+<style>
+  header{padding:14px 22px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;
+    flex-wrap:wrap;background:linear-gradient(180deg,#131826,#0c0e15);position:sticky;top:0;z-index:10}
+  .brand{font-size:16px;font-weight:700} .brand span{color:var(--green)} .brand small{display:block;color:var(--dim);font-weight:400;font-size:11px}
+  .grow{flex:1} select,button,a.btn{background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer;text-decoration:none}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;padding:12px 22px;border-bottom:1px solid var(--line)}
+  .tab{font-size:13px;color:var(--dim);padding:7px 13px;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+  .tab.on{color:var(--tx);border-color:var(--green);background:var(--panel)}
+  main{max-width:1080px;margin:0 auto;padding:18px 22px}
+  h2{font-size:15px;margin:0 0 4px} .sub{color:var(--dim);font-size:12px;margin-bottom:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .pill{font-size:10.5px;padding:2px 9px;border-radius:20px;border:1px solid var(--line);color:var(--dim);white-space:nowrap}
+  .pass{color:var(--green);border-color:var(--green)} .warn,.not_wired{color:var(--amber);border-color:var(--amber)}
+  .fail,.refused{color:var(--red);border-color:var(--red)} .supported{color:var(--green);border-color:var(--green)}
+  table{width:100%;border-collapse:collapse;font-size:12.5px} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim);font-size:11px;text-transform:uppercase}
+  .chain{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
+  .link{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:130px;flex:1}
+  .link .l{font-size:10.5px;color:var(--green);text-transform:uppercase} .link .e{font-size:12.5px;margin-top:2px}
+  .arrow{align-self:center;color:var(--dim)}
+  ul{margin:5px 0;padding-left:18px} li{font-size:12px;margin:2px 0} code{color:var(--amber);font-size:11.5px;word-break:break-all}
+  input[type=text]{background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:8px 10px;font-size:12.5px}
+  .turn{border-left:3px solid var(--line);padding:6px 0 6px 12px;margin:8px 0}
+  .turn .r{color:var(--violet);font-weight:600} .consensus{background:rgba(6,214,160,.08);border-left:3px solid var(--green);border-radius:6px;padding:10px 12px;margin-top:8px;font-size:13px}
+  .empty{color:var(--dim);text-align:center;padding:40px}
+  @media (max-width:680px){.link{min-width:100%}.arrow{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Key<span>stone</span> — Life-Science Labs
+    <small>integrity · notebook · biology chain · computer vision · live debate — real data or an honest refusal</small></div>
+  <div class="grow"></div>
+  <select id="domain" onchange="loadTab()">
+    <option value="gbm">Glioblastoma</option><option value="insulin">Insulin resistance</option>
+  </select>
+  <a class="btn" href="/">← Decision Engine</a>
+</header>
+<div class="tabs" id="tabs"></div>
+<main id="main"><div class="empty">Loading…</div></main>
+
+<script>
+const TABS=[['integrity','Research Integrity Center'],['notebook','Scientific Notebook'],
+  ['biology','Biology Chain'],['cv','Computer Vision Lab'],['debate','Live AI Debate']];
+let TAB='integrity';
+const $=id=>document.getElementById(id);
+const esc=s=>(s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const dom=()=>$('domain').value;
+$('tabs').innerHTML=TABS.map(([k,l])=>`<span class="tab" data-k="${k}" onclick="TAB='${k}';loadTab()">${l}</span>`).join('');
+
+async function j(u){const r=await fetch(u);return r.json();}
+function drawTabs(){document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.k===TAB));}
+
+async function loadTab(){
+  drawTabs(); $('main').innerHTML='<div class="empty">Loading real data…</div>';
+  try{ await RENDER[TAB](); }catch(e){ $('main').innerHTML=`<div class="empty" style="color:var(--red)">${esc(e.message)}</div>`; }
+}
+const RENDER={
+  integrity: async()=>{const d=await j('/api/integrity?domain='+dom());
+    $('main').innerHTML=`<h2>Research Integrity Center</h2>
+      <div class="sub">Verdict: <b>${esc(d.summary.verdict)}</b> · ${d.summary.passed} pass / ${d.summary.warned} warn / ${d.summary.failed} fail / ${d.summary.not_wired} not wired · hash <code>${esc(d.graph_hash)}</code></div>
+      ${d.checks.map(c=>`<div class="card"><div class="row"><b>${esc(c.name)}</b>
+        <span class="pill ${c.status}">${esc(c.status)}</span><span class="pill">Tier ${c.tier}</span></div>
+        <div class="sub" style="margin:6px 0 0">${esc(c.detail)}</div>
+        <div class="sub">source: ${esc(c.source)}</div></div>`).join('')}`;},
+  notebook: async()=>{const d=await j('/api/notebook?domain='+dom());const s=d.sections;
+    $('main').innerHTML=`<h2>Scientific Notebook</h2><div class="sub">Protocol → Evidence → Comments → Reviewer → Version History → Publication · every section is a real object, pinned to hash <code>${esc(d.graph_hash)}</code></div>
+      <div class="card"><b>Protocol</b><div class="sub">${esc(s.protocol.perturbation)} — ${esc(s.protocol.system)}, n/arm ${s.protocol.n_per_arm}</div>
+        <div class="sub">kill: ${esc(s.protocol.kill_condition)}</div></div>
+      <div class="card"><b>Evidence</b> (${s.evidence.length})<table><tr><th>Node</th><th>Source</th><th>Doubt</th></tr>
+        ${s.evidence.map(e=>`<tr><td>${esc(e.id)} ${e.retracted?'<span class="pill fail">RET</span>':''}</td><td class="sub">${esc(e.source)}</td><td>${e.doubt}</td></tr>`).join('')}</table></div>
+      <div class="card"><b>Comments</b> (human, attributed)
+        <div id="comments">${s.comments.map(renderComment).join('')||'<div class="sub">no comments yet</div>'}</div>
+        <div class="row" style="margin-top:8px"><input type="text" id="cauthor" placeholder="your name" style="width:130px">
+          <input type="text" id="ctext" placeholder="annotation pinned to this run" style="flex:1"><button onclick="addComment('${esc(d.graph_hash)}')">Add</button></div></div>
+      <div class="card"><b>Reviewer</b><div class="sub">${esc(s.reviewer.verdict)} → ${s.reviewer.adjusted_confidence} · ${esc(s.reviewer.weakness)}</div></div>
+      <div class="card"><b>Version History</b> <span class="sub">${s.version_history.prior_runs_indexed} prior run(s) indexed</span>
+        <div class="row">${s.version_history.steps.map(x=>`<span class="pill">${esc(x.stage)}</span>`).join('')}</div></div>
+      <div class="card"><b>Publication</b> — <a href="${esc(s.publication.endpoint)}" target="_blank">generate report →</a> <span class="sub">reproduces to ${esc(s.publication.reproducibility_hash)}</span></div>`;},
+  biology: async()=>{const d=await j('/api/biology_chain?domain='+dom());
+    $('main').innerHTML=`<h2>Biology Chain</h2><div class="sub">Cell → Protein → Mutation → Drug → Pathway → Disease → Trial — every link a real connector, joined by ${esc(d.gene)}</div>
+      <div class="chain">${d.chain.map((l,i)=>`<div class="link"><div class="l">${esc(l.layer)}</div><div class="e">${esc(l.entity)}</div><div class="sub">${esc(l.source)}</div></div>${i<d.chain.length-1?'<span class="arrow">→</span>':''}`).join('')}</div>
+      ${d.structure_svg?`<div class="card"><b>Standard-of-care 2D structure</b><div style="background:#fff;border-radius:8px;padding:8px;max-width:280px">${d.structure_svg}</div></div>`:''}
+      <div class="card"><b>Spatial transcriptomics</b> <span class="pill not_wired">Tier 3 · not wired</span><div class="sub">${esc(d.spatial_omics.note)}</div></div>`;},
+  cv: async()=>{const d=await j('/api/cv/catalogue');
+    $('main').innerHTML=`<h2>Computer Vision Lab</h2><div class="sub">Claude Vision is used only where a validated model exists (pathway/mechanism figures). Measurement extraction from microscopy/CryoEM/blots is refused — the boundary that keeps it trustworthy.</div>
+      <div class="card"><b>Supported (Claude vision)</b>${d.modalities.filter(m=>m.status==='supported').map(m=>`<div class="row" style="margin-top:6px"><span class="pill supported">${esc(m.modality)}</span><span class="sub">${esc(m.detail)}</span></div>`).join('')}</div>
+      <div class="card"><b>Refused (no validated model — never fabricated)</b>${d.modalities.filter(m=>m.status==='refused').map(m=>`<div class="row" style="margin-top:6px"><span class="pill refused">${esc(m.modality)}</span><span class="sub">${esc(m.detail)}</span></div>`).join('')}</div>
+      <div class="card"><b>Try it</b><div class="row" style="margin-top:6px"><input type="text" id="cvmod" placeholder="modality e.g. microscopy or pathway_figure" style="flex:1"><button onclick="tryCv()">Analyze</button></div><div id="cvout" class="sub" style="margin-top:8px"></div></div>`;},
+  debate: async()=>{const d=await j('/api/debate?domain='+dom());
+    $('main').innerHTML=`<h2>Live AI Debate</h2><div class="sub">${esc(d.hypothesis)}</div>
+      ${d.turns.map(t=>`<div class="turn"><span class="r">${esc(t.role)}</span> <span class="sub">(${esc(t.lens)})</span>
+        <ul>${t.case.map(c=>`<li>${esc(c)}</li>`).join('')}</ul><div class="sub">→ ${esc(t.position)}</div></div>`).join('')}
+      <div class="consensus"><b>Consensus:</b> ${esc(d.consensus.statement)}<div class="sub" style="margin-top:3px">${esc(d.consensus.method)} · human-gated</div></div>`;},
+};
+function renderComment(c){return `<div class="sub" style="margin-top:4px">💬 <b>${esc(c.author)}</b> <span style="color:var(--dim)">${esc(c.at)}</span> — ${esc(c.text)}</div>`;}
+async function addComment(hash){const author=$('cauthor').value,text=$('ctext').value;if(!text.trim())return;
+  const r=await fetch('/api/notebook/comment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({domain:dom(),author,text,graph_hash:hash})});
+  const c=await r.json();if(c.error)return;$('comments').insertAdjacentHTML('beforeend',renderComment(c));$('ctext').value='';}
+async function tryCv(){const m=$('cvmod').value.trim();const r=await fetch('/api/cv/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({modality:m})});
+  const d=await r.json();$('cvout').innerHTML=d.refused?`<span class="pill refused">refused</span> ${esc(d.reason)}`:d.requires_live_vision?`<span class="pill warn">requires live vision</span> ${esc(d.note)}`:`<span class="pill supported">ok</span> ${esc(JSON.stringify(d))}`;}
+loadTab();
+</script>
+</body>
+</html>
