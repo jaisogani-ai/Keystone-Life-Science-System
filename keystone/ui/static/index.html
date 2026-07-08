@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Keystone — AI Scientific Research Workbench</title>
+<script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<style>
+  :root{--bg:#0f1117;--panel:#161a24;--panel2:#1a1f2b;--line:#26304a;
+    --tx:#e6e6e6;--dim:#8d99ae;--cyan:#4cc9f0;--green:#06d6a0;--red:#ff5d5d;
+    --amber:#ffd166;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tx);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5}
+  header{padding:16px 22px;border-bottom:1px solid var(--line);
+    display:flex;gap:16px;align-items:center;flex-wrap:wrap;
+    position:sticky;top:0;background:var(--bg);z-index:5}
+  h1{font-size:17px;margin:0;white-space:nowrap}
+  h1 small{color:var(--dim);font-weight:400;font-size:12px;display:block}
+  .qbar{flex:1;display:flex;gap:8px;min-width:320px}
+  input[type=text]{flex:1;background:var(--panel2);border:1px solid var(--line);
+    color:var(--tx);border-radius:8px;padding:9px 12px;font-size:13px}
+  button{background:var(--cyan);color:#04202b;border:0;border-radius:8px;
+    padding:9px 16px;font-weight:600;cursor:pointer;font-size:13px}
+  button.ghost{background:var(--panel2);color:var(--tx);border:1px solid var(--line)}
+  button:disabled{opacity:.5;cursor:default}
+  .pipe{display:flex;gap:6px;padding:12px 22px;flex-wrap:wrap;
+    border-bottom:1px solid var(--line)}
+  .stage{font-size:11px;color:var(--dim);padding:5px 11px;border-radius:20px;
+    border:1px solid var(--line);background:var(--panel);white-space:nowrap}
+  .stage.active{color:var(--amber);border-color:var(--amber)}
+  .stage.done{color:var(--green);border-color:var(--green)}
+  main{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px 22px;
+    max-width:1500px;margin:0 auto}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;overflow:hidden}
+  .card.wide{grid-column:1 / -1}
+  .card h2{font-size:13px;margin:0 0 10px;text-transform:uppercase;
+    letter-spacing:.06em;color:var(--dim)}
+  .muted{color:var(--dim)} .cyan{color:var(--cyan)} .green{color:var(--green)}
+  .red{color:var(--red)} .amber{color:var(--amber)}
+  svg{max-width:100%;height:auto;display:block}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:4px 0;
+    border-bottom:1px dashed var(--line);font-size:13px}
+  ul{margin:6px 0;padding-left:18px} li{font-size:13px;margin:3px 0}
+  .pill{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;
+    border:1px solid var(--line)}
+  .nodebox{background:var(--panel2);border:1px solid var(--line);border-radius:8px;
+    padding:10px 12px;font-size:12.5px;min-height:64px}
+  .branch{border-left:3px solid var(--line);padding:6px 0 6px 12px;margin:8px 0}
+  .steps{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+  .step-body{background:var(--panel2);border:1px solid var(--line);border-radius:8px;
+    padding:12px;font-size:12.5px;white-space:pre-wrap;font-family:ui-monospace,monospace}
+  a{color:var(--cyan)} code{color:var(--amber);font-size:12px}
+  .empty{color:var(--dim);text-align:center;padding:40px 0}
+  .bignum{font-size:26px;font-weight:700}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body>
+<header>
+  <h1>Keystone <small>AI Scientific Research Workbench</small></h1>
+  <div class="qbar">
+    <input id="q" type="text" placeholder="Ask a research question…"/>
+    <button id="runbtn" onclick="runLoop()">Run loop</button>
+  </div>
+</header>
+
+<div class="pipe" id="pipe"></div>
+
+<main id="main">
+  <div class="card wide"><div class="empty" id="hint">
+    Enter a question and press <b>Run loop</b>. Keystone will Plan → Collect →
+    Analyze → Hypothesize → Design → Review over real glioblastoma evidence,
+    then let you inspect and approve.</div></div>
+</main>
+
+<script>
+const STAGES=["PLAN","COLLECT","ANALYZE","HYPOTHESIS","EXPERIMENT","REVIEW","LEDGER"];
+let BUNDLE=null, STEP=0;
+const $=id=>document.getElementById(id);
+
+function drawPipe(active){
+  $("pipe").innerHTML = STAGES.map(s=>{
+    let cls="stage";
+    const ai=STAGES.indexOf(active);
+    const si=STAGES.indexOf(s);
+    if(active==="DONE"||si<ai) cls+=" done";
+    else if(s===active) cls+=" active";
+    return `<span class="${cls}">${s}</span>`;
+  }).join("");
+}
+
+async function loadDefault(){
+  try{const r=await fetch("/api/default-question");const j=await r.json();
+    $("q").value=j.question;}catch(e){}
+}
+loadDefault();
+
+function runLoop(){
+  const q=$("q").value.trim();
+  $("runbtn").disabled=true; drawPipe("PLAN");
+  $("main").innerHTML=`<div class="card wide"><div class="empty">Running the loop…</div></div>`;
+  const es=new EventSource("/api/stream?question="+encodeURIComponent(q));
+  es.onmessage=(ev)=>{
+    const m=JSON.parse(ev.data);
+    if(m.type==="stage"){ drawPipe(m.stage); }
+    else if(m.type==="done"){ drawPipe("DONE"); BUNDLE=m.data; STEP=0; render(); es.close(); $("runbtn").disabled=false; }
+  };
+  es.onerror=()=>{ es.close(); $("runbtn").disabled=false;
+    $("main").innerHTML=`<div class="card wide"><div class="empty red">Stream error. Is the server running?</div></div>`; };
+}
+
+function esc(s){return (s==null?"":String(s)).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+
+function render(){
+  const b=BUNDLE, h=b.hypothesis, r=b.review, wp=b.why_panel, rd=b.readiness;
+  const ci=`${h.confidence.point} <span class="muted">[${h.confidence.low}, ${h.confidence.high}]</span>`;
+  const verdictColor={supported:"green",downgraded:"amber",rejected:"red"}[r.verdict]||"muted";
+  $("main").innerHTML=`
+  <div class="card wide">
+    <h2>Hypothesis</h2>
+    <div style="font-size:15px">${esc(h.statement)}</div>
+    <div class="row" style="margin-top:10px">
+      <span class="pill">confidence ${ci}</span>
+      <span class="pill ${verdictColor}">reviewer: ${esc(r.verdict)} → ${r.adjusted_confidence}</span>
+      <span class="pill">support ${h.supporting_evidence.join(", ")}</span>
+      <span class="pill red">contra ${h.contradicting_evidence.join(", ")}</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Evidence graph <span class="muted">— click a node</span></h2>
+    <div id="graph">${b.evidence_graph_svg}</div>
+    <div class="nodebox" id="nodebox">Click a node to see its source and doubt.</div>
+  </div>
+
+  <div class="card">
+    <h2>Why did Keystone reach this?</h2>
+    ${evList("Supporting", wp.supporting_evidence, "green")}
+    ${evList("Contradicting", wp.contradicting_evidence, "amber")}
+    <div class="kv"><span>Confidence</span><span>${wp.confidence.point} [${wp.confidence.interval.join(", ")}]</span></div>
+    <div style="margin-top:8px"><span class="red">Reviewer (${esc(wp.reviewer_objection.verdict)}):</span> ${esc(wp.reviewer_objection.weakness)}
+      <span class="muted">→ adj ${wp.reviewer_objection.adjusted_confidence}</span></div>
+    <div style="margin-top:8px"><span class="muted">Remaining uncertainty:</span> ${esc(wp.remaining_uncertainty)}</div>
+    <div style="margin-top:8px" class="muted">Failure modes:</div>
+    <ul>${wp.failure_modes.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>
+    <div class="green" style="margin-top:6px">Next experiment: ${esc(wp.suggested_next_experiment.perturbation)}</div>
+    <div class="muted" style="font-size:12px">kill: ${esc(wp.suggested_next_experiment.kill_condition)} · n/arm ${wp.suggested_next_experiment.required_n_per_arm}</div>
+  </div>
+
+  <div class="card">
+    <h2>Research readiness <span class="muted">— honest</span></h2>
+    <div class="kv"><span>Evidence support</span><span>${rd.evidence_support.value ?? "—"} <span class="muted">${rd.evidence_support.interval?("["+rd.evidence_support.interval.join(", ")+"]"):""}</span></span></div>
+    <div class="kv"><span>Reproducibility</span><span>${esc(rd.reproducibility.value)}</span></div>
+    <div class="kv"><span>Risk</span><span class="${{low:'green',medium:'amber',high:'red'}[rd.risk]||''}">${esc(rd.risk)}</span></div>
+    <div class="kv"><span>Missing evidence</span><span>${rd.missing_evidence.count}</span></div>
+    <div class="kv"><span>Novelty</span><span class="amber">${esc(rd.novelty.estimate)}</span></div>
+    <div class="muted" style="font-size:11.5px;margin-top:8px">${esc(rd.novelty.caveat)}</div>
+  </div>
+
+  <div class="card">
+    <h2>Future experiments — decision tree</h2>
+    ${b.future_tree.map(br=>`<div class="branch">
+      <b>${esc(br.node_id)}</b> — ${esc(br.description)}
+      <div class="muted" style="font-size:12px">
+        ${br.on_positive?`<span class="green">＋ positive → ${esc(br.on_positive)}</span>`:""}
+        ${br.on_negative?`&nbsp;&nbsp;<span class="red">－ negative → ${esc(br.on_negative)}</span>`:""}
+        &nbsp;· grounding ${(br.grounding||[]).join(", ")}</div></div>`).join("")}
+  </div>
+
+  <div class="card">
+    <h2>Research timeline</h2>
+    ${b.timeline_svg}
+  </div>
+
+  <div class="card">
+    <h2>3D target structure</h2>
+    ${b.protein_html}
+  </div>
+
+  <div class="card">
+    <h2>Session replay</h2>
+    <div class="steps" id="stepchips"></div>
+    <div class="step-body" id="stepbody"></div>
+    <div class="row" style="margin-top:8px">
+      <button class="ghost" onclick="stepMove(-1)">◀ Prev</button>
+      <button class="ghost" onclick="stepMove(1)">Next ▶</button>
+      <span class="muted" id="stepcount"></span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Human approval gate</h2>
+    <div class="muted" style="font-size:12.5px">Rule 1 — the scientist decides. Your decision is written back into the Ledger with attribution and re-runs to the same hash <code>${esc(b.ledger.graph_hash)}</code>.</div>
+    <div class="row" style="margin-top:10px">
+      <input type="text" id="who" placeholder="your name"/>
+    </div>
+    <div class="row" style="margin-top:8px">
+      <input type="text" id="note" placeholder="optional note / override reason"/>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button class="green" style="background:var(--green);color:#03251c" onclick="approve('approved')">Approve</button>
+      <button style="background:var(--red);color:#2b0606" onclick="approve('rejected')">Reject</button>
+      <button class="ghost" onclick="approve('override')">Override</button>
+    </div>
+    <div id="signoff" style="margin-top:10px"></div>
+  </div>
+
+  <div class="card wide">
+    <h2>Provenance — sources cited (rule 6)</h2>
+    <div class="row">${b.ledger.sources.map(s=>`<span class="pill">${esc(s)}</span>`).join(" ")}</div>
+  </div>`;
+  wireGraph(); renderStep();
+}
+
+function evList(title,items,color){
+  if(!items||!items.length) return `<div class="muted">${title}: none</div>`;
+  return `<div class="${color}" style="margin-top:4px">${title}</div><ul>`+
+    items.map(e=>`<li><b>${esc(e.id)}</b> <span class="muted">(doubt ${e.doubt})</span> — ${esc((e.text||"").slice(0,110))}</li>`).join("")+`</ul>`;
+}
+
+function wireGraph(){
+  const g=$("graph");
+  g.querySelectorAll("[data-node]").forEach(el=>{
+    el.addEventListener("click",()=>{
+      const n=BUNDLE.nodes[el.getAttribute("data-node")];
+      if(!n) return;
+      const doi=/^10\./.test(n.source)?`<a href="https://doi.org/${esc(n.source)}" target="_blank">${esc(n.source)}</a>`:esc(n.source);
+      $("nodebox").innerHTML=`<b>${esc(n.id)}</b> <span class="pill">${esc(n.type)}</span>
+        ${n.retracted?'<span class="pill red">RETRACTED</span>':""}
+        ${n.inexcusable?'<span class="pill amber">post-retraction</span>':""}
+        <div style="margin-top:6px">${esc(n.text)}</div>
+        <div class="kv"><span>source</span><span>${doi}</span></div>
+        <div class="kv"><span>doubt</span><span>${n.doubt} [${n.doubt_interval.join(", ")}]</span></div>`;
+    });
+  });
+}
+
+function renderStep(){
+  const s=BUNDLE.session; STEP=Math.max(0,Math.min(STEP,s.length-1));
+  $("stepchips").innerHTML=s.map((st,i)=>`<span class="stage ${i===STEP?'active':(i<STEP?'done':'')}" onclick="STEP=${i};renderStep()">${st.stage}</span>`).join("");
+  const st=s[STEP];
+  $("stepbody").textContent=`[${st.index}] ${st.stage}\n${st.summary}\n\n`+JSON.stringify(st.detail,null,2);
+  $("stepcount").textContent=`step ${STEP+1} / ${s.length}`;
+}
+function stepMove(d){STEP+=d;renderStep();}
+
+async function approve(decision){
+  const r=await fetch("/api/approve",{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({session_id:BUNDLE.session_id,decision,who:$("who").value,note:$("note").value})});
+  const j=await r.json();
+  if(j.error){$("signoff").innerHTML=`<span class="red">${esc(j.error)}</span>`;return;}
+  const col={approved:"green",rejected:"red",override:"amber"}[j.human_decision]||"cyan";
+  $("signoff").innerHTML=`<span class="${col}">● ${esc(j.human_decision)}</span> <span class="muted">— ${esc(j.human_signoff)}</span>`;
+}
+</script>
+</body>
+</html>

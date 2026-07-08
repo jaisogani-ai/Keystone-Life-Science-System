@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "keystone-ui",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "keystone.ui.server"],
+      "port": 8000
+    }
+  ]
+}

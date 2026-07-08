@@ -48,6 +48,9 @@ python -m pytest                        # 17 tests: reproducibility + rules + re
 python run_workbench.py                 # full loop, offline, no API key -> demo_out/
 python calibrate.py                     # measured load-bearing agreement
 
+pip install fastapi uvicorn             # the interactive workbench UI
+python -m keystone.ui.server            # -> http://127.0.0.1:8000
+
 # refresh the pinned real data from the live APIs:
 KEYSTONE_LIVE=1 python -m keystone.connectors.capture
 
@@ -82,7 +85,11 @@ keystone/
     reasoning_render.py   why-panel + future-experiments renderers
   calibration/
     gbm_citing_sentences.jsonl   44 hand-labeled real sentences
-tests/                    test_smoke.py (7) + test_connectors.py (10)
+  ui/
+    server.py             FastAPI backend (pure projection of the engine)
+    static/index.html     one-page workbench: graph, why-panel, tree,
+                          readiness, timeline, 3D, replay, approval gate
+tests/                    test_smoke.py (7) + test_connectors.py (10) + test_ui.py (4)
 run_workbench.py          end-to-end CLI
 calibrate.py              the moat, measured
 ```

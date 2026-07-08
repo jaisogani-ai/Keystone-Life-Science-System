@@ -71,6 +71,7 @@ def evidence_graph_svg(graph: EvidenceGraph, width: int = 820,
         x, y = pos[nid]
         node = graph.nodes[nid]
         col = _doubt_color(node.doubt.point)
+        parts.append(f'<g data-node="{html.escape(nid)}" style="cursor:pointer">')
         if node.retracted:
             parts.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="30" fill="none" '
                          f'stroke="#ff5d5d" stroke-width="3" stroke-dasharray="4 3"/>')
@@ -85,6 +86,7 @@ def evidence_graph_svg(graph: EvidenceGraph, width: int = 820,
         parts.append(f'<text x="{x:.0f}" y="{y+38:.0f}" fill="#cfcfcf" '
                      f'font-size="8.5" text-anchor="middle">'
                      f'doubt {node.doubt.point:.2f}</text>')
+        parts.append('</g>')
     parts.append('</svg>')
     return "\n".join(parts)
 
