@@ -97,7 +97,7 @@ def evaluate(reasoner, build_graph) -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--domain", choices=["gbm", "insulin"], default="gbm")
+    ap.add_argument("--domain", choices=["gbm", "insulin", "ich"], default="gbm")
     args = ap.parse_args()
     reasoner = _reasoner()
     res = evaluate(reasoner, _graph_builder(args.domain))

@@ -17,6 +17,7 @@ not-wired check is never silently 'passed'.
 """
 from __future__ import annotations
 
+from keystone.core import node_label
 from keystone.workbench import run
 from keystone.agents.reasoner import HeuristicReasoner
 from keystone.connectors import registry as R
@@ -32,6 +33,14 @@ def _spec_and_builder(domain: str):
     if domain == "insulin":
         from keystone import insulin_spec as SPEC
         from keystone.data_insulin import build_insulin_graph as build
+        return SPEC, build
+    if domain == "ich":
+        from keystone import ich_spec as SPEC
+        from keystone.data_ich import build_ich_graph as build
+        return SPEC, build
+    if domain == "tcell":
+        from keystone import tcell_spec as SPEC
+        from keystone.data_tcell import build_tcell_graph as build
         return SPEC, build
     from keystone import gbm_spec as SPEC
     from keystone.data_gbm import build_gbm_graph as build
@@ -50,13 +59,13 @@ def run_integrity_center(domain: str = "gbm") -> dict:
     if reagent is not None:
         prob = reagent.meta.get("problematic")
         checks.append(_check(
-            "Cell Authentication", 1, "fail" if prob else "pass",
+            "Known-misidentification flag (Cellosaurus/ICLAC)", 1, "fail" if prob else "pass",
             (f"{reagent.text.split(' — ')[0]} is flagged misidentified: "
              f"{(prob or '')[:90]}") if prob
             else f"{reagent.text.split(' — ')[0]} — no misidentification flag",
             reagent.source))
     else:
-        checks.append(_check("Cell Authentication", 1, "not_applicable",
+        checks.append(_check("Known-misidentification flag (Cellosaurus/ICLAC)", 1, "not_applicable",
                              "no reagent/cell-line node in this graph", "—"))
 
     # 2. Protocol Validation — real deterministic validator
@@ -69,11 +78,12 @@ def run_integrity_center(domain: str = "gbm") -> dict:
 
     # 3. Evidence Quality — the load-bearing moat + inherited doubt
     doubts = [n.doubt.point for n in graph.nodes.values()]
-    high = [n.id for n in graph.nodes.values() if n.doubt.point >= 0.6]
+    high = [n for n in graph.nodes.values() if n.doubt.point >= 0.6]
     checks.append(_check(
         "Evidence Quality", 1, "warn" if high else "pass",
         (f"{len(high)} grounding/evidence node(s) carry high inherited doubt "
-         f"({', '.join(high)}); mean doubt {sum(doubts)/len(doubts):.2f}")
+         f"({', '.join(node_label(n) for n in high)}); "
+         f"mean doubt {sum(doubts)/len(doubts):.2f}")
         if high else f"mean inherited doubt {sum(doubts)/len(doubts):.2f}",
         "load-bearing classification (calibrated 0.818)"))
 
@@ -86,7 +96,7 @@ def run_integrity_center(domain: str = "gbm") -> dict:
         checks.append(_check(
             "Publication Validation", 1, "fail",
             f"{len(retracted)} node(s) rest on RETRACTED work "
-            f"({', '.join(n.id for n in retracted)}); "
+            f"({', '.join(node_label(n) for n in retracted)}); "
             f"e.g. retracted {rec.get('retraction_date', 'yes')} via "
             f"{rec.get('via', 'retraction watch')}",
             "Retraction Watch (via Crossref)"))

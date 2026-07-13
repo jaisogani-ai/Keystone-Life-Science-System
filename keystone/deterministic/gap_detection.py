@@ -9,7 +9,7 @@ corroboration. Every gap is a real, countable absence — never a fabricated one
 """
 from __future__ import annotations
 
-from keystone.core import EvidenceGraph, Hypothesis, ReviewResult
+from keystone.core import EvidenceGraph, Hypothesis, ReviewResult, node_label
 from keystone.reasoning_panel import research_readiness
 
 
@@ -18,19 +18,23 @@ def detect_gaps(hyp: Hypothesis, review: ReviewResult,
     readiness = research_readiness(hyp, review, graph)
     gaps = list(readiness["missing_evidence"]["items"])
 
-    unresolved = [f"{e.src}->{e.dst}" for e in graph.edges
+    unresolved = [(e.src, e.dst) for e in graph.edges
                   if e.context.startswith("unresolved")
                   and e.edge_type.value in ("cites", "depends_on")]
     if unresolved:
+        pairs = ", ".join(
+            f"“{node_label(graph.nodes[s], 30)}” → “{node_label(graph.nodes[d], 30)}”"
+            for s, d in unresolved if s in graph.nodes and d in graph.nodes)
         gaps.append(f"{len(unresolved)} citing context(s) unresolved "
-                    f"(cannot judge load-bearing): {', '.join(unresolved)}")
+                    f"(cannot judge load-bearing): {pairs}")
 
     # a grounding node that nothing else supports is a corroboration gap
     supported = {e.dst for e in graph.edges if e.edge_type.value == "supports"}
     for nid in hyp.mechanism_path:
         node = graph.nodes.get(nid)
         if node and node.node_type.value == "target" and nid not in supported:
-            gaps.append(f"target {nid} lacks an independent supporting result")
+            gaps.append(f"the target “{node_label(node)}” lacks an "
+                        f"independent supporting result")
 
     return {"stage": "gap_detection", "count": len(gaps), "gaps": gaps,
             "readiness_missing": readiness["missing_evidence"]["count"]}

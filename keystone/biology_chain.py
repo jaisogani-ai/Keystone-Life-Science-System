@@ -24,6 +24,14 @@ def _spec_and_builder(domain: str):
         from keystone import insulin_spec as SPEC
         from keystone.data_insulin import build_insulin_graph as build
         return SPEC, build
+    if domain == "ich":
+        from keystone import ich_spec as SPEC
+        from keystone.data_ich import build_ich_graph as build
+        return SPEC, build
+    if domain == "tcell":
+        from keystone import tcell_spec as SPEC
+        from keystone.data_tcell import build_tcell_graph as build
+        return SPEC, build
     from keystone import gbm_spec as SPEC
     from keystone.data_gbm import build_gbm_graph as build
     return SPEC, build
@@ -38,7 +46,16 @@ def build_biology_chain(domain: str = "gbm") -> dict:
     spec, build = _spec_and_builder(domain)
     graph = build()
 
-    reagent = R.cellosaurus_line(spec.REAGENT["cellosaurus"])
+    # Some programs use an immortalized cell line (Cellosaurus accession); the CD4+
+    # T-cell program uses *primary human cells*, which correctly have no cell-line
+    # accession. Handle both honestly — never crash, never fabricate an accession.
+    cvcl = spec.REAGENT.get("cellosaurus")
+    if cvcl:
+        reagent = R.cellosaurus_line(cvcl)
+        cell_entity, cell_source = reagent.get("name"), f"Cellosaurus:{cvcl}"
+    else:
+        cell_entity = spec.REAGENT.get("text", "primary cells")
+        cell_source = "primary cells — no Cellosaurus cell-line accession"
     protein = R.uniprot_protein(spec.TARGET["uniprot"])
     variants = C.clinvar_variants(spec.GENE)
     drugs = C.chembl_drugs(spec.CHEMBL_QUERY)
@@ -47,8 +64,7 @@ def build_biology_chain(domain: str = "gbm") -> dict:
     trials = C.clinical_trials(spec.DISEASE)
 
     chain = [
-        _link("Cell", reagent.get("name"),
-              f"Cellosaurus:{spec.REAGENT['cellosaurus']}"),
+        _link("Cell", cell_entity, cell_source),
         _link("Protein", f"{protein.get('gene')} — {protein.get('name')}",
               f"UniProt:{spec.TARGET['uniprot']}"),
         _link("Mutation", f"{variants.get('total')} ClinVar variants",

@@ -1,0 +1,46 @@
+# Fly.io deployment template for Keystone.
+#
+# One-command hosted URL for the demo (uses the committed Dockerfile so the
+# offline fixtures ship with the image — no API calls at runtime unless you
+# explicitly set KEYSTONE_LIVE=1 via `flyctl secrets`).
+#
+# Prerequisites (once): `brew install flyctl && flyctl auth signup`
+#
+# First-time deploy from a clean checkout:
+#   flyctl launch --no-deploy --copy-config --name keystone-workbench
+#   flyctl deploy
+#
+# Update KEYSTONE_APP_URL in README.md with the printed URL. That's it.
+
+app = "keystone-workbench"
+primary_region = "sjc"          # San Francisco — closest to Gladstone Institutes
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  # Offline-by-default even on Fly: deterministic + free-tier friendly. Flip
+  # KEYSTONE_LIVE=1 via `flyctl secrets set` when the API key is set.
+  KEYSTONE_OFFLINE = "1"
+  KEYSTONE_PORT = "8000"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = "stop"      # free-tier: sleep when idle
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    timeout = "5s"
+    path = "/healthz"              # the honest liveness probe
+
+[[vm]]
+  # Free-tier sizing — enough for the workbench + offline fixtures.
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1

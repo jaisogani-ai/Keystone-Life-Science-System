@@ -123,6 +123,10 @@ def score_candidate(cand, graph: EvidenceGraph, review, max_reach: int) -> dict:
     return {
         "id": cand.id, "kind": cand.kind, "statement": cand.statement,
         "grounds_on": cand.grounds_on,
+        # the real evidence-node ids this hypothesis interrogates — lets the
+        # decision board illuminate its grounding on the living graph (projection,
+        # not a score).
+        "mechanism_path": list(cand.mechanism_path),
         "evidence_strength": _metric(evidence_strength, "computed",
                                      f"mean inverse-doubt of {len(doubts)} grounding node(s)"),
         "contradiction_score": _metric(contradiction_score, "computed",

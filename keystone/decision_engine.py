@@ -33,6 +33,14 @@ def _spec_and_builder(domain: str):
         from keystone import insulin_spec as SPEC
         from keystone.data_insulin import build_insulin_graph as build
         return SPEC, build
+    if domain == "ich":
+        from keystone import ich_spec as SPEC
+        from keystone.data_ich import build_ich_graph as build
+        return SPEC, build
+    if domain == "tcell":
+        from keystone import tcell_spec as SPEC
+        from keystone.data_tcell import build_tcell_graph as build
+        return SPEC, build
     from keystone import gbm_spec as SPEC
     from keystone.data_gbm import build_gbm_graph as build
     return SPEC, build
@@ -46,14 +54,31 @@ def _experiment_view(ep) -> dict:
                          "negative": ep.negative_controls}}
 
 
-def decide(domain: str = "gbm", reasoner=None):
-    """Produce the decision. Returns (decision_dict, graph, ledger, hyp, review)."""
-    spec, build = _spec_and_builder(domain)
-    reasoner = reasoner or HeuristicReasoner()
-    graph = build()
-    ledger, hyp, review = run(spec.QUESTION, graph, reasoner)
+def decide(domain: str = "gbm", reasoner=None,
+           graph=None, question: str | None = None,
+           chembl_query: str | None = None):
+    """Produce the decision. Returns (decision_dict, graph, ledger, hyp, review).
 
-    drug_info = C.chembl_drugs(spec.CHEMBL_QUERY)
+    Two modes:
+      * curated library — pass ``domain`` ('gbm' or 'insulin'); the graph and
+        question are built from the pinned spec, and ChEMBL is queried for the
+        target's known drugs.
+      * scientist's imported refs — pass ``graph`` (built via
+        ``ingest/references.build_graph_from_dois``) and optionally
+        ``question`` + ``chembl_query``. When ``chembl_query`` is not supplied,
+        ChEMBL is skipped honestly (drug_info stays empty)."""
+    reasoner = reasoner or HeuristicReasoner()
+    if graph is None:
+        spec, build = _spec_and_builder(domain)
+        graph = build()
+        question = question or spec.QUESTION
+        chembl_query = chembl_query or spec.CHEMBL_QUERY
+    else:
+        question = question or "Imported reference set"
+    ledger, hyp, review = run(question, graph, reasoner)
+
+    drug_info = C.chembl_drugs(chembl_query) if chembl_query else {
+        "resolved": False, "count": 0, "drugs": []}
     contradictions = mine_contradictions(graph)
     gaps = detect_knowledge_gaps(hyp, graph)
     cands = generate_candidates(graph, hyp, drug_info)
@@ -87,7 +112,7 @@ def decide(domain: str = "gbm", reasoner=None):
         "over_alternatives": over}
 
     workflow = [
-        {"stage": "Research Question", "value": spec.QUESTION},
+        {"stage": "Research Question", "value": question},
         {"stage": "Evidence collected", "value": f"{len(graph.nodes)} nodes, "
          f"{len(graph.edges)} edges from real connectors"},
         {"stage": "Contradictions detected", "value": len(contradictions)},
@@ -103,7 +128,7 @@ def decide(domain: str = "gbm", reasoner=None):
     ]
 
     decision = {
-        "domain": domain, "question": spec.QUESTION,
+        "domain": domain, "question": question,
         "graph_hash": ledger.graph_hash,
         "workflow": workflow,
         "contradictions": contradictions,
@@ -122,7 +147,7 @@ def main() -> int:
     import argparse
     import sys
     ap = argparse.ArgumentParser(description="Keystone Scientific Decision Engine")
-    ap.add_argument("--domain", choices=["gbm", "insulin"], default="gbm")
+    ap.add_argument("--domain", choices=["gbm", "insulin", "ich"], default="gbm")
     args = ap.parse_args()
     d, *_ = decide(args.domain)
     print("=" * 74)

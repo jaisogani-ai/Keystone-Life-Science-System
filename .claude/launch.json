@@ -5,7 +5,17 @@
       "name": "keystone-ui",
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "keystone.ui.server"],
-      "port": 8000
+      "port": 8000,
+      "autoPort": true,
+      "env": { "KEYSTONE_OFFLINE": "1" }
+    },
+    {
+      "name": "keystone-ui-live",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "keystone.ui.server"],
+      "port": 8000,
+      "autoPort": true,
+      "env": { "KEYSTONE_WARM": "1" }
     },
     {
       "name": "graph-browser",

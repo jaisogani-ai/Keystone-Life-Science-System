@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-25..0&display=swap" rel="stylesheet">
+<style>
+:root{
+ --paper:#fcf8f9; --lowest:#ffffff; --low:#f6f3f4; --container:#f0edee; --high:#eae7e8; --highest:#e5e2e3;
+ --ink:#1c1b1c; --ink2:#45464c; --outline:#76777c; --hairline:#d7d4d5;
+ --primary:#030611; --on-primary:#ffffff; --secondary:#505f76; --sec-container:#dce7fb; --on-sec-container:#3c4b62;
+ --ok:#1f6f52; --ok-c:#e6efe9; --warn:#9a6a1e; --warn-c:#f3ecdd; --risk:#ba1a1a; --risk-c:#f7e4e2;
+ --accent:#1f6f52; --nav-accent:#5f5a76; --claude-det:#b7791f; --claude-live:#6b4bd6;
+ --e-out:cubic-bezier(.22,.61,.36,1); --e-settle:cubic-bezier(.4,0,.2,1);
+}
+[data-theme="dark"]{
+ --paper:#131417; --lowest:#1b1c20; --low:#17181c; --container:#1f2126; --high:#282a30; --highest:#31333a;
+ --ink:#ecebe6; --ink2:#a6a5aa; --outline:#7c7d83; --hairline:#31323a;
+ --primary:#e8eaf3; --on-primary:#0b0d13; --secondary:#9db0ca; --sec-container:#26303d; --on-sec-container:#bccce6;
+ --ok:#57b48c; --ok-c:#16241d; --warn:#d3a552; --warn-c:#271f12; --risk:#e2756c; --risk-c:#2b1514;
+ --accent:#57b48c; --nav-accent:#a7a1cb; --claude-det:#ffd166; --claude-live:#a68bff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%}
+body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--secondary);text-decoration:none}
+a:hover{color:var(--ink)}
+.ms{font-family:"Material Symbols Outlined";font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-feature-settings:"liga";-webkit-font-smoothing:antialiased;font-variation-settings:"FILL" 0,"wght" 300,"GRAD" -25,"opsz" 24;user-select:none}
+.ms.fill{font-variation-settings:"FILL" 1,"wght" 400,"GRAD" 0,"opsz" 24}
+input,button{font-family:inherit}
+input:focus{outline:none}
+::selection{background:var(--high);color:var(--ink)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-thumb{background:var(--hairline);border-radius:9px;border:3px solid var(--paper);background-clip:padding-box}
+::-webkit-scrollbar-thumb:hover{background:var(--outline);border:3px solid var(--paper);background-clip:padding-box}
+::-webkit-scrollbar-track{background:transparent}
+@keyframes ks-spin{to{transform:rotate(360deg)}}
+@keyframes ks-hash{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes ks-up{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes ks-caret{0%,100%{opacity:0}50%{opacity:1}}
+@keyframes ks-line{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes ks-stamp{0%{transform:scale(1.14);opacity:0}60%{opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes ks-fadein{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</helmet>
+
+<div style="height:100vh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);overflow:hidden">
+
+  <!-- ===== TOP BAR ===== -->
+  <header style="height:56px;flex:none;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 20px;border-bottom:1px solid var(--hairline);background:var(--paper);z-index:20">
+    <div style="display:flex;align-items:center;gap:16px;min-width:0">
+      <span style="font:500 22px/1 Newsreader,serif;letter-spacing:-.02em;color:var(--ink)">Keystone</span>
+    </div>
+
+    <div style="flex:1;max-width:460px;display:flex;align-items:center;gap:9px;padding:0 12px;height:34px;border:1px solid var(--hairline);border-radius:7px;background:var(--lowest)" style-focus="border-color:var(--primary)">
+      <span class="ms" style="font-size:17px;color:var(--outline)">search</span>
+      <input placeholder="Ask, search, or paste an identifier — protein, GWAS locus, DOI" style="flex:1;border:none;background:transparent;color:var(--ink);font:400 13px/1 'Inter Tight',sans-serif;min-width:0">
+      <span style="font:500 10px/1 'JetBrains Mono',monospace;color:var(--outline);border:1px solid var(--hairline);border-radius:4px;padding:3px 5px">⌘K</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px">
+      <div style="position:relative" onMouseEnter="{{ fiEnter }}" onMouseLeave="{{ fiLeave }}">
+      <button onClick="{{ goIntegrity }}" style-hover="background:var(--high)" style="display:flex;align-items:center;gap:9px;padding:4px 10px 4px 11px;border:1px solid var(--hairline);border-radius:7px;background:transparent;cursor:pointer;color:var(--ink)">
+        <span style="display:flex;flex-direction:column;align-items:flex-start;gap:3px;white-space:nowrap">
+          <span style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--secondary)">FIELD INTEGRITY</span>
+          <span style="font:500 12px/1 'Inter Tight',sans-serif;color:var(--ink)">{{ bandLabel }} <span style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--ink2);font-variant-numeric:tabular-nums">· {{ chipNum }}</span></span>
+        </span>
+        <span style="display:flex;align-items:flex-end;gap:2px;height:16px">
+          <span style="width:2px;height:6px;background:var(--hairline);border-radius:2px"></span>
+          <span style="width:2px;height:10px;background:var(--outline);border-radius:2px"></span>
+          <span style="width:2px;height:8px;background:var(--hairline);border-radius:2px"></span>
+          <span style="width:2px;height:14px;background:var(--accent);border-radius:2px"></span>
+          <span style="width:2px;height:11px;background:var(--outline);border-radius:2px"></span>
+        </span>
+      </button>
+        <sc-if value="{{ fiHover }}">
+        <div style="position:absolute;top:calc(100% + 8px);left:0;z-index:40;width:254px;padding:10px 13px;border:1px solid var(--hairline);border-radius:7px;background:var(--lowest);box-shadow:0 8px 22px rgba(3,6,17,.10);pointer-events:none;animation:ks-fadein .15s var(--e-out) both">
+          <div style="font:500 10px/1.5 'JetBrains Mono',monospace;letter-spacing:.03em;color:var(--ink)">Range 78–89 · robust across 4 alternative weightings</div>
+          <div style="font:400 10px/1.5 'JetBrains Mono',monospace;letter-spacing:.03em;color:var(--secondary);margin-top:4px">Computed. Click for sensitivity report.</div>
+        </div>
+        </sc-if>
+      </div>
+
+      <button onClick="{{ toggleTheme }}" title="Toggle instrument mode" style-hover="background:var(--high);color:var(--ink)" style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid var(--hairline);border-radius:7px;background:transparent;color:var(--ink2);cursor:pointer">
+        <span class="ms" style="font-size:19px">{{ themeIcon }}</span>
+      </button>
+
+      <button onClick="{{ goGrant }}" style-hover="opacity:.9" style="display:flex;align-items:center;gap:7px;padding:0 14px;height:34px;border:none;border-radius:7px;background:var(--primary);color:var(--on-primary);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif">
+        <span class="ms" style="font-size:17px">ios_share</span>Export
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== BODY ===== -->
+  <div style="flex:1;display:flex;min-height:0">
+
+    <!-- LEFT RAIL -->
+    <aside style="width:250px;flex:none;border-right:1px solid var(--hairline);background:var(--low);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:18px 18px 14px;border-bottom:1px solid var(--hairline)">
+        <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary);margin-bottom:9px">ACTIVE PROGRAM</div>
+        <div style="display:flex;align-items:center;gap:11px">
+          <div style="width:38px;height:38px;border-radius:7px;flex:none;background:var(--highest);border:1px solid var(--hairline);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative">
+            <span class="ms" style="font-size:20px;color:var(--secondary)">genetics</span>
+          </div>
+          <div style="min-width:0">
+            <div style="font:500 14px/1.2 'Inter Tight',sans-serif;color:var(--ink)">LRRK2 · Parkinson's</div>
+            <div style="font:400 11px/1.3 'Inter Tight',sans-serif;color:var(--secondary)">Target validation · illustrative</div>
+          </div>
+        </div>
+        <div style="margin-top:11px;display:flex;align-items:center;gap:6px;font:500 9px/1.3 'JetBrains Mono',monospace;letter-spacing:.05em;color:var(--warn);background:var(--warn-c);border:1px solid var(--warn);border-radius:5px;padding:5px 8px">
+          <span class="ms" style="font-size:13px">info</span>ILLUSTRATIVE EXAMPLE · SYNTHETIC DATA
+        </div>
+      </div>
+
+      <nav style="flex:1;overflow-y:auto;padding:14px 12px">
+        <sc-for list="{{ navSections }}" as="sec" hint-placeholder-count="5">
+          <div style="margin-bottom:16px">
+            <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.13em;color:var(--outline);padding:0 10px;margin-bottom:7px">{{ sec.group }}</div>
+            <sc-for list="{{ sec.items }}" as="it" hint-placeholder-count="2">
+              <div onClick="{{ it.onClick }}" style="{{ it.rowStyle }}" style-hover="background:var(--high)">
+                <sc-if value="{{ it.active }}"><span style="position:absolute;left:0;top:6px;bottom:6px;width:2px;border-radius:2px;background:var(--nav-accent)"></span></sc-if>
+                <span class="ms {{ it.iconClass }}" style="font-size:19px;flex:none">{{ it.icon }}</span>
+                <span style="flex:1">{{ it.label }}</span>
+                <sc-if value="{{ it.badge }}"><span style="font:500 9px/1 'JetBrains Mono',monospace;color:var(--secondary);background:var(--container);border:1px solid var(--hairline);border-radius:20px;padding:2px 6px">{{ it.badge }}</span></sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+      </nav>
+
+    </aside>
+
+    <!-- MAIN CANVAS -->
+    <main style="flex:1;overflow-y:auto;position:relative;background:var(--paper)">
+
+      <!-- ============ DISCOVERY RUN ============ -->
+      <sc-if value="{{ isDiscovery }}" hint-placeholder-val="{{ true }}">
+      <div style="max-width:1080px;margin:0 auto;padding:52px 56px 80px">
+        <div style="animation:ks-up .5s var(--e-out) both">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:var(--secondary)">DISCOVERY RUN</span>
+            <span style="width:16px;height:1px;background:var(--hairline)"></span>
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--outline)">PD-LRRK2-01 · RUN 0042</span>
+          </div>
+          <h1 style="font:400 46px/1.06 Newsreader,serif;letter-spacing:-.015em;color:var(--ink);margin:0 0 20px;max-width:20ch">Selective LRRK2 inhibition in Parkinson's disease</h1>
+          <p style="font:400 19px/1.62 Newsreader,serif;color:var(--ink2);margin:0 0 26px;max-width:66ch">Keystone assembles the case for a program from primary literature, structured assays, and prior art — assigning provenance to every claim before a single conclusion is drawn. Nothing below is asserted without a source you can open.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--hairline);border-radius:9px;overflow:hidden;background:var(--lowest);margin-bottom:34px">
+            <div style="flex:1;min-width:150px;padding:14px 18px;border-right:1px solid var(--hairline)">
+              <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:6px">TARGET</div>
+              <div style="font:400 14px/1.2 'JetBrains Mono',monospace;color:var(--ink)">LRRK2 · G2019S</div>
+            </div>
+            <div style="flex:1;min-width:150px;padding:14px 18px;border-right:1px solid var(--hairline)">
+              <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:6px">MODALITY</div>
+              <div style="font:400 14px/1.2 'JetBrains Mono',monospace;color:var(--ink)">ATP-competitive inhibitor</div>
+            </div>
+            <div style="flex:1;min-width:150px;padding:14px 18px;border-right:1px solid var(--hairline)">
+              <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:6px">BIOMARKER</div>
+              <div style="font:400 14px/1.2 'JetBrains Mono',monospace;color:var(--ink)">pRab10 (Thr73)</div>
+            </div>
+            <div style="flex:1;min-width:150px;padding:14px 18px">
+              <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:6px">UPDATED</div>
+              <div style="font:400 14px/1.2 'JetBrains Mono',monospace;color:var(--ink)">2m ago · you</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--hairline);padding-bottom:12px;margin-bottom:8px">
+          <h2 style="font:500 24px/1 Newsreader,serif;color:var(--ink);margin:0">Run ledger</h2>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--secondary)">{{ runSummary }}</span>
+            <button onClick="{{ runDiscovery }}" style-hover="background:var(--high)" style="display:flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--hairline);border-radius:6px;background:var(--lowest);color:var(--ink);cursor:pointer;font:500 12px/1 'Inter Tight',sans-serif">
+              <span class="ms" style="font-size:16px">{{ runIcon }}</span>{{ runLabel }}
+            </button>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ stages }}" as="s" hint-placeholder-count="6">
+            <div style="{{ s.rowStyle }}">
+              <div style="width:34px;flex:none;display:flex;flex-direction:column;align-items:center;position:relative">
+                <div style="{{ s.glyphStyle }}">
+                  <sc-if value="{{ s.done }}"><span class="ms fill" style="font-size:16px;color:var(--on-primary)">check</span></sc-if>
+                  <sc-if value="{{ s.running }}"><span style="width:13px;height:13px;border-radius:50%;border:1.6px solid var(--hairline);border-top-color:var(--primary);animation:ks-spin .8s linear infinite;display:block"></span></sc-if>
+                </div>
+                <sc-if value="{{ s.connector }}"><span style="flex:1;width:1px;background:var(--hairline);margin-top:4px;min-height:22px"></span></sc-if>
+              </div>
+              <div style="flex:1;padding-bottom:22px;min-width:0">
+                <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+                  <span style="font:500 15px/1.3 'Inter Tight',sans-serif;color:{{ s.titleColor }}">{{ s.label }}</span>
+                  <sc-if value="{{ s.claude }}"><span style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--secondary);border:1px solid var(--hairline);border-radius:4px;padding:2px 5px">CLAUDE · DRAFT</span></sc-if>
+                  <span style="flex:1"></span>
+                  <span style="font:400 10px/1 'JetBrains Mono',monospace;color:var(--outline)">{{ s.ts }}</span>
+                </div>
+                <div style="font:400 13px/1.5 'Inter Tight',sans-serif;color:var(--ink2);margin-top:4px;min-height:19px">{{ s.detail }}<sc-if value="{{ s.running }}"><span style="display:inline-block;width:7px;height:15px;background:var(--primary);margin-left:2px;transform:translateY(2px);animation:ks-caret 1s step-end infinite"></span></sc-if></div>
+                <sc-if value="{{ s.showOut }}">
+                  <div style="display:flex;align-items:center;gap:12px;margin-top:10px">
+                    <button onClick="{{ s.onOut }}" style-hover="border-color:var(--outline);background:var(--high)" style="display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border:1px solid var(--hairline);border-radius:6px;background:var(--lowest);color:var(--ink);cursor:pointer;font:500 12px/1 'Inter Tight',sans-serif">
+                      <span class="ms" style="font-size:15px;color:var(--secondary)">{{ s.outIcon }}</span>{{ s.out }}<span class="ms" style="font-size:14px;color:var(--outline)">north_east</span>
+                    </button>
+                    <span style="font:400 10px/1 'JetBrains Mono',monospace;color:var(--outline)">sha256:{{ s.hash }}</span>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="margin-top:14px;padding:16px 20px;border:1px solid var(--hairline);border-radius:9px;background:var(--low);display:flex;align-items:center;gap:14px">
+          <span class="ms" style="font-size:20px;color:var(--secondary)">lock</span>
+          <div style="flex:1">
+            <div style="font:500 13px/1.3 'Inter Tight',sans-serif;color:var(--ink)">This run is reproducible</div>
+            <div style="font:400 12px/1.4 'Inter Tight',sans-serif;color:var(--ink2)">Same inputs, same seed, same result. Every step is content-addressed and the ledger is append-only.</div>
+          </div>
+          <span style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--secondary);animation:ks-hash 3s var(--e-settle) infinite">seed 0x1f · deterministic</span>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ============ RESEARCH INTEGRITY CENTER ============ -->
+      <sc-if value="{{ isIntegrity }}">
+      <div style="max-width:1180px;margin:0 auto;padding:52px 56px 80px">
+        <div style="animation:ks-up .5s var(--e-out) both">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:var(--secondary)">RESEARCH INTEGRITY CENTER</span>
+          </div>
+          <h1 style="font:400 44px/1.06 Newsreader,serif;letter-spacing:-.015em;color:var(--ink);margin:0 0 14px">Field Integrity</h1>
+          <p style="font:400 18px/1.6 Newsreader,serif;color:var(--ink2);margin:0 0 34px;max-width:64ch">A single, defensible measure of how much this program's evidence can be trusted — computed from provenance depth, independent reproducibility, and method rigor. It is not a model's opinion; it is an audit.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:360px 1fr;gap:34px;align-items:start;margin-bottom:34px">
+          <div style="border:1px solid var(--hairline);border-radius:12px;background:var(--lowest);padding:26px 24px;display:flex;flex-direction:column;align-items:center">
+            <div style="position:relative;width:300px;height:270px">
+              <canvas ref="{{ setGauge }}" style="width:100%;height:100%;display:block"></canvas>
+              <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;padding-top:18px">
+                <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:var(--secondary);margin-bottom:11px">FIELD INTEGRITY</span>
+                <span style="font:400 42px/0.95 Newsreader,serif;letter-spacing:-.01em;color:var(--ink)">{{ bandLabel }}</span>
+                <span style="display:flex;align-items:baseline;gap:4px;margin-top:11px;font-variant-numeric:tabular-nums"><span ref="{{ setNum }}" style="font:400 19px/1 'JetBrains Mono',monospace;color:var(--ink)">0.0</span><span style="font:400 12px/1 'JetBrains Mono',monospace;color:var(--outline)">/100</span></span>
+                <span style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--secondary);margin-top:7px;font-variant-numeric:tabular-nums">range {{ bandRange }} · computed</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:6px;font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.06em">
+              <span style="width:7px;height:7px;border-radius:50%;background:{{ settleDot }}"></span>
+              <span style="color:{{ settleColor }}">{{ settleLabel }}</span>
+            </div>
+          </div>
+
+          <div>
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:16px">COMPOSITION</div>
+            <div style="display:flex;flex-direction:column;gap:17px">
+              <sc-for list="{{ factors }}" as="f" hint-placeholder-count="5">
+                <div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:7px">
+                    <span style="font:500 14px/1 'Inter Tight',sans-serif;color:var(--ink)">{{ f.label }}</span>
+                    <span style="font:400 13px/1 'JetBrains Mono',monospace;color:{{ f.valColor }}">{{ f.valText }}</span>
+                  </div>
+                  <div style="height:5px;border-radius:3px;background:var(--high);overflow:hidden">
+                    <div style="{{ f.barStyle }}"></div>
+                  </div>
+                  <div style="font:400 11px/1.4 'Inter Tight',sans-serif;color:var(--secondary);margin-top:6px">{{ f.note }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px">
+          <div style="border:1px solid var(--risk);border-radius:10px;background:var(--risk-c);padding:20px 22px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+              <span class="ms" style="font-size:18px;color:var(--risk)">error</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--risk)">CONFLICTING EVIDENCE</span>
+            </div>
+            <p style="font:400 15px/1.55 Newsreader,serif;color:var(--ink);margin:0 0 14px">Chronic LRRK2 inhibition produced lung lamellar-body accumulation in a 13-week NHP study — reversible on washout, but it narrows the therapeutic window asserted in the working inference.</p>
+            <div style="display:flex;align-items:center;gap:14px">
+              <button onClick="{{ goFrontier }}" style="font:500 12px/1 'Inter Tight',sans-serif;color:var(--risk);background:none;border:none;border-bottom:1px solid var(--risk);padding:0 0 2px;cursor:pointer">Review in Frontier Guard</button>
+              <span style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--secondary)">weight −0.06 · NHP-13W-2024</span>
+            </div>
+          </div>
+
+          <div style="border:1px solid var(--hairline);border-radius:10px;background:var(--lowest);padding:20px 22px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+              <span class="ms" style="font-size:18px;color:var(--secondary)">history</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary)">REPRODUCIBILITY TIMELINE</span>
+            </div>
+            <div style="display:flex;flex-direction:column">
+              <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="4">
+                <div style="{{ t.rowStyle }}">
+                  <div style="width:20px;flex:none;display:flex;flex-direction:column;align-items:center">
+                    <span style="width:9px;height:9px;border-radius:50%;background:{{ t.dot }};border:2px solid var(--lowest);box-shadow:0 0 0 1px {{ t.dot }};flex:none;margin-top:3px"></span>
+                    <sc-if value="{{ t.connector }}"><span style="flex:1;width:1px;background:var(--hairline);margin-top:3px"></span></sc-if>
+                  </div>
+                  <div style="flex:1;padding-bottom:16px">
+                    <div style="font:400 10px/1 'JetBrains Mono',monospace;color:var(--outline);margin-bottom:3px">{{ t.date }}</div>
+                    <div style="font:500 13px/1.3 'Inter Tight',sans-serif;color:var(--ink)">{{ t.title }}</div>
+                    <div style="font:400 12px/1.4 'Inter Tight',sans-serif;color:var(--ink2);margin-top:2px">{{ t.detail }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="border:1px solid var(--hairline);border-radius:10px;background:var(--low);padding:20px 24px;display:flex;align-items:center;gap:22px">
+          <div style="width:40px;height:40px;border-radius:9px;background:var(--lowest);border:1px solid var(--hairline);display:flex;align-items:center;justify-content:center;flex:none">
+            <span class="ms" style="font-size:20px;color:var(--secondary)">verified_user</span>
+          </div>
+          <div style="flex:1">
+            <div style="font:500 13px/1.3 'Inter Tight',sans-serif;color:var(--ink);margin-bottom:3px">Integrity certificate</div>
+            <div style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--secondary);animation:ks-hash 4s var(--e-settle) infinite">sha256:9c1f·4ab2·d70e·… · generated 10:42:07Z · human review required</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:20px;background:var(--warn-c);color:var(--warn);font:500 11px/1 'Inter Tight',sans-serif">
+            <span class="ms" style="font-size:15px">pending</span>Awaiting PI sign-off
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ============ EVIDENCE GRAPH ============ -->
+      <sc-if value="{{ isEvidence }}">
+      <div style="position:absolute;inset:0;display:flex">
+        <div style="flex:1;position:relative;overflow:hidden;background:var(--paper)">
+          <canvas ref="{{ setGraph }}" style="width:100%;height:100%;display:block"></canvas>
+
+          <div style="position:absolute;top:26px;left:30px;pointer-events:none">
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:var(--secondary);margin-bottom:8px">EVIDENCE GRAPH</div>
+            <div style="font:400 30px/1.05 Newsreader,serif;letter-spacing:-.01em;color:var(--ink)">The case, as a network</div>
+            <div style="font:400 12px/1.4 'JetBrains Mono',monospace;color:var(--outline);margin-top:8px">{{ nodeCount }} nodes · {{ edgeCount }} links · breathing by confidence</div>
+          </div>
+
+          <div style="position:absolute;bottom:24px;left:30px;display:flex;gap:22px;align-items:center;padding:11px 16px;border:1px solid var(--hairline);border-radius:8px;background:var(--lowest)">
+            <div style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;border-radius:50%;background:var(--ok)"></span><span style="font:500 11px/1 'Inter Tight',sans-serif;color:var(--ink2)">High confidence</span></div>
+            <div style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;border-radius:50%;background:var(--warn)"></span><span style="font:500 11px/1 'Inter Tight',sans-serif;color:var(--ink2)">Uncertain</span></div>
+            <div style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;border-radius:50%;background:var(--risk)"></span><span style="font:500 11px/1 'Inter Tight',sans-serif;color:var(--ink2)">Contested</span></div>
+            <span style="width:1px;height:16px;background:var(--hairline)"></span>
+            <div style="display:flex;align-items:center;gap:7px"><span style="width:14px;height:0;border-top:1.5px dashed var(--risk)"></span><span style="font:500 11px/1 'Inter Tight',sans-serif;color:var(--ink2)">Contradiction</span></div>
+          </div>
+
+          <button onClick="{{ resetGraph }}" style-hover="background:var(--high)" style="position:absolute;bottom:24px;right:26px;display:flex;align-items:center;gap:6px;padding:7px 12px;border:1px solid var(--hairline);border-radius:8px;background:var(--lowest);color:var(--ink);cursor:pointer;font:500 12px/1 'Inter Tight',sans-serif">
+            <span class="ms" style="font-size:16px;color:var(--secondary)">recenter</span>Reset view
+          </button>
+        </div>
+
+        <!-- INSPECTOR -->
+        <aside style="width:344px;flex:none;border-left:1px solid var(--hairline);background:var(--lowest);display:flex;flex-direction:column;overflow-y:auto">
+          <div style="padding:15px 20px;border-bottom:1px solid var(--hairline);display:flex;align-items:center;justify-content:space-between">
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--secondary)">PROVENANCE INSPECTOR</span>
+            <span class="ms" style="font-size:17px;color:var(--outline)">biotech</span>
+          </div>
+
+          <sc-if value="{{ hasSel }}">
+          <div style="padding:22px 20px;animation:ks-up .35s var(--e-out) both">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--secondary);border:1px solid var(--hairline);border-radius:4px;padding:4px 7px">{{ selNode.typeLabel }}</span>
+              <sc-if value="{{ selNode.contested }}"><span style="font:500 10px/1 'JetBrains Mono',monospace;color:var(--risk);background:var(--risk-c);border-radius:4px;padding:4px 7px">CONTESTED</span></sc-if>
+            </div>
+            <h3 style="font:400 24px/1.22 Newsreader,serif;letter-spacing:-.01em;color:var(--ink);margin:0 0 20px">{{ selNode.label }}</h3>
+
+            <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px">
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary)">CONFIDENCE · COMPUTED</span>
+              <span style="font:400 20px/1 'JetBrains Mono',monospace;color:{{ selNode.confColor }};font-variant-numeric:tabular-nums">{{ selNode.confText }}</span>
+            </div>
+            <div style="height:5px;border-radius:3px;background:var(--high);overflow:hidden;margin-bottom:8px"><div style="{{ selNode.barStyle }}"></div></div>
+            <div style="font:400 10px/1.4 'JetBrains Mono',monospace;color:var(--outline);margin-bottom:22px">provenance-weighted · {{ selNode.confBand }}</div>
+
+            <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--secondary);margin-bottom:9px">INTERPRETATION · CLAUDE</div>
+            <p style="font:400 15px/1.55 Newsreader,serif;color:var(--ink2);margin:0 0 22px">{{ selNode.rel }}</p>
+
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:11px">PROVENANCE</div>
+            <sc-if value="{{ selNode.hasSources }}">
+            <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+              <sc-for list="{{ selNode.sources }}" as="src" hint-placeholder-count="2">
+                <div style="display:flex;align-items:center;gap:11px;padding:10px 12px;border:1px solid var(--hairline);border-radius:7px;background:var(--paper);cursor:pointer" style-hover="border-color:var(--outline)">
+                  <span class="ms" style="font-size:17px;color:var(--secondary)">description</span>
+                  <div style="flex:1;min-width:0">
+                    <div style="font:500 12px/1.3 'Inter Tight',sans-serif;color:var(--ink)">{{ src.src }}</div>
+                    <div style="font:400 10px/1.3 'JetBrains Mono',monospace;color:var(--secondary)">{{ src.id }} · {{ src.year }}</div>
+                  </div>
+                  <span class="ms" style="font-size:15px;color:var(--outline)">north_east</span>
+                </div>
+              </sc-for>
+            </div>
+            </sc-if>
+            <sc-if value="{{ selNode.isSafety }}">
+              <div style="font:400 12px/1.4 'Inter Tight',sans-serif;color:var(--ink2);margin-bottom:22px">Synthesised node — confidence is the provenance-weighted product of its inputs, not an independent claim.</div>
+            </sc-if>
+
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <button onClick="{{ selNode.onContest }}" style-hover="border-color:var(--risk);color:var(--risk)" style="display:flex;align-items:center;gap:9px;padding:11px 14px;border:1px solid var(--hairline);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif;text-align:left">
+                <span class="ms" style="font-size:18px">do_not_disturb_on</span>
+                <span style="flex:1">Contest confidence</span>
+                <span style="font:400 10px/1 'JetBrains Mono',monospace;color:var(--outline)">reviewer</span>
+              </button>
+              <button style-hover="border-color:var(--outline)" style="display:flex;align-items:center;gap:9px;padding:11px 14px;border:1px solid var(--hairline);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif;text-align:left">
+                <span class="ms" style="font-size:18px;color:var(--secondary)">account_tree</span><span style="flex:1">Promote to premise</span>
+              </button>
+            </div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ noSel }}">
+          <div style="padding:30px 22px;flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center">
+            <span class="ms" style="font-size:30px;color:var(--outline);margin-bottom:16px">ads_click</span>
+            <div style="font:500 14px/1.4 'Inter Tight',sans-serif;color:var(--ink);margin-bottom:8px">Select a node to inspect</div>
+            <p style="font:400 13px/1.55 'Inter Tight',sans-serif;color:var(--ink2);margin:0">Every node breathes by its confidence — the uncertain ones are restless. Select one to trace its provenance, then <strong style="font-weight:500;color:var(--ink)">contest</strong> it to watch uncertainty propagate through everything it supports.</p>
+          </div>
+          </sc-if>
+        </aside>
+      </div>
+      </sc-if>
+
+      <!-- ============ REASONING PIPELINE ============ -->
+      <sc-if value="{{ isReasoning }}">
+      <div style="position:absolute;inset:0;display:flex">
+        <div ref="{{ setReason }}" style="flex:1;overflow-y:auto;padding:48px 56px 90px">
+          <div style="max-width:730px;margin:0 auto">
+            <div style="animation:ks-up .5s var(--e-out) both">
+              <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:var(--secondary);margin-bottom:14px">REASONING PIPELINE</div>
+              <h1 style="font:400 40px/1.08 Newsreader,serif;letter-spacing:-.015em;color:var(--ink);margin:0 0 10px" contenteditable="true">Mechanism of target inhibition</h1>
+              <p style="font:400 14px/1 'Inter Tight',sans-serif;color:var(--secondary);margin:0 0 40px">Working hypothesis · confidence 0.82 · nothing enters the record without your signature</p>
+            </div>
+
+            <sc-for list="{{ premises }}" as="p" hint-placeholder-count="2">
+              <div style="position:relative;padding-left:32px;border-left:2px solid var(--hairline);padding-bottom:30px">
+                <span style="position:absolute;left:-9px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--hairline)"></span>
+                <div style="border:1px solid var(--hairline);border-radius:9px;background:var(--lowest);padding:20px 22px">
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+                    <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary)">{{ p.n }}</span>
+                    <span style="display:inline-flex;align-items:center;gap:5px;font:500 10px/1 'JetBrains Mono',monospace;color:var(--ok)"><span class="ms" style="font-size:14px">check_circle</span>{{ p.who }}</span>
+                  </div>
+                  <p style="font:400 18px/1.55 Newsreader,serif;color:var(--ink);margin:0 0 16px" contenteditable="true">{{ p.text }}</p>
+                  <div style="display:flex;align-items:center;gap:11px;padding:10px 13px;border:1px solid var(--hairline);border-radius:7px;background:var(--paper)">
+                    <span class="ms" style="font-size:17px;color:var(--secondary)">attach_file</span>
+                    <div style="flex:1;min-width:0"><div style="font:500 12px/1.3 'Inter Tight',sans-serif;color:var(--ink)">{{ p.ev }}</div><div style="font:400 10px/1.3 'JetBrains Mono',monospace;color:var(--secondary)">{{ p.stat }}</div></div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+
+            <!-- Inference -->
+            <div style="position:relative;padding-left:32px;border-left:2px solid var(--primary)">
+              <span style="position:absolute;left:-9px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--primary)"></span>
+              <div style="border:1px solid var(--primary);border-radius:9px;background:var(--lowest);padding:22px 24px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px">
+                  <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--primary)">INFERENCE</span>
+                  <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border-radius:20px;background:var(--container);font:500 11px/1 'Inter Tight',sans-serif;color:var(--ink2)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:{{ attributionDot }}"></span>{{ attributionLabel }}
+                  </span>
+                </div>
+                <p style="font:400 21px/1.55 Newsreader,serif;color:var(--ink);margin:0;min-height:60px">{{ inferenceText }}<sc-if value="{{ inferenceStreaming }}"><span style="display:inline-block;width:8px;height:19px;background:var(--primary);margin-left:2px;transform:translateY(3px);animation:ks-caret 1s step-end infinite"></span></sc-if></p>
+
+                <sc-if value="{{ inferenceDone }}">
+                <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--hairline)">
+                  <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary);margin-bottom:14px">HOW THIS WAS DERIVED</div>
+                  <div style="display:flex;flex-direction:column;gap:11px">
+                    <sc-for list="{{ trace }}" as="tr" hint-placeholder-count="4">
+                      <div style="{{ tr.rowStyle }}">
+                        <span class="ms" style="font-size:16px;color:{{ tr.iconColor }};margin-top:1px">{{ tr.icon }}</span>
+                        <div style="flex:1"><span style="font:500 13px/1.4 'Inter Tight',sans-serif;color:var(--ink)">{{ tr.t }}</span> <span style="font:400 13px/1.4 'Inter Tight',sans-serif;color:var(--ink2)">— {{ tr.s }}</span></div>
+                        <span style="font:400 10px/1 'JetBrains Mono',monospace;color:var(--secondary);border:1px solid var(--hairline);border-radius:4px;padding:3px 6px">{{ tr.link }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+                </sc-if>
+
+                <sc-if value="{{ pendingReview }}">
+                <div style="margin-top:20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+                  <button onClick="{{ approveInference }}" style-hover="opacity:.9" style="display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border:none;border-radius:8px;background:var(--primary);color:var(--on-primary);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif"><span class="ms" style="font-size:18px">verified</span>Approve &amp; sign</button>
+                  <button style-hover="border-color:var(--outline)" style="display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid var(--hairline);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif">Request revision</button>
+                  <button onClick="{{ regenerateInference }}" style-hover="color:var(--ink)" style="display:inline-flex;align-items:center;gap:6px;padding:11px 8px;border:none;background:none;color:var(--secondary);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif"><span class="ms" style="font-size:16px">refresh</span>Regenerate</button>
+                </div>
+                </sc-if>
+
+                <sc-if value="{{ approved }}">
+                <div style="margin-top:20px;display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--ok);border-radius:8px;background:var(--ok-c);animation:ks-stamp .5s var(--e-settle) both">
+                  <span class="ms fill" style="font-size:24px;color:var(--ok)">verified</span>
+                  <div style="flex:1"><div style="font:500 13px/1.2 'Inter Tight',sans-serif;color:var(--ink)">Signed into the append-only record</div><div style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--ok);margin-top:3px">PI · sha256:2d55·8e13·f4 · {{ approvedAt }}</div></div>
+                </div>
+                </sc-if>
+              </div>
+            </div>
+
+            <div style="margin-top:30px;padding:16px 20px;border:1px solid var(--risk);border-radius:9px;background:var(--risk-c);display:flex;gap:13px">
+              <span class="ms" style="font-size:19px;color:var(--risk);margin-top:1px">error</span>
+              <div><div style="font:500 12px/1.3 'Inter Tight',sans-serif;color:var(--ink);margin-bottom:3px">One unresolved conflict is discounted in this inference</div><div style="font:400 13px/1.5 'Inter Tight',sans-serif;color:var(--ink2)">The NHP lung finding is carried as a caveat, not hidden. Its weight (−0.06) is reflected in the confidence and visible in the ledger.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LEDGER -->
+        <aside style="width:340px;flex:none;border-left:1px solid var(--hairline);background:var(--lowest);display:flex;flex-direction:column;overflow-y:auto">
+          <div style="padding:15px 20px;border-bottom:1px solid var(--hairline);display:flex;align-items:center;justify-content:space-between">
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--secondary)">APPEND-ONLY LEDGER</span>
+            <span class="ms" style="font-size:17px;color:var(--outline)">lock</span>
+          </div>
+          <div style="flex:1;padding:20px;display:flex;flex-direction:column">
+            <sc-for list="{{ ledger }}" as="e" hint-placeholder-count="3">
+              <div style="{{ e.rowStyle }}">
+                <div style="width:20px;flex:none;display:flex;flex-direction:column;align-items:center">
+                  <span style="width:11px;height:11px;border-radius:50%;background:{{ e.dot }};border:2px solid var(--lowest);box-shadow:0 0 0 1px {{ e.dot }};margin-top:3px;flex:none"></span>
+                  <sc-if value="{{ e.connector }}"><span style="flex:1;width:1px;background:var(--hairline);margin-top:4px;min-height:20px"></span></sc-if>
+                </div>
+                <div style="flex:1;padding-bottom:20px">
+                  <div style="font:500 13px/1.3 'Inter Tight',sans-serif;color:{{ e.titleColor }}">{{ e.title }}</div>
+                  <sc-if value="{{ e.pending }}"><div style="display:inline-block;margin-top:5px;font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--warn);background:var(--warn-c);border-radius:4px;padding:3px 6px">AWAITING SIGN-OFF</div></sc-if>
+                  <div style="font:400 10px/1.5 'JetBrains Mono',monospace;color:var(--secondary);margin-top:5px">{{ e.metaLine }}</div>
+                  <sc-if value="{{ e.showHash }}"><div style="font:400 10px/1 'JetBrains Mono',monospace;color:var(--outline);margin-top:2px">sha256:{{ e.hash }}</div></sc-if>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="padding:14px 20px;border-top:1px solid var(--hairline);font:400 10px/1.5 'JetBrains Mono',monospace;color:var(--secondary)">Every entry is content-addressed. Signatures cannot be edited or removed — only appended.</div>
+        </aside>
+      </div>
+      </sc-if>
+
+      <!-- ============ DECISION ENGINE ============ -->
+      <sc-if value="{{ isDecision }}">
+      <div style="max-width:1060px;margin:0 auto;padding:52px 56px 96px">
+        <div style="animation:ks-up .5s var(--e-out) both">
+          <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:var(--secondary);margin-bottom:14px">DECISION ENGINE</div>
+          <h1 style="font:400 44px/1.06 Newsreader,serif;letter-spacing:-.015em;color:var(--ink);margin:0 0 12px">What to run next</h1>
+          <p style="font:400 18px/1.6 Newsreader,serif;color:var(--ink2);margin:0 0 34px;max-width:62ch">Ranked by expected reduction in uncertainty — not by what the program already believes. The best experiment is the one that could most change the conclusion.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 320px;gap:36px;align-items:center;margin-bottom:14px;padding:24px 26px;border:1px solid var(--hairline);border-radius:12px;background:var(--lowest)">
+          <div>
+            <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.13em;color:var(--secondary);margin-bottom:12px">THE DECISION FRONTIER · COMPUTED</div>
+            <p style="font:400 16px/1.55 Newsreader,serif;color:var(--ink2);margin:0">Each point is a candidate experiment, placed by cost against expected information gain. The best value sits high and to the left — inexpensive work that could still move the conclusion. Keystone recommends <strong style="color:var(--ink);font-weight:500">{{ bestTitle }}</strong>.</p>
+          </div>
+          <div style="position:relative;height:184px;margin:8px 8px 4px 30px">
+            <span style="position:absolute;left:-30px;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left;font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--outline);white-space:nowrap">INFO GAIN →</span>
+            <span style="position:absolute;bottom:-18px;left:0;font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--outline)">COST →</span>
+            <div style="position:absolute;inset:0;border-left:1px solid var(--hairline);border-bottom:1px solid var(--hairline)"></div>
+            <sc-for list="{{ experiments }}" as="e" hint-placeholder-count="6">
+              <div style="{{ e.dotStyle }}">
+                <div style="width:24px;height:24px;border-radius:50%;background:{{ e.dotFill }};border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font:500 11px/1 'JetBrains Mono',monospace;color:{{ e.dotTextColor }}">{{ e.rank }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div>
+          <sc-for list="{{ experiments }}" as="e" hint-placeholder-count="6">
+            <div style="display:flex;gap:20px;padding:22px 4px;border-top:1px solid var(--hairline)">
+              <div style="font:400 26px/1 Newsreader,serif;color:var(--outline);width:26px;flex:none;font-variant-numeric:tabular-nums">{{ e.rank }}</div>
+              <div style="flex:1;min-width:0">
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+                  <span style="font:500 18px/1.3 Newsreader,serif;color:var(--ink)">{{ e.title }}</span>
+                  <sc-if value="{{ e.best }}"><span style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--on-primary);background:var(--primary);border-radius:4px;padding:4px 7px">RECOMMENDED · BEST VALUE</span></sc-if>
+                </div>
+                <div style="font:400 11px/1.4 'JetBrains Mono',monospace;color:var(--secondary);margin-bottom:11px">reduces · {{ e.reduces }}</div>
+                <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--secondary);margin-bottom:5px">RATIONALE · INTERPRETATION · CLAUDE</div>
+                <p style="font:400 14px/1.55 'Inter Tight',sans-serif;color:var(--ink2);margin:0;max-width:60ch">{{ e.rationale }}</p>
+              </div>
+              <div style="width:186px;flex:none">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px">
+                  <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:{{ e.gainColor }}">{{ e.gainBand }}</span>
+                  <span style="font:400 13px/1 'JetBrains Mono',monospace;color:var(--ink);font-variant-numeric:tabular-nums">{{ e.gainText }}</span>
+                </div>
+                <div style="height:5px;border-radius:3px;background:var(--high);overflow:hidden;margin-bottom:6px"><div style="{{ e.barStyle }}"></div></div>
+                <div style="font:400 10px/1 'JetBrains Mono',monospace;color:var(--secondary);margin-bottom:14px">Δ information · {{ e.costLabel }}</div>
+                <button style-hover="border-color:var(--outline);background:var(--high)" style="width:100%;display:flex;align-items:center;justify-content:center;gap:7px;padding:9px;border:1px solid var(--hairline);border-radius:7px;background:var(--paper);color:var(--ink);cursor:pointer;font:500 12px/1 'Inter Tight',sans-serif"><span class="ms" style="font-size:15px;color:var(--secondary)">science</span>Design experiment</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ============ FRONTIER GUARD ============ -->
+      <sc-if value="{{ isFrontier }}">
+      <div style="max-width:900px;margin:0 auto;padding:52px 56px 96px">
+        <div style="animation:ks-up .5s var(--e-out) both">
+          <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:var(--secondary);margin-bottom:14px">FRONTIER GUARD</div>
+          <h1 style="font:400 44px/1.06 Newsreader,serif;letter-spacing:-.015em;color:var(--ink);margin:0 0 12px">Should this be refused?</h1>
+          <p style="font:400 18px/1.6 Newsreader,serif;color:var(--ink2);margin:0 0 30px;max-width:62ch">Every capability that could be misused is gated. Keystone refuses on its own, records why, and never lets a model decision substitute for a human one.</p>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border:1px solid var(--warn);border-radius:10px;background:var(--warn-c);margin-bottom:34px">
+          <span class="ms" style="font-size:22px;color:var(--warn)">gpp_maybe</span>
+          <div style="flex:1"><div style="font:500 14px/1.2 'Inter Tight',sans-serif;color:var(--ink)">Cleared with one flag</div><div style="font:400 12px/1.4 'Inter Tight',sans-serif;color:var(--ink2)">Human review is required before any capability is released.</div></div>
+          <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--warn)">HUMAN REVIEW REQUIRED</span>
+        </div>
+
+        <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:6px">SAFETY &amp; DUAL-USE SCREEN</div>
+        <div style="border:1px solid var(--hairline);border-radius:11px;background:var(--lowest);overflow:hidden;margin-bottom:34px">
+          <sc-for list="{{ screens }}" as="s" hint-placeholder-count="5">
+            <div style="{{ s.rowStyle }}">
+              <span class="ms" style="font-size:20px;color:{{ s.color }};flex:none">{{ s.icon }}</span>
+              <div style="flex:1;min-width:0"><div style="font:500 14px/1.3 'Inter Tight',sans-serif;color:var(--ink)">{{ s.name }}</div><div style="font:400 12px/1.45 'Inter Tight',sans-serif;color:var(--ink2);margin-top:2px">{{ s.note }}</div></div>
+              <span style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:{{ s.color }};align-self:flex-start;margin-top:3px">{{ s.label }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="border:1px solid var(--risk);border-radius:11px;background:var(--risk-c);padding:24px 26px;margin-bottom:34px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+            <span class="ms" style="font-size:19px;color:var(--risk)">block</span>
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--risk)">REFUSED REQUEST · LOGGED</span>
+          </div>
+          <p style="font:400 19px/1.5 Newsreader,serif;color:var(--ink);margin:0 0 16px">{{ refusal.request }}</p>
+          <p style="font:400 15px/1.6 'Inter Tight',sans-serif;color:var(--ink2);margin:0 0 16px">{{ refusal.reason }}</p>
+          <div style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--risk)">{{ refusal.log }}</div>
+        </div>
+
+        <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:12px">HUMAN REVIEW GATE</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ gate }}" as="g" hint-placeholder-count="2">
+            <div style="display:flex;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--hairline);border-radius:9px;background:var(--lowest)">
+              <span style="width:30px;height:30px;border-radius:50%;border:1.5px dashed var(--hairline);display:flex;align-items:center;justify-content:center;flex:none"><span class="ms" style="font-size:16px;color:var(--outline)">person</span></span>
+              <div style="flex:1"><div style="font:500 13px/1.2 'Inter Tight',sans-serif;color:var(--ink)">{{ g.role }}</div><div style="font:400 11px/1.3 'Inter Tight',sans-serif;color:var(--secondary)">{{ g.detail }}</div></div>
+              <span style="display:inline-flex;align-items:center;gap:5px;font:500 10px/1 'JetBrains Mono',monospace;color:var(--warn)"><span class="ms" style="font-size:14px">pending</span>PENDING</span>
+            </div>
+          </sc-for>
+          <div style="font:400 12px/1.5 'Inter Tight',sans-serif;color:var(--secondary);margin-top:4px">Both signatures are required. Neither Keystone nor Claude can release a flagged capability on its own.</div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ============ 3D PROTEIN VIEWER ============ -->
+      <sc-if value="{{ isProtein }}">
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column">
+        <div style="padding:20px 32px 18px;border-bottom:1px solid var(--hairline);display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap">
+          <div>
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:var(--secondary);margin-bottom:10px">3D PROTEIN VIEWER</div>
+            <h1 style="font:400 30px/1.05 Newsreader,serif;letter-spacing:-.01em;color:var(--ink);margin:0 0 7px">LRRK2 kinase domain</h1>
+            <div style="font:400 12px/1 'JetBrains Mono',monospace;color:var(--outline)">Predicted model · residues 1879–2138 · G2019S · confidence shown as a halo, not hidden</div>
+          </div>
+          <div style="display:flex;gap:3px;padding:3px;background:var(--container);border-radius:8px">
+            <button onClick="{{ setSchematic }}" style="{{ schematicStyle }}">2.5D schematic</button>
+            <button onClick="{{ setStructure }}" style="{{ structureStyle }}">3D structure</button>
+          </div>
+        </div>
+
+        <div style="flex:1;display:flex;min-height:0">
+          <div style="flex:1;position:relative;overflow:hidden">
+            <sc-if value="{{ isStructure }}">
+              <canvas ref="{{ setProtein }}" style="width:100%;height:100%;display:block"></canvas>
+              <div style="position:absolute;top:22px;left:28px;display:flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--hairline);border-radius:20px;background:var(--lowest);pointer-events:none">
+                <span class="ms" style="font-size:15px;color:var(--secondary)">3d_rotation</span><span style="font:500 11px/1 'Inter Tight',sans-serif;color:var(--ink2)">Drag to rotate</span>
+              </div>
+              <div style="position:absolute;bottom:24px;left:28px;display:flex;align-items:center;gap:11px;padding:11px 15px;border:1px solid var(--hairline);border-radius:9px;background:var(--lowest)">
+                <span style="width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%, #fff, var(--accent));flex:none"></span>
+                <div><div style="font:500 12px/1.2 'Inter Tight',sans-serif;color:var(--ink)">Bound inhibitor · ATP pocket</div><div style="font:400 10px/1.2 'JetBrains Mono',monospace;color:var(--secondary)">halo radius ∝ binding-pose uncertainty</div></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ isSchematic }}">
+              <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px">
+                <div style="position:relative;width:300px;height:300px;display:flex;align-items:center;justify-content:center">
+                  <div style="position:absolute;width:150px;height:150px;border-radius:50%;background:var(--high);border:1px solid var(--hairline);top:20px;left:40px"></div>
+                  <div style="position:absolute;width:200px;height:200px;border-radius:50%;background:var(--container);border:1px solid var(--hairline);bottom:12px;right:22px"></div>
+                  <div style="position:absolute;top:132px;left:118px;width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at 38% 32%, var(--accent), transparent 70%);border:1px dashed var(--accent)"></div>
+                  <span style="position:absolute;top:56px;left:96px;font:500 11px/1 'JetBrains Mono',monospace;color:var(--ink2)">N-lobe</span>
+                  <span style="position:absolute;bottom:60px;right:70px;font:500 11px/1 'JetBrains Mono',monospace;color:var(--ink2)">C-lobe</span>
+                  <span style="position:absolute;top:160px;left:132px;font:500 10px/1 'JetBrains Mono',monospace;color:var(--accent)">ATP</span>
+                </div>
+                <div style="font:400 14px/1.5 'Inter Tight',sans-serif;color:var(--secondary);max-width:44ch;text-align:center;margin-top:20px">The bilobal kinase fold. G2019S sits in the activation loop at the cleft between lobes — the switch this program aims to hold closed. Enter 3D to inspect the binding pose and its uncertainty.</div>
+              </div>
+            </sc-if>
+          </div>
+
+          <aside style="width:300px;flex:none;border-left:1px solid var(--hairline);background:var(--lowest);overflow-y:auto;padding:22px 22px">
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--secondary);margin-bottom:16px">BINDING SITE</div>
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div><div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--secondary);margin-bottom:5px">POCKET</div><div style="font:400 14px/1.3 'Inter Tight',sans-serif;color:var(--ink)">ATP-competitive · hinge Ala1904</div></div>
+              <div><div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--secondary);margin-bottom:5px">MUTATION</div><div style="font:400 14px/1.3 'JetBrains Mono',monospace;color:var(--ink)">G2019S · activation loop</div></div>
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px"><span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--secondary)">MODEL CONFIDENCE · COMPUTED</span><span style="font:400 13px/1 'JetBrains Mono',monospace;color:var(--warn);font-variant-numeric:tabular-nums">0.72</span></div>
+                <div style="height:5px;border-radius:3px;background:var(--high);overflow:hidden"><div style="height:100%;width:72%;background:var(--warn);border-radius:3px"></div></div>
+                <div style="font:400 11px/1.4 'Inter Tight',sans-serif;color:var(--secondary);margin-top:7px">The halo in 3D is this number, made visible. A wider halo means the binding pose is less certain — do not over-read it.</div>
+              </div>
+            </div>
+            <div style="height:1px;background:var(--hairline);margin:22px 0"></div>
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--secondary);margin-bottom:11px">PROVENANCE</div>
+            <div style="display:flex;align-items:center;gap:11px;padding:10px 12px;border:1px solid var(--hairline);border-radius:7px;background:var(--paper)">
+              <span class="ms" style="font-size:17px;color:var(--secondary)">description</span>
+              <div style="flex:1;min-width:0"><div style="font:500 12px/1.3 'Inter Tight',sans-serif;color:var(--ink)">Predicted structure · v4</div><div style="font:400 10px/1.3 'JetBrains Mono',monospace;color:var(--secondary)">UniProt Q5S007 · 1879–2138</div></div>
+            </div>
+          </aside>
+        </div>
+
+        <div style="padding:15px 32px 18px;border-top:1px solid var(--hairline)">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:9px">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--secondary)">DOMAIN ARCHITECTURE · 2,527 aa</span>
+            <span style="font:400 10px/1 'JetBrains Mono',monospace;color:var(--outline)">UniProt Q5S007</span>
+          </div>
+          <div style="position:relative">
+            <div style="display:flex;gap:3px">
+              <sc-for list="{{ domainSegs }}" as="d" hint-placeholder-count="7">
+                <div style="{{ d.segStyle }}">{{ d.name }}</div>
+              </sc-for>
+            </div>
+            <div style="position:absolute;top:-4px;bottom:-9px;left:{{ g2019sLeft }};width:1.5px;background:var(--risk)"></div>
+            <div style="position:absolute;top:-20px;left:{{ g2019sLeft }};transform:translateX(-50%);font:500 9px/1 'JetBrains Mono',monospace;color:var(--risk);white-space:nowrap">G2019S</div>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ============ GRANT EXPORT ============ -->
+      <sc-if value="{{ isGrant }}">
+      <div style="position:absolute;inset:0;display:flex">
+        <div style="flex:1;overflow-y:auto;background:var(--container);padding:44px 48px;display:flex;justify-content:center">
+          <div style="width:720px;max-width:100%;background:#ffffff;border:1px solid var(--hairline);box-shadow:0 4px 24px rgba(3,6,17,.08);border-radius:3px;padding:64px 68px;color:#1c1b1c">
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid #e5e2e3;padding-bottom:12px;margin-bottom:34px;font:400 10px/1 'JetBrains Mono',monospace;color:#76777c;letter-spacing:.04em">
+              <span>PD-LRRK2-01 · SPECIFIC AIMS</span><span>NIH R01 · PAGE 1 OF 17</span>
+            </div>
+            <h2 style="font:500 25px/1.3 Newsreader,serif;color:#030611;margin:0 0 8px">Selective LRRK2 kinase inhibition to slow dopaminergic neurodegeneration in Parkinson's disease</h2>
+            <div style="font:400 12px/1 'JetBrains Mono',monospace;color:#76777c;margin-bottom:28px">Principal Investigator · Gladstone Institutes · resubmission A1</div>
+            <p style="font:400 15.5px/1.7 Newsreader,serif;color:#1c1b1c;margin:0 0 18px">Gain-of-function mutations in <em>LRRK2</em> — most commonly G2019S — raise kinase activity roughly 2.6-fold<sup style="font:500 9px 'JetBrains Mono',monospace;color:#505f76">1</sup> and elevate phosphorylation of Rab10 at Thr73<sup style="font:500 9px 'JetBrains Mono',monospace;color:#505f76">2</sup>, impairing lysosomal clearance in dopaminergic neurons<sup style="font:500 9px 'JetBrains Mono',monospace;color:#505f76">3</sup>. We hypothesise that selective, ATP-competitive inhibition of LRRK2 restores lysosomal homeostasis and slows neurodegeneration<sup style="font:500 9px 'JetBrains Mono',monospace;color:#505f76">4</sup>.</p>
+            <p style="font:400 15.5px/1.7 Newsreader,serif;color:#1c1b1c;margin:0 0 24px">A 13-week non-human-primate study identified reversible lung phospholipidosis<sup style="font:500 9px 'JetBrains Mono',monospace;color:#505f76">5</sup>; this caveat is carried explicitly through the aims below rather than set aside.</p>
+            <div style="border-left:2px solid #030611;padding-left:18px;margin-bottom:16px"><div style="font:500 11px/1 'JetBrains Mono',monospace;color:#505f76;letter-spacing:.06em;margin-bottom:5px">AIM 1</div><p style="font:400 15px/1.6 Newsreader,serif;margin:0;color:#1c1b1c">Establish central target engagement in a Phase 1b cohort via CSF pRab10 dose-response.</p></div>
+            <div style="border-left:2px solid #030611;padding-left:18px;margin-bottom:16px"><div style="font:500 11px/1 'JetBrains Mono',monospace;color:#505f76;letter-spacing:.06em;margin-bottom:5px">AIM 2</div><p style="font:400 15px/1.6 Newsreader,serif;margin:0;color:#1c1b1c">Confirm kinase-dependent lysosomal rescue across an iPSC allelic series.</p></div>
+            <div style="border-left:2px solid #030611;padding-left:18px;margin-bottom:30px"><div style="font:500 11px/1 'JetBrains Mono',monospace;color:#505f76;letter-spacing:.06em;margin-bottom:5px">AIM 3</div><p style="font:400 15px/1.6 Newsreader,serif;margin:0;color:#1c1b1c">Define the therapeutic window with intermittent dosing to resolve the lung-safety signal.</p></div>
+            <div style="border-top:1px solid #e5e2e3;padding-top:14px;font:400 12px/1.5 'Inter Tight',sans-serif;color:#76777c">Every superscript resolves to a primary source in the evidence appendix. No sentence in this document originates with the model unattributed.</div>
+          </div>
+        </div>
+
+        <aside style="width:360px;flex:none;border-left:1px solid var(--hairline);background:var(--lowest);overflow-y:auto;padding:26px 24px">
+          <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary);margin-bottom:8px">GRANT EXPORT · NIH R01</div>
+          <h2 style="font:400 26px/1.1 Newsreader,serif;color:var(--ink);margin:0 0 24px">Ready to submit</h2>
+
+          <div style="border:1px solid var(--hairline);border-radius:10px;background:var(--paper);padding:16px 18px;margin-bottom:14px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px"><span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--secondary)">PROVENANCE COVERAGE · COMPUTED</span><span style="font:400 15px/1 'JetBrains Mono',monospace;color:var(--ok);font-variant-numeric:tabular-nums">100%</span></div>
+            <div style="height:5px;border-radius:3px;background:var(--high);overflow:hidden"><div style="height:100%;width:100%;background:var(--ok);border-radius:3px"></div></div>
+            <div style="font:400 11px/1.4 'Inter Tight',sans-serif;color:var(--secondary);margin-top:8px">47 of 47 claims trace to a source. A reviewer can open every one.</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:11px;border:1px solid var(--hairline);border-radius:10px;background:var(--paper);padding:14px 18px;margin-bottom:22px">
+            <span class="ms fill" style="font-size:20px;color:var(--ok)">verified_user</span>
+            <div style="flex:1"><div style="font:500 12px/1.2 'Inter Tight',sans-serif;color:var(--ink)">Field Integrity · HIGH</div><div style="font:400 10px/1.2 'JetBrains Mono',monospace;color:var(--secondary);font-variant-numeric:tabular-nums">84.2 · range 78–89 · certificate attached</div></div>
+          </div>
+
+          <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:11px">INCLUDED · 17 PAGES</div>
+          <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:24px">
+            <sc-for list="{{ grantSections }}" as="g" hint-placeholder-count="5">
+              <div style="display:flex;align-items:flex-start;gap:11px;padding:10px 4px;border-bottom:1px solid var(--hairline)">
+                <span class="ms" style="font-size:17px;color:var(--ok);margin-top:1px">check_circle</span>
+                <div style="flex:1"><div style="font:500 13px/1.3 'Inter Tight',sans-serif;color:var(--ink)">{{ g.name }}</div><div style="font:400 11px/1.35 'Inter Tight',sans-serif;color:var(--secondary);margin-top:2px">{{ g.note }}</div></div>
+                <span style="font:400 10px/1 'JetBrains Mono',monospace;color:var(--outline);margin-top:2px">{{ g.pages }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <button onClick="{{ downloadPackage }}" style-hover="opacity:.92" style="width:100%;display:flex;align-items:center;justify-content:center;gap:9px;padding:13px;border:none;border-radius:8px;background:var(--primary);color:var(--on-primary);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif;margin-bottom:9px">
+            <sc-if value="{{ exportPreparing }}"><span style="width:14px;height:14px;border-radius:50%;border:1.6px solid rgba(255,255,255,.4);border-top-color:#fff;animation:ks-spin .8s linear infinite;display:block"></span></sc-if>
+            <sc-if value="{{ exportIdle }}"><span class="ms" style="font-size:18px">download</span></sc-if>
+            <sc-if value="{{ exportDone }}"><span class="ms fill" style="font-size:18px">check_circle</span></sc-if>
+            {{ exportLabel }}
+          </button>
+          <button onClick="{{ printPackage }}" style-hover="border-color:var(--outline);background:var(--high)" style="width:100%;display:flex;align-items:center;justify-content:center;gap:9px;padding:12px;border:1px solid var(--hairline);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif">
+            <span class="ms" style="font-size:17px;color:var(--secondary)">print</span>Print
+          </button>
+
+          <div style="font:400 11px/1.5 'JetBrains Mono',monospace;color:var(--secondary);margin-top:20px;padding-top:16px;border-top:1px solid var(--hairline)">The export is a snapshot of the append-only record. Its content hash travels inside the PDF, so any later edit is detectable.</div>
+        </aside>
+      </div>
+      </sc-if>
+
+      <!-- ============ PLACEHOLDER (other surfaces) ============ -->
+      <sc-if value="{{ isOther }}">
+      <div style="max-width:900px;margin:0 auto;padding:80px 56px;display:flex;flex-direction:column;align-items:center;text-align:center">
+        <span class="ms" style="font-size:40px;color:var(--outline);margin-bottom:20px">{{ otherIcon }}</span>
+        <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:var(--secondary);margin-bottom:12px">{{ otherEyebrow }}</div>
+        <h1 style="font:400 40px/1.06 Newsreader,serif;letter-spacing:-.015em;color:var(--ink);margin:0 0 12px">{{ otherTitle }}</h1>
+        <p style="font:400 17px/1.6 Newsreader,serif;color:var(--ink2);margin:0;max-width:52ch">This surface is being assembled next. The shell, provenance model, and integrity scoring it depends on are already live.</p>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:26px;font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--secondary)">
+          <span style="width:11px;height:11px;border-radius:50%;border:1.5px solid var(--hairline);border-top-color:var(--primary);animation:ks-spin .9s linear infinite;display:block"></span>
+          IN THIS BUILD
+        </div>
+      </div>
+      </sc-if>
+
+    </main>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+ &quot;$preview&quot;: {&quot;width&quot;: &quot;1440px&quot;, &quot;height&quot;: &quot;900px&quot;},
+ &quot;defaultView&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;discovery&quot;,&quot;integrity&quot;,&quot;evidence&quot;,&quot;reasoning&quot;,&quot;decision&quot;,&quot;protein&quot;,&quot;frontier&quot;,&quot;grant&quot;,&quot;claude&quot;], &quot;default&quot;: &quot;discovery&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Environment&quot;},
+ &quot;defaultTheme&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;light&quot;,&quot;dark&quot;], &quot;default&quot;: &quot;light&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Environment&quot;},
+ &quot;claudeStatus&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;online&quot;,&quot;deterministic&quot;,&quot;offline&quot;], &quot;default&quot;: &quot;online&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Environment&quot;},
+ &quot;fieldIntegrity&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 84.2, &quot;min&quot;: 0, &quot;max&quot;: 100, &quot;step&quot;: 0.1, &quot;unit&quot;: &quot;/100&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Integrity&quot;},
+ &quot;confidenceAccent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1f6f52&quot;, &quot;options&quot;: [&quot;#1f6f52&quot;,&quot;#2a5f8f&quot;,&quot;#5b4b8a&quot;,&quot;#7c6f00&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Appearance&quot;}
+}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.state = {
+      view: props.defaultView || 'discovery',
+      theme: props.defaultTheme || 'light',
+      claude: props.claudeStatus || 'online',
+      runStage: 0, running: false, streamText: '', ranOnce: false,
+      intSettled: false,
+      reasonText: '', reasonDone: false, approved: false, approvedAt: '',
+      proteinMode: 'schematic',
+      exportState: 'idle',
+      liveClaude: false,
+      fiHover: false,
+    };
+    this.NAV = [
+      {group:'DISCOVERY', items:[{id:'discovery',label:'Discovery Run',icon:'play_circle'}]},
+      {group:'ANALYSIS', items:[
+        {id:'evidence',label:'Evidence Graph',icon:'hub',badge:'47'},
+        {id:'reasoning',label:'Reasoning Pipeline',icon:'account_tree'},
+        {id:'decision',label:'Decision Engine',icon:'fork_right'},
+        {id:'protein',label:'3D Protein Viewer',icon:'biotech'},
+      ]},
+      {group:'INTEGRITY', items:[
+        {id:'integrity',label:'Research Integrity',icon:'verified'},
+        {id:'frontier',label:'Frontier Guard',icon:'security'},
+      ]},
+      {group:'OUTPUT', items:[{id:'grant',label:'Grant Export',icon:'description'}]},
+    ];
+    this.STAGES = [
+      {id:'ingest',label:'Ingest sources',detail:'142 sources indexed from Crossref + OpenAlex.',out:'Corpus',outIcon:'inventory_2',hash:'e4a1·77c0',ts:'10:41:52Z'},
+      {id:'extract',label:'Extract evidence',detail:'318 candidate claims resolved to 47 evidence nodes and 112 provenance-typed links.',out:'Evidence Graph',outIcon:'hub',to:'evidence',hash:'b90d·1f22',ts:'10:42:01Z'},
+      {id:'score',label:'Score field integrity',detail:'Composite 84.2 / 100 — provenance-weighted, discounting one unresolved conflict.',out:'Integrity',outIcon:'verified',to:'integrity',hash:'9c1f·4ab2',ts:'10:42:07Z'},
+      {id:'reason',label:'Draft working inference',detail:'Two premises resolve to one testable inference. Flagged for human review before entry.',claude:true,out:'Reasoning',outIcon:'account_tree',to:'reasoning',hash:'2d55·8e13',ts:'10:42:11Z'},
+      {id:'decide',label:'Rank next experiments',detail:'Six candidates ordered by expected information gain against remaining uncertainty.',out:'Decisions',outIcon:'fork_right',to:'decision',hash:'71aa·c3f9',ts:'10:42:14Z'},
+      {id:'guard',label:'Frontier Guard clearance',detail:'Dual-use and biosafety screen passed. Release gated on principal-investigator sign-off.',out:'Cleared',outIcon:'security',to:'frontier',hash:'0af7·5b6c',ts:'10:42:16Z'},
+    ];
+    this.FACTORS = [
+      {label:'Provenance depth', val:0.91, note:'Every claim traces to an openable primary source.'},
+      {label:'Independent reproducibility', val:0.76, note:'2 of 3 key results replicated by an outside lab.'},
+      {label:'Method rigor', val:0.83, note:'Pre-registered analysis plan; blinded scoring.'},
+      {label:'Data & code availability', val:0.88, note:'Raw data and analysis code deposited and versioned.'},
+      {label:'Conflict rate', val:0.14, invert:true, note:'Share of claims with unresolved contradictory evidence.'},
+    ];
+    this.TIMELINE = [
+      {date:'2026-05-14', title:'Independent replication', detail:'Outside lab confirmed pRab10 reduction in ex-vivo tissue.', tone:'ok'},
+      {date:'2025-11-02', title:'iPSC lysosomal flux', detail:'Rescue reproduced; effect size smaller than internal.', tone:'warn'},
+      {date:'2024-09-08', title:'NHP 13-week toxicology', detail:'Lung lamellar bodies observed; reversible on washout.', tone:'risk'},
+      {date:'2023-03-09', title:'Kinase activity assay', detail:'G2019S measured at 2.6× wild-type activity.', tone:'sec'},
+    ];
+    this.integrity = { value: 0, band: 42 };
+    this._setGauge = (el) => this.gaugeMount(el);
+    this._setNum = (el) => { this.numRef = el; };
+    this._setGraph = (el) => this.graphMount(el);
+
+    // ---- Evidence graph model (LRRK2 program) ----
+    this.NODES = [
+      {id:'gen', type:'genetics', tc:'G2019S', label:'LRRK2 G2019S — gain-of-function variant', short:'G2019S variant', conf:0.96, x:120, y:300, r:22,
+        rel:'Foundational human genetics. Predicts elevated kinase activity and anchors the causal chain.',
+        sources:[{src:'GWAS Catalog', id:'rs34637584', year:'2004–2023'},{src:'Nature Genetics', id:'PARK8 locus', year:'2004'}]},
+      {id:'kin', type:'experiment', tc:'KIN', label:'G2019S kinase activity 2.6× wild-type', short:'Kinase 2.6× WT', conf:0.90, x:300, y:175, r:19,
+        rel:'In-vitro confirmation that the variant is kinase-activating, not silent.',
+        sources:[{src:'Internal assay', id:'KA-118 · kinase-Glo', year:'2023'},{src:'J. Biol. Chem.', id:'in-vitro panel', year:'2019'}]},
+      {id:'rab', type:'biomarker', tc:'pRab', label:'Elevated phospho-Rab10 (Thr73)', short:'pRab10 elevated', conf:0.88, x:300, y:415, r:20,
+        rel:'Direct pharmacodynamic substrate of LRRK2. Measurable target-engagement biomarker.',
+        sources:[{src:'Cell', id:'pRab10 Thr73', year:'2016'},{src:'Internal PD-Bx', id:'MSD ELISA', year:'2025'}]},
+      {id:'lyso', type:'mechanism', tc:'LYS', label:'Lysosomal membrane dysfunction', short:'Lysosomal dysfn.', conf:0.74, x:490, y:330, r:19,
+        rel:'Mechanistic bridge from kinase hyperactivity to cellular pathology.',
+        sources:[{src:'Neuron', id:'lysosomal pH', year:'2020'}]},
+      {id:'auto', type:'mechanism', tc:'φ', label:'Impaired autophagy flux', short:'Autophagy block', conf:0.70, x:470, y:500, r:18,
+        rel:'Downstream of lysosomal failure; proposed driver of proteostasis collapse.',
+        sources:[{src:'Autophagy', id:'flux assay', year:'2020'}]},
+      {id:'micro', type:'mechanism', tc:'μ', label:'Microglial inflammation amplification', short:'Microglial infl.', conf:0.63, x:640, y:545, r:17,
+        rel:'Parallel contributor; strength of causal link to neuron loss still uncertain.',
+        sources:[{src:'Glia', id:'microglial LRRK2', year:'2021'}]},
+      {id:'da', type:'phenotype', tc:'DA', label:'Dopaminergic neuron loss (SNpc)', short:'DA neuron loss', conf:0.86, x:690, y:405, r:22,
+        rel:'The clinical phenotype the program must ultimately move.',
+        sources:[{src:'Brain', id:'SNpc TH+ count', year:'2018'}]},
+      {id:'resc', type:'experiment', tc:'RES', label:'LRRK2 inhibitor rescues autophagy in iPSC neurons', short:'iPSC rescue', conf:0.71, x:625, y:150, r:18,
+        rel:'Key intervention evidence; replicated externally with a smaller effect size.',
+        sources:[{src:'Internal iPSC-042', id:'autophagy flux', year:'2025'}]},
+      {id:'csf', type:'translational', tc:'CSF', label:'CSF pRab10 tracks target engagement', short:'CSF pRab10', conf:0.67, x:470, y:130, r:17,
+        rel:'Translational readout enabling a go/no-go biomarker in Phase 1.',
+        sources:[{src:'Sci. Transl. Med.', id:'CSF pRab10', year:'2022'}]},
+      {id:'hyp', type:'hypothesis', tc:'H', label:'Selective LRRK2 kinase inhibition slows dopaminergic neurodegeneration', short:'Kinase inhibition slows PD', conf:0.82, x:815, y:265, r:30,
+        rel:'The working hypothesis. Confidence is the provenance-weighted synthesis of everything upstream.',
+        sources:[]},
+      {id:'lung', type:'safety', tc:'SAF', label:'NHP lung phospholipidosis (13-week)', short:'Lung phospholipidosis', conf:0.58, x:800, y:520, r:18,
+        rel:'Safety signal that contradicts the asserted therapeutic window. Reversible on washout.',
+        sources:[{src:'NHP-13W-2024', id:'lamellar bodies', year:'2024'},{src:'Tox. Sci.', id:'phospholipidosis', year:'2021'}]},
+    ];
+    this.EDGES = [
+      {a:'gen', b:'kin'}, {a:'gen', b:'hyp'}, {a:'kin', b:'rab'}, {a:'kin', b:'hyp'},
+      {a:'rab', b:'lyso'}, {a:'rab', b:'csf'}, {a:'lyso', b:'auto'}, {a:'lyso', b:'da'},
+      {a:'auto', b:'da'}, {a:'da', b:'hyp'}, {a:'resc', b:'auto'}, {a:'hyp', b:'resc'},
+      {a:'micro', b:'da'}, {a:'lung', b:'hyp', kind:'contradicts'},
+    ];
+    this.TYPE_LABEL = {genetics:'Human genetics', experiment:'Experiment', biomarker:'Biomarker', mechanism:'Mechanism', phenotype:'Clinical phenotype', translational:'Translational', hypothesis:'Working hypothesis', safety:'Safety signal'};
+    this.cam = null;
+    this.blast = null;
+    this.hoverId = null;
+    this.worldW = 940; this.worldH = 640;
+    this._setGraph = this._setGraph;
+    this._setReason = (el) => { if (el && !this._reasonInit){ this._reasonInit = true; this.streamInference(); } };
+
+    // ---- Reasoning pipeline ----
+    this.PREMISES = [
+      {n:'PREMISE I', text:'LRRK2 G2019S elevates kinase activity to 2.6× wild-type in the disease-relevant allele.', ev:'Kinase activity assay · KA-118', stat:'2.6× WT · n=6 · p<0.001', who:'PI · 2026-06-01'},
+      {n:'PREMISE II', text:'Hyperactive LRRK2 phosphorylates Rab10 at Thr73, impairing lysosomal clearance in dopaminergic neurons.', ev:'pRab10 immunoassay · iPSC-042', stat:'+180% pRab10 · FDR 0.002', who:'PI · 2026-06-02'},
+    ];
+    this.INFERENCE = 'Therefore, selective ATP-competitive inhibition of LRRK2 should restore lysosomal clearance and slow dopaminergic neuron loss — conditional on kinase selectivity that spares the peripheral phospholipid handling implicated in the 13-week non-human-primate lung finding.';
+    this.TRACE = [
+      {t:'Draws on Premise I', s:'genetics → kinase activity', link:'KA-118'},
+      {t:'Draws on Premise II', s:'pRab10 → lysosomal clearance', link:'iPSC-042'},
+      {t:'Discounts a conflict', s:'NHP lung phospholipidosis', link:'NHP-13W-2024', risk:true},
+      {t:'Provenance-weighted confidence', s:'0.82 of 1.00', conf:true},
+    ];
+    this.LEDGER = [
+      {title:'Premise I accepted into record', hash:'4b1c·9f02·a1', who:'PI', when:'2026-06-01 · 09:14Z'},
+      {title:'Premise II accepted into record', hash:'a7e3·1d55·8c', who:'PI', when:'2026-06-02 · 11:40Z'},
+    ];
+
+    // ---- Decision engine ---- (expected reduction in uncertainty, not confidence)
+    this.EXPERIMENTS = [
+      {title:'CSF pRab10 dose-response, Phase 1b (n=24)', reduces:'Human target engagement · CSF pRab10', gain:0.42, cost:6, costLabel:'~6 mo · high', rationale:'Directly tests whether peripheral target engagement predicts a central effect — the weakest link between mechanism and clinic.'},
+      {title:'iPSC lysosomal-flux across an allelic series', reduces:'Mechanism · lysosomal dysfunction', gain:0.36, cost:2, costLabel:'~8 wk · low', rationale:'Cheapest route to raise mechanism confidence; isolates the kinase-dependence of the lysosomal phenotype.'},
+      {title:'Intermittent-dosing NHP tox, 13 wk', reduces:'Safety conflict · lung phospholipidosis', gain:0.31, cost:5, costLabel:'~5 mo · high', rationale:'Addresses the one contradiction discounted in the working inference; a clean result could re-open the therapeutic window.'},
+      {title:'Blinded external replication of iPSC rescue', reduces:'Reproducibility · Field Integrity', gain:0.24, cost:3, costLabel:'~10 wk · med', rationale:'Independent replication is the single highest-leverage move for the Field Integrity score.'},
+      {title:'pRab10 assay cross-validation, 2 sites', reduces:'Method rigor · biomarker', gain:0.15, cost:2, costLabel:'~6 wk · low', rationale:'Locks the biomarker before pivotal use; low gain now but a prerequisite later.'},
+      {title:'Microglial LRRK2 conditional-KO in vivo', reduces:'Mechanism · neuroinflammation', gain:0.12, cost:9, costLabel:'~9 mo · high', rationale:'Scientifically interesting but low marginal value against the questions that currently move the program.'},
+    ];
+
+    // ---- Frontier Guard ---- (should this request be refused?)
+    this.SCREENS = [
+      {name:'Dual-use potential', status:'flag', note:'One request sought to evade a safety assay. Refused on its own and logged below.'},
+      {name:'Biosafety · BSL-1', status:'pass', note:'In-vitro kinase and iPSC work only; no select agents or gain-of-function.'},
+      {name:'Human subjects · IRB', status:'pass', note:'Phase 1b protocol IRB-2026-114 on file and current.'},
+      {name:'Data governance', status:'pass', note:'De-identified. Runs locally inside Claude Desktop; source data never leaves the device.'},
+      {name:'Export control', status:'pass', note:'No controlled sequences, organisms, or materials involved.'},
+    ];
+    this.REFUSAL = {
+      request:'“Suggest modifications that raise CNS exposure while avoiding detection on the phospholipidosis safety assay.”',
+      reason:'This asks Keystone to defeat a safety readout rather than improve safety. Keystone will not help conceal or evade a toxicology signal. The legitimate underlying goal — widening the therapeutic window — is answerable, and was reframed as experiment #3 in the Decision Engine.',
+      log:'Logged · FG-2026-0042 · appealable only through dual human sign-off',
+    };
+    this.GATE = [
+      {role:'Principal Investigator', detail:'Scientific accountability', status:'pending'},
+      {role:'Institutional Biosafety Officer', detail:'Dual-use & biosafety', status:'pending'},
+    ];
+    this.DOMAINS = [
+      {name:'ARM', a:1, b:660}, {name:'ANK', a:690, b:860}, {name:'LRR', a:983, b:1319},
+      {name:'ROC', a:1329, b:1516}, {name:'COR', a:1517, b:1843},
+      {name:'KINASE', a:1879, b:2138, active:true}, {name:'WD40', a:2142, b:2498},
+    ];
+    this._setProtein = (el) => this.proteinMount(el);
+    this.GRANT_SECTIONS = [
+      {name:'Specific Aims', pages:'1 p', note:'Three aims, each linked to a signed inference'},
+      {name:'Evidence appendix', pages:'12 p', note:'47 claims — every one traceable to a source'},
+      {name:'Integrity certificate', pages:'1 p', note:'Field Integrity HIGH · 84.2 · range 78–89'},
+      {name:'Reproducibility statement', pages:'2 p', note:'Raw data and analysis code deposited'},
+      {name:'Conflicts & caveats', pages:'1 p', note:'The one unresolved conflict, disclosed not hidden'},
+    ];
+  }
+
+  componentDidMount(){
+    const t = this.state.theme;
+    document.documentElement.dataset.theme = t;
+    document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--paper');
+    if (this.props.confidenceAccent) document.documentElement.style.setProperty('--accent', this.props.confidenceAccent);
+    this.reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._t0 = setTimeout(()=>this.runDiscovery(), 560);
+  }
+  componentWillUnmount(){
+    clearTimeout(this._t0); clearTimeout(this._typeT); clearTimeout(this._stageT);
+    cancelAnimationFrame(this._gaugeRAF);
+  }
+
+  cv(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+
+  go(v){ this.setState({view:v}); }
+  toggleClaudeLive(){ this.setState(s => ({ liveClaude: !s.liveClaude })); }
+  toggleTheme(){
+    const t = this.state.theme==='light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+    document.body.style.background = this.cv('--paper');
+    this.setState({theme:t});
+    cancelAnimationFrame(this._gaugeRAF);
+    if (this.gauge) this.drawGauge();
+  }
+  cycleClaude(){
+    const order = ['online','deterministic','offline'];
+    const next = order[(order.indexOf(this.state.claude)+1)%3];
+    this.setState({claude:next});
+  }
+
+  // ---- Discovery run ----
+  runDiscovery(){
+    clearTimeout(this._typeT); clearTimeout(this._stageT);
+    if (this.reduced){ this.setState({runStage:this.STAGES.length, running:false, ranOnce:true, streamText:''}); return; }
+    this.setState({runStage:0, running:true, ranOnce:true, streamText:''});
+    this._stageT = setTimeout(()=>this.stepStage(0), 260);
+  }
+  stepStage(i){
+    if (i >= this.STAGES.length){ this.setState({running:false, runStage:this.STAGES.length}); return; }
+    this.setState({runStage:i, running:true, streamText:''});
+    const full = this.STAGES[i].detail;
+    let k = 0;
+    const type = () => {
+      k += Math.max(1, Math.round(full.length/24));
+      this.setState({streamText: full.slice(0, k)});
+      if (k < full.length){ this._typeT = setTimeout(type, 26); }
+      else { this.setState({streamText: full}); this._stageT = setTimeout(()=>this.stepStage(i+1), 480); }
+    };
+    this._typeT = setTimeout(type, 200);
+  }
+
+  // ---- Field Integrity gauge ----
+  gaugeMount(el){
+    if (el && el !== this.gauge){ this.gauge = el; this.startIntegrity(); }
+    else if (!el){ cancelAnimationFrame(this._gaugeRAF); this.gauge = null; }
+  }
+  startIntegrity(){
+    cancelAnimationFrame(this._gaugeRAF);
+    const target = (this.props.fieldIntegrity != null ? this.props.fieldIntegrity : 84.2);
+    if (this.reduced){ this.integrity={value:target,band:6}; if(this.numRef)this.numRef.textContent=target.toFixed(1); this.drawGauge(); this.setState({intSettled:true}); return; }
+    this.setState({intSettled:false});
+    const start = performance.now(), dur = 2300;
+    const ease = t => 1 - Math.pow(1-t, 3);
+    const step = (now) => {
+      let t = Math.min(1, (now-start)/dur);
+      const e = ease(t);
+      const jitter = (1-t)*(1-t) * (Math.sin(now/42)*3.0 + (Math.random()-0.5)*1.6);
+      this.integrity.value = Math.max(0, target*e + jitter);
+      this.integrity.band = 42*(1-e) + 6;
+      if (this.numRef) this.numRef.textContent = this.integrity.value.toFixed(1);
+      this.drawGauge();
+      if (t < 1){ this._gaugeRAF = requestAnimationFrame(step); }
+      else { this.integrity={value:target,band:6}; if(this.numRef)this.numRef.textContent=target.toFixed(1); this.drawGauge(); this.setState({intSettled:true}); }
+    };
+    this._gaugeRAF = requestAnimationFrame(step);
+  }
+  drawGauge(){
+    const c = this.gauge; if (!c) return;
+    const dpr = Math.min(2, window.devicePixelRatio||1);
+    const w = c.clientWidth, h = c.clientHeight;
+    if (c.width !== Math.round(w*dpr)){ c.width = Math.round(w*dpr); c.height = Math.round(h*dpr); }
+    const ctx = c.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,w,h);
+    const cx = w/2, cy = h/2 + 10, R = Math.min(w, h*1.15)/2 - 20;
+    const a0 = Math.PI*0.75, a1 = Math.PI*2.25;
+    const val = Math.max(0, Math.min(100, this.integrity.value))/100;
+    const band = this.integrity.band/100;
+    const hair = this.cv('--hairline'), ink = this.cv('--ink'), paper = this.cv('--lowest'), acc = this.cv('--accent'), out = this.cv('--outline');
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = hair; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(cx, cy, R, a0, a1); ctx.stroke();
+    const av = a0 + (a1-a0)*val;
+    const lo = a0 + (a1-a0)*Math.max(0, val-band), hi = a0 + (a1-a0)*Math.min(1, val+band);
+    ctx.strokeStyle = acc; ctx.globalAlpha = 0.15; ctx.lineWidth = 13;
+    ctx.beginPath(); ctx.arc(cx, cy, R, lo, hi); ctx.stroke(); ctx.globalAlpha = 1;
+    ctx.strokeStyle = acc; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(cx, cy, R, a0, av); ctx.stroke();
+    ctx.strokeStyle = hair; ctx.lineWidth = 1;
+    for (let i=0;i<=10;i++){ const a = a0+(a1-a0)*(i/10); const r1 = R-7, r2 = R-(i%5===0?15:10); ctx.beginPath(); ctx.moveTo(cx+Math.cos(a)*r1, cy+Math.sin(a)*r1); ctx.lineTo(cx+Math.cos(a)*r2, cy+Math.sin(a)*r2); ctx.stroke(); }
+    const mx = cx+Math.cos(av)*R, my = cy+Math.sin(av)*R;
+    ctx.fillStyle = paper; ctx.strokeStyle = ink; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(mx, my, 5.5, 0, 7); ctx.fill(); ctx.stroke();
+  }
+
+  // ---- Evidence graph ----
+  nodeById(id){ return this.NODES.find(n=>n.id===id); }
+  confVar(c){ return c>=0.8 ? '--ok' : (c>=0.63 ? '--warn' : '--risk'); }
+  segToggle(active){ return 'padding:7px 15px;border:none;border-radius:6px;cursor:pointer;font:500 12px/1 "Inter Tight",sans-serif;transition:all .18s var(--e-out);' + (active ? 'background:var(--lowest);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.07);' : 'background:transparent;color:var(--ink2);'); }
+  downloadPackage(){ if (this.state.exportState==='preparing') return; this.setState({exportState:'preparing'}); clearTimeout(this._expT); this._expT = setTimeout(()=>this.setState({exportState:'done'}), 1500); }
+  printPackage(){ try{ window.print(); }catch(e){} }
+  graphMount(el){
+    if (el && el!==this.graphCanvas){
+      this.graphCanvas = el;
+      this._gMove = (e)=>this.onGraphMove(e);
+      this._gClick = (e)=>this.onGraphClick(e);
+      this._gLeave = ()=>{ this.hoverId=null; if(this.graphCanvas) this.graphCanvas.style.cursor='default'; };
+      el.addEventListener('mousemove', this._gMove);
+      el.addEventListener('click', this._gClick);
+      el.addEventListener('mouseleave', this._gLeave);
+      this.NODES.forEach(n=>{ n.dispConf = n.conf; n.targetConf = n.conf; n.flare = 0; });
+      this.graphT0 = performance.now();
+      this.cam = null;
+      this.startGraph();
+    } else if (!el){
+      if (this.graphCanvas){ this.graphCanvas.removeEventListener('mousemove', this._gMove); this.graphCanvas.removeEventListener('click', this._gClick); this.graphCanvas.removeEventListener('mouseleave', this._gLeave); }
+      cancelAnimationFrame(this._graphRAF); this.graphCanvas = null;
+    }
+  }
+  fitScale(vpW, vpH){ return Math.min(vpW/this.worldW, vpH/this.worldH) * 0.82; }
+  initCam(vpW, vpH){
+    const s = this.fitScale(vpW, vpH);
+    this.cam = {cx:this.worldW/2, cy:this.worldH/2, scale:s, tcx:this.worldW/2, tcy:this.worldH/2, tscale:s};
+  }
+  w2s(wx, wy){ const vpW=this._vpW, vpH=this._vpH, c=this.cam; return [ (wx-c.cx)*c.scale + vpW/2, (wy-c.cy)*c.scale + vpH/2 ]; }
+  s2w(sx, sy){ const vpW=this._vpW, vpH=this._vpH, c=this.cam; return [ (sx-vpW/2)/c.scale + c.cx, (sy-vpH/2)/c.scale + c.cy ]; }
+  onGraphMove(e){
+    if (!this.cam) return;
+    const rect = this.graphCanvas.getBoundingClientRect();
+    const [wx, wy] = this.s2w(e.clientX-rect.left, e.clientY-rect.top);
+    let hit = null;
+    for (const n of this.NODES){ if (Math.hypot(n.x-wx, n.y-wy) < n.r+8){ hit = n.id; break; } }
+    this.hoverId = hit;
+    this.graphCanvas.style.cursor = hit ? 'pointer' : 'default';
+  }
+  onGraphClick(e){
+    if (!this.cam) return;
+    const rect = this.graphCanvas.getBoundingClientRect();
+    const [wx, wy] = this.s2w(e.clientX-rect.left, e.clientY-rect.top);
+    let hit = null;
+    for (const n of this.NODES){ if (Math.hypot(n.x-wx, n.y-wy) < n.r+8){ hit = n; break; } }
+    if (hit) this.selectNode(hit.id); else this.deselect();
+  }
+  selectNode(id){
+    const n = this.nodeById(id); if (!n) return;
+    this.setState({selectedNode:id});
+    if (this.cam){ this.cam.tcx = n.x; this.cam.tcy = n.y; this.cam.tscale = this.fitScale(this._vpW, this._vpH) * 1.32; }
+    if (!this.reduced) this.blast = {x:n.x, y:n.y, t0:performance.now()};
+  }
+  deselect(){
+    this.setState({selectedNode:null});
+    if (this.cam){ this.cam.tcx = this.worldW/2; this.cam.tcy = this.worldH/2; this.cam.tscale = this.fitScale(this._vpW, this._vpH); }
+  }
+  resetGraphView(){ this.deselect(); }
+  contest(id){
+    const n = this.nodeById(id); if (!n) return;
+    n.targetConf = Math.max(0.18, n.dispConf - 0.30);
+    n.contested = true;
+    // propagate downstream: nodes this one supports lose a little confidence
+    this.EDGES.filter(ed=>ed.a===id).forEach(ed=>{ const c=this.nodeById(ed.b); if(c){ c.targetConf = Math.max(0.2, c.targetConf - 0.10); } });
+    if (!this.reduced) this.blast = {x:n.x, y:n.y, t0:performance.now(), review:true};
+    this.setState({});
+    clearTimeout(this._contestT);
+    this._contestT = setTimeout(()=>this.setState({}), 780);
+  }
+  startGraph(){
+    cancelAnimationFrame(this._graphRAF);
+    const loop = (now)=>{ this.drawGraph(now); this._graphRAF = requestAnimationFrame(loop); };
+    this._graphRAF = requestAnimationFrame(loop);
+  }
+  drawGraph(now){
+    const c = this.graphCanvas; if (!c) return;
+    const dpr = Math.min(2, window.devicePixelRatio||1);
+    const vpW = c.clientWidth, vpH = c.clientHeight;
+    if (!vpW || !vpH) return;
+    if (c.width !== Math.round(vpW*dpr)){ c.width = Math.round(vpW*dpr); c.height = Math.round(vpH*dpr); }
+    this._vpW = vpW; this._vpH = vpH;
+    if (!this.cam) this.initCam(vpW, vpH);
+    const ctx = c.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,vpW,vpH);
+    // ease camera
+    const cam = this.cam;
+    cam.cx += (cam.tcx-cam.cx)*0.09; cam.cy += (cam.tcy-cam.cy)*0.09; cam.scale += (cam.tscale-cam.scale)*0.09;
+    // lerp confidences
+    this.NODES.forEach(n=>{ n.dispConf += (n.targetConf-n.dispConf)*0.12; });
+    const t = (now - this.graphT0)/1000;
+    const hair = this.cv('--hairline'), ink = this.cv('--ink'), paper = this.cv('--lowest'), out = this.cv('--outline'), ink2 = this.cv('--ink2'), risk = this.cv('--risk');
+    const sel = this.state.selectedNode;
+
+    // blast wave
+    let wave = null;
+    if (this.blast){ const el = (now - this.blast.t0)/1000; const speed = 660; wave = {r: el*speed, a: Math.max(0, 0.42 - el*0.30), review:this.blast.review}; if (el > 2.4){ this.blast=null; wave=null; this.NODES.forEach(n=>n.flare=0);} }
+
+    // edges
+    ctx.lineCap = 'round';
+    this.EDGES.forEach((ed, i)=>{
+      const na = this.nodeById(ed.a), nb = this.nodeById(ed.b);
+      const [ax, ay] = this.w2s(na.x, na.y), [bx, by] = this.w2s(nb.x, nb.y);
+      const alpha = Math.max(0, Math.min(1, (t - i*0.05)/0.4));
+      if (alpha<=0) return;
+      const active = sel && (ed.a===sel || ed.b===sel);
+      ctx.save(); ctx.globalAlpha = alpha * (sel ? (active?1:0.28) : 0.9);
+      if (ed.kind==='contradicts'){ ctx.strokeStyle = risk; ctx.setLineDash([2,5]); ctx.lineWidth = 1.5; }
+      else { ctx.strokeStyle = active ? out : hair; ctx.lineWidth = active ? 1.6 : 1; }
+      ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
+      ctx.restore();
+    });
+
+    // blast ring
+    if (wave && wave.a>0){
+      const [bx, by] = this.w2s(this.blast.x, this.blast.y);
+      ctx.save(); ctx.globalAlpha = wave.a; ctx.strokeStyle = wave.review ? risk : this.cv('--secondary'); ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(bx, by, wave.r*cam.scale, 0, 7); ctx.stroke(); ctx.restore();
+    }
+
+    // nodes
+    this.NODES.forEach((n, i)=>{
+      const [sx, sy] = this.w2s(n.x, n.y);
+      const conf = n.dispConf;
+      const isSel = n.id===sel, isHover = n.id===this.hoverId;
+      // breathing: lower confidence => larger, slower unrest
+      const amp = (0.5 + (1-conf)*3.6);
+      const spd = (0.55 + (1-conf)*0.85);
+      const breath = Math.sin(t*spd*2 + i*1.7) * amp;
+      // blast flare
+      let flare = 0;
+      if (wave){ const d = Math.hypot(n.x-this.blast.x, n.y-this.blast.y); flare = Math.max(0, 1 - Math.abs(wave.r - d)/46) * (wave.a*2.2); flare = Math.min(1, flare); }
+      const rBase = n.r * cam.scale;
+      const rNode = rBase + breath*0.35*cam.scale/1;
+      // confidence halo
+      const haloR = rNode + (8 + conf*22)*cam.scale/1 + breath + flare*14;
+      const cvar = this.cv(this.confVar(conf));
+      ctx.save();
+      const g = ctx.createRadialGradient(sx, sy, rNode, sx, sy, haloR);
+      g.addColorStop(0, this.hexA(cvar, 0.16 + conf*0.14 + flare*0.3));
+      g.addColorStop(1, this.hexA(cvar, 0));
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(sx, sy, haloR, 0, 7); ctx.fill();
+      ctx.restore();
+      // disc
+      ctx.fillStyle = n.type==='hypothesis' ? ink : paper;
+      ctx.beginPath(); ctx.arc(sx, sy, rNode, 0, 7); ctx.fill();
+      ctx.lineWidth = 1; ctx.strokeStyle = isSel ? ink : (n.type==='hypothesis'?ink:hair); ctx.stroke();
+      // confidence arc ring
+      ctx.strokeStyle = cvar; ctx.lineWidth = 2.4; ctx.lineCap='round';
+      ctx.beginPath(); ctx.arc(sx, sy, rNode+3.5, -Math.PI/2, -Math.PI/2 + Math.PI*2*conf); ctx.stroke();
+      // selection focus ring
+      if (isSel || isHover){ ctx.strokeStyle = ink; ctx.globalAlpha = isSel?0.9:0.4; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(sx, sy, rNode+8, 0, 7); ctx.stroke(); ctx.globalAlpha=1; }
+      // type code
+      ctx.fillStyle = n.type==='hypothesis' ? paper : ink2;
+      ctx.font = '500 ' + Math.max(8, 9.5*cam.scale) + 'px "JetBrains Mono", monospace';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(n.tc, sx, sy+0.5);
+      // label
+      if (cam.scale > 0.36){
+        ctx.font = '500 12px "Inter Tight", system-ui, sans-serif';
+        ctx.fillStyle = ink; ctx.textBaseline='top';
+        const ly = sy + haloR + 4;
+        const tw = ctx.measureText(n.short).width;
+        ctx.fillStyle = this.hexA(paper, 0.85); ctx.fillRect(sx-tw/2-4, ly-1, tw+8, 17);
+        ctx.fillStyle = isSel? ink : ink2; ctx.fillText(n.short, sx, ly);
+      }
+    });
+  }
+  hexA(v, a){
+    v = (v||'').trim();
+    if (v.startsWith('#')){ let h=v.slice(1); if(h.length===3) h=h.split('').map(x=>x+x).join(''); const n=parseInt(h,16); return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')'; }
+    const m = v.match(/(\d+)[ ,]+(\d+)[ ,]+(\d+)/); if (m) return 'rgba('+m[1]+','+m[2]+','+m[3]+','+a+')';
+    return v;
+  }
+
+  // ---- 3D protein viewer (canvas glass spheres, perspective, DOF, uncertainty halo) ----
+  proteinMount(el){
+    if (el && el!==this.protCanvas){
+      this.protCanvas = el;
+      if (!this.ATOMS) this.ATOMS = this.genAtoms();
+      this.protRX = -0.35; this.protRY = 0.5; this.protVY = 0.0032; this.protDrag = false;
+      this._pDown = (e)=>{ this.protDrag=true; this._pLast=[e.clientX,e.clientY]; el.style.cursor='grabbing'; };
+      this._pUp = ()=>{ this.protDrag=false; el.style.cursor='grab'; };
+      this._pMove = (e)=>{ if(!this.protDrag) return; const dx=e.clientX-this._pLast[0], dy=e.clientY-this._pLast[1]; this._pLast=[e.clientX,e.clientY]; this.protRY+=dx*0.008; this.protRX+=dy*0.008; };
+      el.addEventListener('mousedown', this._pDown);
+      window.addEventListener('mouseup', this._pUp);
+      window.addEventListener('mousemove', this._pMove);
+      el.style.cursor='grab';
+      this.startProtein();
+    } else if (!el){
+      if (this.protCanvas){ this.protCanvas.removeEventListener('mousedown', this._pDown); }
+      window.removeEventListener('mouseup', this._pUp);
+      window.removeEventListener('mousemove', this._pMove);
+      cancelAnimationFrame(this._protRAF); this.protCanvas = null;
+    }
+  }
+  genAtoms(){
+    let s = 1337; const rng = () => { s = (s*1664525 + 1013904223) & 0x7fffffff; return s/0x7fffffff; };
+    const inSphere = (cx,cy,cz,R) => { let x,y,z,d; do{ x=rng()*2-1; y=rng()*2-1; z=rng()*2-1; d=x*x+y*y+z*z; }while(d>1); return [cx+x*R, cy+y*R, cz+z*R]; };
+    const a = [];
+    for (let i=0;i<48;i++){ const p=inSphere(-6,-42,0,30); a.push({x:p[0],y:p[1],z:p[2],r:5.4,t:'n'}); } // N-lobe
+    for (let i=0;i<74;i++){ const p=inSphere(6,34,2,46); a.push({x:p[0],y:p[1],z:p[2],r:6.0,t:'c'}); } // C-lobe
+    for (let i=0;i<9;i++){ const p=inSphere(2,-6,26,10); a.push({x:p[0],y:p[1],z:p[2],r:4.0,t:'d'}); } // inhibitor in ATP cleft
+    return a;
+  }
+  setProteinMode(m){ this.setState({proteinMode:m}); }
+  startProtein(){ cancelAnimationFrame(this._protRAF); const loop=()=>{ this.drawProtein(); this._protRAF=requestAnimationFrame(loop); }; this._protRAF=requestAnimationFrame(loop); }
+  drawProtein(){
+    const c = this.protCanvas; if (!c) return;
+    const dpr = Math.min(2, window.devicePixelRatio||1);
+    const w = c.clientWidth, h = c.clientHeight; if (!w||!h) return;
+    if (c.width !== Math.round(w*dpr)){ c.width=Math.round(w*dpr); c.height=Math.round(h*dpr); }
+    const ctx = c.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,w,h);
+    if (!this.protDrag) this.protRY += this.protVY;
+    const cx=w/2, cy=h/2, focal=360;
+    const cosY=Math.cos(this.protRY), sinY=Math.sin(this.protRY), cosX=Math.cos(this.protRX), sinX=Math.sin(this.protRX);
+    const ink=this.cv('--ink'), acc=this.cv('--accent'), sec=this.cv('--secondary'), paper=this.cv('--paper');
+    const proj = a => {
+      let x=a.x*cosY - a.z*sinY, z=a.x*sinY + a.z*cosY, y=a.y;
+      let y2=y*cosX - z*sinX, z2=y*sinX + z*cosX;
+      const s=focal/(focal+z2);
+      return {sx:cx+x*s, sy:cy+y2*s, s, z:z2, r:a.r*s, t:a.t};
+    };
+    const pts = this.ATOMS.map(proj).sort((p,q)=>p.z-q.z);
+    // volumetric uncertainty halo at ATP cleft (binding-pose confidence 0.72)
+    const cleft = proj({x:2,y:-6,z:26,r:1});
+    const conf = 0.72; const halo = (1-conf)*120 + 46;
+    const hg = ctx.createRadialGradient(cleft.sx, cleft.sy, 0, cleft.sx, cleft.sy, halo*cleft.s);
+    hg.addColorStop(0, this.hexA(acc, 0.20)); hg.addColorStop(0.5, this.hexA(acc, 0.07)); hg.addColorStop(1, this.hexA(acc,0));
+    ctx.fillStyle=hg; ctx.beginPath(); ctx.arc(cleft.sx, cleft.sy, halo*cleft.s, 0, 7); ctx.fill();
+    // glass spheres with DOF
+    const zmin=Math.min(...pts.map(p=>p.z)), zmax=Math.max(...pts.map(p=>p.z));
+    pts.forEach(p => {
+      const depth = (p.z - zmin)/(zmax-zmin || 1); // 0 near .. 1 far
+      const alpha = 1 - depth*0.55;
+      const base = p.t==='d' ? acc : (p.t==='n' ? sec : ink);
+      ctx.globalAlpha = alpha;
+      const g = ctx.createRadialGradient(p.sx - p.r*0.4, p.sy - p.r*0.5, p.r*0.1, p.sx, p.sy, p.r*1.15);
+      g.addColorStop(0, this.hexA('#ffffff', p.t==='d'?0.85:0.6));
+      g.addColorStop(0.28, this.hexA(base, 0.95));
+      g.addColorStop(1, this.hexA(base, p.t==='d'?0.9:0.72));
+      ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.sx, p.sy, p.r, 0, 7); ctx.fill();
+      ctx.globalAlpha = alpha*0.9; ctx.fillStyle=this.hexA('#ffffff',0.9);
+      ctx.beginPath(); ctx.arc(p.sx - p.r*0.34, p.sy - p.r*0.4, p.r*0.20, 0, 7); ctx.fill();
+    });
+    ctx.globalAlpha=1;
+  }
+
+  // ---- Reasoning ----
+  streamInference(){
+    clearTimeout(this._rt);
+    this.setState({reasonText:'', reasonDone:false, approved:false, approvedAt:''});
+    if (this.state.claude==='offline' || this.reduced){ this.setState({reasonText:this.INFERENCE, reasonDone:true}); return; }
+    const full = this.INFERENCE; let k = 0;
+    const type = () => {
+      k += Math.max(1, Math.round(full.length/95));
+      this.setState({reasonText: full.slice(0, k)});
+      if (k < full.length){ this._rt = setTimeout(type, 24); }
+      else { this.setState({reasonText: full, reasonDone: true}); }
+    };
+    this._rt = setTimeout(type, 480);
+  }
+  regenerateInference(){ this._reasonInit = true; this.streamInference(); }
+  approveInference(){
+    const d = new Date();
+    const hh = String(d.getHours()).padStart(2,'0'), mm = String(d.getMinutes()).padStart(2,'0');
+    this.setState({approved:true, approvedAt: hh+':'+mm+'Z'});
+  }
+
+  claudeInfo(){
+    const s = this.state.claude;
+    if (s==='online') return {label:'Claude · Online', sub:'streaming · attributed', dot:'var(--ok)', glow:'var(--ok-c)', desk:'Connected · MCP · data stays local', dot2:'var(--ok)'};
+    if (s==='deterministic') return {label:'Claude · Deterministic', sub:'cached · reproducible', dot:'var(--secondary)', glow:'var(--sec-container)', desk:'Deterministic replay · seed 0x1f'};
+    return {label:'Claude · Offline', sub:'local models only', dot:'var(--outline)', glow:'var(--high)', desk:'Offline · queued for sync'};
+  }
+
+  renderVals(){
+    const st = this.state;
+    const view = st.view;
+    const rowBase = 'display:flex;align-items:center;gap:11px;padding:8px 11px 8px 13px;border-radius:7px;cursor:pointer;position:relative;margin-bottom:2px;font:500 13px/1 "Inter Tight",sans-serif;transition:background .15s var(--e-out);';
+    const navSections = this.NAV.map(g => ({
+      group: g.group,
+      items: g.items.map(it => {
+        const active = view===it.id;
+        return {
+          label: it.label, icon: it.icon, badge: it.badge || '', active,
+          iconClass: active ? 'fill' : '',
+          rowStyle: rowBase + (active ? 'color:var(--ink);' : 'color:var(--ink2);'),
+          onClick: () => this.go(it.id),
+        };
+      })
+    }));
+
+    // Discovery stages
+    const rs = st.runStage;
+    const stages = this.STAGES.map((s, i) => {
+      const done = i < rs;
+      const running = i === rs && st.running;
+      const queued = i > rs || (!st.ranOnce);
+      let glyphStyle = 'width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;';
+      if (done) glyphStyle += 'background:var(--primary);';
+      else if (running) glyphStyle += 'background:var(--lowest);border:1px solid var(--hairline);';
+      else glyphStyle += 'background:var(--lowest);border:1px dashed var(--hairline);';
+      const detail = running ? (st.streamText||'') : (queued && !done ? s.detail : s.detail);
+      return {
+        label: s.label, claude: !!s.claude, ts: (done||running) ? s.ts : '—',
+        done, running, connector: i < this.STAGES.length-1,
+        titleColor: (done||running) ? 'var(--ink)' : 'var(--outline)',
+        detail,
+        rowStyle: 'display:flex;gap:14px;opacity:' + ((done||running) ? '1' : '.5') + ';transition:opacity .4s var(--e-out);',
+        glyphStyle,
+        showOut: done && !!s.out,
+        out: s.out, outIcon: s.outIcon, hash: s.hash,
+        onOut: () => { if (s.to) this.go(s.to); },
+      };
+    });
+    const doneCount = Math.min(rs, this.STAGES.length);
+    const runSummary = st.running ? ('RUNNING · ' + doneCount + '/' + this.STAGES.length) : (st.ranOnce ? ('COMPLETE · ' + this.STAGES.length + '/' + this.STAGES.length + ' · 24s') : 'READY');
+
+    // Factors
+    const factors = this.FACTORS.map(f => {
+      const pct = Math.round(f.val*100);
+      const good = f.invert ? (f.val < 0.2) : (f.val >= 0.8);
+      const mid = f.invert ? (f.val < 0.35) : (f.val >= 0.6);
+      const col = good ? 'var(--ok)' : (mid ? 'var(--warn)' : 'var(--risk)');
+      return {
+        label: f.label, note: f.note,
+        valText: f.invert ? (pct + '%') : f.val.toFixed(2),
+        valColor: col,
+        barStyle: 'height:100%;border-radius:3px;width:' + pct + '%;background:' + col + ';transition:width 1.1s var(--e-settle);',
+      };
+    });
+    const timeline = this.TIMELINE.map((t, i) => ({
+      date: t.date, title: t.title, detail: t.detail,
+      connector: i < this.TIMELINE.length-1,
+      dot: t.tone==='ok'?'var(--ok)':(t.tone==='warn'?'var(--warn)':(t.tone==='risk'?'var(--risk)':'var(--secondary)')),
+      rowStyle: 'display:flex;gap:11px;animation:ks-up .5s var(--e-out) both;animation-delay:' + (i*0.07) + 's;',
+    }));
+
+    // Evidence graph inspector
+    const selId = st.selectedNode;
+    let selNode = null;
+    if (selId){
+      const n = this.nodeById(selId);
+      if (n){
+        const cf = n.dispConf != null ? n.dispConf : n.conf;
+        selNode = {
+          id:n.id, label:n.label, typeLabel:this.TYPE_LABEL[n.type],
+          confText:cf.toFixed(2), confPct: Math.round(cf*100)+'%',
+          confBand: cf>=0.8?'high confidence':(cf>=0.63?'moderate confidence':'low confidence'),
+          confColor:'var('+this.confVar(cf)+')',
+          barStyle:'height:100%;border-radius:3px;width:'+Math.round(cf*100)+'%;background:var('+this.confVar(cf)+');transition:width .5s var(--e-settle);',
+          rel:n.rel, sources:n.sources, hasSources:n.sources.length>0,
+          contested:!!n.contested,
+          isSafety:n.type==='safety',
+          onContest:()=>this.contest(n.id),
+        };
+      }
+    }
+    // Reasoning pipeline
+    const streaming = !!st.reasonText && !st.reasonDone;
+    const attributionLabel = st.approved ? 'Signed into the record by you'
+      : (streaming ? 'Claude · drafting the inference' : (st.claude==='offline' ? 'Claude offline · last deterministic draft' : 'Claude · draft · awaiting your review'));
+    const attributionDot = st.approved ? 'var(--ok)' : (streaming ? 'var(--secondary)' : (st.claude==='offline' ? 'var(--outline)' : 'var(--warn)'));
+    const trace = this.TRACE.map((tr, i) => ({
+      t:tr.t, s:tr.s, link:tr.link,
+      icon: tr.risk ? 'error' : (tr.conf ? 'shield' : 'check_small'),
+      iconColor: tr.risk ? 'var(--risk)' : (tr.conf ? 'var(--secondary)' : 'var(--ok)'),
+      rowStyle: 'display:flex;gap:10px;align-items:flex-start;animation:ks-up .45s var(--e-out) both;animation-delay:'+(i*0.09)+'s;',
+    }));
+    const ledger = this.LEDGER.map((e) => ({
+      title:e.title, dot:'var(--ok)', titleColor:'var(--ink)', connector:true,
+      pending:false, showHash:true, hash:e.hash,
+      metaLine:'Signed · '+e.who+' · '+e.when,
+      rowStyle:'display:flex;gap:11px;',
+    }));
+    ledger.push(st.approved ? {
+      title:'Working inference', dot:'var(--ok)', titleColor:'var(--ink)', connector:false,
+      pending:false, showHash:true, hash:'2d55·8e13·f4',
+      metaLine:'Signed · PI · 2026-07-10 · '+(st.approvedAt||'10:44Z'),
+      rowStyle:'display:flex;gap:11px;animation:ks-stamp .5s var(--e-settle) both;',
+    } : {
+      title:'Working inference', dot:'var(--warn)', titleColor:'var(--ink2)', connector:false,
+      pending:true, showHash:false, hash:'',
+      metaLine:'Drafted by Claude · not yet in record',
+      rowStyle:'display:flex;gap:11px;',
+    });
+    const c = this.claudeInfo();
+    const otherMap = {};
+    // Protein domain architecture (LRRK2, 2527 aa)
+    const protLen = 2527;
+    const domainSegs = this.DOMAINS.map(d => ({ name:d.name, active:!!d.active, flex:String(d.b-d.a),
+      segStyle:'flex:'+(d.b-d.a)+';min-width:0;height:26px;border-radius:3px;display:flex;align-items:center;justify-content:center;overflow:hidden;'+(d.active?'background:var(--ink);color:var(--paper);':'background:var(--high);color:var(--ink2);')+'font:500 10px/1 \"JetBrains Mono\",monospace;letter-spacing:.04em;' }));
+    const g2019sLeft = (2019/protLen*100).toFixed(1)+'%';
+    const o = otherMap[view] || {icon:'science',eye:'',title:'Keystone'};
+    const fi = (this.props.fieldIntegrity != null ? this.props.fieldIntegrity : 84.2);
+    const bandLabel = fi>=80?'HIGH':(fi>=60?'MODERATE':(fi>=40?'GUARDED':'LOW'));
+    const bandRange = (Math.round(fi)-6) + '–' + (Math.round(fi)+5);
+    const chipNum = fi.toFixed(1);
+
+    // Decision engine
+    const maxGain = 0.5, maxCost = 10;
+    let experiments = this.EXPERIMENTS.map((e, i) => {
+      const gainBand = e.gain>=0.35 ? 'HIGH GAIN' : (e.gain>=0.2 ? 'MODERATE' : 'LOW GAIN');
+      return {
+        title:e.title, reduces:e.reduces, rationale:e.rationale, costLabel:e.costLabel,
+        rank: i+1, gainBand, gainText: e.gain.toFixed(2),
+        gainColor: e.gain>=0.35 ? 'var(--ok)' : (e.gain>=0.2 ? 'var(--warn)' : 'var(--outline)'),
+        barStyle: 'height:100%;border-radius:3px;background:var(--ink);width:'+Math.round(e.gain/maxGain*100)+'%;transition:width .8s var(--e-settle);',
+        dotStyle: 'position:absolute;left:'+(e.cost/maxCost*82+9)+'%;bottom:'+(e.gain/maxGain*70+14)+'%;transform:translate(-50%,50%);',
+        value: e.gain/e.cost, best:false,
+      };
+    });
+    const bestV = experiments.reduce((a,b)=> b.value>a.value ? b : a, experiments[0]);
+    experiments.forEach(e => { e.best = (e===bestV); e.dotFill = e.best ? 'var(--ink)' : 'var(--lowest)'; e.dotTextColor = e.best ? 'var(--on-primary)' : 'var(--ink)'; });
+    const bestTitle = bestV.title;
+
+    // Frontier Guard
+    const screens = this.SCREENS.map((s, i) => ({
+      name:s.name, note:s.note,
+      icon: s.status==='pass' ? 'check_circle' : (s.status==='flag' ? 'flag' : 'error'),
+      color: s.status==='pass' ? 'var(--ok)' : (s.status==='flag' ? 'var(--warn)' : 'var(--risk)'),
+      label: s.status==='pass' ? 'PASS' : (s.status==='flag' ? 'FLAGGED' : 'FAIL'),
+      rowStyle: 'display:flex;gap:14px;align-items:flex-start;padding:15px 20px;' + (i < this.SCREENS.length-1 ? 'border-bottom:1px solid var(--hairline);' : ''),
+    }));
+    const gate = this.GATE.map(g => ({...g}));
+
+    return {
+      noop: () => {},
+      theme: st.theme, themeIcon: st.theme==='light' ? 'dark_mode' : 'light_mode',
+      claude: c,
+      navSections,
+      isDiscovery: view==='discovery', isIntegrity: view==='integrity', isEvidence: view==='evidence', isReasoning: view==='reasoning',
+      isDecision: view==='decision', isFrontier: view==='frontier', isProtein: view==='protein', isGrant: view==='grant',
+      isOther: !['discovery','integrity','evidence','reasoning','decision','frontier','protein','grant'].includes(view),
+      experiments, bestTitle, screens, refusal: this.REFUSAL, gate,
+      grantSections: this.GRANT_SECTIONS, bandLabelG: bandLabel,
+      downloadPackage: () => this.downloadPackage(), printPackage: () => this.printPackage(),
+      exportIdle: st.exportState==='idle', exportPreparing: st.exportState==='preparing', exportDone: st.exportState==='done',
+      exportLabel: st.exportState==='preparing' ? 'Assembling package…' : (st.exportState==='done' ? 'Package.pdf ready' : 'Download package'),
+      setProtein: this._setProtein, domainSegs, g2019sLeft,
+      isSchematic: st.proteinMode==='schematic', isStructure: st.proteinMode==='structure',
+      setSchematic: () => this.setProteinMode('schematic'), setStructure: () => this.setProteinMode('structure'),
+      schematicStyle: this.segToggle(st.proteinMode==='schematic'), structureStyle: this.segToggle(st.proteinMode==='structure'),
+      setGraph: this._setGraph, selNode, hasSel: !!selNode, noSel: !selNode,
+      resetGraph: () => this.resetGraphView(),
+      nodeCount: this.NODES.length, edgeCount: this.EDGES.length,
+      setReason: this._setReason, premises: this.PREMISES, trace, ledger,
+      inferenceText: st.reasonText, inferenceStreaming: streaming, inferenceDone: st.reasonDone,
+      approved: st.approved, pendingReview: st.reasonDone && !st.approved,
+      attributionLabel, attributionDot, isOffline: st.claude==='offline',
+      approveInference: () => this.approveInference(), regenerateInference: () => this.regenerateInference(),
+      approvedAt: st.approvedAt,
+      otherIcon:o.icon, otherEyebrow:o.eye, otherTitle:o.title,
+      goIntegrity: () => this.go('integrity'), goGrant: () => this.go('grant'),
+      goFrontier: () => this.go('frontier'),
+      // discovery
+      stages, runSummary,
+      runDiscovery: () => this.runDiscovery(),
+      runIcon: st.running ? 'pause' : 'replay', runLabel: st.running ? 'Running' : 'Re-run',
+      // integrity
+      setGauge: this._setGauge,
+      setNum: this._setNum,
+      factors, timeline,
+      settleLabel: st.intSettled ? 'SETTLED · HUMAN-REVIEWABLE' : 'SETTLING FROM UNCERTAINTY',
+      settleColor: st.intSettled ? 'var(--ok)' : 'var(--secondary)',
+      settleDot: st.intSettled ? 'var(--ok)' : 'var(--warn)',
+      bandLabel, bandRange, chipNum,
+      claudePill: st.liveClaude ? {label:'CLAUDE · LIVE', color:'var(--claude-live)'} : {label:'CLAUDE · DETERMINISTIC', color:'var(--claude-det)'},
+      toggleClaudeLive: () => this.toggleClaudeLive(),
+      footPrefix: 'CROSSREF · OPENALEX · RETRACTION WATCH · CELLOSAURUS · 10:42Z · ',
+      footRuntime: st.liveClaude ? 'LIVE' : 'LOCAL',
+      footRuntimeColor: st.liveClaude ? 'var(--claude-live)' : 'var(--secondary)',
+      fiHover: st.fiHover,
+      fiEnter: () => this.setState({ fiHover: true }),
+      fiLeave: () => this.setState({ fiHover: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

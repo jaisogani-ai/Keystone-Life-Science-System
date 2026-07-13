@@ -9,8 +9,36 @@ from __future__ import annotations
 
 import html
 import math
+import re
 
 from keystone.core import EvidenceGraph
+
+
+_DISC_STOP = {"the", "a", "an", "of", "in", "on", "and", "for", "role", "high",
+              "inhibition", "targeting", "high", "via", "to", "by", "with"}
+
+
+def _disc_label(node) -> str:
+    """Compact human-readable token for inside the node disc — a real gene/marker
+    symbol when present, else the first meaningful (non-stopword) term. NEVER the id."""
+    text = (getattr(node, "text", "") or "").split(" — ")[0]
+    text = re.sub(r"^\s*(RETRACTED ARTICLE:?|RETRACTED:?)\s*", "", text, flags=re.I)
+    words = [w.strip(",.:;()") for w in re.split(r"\s+", text) if w.strip(",.:;()")]
+    for w in words[:6]:                       # prefer a gene/marker token (CTSB, MMP-9, U-87MG)
+        if re.match(r"^[A-Z0-9][A-Za-z0-9\-]{1,8}$", w) and (any(c.isupper() for c in w[1:]) or re.match(r"^[A-Z0-9\-]{2,9}$", w)):
+            return w[:9]
+    for w in words:                           # else first meaningful non-stopword
+        if w.lower() not in _DISC_STOP and len(w) > 2:
+            return w[:9]
+    nt = getattr(node, "node_type", None)
+    return words[0][:9] if words else (nt.value[:6] if nt else "node")
+
+
+def _title_label(node, limit: int = 30) -> str:
+    """Real node title (from node.text) truncated for the below-disc caption."""
+    text = (getattr(node, "text", "") or "").strip()
+    text = re.sub(r"^\s*RETRACTED ARTICLE:?\s*", "RETRACTED: ", text, flags=re.I)
+    return (text[:limit - 1] + "…") if len(text) > limit else text
 
 
 def _doubt_color(doubt: float) -> str:
@@ -59,7 +87,14 @@ def evidence_graph_svg(graph: EvidenceGraph, width: int = 820,
             col, dash = "#06d6a0", ""
         else:
             col, dash = "#5b6b8c", ""
-        parts.append(f'<line x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" '
+        # data-* attributes let the living-graph module (lib/graph.js) illuminate
+        # a selected node's edges and trace doubt along load-bearing reliance —
+        # purely presentational; no number is computed in the browser.
+        parts.append(f'<line class="ks-edge" data-src="{html.escape(e.src)}" '
+                     f'data-dst="{html.escape(e.dst)}" '
+                     f'data-etype="{e.edge_type.value}" '
+                     f'data-load="{e.load_bearing.point:.2f}" '
+                     f'x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" '
                      f'y2="{y2:.0f}" stroke="{col}" stroke-width="{w:.1f}"{dash} '
                      f'opacity="0.8"/>')
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
@@ -71,7 +106,11 @@ def evidence_graph_svg(graph: EvidenceGraph, width: int = 820,
         x, y = pos[nid]
         node = graph.nodes[nid]
         col = _doubt_color(node.doubt.point)
-        parts.append(f'<g data-node="{html.escape(nid)}" style="cursor:pointer">')
+        parts.append(f'<g class="ks-node" data-node="{html.escape(nid)}" '
+                     f'data-type="{node.node_type.value}" '
+                     f'data-doubt="{node.doubt.point:.2f}" '
+                     f'data-retracted="{"1" if node.retracted else "0"}" '
+                     f'style="cursor:pointer">')
         if node.retracted:
             parts.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="30" fill="none" '
                          f'stroke="#ff5d5d" stroke-width="3" stroke-dasharray="4 3"/>')
@@ -80,11 +119,14 @@ def evidence_graph_svg(graph: EvidenceGraph, width: int = 820,
                          f'stroke="#ffd166" stroke-width="2"/>')
         parts.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="22" fill="{col}" '
                      f'stroke="#0f1117" stroke-width="2"/>')
-        parts.append(f'<text x="{x:.0f}" y="{y+4:.0f}" fill="#0f1117" '
-                     f'font-size="9" font-weight="bold" text-anchor="middle">'
-                     f'{html.escape(nid.replace("N_", ""))}</text>')
-        parts.append(f'<text x="{x:.0f}" y="{y+38:.0f}" fill="#cfcfcf" '
+        parts.append(f'<text x="{x:.0f}" y="{y+3:.0f}" fill="#0f1117" '
+                     f'font-size="8.5" font-weight="bold" text-anchor="middle">'
+                     f'{html.escape(_disc_label(node))}</text>')
+        parts.append(f'<text x="{x:.0f}" y="{y+37:.0f}" fill="#e8ecf3" '
                      f'font-size="8.5" text-anchor="middle">'
+                     f'{html.escape(_title_label(node))}</text>')
+        parts.append(f'<text x="{x:.0f}" y="{y+47:.0f}" fill="#9aa4bd" '
+                     f'font-size="7.5" text-anchor="middle">'
                      f'doubt {node.doubt.point:.2f}</text>')
         parts.append('</g>')
     parts.append('</svg>')
@@ -156,12 +198,18 @@ def genome_track_svg(variants: list, gene: str, width: int = 820) -> str:
              f'<text x="{x0}" y="{y+26}" fill="#8d99ae" font-size="9">{lo:,}</text>',
              f'<text x="{x1}" y="{y+26}" fill="#8d99ae" font-size="9" '
              f'text-anchor="end">{hi:,}</text>']
-    for v in placed:
+    for i, v in enumerate(placed):
         x = px(v["coord"]["start"])
         c = sig_color(v.get("significance"))
+        # each variant is a selectable group (lib/selection.js binds to data-variant)
+        # so the genome track syncs with the rest of the connected workbench.
+        parts.append(f'<g class="ks-variant" data-variant="{i}" '
+                     f'data-sig="{html.escape((v.get("significance") or "").lower())}" '
+                     f'data-pos="{v["coord"]["start"]}" style="cursor:pointer">')
         parts.append(f'<line x1="{x:.0f}" y1="{y-14}" x2="{x:.0f}" y2="{y+14}" '
                      f'stroke="{c}" stroke-width="2"/>')
         parts.append(f'<circle cx="{x:.0f}" cy="{y-14}" r="4" fill="{c}"/>')
+        parts.append('</g>')
     parts.append('</svg>')
     return "\n".join(parts)
 

@@ -1,0 +1,20 @@
+{
+  "question": "State of the patient-derived-organoid drug-screening literature",
+  "seed_doi": "",
+  "captured": "2026-07-10",
+  "provenance": "ALL 12 records are ILLUSTRATIVE synthetic records (doi prefix 10.9999/*, marked illustrative:true) that demonstrate the evidence-scan detectors on realistic organoid drug-screening themes. None is a real publication; Keystone badges every one as illustrative and never presents it as a real DOI. The frontier scorecard rates a described study's rigor, not these DOIs.",
+  "records": [
+    {"doi": "10.9999/pdo-kras-01", "illustrative": true, "title": "KRAS mutation promotes organoid resistance to MEK inhibition in colorectal PDOs", "year": 2019, "cited_by_count": 210},
+    {"doi": "10.9999/pdo-kras-02", "illustrative": true, "title": "KRAS status inhibits response prediction accuracy in unmatched organoid screens", "year": 2021, "cited_by_count": 95},
+    {"doi": "10.9999/pdo-tp53-03", "illustrative": true, "title": "TP53 loss promotes chemoresistance across patient-derived organoids", "year": 2020, "cited_by_count": 160},
+    {"doi": "10.9999/pdo-tp53-04", "illustrative": true, "title": "TP53 wild-type organoids inhibit apoptosis under standard dosing", "year": 2022, "cited_by_count": 70},
+    {"doi": "10.9999/pdo-auth-05", "illustrative": true, "title": "STR authentication and passage control in colorectal organoid biobanks", "year": 2021, "cited_by_count": 130},
+    {"doi": "10.9999/pdo-matched-06", "illustrative": true, "title": "Matched-normal organoid controls improve drug-response specificity", "year": 2020, "cited_by_count": 118},
+    {"doi": "10.9999/pdo-matrigel-07", "illustrative": true, "title": "Matrigel batch effects confound organoid viability readouts", "year": 2022, "cited_by_count": 88},
+    {"doi": "10.9999/pdo-screen-08", "illustrative": true, "title": "High-throughput drug screening in pancreatic patient-derived organoids", "year": 2021, "cited_by_count": 175},
+    {"doi": "10.9999/pdo-blinding-09", "illustrative": true, "title": "Blinded scoring reduces bias in organoid response assays", "year": 2023, "cited_by_count": 42},
+    {"doi": "10.9999/pdo-solo-10", "illustrative": true, "title": "SMAD4 loss defines a single-cohort organoid response signature", "year": 2023, "cited_by_count": 5},
+    {"doi": "10.9999/pdo-solo-11", "illustrative": true, "title": "Viability-readout orthogonal validation for organoid drug screens", "year": 2024, "cited_by_count": 3},
+    {"doi": "10.9999/pdo-review-12", "illustrative": true, "title": "Reproducibility standards for patient-derived-organoid drug screening", "year": 2023, "cited_by_count": 64}
+  ]
+}

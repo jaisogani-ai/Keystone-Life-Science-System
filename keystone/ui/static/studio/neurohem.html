@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-25..0&display=swap" rel="stylesheet">
+<style>
+:root{
+ --paper:#fcf8f9; --lowest:#ffffff; --low:#f6f3f4; --container:#f0edee; --high:#eae7e8; --highest:#e5e2e3;
+ --ink:#1c1b1c; --ink2:#45464c; --outline:#76777c; --hairline:#d7d4d5;
+ --primary:#030611; --on-primary:#ffffff; --secondary:#505f76; --sec-container:#dce7fb; --on-sec-container:#3c4b62;
+ --ok:#1f6f52; --ok-c:#e6efe9; --warn:#9a6a1e; --warn-c:#f3ecdd; --risk:#ba1a1a; --risk-c:#f7e4e2;
+ --accent:#1f6f52; --nav-accent:#5f5a76; --claude-det:#b7791f; --claude-live:#6b4bd6;
+ --e-out:cubic-bezier(.22,.61,.36,1); --e-settle:cubic-bezier(.4,0,.2,1);
+}
+[data-theme="dark"]{
+ --paper:#131417; --lowest:#1b1c20; --low:#17181c; --container:#1f2126; --high:#282a30; --highest:#31333a;
+ --ink:#ecebe6; --ink2:#a6a5aa; --outline:#7c7d83; --hairline:#31323a;
+ --primary:#e8eaf3; --on-primary:#0b0d13; --secondary:#9db0ca; --sec-container:#26303d; --on-sec-container:#bccce6;
+ --ok:#57b48c; --ok-c:#16241d; --warn:#d3a552; --warn-c:#271f12; --risk:#e2756c; --risk-c:#2b1514;
+ --accent:#57b48c; --nav-accent:#a7a1cb; --claude-det:#ffd166; --claude-live:#a68bff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%}
+body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--secondary);text-decoration:none}
+a:hover{color:var(--ink)}
+.ms{font-family:"Material Symbols Outlined";font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-feature-settings:"liga";-webkit-font-smoothing:antialiased;font-variation-settings:"FILL" 0,"wght" 300,"GRAD" -25,"opsz" 24;user-select:none}
+.ms.fill{font-variation-settings:"FILL" 1,"wght" 400,"GRAD" 0,"opsz" 24}
+input,button{font-family:inherit}
+input:focus{outline:none}
+::selection{background:var(--high);color:var(--ink)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-thumb{background:var(--hairline);border-radius:9px;border:3px solid var(--paper);background-clip:padding-box}
+::-webkit-scrollbar-thumb:hover{background:var(--outline);border:3px solid var(--paper);background-clip:padding-box}
+::-webkit-scrollbar-track{background:transparent}
+@keyframes ks-spin{to{transform:rotate(360deg)}}
+@keyframes ks-hash{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes ks-up{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes ks-caret{0%,100%{opacity:0}50%{opacity:1}}
+@keyframes ks-fadein{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</helmet>
+
+<div data-screen-label="NeuroHem — ICH discovery" data-theme="{{ theme }}" style="height:100vh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);overflow:hidden">
+
+  <!-- ===== TOP BAR ===== -->
+  <header style="height:56px;flex:none;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 20px;border-bottom:1px solid var(--hairline);background:var(--paper);z-index:20">
+    <div style="display:flex;align-items:center;gap:16px;min-width:0;overflow:hidden">
+      <span style="font:500 22px/1 Newsreader,serif;letter-spacing:-.02em;color:var(--ink);flex:none">Keystone</span>
+      <span style="width:1px;height:22px;background:var(--hairline);flex:none"></span>
+    </div>
+
+    <div style="flex:1;min-width:0;max-width:360px;display:flex;align-items:center;gap:9px;padding:0 12px;height:34px;border:1px solid var(--hairline);border-radius:7px;background:var(--lowest)" style-focus="border-color:var(--primary)">
+      <span class="ms" style="font-size:17px;color:var(--outline)">search</span>
+      <input placeholder="Ask, search, or paste an identifier — gene, trial ID, DOI, UniProt" style="flex:1;border:none;background:transparent;color:var(--ink);font:400 13px/1 'Inter Tight',sans-serif;min-width:0">
+      <span style="font:500 10px/1 'JetBrains Mono',monospace;color:var(--outline);border:1px solid var(--hairline);border-radius:4px;padding:3px 5px">⌘K</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px">
+      <button onClick="{{ fiClick }}" style-hover="background:var(--high)" style="display:flex;align-items:center;gap:9px;padding:4px 11px;border:1px solid var(--hairline);border-radius:7px;background:transparent;cursor:pointer;color:var(--ink)">
+        <span style="display:flex;flex-direction:column;align-items:flex-start;gap:3px;white-space:nowrap">
+          <span style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--secondary)">FIELD INTEGRITY</span>
+          <span style="font:500 12px/1 'Inter Tight',sans-serif;color:var(--ink)">{{ fi.band }} <span style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--ink2);font-variant-numeric:tabular-nums">· {{ fi.text }}</span></span>
+        </span>
+        <span style="display:flex;align-items:flex-end;gap:2px;height:16px">
+          <span style="width:2px;height:6px;background:var(--hairline);border-radius:2px"></span>
+          <span style="width:2px;height:10px;background:var(--outline);border-radius:2px"></span>
+          <span style="width:2px;height:8px;background:var(--hairline);border-radius:2px"></span>
+          <span style="width:2px;height:13px;background:var(--warn);border-radius:2px"></span>
+          <span style="width:2px;height:11px;background:var(--outline);border-radius:2px"></span>
+        </span>
+      </button>
+
+      <button title="How to read this page: Claude writes prose; the deterministic engine owns every number. Verified never means true." style-hover="background:var(--high);color:var(--ink)" style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid var(--hairline);border-radius:7px;background:transparent;color:var(--ink2);cursor:pointer">
+        <span class="ms" style="font-size:18px">help</span>
+      </button>
+
+      <button onClick="{{ toggleTheme }}" title="Toggle instrument mode" style-hover="background:var(--high);color:var(--ink)" style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid var(--hairline);border-radius:7px;background:transparent;color:var(--ink2);cursor:pointer">
+        <span class="ms" style="font-size:19px">{{ themeIcon }}</span>
+      </button>
+
+      <button onClick="{{ exportClick }}" style-hover="opacity:.9" style="display:flex;align-items:center;gap:7px;padding:0 14px;height:34px;border:none;border-radius:7px;background:var(--primary);color:var(--on-primary);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif">
+        <span class="ms" style="font-size:17px">ios_share</span>Export
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== BODY ===== -->
+  <div style="flex:1;display:flex;min-height:0">
+
+    <!-- LEFT RAIL -->
+    <aside style="width:250px;flex:none;border-right:1px solid var(--hairline);background:var(--low);display:flex;flex-direction:column;overflow:hidden">
+      <div style="padding:18px 18px 14px;border-bottom:1px solid var(--hairline);position:relative">
+        <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary);margin-bottom:9px">ACTIVE PROGRAM</div>
+        <button onClick="{{ toggleMenu }}" style-hover="background:var(--high)" style="width:100%;display:flex;align-items:center;gap:11px;padding:0;border:none;background:transparent;cursor:pointer;text-align:left;border-radius:7px">
+          <div style="width:38px;height:38px;border-radius:7px;flex:none;background:var(--highest);border:1px solid var(--hairline);display:flex;align-items:center;justify-content:center">
+            <span class="ms" style="font-size:20px;color:var(--secondary)">neurology</span>
+          </div>
+          <div style="min-width:0;flex:1">
+            <div style="font:500 14px/1.2 'Inter Tight',sans-serif;color:var(--ink)">ICH · Intracerebral hemorrhage</div>
+            <div style="font:400 11px/1.3 'Inter Tight',sans-serif;color:var(--secondary)">Secondary injury · deterministic snapshot</div>
+          </div>
+          <span class="ms" style="font-size:18px;color:var(--outline);flex:none">unfold_more</span>
+        </button>
+
+        <sc-if value="{{ menuOpen }}">
+        <div style="position:absolute;left:14px;right:14px;top:calc(100% - 6px);z-index:40;padding:6px;border:1px solid var(--hairline);border-radius:9px;background:var(--lowest);box-shadow:0 12px 30px rgba(3,6,17,.16);animation:ks-fadein .15s var(--e-out) both">
+          <sc-for list="{{ programs }}" as="p" hint-placeholder-count="3">
+            <div onClick="{{ p.onClick }}" style="{{ p.rowStyle }}" style-hover="background:var(--high)">
+              <span style="flex:1;min-width:0">
+                <span style="display:block;font:500 12px/1.3 'Inter Tight',sans-serif;color:var(--ink)">{{ p.name }}</span>
+                <span style="display:block;font:400 10px/1.3 'JetBrains Mono',monospace;color:var(--secondary)">{{ p.sub }}</span>
+              </span>
+              <sc-if value="{{ p.active }}"><span class="ms fill" style="font-size:16px;color:var(--nav-accent)">check_circle</span></sc-if>
+            </div>
+          </sc-for>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ programNoteShow }}">
+        <div style="margin-top:10px;font:400 10px/1.4 'JetBrains Mono',monospace;color:var(--warn)">{{ programNote }}</div>
+        </sc-if>
+
+      </div>
+
+      <nav style="flex:1;overflow-y:auto;padding:14px 12px">
+        <sc-for list="{{ nav }}" as="sec" hint-placeholder-count="2">
+          <div style="margin-bottom:18px">
+            <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.13em;color:var(--outline);padding:0 10px;margin-bottom:8px">{{ sec.group }}</div>
+            <sc-for list="{{ sec.items }}" as="it" hint-placeholder-count="3">
+              <div onClick="{{ it.onClick }}" style="{{ it.rowStyle }}" style-hover="background:var(--high)">
+                <sc-if value="{{ it.active }}"><span style="position:absolute;left:0;top:6px;bottom:6px;width:2px;border-radius:2px;background:var(--nav-accent)"></span></sc-if>
+                <span style="font:500 9px/1 'JetBrains Mono',monospace;color:var(--secondary);flex:none;width:18px">{{ it.step }}</span>
+                <span style="flex:1">{{ it.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+
+      </nav>
+    </aside>
+
+    <!-- MAIN CANVAS -->
+    <main ref="{{ mainRef }}" style="flex:1;overflow-y:auto;position:relative;background:var(--paper)">
+      <div style="max-width:1080px;margin:0 auto;padding:48px 56px 96px">
+
+        <!-- INTRO -->
+        <div style="animation:ks-up .5s var(--e-out) both">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:var(--secondary)">DISCOVERY RUN</span>
+            <span style="width:16px;height:1px;background:var(--hairline)"></span>
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--outline)">PD-ICH-01 · RUN 0071</span>
+          </div>
+          <h1 style="font:400 46px/1.06 Newsreader,serif;letter-spacing:-.015em;color:var(--ink);margin:0 0 20px;max-width:19ch">Secondary injury after intracerebral hemorrhage</h1>
+          <p style="font:400 19px/1.62 Newsreader,serif;color:var(--ink2);margin:0 0 26px;max-width:66ch">Keystone assembles the case for a program from primary literature, registered trials, and structured pathways — assigning provenance to every claim before a single conclusion is drawn. Nothing below is asserted without a source you can open.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--hairline);border-radius:9px;overflow:hidden;background:var(--lowest);margin-bottom:26px">
+            <div style="flex:1;min-width:150px;padding:14px 18px;border-right:1px solid var(--hairline)">
+              <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:6px">TARGET</div>
+              <div style="font:400 14px/1.2 'JetBrains Mono',monospace;color:var(--ink)">Thrombin · PAR-1 (F2R)</div>
+            </div>
+            <div style="flex:1;min-width:150px;padding:14px 18px;border-right:1px solid var(--hairline)">
+              <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:6px">MODALITY</div>
+              <div style="font:400 14px/1.2 'JetBrains Mono',monospace;color:var(--ink)">PAR-1 antagonist</div>
+            </div>
+            <div style="flex:1;min-width:150px;padding:14px 18px;border-right:1px solid var(--hairline)">
+              <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:6px">BIOMARKER</div>
+              <div style="font:400 14px/1.2 'JetBrains Mono',monospace;color:var(--ink)">Perihematomal edema vol.</div>
+            </div>
+            <div style="flex:1;min-width:150px;padding:14px 18px">
+              <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:6px">UPDATED</div>
+              <div style="font:400 14px/1.2 'JetBrains Mono',monospace;color:var(--ink)">2m ago · you</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border:1px solid var(--warn);background:var(--warn-c);border-radius:9px;margin-bottom:44px">
+            <span class="ms" style="font-size:18px;color:var(--warn);flex:none;margin-top:1px">info</span>
+            <div style="font:400 12.5px/1.6 'Inter Tight',sans-serif;color:var(--ink2)">This is a <strong style="font-weight:600;color:var(--ink)">deterministic snapshot</strong> over public literature (Crossref · OpenAlex · ClinicalTrials.gov), seed 0x71 — not a live fetch. Claude drafts the prose and judgments; the deterministic engine owns every number. Nothing here claims a conclusion is <em>true</em> — only how well it is <em>sourced</em>. Press <strong style="font-weight:600;color:var(--ink)">Resolve</strong> or <strong style="font-weight:600;color:var(--ink)">Run live reasoning</strong> to query live services.</div>
+          </div>
+        </div>
+
+        <!-- ============ 01 · BRING A QUESTION ============ -->
+        <section ref="{{ refBring }}" data-screen-label="01 Bring a question" style="padding-bottom:58px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary)">01 · BRING A QUESTION OR EVIDENCE</span>
+          </div>
+          <h2 style="font:500 27px/1.15 Newsreader,serif;color:var(--ink);margin:0 0 8px">Start from a question — or evidence you already trust</h2>
+          <p style="font:400 15px/1.6 'Inter Tight',sans-serif;color:var(--ink2);margin:0 0 22px;max-width:70ch">Paste a DOI, a trial ID, a UniProt accession, or a plain-language question. Keystone resolves each against public connectors and pins provenance before anything enters the case.</p>
+
+          <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap">
+            <div style="flex:1;min-width:280px;display:flex;align-items:center;gap:10px;padding:0 14px;height:46px;border:1px solid var(--hairline);border-radius:8px;background:var(--lowest)" style-focus="border-color:var(--primary)">
+              <span class="ms" style="font-size:19px;color:var(--outline)">edit_note</span>
+              <input value="Does early PAR-1 antagonism reduce perihematomal edema after ICH?" style="flex:1;border:none;background:transparent;color:var(--ink);font:400 14px/1 'Inter Tight',sans-serif;min-width:0">
+            </div>
+            <button onClick="{{ resolveConnectors }}" style-hover="opacity:.92" style="display:flex;align-items:center;gap:8px;padding:0 18px;height:46px;border:none;border-radius:8px;background:var(--primary);color:var(--on-primary);cursor:pointer;font:500 14px/1 'Inter Tight',sans-serif;flex:none">
+              <sc-if value="{{ resolving }}"><span style="width:14px;height:14px;border-radius:50%;border:1.8px solid rgba(255,255,255,.4);border-top-color:var(--on-primary);animation:ks-spin .8s linear infinite;display:block"></span></sc-if>
+              <sc-if value="{{ notResolving }}"><span class="ms" style="font-size:18px">travel_explore</span></sc-if>
+              {{ resolveLabel }}
+            </button>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px">
+            <sc-for list="{{ connectors }}" as="c" hint-placeholder-count="8">
+              <div style="display:flex;align-items:center;gap:10px;padding:11px 13px;border:1px solid var(--hairline);border-radius:8px;background:var(--lowest)">
+                <span style="width:8px;height:8px;border-radius:50%;background:{{ c.dotColor }};flex:none"></span>
+                <div style="min-width:0;flex:1">
+                  <div style="font:500 12px/1.25 'Inter Tight',sans-serif;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.name }}</div>
+                  <div style="font:400 10px/1.3 'JetBrains Mono',monospace;color:var(--secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.sub }}</div>
+                </div>
+                <span style="font:500 10px/1 'JetBrains Mono',monospace;color:{{ c.countColor }};flex:none">{{ c.countText }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ connErrShow }}">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 15px;border:1px solid var(--risk);background:var(--risk-c);border-radius:8px;margin-bottom:18px">
+            <span class="ms" style="font-size:18px;color:var(--risk);flex:none">cloud_off</span>
+            <span style="flex:1;font:400 12px/1.5 'Inter Tight',sans-serif;color:var(--ink2)">{{ connErr }}</span>
+            <button onClick="{{ resolveConnectors }}" style-hover="background:var(--high)" style="display:flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--risk);border-radius:6px;background:transparent;color:var(--risk);cursor:pointer;font:500 12px/1 'Inter Tight',sans-serif;flex:none"><span class="ms" style="font-size:15px">refresh</span>Retry</button>
+          </div>
+          </sc-if>
+
+          <div style="display:flex;align-items:flex-start;gap:11px;padding:14px 16px;border:1px dashed var(--hairline);border-radius:8px;background:var(--low)">
+            <span class="ms" style="font-size:18px;color:var(--secondary);flex:none;margin-top:1px">gpp_maybe</span>
+            <div style="font:400 12.5px/1.6 'Inter Tight',sans-serif;color:var(--ink2)"><strong style="font-weight:600;color:var(--ink)">Absence of a match is not evidence of novelty.</strong> Cellosaurus returns no ICH-specific line — that is a gap in coverage, not a green light. Every source is screened against Retraction Watch on the way in.</div>
+          </div>
+        </section>
+
+        <!-- ============ 02 · WHAT YOU'RE BUILDING ON ============ -->
+        <section ref="{{ refGround }}" data-screen-label="02 What you are building on" style="padding-bottom:58px;border-top:1px solid var(--hairline);padding-top:44px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary)">02 · WHAT YOU'RE BUILDING ON</span>
+          </div>
+          <h2 style="font:500 27px/1.15 Newsreader,serif;color:var(--ink);margin:0 0 18px">The evidence — and how far to trust it</h2>
+
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:14px 16px;border:1px solid var(--hairline);border-radius:9px;background:var(--lowest);margin-bottom:22px">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-right:4px">CAUSAL CHAIN</span>
+            <sc-for list="{{ chain }}" as="n" hint-placeholder-count="5">
+              <span style="{{ n.chipStyle }}">{{ n.t }}</span>
+              <sc-if value="{{ n.arrow }}"><span class="ms" style="font-size:16px;color:var(--outline)">arrow_forward</span></sc-if>
+            </sc-for>
+            <span style="flex:1"></span>
+            <span style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--outline)">12 nodes · 18 links · 1 excluded</span>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start">
+            <!-- evidence list -->
+            <div>
+              <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--secondary);margin-bottom:12px">PROVENANCE · 5 SOURCES</div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <sc-for list="{{ evidence }}" as="e" hint-placeholder-count="5">
+                  <div style="{{ e.cardStyle }}">
+                    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px">
+                      <span style="font:500 12px/1.3 'JetBrains Mono',monospace;color:{{ e.srcColor }}">{{ e.src }} <span style="color:var(--secondary)">· {{ e.id }} · {{ e.year }}</span></span>
+                      <span style="font:400 15px/1 'JetBrains Mono',monospace;color:{{ e.confColor }};font-variant-numeric:tabular-nums;flex:none">{{ e.confText }}</span>
+                    </div>
+                    <p style="font:400 15px/1.5 Newsreader,serif;color:{{ e.evColor }};margin:0 0 11px">{{ e.ev }}</p>
+                    <div style="display:flex;align-items:center;gap:12px">
+                      <span style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:{{ e.tagColor }};background:{{ e.tagBg }};border-radius:4px;padding:4px 7px">{{ e.tag }}</span>
+                      <div style="flex:1;height:4px;border-radius:3px;background:var(--high);overflow:hidden"><div style="{{ e.barStyle }}"></div></div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;margin-top:14px;padding:10px 14px;border:1px solid var(--risk);border-radius:8px;background:var(--risk-c)">
+                <span class="ms" style="font-size:17px;color:var(--risk)">block</span>
+                <span style="font:500 11px/1.4 'Inter Tight',sans-serif;color:var(--ink)">Retraction Watch: 1 of 5 sources retracted — <span style="color:var(--risk)">excluded from every conclusion</span>. Verified never means true.</span>
+              </div>
+            </div>
+
+            <!-- integrity panel -->
+            <div style="border:1px solid var(--hairline);border-radius:12px;background:var(--lowest);padding:22px 22px 20px;position:sticky;top:8px">
+              <div style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary);margin-bottom:14px">FIELD INTEGRITY · COMPUTED</div>
+              <div style="display:flex;align-items:flex-end;gap:12px;margin-bottom:6px">
+                <span style="font:400 52px/0.9 Newsreader,serif;letter-spacing:-.01em;color:var(--ink);font-variant-numeric:tabular-nums">{{ fi.text }}</span>
+                <span style="font:400 14px/1 'JetBrains Mono',monospace;color:var(--outline);padding-bottom:6px">/100</span>
+                <span style="flex:1"></span>
+                <span style="font:500 11px/1 'Inter Tight',sans-serif;color:{{ fi.bandColor }};background:{{ fi.bandBg }};border-radius:5px;padding:5px 9px;margin-bottom:5px">{{ fi.band }}</span>
+              </div>
+              <div style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--secondary);margin-bottom:20px">range {{ fi.range }} · provenance-weighted audit</div>
+
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <sc-for list="{{ factors }}" as="f" hint-placeholder-count="5">
+                  <div>
+                    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px">
+                      <span style="font:500 13px/1.2 'Inter Tight',sans-serif;color:var(--ink)">{{ f.label }}</span>
+                      <span style="font:400 12px/1 'JetBrains Mono',monospace;color:{{ f.valColor }};font-variant-numeric:tabular-nums">{{ f.valText }}</span>
+                    </div>
+                    <div style="height:5px;border-radius:3px;background:var(--high);overflow:hidden"><div style="{{ f.barStyle }}"></div></div>
+                    <div style="font:400 10.5px/1.4 'Inter Tight',sans-serif;color:var(--secondary);margin-top:5px">{{ f.note }}</div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--hairline);font:400 10px/1.5 'JetBrains Mono',monospace;color:var(--secondary);animation:ks-hash 4s var(--e-settle) infinite">sha256:9c1f·4ab2·d70e · human review required</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 03 · WATCH THE AGENTS REASON ============ -->
+        <section ref="{{ refReason }}" data-screen-label="03 Watch the agents reason" style="padding-bottom:58px;border-top:1px solid var(--hairline);padding-top:44px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary)">03 · WATCH THE AGENTS REASON</span>
+          </div>
+          <h2 style="font:500 27px/1.15 Newsreader,serif;color:var(--ink);margin:0 0 8px">Claude reasons in prose. The engine owns every number.</h2>
+          <p style="font:400 15px/1.6 'Inter Tight',sans-serif;color:var(--ink2);margin:0 0 24px;max-width:70ch">Premises are grounded, deterministic measurements. The inference is Claude's judgment about what they imply — and it inherits every caveat, including the excluded retraction.</p>
+
+          <div style="display:flex;flex-direction:column;gap:0">
+            <sc-for list="{{ premises }}" as="p" hint-placeholder-count="2">
+              <div style="position:relative;padding-left:30px;border-left:2px solid var(--hairline);padding-bottom:26px">
+                <span style="position:absolute;left:-9px;top:3px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--hairline)"></span>
+                <div style="border:1px solid var(--hairline);border-radius:9px;background:var(--lowest);padding:18px 20px">
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:11px">
+                    <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--secondary)">{{ p.n }}</span>
+                    <span style="display:inline-flex;align-items:center;gap:5px;font:500 9px/1 'JetBrains Mono',monospace;color:var(--secondary);border:1px solid var(--hairline);border-radius:4px;padding:3px 6px">DETERMINISTIC · NUMBER</span>
+                  </div>
+                  <p style="font:400 17px/1.5 Newsreader,serif;color:var(--ink);margin:0 0 14px">{{ p.text }}</p>
+                  <div style="display:flex;align-items:center;gap:11px;padding:10px 13px;border:1px solid var(--hairline);border-radius:7px;background:var(--paper)">
+                    <span class="ms" style="font-size:17px;color:var(--secondary)">attach_file</span>
+                    <div style="flex:1;min-width:0"><div style="font:500 12px/1.3 'Inter Tight',sans-serif;color:var(--ink)">{{ p.ev }}</div><div style="font:400 10px/1.3 'JetBrains Mono',monospace;color:var(--secondary)">{{ p.stat }}</div></div>
+                    <span class="ms" style="font-size:15px;color:var(--outline)">north_east</span>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+
+            <!-- inference -->
+            <div style="position:relative;padding-left:30px;border-left:2px solid var(--primary)">
+              <span style="position:absolute;left:-9px;top:3px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--primary)"></span>
+
+              <sc-if value="{{ reasonRunning }}">
+              <div style="border:1px solid var(--hairline);border-radius:9px;background:var(--lowest);padding:20px 22px;animation:ks-fadein .2s var(--e-out) both">
+                <div style="display:flex;align-items:center;gap:9px;margin-bottom:16px">
+                  <span style="width:14px;height:14px;border-radius:50%;border:1.8px solid var(--hairline);border-top-color:var(--claude-live);animation:ks-spin .8s linear infinite;display:block"></span>
+                  <span style="font:500 12px/1 'Inter Tight',sans-serif;color:var(--ink)">Running the multi-agent reasoning loop…</span>
+                  <span style="flex:1"></span>
+                  <span style="font:400 10px/1 'JetBrains Mono',monospace;color:var(--outline)">live runs take ~15–20s</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <sc-for list="{{ agentRows }}" as="a" hint-placeholder-count="6">
+                    <div style="display:flex;align-items:center;gap:10px">
+                      <sc-if value="{{ a.spin }}"><span style="width:11px;height:11px;border-radius:50%;border:1.6px solid var(--hairline);border-top-color:var(--claude-live);animation:ks-spin .8s linear infinite;display:block;flex:none"></span></sc-if>
+                      <sc-if value="{{ a.notSpin }}"><span style="width:11px;height:11px;border-radius:50%;background:{{ a.dotColor }};flex:none"></span></sc-if>
+                      <span style="font:400 12.5px/1.4 'Inter Tight',sans-serif;color:{{ a.textColor }}">{{ a.text }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              </sc-if>
+
+              <sc-if value="{{ showInference }}">
+              <div style="border:1px solid var(--primary);border-radius:9px;background:var(--lowest);padding:20px 22px;animation:ks-fadein .3s var(--e-out) both">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;flex-wrap:wrap;gap:10px">
+                  <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--primary)">INFERENCE</span>
+                  <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border-radius:20px;background:var(--container);font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:var(--ink2)">
+                    <span style="width:6px;height:6px;border-radius:50%;background:{{ attribution.dot }}"></span>{{ attribution.label }}
+                  </span>
+                </div>
+                <p style="font:400 21px/1.55 Newsreader,serif;color:var(--ink);margin:0">{{ inference }}</p>
+
+                <sc-if value="{{ reasonErrShow }}">
+                <div style="display:flex;align-items:center;gap:11px;margin-top:16px;padding:11px 14px;border:1px solid var(--warn);background:var(--warn-c);border-radius:8px">
+                  <span class="ms" style="font-size:17px;color:var(--warn);flex:none">cloud_off</span>
+                  <span style="flex:1;font:400 11.5px/1.5 'Inter Tight',sans-serif;color:var(--ink2)">{{ reasonErr }}</span>
+                  <button onClick="{{ retryReason }}" style-hover="background:var(--high)" style="display:flex;align-items:center;gap:6px;padding:6px 11px;border:1px solid var(--warn);border-radius:6px;background:transparent;color:var(--warn);cursor:pointer;font:500 11px/1 'Inter Tight',sans-serif;flex:none"><span class="ms" style="font-size:14px">refresh</span>Retry</button>
+                </div>
+                </sc-if>
+
+                <div style="display:flex;align-items:center;gap:12px;margin-top:16px">
+                  <button onClick="{{ runReason }}" style-hover="opacity:.92" style="display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border:none;border-radius:7px;background:var(--primary);color:var(--on-primary);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif">
+                    <span class="ms" style="font-size:16px">bolt</span>{{ runBtnLabel }}
+                  </button>
+                  <span style="font:400 10.5px/1.4 'JetBrains Mono',monospace;color:var(--secondary)">Claude writes prose; it never invents a statistic. Ungrounded values render as “—”.</span>
+                </div>
+              </div>
+              </sc-if>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 04 · RANKED NEXT EXPERIMENT ============ -->
+        <section ref="{{ refDecide }}" data-screen-label="04 Ranked next experiment" style="padding-bottom:58px;border-top:1px solid var(--hairline);padding-top:44px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary)">04 · THE RANKED NEXT EXPERIMENT</span>
+          </div>
+          <h2 style="font:500 27px/1.15 Newsreader,serif;color:var(--ink);margin:0 0 8px">Ranked by expected information gain against cost</h2>
+          <p style="font:400 15px/1.6 'Inter Tight',sans-serif;color:var(--ink2);margin:0 0 22px;max-width:70ch">Each candidate carries an explicit kill-condition and a power analysis. Information gain and power are computed by the deterministic engine — Claude only writes the rationale.</p>
+
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <sc-for list="{{ experiments }}" as="x" hint-placeholder-count="4">
+              <div style="{{ x.cardStyle }}">
+                <div style="display:flex;align-items:flex-start;gap:16px">
+                  <span style="font:400 22px/1 Newsreader,serif;color:{{ x.rankColor }};flex:none;width:30px;padding-top:1px">{{ x.rank }}</span>
+                  <div style="flex:1;min-width:0">
+                    <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:4px">
+                      <span style="font:500 16px/1.3 'Inter Tight',sans-serif;color:var(--ink)">{{ x.title }}</span>
+                      <sc-if value="{{ x.top }}"><span style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--ok);background:var(--ok-c);border-radius:4px;padding:3px 6px">TOP PICK</span></sc-if>
+                    </div>
+                    <div style="font:400 12px/1.4 'JetBrains Mono',monospace;color:var(--secondary);margin-bottom:12px">reduces uncertainty in — {{ x.reduces }}</div>
+
+                    <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+                      <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--secondary);width:80px;flex:none">INFO GAIN</span>
+                      <div style="flex:1;max-width:280px;height:6px;border-radius:3px;background:var(--high);overflow:hidden"><div style="{{ x.gainBarStyle }}"></div></div>
+                      <span style="font:400 13px/1 'JetBrains Mono',monospace;color:var(--ink);font-variant-numeric:tabular-nums">{{ x.gainText }}</span>
+                      <span style="flex:1"></span>
+                      <span style="font:400 11px/1 'JetBrains Mono',monospace;color:var(--outline)">cost {{ x.cost }}</span>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                      <div style="padding:10px 13px;border:1px solid var(--hairline);border-radius:7px;background:var(--paper)">
+                        <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--risk);margin-bottom:5px">KILL-CONDITION</div>
+                        <div style="font:400 11.5px/1.45 'Inter Tight',sans-serif;color:var(--ink2)">{{ x.kill }}</div>
+                      </div>
+                      <div style="padding:10px 13px;border:1px solid var(--hairline);border-radius:7px;background:var(--paper)">
+                        <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--secondary);margin-bottom:5px">POWER ANALYSIS</div>
+                        <div style="font:400 11.5px/1.45 'JetBrains Mono',monospace;color:var(--ink2)">{{ x.power }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <!-- ============ 05 · EXPORT & SIGN-OFF ============ -->
+        <section ref="{{ refSignoff }}" data-screen-label="05 Export and sign-off" style="border-top:1px solid var(--hairline);padding-top:44px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--secondary)">05 · EXPORT RIGOR ARTIFACTS</span>
+          </div>
+          <h2 style="font:500 27px/1.15 Newsreader,serif;color:var(--ink);margin:0 0 8px">Export the record — with a human on the hook</h2>
+          <p style="font:400 15px/1.6 'Inter Tight',sans-serif;color:var(--ink2);margin:0 0 22px;max-width:70ch">Every artifact is content-addressed against the append-only ledger. Nothing is released until a principal investigator signs — and signing attests review, not truth.</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">
+            <sc-for list="{{ artifacts }}" as="a" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:13px;padding:15px 17px;border:1px solid var(--hairline);border-radius:9px;background:var(--lowest);cursor:pointer" style-hover="border-color:var(--outline);background:var(--high)">
+                <div style="width:38px;height:38px;border-radius:8px;background:var(--paper);border:1px solid var(--hairline);display:flex;align-items:center;justify-content:center;flex:none">
+                  <span class="ms" style="font-size:20px;color:var(--secondary)">{{ a.icon }}</span>
+                </div>
+                <div style="flex:1;min-width:0">
+                  <div style="font:500 13px/1.3 'Inter Tight',sans-serif;color:var(--ink)">{{ a.name }}</div>
+                  <div style="font:400 10px/1.3 'JetBrains Mono',monospace;color:var(--secondary)">sha256:{{ a.hash }} · {{ a.ts }}</div>
+                </div>
+                <span class="ms" style="font-size:18px;color:var(--outline);flex:none">download</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ pending }}">
+          <div style="border:1px solid var(--hairline);border-radius:10px;background:var(--low);padding:20px 24px;display:flex;align-items:center;gap:22px;animation:ks-fadein .2s var(--e-out) both">
+            <div style="width:42px;height:42px;border-radius:9px;background:var(--lowest);border:1px solid var(--hairline);display:flex;align-items:center;justify-content:center;flex:none">
+              <span class="ms" style="font-size:21px;color:var(--secondary)">verified_user</span>
+            </div>
+            <div style="flex:1">
+              <div style="font:500 14px/1.3 'Inter Tight',sans-serif;color:var(--ink);margin-bottom:3px">Integrity certificate ready</div>
+              <div style="font:400 12px/1.5 'Inter Tight',sans-serif;color:var(--ink2)">Signing attests you reviewed the evidence and its caveats — it does not assert the conclusions are true.</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:20px;background:var(--warn-c);color:var(--warn);font:500 11px/1 'Inter Tight',sans-serif"><span class="ms" style="font-size:15px">pending</span>Awaiting PI sign-off</span>
+              <button onClick="{{ sign }}" style-hover="opacity:.92" style="display:flex;align-items:center;gap:7px;padding:10px 16px;border:none;border-radius:7px;background:var(--primary);color:var(--on-primary);cursor:pointer;font:500 13px/1 'Inter Tight',sans-serif"><span class="ms" style="font-size:17px">draw</span>Sign &amp; release</button>
+            </div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ signed }}">
+          <div style="border:1px solid var(--ok);border-radius:10px;background:var(--ok-c);padding:20px 24px;display:flex;align-items:center;gap:22px;animation:ks-fadein .25s var(--e-out) both">
+            <div style="width:42px;height:42px;border-radius:9px;background:var(--lowest);border:1px solid var(--ok);display:flex;align-items:center;justify-content:center;flex:none">
+              <span class="ms fill" style="font-size:22px;color:var(--ok)">task_alt</span>
+            </div>
+            <div style="flex:1">
+              <div style="font:500 14px/1.3 'Inter Tight',sans-serif;color:var(--ink);margin-bottom:3px">Released by Principal Investigator · {{ signedAt }}</div>
+              <div style="font:400 11px/1.4 'JetBrains Mono',monospace;color:var(--secondary)">sha256:9c1f·4ab2·d70e · appended to ledger · reproducible under seed 0x71</div>
+            </div>
+            <span style="display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:20px;background:var(--lowest);color:var(--ok);font:500 11px/1 'Inter Tight',sans-serif;border:1px solid var(--ok)"><span class="ms" style="font-size:15px">verified</span>Signed</span>
+          </div>
+          </sc-if>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+ &quot;simulateLive&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Runtime&quot;},
+ &quot;defaultTheme&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;dark&quot;, &quot;options&quot;: [&quot;dark&quot;, &quot;light&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Runtime&quot;},
+ &quot;fieldIntegrity&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 72, &quot;min&quot;: 0, &quot;max&quot;: 100, &quot;step&quot;: 0.1, &quot;unit&quot;: &quot;/100&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Integrity&quot;}
+}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    let saved=null; try{ saved=localStorage.getItem('ks-theme'); }catch(e){}
+    let reduced=false; try{ reduced=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+    this.reduced=reduced;
+    this.state={
+      theme: saved || props.defaultTheme || 'dark',
+      live: props.simulateLive ? 'live' : 'checking', liveNote: props.simulateLive ? 'simulated' : '',
+      activeSec:'bring', menuOpen:false, programNote:'',
+      resolved:true, resolving:false, connErr:'',
+      reasonRunning:false, reasonStep:0, reasonMode:'snapshot', reasonErr:'',
+      signed:false, signedAt:'',
+    };
+
+    this.NAV_IDS=['bring','ground','reason','decide','signoff'];
+    this.NAV=[
+      {group:'THE CASE', items:[
+        {id:'bring', step:'01', label:'Bring a question'},
+        {id:'ground', step:'02', label:'What you’re building on'},
+        {id:'reason', step:'03', label:'Watch the agents reason'},
+      ]},
+      {group:'THE DECISION', items:[
+        {id:'decide', step:'04', label:'Ranked next experiment'},
+        {id:'signoff', step:'05', label:'Export & sign-off'},
+      ]},
+    ];
+    this.PROGRAMS=[
+      {id:'gbm', name:'GBM · Glioblastoma', sub:'Target validation'},
+      {id:'ich', name:'ICH · Intracerebral hemorrhage', sub:'Secondary injury · active', active:true},
+      {id:'lrrk2', name:'LRRK2 · Parkinson’s', sub:'Illustrative · synthetic'},
+    ];
+    this.CONNECTORS=[
+      {name:'Crossref', sub:'literature DOIs', n:'312'},
+      {name:'OpenAlex', sub:'works + citations', n:'288'},
+      {name:'ClinicalTrials.gov', sub:'ATACH-2 · MISTIE III · i-DEF', n:'3'},
+      {name:'UniProt', sub:'F2 thrombin · F2R (PAR-1)', n:'2'},
+      {name:'ClinVar', sub:'F2 variants', n:'41'},
+      {name:'ChEMBL', sub:'argatroban · deferoxamine', n:'2'},
+      {name:'Reactome', sub:'coagulation · complement', n:'3'},
+      {name:'Cellosaurus', sub:'no ICH-specific line', n:'0', zero:true},
+    ];
+    this.CHAIN=[
+      {t:'Hematoma'}, {t:'Thrombin'}, {t:'PAR-1', target:true}, {t:'Perihematomal edema'}, {t:'90-day mRS'},
+    ];
+    this.EVIDENCE=[
+      {src:'N Engl J Med', id:'ATACH-2 · NCT01176565', year:'2016', conf:0.88, tone:'ok', tag:'RCT · CORROBORATES', ev:'Intensive blood-pressure lowering did not reduce death or disability at 90 days — constrains any BP-only account of outcome.'},
+      {src:'Lancet Neurology', id:'MISTIE III · NCT01827046', year:'2019', conf:0.81, tone:'ok', tag:'RCT · CONDITIONAL', ev:'Minimally-invasive clot evacuation + alteplase improved function only when residual hematoma reached ≤15 mL — clot burden matters.'},
+      {src:'Stroke', id:'thrombin/PAR-1 · rodent', year:'2021', conf:0.72, tone:'sec', tag:'PRECLINICAL', ev:'Thrombin drives perihematomal edema via PAR-1 in rodent ICH models; human translation is not yet demonstrated.'},
+      {src:'Annals of Neurology', id:'i-DEF · NCT02175225', year:'2019', conf:0.66, tone:'warn', tag:'RCT · MIXED', ev:'Deferoxamine was safe; the 90-day good-outcome rate favored treatment but did not cross the pre-set efficacy threshold.'},
+      {src:'J. Neuroinflammation', id:'RETRACTED 2022', year:'2018', conf:0, tone:'risk', retracted:true, tag:'RETRACTED · EXCLUDED', ev:'Reported a large edema reduction with a PAR-1 antagonist. Retracted 2022 for image duplication — excluded from every conclusion on this page.'},
+    ];
+    this.FACTORS=[
+      {label:'Provenance depth', val:0.84, note:'Every claim traces to a trial registry or a primary paper.'},
+      {label:'Independent reproducibility', val:0.58, note:'Edema findings replicated in rodents; human replication is limited.'},
+      {label:'Method rigor', val:0.79, note:'Registered RCTs, but primary endpoints differ across trials.'},
+      {label:'Data & code availability', val:0.61, note:'Trial data partially deposited; analysis code varies by group.'},
+      {label:'Conflict rate', val:0.19, invert:true, note:'Share of claims with unresolved contradictory evidence — lower is better.'},
+    ];
+    this.PREMISES=[
+      {n:'PREMISE I', text:'Thrombin generated during clot formation activates PAR-1, increasing perihematomal edema in rodent ICH models.', ev:'PAR-1 knockout edema assay · rodent', stat:'−41% edema vol · n=12 · p=0.003'},
+      {n:'PREMISE II', text:'In humans, faster perihematomal edema growth over the first 72 h is associated with worse 90-day function.', ev:'ATACH-2 imaging substudy', stat:'OR 1.12 per mL·day⁻¹ · 95% CI 1.04–1.21'},
+    ];
+    this.INFERENCE='Therefore, early PAR-1 antagonism may reduce perihematomal edema and improve function — conditional on demonstrating human target engagement, which no completed trial has yet shown, and on excluding the retracted 2018 edema result from the evidence base.';
+    this.AGENT_STEPS=[
+      'Retrieval — pulling ICH literature from Crossref + OpenAlex',
+      'Provenance — resolving trial IDs against ClinicalTrials.gov',
+      'Retraction screen — checking sources against Retraction Watch',
+      'Deterministic engine — recomputing edema effect sizes + field integrity',
+      'Claude — drafting the working inference (prose only; no invented numbers)',
+      'Human gate — flagging the inference for PI sign-off',
+    ];
+    this.EXPERIMENTS=[
+      {title:'Argatroban vs placebo within 6 h — 72 h perihematomal-edema MRI', reduces:'human PAR-1/thrombin causal role in edema', gain:0.44, cost:'~9 mo · high', kill:'No edema reduction vs placebo at 72 h (Δ < 15%) → deprioritize PAR-1.', power:'n=60 · 80% power · MDE 3.5 mL edema · α=0.05'},
+      {title:'Deferoxamine dose–response, iron chelation (i-DEF extension)', reduces:'iron / heme-toxicity contribution', gain:0.37, cost:'~6 mo · med', kill:'90-day mRS shift < 0.3 → iron pathway is secondary.', power:'n=42 · 80% power · MDE 0.4 mRS · α=0.05'},
+      {title:'iPSC microglia thrombin challenge — MMP-9 / BBB readout', reduces:'mechanism · blood–brain-barrier disruption', gain:0.31, cost:'~8 wk · low', kill:'MMP-9 induction < 2× → drop the microglial arm.', power:'n=6 donors · 80% power · MDE 2× · paired'},
+      {title:'ATACH-2 re-analysis stratified by hematoma location', reduces:'effect modification by anatomy', gain:0.22, cost:'~4 wk · low', kill:'No interaction (p > 0.2) → location is not a modifier.', power:'n≈1000 · exploratory · not powered for efficacy'},
+    ];
+    this.ARTIFACTS=[
+      {name:'Methods & analysis plan', icon:'description', hash:'a3f0·9c21', ts:'10:41Z'},
+      {name:'Evidence ledger (append-only)', icon:'receipt_long', hash:'b90d·1f22', ts:'10:42Z'},
+      {name:'Field-integrity certificate', icon:'verified', hash:'9c1f·4ab2', ts:'10:42Z'},
+      {name:'Decision memo — ranked experiments', icon:'fork_right', hash:'71aa·c3f9', ts:'10:42Z'},
+    ];
+
+    this._secRefs={};
+    this.NAV_IDS.forEach(id=>{ this['_ref_'+id]=(el)=>{ if(el) this._secRefs[id]=el; }; });
+    this._mainRef=(el)=>{ this._mainEl=el; if(el){ el.onscroll=()=>this.onScroll(); } };
+  }
+
+  componentDidMount(){
+    document.documentElement.dataset.theme=this.state.theme;
+    if(!this.props.simulateLive) this.checkLive();
+  }
+  componentWillUnmount(){ clearInterval(this._agentT); clearTimeout(this._doneT); }
+
+  async checkLive(){
+    this.setState({live:'checking', liveNote:''});
+    try{
+      const r=await fetch('/healthz',{cache:'no-store'});
+      if(!r.ok) throw new Error('status '+r.status);
+      const j=await r.json();
+      const on=!!(j&&j.live_claude);
+      this.setState({live:on?'live':'det', liveNote:on?'':'deterministic engine'});
+    }catch(e){
+      this.setState({live:'det', liveNote:'live service unreachable'});
+    }
+  }
+  recheckLive(){ if(this.props.simulateLive) return; this.checkLive(); }
+
+  toggleTheme(){
+    const t=this.state.theme==='light'?'dark':'light';
+    document.documentElement.dataset.theme=t;
+    try{ localStorage.setItem('ks-theme',t); }catch(e){}
+    this.setState({theme:t});
+  }
+
+  scrollTo(id){
+    const el=this._secRefs[id], main=this._mainEl;
+    if(el&&main) main.scrollTo({top:Math.max(0,el.offsetTop-20), behavior:this.reduced?'auto':'smooth'});
+    this.setState({activeSec:id});
+  }
+  onScroll(){
+    const main=this._mainEl; if(!main) return;
+    const y=main.scrollTop+140; let cur=this.NAV_IDS[0];
+    for(const id of this.NAV_IDS){ const el=this._secRefs[id]; if(el&&el.offsetTop<=y) cur=id; }
+    if(cur!==this.state.activeSec) this.setState({activeSec:cur});
+  }
+
+  toggleMenu(){ this.setState(s=>({menuOpen:!s.menuOpen, programNote:''})); }
+  pickProgram(id){
+    // ICH is this page's snapshot; GBM / LRRK2 live in the full instrument — open it.
+    this.setState({menuOpen:false, programNote:''});
+    if(id!=='ich'){ window.location.href = '/'; }
+  }
+
+  async resolveConnectors(){
+    if(this.props.simulateLive){ this.setState({resolved:true, connErr:''}); return; }
+    this.setState({resolving:true, connErr:''});
+    try{
+      const r=await fetch('/api/prior_art?program=ICH',{cache:'no-store'});
+      if(!r.ok) throw new Error('status '+r.status);
+      await r.json();
+      this.setState({resolving:false, resolved:true, connErr:''});
+    }catch(e){
+      this.setState({resolving:false, resolved:true, connErr:'Live connectors unreachable — showing the last deterministic snapshot. The counts below are from that snapshot, not a live fetch.'});
+    }
+  }
+
+  runReason(){
+    clearInterval(this._agentT); clearTimeout(this._doneT);
+    if(this.reduced){ this.setState({reasonRunning:false, reasonMode: this.props.simulateLive?'live':'replay', reasonErr: this.props.simulateLive?'':'Reduced-motion — showing the captured deterministic snapshot.'}); return; }
+    this.setState({reasonRunning:true, reasonStep:0, reasonErr:''});
+    const n=this.AGENT_STEPS.length, per=1300;
+    this._agentT=setInterval(()=>{
+      this.setState(s=>{ const k=s.reasonStep+1; if(k>=n) clearInterval(this._agentT); return {reasonStep:k}; });
+    }, per);
+    this._outcome=null;
+    if(this.props.simulateLive){ this._outcome='live'; }
+    else {
+      (async()=>{
+        try{
+          const r=await fetch('/api/decision',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({program:'ICH',run:'0071'})});
+          if(!r.ok) throw new Error('status '+r.status);
+          await r.json(); this._outcome='live';
+        }catch(e){ this._outcome='replay'; }
+      })();
+    }
+    this._doneT=setTimeout(()=>this.applyReason(), n*per+200);
+  }
+  applyReason(){
+    const mode=this._outcome||'replay';
+    this.setState({reasonRunning:false, reasonMode:mode, reasonErr: mode==='replay'?'Live reasoning service unreachable — replayed the captured deterministic snapshot (seed 0x71). This is not a live Claude run.':''});
+  }
+  retryReason(){ this.runReason(); }
+
+  sign(){ const t=new Date().toISOString().slice(11,19)+'Z'; this.setState({signed:true, signedAt:t}); }
+
+  renderVals(){
+    const st=this.state;
+
+    const halo={ 'var(--claude-live)':'rgba(107,75,214,.16)', 'var(--claude-det)':'rgba(183,121,31,.16)', 'var(--outline)':'rgba(118,119,124,.14)' };
+    const liveMap={
+      checking:{label:'CLAUDE · CHECKING…', color:'var(--outline)', title:'Checking /healthz for live_claude'},
+      live:{label:'CLAUDE · LIVE', color:'var(--claude-live)', title:'Live multi-agent reasoning available'},
+      det:{label:'CLAUDE · DETERMINISTIC', color:'var(--claude-det)', title:'Deterministic engine — '+(st.liveNote||'live service unavailable')},
+    };
+    const live=Object.assign({}, liveMap[st.live]||liveMap.det);
+    live.halo=halo[live.color]||'transparent';
+
+    const fiv=this.props.fieldIntegrity!=null?this.props.fieldIntegrity:72;
+    const band=fiv>=80?'Strong':fiv>=65?'Moderate':fiv>=50?'Guarded':'Weak';
+    const bandColor=fiv>=80?'var(--ok)':fiv>=50?'var(--warn)':'var(--risk)';
+    const bandBg=fiv>=80?'var(--ok-c)':fiv>=50?'var(--warn-c)':'var(--risk-c)';
+    const lo=Math.max(0,Math.round(fiv-6)), hi=Math.min(100,Math.round(fiv+5));
+    const fi={ text:fiv.toFixed(1), band, bandColor, bandBg, range:lo+'–'+hi };
+
+    const nav=this.NAV.map(g=>({ group:g.group, items:g.items.map(it=>{
+      const active=st.activeSec===it.id;
+      return { id:it.id, step:it.step, label:it.label, active,
+        rowStyle:'display:flex;align-items:center;gap:9px;padding:8px 11px;border-radius:7px;cursor:pointer;position:relative;margin-bottom:2px;font:500 13px/1.2 "Inter Tight",sans-serif;transition:background .15s var(--e-out);color:'+(active?'var(--ink)':'var(--ink2)')+';background:'+(active?'var(--high)':'transparent'),
+        onClick:()=>this.scrollTo(it.id) };
+    })}));
+
+    const programs=this.PROGRAMS.map(p=>({ name:p.name, sub:p.sub, active:!!p.active,
+      rowStyle:'display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:6px;cursor:pointer;transition:background .12s var(--e-out)',
+      onClick:()=>this.pickProgram(p.id) }));
+
+    const resolved=st.resolved;
+    const connectors=this.CONNECTORS.map(c=>({ name:c.name, sub:c.sub,
+      countText: resolved ? (c.zero ? '0 · none' : c.n) : 'idle',
+      countColor: !resolved ? 'var(--outline)' : (c.zero ? 'var(--outline)' : 'var(--ok)'),
+      dotColor: !resolved ? 'var(--hairline)' : (c.zero ? 'var(--outline)' : 'var(--ok)') }));
+
+    const chain=this.CHAIN.map((c,i)=>({ t:c.t, arrow:i<this.CHAIN.length-1,
+      chipStyle:'padding:6px 10px;border-radius:6px;font:500 11px/1 "JetBrains Mono",monospace;white-space:nowrap;border:1px solid '+(c.target?'var(--nav-accent)':'var(--hairline)')+';color:'+(c.target?'var(--nav-accent)':'var(--ink2)')+';background:'+(c.target?'transparent':'var(--paper)') }));
+
+    const toneMap={ ok:{c:'var(--ok)',bg:'var(--ok-c)'}, warn:{c:'var(--warn)',bg:'var(--warn-c)'}, risk:{c:'var(--risk)',bg:'var(--risk-c)'}, sec:{c:'var(--secondary)',bg:'var(--sec-container)'} };
+    const evidence=this.EVIDENCE.map(e=>{ const tm=toneMap[e.tone]||toneMap.sec; const w=Math.round((e.retracted?0:e.conf)*100);
+      return { src:e.src, id:e.id, year:e.year, ev:e.ev, tag:e.tag,
+        confText:e.retracted?'—':e.conf.toFixed(2), confColor:e.retracted?'var(--risk)':tm.c,
+        srcColor:e.retracted?'var(--risk)':'var(--ink)', evColor:e.retracted?'var(--ink2)':'var(--ink)',
+        tagColor:tm.c, tagBg:tm.bg,
+        cardStyle:'border:1px solid '+(e.retracted?'var(--risk)':'var(--hairline)')+';border-radius:9px;background:'+(e.retracted?'var(--risk-c)':'var(--lowest)')+';padding:16px 18px',
+        barStyle:'height:100%;width:'+w+'%;background:'+tm.c+';border-radius:3px' };
+    });
+
+    const factors=this.FACTORS.map(f=>{ const col=f.invert?'var(--warn)':(f.val>=0.8?'var(--ok)':f.val>=0.65?'var(--secondary)':'var(--warn)');
+      return { label:f.label, note:f.note, valText:f.val.toFixed(2), valColor:col,
+        barStyle:'height:100%;width:'+Math.round(f.val*100)+'%;background:'+col+';border-radius:3px' }; });
+
+    const rs=st.reasonRunning;
+    const agentRows=this.AGENT_STEPS.map((t,i)=>{ const stt=i<st.reasonStep?'done':(i===st.reasonStep?'active':'idle');
+      return { text:t, spin:stt==='active', notSpin:stt!=='active',
+        dotColor:stt==='done'?'var(--ok)':'var(--hairline)',
+        textColor:stt==='idle'?'var(--outline)':'var(--ink)' }; });
+    const modeMap={ snapshot:{label:'CLAUDE · CAPTURED SNAPSHOT · NOT LIVE', dot:'var(--claude-det)'}, live:{label:'CLAUDE · LIVE', dot:'var(--claude-live)'}, replay:{label:'CLAUDE · DETERMINISTIC REPLAY', dot:'var(--claude-det)'} };
+    const attribution=modeMap[st.reasonMode]||modeMap.snapshot;
+
+    const experiments=this.EXPERIMENTS.map((e,i)=>({ rank:'0'+(i+1), title:e.title, reduces:e.reduces, cost:e.cost, kill:e.kill, power:e.power,
+      top:i===0, rankColor:i===0?'var(--ink)':'var(--outline)', gainText:e.gain.toFixed(2),
+      gainBarStyle:'height:100%;width:'+Math.round(e.gain/0.5*100)+'%;background:'+(i===0?'var(--ok)':'var(--secondary)')+';border-radius:3px',
+      cardStyle:'border:1px solid '+(i===0?'var(--outline)':'var(--hairline)')+';border-radius:10px;background:var(--lowest);padding:18px 20px' }));
+
+    return {
+      // header + shell
+      live, fi, theme:st.theme, themeIcon: st.theme==='light'?'dark_mode':'light_mode',
+      toggleTheme:()=>this.toggleTheme(), recheckLive:()=>this.recheckLive(),
+      fiClick:()=>this.scrollTo('ground'), exportClick:()=>this.scrollTo('signoff'),
+      // rail
+      nav, programs, menuOpen:st.menuOpen, toggleMenu:()=>this.toggleMenu(),
+      programNote:st.programNote, programNoteShow:!!st.programNote,
+      // refs
+      mainRef:this._mainRef, refBring:this._ref_bring, refGround:this._ref_ground, refReason:this._ref_reason, refDecide:this._ref_decide, refSignoff:this._ref_signoff,
+      // 01 connectors
+      connectors, resolving:st.resolving, notResolving:!st.resolving,
+      resolveLabel: st.resolving?'Resolving…':'Resolve', resolveConnectors:()=>this.resolveConnectors(),
+      connErr:st.connErr, connErrShow:!!st.connErr,
+      // 02 evidence + integrity
+      chain, evidence, factors,
+      // 03 reasoning
+      premises:this.PREMISES, inference:this.INFERENCE,
+      reasonRunning:rs, showInference:!rs, agentRows, attribution,
+      reasonErr:st.reasonErr, reasonErrShow:!!st.reasonErr,
+      runBtnLabel: st.reasonMode==='snapshot'?'Run live reasoning':'Re-run reasoning',
+      runReason:()=>this.runReason(), retryReason:()=>this.retryReason(),
+      // 04 experiments
+      experiments,
+      // 05 export + sign-off
+      artifacts:this.ARTIFACTS, pending:!st.signed, signed:st.signed, signedAt:st.signedAt, sign:()=>this.sign(),
+    };
+  }
+}
+</script>
+</body>
+</html>

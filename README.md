@@ -1,185 +1,296 @@
-# Keystone — Scientific Decision Engine
+<div align="center">
 
-**Keystone answers one question: what should the scientist do next — and why,
-over every alternative?** It is the reasoning layer that sits on top of a research
-workbench: it generates *competing* hypotheses, scores each on real decision
-dimensions, and ranks the experiments so a PI knows which one to run before
-spending six months and $500k.
+# 🧬 Keystone — Life Science System
 
-The trust guarantee that makes the ranking usable: **every score is computed,
-a transparent estimate, or an explicit qualitative label — never fabricated.**
-Expected information gain, cost, duration, and risk are deterministic models with
-their assumptions shown (like the power analysis computes `n` from a stated
-effect size). A ranking built on invented numbers is decoration; this one is
-auditable.
+### An agentic scientific discovery workbench that **checks what you build on** before it reasons.
 
-Under the decision engine is the evidence engine — one loop (**Plan → Collect →
-Analyze → Hypothesize → Design → Review → Human Approval → Ledger**) over a
-reproducible, content-hashed provenance graph, with an independent Reviewer that
-challenges every conclusion. **Demo domains:** glioblastoma and insulin
-resistance. Domain-agnostic by construction (measured: 0.818 on both).
+*Literature · evidence integrity · multi-agent reasoning · a decision engine · reproducible artifacts — one continuous, provenance-grounded workflow. AI proposes, scientists decide, experiments verify.*
 
-## The decision engine
+[![Built with Claude: Life Sciences](https://img.shields.io/badge/Built%20with-Claude%3A%20Life%20Sciences-6B4BD6)](https://claude.com/product/claude-science)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Tests](https://img.shields.io/badge/tests-267%20passing-2ea44f)](tests/)
+[![No fabrication](https://img.shields.io/badge/data-real%20or%20'unresolved'-brightgreen)](#-scientific-integrity-the-non-negotiables)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-`python -m keystone.decision_engine` (or the UI home `/`) produces, for a
-research question:
+<br/>
 
-- **5–20 competing hypotheses**, each grounded in a real graph element (a
-  retracted node, a contradiction, a doubtful reagent, an undrugged target).
-- a **Scientific Decision Board**: priority, expected information gain, evidence
-  strength, contradiction score, novelty, risk, cost, duration, validation
-  difficulty, reviewer confidence — each tagged computed / estimate / qualitative.
-- an **experiment portfolio** (Quick Win / High Impact / High Risk / Cheap
-  Validation / Mechanism / Clinical Translation / Negative Control).
-- a **scientific debate** per hypothesis (Proponent / Skeptic / Reviewer),
-  resolved by explicit evidence, never by voting.
-- a **knowledge-gap engine** — "what evidence is preventing publication?"
-- a single **recommendation**: which experiment first, why, how to falsify it,
-  and why it beats the runner-up.
+![Keystone front door — Target Trust](docs/screenshots/01-front-door.png)
 
-## This is built on *real* evidence
+*The front door: a real target-prioritization run over primary literature, with an integrity gate that runs **before** any reasoning.*
 
-The demo is not synthetic. It is assembled live from public research databases
-and pinned as offline fixtures:
+</div>
 
-- **Foundation:** a real 2004 *Oncogene* paper claiming RNAi knockdown of
-  cathepsin B (CTSB) and MMP-9 suppresses glioblastoma invasion
-  ([10.1038/sj.onc.1207616](https://doi.org/10.1038/sj.onc.1207616)) — **retracted
-  2025-04-29** (Retraction Watch record 64194, confirmed via Crossref).
-- **The moat, on real data:** real downstream citers with their *real Semantic
-  Scholar citing sentences*, classified load-bearing vs. incidental. A citer that
-  restates the retracted result inherits doubt **0.55**; an incidental one
-  **0.21**; a citer that cited it **8 months after retraction** (Jan 2026) is
-  flagged **inexcusable** (doubt 0.90).
-- **Reagent doubt:** the U-87MG line ([Cellosaurus CVCL_0022](https://www.cellosaurus.org/CVCL_0022))
-  carries its real, famous *misidentification* flag.
-- **Target:** cathepsin B ([UniProt P07858](https://www.uniprot.org/uniprotkb/P07858)),
-  rendered as a real 3D structure.
+---
 
-## The moat is a number, not a claim — on two domains
+## What Keystone is
 
-`calibrate.py` measures the load-bearing classifier against hand-labeled real
-citing sentences. The **same classifier**, measured on two unrelated domains:
+**Keystone** coordinates literature, evidence, datasets, biological knowledge, AI reasoning, laboratory data, experiment planning, and publication artifacts into **one reproducible scientific workflow** — for translational biomedical research.
+
+It follows the [**Claude Science**](https://claude.com/product/claude-science) philosophy: bring literature + data + tools + compute + artifacts into a single environment. Claude (the AI) is **one component, not the product** — Claude reasons in prose, a deterministic engine owns every number, and the scientist makes every decision.
+
+The one idea that makes it trustworthy:
+
+> **A resolvable DOI proves a *record* exists — never that a *claim* is true.**
+> Keystone tracks that distinction on every claim. A real but **retracted** paper stays visible for context but is **excluded from every conclusion**. Nothing is fabricated: a lookup that fails is marked `unresolved`, never invented.
+
+> Built for **Claude: Life Sciences** — a global hackathon in partnership with the **Gladstone Institutes** (San Francisco). Keystone extends Claude Science into an integrity-first research OS: it doesn't just answer, it shows *what it's standing on*.
+
+---
+
+## The problem it solves
+
+Modern labs don't lack intelligence — they lack **coordination**. Scientists lose hours every day to:
+
+- 📚 **Fragmented tools** — PubMed, Zotero, UniProt, Reactome, ClinVar, ChEMBL, ClinicalTrials.gov, PyMOL, Jupyter, grant docs — twenty tools for one line of thought.
+- ⚠️ **Retracted literature** silently contaminating downstream work.
+- 🔁 **Irreproducible analyses** — the result is right, the path is lost.
+- 🧾 **Grant rigor & methods** rebuilt from scratch every submission.
+- 🧭 **No defensible next experiment** — which one settles the question?
+- 🕳️ **Scattered provenance** — where did this claim actually come from?
+
+**Intelligence is no longer the bottleneck. Coordination is.**
+
+---
+
+## ✨ Feature tour
+
+### 1 · Bring your own research — three real flows, on the front door
+
+Paste your references, drop a plate-reader CSV, or type any gene. Every result is computed from **real records** and stays on your machine.
+
+![New Analysis — feed your own research](docs/screenshots/03-new-analysis-import.png)
+
+| Flow | You give it | Keystone returns |
+|------|-------------|------------------|
+| **Paste references** (`.bib` / `.ris` / DOIs) | your citation list | real Crossref/OpenAlex records · retraction & post-pub flags · a **Field Integrity score** for *your* set · a Decision-Engine next experiment on *your* papers |
+| **Upload lab data** (plate-reader CSV) | a 96-well plate | deterministic QC (Z′-factor · replicate CV · edge effects · blanks) that **downgrades confidence** on failure, with FDA-cite-able thresholds — never a fabricated reading |
+| **Assess a gene** | any human symbol | live **Open Targets** disease associations + type-2 relevance — proof it generalizes past the demo |
+
+> In the screenshot above, a 5-reference set is scored **72 / medium**, flagged **1 retracted + 3 that cite a retraction**, and gets a real next-experiment naming the retracted DOI. This is the *"if only they'd known"* retrospective, built in as its own positive control.
+
+### 2 · Multi-agent AI reasoning — on *your* graph
+
+A coordinated cell of **12 specialist seats** (agents + deterministic tools) reasons over the evidence you just imported — planner → connectors → evidence-quality → doubt propagation → contradiction mining → hypothesis → experiment design → statistics → **adversarial reviewer** → reproducibility ledger → PI synthesis. Live Claude prose when a key is present; deterministic (and never broken) otherwise.
+
+![Multi-agent analysis on your data](docs/screenshots/04-multi-agent-trace.png)
+
+> The **Reviewer Agent downgrades confidence to 0.3** because the hypothesis partly rests on a retracted foundation — the model *removing unearned confidence*, on the record. Every seat is labelled `AGENT` (semantic) or `TOOL` (deterministic): Claude never invents a statistic; the tools never write prose.
+
+### 3 · Research integrity — the gate that runs *before* reasoning
+
+Keystone triages every source against Crossref / Retraction Watch / Cellosaurus **before** it draws a conclusion. Red here is not a bug — it's the product catching something real.
+
+![Integrity gate catching a retraction + misidentified cell line](docs/screenshots/02-integrity-gate-gbm.png)
+
+> The glioblastoma program's foundational RNAi paper is genuinely **retracted**, and **U-87MG is a real Cellosaurus-flagged misidentified cell line** (`CVCL_0022`). Keystone surfaces both, propagates the doubt across the citation graph (the *blast radius*), and **excludes** the retracted source from every conclusion while keeping it visible for integrity context.
+
+### 4 · A search bar wired to the engine
+
+The header search is a scientist's command bar: a **research question** routes to the Decision Engine, a **gene** to live Open Targets, a **DOI** to prior art — each result real and sourced.
+
+---
+
+## 🔬 Four real research programs
+
+Switch programs from the sidebar and the entire workbench re-derives from that domain's real, pinned, DOI-resolvable evidence. Per-program capabilities filter the navigation so you never land on an empty tab.
+
+| Program | Domain | Target | The real story |
+|---------|--------|--------|----------------|
+| **CD4⁺ T-cell · Th2** ⭐ | Immunology / drug discovery | GATA3 · STAT6 | Ranks STAT6 **#1** (validated by KT-621, Kymera, Phase 1b), then finds the *next* degradable master regulator using real Gladstone Perturb-seq metrics |
+| **Glioblastoma** | Oncology | Cathepsin B / MMP-9 | A retracted foundational paper + real downstream citers + a real misidentified cell line — a complete integrity case |
+| **Intracerebral hemorrhage** | Neurology | MMP-9 (P14780) | A real 2009 MMP-9 retraction, 59 real citers, and a genuine *dual-role* contradiction (Zhao et al., Nat. Med. 2006) |
+| **Insulin resistance** | Metabolism | IRS-1 / PI3K–Akt | The insulin-signalling literature audited around the IRS-1 axis — a second, independent integrity domain |
+
+The flagship carries **measured perturbation metrics from the real Gladstone–UCSF CD4⁺ T-cell genome-scale Perturb-seq study** (Zhu et al., 2025) — downstream-DE count, on-target knockdown, and cross-donor reproducibility. FBXO32's cross-donor *r ≈ 0.13* is a **measured** reason its preprint nomination stays provisional.
+
+---
+
+## 🧠 How it works — one connected spine
 
 ```
---domain gbm      ACCURACY = 0.818   (44 real GBM citing sentences)
---domain insulin  ACCURACY = 0.818   (44 real insulin-signalling sentences)
+  Scientist ──(.bib / .ris / DOIs / plate CSV / gene)──►  Keystone
+       │
+       ▼
+  📚 EVIDENCE GRAPH ......... real DOIs · Cellosaurus · ClinVar · Reactome ·
+                             ClinicalTrials.gov · UniProt · PDB — or 'unresolved'
+       │
+       ▼
+  🛡️ INTEGRITY GATE ........ retracted / cites-a-retraction / misidentified /
+                             high-doubt / clean — with doubt propagated across the graph
+       │
+       ▼
+  🧠 MULTI-AGENT REASONING .. Planner ▸ Evidence-Quality ▸ Hypothesis ▸ Design ▸
+                             Statistics ▸ Reviewer (downgrades) ▸ PI (synthesizes)
+       │
+       ▼
+  🧪 DECISION ENGINE ........ competing hypotheses ranked by Expected Info Gain ·
+                             cost · risk → the falsifiable next experiment (n/arm computed)
+       │
+       ▼
+  📄 GRANT & PUBLICATION .... NIH R&R + STAR Methods rigor · evidence appendix ·
+                             reproducibility hash — human-gated (rule 1)
+       │
+       ▼
+  🧫 LEDGER / MEMORY ........ content-hashed; same hash re-runs to the same result;
+                             answers "has this been tried before?"
+       │
+       ▼
+  🖥️ CLAUDE DESKTOP ........ the same tools via MCP + an Agent Skill — no app open
 ```
 
-Two data points near-identical ⇒ "domain-agnostic by construction" is measured
-fact, not a claim. Offline, no API key. The live `ClaudeReasoner` runs the
-identical harness.
+**Research Integrity is the first station, not the identity.** The scientist enters through it, flows into the multi-agent Decision Engine and experiment plan, out to the publication artifact, and back into Claude Desktop — one content-hashed ledger throughout, nothing loses context.
 
-## It measures its own blind spots
+---
 
-`python -m keystone.agents.flaw_catch_eval` plants deterministic flaws (a false
-retraction, a corrupted citing sentence, a hidden post-retraction flag, a hidden
-reagent misidentification) into the graph and asks whether the agents catch them:
+## 🚀 Quickstart
 
-```
-accuracy 0.714  precision 1.000  recall 0.500
-caught: false-retraction-of-grounding, context-corruption
-MISSED: hidden temporal + reagent flaws  (the Reviewer reads the flag the flaw
-        clears — catching these needs re-verification against the connector)
-```
-
-An honest map of what the current agents catch and where they are blind.
-
-## Quickstart
+### Option A — Python (recommended for development)
 
 ```bash
-pip install -e .                       # or: pip install requests
-python -m pytest                        # 17 tests: reproducibility + rules + real data
-python run_workbench.py                 # full loop, offline, no API key -> demo_out/
-python calibrate.py --domain gbm        # measured load-bearing agreement (GBM)
-python calibrate.py --domain insulin    # ...and on the second domain
-python -m keystone.agents.flaw_catch_eval   # do the agents catch planted flaws?
+git clone https://github.com/jaisogani-ai/Keystone-Life-Science-System.git
+cd Keystone-Life-Science-System
 
-python -m keystone.decision_engine      # the decision engine (CLI)
-
-pip install fastapi uvicorn             # the UI
-python -m keystone.ui.server            # -> http://127.0.0.1:8000  Decision Engine
-                                        #    /workspace  evidence view
-                                        #    /workbench   reasoning loop
-
-python -m keystone.ui.graph_browser.build --domain gbm   # static graph browser
-python -m http.server -d browser_out/gbm 8010            # -> http://127.0.0.1:8010
-
-# refresh the pinned real data from the live APIs:
-KEYSTONE_LIVE=1 python -m keystone.connectors.capture
-
-# run the semantic layer with real Claude agents (spends API budget):
-KEYSTONE_LIVE=1 ANTHROPIC_API_KEY=... python run_workbench.py
+pip install -e . fastapi uvicorn        # workbench + engine (offline, deterministic)
+python -m keystone.ui.server            # → open http://127.0.0.1:8000
 ```
 
-## Structure
+Keystone runs **fully offline and deterministic** with no key — every number is computed from committed real-data fixtures.
+
+### Option B — Docker
+
+```bash
+docker build -t keystone .
+docker run -p 8000:8000 keystone       # → http://127.0.0.1:8000
+```
+
+### Pages
+
+| Route | What |
+|-------|------|
+| `/` | **Front door** — the Target Trust workbench + New Analysis (your data) |
+| `/labs` | Scientific Workspaces — integrity center, notebook, biology chain, pattern miner, lab agent |
+| `/workspace` | Connected View — protein · genome · pathways · trials · evidence graph, synchronized |
+| `/classic` | The prior decision-engine front door |
+
+---
+
+## 🔑 Live Claude layer (optional) — and how your key stays safe
+
+Keystone is **100% functional offline**. A key only activates the *semantic* layer: the plain-language integrity summary, the Reviewer's critique, the PI's synthesis, and live load-bearing judgement. **Every number stays identical either way.**
+
+```bash
+cp .env.example .env          # then paste your key into .env
+#   ANTHROPIC_API_KEY=sk-ant-...
+#   KEYSTONE_MODEL=claude-sonnet-5
+python -m keystone.ui.server  # the badge flips to "CLAUDE · LIVE"
+```
+
+> 🔒 **Your API key never enters the repository.** `.env` is git-ignored (see [`.gitignore`](.gitignore)), loaded server-side only, and there is a regression test — [`tests/test_safety_invariants.py`](tests/test_safety_invariants.py) — that fails if a key ever leaks into an API response. Only [`.env.example`](.env.example) (a placeholder) is committed.
+
+---
+
+## 🖥️ Use Keystone inside Claude Desktop (MCP)
+
+Keystone ships as an **MCP server** so Claude can call the engine with no app open. Register it:
+
+```json
+{
+  "mcpServers": {
+    "keystone": { "command": "python", "args": ["-m", "keystone.mcp_server"] }
+  }
+}
+```
+
+Then ask Claude *"check these DOIs for retractions"* → it calls `check_reference_integrity`. Other tools include `competing_hypotheses`, `next_experiment`, `field_integrity`, `check_prior_art`, `review_bench_data`, `search_clinical_trials`, `evidence_graph`, `validation_metrics`, and `publication_report`. The [`skills/keystone-workbench/`](skills/keystone-workbench/) Agent Skill teaches Claude *when* to reach for each.
+
+---
+
+## 🧾 Scientific integrity — the non-negotiables
+
+Every claim in Keystone carries a machine-checked status (in [`keystone/deterministic/claim_status.py`](keystone/deterministic/claim_status.py), in the API response — not a cosmetic badge):
+
+- **Source record verified** — the identifier resolved and metadata matched. *Not* "supports the claim."
+- **Claim type** — `evidence` · `computed` · `hypothesis` · `missing`. A claim is `evidence` **only** with an exact source link; a real DOI on an unrelated sentence is `missing`.
+- **Integrity state** — `normal` · `retracted` · `concern` · `unverified`.
+- **Evidence status is conclusion-specific** — the same claim can *support* conclusion A and *contradict* conclusion B. A retracted source resolves to **`excluded`** for every conclusion.
+
+**The rules the engine enforces:**
+
+1. 🚫 **No fabrication** — every number is computed, a labelled estimate, or a labelled qualitative. Failed lookups are `unresolved`, never invented.
+2. 🧮 **Claude writes prose; tools write numbers** — the semantic/deterministic boundary is the rigor.
+3. 🔁 **Reproducible** — a content-hashed ledger re-runs to an identical hash.
+4. ✋ **Human-gated** — every recommendation is a draft that requires a scientist's sign-off, written to the ledger with attribution.
+5. 🛑 **Refuses misuse** — no pathogen design, no toxicity enhancement, no assay-evasion, no PHI, no clinical/diagnostic claims. Refusals are on the record (Frontier Guard).
+
+---
+
+## ✅ Testing & reproducibility
+
+```bash
+python -m pytest -q                          # 267 tests, offline & deterministic
+python -m keystone.decision_engine           # decision engine on the flagship program
+python -m keystone.agents.flaw_catch_eval     # the self-test: does it catch planted flaws?
+```
+
+Keystone **self-tests**: the validation panel plants known flaws and measures its own catch rate honestly. The load-bearing classifier reaches **0.818 agreement** with a hand-labelled reference set across two independent domains (single-annotator baseline). You verify the tool before you trust it.
+
+---
+
+## ☁️ Deploy (Fly.io)
+
+```bash
+flyctl launch --no-deploy --copy-config --name keystone-workbench
+flyctl deploy                                 # fly.toml ships in the repo
+```
+
+`KEYSTONE_OFFLINE=1` is the deploy default (free-tier-safe, deterministic). Enable live Claude with `flyctl secrets set ANTHROPIC_API_KEY=sk-ant-...` and redeploy — the key lives in Fly secrets, never in the image.
+
+---
+
+## 🗂️ Project structure
 
 ```
 keystone/
-  core.py                 data model + rule-3-enforced Hypothesis + Ledger
-  workbench.py            orchestrator: the full loop + timeline projection
-  gbm_spec.py             pinned REAL identifiers — GBM (single source of truth)
-  insulin_spec.py         pinned REAL identifiers — insulin (second domain)
-  data_gbm.py             builds the GBM graph from real connector output
-  data_insulin.py         builds the insulin graph (same core types)
-  reasoning_panel.py      why-panel / future-experiments / honest readiness
-  replay.py               session replay (ordered, timestamped)
-  agents/
-    reasoner.py           HeuristicReasoner (offline, transparent) + interface
-    claude_reasoner.py    ClaudeReasoner + PathwayFigureAgent (real API, vision)
-    flaw_catch_eval.py    do the agents catch a planted flaw? (may call Claude)
-  deterministic/
-    stats.py              power analysis (refuses to fabricate n)
-    propagation.py        doubt propagation (graph math)
-    protocol.py           protocol completeness validator + checklist
-    flaw_injection.py     plant one grounded flaw, immutably (no LLM)
-  connectors/
-    registry.py           OpenAlex, RetractionWatch, Cellosaurus, S2, UniProt
-    http_cache.py         cache -> live -> fixture (never fabricates)
-    capture.py            re-pins real fixtures
-    fixtures/             committed real API responses
-  artifacts/
-    render.py             evidence graph / timeline / 3D structure
-    reasoning_render.py   why-panel + future-experiments renderers
-  calibration/
-    gbm_citing_sentences.jsonl       44 hand-labeled real GBM sentences
-    insulin_citing_sentences.jsonl   44 hand-labeled real insulin sentences
-  artifacts/
-    graph_export.py       lossless EvidenceGraph <-> JSON (projection only)
-  decision_engine.py      THE PRODUCT — competing hypotheses ranked into a
-                          next-experiment recommendation (what to do, and why)
-  deterministic/
-    hypothesis_space.py      generate 5-20 competing hypotheses from the graph
-    decision_metrics.py      score + rank (computed/estimate/qualitative, no fabrication)
-    experiment_portfolio.py  bucket experiments + explain ordering
-    scientific_debate.py     Proponent/Skeptic/Reviewer, resolved by evidence
-    gap_engine.py            categorized "what's preventing publication?"
-  workspace.py            Disease Workspace (evidence view, at /workspace)
-  connectors/
-    clinical.py           Tier-1 real: ClinicalTrials.gov, ChEMBL, Reactome, ClinVar
-  deterministic/
-    contradiction_mining.py  named loop stage over EdgeType.CONTRADICTS
-    gap_detection.py         named loop stage (missing evidence + structural gaps)
-    ledger_index.py          Scientific Memory — "has this been tried?" over Ledgers
-  ui/
-    server.py             FastAPI backend (pure projection of the engine)
-    static/os.html        Scientific Discovery OS: research-question home,
-                          Disease Workspace tabs, real trials/drugs/pathways/
-                          variants, dashboard, 3D, scientific memory
-    static/index.html     the reasoning-loop workbench (at /workbench)
-    graph_browser/        static, S3-deployable browser: layer filter over
-                          NodeType, doubt bands, full-text search (DEPLOY.md)
-tests/                    smoke(7) + connectors(10) + ui(4) + flaw(7) + insulin(6)
-run_workbench.py          end-to-end CLI
-calibrate.py              the moat, measured
+├── core.py                    data model · rule-enforced Hypothesis · content-hashed Ledger
+├── decision_engine.py         THE PRODUCT — competing hypotheses → next-experiment recommendation
+├── orchestrator.py            the 12-seat multi-agent pipeline (agents + tools)
+├── field_integrity.py         Field Integrity Score (0–100) for a corpus, every weight exposed
+├── integrity_report.py        per-reference triage (retracted / cites-retraction / clean)
+├── {gbm,ich,insulin,tcell}_spec.py   pinned REAL identifiers per program (single source of truth)
+├── data_{gbm,ich,insulin,tcell}.py   build each evidence graph from real connector output
+├── gladstone_data.py          real Gladstone CD4⁺ Perturb-seq metrics (measured)
+├── agents/
+│   ├── reasoner.py            HeuristicReasoner (offline, transparent)
+│   ├── claude_reasoner.py     ClaudeReasoner (live API, schema-validated, deterministic fallback)
+│   ├── bench_reviewer.py      plate-reader QC that downgrades confidence
+│   └── pattern_miner.py       corpus-scale integrity detectors
+├── deterministic/             stats · doubt propagation · target_ranking · claim_status · research_cell
+├── connectors/                OpenAlex · Crossref/RetractionWatch · Cellosaurus · UniProt · ChEMBL ·
+│   └── fixtures/              Reactome · ClinVar · ClinicalTrials.gov · Open Targets — committed real responses
+├── artifacts/                 evidence-graph & 3D renderers · repro_bundle (grant .zip)
+├── ingest/references.py       parse .bib/.ris/DOIs → real evidence graph (bring-your-own-data)
+├── ml/                        Perturb-seq / type-2 signature pipeline
+├── mcp_server.py              Keystone as an MCP server for Claude Desktop
+└── ui/
+    ├── server.py              FastAPI backend — a pure projection of the engine (no logic)
+    └── static/                the single-page instrument (run.html + lib/ks-design.js)
+tests/                         267 tests (integrity · claims · connectors · UI · safety · per-program)
+skills/keystone-workbench/     Agent Skill (SKILL.md) — teaches Claude the spine & the discipline
+examples/                      sample reference sets, bench plates, and corpora for the demos
 ```
 
-## Why a lab would trust it
+---
 
-Every conclusion is grounded in a cited node, carries a confidence interval, is
-independently challenged, is human-gated, and lives in a version-pinned Ledger
-that re-runs to an identical hash. Statistics are never fabricated. Identifiers
-and citing sentences are never invented — a failed lookup is marked `unresolved`.
-Computer vision is used only where scientifically justified, and refused
-everywhere else, on the record. See [ARCHITECTURE.md](ARCHITECTURE.md) and
-[CONTRIBUTING.md](CONTRIBUTING.md) (the semantic/deterministic boundary).
+## ⚖️ Honest limits
+
+Keystone **ranks hypotheses and drafts artifacts — it does not discover a target, and it never replaces laboratory validation or scientific judgement.** The headline functional-effect signal is literature-supported and measured-in-dataset (real DOIs + real Gladstone metrics), **not a trained predictive model**; the single-cell *classifier* matrix is synthetic/exploratory (labelled everywhere, never a ranking input). No association is stated as causal. **"Designed for scientist review," not "scientist-validated."**
+
+> **AI proposes · scientists decide · experiments verify.**
+
+---
+
+## 📄 License
+
+[MIT](LICENSE) · See [`ARCHITECTURE.md`](ARCHITECTURE.md) and [`CONTRIBUTING.md`](CONTRIBUTING.md) for the semantic/deterministic boundary and contribution guide.
+
+<div align="center"><br/><sub>Built with <b>Claude: Life Sciences</b> × <b>Gladstone Institutes</b> · Check what you build on.</sub></div>

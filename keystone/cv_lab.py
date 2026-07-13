@@ -37,6 +37,17 @@ REFUSED = {
     "radiology": "radiology interpretation is diagnosis — out of scope, refused",
     "spatial_transcriptomics": "spatial-omics needs a real dataset source "
                                "(CELLxGENE/GEO) not wired — refused",
+    # NeuroHem (brain-hemorrhage) boundary — the parts of a 'detect + treat'
+    # brief Keystone refuses by design, on the record.
+    "ct_hemorrhage_detection": "detecting or localizing a hemorrhage on a CT/MRI "
+                               "is radiology diagnosis — refused; it needs a "
+                               "validated clinical imaging system, not Keystone",
+    "eeg_brainwave": "reading patient brain-waves / EEG or vital signs is patient "
+                     "monitoring data — Keystone ingests no patient data; refused",
+    "treatment_recommendation": "recommending a hemorrhage treatment is a clinical "
+                                "decision needing a physician, IRB, and a validated "
+                                "system — refused; Keystone drafts research "
+                                "hypotheses, never treatment",
 }
 
 

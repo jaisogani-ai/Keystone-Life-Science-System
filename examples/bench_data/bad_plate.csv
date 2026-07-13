@@ -1,0 +1,17 @@
+# Bad plate — hard replicate-CV breach + edge effect + low R^2 + missing wells (REJECTED)
+# expected_wells: 24
+standard,B2,0,0.30
+standard,C2,2,0.12
+standard,D2,4,0.55
+standard,E2,8,0.28
+standard,F2,16,0.70
+standard,G2,32,0.60
+sample,A1,S1,0.20
+sample,A12,S1,0.80
+sample,H1,S1,0.30
+sample,D5,S2,0.40
+sample,D6,S2,0.42
+sample,D7,S2,0.39
+sample,E5,S3,0.55
+sample,E6,S3,0.58
+sample,E7,S3,0.53

@@ -1,12 +1,16 @@
-# Runtime (offline workbench + real connectors)
-requests>=2.28
+# Keystone runtime — everything a scientist needs to run the workbench UI
+# + the MCP server offline. Live-Claude and dev-only deps are commented out.
 
-# Live semantic layer (optional — only for KEYSTONE_LIVE=1)
+requests>=2.28          # real connectors (Crossref, OpenAlex, UniProt, ...)
+fastapi>=0.110          # the workbench UI (http://127.0.0.1:8000)
+uvicorn>=0.27           # ASGI server for the UI
+mcp>=1.0                # exposes Keystone tools inside Claude Desktop / Code
+
+# Perturb-seq / type-2 signature analysis pipeline (keystone/ml/th2_signature.py).
+numpy>=1.24
+
+# Live semantic layer — set KEYSTONE_LIVE=1 + ANTHROPIC_API_KEY to enable.
 # anthropic>=0.39
 
-# Dev / test
+# Dev / test only (installed separately in Dockerfile with -e .[dev]).
 # pytest>=7
-
-# UI (optional — only for the local workbench UI)
-# fastapi>=0.110
-# uvicorn>=0.27

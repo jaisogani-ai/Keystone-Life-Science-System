@@ -1,0 +1,1412 @@
+{
+  "Cellosaurus": {
+    "cell-line-list": [
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_0182"
+          }
+        ],
+        "age": "1W",
+        "breed": "C57BL/6",
+        "category": "Transformed cell line",
+        "cell-type": {
+          "value": "Microglial cell",
+          "xref": {
+            "accession": "CL_0000129",
+            "category": "Anatomy/cell type resources",
+            "database": "CL",
+            "iri": "http://purl.obolibrary.org/obo/CL_0000129",
+            "label": "microglial cell",
+            "url": "https://www.ebi.ac.uk/ols4/ontologies/cl/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000129"
+          }
+        },
+        "child-list": [
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_ZJ35"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "BV-2 PU.1 KO"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_XD67"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "BV2-EGFP"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_C8UX"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "BV2-Luc"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_WJ28"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "BV2-mCherry"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_XD66"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "BV2-tDT"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F5NX"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "EDITGENE BV2-Cas9"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F5ZV"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "EDITGENE BV2-CopGFP"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F5SC"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "EDITGENE BV2-FLUC"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_E1JF"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mAgo2"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_E1JG"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mCadm1"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4FK"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mCcr5"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_E1JH"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mCd83"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1N6"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mDhrs3"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4H0"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mGpnmb"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1N7"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mIkzf1"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4ES"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mIl2ra"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1N8"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mLy96"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1N9"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mMapt"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1NA"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mMir124a-3"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_E1JI"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mNpc1"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4FE"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mPink1"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1NB"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mRgs1"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1NC"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mSlc2a5"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1ND"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mSqstm1"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1NE"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mStat3"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_E1JJ"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mTrem2"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F1NF"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 KO-mTxnip"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4SG"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mAim2 overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4M9"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mApoe overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4PE"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mCklf overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4W5"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mClec7a overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4NZ"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mDnm1 overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4NW"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mEnc1 overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4PF"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mEsrra overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4PQ"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mHif1a overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4PG"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mmu-mir-124-3 overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4U0"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mOr5m3b overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4RM"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mSelenop overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4SF"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mSirt1 overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4Q1"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mTfeb overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_F4R5"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2 stable cell line for mTrem2 overexpression"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_E3GW"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "HyCyte BV-2-Luc"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_D8EW"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "Ubigene BV-2 Ifngr1 KO"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_D8EX"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "Ubigene BV-2 Lpl KO"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_D8EY"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "Ubigene BV-2 Plin2 KO"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_D8EZ"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "Ubigene BV-2 Syk KO"
+            }
+          },
+          {
+            "accession": {
+              "type": "primary",
+              "value": "CVCL_D8F0"
+            },
+            "name": {
+              "type": "identifier",
+              "value": "Ubigene BV-2 Usp7 KO"
+            }
+          }
+        ],
+        "created": "2012-04-04",
+        "derived-from-site-list": [
+          {
+            "site": {
+              "site-type": "In situ",
+              "value": "Brain",
+              "xref-list": [
+                {
+                  "accession": "UBERON_0000955",
+                  "category": "Anatomy/cell type resources",
+                  "database": "UBERON",
+                  "iri": "http://purl.obolibrary.org/obo/UBERON_0000955",
+                  "label": "brain",
+                  "url": "https://www.ebi.ac.uk/ols4/ontologies/uberon/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FUBERON_0000955"
+                }
+              ]
+            }
+          }
+        ],
+        "entry-version": "31",
+        "last-updated": "2026-06-25",
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "BV-2"
+          },
+          {
+            "type": "synonym",
+            "value": "BV2"
+          }
+        ],
+        "omics-list": [
+          {
+            "branch": "Proteomics",
+            "value": "Subcellular; Secretome."
+          },
+          {
+            "branch": "Transcriptomics",
+            "value": "Microarray."
+          },
+          {
+            "branch": "Transcriptomics",
+            "value": "RNAseq."
+          },
+          {
+            "branch": "Variations",
+            "value": "Array-based CGH."
+          }
+        ],
+        "reference-list": [
+          {
+            "resource-internal-ref": "CelloPub=CLPUB00788"
+          },
+          {
+            "resource-internal-ref": "DOI=10.1007/s13273-019-00057-6"
+          },
+          {
+            "resource-internal-ref": "PubMed=2110186"
+          },
+          {
+            "resource-internal-ref": "PubMed=19565166"
+          },
+          {
+            "resource-internal-ref": "PubMed=21214938"
+          },
+          {
+            "resource-internal-ref": "PubMed=21961028"
+          },
+          {
+            "resource-internal-ref": "PubMed=22651808"
+          },
+          {
+            "resource-internal-ref": "PubMed=26227174"
+          }
+        ],
+        "sex": "Female",
+        "species-list": [
+          {
+            "accession": "10090",
+            "category": "Taxonomy",
+            "database": "NCBI_TaxID",
+            "iri": "http://purl.obolibrary.org/obo/NCBITaxon_10090",
+            "label": "Mus musculus (Mouse)",
+            "url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10090&lvl=3"
+          }
+        ],
+        "str-list": {
+          "marker-list": [
+            {
+              "conflict": "false",
+              "id": "Mouse STR 1-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "19"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 11-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "16"
+                }
+              ]
+            },
+            {
+              "conflict": "true",
+              "id": "Mouse STR 12-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "16",
+                  "source-list": [
+                    {
+                      "xref": {
+                        "accession": "T9077",
+                        "category": "Cell line collections (Providers)",
+                        "database": "ABM",
+                        "url": "https://www.abmgood.com/search?query=T9077&filter_by=cat_no"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "marker-alleles": "17",
+                  "source-list": [
+                    {
+                      "xref": {
+                        "accession": "YC-C035",
+                        "category": "Cell line collections (Providers)",
+                        "database": "Ubigene",
+                        "url": "https://www.ubigene.us/product/?cate=0&mykeyword=YC-C035"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 13-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "17.1"
+                }
+              ]
+            },
+            {
+              "conflict": "true",
+              "id": "Mouse STR 15-3",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "22.3,23.3",
+                  "source-list": [
+                    {
+                      "xref": {
+                        "accession": "T9077",
+                        "category": "Cell line collections (Providers)",
+                        "database": "ABM",
+                        "url": "https://www.abmgood.com/search?query=T9077&filter_by=cat_no"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "marker-alleles": "22.3,23.3,24.3",
+                  "source-list": [
+                    {
+                      "xref": {
+                        "accession": "YC-C035",
+                        "category": "Cell line collections (Providers)",
+                        "database": "Ubigene",
+                        "url": "https://www.ubigene.us/product/?cate=0&mykeyword=YC-C035"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 17-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "15"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 18-3",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "16,17"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 19-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "13"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 2-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "16"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 3-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "14"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 4-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "20.3"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 5-5",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "17"
+                }
+              ]
+            },
+            {
+              "conflict": "true",
+              "id": "Mouse STR 6-4",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "17,18",
+                  "source-list": [
+                    {
+                      "xref": {
+                        "accession": "YC-C035",
+                        "category": "Cell line collections (Providers)",
+                        "database": "Ubigene",
+                        "url": "https://www.ubigene.us/product/?cate=0&mykeyword=YC-C035"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "marker-alleles": "17.3",
+                  "source-list": [
+                    {
+                      "xref": {
+                        "accession": "T9077",
+                        "category": "Cell line collections (Providers)",
+                        "database": "ABM",
+                        "url": "https://www.abmgood.com/search?query=T9077&filter_by=cat_no"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 6-7",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "15"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR 9-2",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "18"
+                }
+              ]
+            },
+            {
+              "conflict": "false",
+              "id": "Mouse STR X-1",
+              "marker-data-list": [
+                {
+                  "marker-alleles": "27"
+                }
+              ]
+            }
+          ],
+          "source-list": [
+            {
+              "xref": {
+                "accession": "T9077",
+                "category": "Cell line collections (Providers)",
+                "database": "ABM",
+                "url": "https://www.abmgood.com/search?query=T9077&filter_by=cat_no"
+              }
+            },
+            {
+              "xref": {
+                "accession": "YC-C035",
+                "category": "Cell line collections (Providers)",
+                "database": "Ubigene",
+                "url": "https://www.ubigene.us/product/?cate=0&mykeyword=YC-C035"
+              }
+            }
+          ]
+        },
+        "transformant-list": [
+          "Recombinant retrovirus J2"
+        ],
+        "xref-list": [
+          {
+            "accession": "BTO_0003350",
+            "category": "Anatomy/cell type resources",
+            "database": "BTO",
+            "iri": "http://purl.obolibrary.org/obo/BTO_0003350",
+            "url": "https://www.ebi.ac.uk/ols4/ontologies/bto/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FBTO_0003350"
+          },
+          {
+            "accession": "EFO_0022792",
+            "category": "Experimental variables resources",
+            "database": "EFO",
+            "url": "https://www.ebi.ac.uk/efo/EFO_0022792"
+          },
+          {
+            "accession": "MCC:0000073",
+            "category": "Cell line databases/resources",
+            "database": "MCCL"
+          },
+          {
+            "accession": "cl7130",
+            "category": "Cell line databases/resources",
+            "database": "CLDB",
+            "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl7130.html"
+          },
+          {
+            "accession": "0356",
+            "category": "Cell line collections (Providers)",
+            "database": "BCRJ",
+            "url": "https://bcrj.org.br/pesquisa/?search=0356"
+          },
+          {
+            "accession": "765",
+            "category": "CRISP screens repositories",
+            "database": "BioGRID_ORCS_Cell_line",
+            "url": "https://orcs.thebiogrid.org/Search?searchType=10&search=765&organism=all"
+          },
+          {
+            "accession": "1101MOU-PUMC000063",
+            "category": "Cell line databases/resources",
+            "database": "CCRID",
+            "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=1101MOU-PUMC000063"
+          },
+          {
+            "accession": "4201MOU-CCTCC00311",
+            "category": "Cell line databases/resources",
+            "database": "CCRID",
+            "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=4201MOU-CCTCC00311"
+          },
+          {
+            "accession": "GDC0311",
+            "category": "Cell line collections (Providers)",
+            "database": "CCTCC"
+          },
+          {
+            "accession": "CHEMBL3307704",
+            "category": "Chemistry resources",
+            "database": "ChEMBL-Cells",
+            "url": "https://www.ebi.ac.uk/chembldb/cell/inspect/CHEMBL3307704"
+          },
+          {
+            "accession": "CHEMBL614781",
+            "category": "Chemistry resources",
+            "database": "ChEMBL-Targets",
+            "url": "https://www.ebi.ac.uk/chembldb/target/inspect/CHEMBL614781"
+          },
+          {
+            "accession": "305156",
+            "category": "Cell line collections (Providers)",
+            "database": "CLS",
+            "url": "https://www.cytion.com/305156"
+          },
+          {
+            "accession": "EDC00359",
+            "category": "Cell line collections (Providers)",
+            "database": "EDITGENE",
+            "url": "https://www.editxor.com/products/cat/?keyword=EDC00359"
+          },
+          {
+            "accession": "GSM635468",
+            "category": "Gene expression databases",
+            "database": "GEO",
+            "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM635468"
+          },
+          {
+            "accession": "GSM635469",
+            "category": "Gene expression databases",
+            "database": "GEO",
+            "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM635469"
+          },
+          {
+            "accession": "GSM635470",
+            "category": "Gene expression databases",
+            "database": "GEO",
+            "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM635470"
+          },
+          {
+            "accession": "GSM635471",
+            "category": "Gene expression databases",
+            "database": "GEO",
+            "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM635471"
+          },
+          {
+            "accession": "TCM-C718",
+            "category": "Cell line collections (Providers)",
+            "database": "Hysigen",
+            "url": "https://hysigen.com/TCM-C718.html"
+          },
+          {
+            "accession": "ATL03001",
+            "category": "Cell line collections (Providers)",
+            "database": "ICLC",
+            "url": "http://www.iclc.it/details/det_list.php?line_id=ATL03001"
+          },
+          {
+            "accession": "KCB 200770YJ",
+            "category": "Cell line collections (Providers)",
+            "database": "KCB"
+          },
+          {
+            "accession": "118",
+            "category": "Cell line databases/resources",
+            "database": "Lonza",
+            "url": "https://knowledge.lonza.com/cell?id=118"
+          },
+          {
+            "accession": "PXD001597",
+            "category": "Proteomic databases",
+            "database": "PRIDE",
+            "url": "https://www.ebi.ac.uk/pride/archive/projects/PXD001597"
+          },
+          {
+            "accession": "PXD004984",
+            "category": "Proteomic databases",
+            "database": "PRIDE",
+            "url": "https://www.ebi.ac.uk/pride/archive/projects/PXD004984"
+          },
+          {
+            "accession": "CVCL_0182",
+            "category": "Chemistry resources",
+            "database": "PubChem_Cell_line",
+            "url": "https://pubchem.ncbi.nlm.nih.gov/cell/CVCL_0182"
+          },
+          {
+            "accession": "YC-C035",
+            "category": "Cell line collections (Providers)",
+            "database": "Ubigene",
+            "url": "https://www.ubigene.us/product/?cate=0&mykeyword=YC-C035"
+          },
+          {
+            "accession": "Q54798657",
+            "category": "Encyclopedic resources",
+            "database": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q54798657"
+          }
+        ]
+      }
+    ],
+    "publication-list": [
+      {
+        "author-list": [
+          {
+            "first-names": "Jessica M.",
+            "last-name": "Crain",
+            "name": "Crain J.M.",
+            "type": "person"
+          },
+          {
+            "first-names": "Jyoti J.",
+            "last-name": "Watters",
+            "name": "Watters J.J.",
+            "type": "person"
+          }
+        ],
+        "date": "2010",
+        "first-page": "148",
+        "internal-id": "PubMed=21961028",
+        "journal-name": "Open Drug Discov. J.",
+        "last-page": "167",
+        "title": "Estrogen and P2 purinergic receptor systems in microglia: therapeutic targets for neuroprotection.",
+        "type": "article",
+        "volume": "2",
+        "xref-list": [
+          {
+            "accession": "PMC3180920",
+            "category": "Reference resources",
+            "database": "PMCID",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3180920"
+          },
+          {
+            "accession": "10.2174/1877381801002010148",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.2174/1877381801002010148"
+          },
+          {
+            "accession": "21961028",
+            "category": "Reference resources",
+            "database": "PubMed",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/21961028"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Jin Hwan",
+            "last-name": "Do",
+            "name": "Do J.H.",
+            "type": "person"
+          },
+          {
+            "first-names": "Hyun Myung",
+            "last-name": "Ko",
+            "name": "Ko H.M.",
+            "type": "person"
+          },
+          {
+            "first-names": "Kyoungho",
+            "last-name": "Suk",
+            "name": "Suk K.",
+            "type": "person"
+          },
+          {
+            "first-names": "Eun Jung",
+            "last-name": "Park",
+            "name": "Park E.J.",
+            "type": "person"
+          },
+          {
+            "first-names": "Dong-Kug",
+            "last-name": "Choi",
+            "name": "Choi D.-K.",
+            "type": "person"
+          }
+        ],
+        "date": "2009",
+        "first-page": "28",
+        "internal-id": "CelloPub=CLPUB00788",
+        "journal-name": "BioChip J.",
+        "last-page": "36",
+        "title": "Genome-wide inspection of chromosomal aberrations in microglia BV-2 cells by array-based comparative genomic hybridization.",
+        "type": "article",
+        "volume": "3",
+        "xref-list": [
+          {
+            "accession": "CLPUB00788",
+            "category": "Reference resources",
+            "database": "CelloPub",
+            "url": "https://www.cellosaurus.org/cellopub/CLPUB00788"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Branden",
+            "last-name": "Stansley",
+            "name": "Stansley B.",
+            "type": "person"
+          },
+          {
+            "first-names": "Jan",
+            "last-name": "Post",
+            "name": "Post J.",
+            "type": "person"
+          },
+          {
+            "first-names": "Kenneth",
+            "last-name": "Hensley",
+            "name": "Hensley K.",
+            "type": "person"
+          }
+        ],
+        "date": "2012",
+        "first-page": "115.1",
+        "internal-id": "PubMed=22651808",
+        "journal-name": "J. Neuroinflammation",
+        "last-page": "115.8",
+        "title": "A comparative review of cell culture systems for the study of microglial biology in Alzheimer's disease.",
+        "type": "article",
+        "volume": "9",
+        "xref-list": [
+          {
+            "accession": "PMC3407712",
+            "category": "Reference resources",
+            "database": "PMCID",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3407712"
+          },
+          {
+            "accession": "10.1186/1742-2094-9-115",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.1186/1742-2094-9-115"
+          },
+          {
+            "accession": "22651808",
+            "category": "Reference resources",
+            "database": "PubMed",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/22651808"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Jong-Min",
+            "last-name": "Woo",
+            "name": "Woo J.-M.",
+            "type": "person"
+          },
+          {
+            "first-names": "Do-Hyun",
+            "last-name": "Han",
+            "name": "Han D.-H.",
+            "type": "person"
+          },
+          {
+            "first-names": "Joonho",
+            "last-name": "Park",
+            "name": "Park J.",
+            "type": "person"
+          },
+          {
+            "first-names": "Sang Jeong",
+            "last-name": "Kim",
+            "name": "Kim S.J.",
+            "type": "person"
+          },
+          {
+            "first-names": "Youngsoo",
+            "last-name": "Kim",
+            "name": "Kim Y.",
+            "type": "person"
+          }
+        ],
+        "date": "2015",
+        "first-page": "3617",
+        "internal-id": "PubMed=26227174",
+        "journal-name": "Proteomics",
+        "last-page": "3622",
+        "title": "In-depth characterization of the secretome of mouse CNS cell lines by LC-MS/MS without prefractionation.",
+        "type": "article",
+        "volume": "15",
+        "xref-list": [
+          {
+            "accession": "10.1002/pmic.201400623",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.1002/pmic.201400623"
+          },
+          {
+            "accession": "26227174",
+            "category": "Reference resources",
+            "database": "PubMed",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/26227174"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Elisabetta",
+            "last-name": "Blasi",
+            "name": "Blasi E.",
+            "type": "person"
+          },
+          {
+            "first-names": "Roberta",
+            "last-name": "Barluzzi",
+            "name": "Barluzzi R.",
+            "type": "person"
+          },
+          {
+            "first-names": "Virginia",
+            "last-name": "Bocchini",
+            "name": "Bocchini V.",
+            "type": "person"
+          },
+          {
+            "first-names": "Rosanna",
+            "last-name": "Mazzolla",
+            "name": "Mazzolla R.",
+            "type": "person"
+          },
+          {
+            "first-names": "Francesco",
+            "last-name": "Bistoni",
+            "name": "Bistoni F.",
+            "type": "person"
+          }
+        ],
+        "date": "1990",
+        "first-page": "229",
+        "internal-id": "PubMed=2110186",
+        "journal-name": "J. Neuroimmunol.",
+        "last-page": "237",
+        "title": "Immortalization of murine microglial cells by a v-raf/v-myc carrying retrovirus.",
+        "type": "article",
+        "volume": "27",
+        "xref-list": [
+          {
+            "accession": "10.1016/0165-5728(90)90073-V",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.1016/0165-5728(90)90073-V"
+          },
+          {
+            "accession": "2110186",
+            "category": "Reference resources",
+            "database": "PubMed",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/2110186"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Anja",
+            "last-name": "Henn",
+            "name": "Henn A.",
+            "type": "person"
+          },
+          {
+            "first-names": "Soren",
+            "last-name": "Lund",
+            "name": "Lund S.",
+            "type": "person"
+          },
+          {
+            "first-names": "Maj",
+            "last-name": "Hedtjarn",
+            "name": "Hedtjarn M.",
+            "type": "person"
+          },
+          {
+            "first-names": "Andre",
+            "last-name": "Schrattenholz",
+            "name": "Schrattenholz A.",
+            "type": "person"
+          },
+          {
+            "first-names": "Peter",
+            "last-name": "Porzgen",
+            "name": "Porzgen P.",
+            "type": "person"
+          },
+          {
+            "first-names": "Marcel",
+            "last-name": "Leist",
+            "name": "Leist M.",
+            "type": "person"
+          }
+        ],
+        "date": "2009",
+        "first-page": "83",
+        "internal-id": "PubMed=19565166",
+        "journal-name": "ALTEX",
+        "last-page": "94",
+        "title": "The suitability of BV2 cells as alternative model system for primary microglia cultures or for animal experiments examining brain inflammation.",
+        "type": "article",
+        "volume": "26",
+        "xref-list": [
+          {
+            "accession": "10.14573/altex.2009.2.83",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.14573/altex.2009.2.83"
+          },
+          {
+            "accession": "19565166",
+            "category": "Reference resources",
+            "database": "PubMed",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/19565166"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Chanchal",
+            "last-name": "Mandal",
+            "name": "Mandal C.",
+            "type": "person"
+          },
+          {
+            "first-names": "Taeho",
+            "last-name": "Yoon",
+            "name": "Yoon T.",
+            "type": "person"
+          },
+          {
+            "first-names": "Ji Yoon",
+            "last-name": "Park",
+            "name": "Park J.Y.",
+            "type": "person"
+          },
+          {
+            "first-names": "Kyoung Hwa",
+            "last-name": "Jung",
+            "name": "Jung K.H.",
+            "type": "person"
+          },
+          {
+            "first-names": "Young Gyu",
+            "last-name": "Chai",
+            "name": "Chai Y.G.",
+            "type": "person"
+          }
+        ],
+        "date": "2020",
+        "first-page": "51",
+        "internal-id": "DOI=10.1007/s13273-019-00057-6",
+        "journal-name": "Mol. Cell. Toxicol.",
+        "last-page": "61",
+        "title": "Lipopolysaccharide-dependent transcriptional regulation of PU.1 in microglial cells.",
+        "type": "article",
+        "volume": "16",
+        "xref-list": [
+          {
+            "accession": "10.1007/s13273-019-00057-6",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.1007/s13273-019-00057-6"
+          }
+        ]
+      },
+      {
+        "author-list": [
+          {
+            "first-names": "Brady K.",
+            "last-name": "Atwood",
+            "name": "Atwood B.K.",
+            "type": "person"
+          },
+          {
+            "first-names": "Jacqueline",
+            "last-name": "Lopez",
+            "name": "Lopez J.",
+            "type": "person"
+          },
+          {
+            "first-names": "James",
+            "last-name": "Wager-Miller",
+            "name": "Wager-Miller J.",
+            "type": "person"
+          },
+          {
+            "first-names": "Kenneth P.",
+            "last-name": "Mackie",
+            "name": "Mackie K.P.",
+            "type": "person"
+          },
+          {
+            "first-names": "Alex",
+            "last-name": "Straiker",
+            "name": "Straiker A.",
+            "type": "person"
+          }
+        ],
+        "date": "2011",
+        "first-page": "14.1",
+        "internal-id": "PubMed=21214938",
+        "journal-name": "BMC Genomics",
+        "last-page": "14.14",
+        "title": "Expression of G protein-coupled receptors and related proteins in HEK293, AtT20, BV2, and N18 cell lines as revealed by microarray analysis.",
+        "type": "article",
+        "volume": "12",
+        "xref-list": [
+          {
+            "accession": "PMC3024950",
+            "category": "Reference resources",
+            "database": "PMCID",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3024950"
+          },
+          {
+            "accession": "10.1186/1471-2164-12-14",
+            "category": "Reference resources",
+            "database": "DOI",
+            "url": "https://doi.org/10.1186/1471-2164-12-14"
+          },
+          {
+            "accession": "21214938",
+            "category": "Reference resources",
+            "database": "PubMed",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/21214938"
+          }
+        ]
+      }
+    ]
+  }
+}

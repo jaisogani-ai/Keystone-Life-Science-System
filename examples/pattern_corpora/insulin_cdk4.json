@@ -1,0 +1,21 @@
+{
+  "question": "State of the insulin signalling — CDK4 literature in metabolic disease",
+  "seed_doi": "10.1172/jci81480",
+  "captured": "2026-07-10",
+  "provenance": "2 of 13 records are REAL Crossref-resolvable DOIs (the seed 2015 JCI paper retracted in 2023, plus a real Physiological Reviews paper). The remaining 11 are ILLUSTRATIVE synthetic records (doi prefix 10.1038/insulin-*, marked illustrative:true) that demonstrate the detectors on a known pattern without claiming to be real publications. Keystone labels them as such in the UI; it never presents a synthetic DOI as a real one.",
+  "records": [
+    {"doi": "10.1172/jci81480", "title": "CDK4 promotes beta-cell regeneration and insulin secretion in murine models", "year": 2015, "cited_by_count": 380, "is_retracted": true},
+    {"doi": "10.1152/physrev.00063.2017", "title": "CDK4-cyclin D complexes upregulate hepatic insulin signalling", "year": 2018, "cited_by_count": 640},
+    {"doi": "10.1038/insulin-boyden-01", "illustrative": true, "title": "Boyden chamber migration of insulin-secreting cells: CDK4 role", "year": 2010, "cited_by_count": 55},
+    {"doi": "10.1038/insulin-boyden-02", "illustrative": true, "title": "Boyden chamber invasion of pancreatic islets in CDK4-null mice", "year": 2011, "cited_by_count": 40},
+    {"doi": "10.1038/insulin-contra-01", "illustrative": true, "title": "CDK4 inhibits insulin secretion in ex vivo beta-cell preparations", "year": 2019, "cited_by_count": 90},
+    {"doi": "10.1038/insulin-contra-02", "illustrative": true, "title": "CDK4 suppresses IRS-1 signalling in adipocyte lineage commitment", "year": 2020, "cited_by_count": 55},
+    {"doi": "10.1038/insulin-transwell-01", "illustrative": true, "title": "Transwell migration of pancreatic islet precursors with CDK4 modulation", "year": 2018, "cited_by_count": 44},
+    {"doi": "10.1038/insulin-transwell-02", "illustrative": true, "title": "Transwell invasion of insulin-responsive cell lines, standard protocol", "year": 2019, "cited_by_count": 30},
+    {"doi": "10.1038/insulin-transwell-03", "illustrative": true, "title": "Transwell assay demonstrates CDK4 modulates beta-cell migration", "year": 2020, "cited_by_count": 22},
+    {"doi": "10.1038/insulin-transwell-04", "illustrative": true, "title": "Transwell chamber standardisation for insulin-linked CDK4 studies", "year": 2021, "cited_by_count": 18},
+    {"doi": "10.1038/insulin-kb-01", "illustrative": true, "title": "KB cell line used as insulin-response model, retrospective concern", "year": 2015, "cited_by_count": 12},
+    {"doi": "10.1038/insulin-outlier", "illustrative": true, "title": "SUV3 promotes insulin secretion via CDK4 in single cohort", "year": 2019, "cited_by_count": 4},
+    {"doi": "10.1038/insulin-hep2", "illustrative": true, "title": "Hep-2 cell contamination affects insulin binding assay reliability", "year": 2016, "cited_by_count": 10}
+  ]
+}

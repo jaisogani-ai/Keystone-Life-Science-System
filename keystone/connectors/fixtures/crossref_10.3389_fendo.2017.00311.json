@@ -1,0 +1,42 @@
+{
+  "message": {
+    "title": [
+      "E2F1, a Novel Regulator of Metabolism"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          11,
+          10
+        ]
+      ]
+    },
+    "published-print": null,
+    "published-online": {
+      "date-parts": [
+        [
+          2017,
+          11,
+          10
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2017,
+          11,
+          10
+        ]
+      ],
+      "date-time": "2017-11-10T04:11:19Z",
+      "timestamp": 1510287079000
+    },
+    "container-title": [
+      "Frontiers in Endocrinology"
+    ],
+    "type": "journal-article",
+    "updated-by": []
+  }
+}

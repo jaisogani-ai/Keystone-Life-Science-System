@@ -1,0 +1,40 @@
+{
+  "message": {
+    "title": [
+      "multifunctional enzymes in cancer"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2006,
+          10
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2006,
+          10
+        ]
+      ]
+    },
+    "published-online": null,
+    "created": {
+      "date-parts": [
+        [
+          2006,
+          9,
+          22
+        ]
+      ],
+      "date-time": "2006-09-22T10:18:56Z",
+      "timestamp": 1158920336000
+    },
+    "container-title": [
+      "Nature Reviews Cancer"
+    ],
+    "type": "journal-article",
+    "updated-by": []
+  }
+}

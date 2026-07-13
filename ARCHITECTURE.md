@@ -1,8 +1,8 @@
-# Keystone — AI Scientific Research Workbench (Architecture)
+# Keystone — an agentic scientific discovery workbench (Architecture)
 
 *A capability Anthropic could add to Claude Science tomorrow. Built to be trusted by a real research laboratory.*
 
-The mission is not to discover cures. It is to build the most trustworthy AI scientific workbench that accelerates biomedical research while keeping scientists fully in control.
+The mission is not to discover cures. It is to build the most trustworthy agentic scientific discovery workbench that checks what a scientist builds on and drafts the rigor and methods artifacts they must submit — while keeping scientists fully in control. **Keystone recommends experiments and drafts artifacts; it never replaces laboratory validation or scientific judgment.**
 
 ---
 

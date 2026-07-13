@@ -41,6 +41,14 @@ def _spec_and_builder(domain: str):
         from keystone import insulin_spec as SPEC
         from keystone.data_insulin import build_insulin_graph as build
         return SPEC, build
+    if domain == "ich":
+        from keystone import ich_spec as SPEC
+        from keystone.data_ich import build_ich_graph as build
+        return SPEC, build
+    if domain == "tcell":
+        from keystone import tcell_spec as SPEC
+        from keystone.data_tcell import build_tcell_graph as build
+        return SPEC, build
     from keystone import gbm_spec as SPEC
     from keystone.data_gbm import build_gbm_graph as build
     return SPEC, build

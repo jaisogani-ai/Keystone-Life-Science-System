@@ -3,13 +3,24 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Keystone — Life-Science Labs</title>
-<link rel="stylesheet" href="/static/lib/tokens.css"/>
-<link rel="stylesheet" href="/static/lib/anim.css"/>
+<title>Keystone — Scientific Workspaces · agentic scientific discovery workbench</title>
+<link rel="stylesheet" href="/static/lib/tokens.css?v=2"/>
+<link rel="stylesheet" href="/static/lib/anim.css?v=2"/>
+<link rel="stylesheet" href="/static/lib/components.css?v=2"/>
 <style>
+  /* Light "paper" Claude-design palette — matches the front door (overrides tokens.css). */
+  :root{
+    --bg:#fcf8f9;--panel:#ffffff;--panel2:#f0edee;--line:#e2dfe0;
+    --tx:#1c1b1c;--dim:#505f76;--cyan:#3c4b62;--green:#1f6f52;--red:#ba1a1a;
+    --amber:#9a6a1e;--violet:#6b4bd6;--paper:#fcf8f9;--ink:#1c1b1c;--ink2:#45464c;
+    --secondary:#505f76;--outline:#76777c;--hairline:#e2dfe0;--lowest:#ffffff;
+    --container:#f0edee;--claude-live:#6b4bd6;--accent:#6b4bd6;--primary:#6b4bd6;
+    --on-primary:#ffffff;--ok:#1f6f52;--warn:#9a6a1e;--risk:#ba1a1a}
+  body{background:var(--bg);color:var(--tx);font-family:'Inter Tight',system-ui,sans-serif}
+  h1,h2,.brand{font-family:'Newsreader',Georgia,serif;font-weight:500}
   header{padding:14px 22px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;
-    flex-wrap:wrap;background:linear-gradient(180deg,#131826,#0c0e15);position:sticky;top:0;z-index:10}
-  .brand{font-size:16px;font-weight:700} .brand span{color:var(--green)} .brand small{display:block;color:var(--dim);font-weight:400;font-size:11px}
+    flex-wrap:wrap;background:var(--lowest);position:sticky;top:0;z-index:10}
+  .brand{font-size:16px;font-weight:700} .brand span{color:var(--violet)} .brand small{display:block;color:var(--dim);font-weight:400;font-size:11px}
   .grow{flex:1} select,button,a.btn{background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer;text-decoration:none}
   .tabs{display:flex;gap:6px;flex-wrap:wrap;padding:12px 22px;border-bottom:1px solid var(--line)}
   .tab{font-size:13px;color:var(--dim);padding:7px 13px;border:1px solid var(--line);border-radius:8px;cursor:pointer}
@@ -30,32 +41,55 @@
   ul{margin:5px 0;padding-left:18px} li{font-size:12px;margin:2px 0} code{color:var(--amber);font-size:11.5px;word-break:break-all}
   input[type=text]{background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:8px 10px;font-size:12.5px}
   .turn{border-left:3px solid var(--line);padding:6px 0 6px 12px;margin:8px 0}
-  .turn .r{color:var(--violet);font-weight:600} .consensus{background:rgba(6,214,160,.08);border-left:3px solid var(--green);border-radius:6px;padding:10px 12px;margin-top:8px;font-size:13px}
+  .turn .r{color:var(--violet);font-weight:600} .consensus{background:rgba(87,180,140,.08);border-left:3px solid var(--green);border-radius:6px;padding:10px 12px;margin-top:8px;font-size:13px}
   .empty{color:var(--dim);text-align:center;padding:40px}
   @media (max-width:680px){.link{min-width:100%}.arrow{display:none}}
 </style>
 </head>
-<body>
+<body data-stage="integrity">
 <header>
-  <div class="brand">Key<span>stone</span> — Life-Science Labs
-    <small>integrity · notebook · biology chain · computer vision · live debate — real data or an honest refusal</small></div>
+  <a href="/" title="Back to the Keystone workbench" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:9px">
+    <span style="font-size:20px;color:var(--violet);line-height:1">←</span>
+    <div class="brand">Key<span>stone</span> — Scientific Workspaces
+      <small>Sections of one agentic scientific discovery workbench. Every value is real evidence or an explicit refusal.</small></div></a>
   <div class="grow"></div>
   <select id="domain" onchange="loadTab()">
-    <option value="gbm">Glioblastoma</option><option value="insulin">Insulin resistance</option>
+    <option value="gbm">Glioblastoma</option><option value="insulin">Insulin resistance</option><option value="ich">Brain hemorrhage · NeuroHem</option>
   </select>
-  <a class="btn" href="/">← Decision Engine</a>
+  <a class="btn" href="/">← Workbench</a>
 </header>
-<div class="tabs" id="tabs"></div>
-<main id="main"><div class="empty">Loading…</div></main>
+<div class="wf-spine" id="spine"></div>
+<div class="tabs" id="tabs" role="tablist" aria-label="Scientific workspaces"></div>
+<script type="module" src="/static/lib/spine.js"></script>
+<main id="main" role="region" aria-live="polite" aria-label="Workspace content"><div class="empty">Loading…</div></main>
 
 <script>
-const TABS=[['integrity','Research Integrity Center'],['notebook','Scientific Notebook'],
-  ['biology','Biology Chain'],['cv','Computer Vision Lab'],['debate','Live AI Debate']];
-let TAB='integrity';
+const TABS=[['discovery','Discovery Run ⟲'],['frontier','Frontier Guard 🛡️'],
+  ['integrity','Research Integrity Center'],['notebook','Scientific Notebook'],
+  ['biology','Biology Chain'],['patterns','Literature Pattern Miner'],
+  ['bench','Laboratory Agent'],['cv','Scientific Safety Boundary'],
+  ['debate','Live AI Debate']];
+// Progressive disclosure (Apple-HIG): three core surfaces are always visible;
+// the rest live behind "More" so a first-time PI isn't met with nine tabs.
+const CORE = new Set(['discovery','frontier','integrity']);
+let TAB='discovery', SHOW_MORE=false;
 const $=id=>document.getElementById(id);
 const esc=s=>(s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const dom=()=>$('domain').value;
-$('tabs').innerHTML=TABS.map(([k,l])=>`<span class="tab" data-k="${k}" onclick="TAB='${k}';loadTab()">${l}</span>`).join('');
+const DEMO = new URLSearchParams(location.search).get('demo')==='1';
+
+function renderTabs(){
+  const core = TABS.filter(([k])=>CORE.has(k));
+  const shown = DEMO ? core : (SHOW_MORE ? TABS : core);
+  let html = shown.map(([k,l])=>
+    `<span class="tab ${k===TAB?'on':''}" role="tab" tabindex="0" aria-selected="${k===TAB}" data-k="${k}"
+       onclick="selectTab('${k}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectTab('${k}')}">${l}</span>`).join('');
+  if (!DEMO) html += `<button class="tab more-toggle" aria-expanded="${SHOW_MORE}"
+      onclick="SHOW_MORE=!SHOW_MORE;renderTabs()">${SHOW_MORE?'Less ▴':'More ▾'}</button>`;
+  $('tabs').innerHTML = html;
+}
+function selectTab(k){ TAB=k; if(!CORE.has(k)) SHOW_MORE=true; renderTabs(); loadTab(); }
+renderTabs();
 
 async function j(u){const r=await fetch(u);return r.json();}
 function drawTabs(){document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.k===TAB));}
@@ -65,6 +99,33 @@ async function loadTab(){
   try{ await RENDER[TAB](); }catch(e){ $('main').innerHTML=`<div class="empty" style="color:var(--red)">${esc(e.message)}</div>`; }
 }
 const RENDER={
+  discovery: async()=>{
+    $('main').innerHTML = `<h2>Discovery Run ⟲ <span class="sub" style="font-weight:400">— the self-correcting loop</span></h2>
+      <div class="sub">One continuous loop, not separate tabs: the Literature Pattern Miner finds a contradiction → it becomes a rankable Decision-Engine hypothesis → the recommended experiment is validated against a plate → a QC failure downgrades the confidence of the very hypothesis it was meant to test. Every number is deterministic; a literature-only hypothesis carries honest default uncertainty, never an inflated graph score.</div>
+      <div class="card"><div class="row">
+        <label class="sub">Corpus</label>
+        <select id="dr-corpus"><option value="gbm">GBM — cathepsin B</option><option value="insulin">Insulin — CDK4</option></select>
+        <label class="sub">Validation plate</label>
+        <select id="dr-plate"><option value="">none</option><option value="clean">clean (passes QC)</option><option value="borderline">borderline (downgrades)</option><option value="bad" selected>bad (rejects)</option></select>
+        <button onclick="runDiscovery()">Run the loop</button>
+      </div></div>
+      <div id="dr-out"></div>`;
+  },
+  frontier: async()=>{
+    $('main').innerHTML = `<h2>Frontier Guard 🛡️ <span class="sub" style="font-weight:400">— responsible AI for three frontiers</span></h2>
+      <div class="sub">AI can now design phages, screen organoids, and run aging clocks. Keystone is the trust layer: it vets a candidate, scores a study, benchmarks a claim, and shows the evidence — while refusing to generate a sequence, prescribe a phage, or compute a patient's biological age. The guardrail is the point.</div>
+      <div class="card"><div class="row">
+        <label class="sub">Frontier</label>
+        <select id="fr-sel" onchange="renderFrontierForm()">
+          <option value="phage_design">Phage design / therapy — biosafety vetting</option>
+          <option value="organoid_response">Organoid response — reproducibility score</option>
+          <option value="aging_clock">Aging clock — study rigor + clock benchmark</option>
+        </select>
+      </div></div>
+      <div id="fr-form"></div>
+      <div id="fr-out"></div>`;
+    renderFrontierForm();
+  },
   integrity: async()=>{const d=await j('/api/integrity?domain='+dom());
     $('main').innerHTML=`<h2>Research Integrity Center</h2>
       <div class="sub">Verdict: <b>${esc(d.summary.verdict)}</b> · ${d.summary.passed} pass / ${d.summary.warned} warn / ${d.summary.failed} fail / ${d.summary.not_wired} not wired · hash <code>${esc(d.graph_hash)}</code></div>
@@ -86,16 +147,88 @@ const RENDER={
       <div class="card"><b>Version History</b> <span class="sub">${s.version_history.prior_runs_indexed} prior run(s) indexed</span>
         <div class="row">${s.version_history.steps.map(x=>`<span class="pill">${esc(x.stage)}</span>`).join('')}</div></div>
       <div class="card"><b>Publication</b> — <a href="${esc(s.publication.endpoint)}" target="_blank">generate report →</a> <span class="sub">reproduces to ${esc(s.publication.reproducibility_hash)}</span></div>`;},
+  patterns: async()=>{
+    const cat = await j('/api/pattern_mine/catalogue');
+    const supp = cat.scan_types.filter(x=>x.status==='supported');
+    const ref = cat.scan_types.filter(x=>x.status==='refused');
+    $('main').innerHTML = `<h2>Literature Pattern Miner</h2>
+      <div class="sub">Scan a corpus of papers and surface patterns manual reading misses — contradictions, method drift, reagent contamination, consensus vs outlier. Deterministic detectors own every count; Claude narrates. Every hit cites real DOIs; refusal boundary applies.</div>
+      <div class="card">
+        <b>Corpus source</b>
+        <div class="row" style="margin-top:6px">
+          <button onclick="loadPatCorpus('gbm_real')">Load REAL GBM corpus (citers of the retraction)</button>
+          <button onclick="loadPatCorpus('prostate')">Load REAL prostate corpus (assay drift 1996→2022)</button>
+          <button onclick="loadPatCorpus('gbm')">Load GBM structure demo (all detectors)</button>
+          <button onclick="loadPatCorpus('insulin')">Load insulin CDK4 corpus</button>
+          <select id="pat-scan" style="margin-left:6px">
+            ${supp.map(s=>`<option value="${esc(s.scan_type)}">${esc(s.scan_type)} — supported</option>`).join('')}
+            ${ref.map(s=>`<option value="${esc(s.scan_type)}">${esc(s.scan_type)} — refused</option>`).join('')}
+          </select>
+          <button onclick="runPatScan()">Run scan</button>
+          <button onclick="runFieldIntegrity()">Field Integrity Score</button>
+        </div>
+        <div class="sub" id="pat-corpus-info" style="margin-top:8px">No corpus loaded.</div>
+      </div>
+      <div id="fi-out"></div>
+      <div id="pat-out"></div>`;
+  },
+  bench: async()=>{
+    const cat = await j('/api/bench/catalogue');
+    const supp = cat.formats.filter(x=>x.status==='supported');
+    const ref = cat.formats.filter(x=>x.status==='refused');
+    $('main').innerHTML = `<h2>Laboratory Agent</h2>
+      <div class="sub">Ingest bench-instrument output, run deterministic QC (standard-curve R², replicate CV, edge effect, missing wells), and apply the Reviewer's self-challenge — confidence is downgraded when the data fails QC, the same discipline Keystone applies to literature. Every threshold is cite-able (FDA Bioanalytical 2018; Ekins &amp; Chu 1988). Unsupported instruments are refused, not guessed.</div>
+      <div class="card">
+        <div class="row"><b>Supported format</b> ${supp.map(s=>`<span class="pill supported">${esc(s.format)}</span>`).join('')}</div>
+        <div class="sub" style="margin-top:6px">Refused — no validated interpretation model: ${ref.map(s=>`<span class="pill refused">${esc(s.format)}</span>`).join(' ')}</div>
+      </div>
+      <div class="card">
+        <b>Plate data (CSV)</b>
+        <div class="row" style="margin-top:6px">
+          <button onclick="loadBench('clean')">Load clean plate</button>
+          <button onclick="loadBench('borderline')">Load borderline plate</button>
+          <button onclick="loadBench('bad')">Load bad plate</button>
+        </div>
+        <textarea id="bench-csv" style="width:100%;min-height:150px;margin-top:8px;background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:10px;font-family:ui-monospace,monospace;font-size:12px" placeholder="Paste plate-reader CSV:  kind,position,label,reading …"></textarea>
+        <div class="row" style="margin-top:8px">
+          <select id="bench-fmt">
+            ${supp.map(s=>`<option value="${esc(s.format)}">${esc(s.format)} — supported</option>`).join('')}
+            ${ref.map(s=>`<option value="${esc(s.format)}">${esc(s.format)} — refused</option>`).join('')}
+          </select>
+          <button onclick="runBench()">Review data</button>
+        </div>
+      </div>
+      <div id="bench-out"></div>`;
+  },
   biology: async()=>{const d=await j('/api/biology_chain?domain='+dom());
     $('main').innerHTML=`<h2>Biology Chain</h2><div class="sub">Cell → Protein → Mutation → Drug → Pathway → Disease → Trial — every link a real connector, joined by ${esc(d.gene)}</div>
       <div class="chain">${d.chain.map((l,i)=>`<div class="link"><div class="l">${esc(l.layer)}</div><div class="e">${esc(l.entity)}</div><div class="sub">${esc(l.source)}</div></div>${i<d.chain.length-1?'<span class="arrow">→</span>':''}`).join('')}</div>
       ${d.structure_svg?`<div class="card"><b>Standard-of-care 2D structure</b><div style="background:#fff;border-radius:8px;padding:8px;max-width:280px">${d.structure_svg}</div></div>`:''}
       <div class="card"><b>Spatial transcriptomics</b> <span class="pill not_wired">Tier 3 · not wired</span><div class="sub">${esc(d.spatial_omics.note)}</div></div>`;},
   cv: async()=>{const d=await j('/api/cv/catalogue');
-    $('main').innerHTML=`<h2>Computer Vision Lab</h2><div class="sub">Claude Vision is used only where a validated model exists (pathway/mechanism figures). Measurement extraction from microscopy/CryoEM/blots is refused — the boundary that keeps it trustworthy.</div>
-      <div class="card"><b>Supported (Claude vision)</b>${d.modalities.filter(m=>m.status==='supported').map(m=>`<div class="row" style="margin-top:6px"><span class="pill supported">${esc(m.modality)}</span><span class="sub">${esc(m.detail)}</span></div>`).join('')}</div>
-      <div class="card"><b>Refused (no validated model — never fabricated)</b>${d.modalities.filter(m=>m.status==='refused').map(m=>`<div class="row" style="margin-top:6px"><span class="pill refused">${esc(m.modality)}</span><span class="sub">${esc(m.detail)}</span></div>`).join('')}</div>
-      <div class="card"><b>Try it</b><div class="row" style="margin-top:6px"><input type="text" id="cvmod" placeholder="modality e.g. microscopy or pathway_figure" style="flex:1"><button onclick="tryCv()">Analyze</button></div><div id="cvout" class="sub" style="margin-top:8px"></div></div>`;},
+    $('main').innerHTML=`<h2>Scientific Safety Boundary</h2>
+      <div class="sub">Keystone intentionally refuses tasks outside its validated scope.</div>
+      <div class="card" style="border-left:3px solid var(--green)">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">Within scope · Claude vision supported</div>
+        <div class="row" style="margin-top:4px"><span class="pill pass">✓</span><span>Pathway figures</span></div>
+        <div class="row" style="margin-top:4px"><span class="pill pass">✓</span><span>Molecular mechanisms</span></div>
+        <div class="row" style="margin-top:4px"><span class="pill pass">✓</span><span>Scientific diagrams</span></div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--red)">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">Out of scope · refused by design</div>
+        <div class="row" style="margin-top:4px"><span class="pill fail">✕</span><span>Microscopy diagnosis</span></div>
+        <div class="row" style="margin-top:4px"><span class="pill fail">✕</span><span>Histopathology</span></div>
+        <div class="row" style="margin-top:4px"><span class="pill fail">✕</span><span>Clinical radiology</span></div>
+        <div class="row" style="margin-top:4px"><span class="pill fail">✕</span><span>CT / MRI hemorrhage detection <span class="sub">(NeuroHem)</span></span></div>
+        <div class="row" style="margin-top:4px"><span class="pill fail">✕</span><span>Patient brain-waves / EEG / vital signs <span class="sub">(NeuroHem)</span></span></div>
+        <div class="row" style="margin-top:4px"><span class="pill fail">✕</span><span>Treatment recommendations <span class="sub">(NeuroHem)</span></span></div>
+        <div class="sub" style="margin-top:10px">These require dedicated validated diagnostic systems, patient governance (IRB), and a physician. Being wrong in medicine is a harm, not a bug. This boundary is enforced in <code>keystone/cv_lab.py</code>; Keystone drafts research hypotheses, never diagnosis or treatment.</div>
+      </div>
+      <div class="card"><b>See the boundary in action</b>
+        <div class="sub" style="margin-top:4px">Type any modality. Supported ones (e.g. <code>pathway_figure</code>) run against Claude vision. Refused ones return the structured refusal from <code>cv_lab.py</code> — never a fabricated measurement.</div>
+        <div class="row" style="margin-top:8px"><input type="text" id="cvmod" placeholder="e.g. microscopy, radiology, pathway_figure" style="flex:1"><button onclick="tryCv()">Test the boundary</button></div>
+        <div id="cvout" class="sub" style="margin-top:8px"></div>
+      </div>`;},
   debate: async()=>{const d=await j('/api/debate?domain='+dom());
     $('main').innerHTML=`<h2>Live AI Debate</h2><div class="sub">${esc(d.hypothesis)}</div>
       ${d.turns.map(t=>`<div class="turn"><span class="r">${esc(t.role)}</span> <span class="sub">(${esc(t.lens)})</span>
@@ -108,6 +241,351 @@ async function addComment(hash){const author=$('cauthor').value,text=$('ctext').
   const c=await r.json();if(c.error)return;$('comments').insertAdjacentHTML('beforeend',renderComment(c));$('ctext').value='';}
 async function tryCv(){const m=$('cvmod').value.trim();const r=await fetch('/api/cv/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({modality:m})});
   const d=await r.json();$('cvout').innerHTML=d.refused?`<span class="pill refused">refused</span> ${esc(d.reason)}`:d.requires_live_vision?`<span class="pill warn">requires live vision</span> ${esc(d.note)}`:`<span class="pill supported">ok</span> ${esc(JSON.stringify(d))}`;}
+
+// --- Literature Pattern Miner (Idea #4) ---
+let PAT_CORPUS = null;
+async function loadPatCorpus(kind){
+  const d = await j('/api/pattern_mine/sample?kind=' + encodeURIComponent(kind));
+  if (d.error){ $('pat-corpus-info').innerHTML = `<span class="pill refused">${esc(d.error)}</span>`; return; }
+  PAT_CORPUS = d;
+  const doiHint = d.seed_doi ? ` · seed <code>${esc(d.seed_doi)}</code>` : '';
+  const nIll = (d.records || []).filter(r => r.illustrative).length;
+  const nReal = (d.records || []).length - nIll;
+  const split = nIll
+    ? ` · <span class="pill warn">${nReal} real · ${nIll} illustrative</span>`
+    : ` · <span class="pill pass">${nReal} real DOIs</span>`;
+  $('pat-corpus-info').innerHTML = `Loaded <b>${d.records.length}</b> paper(s) — <i>${esc(d.question)}</i>${doiHint}${split}`;
+}
+async function runPatScan(){
+  if (!PAT_CORPUS){ $('pat-out').innerHTML = `<div class="card"><span class="pill warn">no corpus loaded</span></div>`; return; }
+  const scan = $('pat-scan').value;
+  $('pat-out').innerHTML = `<div class="card sub">running ${esc(scan)} on ${PAT_CORPUS.records.length} paper(s)…</div>`;
+  const r = await fetch('/api/pattern_mine', {method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({records: PAT_CORPUS.records, question: PAT_CORPUS.question,
+                           seed_doi: PAT_CORPUS.seed_doi, scan_type: scan})});
+  renderPatOut(await r.json());
+}
+function renderPatOut(d){
+  let h = '';
+  if (d.refused){
+    h = `<div class="card" style="border-left:3px solid var(--red)">
+      <b>Refused by design.</b> <span class="pill refused">${esc(d.report && d.report.hits === undefined ? '' : 'refused')}</span>
+      <div class="sub" style="margin-top:6px">${esc(d.reason)}</div>
+      <div class="sub" style="margin-top:6px">Refusal boundary enforced in <code>keystone/agents/pattern_miner.py</code> — the deterministic layer will not fabricate a pattern for out-of-scope scans.</div>
+    </div>`;
+    $('pat-out').innerHTML = h; return;
+  }
+  const rep = d.report;
+  const prov = d.provenance || {n_real:0, n_illustrative:0, illustrative_dois:[], note:''};
+  const illus = new Set(prov.illustrative_dois || []);
+  const srcTag = d.reasoner === 'claude' ? 'Claude prose' : 'deterministic template';
+  const provPill = prov.n_illustrative
+    ? `<span class="pill warn">${prov.n_real} real · ${prov.n_illustrative} illustrative</span>`
+    : `<span class="pill pass">${prov.n_real} real DOIs</span>`;
+  h += `<div class="card"><b>Corpus:</b> ${rep.corpus_size} paper(s)
+    · <span class="sub">${esc(rep.question || 'no question')}</span>
+    · <span class="pill">${esc(srcTag)}</span> ${provPill}
+    ${prov.note ? `<div class="sub" style="margin-top:6px">${esc(prov.note)}</div>` : ''}</div>`;
+  if (!rep.hits.length){
+    h += `<div class="card sub">No pattern threshold breached — nothing to flag. This is a legitimate honest outcome; the deterministic layer will not invent a pattern for a clean corpus.</div>`;
+    $('pat-out').innerHTML = h; return;
+  }
+  // render a DOI as a clickable Crossref link, or a badged illustrative record
+  const doiCell = dd => illus.has(dd)
+    ? `<span class="pill" title="illustrative synthetic record — not a real publication"><code>${esc(dd)}</code> illustrative</span>`
+    : `<a href="https://doi.org/${esc(dd)}" target="_blank"><code>${esc(dd)}</code></a>`;
+  rep.hits.forEach((hit, i) => {
+    const sev = hit.severity;
+    const pillCls = sev >= 0.7 ? 'fail' : sev >= 0.4 ? 'warn' : 'pass';
+    h += `<div class="card">
+      <div class="row"><b>${esc(hit.kind.replace(/_/g,' '))}</b>
+        <span class="pill ${pillCls}">severity ${sev.toFixed(2)}</span>
+      </div>
+      <div style="margin:6px 0;font-size:13px">${esc(hit.summary)}</div>
+      <div class="sub"><b>Cites:</b> ${(hit.dois||[]).slice(0,6).map(doiCell).join(' · ')}${hit.dois.length > 6 ? ' <i>… +' + (hit.dois.length - 6) + ' more</i>' : ''}</div>
+      <div class="sub" style="margin-top:4px;font-size:11px"><i>Methodology:</i> ${esc(hit.citation)}</div>
+      <details style="margin-top:6px"><summary style="cursor:pointer;color:var(--cyan);font-size:12.5px">detail</summary>
+        <pre style="font-size:11px;color:var(--dim);white-space:pre-wrap;word-break:break-word">${esc(JSON.stringify(hit.detail, null, 2))}</pre>
+      </details>
+    </div>`;
+  });
+  $('pat-out').innerHTML = h;
+}
+
+// --- Frontier Guard: responsible AI for three frontiers ---
+function renderFrontierForm(){
+  const fr = $('fr-sel').value;
+  if (fr === 'phage_design'){
+    $('fr-form').innerHTML = `<div class="card">
+      <b>Candidate phage genome — gene annotations</b>
+      <div class="sub" style="margin:4px 0">Paste the candidate's annotated gene/ORF names (one per line or comma-separated). Keystone screens them against declared toxin / lysogeny / AMR marker sets. It reads no raw sequence and never generates one.</div>
+      <div class="row" style="margin-bottom:6px">
+        <button onclick="loadPhagePreset('clean')">Load clean lytic candidate</button>
+        <button onclick="loadPhagePreset('toxin')">Load toxin + temperate candidate</button>
+        <button onclick="loadPhagePreset('amr')">Load AMR-carrying candidate</button>
+      </div>
+      <textarea id="fr-genes" style="width:100%;min-height:110px;background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:10px;font-family:ui-monospace,monospace;font-size:12px" placeholder="major capsid protein&#10;tail fiber protein&#10;DNA polymerase&#10;receptor binding protein"></textarea>
+      <div class="row" style="margin-top:8px"><label class="sub"><input type="checkbox" id="fr-corpus" checked> include phage-therapy literature scan</label>
+        <button onclick="runFrontier()">Vet candidate</button></div>
+    </div>`;
+  } else {
+    const SPEC = {
+      organoid_response: {
+        title:'Describe the organoid drug-screening study',
+        note:'Check what the study actually did. Keystone scores STUDY reproducibility risk against published standards. It does not predict patient response, read images, or touch patient data.',
+        corpus:'include organoid literature scan', btn:'Score study',
+        items:[['authenticated','Organoid authenticated (STR / biobank ID)',true],
+          ['matched_normal','Matched-normal control present',true],
+          ['passage_recorded','Passage number recorded & in range',false],
+          ['matrigel_batch','Matrigel/BME batch recorded',false],
+          ['replicates_adequate','Biological replicate n ≥ 3',false],
+          ['blinded','Scoring blinded to arm',false],
+          ['viability_validated','Viability readout validated',false],
+          ['data_deposited','Raw data deposited',false]]
+      },
+      aging_clock: {
+        title:'Describe the biological-age-acceleration study',
+        note:"Check what the study actually did. Keystone scores STUDY rigor and benchmarks against published clocks. It does NOT compute a patient's biological age from scRNA-seq, read patient samples, or touch PHI.",
+        corpus:'include aging-clock literature scan', btn:'Score study + benchmark',
+        items:[['clock_selection_justified','Aging clock named + selection justified',true],
+          ['chronological_age_controlled','Chronological-age confound controlled',true],
+          ['healthy_controls_matched','Healthy controls matched (age/sex/tissue)',false],
+          ['batch_corrected','Batch effects corrected',false],
+          ['tissue_matched','Clock trained on the same tissue',false],
+          ['replicates_adequate','Biological replicate n reported',false],
+          ['data_code_deposited','Raw data + code deposited',false]]
+      }
+    }[fr];
+    $('fr-form').innerHTML = `<div class="card">
+      <b>${SPEC.title}</b>
+      <div class="sub" style="margin:4px 0">${SPEC.note}</div>
+      ${SPEC.items.map(([k,label,crit])=>`<div style="margin:3px 0"><label class="sub"><input type="checkbox" id="fr-${k}"> ${label}${crit?' <span class="pill" style="color:var(--red);border-color:var(--red)">critical</span>':''}</label></div>`).join('')}
+      <div class="row" style="margin-top:8px"><label class="sub"><input type="checkbox" id="fr-corpus" checked> ${SPEC.corpus}</label>
+        <button onclick="runFrontier()">${SPEC.btn}</button></div>
+    </div>`;
+  }
+}
+function loadPhagePreset(kind){
+  const p = {
+    clean: ['major capsid protein','portal protein','terminase large subunit','DNA polymerase','tail fiber protein','receptor binding protein','endolysin','holin'],
+    toxin: ['major capsid protein','integrase','stx2','tail fiber protein','cI repressor'],
+    amr:   ['major capsid protein','tail fiber protein','blaKPC','DNA polymerase']
+  };
+  $('fr-genes').value = (p[kind]||[]).join('\n');
+}
+async function runFrontier(){
+  const fr = $('fr-sel').value, body = {frontier: fr};
+  const corpusMap = {phage_design:'phage', organoid_response:'organoid', aging_clock:'aging'};
+  if ($('fr-corpus') && $('fr-corpus').checked) body.corpus_kind = corpusMap[fr];
+  if (fr === 'phage_design'){
+    body.genes = $('fr-genes').value.split(/[\n,]+/).map(s=>s.trim()).filter(Boolean);
+  } else {
+    const study={};
+    document.querySelectorAll('#fr-form input[type=checkbox]').forEach(el=>{
+      if (el.id === 'fr-corpus') return;
+      if (el.checked) study[el.id.replace(/^fr-/,'')] = true;
+    });
+    body.study = study;
+  }
+  $('fr-out').innerHTML = '<div class="card sub">assessing…</div>';
+  const r = await fetch('/api/frontier/assess',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  renderFrontierOut(await r.json());
+}
+function renderFrontierOut(d){
+  if (d.refused){ $('fr-out').innerHTML = `<div class="card" style="border-left:3px solid var(--red)"><b>Refused.</b> ${esc(d.reason)}</div>`; return; }
+  const a = d.active; let h = '';
+  if (a.input_kind === 'phage_candidate'){
+    const col = a.verdict==='no-go'?'var(--red)':a.verdict==='caution'?'var(--amber)':'var(--green)';
+    const pc = a.verdict==='no-go'?'fail':a.verdict==='caution'?'warn':'pass';
+    h += `<div class="card" style="border-left:3px solid ${col}"><b>Biosafety verdict</b> <span class="pill ${pc}">${esc(a.verdict).toUpperCase()}</span>
+      <div style="margin:6px 0;font-size:13px">${esc(a.reason)}</div>
+      <table><tr><th>Screen</th><th>Status</th><th>Markers found</th><th>Basis</th></tr>
+      ${a.checks.map(c=>{const good=(c.category==='host-range evidence')?c.hit:!c.hit; return `<tr><td>${esc(c.category)}</td><td><span class="pill ${good?'pass':(c.category==='host-range evidence'?'warn':'fail')}">${c.hit?'present':'absent'}</span></td><td class="sub">${c.markers.map(m=>esc(m.marker)).join(', ')||'—'}</td><td class="sub" style="font-size:11px">${esc(c.citation)}</td></tr>`;}).join('')}
+      </table></div>`;
+  } else {
+    const col = a.verdict==='high'?'var(--red)':a.verdict==='medium'?'var(--amber)':'var(--green)';
+    const pc = a.verdict==='high'?'fail':a.verdict==='medium'?'warn':'pass';
+    h += `<div class="card" style="border-left:3px solid ${col}"><b>Reproducibility risk</b> <span class="pill ${pc}">${esc(a.verdict).toUpperCase()}</span>
+      <div style="margin:6px 0;font-size:13px">${esc(a.reason)}</div>`;
+    if (a.gaps && a.gaps.length){ h += `<div class="sub"><b>Unmet rigor items:</b></div><ul>${a.gaps.map(g=>`<li>${esc(g.question)}${g.critical?' <span class="pill" style="color:var(--red);border-color:var(--red)">critical</span>':''} <span class="sub" style="font-size:11px">— ${esc(g.citation)}</span></li>`).join('')}</ul>`; }
+    if (a.fixes && a.fixes.length){ h += `<div class="sub"><b>Fixes:</b></div><ul>${a.fixes.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>`; }
+    if (a.benchmark_clocks && a.benchmark_clocks.length){ h += `<div class="sub"><b>Benchmark a claimed result against published clocks:</b></div><ul>${a.benchmark_clocks.map(c=>`<li><b>${esc(c.clock)}</b> — ${esc(c.detail)} <span class="sub" style="font-size:11px">(${esc(c.citation)})</span></li>`).join('')}</ul>`; }
+    h += `</div>`;
+  }
+  h += `<div class="card" style="border-left:3px solid var(--amber)"><b>What Keystone refuses here</b>
+    <div class="sub" style="margin-top:4px">${esc(a.refusal)}</div>
+    <ul>${(d.refuses||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`;
+  const ev = d.evidence && d.evidence.report;
+  if (ev && ev.hits && ev.hits.length){
+    const evIllus = new Set(((d.evidence.provenance)||{}).illustrative_dois||[]);
+    h += `<div class="card"><b>Literature evidence scan</b> <span class="sub">${ev.corpus_size} paper(s)</span>
+      ${ev.hits.map(hit=>`<div style="margin-top:8px"><span class="pill ${hit.severity>=0.7?'fail':hit.severity>=0.4?'warn':'pass'}">${esc(hit.kind.replace(/_/g,' '))}</span> <span style="font-size:12.5px">${esc(hit.summary)}</span>${hit.dois&&hit.dois.length?`<div class="sub">cites ${hit.dois.slice(0,4).map(dd=>doiHtml(dd, evIllus)).join(' · ')}</div>`:''}</div>`).join('')}</div>`;
+  }
+  h += `<div class="card"><b>Rigor checklist</b> <span class="sub">what this frontier's research must report</span><ul>${(d.rigor_checklist||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`;
+  $('fr-out').innerHTML = h;
+}
+
+// --- Field Integrity Report: a computed integrity index for the whole corpus ---
+async function runFieldIntegrity(){
+  if (!PAT_CORPUS){ $('fi-out').innerHTML = `<div class="card"><span class="pill warn">load a corpus first</span></div>`; return; }
+  $('fi-out').innerHTML = '<div class="card sub">computing field integrity from real signals…</div>';
+  const body = {records: PAT_CORPUS.records, question: PAT_CORPUS.question, seed_doi: PAT_CORPUS.seed_doi};
+  const r = await fetch('/api/field_integrity', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  const d = await r.json();
+  if (!d.resolved){ $('fi-out').innerHTML = `<div class="card sub">${esc(d.note||'nothing to score')}</div>`; return; }
+  const bandCls = d.band==='high'?'pass':d.band==='medium'?'warn':'fail';
+  const c = d.components;
+  let h = `<div class="card" style="border-left:3px solid var(--violet)">
+    <div class="row" style="align-items:baseline;gap:12px"><span style="font-size:34px;font-weight:800">${d.score}</span><span class="sub">/100</span>
+      <span class="pill ${bandCls}">${esc(d.band)} integrity</span> <span class="sub">· ${d.n} references</span></div>
+    <div style="margin:8px 0;font-size:13px">${esc(d.interpretation)}</div>
+    <table><tr><th>Component</th><th>Value</th><th>Weight</th><th>Basis</th></tr>
+      <tr><td>Retraction burden</td><td>${c.retraction.rate} (${c.retraction.count}/${d.n})</td><td>${d.weights.retraction}</td><td class="sub" style="font-size:11px">${esc(c.retraction.basis)}</td></tr>
+      <tr><td>Post-publication burden</td><td>${c.post_pub.rate} <span class="sub">(${esc(c.post_pub.coverage)})</span></td><td>${d.weights.post_pub}</td><td class="sub" style="font-size:11px">${esc(c.post_pub.basis)}</td></tr>
+      <tr><td>Integrity-pattern load</td><td>${c.pattern.load}</td><td>${d.weights.pattern}</td><td class="sub" style="font-size:11px">${esc(c.pattern.basis)}</td></tr>
+    </table>
+    <div class="sub" style="margin-top:6px">Score = 100 × (1 − Σ weight·burden). Every burden computed from real records; weights shown.</div>
+    ${d.sensitivity ? `<div class="sub" style="margin-top:4px"><b>Sensitivity:</b> <span class="pill ${d.sensitivity.band_robust?'pass':'warn'}">${d.sensitivity.band_robust?'band robust':'band shifts'}</span> across equal / retraction-heavy / pattern-discounted priors (score range ${d.sensitivity.score_range[0]}–${d.sensitivity.score_range[1]}). ${esc(d.sensitivity.note)}</div>` : ''}
+    <div class="row" style="margin-top:8px"><button onclick="downloadAudit()">Download Research Integrity Audit ▸</button></div>
+  </div>`;
+  if (d.retracted_papers && d.retracted_papers.length){
+    h += `<div class="card"><b>Retracted references in this corpus</b><ul>${d.retracted_papers.map(p=>`<li>${esc((p.title||'').slice(0,90))} (${p.year||'—'}) — <a href="https://doi.org/${esc(p.doi)}" target="_blank"><code>${esc(p.doi)}</code></a></li>`).join('')}</ul></div>`;
+  }
+  $('fi-out').innerHTML = h;
+}
+async function downloadAudit(){
+  if (!PAT_CORPUS) return;
+  const body = {records: PAT_CORPUS.records, question: PAT_CORPUS.question, seed_doi: PAT_CORPUS.seed_doi};
+  const r = await fetch('/api/field_integrity/audit', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  const w = window.open('', '_blank'); w.document.write(await r.text()); w.document.close();
+}
+
+// shared: render a DOI as a Crossref link, or a badged illustrative record —
+// so no synthetic DOI is ever shown as real on any surface.
+function doiHtml(dd, illusSet){
+  return (illusSet && illusSet.has(dd))
+    ? `<span class="pill" title="illustrative synthetic record — not a real publication"><code>${esc(dd)}</code> illustrative</span>`
+    : `<a href="https://doi.org/${esc(dd)}" target="_blank"><code>${esc(dd)}</code></a>`;
+}
+
+// --- Discovery Run: the self-correcting loop (cross-wire) ---
+async function runDiscovery(){
+  const corpus = $('dr-corpus').value, plate = $('dr-plate').value;
+  $('dr-out').innerHTML = '<div class="card sub">running the loop — mining contradictions → ranking → validating…</div>';
+  const body = {corpus_kind: corpus};
+  if (plate) body.bench_kind = plate;
+  const r = await fetch('/api/discovery_run', {method:'POST',
+    headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  renderDiscovery(await r.json());
+}
+function renderDiscovery(d){
+  let h = `<div class="card"><b>Loop</b><div class="chain" style="margin-top:8px">`
+    + d.loop.map((s,i)=>`<div class="link"><div class="l">${esc(s.stage)}</div><div class="e" style="font-size:11.5px">${esc(String(s.value))}</div></div>${i<d.loop.length-1?'<span class="arrow">→</span>':''}`).join('')
+    + `</div><div class="sub" style="margin-top:8px">run hash <code>${esc(d.run_hash)}</code> · reproduces to graph <code>${esc(d.graph_hash)}</code></div></div>`;
+  if (d.top_literature_hypothesis){
+    const t = d.top_literature_hypothesis;
+    h += `<div class="card" style="border-left:3px solid var(--violet)"><b>Literature → hypothesis</b>
+      <span class="pill" style="color:var(--violet);border-color:var(--violet)">entered the board at rank #${t.rank}</span>
+      <div style="margin:6px 0;font-size:13px">${esc(t.statement)}</div>
+      <div class="sub">grounds on ${String(t.grounds_on).split(' vs ').map(dd=>doiHtml(dd.trim(), new Set(d.illustrative_dois||[]))).join(' vs ')} · priority ${t.priority_score}</div></div>`;
+  }
+  h += `<div class="card"><b>Decision board</b>
+    <span class="sub">${d.n_literature_hypotheses} literature + ${d.n_graph_hypotheses} graph hypotheses, one ranking, one scorer</span>
+    <table><tr><th>#</th><th>Source</th><th>ID</th><th>Kind</th><th>Priority</th></tr>
+    ${d.competing_hypotheses.map(s=>`<tr>
+      <td>${s.rank}</td>
+      <td><span class="pill" style="${s.source==='literature'?'color:var(--violet);border-color:var(--violet)':''}">${esc(s.source)}</span></td>
+      <td><code>${esc(s.id)}</code></td><td>${esc(s.kind.replace(/_/g,' '))}</td>
+      <td>${s.priority_score.value}</td></tr>`).join('')}
+    </table></div>`;
+  const rec = d.recommendation;
+  h += `<div class="card"><b>Recommended next experiment</b> <span class="pill">${esc(rec.source)}</span>
+    <div style="margin:6px 0;font-size:13px">${esc(rec.statement)}</div>
+    <div class="sub">${esc(rec.experiment.perturbation)} · n/arm ${rec.experiment.n_per_arm}</div>
+    <div class="sub" style="margin-top:4px"><b>Falsify:</b> ${esc(rec.how_to_falsify)}</div></div>`;
+  if (d.receipt){
+    const rc = d.receipt;
+    h += `<div class="card" style="border-left:3px solid var(--violet)"><b>Reasoning receipt</b>
+      <span class="pill" style="color:var(--violet);border-color:var(--violet)">${esc(rc.reasoner)}</span>
+      <div class="sub" style="margin-top:2px">who reasoned what — the deterministic engine owns the numbers, Fable 5 the advisory prose, you the sign-off</div>`;
+    rc.steps.forEach(s=>{
+      const badge = s.covered_by_hash
+        ? '<span class="pill pass" title="computed by the engine and covered by the reproducibility hash">hashed</span>'
+        : '<span class="pill" title="advisory — recorded separately, never hashed">advisory</span>';
+      h += `<div style="margin-top:8px;padding-left:8px;border-left:2px solid var(--line)">
+        <div style="font-size:12.5px"><b>${s.n}. ${esc(s.step)}</b> · <span class="sub">${esc(s.owner)}</span> ${badge}</div>`;
+      if (s.detail) h += `<div class="sub">${esc(s.detail)}</div>`;
+      if (s.facts) h += `<div class="sub">${s.facts.map(f=>`${esc(f.name)} <b>${esc(String(f.value))}</b>`).join(' · ')}</div>`;
+      if (s.statement) h += `<div style="font-size:12.5px;margin-top:2px">${esc(s.statement)}</div>`;
+      if (s.narrative) h += `<div style="font-size:12.5px;margin-top:2px;color:var(--violet)">“${esc(s.narrative)}”</div>`;
+      if (s.note) h += `<div class="sub" style="font-style:italic">${esc(s.note)}</div>`;
+      if (s.status) h += `<div class="sub" style="margin-top:2px"><span class="pill warn">${esc(s.status)}</span> ${esc(s.gate||'')}</div>`;
+      h += `</div>`;
+    });
+    h += `<div class="sub" style="margin-top:8px;font-style:italic">${esc(rc.discipline)}</div></div>`;
+  }
+  if (d.bench_review){
+    const b = d.bench_review;
+    const col = b.verdict==='refused'?'var(--amber)':(b.downgraded?'var(--red)':'var(--green)');
+    const pc = b.verdict==='rejected'||b.verdict==='refused'?'fail':(b.verdict==='downgraded'?'warn':'pass');
+    h += `<div class="card" style="border-left:3px solid ${col}"><b>Validation → confidence</b>
+      <span class="pill ${pc}">${esc(b.verdict)}</span>
+      <div style="margin:6px 0;font-size:13px">${esc(b.reason)}</div>`;
+    if (b.downgraded){ h += `<div class="sub">confidence in <code>${esc(b.applies_to)}</code>: ${b.base_confidence} → <b style="color:var(--red)">${b.adjusted_confidence}</b></div>`; }
+    if (b.suggestions && b.suggestions.length){ h += `<ul>${b.suggestions.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`; }
+    h += `</div>`;
+  }
+  $('dr-out').innerHTML = h;
+}
+
+// --- Laboratory Agent (Idea #1) ---
+async function loadBench(kind){
+  const d = await j('/api/bench/sample?kind=' + encodeURIComponent(kind));
+  if (d.error){ $('bench-out').innerHTML = `<div class="card"><span class="pill refused">${esc(d.error)}</span></div>`; return; }
+  $('bench-csv').value = d.csv_text;
+  const sel = $('bench-fmt'); if (sel) sel.value = 'plate_reader_csv';
+}
+async function runBench(){
+  const csv = $('bench-csv').value, fmt = $('bench-fmt').value;
+  const isRefusedFmt = /western|micro|cryo|flow|fastq/.test(fmt);
+  if (!csv.trim() && !isRefusedFmt){ $('bench-out').innerHTML = '<div class="card sub">Paste or load a plate first.</div>'; return; }
+  $('bench-out').innerHTML = '<div class="card sub">running deterministic QC…</div>';
+  const r = await fetch('/api/bench/review', {method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({csv_text: csv, format: fmt})});
+  renderBenchOut(await r.json());
+}
+function renderBenchOut(d){
+  if (d.refused){
+    $('bench-out').innerHTML = `<div class="card" style="border-left:3px solid var(--red)">
+      <b>Refused by design.</b> <span class="pill refused">refused</span>
+      <div class="sub" style="margin-top:6px">${esc(d.reason)}</div>
+      <div class="sub" style="margin-top:6px">Boundary enforced in <code>keystone/agents/bench_reviewer.py</code> — the Laboratory Agent will not fabricate a measurement for an instrument it cannot validate.</div></div>`;
+    return;
+  }
+  const vcol = {supported:'pass', downgraded:'warn', rejected:'fail'}[d.verdict] || '';
+  const ac = d.adjusted_confidence;
+  let h = `<div class="card"><div class="row"><b>Reviewer verdict</b>
+    <span class="pill ${vcol}">${esc(d.verdict)}</span>
+    <span class="pill">${esc(d.reasoner)}</span></div>
+    <div style="margin:8px 0;font-size:13px">${esc(d.weakness)}</div>
+    <div class="sub">confidence ${d.base_confidence} → <b>${ac.point}</b> <span style="color:var(--dim)">[${ac.low}, ${ac.high}]</span></div></div>`;
+  h += `<div class="card"><b>QC checks</b>
+    <table><tr><th>Check</th><th>Value</th><th>Threshold</th><th>Status</th><th>Basis</th></tr>
+    ${d.qc_metrics.map(m=>`<tr>
+      <td>${esc(m.name.replace(/_/g,' '))}</td>
+      <td>${m.value}</td><td>${m.threshold}</td>
+      <td><span class="pill ${m.breached?'fail':'pass'}">${m.breached?'breach':'ok'}</span></td>
+      <td class="sub" style="font-size:11px">${esc(m.citation)}</td></tr>`).join('')}
+    </table></div>`;
+  if (d.suggestions && d.suggestions.length){
+    h += `<div class="card"><b>Suggested workflow fixes</b>
+      <ul>${d.suggestions.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div>`;
+  }
+  $('bench-out').innerHTML = h;
+}
+
 loadTab();
 </script>
 </body>

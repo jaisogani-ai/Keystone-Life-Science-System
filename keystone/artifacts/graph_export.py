@@ -15,6 +15,7 @@ from __future__ import annotations
 
 from keystone.core import (EvidenceGraph, Node, Edge, Interval, NodeType,
                            EdgeType, TemporalRelation)
+from keystone.deterministic.claim_status import node_claim
 
 
 def _interval(iv: Interval) -> dict:
@@ -32,7 +33,10 @@ def graph_to_dict(graph: EvidenceGraph) -> dict:
             {"id": n.id, "node_type": n.node_type.value, "source": n.source,
              "text": n.text, "doubt": _interval(n.doubt), "date": n.date,
              "retracted": n.retracted, "inexcusable": n.inexcusable,
-             "meta": n.meta}
+             "meta": n.meta,
+             # persistent claim-integrity axes (source_record_verified / claim_type
+             # / integrity_state + claim->source linkage) — stored, not a UI badge
+             "claim": node_claim(n)}
             for n in graph.nodes.values()],
         "edges": [
             {"src": e.src, "dst": e.dst, "edge_type": e.edge_type.value,

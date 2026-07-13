@@ -1,0 +1,368 @@
+{
+  "_provenance": {
+    "title": "Genome-scale perturb-seq in primary human CD4+ T cells maps context-specific regulators of T cell programs and human immune traits",
+    "authors": [
+      "Ronghui Zhu",
+      "Emma Dann",
+      "Jun Yan",
+      "Justine Reyes Retana",
+      "Ryunosuke Goto",
+      "Reese C. Guitche",
+      "Lillian K. Petersen",
+      "Mineto Ota",
+      "Jonathan K. Pritchard",
+      "Alexander Marson"
+    ],
+    "institute": "Gladstone-UCSF Institute of Genomic Immunology",
+    "doi": "10.64898/2025.12.23.696273",
+    "url": "https://www.biorxiv.org/content/10.64898/2025.12.23.696273v1",
+    "posted": "2025-12-24",
+    "peer_reviewed": false,
+    "assay": "Genome-scale CRISPRi Perturb-seq, primary human naive CD4+ T cells, 4 donors, 3 conditions (Rest/Stim8hr/Stim48hr)",
+    "tables_used": {
+      "regulator_perturbation_effects": "Supplementary Table 5 (media-6.csv): per-target perturbation summary",
+      "th2_vs_th1_signature": "Supplementary Table 11 (media-12.csv): Th2_vs_Th1 (Ota 2021) differential expression"
+    },
+    "retrieved": "2026-07-13",
+    "license": "bioRxiv preprint supplementary data \u2014 cited with attribution; small derived subset pinned",
+    "note": "Real measured data. A preprint (not peer-reviewed): source-record-verified=true, but claims remain provisional."
+  },
+  "polarization_condition": "Stim8hr",
+  "regulator_perturbation_effects": {
+    "GATA3": {
+      "Rest": {
+        "n_up_genes": 387.0,
+        "n_down_genes": 501.0,
+        "n_total_de_genes": 888.0,
+        "ontarget_effect_size": -16.196718732294897,
+        "ontarget_significant": true,
+        "n_downstream": 887.0,
+        "crossdonor_correlation_mean": 0.678728518495347,
+        "crossguide_correlation": 0.8189334533764884
+      },
+      "Stim48hr": {
+        "n_up_genes": 612.0,
+        "n_down_genes": 641.0,
+        "n_total_de_genes": 1253.0,
+        "ontarget_effect_size": -14.948753114565852,
+        "ontarget_significant": true,
+        "n_downstream": 1252.0,
+        "crossdonor_correlation_mean": 0.72059820097887,
+        "crossguide_correlation": 0.8843615508648568
+      },
+      "Stim8hr": {
+        "n_up_genes": 503.0,
+        "n_down_genes": 736.0,
+        "n_total_de_genes": 1239.0,
+        "ontarget_effect_size": -19.995103304780407,
+        "ontarget_significant": true,
+        "n_downstream": 1238.0,
+        "crossdonor_correlation_mean": 0.7249957295791297,
+        "crossguide_correlation": 0.8015477097391002
+      }
+    },
+    "STAT6": {
+      "Rest": {
+        "n_up_genes": 1.0,
+        "n_down_genes": 2.0,
+        "n_total_de_genes": 3.0,
+        "ontarget_effect_size": -14.433208233974009,
+        "ontarget_significant": true,
+        "n_downstream": 2.0,
+        "crossdonor_correlation_mean": null,
+        "crossguide_correlation": null
+      },
+      "Stim48hr": {
+        "n_up_genes": 582.0,
+        "n_down_genes": 546.0,
+        "n_total_de_genes": 1128.0,
+        "ontarget_effect_size": -13.180099597182386,
+        "ontarget_significant": true,
+        "n_downstream": 1127.0,
+        "crossdonor_correlation_mean": 0.6209139183031535,
+        "crossguide_correlation": 0.6793958052960827
+      },
+      "Stim8hr": {
+        "n_up_genes": 102.0,
+        "n_down_genes": 131.0,
+        "n_total_de_genes": 233.0,
+        "ontarget_effect_size": -18.74440345713411,
+        "ontarget_significant": true,
+        "n_downstream": 232.0,
+        "crossdonor_correlation_mean": 0.7391370998990224,
+        "crossguide_correlation": 0.5136308417484226
+      }
+    },
+    "RARA": {
+      "Rest": {
+        "n_up_genes": 10.0,
+        "n_down_genes": 5.0,
+        "n_total_de_genes": 15.0,
+        "ontarget_effect_size": -9.326671800097726,
+        "ontarget_significant": true,
+        "n_downstream": 14.0,
+        "crossdonor_correlation_mean": null,
+        "crossguide_correlation": null
+      },
+      "Stim48hr": {
+        "n_up_genes": 6.0,
+        "n_down_genes": 2.0,
+        "n_total_de_genes": 8.0,
+        "ontarget_effect_size": -9.115164197384257,
+        "ontarget_significant": true,
+        "n_downstream": 7.0,
+        "crossdonor_correlation_mean": null,
+        "crossguide_correlation": null
+      },
+      "Stim8hr": {
+        "n_up_genes": 15.0,
+        "n_down_genes": 6.0,
+        "n_total_de_genes": 21.0,
+        "ontarget_effect_size": -16.49006187917168,
+        "ontarget_significant": true,
+        "n_downstream": 20.0,
+        "crossdonor_correlation_mean": null,
+        "crossguide_correlation": null
+      }
+    },
+    "FBXO32": {
+      "Rest": {
+        "n_up_genes": 588.0,
+        "n_down_genes": 767.0,
+        "n_total_de_genes": 1355.0,
+        "ontarget_effect_size": -6.3643721463942695,
+        "ontarget_significant": true,
+        "n_downstream": 1354.0,
+        "crossdonor_correlation_mean": 0.4377960261374764,
+        "crossguide_correlation": null
+      },
+      "Stim48hr": {
+        "n_up_genes": 211.0,
+        "n_down_genes": 176.0,
+        "n_total_de_genes": 387.0,
+        "ontarget_effect_size": -4.146985145248712,
+        "ontarget_significant": true,
+        "n_downstream": 386.0,
+        "crossdonor_correlation_mean": -0.1080709604662457,
+        "crossguide_correlation": null
+      },
+      "Stim8hr": {
+        "n_up_genes": 466.0,
+        "n_down_genes": 282.0,
+        "n_total_de_genes": 748.0,
+        "ontarget_effect_size": -3.1388488544752486,
+        "ontarget_significant": true,
+        "n_downstream": 747.0,
+        "crossdonor_correlation_mean": 0.132274874485783,
+        "crossguide_correlation": null
+      }
+    }
+  },
+  "th2_signature_th2_vs_th1_ota2021": [
+    {
+      "gene": "CCR4",
+      "log_fc": 5.2713,
+      "zscore": 35.005,
+      "adj_p_value": 4.205889856688009e-265
+    },
+    {
+      "gene": "IL4R",
+      "log_fc": 1.1198,
+      "zscore": 25.542,
+      "adj_p_value": 3.453304605415718e-141
+    },
+    {
+      "gene": "GATA3",
+      "log_fc": 1.019,
+      "zscore": 24.638,
+      "adj_p_value": 2.2418503145640613e-131
+    },
+    {
+      "gene": "CCR8",
+      "log_fc": 4.7527,
+      "zscore": 22.366,
+      "adj_p_value": 2.3024233017903152e-108
+    },
+    {
+      "gene": "IL13",
+      "log_fc": 5.2034,
+      "zscore": 11.879,
+      "adj_p_value": 5.806075116093198e-31
+    },
+    {
+      "gene": "IL4",
+      "log_fc": 1.2921,
+      "zscore": 5.773,
+      "adj_p_value": 7.391619467108132e-08
+    },
+    {
+      "gene": "IL5",
+      "log_fc": 2.3805,
+      "zscore": 4.911,
+      "adj_p_value": 6.634675095683359e-06
+    },
+    {
+      "gene": "STAT6",
+      "log_fc": 0.0803,
+      "zscore": 2.659,
+      "adj_p_value": 0.0267518901718393
+    },
+    {
+      "gene": "AREG",
+      "log_fc": -0.683,
+      "zscore": -2.88,
+      "adj_p_value": 0.0147843364202633
+    },
+    {
+      "gene": "IL1RL1",
+      "log_fc": -3.4245,
+      "zscore": -4.901,
+      "adj_p_value": 6.972043946719549e-06
+    }
+  ],
+  "data_derived_top_up_in_th2": [
+    {
+      "gene": "TIAM1",
+      "log_fc": 1.969,
+      "zscore": 38.05
+    },
+    {
+      "gene": "DENND5A",
+      "log_fc": 2.119,
+      "zscore": 36.96
+    },
+    {
+      "gene": "IFNGR2",
+      "log_fc": 2.097,
+      "zscore": 36.18
+    },
+    {
+      "gene": "PKIA",
+      "log_fc": 1.858,
+      "zscore": 35.76
+    },
+    {
+      "gene": "CCR4",
+      "log_fc": 5.271,
+      "zscore": 35.0
+    },
+    {
+      "gene": "AP002884.3",
+      "log_fc": 3.632,
+      "zscore": 34.51
+    },
+    {
+      "gene": "ZC2HC1A",
+      "log_fc": 2.582,
+      "zscore": 33.44
+    },
+    {
+      "gene": "SNED1",
+      "log_fc": 2.971,
+      "zscore": 31.23
+    },
+    {
+      "gene": "IL6R",
+      "log_fc": 1.185,
+      "zscore": 30.43
+    },
+    {
+      "gene": "C1orf162",
+      "log_fc": 1.837,
+      "zscore": 30.29
+    },
+    {
+      "gene": "CCR10",
+      "log_fc": 4.254,
+      "zscore": 30.12
+    },
+    {
+      "gene": "SEMA5A",
+      "log_fc": 8.017,
+      "zscore": 29.71
+    }
+  ],
+  "gata3_th2_footprint": {
+    "regulator": "GATA3",
+    "perturbation": "CRISPRi knockdown",
+    "condition": "Stim8hr",
+    "source_table": "Supplementary Table 7 (per-perturbation differential expression)",
+    "gene_id_space": "Ensembl gene id \u2192 HGNC symbol (curated map, 12 canonical type-2 genes)",
+    "th2_collapse_score": -1.661,
+    "n_signature_genes_measured": 10,
+    "n_significantly_down": 8,
+    "footprint": [
+      {
+        "gene": "IL4",
+        "ensembl": "ENSG00000113520",
+        "log2fc": -1.16,
+        "adj_p": 0.00141,
+        "significant": true
+      },
+      {
+        "gene": "IL5",
+        "ensembl": "ENSG00000113525",
+        "log2fc": -4.052,
+        "adj_p": 2.45e-27,
+        "significant": true
+      },
+      {
+        "gene": "IL13",
+        "ensembl": "ENSG00000169194",
+        "log2fc": -2.32,
+        "adj_p": 2.82e-18,
+        "significant": true
+      },
+      {
+        "gene": "IL4R",
+        "ensembl": "ENSG00000077238",
+        "log2fc": 0.27,
+        "adj_p": 0.0807,
+        "significant": false
+      },
+      {
+        "gene": "GATA3",
+        "ensembl": "ENSG00000107485",
+        "log2fc": -1.853,
+        "adj_p": 9.98e-37,
+        "significant": true
+      },
+      {
+        "gene": "STAT6",
+        "ensembl": "ENSG00000166888",
+        "log2fc": -0.124,
+        "adj_p": 0.316,
+        "significant": false
+      },
+      {
+        "gene": "CCR4",
+        "ensembl": "ENSG00000183813",
+        "log2fc": -1.895,
+        "adj_p": 5.48e-30,
+        "significant": true
+      },
+      {
+        "gene": "CCR8",
+        "ensembl": "ENSG00000179934",
+        "log2fc": -3.001,
+        "adj_p": 2.3e-24,
+        "significant": true
+      },
+      {
+        "gene": "IL9",
+        "ensembl": "ENSG00000145839",
+        "log2fc": -1.278,
+        "adj_p": 0.0417,
+        "significant": true
+      },
+      {
+        "gene": "AREG",
+        "ensembl": "ENSG00000109321",
+        "log2fc": -1.197,
+        "adj_p": 0.0276,
+        "significant": true
+      }
+    ],
+    "interpretation": "GATA3 knockdown reduces the type-2 cytokines (IL4/IL5/IL13/IL9), Th2 chemokine receptors (CCR4/CCR8) and AREG, and self (on-target), while its UPSTREAM regulator STAT6 is unchanged \u2014 a measured, direction-resolved Th2-program collapse. Measured \u0394, not causal proof."
+  }
+}

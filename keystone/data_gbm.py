@@ -14,30 +14,18 @@ boundary).
 """
 from __future__ import annotations
 
-import os
-from contextlib import contextmanager
-
 from keystone.core import (EvidenceGraph, Node, Edge, Interval, NodeType,
                            EdgeType, TemporalRelation)
 from keystone.connectors import registry as R
+from keystone.connectors.http_cache import force_offline as _offline
 from keystone import gbm_spec as SPEC
 
 _UNRESOLVED = "unresolved: citing sentence not returned by connector"
 
-
-@contextmanager
-def _offline(active: bool):
-    prev = os.environ.get("KEYSTONE_OFFLINE")
-    if active:
-        os.environ["KEYSTONE_OFFLINE"] = "1"
-    try:
-        yield
-    finally:
-        if active:
-            if prev is None:
-                os.environ.pop("KEYSTONE_OFFLINE", None)
-            else:
-                os.environ["KEYSTONE_OFFLINE"] = prev
+# ``_offline(active=...)`` is re-exported for the ICH / insulin builders. It is
+# now the context-local ``force_offline`` — it no longer mutates the global
+# environment, so building a pinned graph on a live server can never leak the
+# process into permanent offline mode (which had bricked live Claude + search).
 
 
 def _band(point: float, width: float = 0.1) -> Interval:

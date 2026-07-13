@@ -18,7 +18,7 @@ def test_integrity_center_composes_real_checks():
     d = run_integrity_center("gbm")
     by = {c["name"]: c for c in d["checks"]}
     # real checks catch the real problems
-    assert by["Cell Authentication"]["status"] == "fail"     # U-87MG misidentified
+    assert by["Known-misidentification flag (Cellosaurus/ICLAC)"]["status"] == "fail"     # U-87MG misidentified
     assert by["Publication Validation"]["status"] == "fail"  # retracted foundation
     assert by["Protocol Validation"]["status"] in ("pass", "warn")
     # tier-2 checks are honest, never silently passed
@@ -46,6 +46,19 @@ def test_biology_chain_links_real_connectors():
     assert all(l["source"] for l in d["chain"])
     # true spatial-omics is honestly Tier 3, not faked
     assert d["spatial_omics"]["status"] == "not_wired"
+
+
+def test_biology_chain_handles_primary_cells_without_a_cell_line():
+    """The flagship CD4+ T-cell program uses primary human cells, which correctly
+    have NO Cellosaurus accession. The chain must build (never KeyError-crash) and
+    say so honestly rather than fabricate a cell-line id."""
+    d = build_biology_chain("tcell")
+    cell = d["chain"][0]
+    assert cell["layer"] == "Cell"
+    assert "CD4+ T cells" in cell["entity"]
+    assert "no Cellosaurus" in cell["source"]  # honest, not a faked accession
+    assert [l["layer"] for l in d["chain"]] == [
+        "Cell", "Protein", "Mutation", "Drug", "Pathway", "Disease", "Trial"]
 
 
 def test_cv_lab_refuses_measurement_extraction():

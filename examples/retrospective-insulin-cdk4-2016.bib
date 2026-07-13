@@ -1,0 +1,69 @@
+% Retrospective positive-control set — the "if only they'd known" case, in a
+% second biomedical domain (insulin signalling / metabolism) to demonstrate
+% Keystone's disease-agnostic construction.
+%
+% Included:
+%   * Physiological Reviews 2018 (Petersen & Shulman — 2,915 citations)
+%   * Trends in Cell Biology 2018 (CDK4/6 review — 506 citations)
+%   * Frontiers in Endocrinology 2017 (E2F1 metabolism — 216 citations)
+%   * The 2016 JCI paper they all cited on CDK4 as an insulin effector in
+%     adipocytes — which was RETRACTED on 2023-03-15
+%   * A 2001 clean control (Saltiel & Kahn, canonical insulin signalling).
+%
+% Every citer was published BEFORE the retraction (pre_retraction temporal).
+% Drop this into the Keystone front door and press "Check integrity" — it flags
+% **4 of 5 references as compromised**, with 3 pre-retraction citers inheriting
+% doubt from the 2023 retraction (combined ~3,600 citations across
+% Physiological Reviews, Trends in Cell Biology, and Frontiers in
+% Endocrinology).
+%
+% This is the second retrospective in the workbench and demonstrates that
+% Keystone's integrity analysis is disease-agnostic — the same engine that
+% caught the glioblastoma cathepsin B contamination catches the insulin CDK4
+% contamination, without any domain-specific tuning. This example ships as an
+% offline fixture; it works with KEYSTONE_OFFLINE=1.
+
+@article{petersen2018insulin,
+  title   = {Mechanisms of Insulin Action and Insulin Resistance},
+  author  = {Petersen, M. C. and Shulman, G. I.},
+  journal = {Physiological Reviews},
+  year    = 2018,
+  doi     = {10.1152/physrev.00063.2017},
+  note    = {2,915 citations; cites the 2016 CDK4 paper (now retracted).}
+}
+
+@article{fassl2018cdk46,
+  title   = {CDK4/6 Inhibition in Cancer: Beyond Cell Cycle Arrest},
+  author  = {Fassl, A. and others},
+  journal = {Trends in Cell Biology},
+  year    = 2018,
+  doi     = {10.1016/j.tcb.2018.07.002},
+  note    = {506 citations; cites the 2016 CDK4 paper (now retracted).}
+}
+
+@article{denechaud2017e2f1,
+  title   = {E2F1, a Novel Regulator of Metabolism},
+  author  = {Denechaud, P. D. and Fajas, L. and Giralt, A.},
+  journal = {Frontiers in Endocrinology},
+  year    = 2017,
+  doi     = {10.3389/fendo.2017.00311},
+  note    = {216 citations; cites the 2016 CDK4 paper (now retracted).}
+}
+
+@article{lee2016retracted,
+  title   = {CDK4 is an essential insulin effector in adipocytes},
+  author  = {Lee, Y. and others},
+  journal = {Journal of Clinical Investigation},
+  year    = 2016,
+  doi     = {10.1172/jci81480},
+  note    = {RETRACTED 2023-03-15.}
+}
+
+@article{saltiel2001insulin,
+  title   = {Insulin signalling and the regulation of glucose and lipid metabolism},
+  author  = {Saltiel, A. R. and Kahn, C. R.},
+  journal = {Nature},
+  year    = 2001,
+  doi     = {10.1038/414799a},
+  note    = {Clean control — the canonical, non-retracted insulin review.}
+}

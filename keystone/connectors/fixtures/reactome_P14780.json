@@ -1,0 +1,197 @@
+[
+  {
+    "dbId": 1433557,
+    "displayName": "Signaling by SCF-KIT",
+    "stId": "R-HSA-1433557",
+    "stIdVersion": "R-HSA-1433557.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 3,
+    "name": [
+      "Signaling by SCF-KIT"
+    ],
+    "releaseDate": "2011-09-20",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2021-12-08",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 1442490,
+    "displayName": "Collagen degradation",
+    "stId": "R-HSA-1442490",
+    "stIdVersion": "R-HSA-1442490.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Collagen degradation"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/REACT_150401.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2020-03-16",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 1474228,
+    "displayName": "Degradation of the extracellular matrix",
+    "stId": "R-HSA-1474228",
+    "stIdVersion": "R-HSA-1474228.6",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 3,
+    "name": [
+      "Degradation of the extracellular matrix"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/REACT_118572.5",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2020-03-16",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 1592389,
+    "displayName": "Activation of Matrix Metalloproteinases",
+    "stId": "R-HSA-1592389",
+    "stIdVersion": "R-HSA-1592389.4",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Activation of Matrix Metalloproteinases"
+    ],
+    "releaseDate": "2012-03-13",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2016-06-27",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 2022090,
+    "displayName": "Assembly of collagen fibrils and other multimeric structures",
+    "stId": "R-HSA-2022090",
+    "stIdVersion": "R-HSA-2022090.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 3,
+    "name": [
+      "Assembly of collagen fibrils and other multimeric structures"
+    ],
+    "releaseDate": "2012-12-04",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/REACT_150180.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2017-04-20",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 3928665,
+    "displayName": "EPH-ephrin mediated repulsion of cells",
+    "stId": "R-HSA-3928665",
+    "stIdVersion": "R-HSA-3928665.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "EPH-ephrin mediated repulsion of cells"
+    ],
+    "releaseDate": "2014-06-10",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": false,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2023-03-29",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 6785807,
+    "displayName": "Interleukin-4 and Interleukin-13 signaling",
+    "stId": "R-HSA-6785807",
+    "stIdVersion": "R-HSA-6785807.8",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Interleukin-4 and Interleukin-13 signaling"
+    ],
+    "releaseDate": "2016-12-12",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-6785807.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2021-09-15",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 6798695,
+    "displayName": "Neutrophil degranulation",
+    "stId": "R-HSA-6798695",
+    "stIdVersion": "R-HSA-6798695.3",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 2,
+    "name": [
+      "Neutrophil degranulation"
+    ],
+    "releaseDate": "2016-09-19",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-6798695.1",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9009391,
+    "displayName": "Extra-nuclear estrogen signaling",
+    "stId": "R-HSA-9009391",
+    "stIdVersion": "R-HSA-9009391.5",
+    "isInDisease": false,
+    "isInferred": false,
+    "maxDepth": 3,
+    "name": [
+      "Extra-nuclear estrogen signaling"
+    ],
+    "releaseDate": "2019-03-20",
+    "speciesName": "Homo sapiens",
+    "doi": "10.3180/R-HSA-9009391.2",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "lastUpdatedDate": "2023-03-29",
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  },
+  {
+    "dbId": 9918481,
+    "displayName": "Dengue Virus-Host Interactions",
+    "stId": "R-HSA-9918481",
+    "stIdVersion": "R-HSA-9918481.1",
+    "isInDisease": true,
+    "isInferred": false,
+    "maxDepth": 3,
+    "name": [
+      "Dengue Virus-Host Interactions"
+    ],
+    "releaseDate": "2025-12-08",
+    "releaseStatus": "UPDATED",
+    "speciesName": "Homo sapiens",
+    "hasDiagram": true,
+    "hasEHLD": false,
+    "schemaClass": "Pathway",
+    "className": "Pathway"
+  }
+]

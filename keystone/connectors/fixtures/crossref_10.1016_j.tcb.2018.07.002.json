@@ -1,0 +1,40 @@
+{
+  "message": {
+    "title": [
+      "CDK4/6 Inhibition in Cancer: Beyond Cell Cycle Arrest"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          11
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2018,
+          11
+        ]
+      ]
+    },
+    "published-online": null,
+    "created": {
+      "date-parts": [
+        [
+          2018,
+          7,
+          27
+        ]
+      ],
+      "date-time": "2018-07-27T16:21:07Z",
+      "timestamp": 1532708467000
+    },
+    "container-title": [
+      "Trends in Cell Biology"
+    ],
+    "type": "journal-article",
+    "updated-by": []
+  }
+}

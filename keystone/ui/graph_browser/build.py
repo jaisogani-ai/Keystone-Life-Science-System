@@ -68,7 +68,7 @@ def build(domain: str, out: Path) -> Path:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--domain", choices=["gbm", "insulin"], default="gbm")
+    ap.add_argument("--domain", choices=["gbm", "insulin", "ich"], default="gbm")
     ap.add_argument("--out", default="")
     args = ap.parse_args()
     out = Path(args.out) if args.out else Path("browser_out") / args.domain

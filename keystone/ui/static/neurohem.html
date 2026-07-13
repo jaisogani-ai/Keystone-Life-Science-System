@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Keystone · NeuroHem — brain-hemorrhage research workstation</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<script src="/static/lib/neuro3d.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Claude Design palette (matches /run) — neutral charcoal + violet/green/amber accents */
+  :root{
+    /* Light "paper" Claude-design palette — matches the front door. The 3D brain
+       stage keeps its own dark canvas below (--stage), like the protein viewer. */
+    --bg:#fcf8f9; --bg2:#f6f3f4; --panel:rgba(255,255,255,.82); --line:#e2dfe0;
+    --line2:#d7d4d5; --tx:#1c1b1c; --dim:#505f76; --faint:#76777c;
+    --cyan:#6b4bd6; --live:#1f6f52; --bio:#3c4b62; --sim:#9a6a1e; --red:#ba1a1a; --hemo:#ba1a1a;
+    --stage:#0f1013;
+    --serif:"Newsreader","Iowan Old Style",Georgia,serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+    --sans:"Inter Tight",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{background:radial-gradient(1200px 760px at 74% -12%,#f0edee 0,transparent 60%),#fcf8f9;
+    color:var(--tx);font-family:var(--sans);min-height:100vh}
+  a{color:var(--cyan)} ::-webkit-scrollbar{width:10px;height:10px} ::-webkit-scrollbar-thumb{background:#d7d4d5;border-radius:8px}
+  header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap;
+    background:rgba(255,255,255,.9);backdrop-filter:blur(12px);position:sticky;top:0;z-index:20}
+  .kicker{font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--faint)}
+  .brand{font-family:var(--serif);font-weight:600;font-size:20px} .brand .k{color:var(--live)} .brand .n{color:var(--cyan)}
+  .tagline{color:var(--dim);font-size:12px;max-width:400px;line-height:1.5}
+  .safety{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.02em;color:var(--sim);
+    border:1px solid rgba(211,165,82,.4);border-radius:20px;padding:6px 12px;background:rgba(211,165,82,.08)}
+  .knav{display:flex;gap:4px;align-items:center;flex-wrap:wrap;padding:8px 24px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.5);font-size:12px}
+  .knav a{color:var(--dim);text-decoration:none;padding:5px 10px;border-radius:8px;border:1px solid transparent}
+  .knav a:hover{color:#ecebe6;border-color:var(--line2);background:rgba(166,139,255,.08)}
+  .knav a.back{color:var(--live)} .knav .sep{color:var(--faint)}
+  .knav .here{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--cyan);border:1px solid var(--line2);padding:5px 11px;border-radius:20px}
+  #twinload{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--dim);font-family:var(--mono);font-size:12px;background:rgba(255,255,255,.7);z-index:3}
+  #twinlabel{position:absolute;z-index:4;transform:translate(-50%,-140%);background:rgba(255,255,255,.94);border:1px solid var(--line2);border-radius:8px;padding:5px 10px;font-family:var(--mono);font-size:10.5px;color:#ecebe6;white-space:nowrap;display:none;pointer-events:none}
+  #twinlabel a{pointer-events:auto;color:var(--sim);margin-left:8px;text-decoration:none}
+  .orient{position:absolute;right:12px;bottom:12px;z-index:3;font-family:var(--mono);font-size:9.5px;color:var(--dim);background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:8px;padding:6px 9px;line-height:1.55}
+  .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:10.5px;color:var(--dim)}
+  .legend span{display:inline-flex;gap:5px;align-items:center} .legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+  .provkey{display:flex;gap:14px;flex-wrap:wrap;padding:9px 24px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.55);
+    font-family:var(--mono);font-size:10.5px;color:var(--dim)}
+  .provkey .k{display:flex;gap:6px;align-items:center} .dot{width:9px;height:9px;border-radius:50%}
+  .d-live{background:var(--live)} .d-bio{background:var(--bio)} .d-sim{background:var(--sim)}
+  .wrap{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 104px)}
+  nav{border-right:1px solid var(--line);padding:14px 11px;background:rgba(255,255,255,.55)}
+  .navlab{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);padding:0 10px;margin:12px 0 5px}
+  nav button{display:flex;gap:9px;align-items:center;width:100%;text-align:left;background:transparent;color:var(--dim);
+    border:0;border-radius:9px;padding:9px 10px;font-size:12.6px;cursor:pointer;margin-bottom:1px;transition:.14s}
+  nav button:hover{background:rgba(166,139,255,.08);color:var(--tx)}
+  nav button.on{background:linear-gradient(90deg,rgba(166,139,255,.15),rgba(166,139,255,.03));color:#ecebe6;font-weight:600;box-shadow:inset 2px 0 0 var(--cyan)}
+  nav .ic{width:16px;text-align:center;opacity:.9} nav .pd{margin-left:auto;width:8px;height:8px;border-radius:50%}
+  main{padding:24px 28px;min-width:0}
+  h2{font-family:var(--serif);font-weight:600;font-size:25px;margin:0 0 2px}
+  .subttl{font-family:var(--mono);font-size:11px;color:var(--sim);margin:0 0 6px}
+  .lead{color:var(--dim);font-size:12.5px;line-height:1.6;max-width:780px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:16px;margin-top:14px;backdrop-filter:blur(10px);
+    box-shadow:0 18px 50px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.03)}
+  .tag{display:inline-flex;gap:5px;align-items:center;font-family:var(--mono);font-size:9.5px;padding:3px 9px;border-radius:20px;
+    border:1px solid var(--line2);color:var(--dim);vertical-align:middle;margin-left:8px}
+  .tag.live{color:var(--live);border-color:rgba(87,180,140,.5)} .tag.bio{color:var(--bio);border-color:rgba(157,176,202,.5)}
+  .tag.sim{color:var(--sim);border-color:rgba(211,165,82,.5)} .tag.refuse{color:var(--red);border-color:rgba(226,117,108,.5)}
+  .pill{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:10.5px;padding:3px 10px;border-radius:20px;border:1px solid var(--line2);color:var(--dim)}
+  .pill.red{color:var(--hemo);border-color:rgba(192,48,74,.5)} .pill.green{color:var(--live);border-color:rgba(87,180,140,.45)}
+  .pill.blue{color:var(--cyan);border-color:rgba(166,139,255,.45)} .pill.violet{color:#b79bff;border-color:rgba(183,155,255,.45)} .pill.amber{color:var(--sim);border-color:rgba(211,165,82,.45)}
+  code,.mono{font-family:var(--mono);font-size:11px;color:var(--cyan)}
+  .row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+  .grid2{display:grid;grid-template-columns:1.5fr 1fr;gap:15px;align-items:start}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+  @media(max-width:960px){.grid2,.grid3{grid-template-columns:1fr}.wrap{grid-template-columns:1fr}nav{border-right:0;border-bottom:1px solid var(--line);display:flex;overflow-x:auto;padding:8px}.navlab{display:none}nav button{white-space:nowrap}}
+  #twin,#cellscene{width:100%;height:520px;border-radius:13px;position:relative;overflow:hidden;cursor:grab;background:radial-gradient(700px 460px at 50% 36%,#1b1c20 0,#131417 74%)}
+  #cellscene{height:440px} #twin:active,#cellscene:active{cursor:grabbing} #twin canvas,#cellscene canvas{display:block}
+  .hud{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:10px;color:#c9c8c3;background:rgba(255,255,255,.66);border:1px solid var(--line2);border-radius:8px;padding:7px 10px;line-height:1.65}
+  .hint{position:absolute;left:12px;bottom:12px;font-family:var(--mono);font-size:9.5px;color:var(--dim);background:rgba(255,255,255,.72);padding:4px 10px;border-radius:8px;border:1px solid var(--line)}
+  .ctl{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px} .ctl button{background:rgba(20,30,54,.8);border:1px solid var(--line2);color:var(--tx);border-radius:8px;padding:7px 10px;font-size:11px;cursor:pointer;transition:.14s}
+  .ctl button:hover{border-color:var(--cyan)} .ctl button.on{background:rgba(166,139,255,.16);border-color:var(--cyan);color:#ecebe6} .ctl button.off{opacity:.4}
+  .cfield{margin-top:12px} .cfield b{display:block;font-size:11.5px;margin-bottom:5px} .cfield .mono{color:var(--faint)}
+  .slice{display:grid;grid-template-columns:80px 22px 1fr;gap:8px;align-items:center;margin-top:6px;font-size:11px}
+  input[type=range]{width:100%;accent-color:var(--cyan)} input[type=checkbox]{accent-color:var(--cyan)}
+  #mol{width:100%;height:240px;border-radius:11px;background:#131417;overflow:hidden;border:1px solid var(--line)}
+  canvas.viz{width:100%;display:block;border-radius:10px;background:#131417;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:9px} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--faint);font-family:var(--mono);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.04em}
+  .refuse-card{border-left:3px solid var(--red)} .ok-card{border-left:3px solid var(--live)} .sim-card{border-left:3px solid var(--sim)}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px} .stat .n{font-family:var(--serif);font-size:24px} .stat .l{font-family:var(--mono);font-size:9.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+  .chain .step{display:grid;grid-template-columns:104px 1fr auto;gap:11px;align-items:center;padding:10px 3px;border-bottom:1px solid var(--line)}
+  .chain .layer{font-family:var(--mono);font-size:11px;color:var(--cyan)} .chain .src{font-family:var(--mono);font-size:10px;color:var(--faint)}
+  .tl{position:relative;margin-top:10px;padding-left:18px} .tl:before{content:"";position:absolute;left:5px;top:4px;bottom:4px;width:2px;background:linear-gradient(180deg,var(--cyan),transparent)}
+  .tl .ev{position:relative;padding:5px 0 11px 6px;font-size:12.5px} .tl .ev:before{content:"";position:absolute;left:-17px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+  .disc{font-size:11px;color:var(--dim);border-top:1px solid var(--line);margin:24px 28px;padding-top:12px;line-height:1.6;max-width:920px}
+</style>
+</head>
+<body>
+<header>
+  <div><div class="kicker">Keystone workspace</div><div class="brand"><span class="k">Keystone</span> · <span class="n">NeuroHem</span></div></div>
+  <div class="tagline">Brain-hemorrhage research workstation. Every value is real evidence, established biology, or a labelled illustration — nothing fabricated.</div>
+  <div class="safety">◆ RESEARCH SUPPORT ONLY — NOT FOR CLINICAL DIAGNOSIS OR TREATMENT</div>
+</header>
+<div class="knav">
+  <a class="back" href="/" title="Keystone front door">← Keystone</a><span class="sep">·</span>
+  <a href="/labs">Scientific Workspaces</a>
+  <a href="/workspace">Evidence workspace</a>
+  <a href="/workbench">Reasoning loop</a>
+  <span class="here">NeuroHem · brain-hemorrhage workspace</span>
+</div>
+<div class="provkey">
+  <span style="color:var(--faint)">PROVENANCE KEY:</span>
+  <span class="k"><span class="dot d-live"></span>Live research evidence — real Keystone endpoint data</span>
+  <span class="k"><span class="dot d-bio"></span>Established biology — textbook cellular/anatomical knowledge</span>
+  <span class="k"><span class="dot d-sim"></span>Illustrative simulation — 3D model, bleed, time, imaging skins, traces</span>
+</div>
+<div class="wrap"><nav id="nav"></nav><main id="main"></main></div>
+<div class="disc" id="disc"></div>
+
+<script>
+const REAL={foundation:{doi:"10.1179/016164109x12478302362491",title:"MMP-9 potentiates early brain injury after hemorrhage (RETRACTED)"},
+  target:{uniprot:"P14780",gene:"MMP9",pdb:"1L6J",name:"Matrix metalloproteinase-9"},reagent:{cvcl:"CVCL_0182",name:"BV-2 microglia"},
+  molecular:{doi:"10.3390/ijms21249739",title:"MMPs and their inhibitors in brain injury and hemorrhage"},
+  contra:{doi:"10.1038/nm1387",title:"MMP-9 also drives beneficial delayed remodeling (Zhao, Nat Med 2006)"},
+  depA:{doi:"10.1007/s13311-011-0038-0",title:"Role of MMPs and therapeutic benefits of their inhibition in brain injury"}};
+const doi=d=>`<a href="https://doi.org/${d}" target="_blank" rel="noopener"><code>${d}</code></a>`;
+const esc=s=>String(s??'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+async function j(u){try{return await (await fetch(u)).json();}catch(e){return {error:String(e)};}}
+const main=()=>document.getElementById('main');
+const tag=k=>k==='live'?'<span class="tag live">🟢 live research evidence</span>'
+  :k==='bio'?'<span class="tag bio">🔵 established biology</span>'
+  :k==='sim'?'<span class="tag sim">🟡 illustrative simulation</span>'
+  :'<span class="tag refuse">⛔ refused by design</span>';
+
+// established-biology cell descriptions (textbook neuroscience — not patient data)
+const CELLS={
+  neuron:["Neuron","Excitable cells transmitting signals via dendrites & axons; highly vulnerable to ischemia and glutamate excitotoxicity in the perihematomal zone."],
+  astrocyte:["Astrocyte","End-feet ensheath capillaries and help form the blood–brain barrier and regulate ions/water; become reactive (astrogliosis) after hemorrhage."],
+  microglia:["Microglia","Resident immune cells that activate and migrate to injury, phagocytosing blood/debris but also amplifying inflammation and secreting MMP-9."],
+  oligodendrocyte:["Oligodendrocyte","Myelinate axons; sensitive to oxidative stress and thrombin — white-matter injury impairs signal conduction."],
+  endothelial:["Endothelial cell","Line capillaries and form BBB tight junctions; MMP-9 degrades these junctions, driving perihematomal edema."],
+  pericyte:["Pericyte","Wrap capillaries, regulating flow and BBB integrity; detach/contract after injury, worsening barrier breakdown."],
+  "red blood cell":["Red blood cell","Carry oxygen; extravasated blood is toxic to surrounding tissue (iron, hemoglobin, thrombin release)."],
+  platelet:["Platelet","Aggregate at the ruptured vessel to form the clot (hemostasis); release signaling factors into the injury site."],
+  "immune cell":["Immune cell","Infiltrating leukocytes (neutrophils, macrophages) amplify perihematomal inflammation over the first days."]};
+
+const SECTIONS=[
+  ['GROUP','Illustrative model'],
+  ['model','🧠','Anatomical Brain Model','sim'],
+  ['imaging','◎','Hemorrhage Imaging','sim'],
+  ['vascular','⑃','Vascular Network','sim'],
+  ['cellenv','◍','Cellular Environment','sim'],
+  ['waves','〜','Neural Waves & Physiology','sim'],
+  ['GROUP','Real evidence'],
+  ['cell','🔬','Cellular Response','bio'],
+  ['pathways','⧉','Molecular Pathways','live'],
+  ['graph','◈','Evidence Graph','live'],
+  ['treat','⚑','Treatment Hypotheses','live'],
+  ['agents','⦿','Research Agents','live'],
+  ['timeline','◷','Study Timeline','live'],
+];
+let TAB='model', twinApi=null, cellApi=null;
+function pdot(k){return `<span class="pd" style="background:${k==='live'?'var(--live)':k==='bio'?'var(--bio)':'var(--sim)'}"></span>`;}
+function renderNav(){document.getElementById('nav').innerHTML=SECTIONS.map(s=>{
+  if(s[0]==='GROUP')return `<div class="navlab">${s[1]}</div>`;
+  const[id,ic,label,k]=s;return `<button class="${id===TAB?'on':''}" onclick="go('${id}')"><span class="ic">${ic}</span><span>${label}</span>${pdot(k)}</button>`;}).join('');}
+function go(id){ if(twinApi){twinApi.dispose();twinApi=null;} if(cellApi){cellApi.dispose();cellApi=null;}
+  TAB=id; renderNav(); (RENDER[id]||RENDER.model)(); window.scrollTo(0,0); }
+
+const RENDER={
+  model(){
+    main().innerHTML=`<h2>Illustrative Anatomical Brain Model ${tag('sim')}</h2>
+      <div class="subttl">Illustrative anatomical model — not patient-specific · not a scan · not a segmentation · not a detected bleed</div>
+      <div class="lead">A research-grade procedural illustration for navigating hemorrhage neuroscience. Drag to rotate · scroll to zoom · shift-drag to pan · slice on anatomical planes · isolate layers & lobes. Coordinate convention: X left↔right · Y inferior↔superior · Z anterior↔posterior.</div>
+      <div class="grid2">
+        <div class="card" style="padding:0;overflow:hidden"><div id="twin">
+          <div id="twinload">Rendering anatomical model…</div>
+          <div class="hud">approximate anatomy · illustrative<br>region: <span id="hudr" style="color:#fff">whole brain</span><br>hemorrhage: <span style="color:var(--hemo)">deep · illustrative</span></div>
+          <div id="twinlabel"></div>
+          <div class="orient">orientation<br>X L↔R · Y I↔S · Z A↔P</div>
+          <div class="hint">click a structure to label · drag · scroll · shift-drag pan</div></div></div>
+        <div>
+          <div class="card">
+            <div class="cfield"><b>View <span class="mono">(anatomical orientation)</span></b><div class="ctl" id="c-view"></div></div>
+            <div class="cfield"><b>Imaging layer <span class="mono">(illustrative rendering styles)</span></b><div class="ctl" id="c-img"></div></div>
+            <div class="cfield"><b>Anatomy layers</b><div class="ctl" id="c-lay"></div></div>
+            <div class="cfield"><b>Isolate lobe <span class="mono">(approximate)</span></b><div class="ctl" id="c-lobe"></div></div>
+            <div class="cfield"><b>Slice planes <span class="mono">(fixed convention)</span></b><div id="c-slice"></div></div>
+            <div class="cfield"><b>Hemorrhage & time</b>
+              <div class="ctl"><button id="c-hemo" class="on">Hemorrhage: on</button></div>
+              <div class="slice" style="grid-template-columns:80px 1fr"><span>Acute→recovery</span><input type="range" id="c-time" min="0" max="1" step="0.01" value="0.15"></div>
+            </div>
+            <div class="cfield"><b>Colour key <span class="mono">(approximate)</span></b>
+              <div class="legend"><span><i style="background:#c6a3a0"></i>cortex</span><span><i style="background:#e9e1cf"></i>white matter</span><span><i style="background:#b25560"></i>artery</span><span><i style="background:#5f7fa5"></i>vein</span><span><i style="background:#7a1420"></i>hemorrhage</span><span><i style="background:#d9a441"></i>edema</span></div>
+            </div>
+          </div>
+          <div class="card ok-card"><div class="row"><b>Real molecular target</b> ${tag('live')} <span class="pill blue">PDB ${REAL.target.pdb}</span></div>
+            <div class="lead" style="margin-top:4px">${REAL.target.gene} — ${REAL.target.name} · UniProt <code>${REAL.target.uniprot}</code></div>
+            <div id="mol" style="margin-top:9px"></div></div>
+        </div></div>
+      ${hemoIndicators()}`;
+    twinApi=window.Neuro3D.initTwin(document.getElementById('twin'),{onPick:showStructureLabel});
+    setTimeout(()=>{const l=document.getElementById('twinload');if(l)l.style.display='none';},1300);
+    mountMol(REAL.target.pdb); wireModelControls();
+  },
+
+  imaging(){
+    main().innerHTML=`<h2>Hemorrhage Imaging ${tag('sim')} ${tag('refuse')}</h2>
+      <div class="card refuse-card"><div class="row"><b>Keystone does not read, detect, or measure a hemorrhage on a real CT/MRI.</b></div>
+        <div class="lead" style="margin-top:6px">That is radiology diagnosis — validated clinical imaging, ground truth, and a physician. The viewer below is a <b>synthetic illustrative slice</b> with illustrative indicators only. Enforced in <code>keystone/cv_lab.py</code>.</div></div>
+      <div class="grid2">
+        <div class="card"><div class="row"><b>Axial slice</b> ${tag('sim')}</div><canvas id="ct" class="viz" height="360" style="margin-top:9px"></canvas>
+          <input type="range" id="ctlvl" min="0" max="100" value="52" style="margin-top:9px"><div class="lead" style="margin-top:4px">Slide through illustrative axial levels — synthetic, not a scan.</div></div>
+        ${hemoIndicators()}
+      </div>`;
+    initCT();
+  },
+
+  vascular(){
+    main().innerHTML=`<h2>Vascular Network ${tag('sim')}</h2>
+      <div class="subttl">Illustrative vessel scaffold — not an angiogram</div>
+      <div class="lead">Cerebral vessels around the illustrative hemorrhage — where MMP-9 degrades the blood–brain barrier. Toggle the "Vascular" imaging layer to fade tissue and emphasize vessels.</div>
+      <div class="grid2"><div class="card" style="padding:0;overflow:hidden"><div id="twin" style="height:460px"><div class="hint">drag · scroll</div></div></div>
+        <div class="card ok-card"><div class="row"><b>Why vessels matter</b> ${tag('live')}</div>
+          <table><tr><th>Claim</th><th>Source</th></tr>
+            <tr><td>MMP-9 → BBB breakdown &amp; edema</td><td>${doi(REAL.molecular.doi)}</td></tr>
+            <tr><td>MMP-9 also aids delayed neurovascular remodeling</td><td>${doi(REAL.contra.doi)}</td></tr></table></div></div>`;
+    twinApi=window.Neuro3D.initTwin(document.getElementById('twin'),{}); setTimeout(()=>{if(twinApi)twinApi.setImaging('vascular');},60);
+  },
+
+  cellenv(){
+    main().innerHTML=`<h2>Cellular Environment ${tag('sim')} <span class="tag bio">🔵 functions</span></h2>
+      <div class="subttl">Illustrative perivascular niche — cell arrangement is schematic; cell functions are established neuroscience</div>
+      <div class="lead">Macro→micro view of the neurovascular unit around the bleed. Drag to rotate · scroll to zoom. Select a cell type to read its established role near hemorrhage. No patient cells are imaged.</div>
+      <div class="grid2">
+        <div class="card" style="padding:0;overflow:hidden"><div id="cellscene"><div class="hint">drag · scroll</div></div></div>
+        <div>
+          <div class="card"><b>Cell types</b><div class="ctl" id="c-cells"></div>
+            <div class="cfield"><b>Environment</b>
+              <div class="slice" style="grid-template-columns:90px 1fr"><span>Blood flow</span><input type="range" id="c-flow" min="0" max="1" step="0.01" value="0.5"></div>
+              <div class="slice" style="grid-template-columns:90px 1fr"><span>Neural activity</span><input type="range" id="c-act" min="0" max="1" step="0.01" value="0.5"></div></div>
+          </div>
+          <div class="card" id="cellinfo"><div class="lead">Select a cell type to see its function.</div></div>
+        </div></div>`;
+    cellApi=window.Neuro3D.initCellScene(document.getElementById('cellscene'),{}); wireCellControls();
+  },
+
+  waves(){
+    main().innerHTML=`<h2>Neural Waves &amp; Physiology ${tag('sim')} ${tag('refuse')}</h2>
+      <div class="card refuse-card"><div class="row"><b>Keystone reads no patient EEG, ICP, or vital signs.</b></div>
+        <div class="lead" style="margin-top:6px">Patient monitoring needs consent, IRB, and validated devices. Everything below is a <b>synthetic teaching schematic</b> — not a recording from any person.</div></div>
+      <div class="card"><b>EEG-style activity</b> ${tag('sim')}<canvas id="eeg" class="viz" height="180" style="margin-top:9px"></canvas></div>
+      <div class="grid3">
+        <div class="card"><b class="mono" style="color:var(--cyan)">ICP</b> ${tag('sim')}<canvas id="icp" class="viz" height="120" style="margin-top:8px"></canvas></div>
+        <div class="card"><b class="mono" style="color:var(--cyan)">CBF</b> ${tag('sim')}<canvas id="cbf" class="viz" height="120" style="margin-top:8px"></canvas></div>
+        <div class="card"><b class="mono" style="color:var(--cyan)">SpO₂</b> ${tag('sim')}<canvas id="o2" class="viz" height="120" style="margin-top:8px"></canvas></div></div>`;
+    initWaves(); initTrend('icp',0xff5d5d,14); initTrend('cbf',0x5cd0ff,45); initTrend('o2',0x22d3a6,96);
+  },
+
+  cell(){
+    main().innerHTML=`<h2>Cellular Response <span class="tag bio">🔵 established biology</span> ${tag('live')}</h2>
+      <div class="lead">Cell- and molecule-level evidence for MMP-9 in hemorrhagic injury — every claim a real, resolvable DOI. No patient cells are imaged or ingested.</div>
+      <div class="card"><b>Mechanism &amp; evidence</b> ${tag('live')}
+        <table><tr><th>Role</th><th>Claim</th><th>Source</th></tr>
+          <tr><td><span class="pill red">retracted</span></td><td>${esc(REAL.foundation.title)}</td><td>${doi(REAL.foundation.doi)}</td></tr>
+          <tr><td><span class="pill green">supports</span></td><td>MMP-9 degrades tight junctions → BBB breakdown &amp; edema</td><td>${doi(REAL.molecular.doi)}</td></tr>
+          <tr><td><span class="pill blue">load-bearing</span></td><td>${esc(REAL.depA.title)}</td><td>${doi(REAL.depA.doi)}</td></tr>
+          <tr><td><span class="pill amber">contradicts</span></td><td>MMP-9 also drives <b>beneficial</b> delayed remodeling</td><td>${doi(REAL.contra.doi)}</td></tr></table></div>
+      <div class="card"><b>Cell types &amp; roles</b> <span class="tag bio">🔵 established biology</span>
+        <table><tr><th>Cell</th><th>Established role near hemorrhage</th></tr>
+          ${Object.values(CELLS).map(c=>`<tr><td>${esc(c[0])}</td><td class="lead" style="max-width:none">${esc(c[1])}</td></tr>`).join('')}</table>
+        <div class="lead" style="margin-top:6px">Textbook neuroscience — not patient-derived data. Explore them in 3D under <b>Cellular Environment</b>.</div></div>`;
+  },
+
+  async pathways(){
+    main().innerHTML=`<h2>Molecular Pathways ${tag('live')}</h2><div class="lead">Real biological chain: cell → protein → variant → drug → pathway → disease → trial, each layer a live connector. Loading…</div><div id="ch" class="card"></div>`;
+    const bc=await j('/api/biology_chain?domain=ich');const ch=bc.chain||[];
+    document.getElementById('ch').innerHTML=`<div class="chain">${ch.map(s=>`<div class="step"><div class="layer">${esc(s.layer)}</div><div>${esc(s.entity||'—')}</div><div class="src">${esc(s.source||'')}${s.count!=null?` · <span style="color:var(--cyan)">${esc(s.count)}</span>`:''}</div></div>`).join('')}</div>
+      <div class="lead" style="margin-top:9px">Sources: Cellosaurus · UniProt · ClinVar · ChEMBL · Reactome · ClinicalTrials.gov — real, keyless, cached offline.</div>`;
+  },
+  async graph(){
+    main().innerHTML=`<h2>Evidence Graph ${tag('live')}</h2><div class="lead">Real MMP-9 hemorrhage evidence graph — retracted foundation, citers inheriting doubt, real contradiction. Loading…</div><div id="ev" class="card"></div>`;
+    const d=await j('/api/decision?domain=ich');
+    document.getElementById('ev').innerHTML=`<div class="row"><b style="font-family:var(--serif);font-size:15px">${esc(d.question||'')}</b></div>
+      <div class="lead" style="margin-top:5px">reproducibility hash <code>${esc(d.graph_hash||'')}</code> · every node a real DOI or explicit <i>unresolved</i>.</div>
+      <table><tr><th>#</th><th>Competing hypothesis</th><th>Kind</th><th>Priority</th></tr>${(d.competing_hypotheses||[]).map(h=>`<tr><td class="mono">${h.id}</td><td>${esc(h.statement)}</td><td>${esc(String(h.kind||'').replace(/_/g,' '))}</td><td class="mono">${(h.priority_score&&h.priority_score.value)??'—'}</td></tr>`).join('')}</table>`;
+  },
+  async treat(){
+    main().innerHTML=`<h2>Treatment Hypotheses ${tag('live')} <span class="tag">research questions, not treatment</span></h2><div class="lead">Keystone ranks the next <b>experiment</b> to test — it does <b>not</b> recommend treatment for any patient. Loading…</div><div id="tr" class="card"></div>`;
+    const d=await j('/api/decision?domain=ich');const r=d.recommendation||{};const ex=r.experiment||{};
+    document.getElementById('tr').innerHTML=`<div class="row"><b style="font-family:var(--serif);font-size:16px">Recommended next experiment</b> <span class="pill violet">${esc(r.kind||'')}</span></div>
+      <div style="margin:8px 0;font-size:14px;line-height:1.5">${esc(r.statement||'')}</div><div class="lead">Why first: ${(r.why_first||[]).map(esc).join(' · ')||'—'}</div>
+      <div class="row" style="margin-top:8px"><span class="pill">priority ${r.priority_score??'—'}</span><span class="pill">info-gain ${r.information_gain??'—'}</span><span class="pill">n/arm ${esc(ex.n_per_arm??ex.required_n_per_arm??'—')}</span></div>
+      <div class="card" style="margin-top:11px"><b>How to falsify</b><div class="lead" style="margin-top:4px">${esc(r.how_to_falsify||'')}</div></div>
+      <div class="lead" style="margin-top:9px">Research hypotheses to test at the bench, grounded in the real evidence graph — never a clinical treatment recommendation.</div>`;
+  },
+  async agents(){
+    main().innerHTML=`<h2>Research Agents ${tag('live')}</h2><div class="lead">Specialist agents debate the MMP-9 hypothesis; a Reviewer challenges it and a PI seat synthesizes — human-gated. Loading…</div><div id="ag"></div>`;
+    const d=await j('/api/debate?domain=ich');
+    document.getElementById('ag').innerHTML=`<div class="card"><b style="font-family:var(--serif);font-size:15px">${esc(d.hypothesis||'')}</b></div>
+      ${(d.turns||[]).map(t=>`<div class="card"><div class="row"><span class="pill blue">${esc(t.role)}</span> <span class="lead">${esc(t.lens||'')}</span></div><ul class="lead" style="margin:6px 0 0 16px">${(t.case||[]).map(c=>`<li>${esc(c)}</li>`).join('')}</ul><div class="lead" style="margin-top:4px">→ ${esc(t.position||'')}</div></div>`).join('')}
+      ${d.consensus?`<div class="card ok-card"><b>Consensus</b> <span class="tag">${esc(d.consensus.method||'')}</span><div style="margin-top:4px">${esc(d.consensus.statement||'')}</div><div class="lead" style="margin-top:4px">human-gated — a scientist signs off before anything enters the ledger.</div></div>`:''}`;
+  },
+  async timeline(){
+    main().innerHTML=`<h2>Study Timeline ${tag('live')}</h2><div class="lead">The deterministic workflow spine for this question. Loading…</div><div id="tll" class="card"></div>`;
+    const d=await j('/api/decision?domain=ich');const wf=d.workflow||[];
+    document.getElementById('tll').innerHTML=`<div class="tl">${wf.map(s=>`<div class="ev"><b class="mono" style="color:var(--cyan)">${esc(s.stage)}</b><div class="lead">${esc(String(s.value||''))}</div></div>`).join('')}</div>`;
+  },
+};
+
+function hemoIndicators(){return `<div class="card sim-card"><div class="row"><b>Hemorrhage research indicators</b> ${tag('sim')}</div>
+  <div class="lead" style="margin-top:4px"><b>Illustrative placeholders</b> — Keystone computes no volume, pressure, or perfusion from any image.</div>
+  <div class="grid3" style="margin-top:9px">
+    <div class="stat"><div class="n" style="color:var(--hemo)">~34<span style="font-size:13px"> mL</span></div><div class="l">est. volume</div></div>
+    <div class="stat"><div class="n" style="font-size:17px;font-family:var(--sans)">Deep</div><div class="l">location (basal ganglia)</div></div>
+    <div class="stat"><div class="n" style="color:var(--sim)">+</div><div class="l">perihematomal edema</div></div>
+    <div class="stat"><div class="n" style="font-size:17px;font-family:var(--sans)">midline</div><div class="l">mass effect (mild)</div></div>
+    <div class="stat"><div class="n">~18</div><div class="l">ICP mmHg (illus.)</div></div>
+    <div class="stat"><div class="n">72 h</div><div class="l">time since onset (illus.)</div></div>
+  </div></div>`;}
+
+function showStructureLabel(info){
+  const host=document.getElementById('twin'),el=document.getElementById('twinlabel');if(!host||!el)return;
+  const rect=host.getBoundingClientRect();
+  el.style.left=(info.x-rect.left)+'px';el.style.top=(info.y-rect.top)+'px';el.style.display='block';
+  el.innerHTML=esc(info.name)+(info.isHemorrhage?' <a href="#" onclick="go(\'cellenv\');return false">explore cells →</a>':'');
+  clearTimeout(window._lblT);window._lblT=setTimeout(()=>{if(el)el.style.display='none';},info.isHemorrhage?6000:2800);
+}
+function wireModelControls(){
+  if(!twinApi)return;
+  const views=[['anterior','Anterior'],['lateral','Lateral'],['superior','Superior'],['reset','Reset']];
+  const cv=document.getElementById('c-view');views.forEach(([v,lbl])=>{const b=document.createElement('button');b.textContent=lbl;b.onclick=()=>twinApi.setView(v);cv.appendChild(b);});
+  const ab=document.createElement('button');ab.textContent='Auto-rotate: on';ab.classList.add('on');let arot=true;ab.onclick=()=>{arot=!arot;ab.textContent='Auto-rotate: '+(arot?'on':'off');ab.classList.toggle('on',arot);twinApi.setAutoRotate(arot);};cv.appendChild(ab);
+  const imgs=['anatomy','MRI','CT','vascular','perfusion','cellular'];
+  const cimg=document.getElementById('c-img'); imgs.forEach((m,i)=>{const b=document.createElement('button');b.textContent=m;if(i===0)b.classList.add('on');
+    b.onclick=()=>{if(m==='cellular'){go('cellenv');return;}[...cimg.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');twinApi.setImaging(m.toLowerCase());};cimg.appendChild(b);});
+  const lays=['Skull / meninges','Arteries & veins','Capillaries','Cortex & white matter','Deep structures & ventricles','Cerebellum & brainstem'];
+  const clay=document.getElementById('c-lay'); lays.forEach(n=>{const b=document.createElement('button');b.textContent=n;b.classList.add(n==='Skull / meninges'?'off':'on');
+    b.onclick=()=>{const off=b.classList.toggle('off');b.classList.toggle('on',!off);twinApi.setLayer(n,!off);};clay.appendChild(b);});
+  twinApi.setLayer('Skull / meninges',false);
+  const lobes=['whole brain','frontal','parietal','temporal','occipital'];
+  const clobe=document.getElementById('c-lobe'); lobes.forEach((n,i)=>{const b=document.createElement('button');b.textContent=n;if(i===0)b.classList.add('on');
+    b.onclick=()=>{[...clobe.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');twinApi.isolateLobe(n);document.getElementById('hudr').textContent=n;};clobe.appendChild(b);});
+  const slices=[['sagittal','X · L↔R'],['coronal','Z · A↔P'],['axial','Y · I↔S'],['freeform','tilt']];
+  document.getElementById('c-slice').innerHTML=slices.map(([a,lbl])=>
+    `<div class="slice"><span>${a}</span><input type="checkbox" id="sl-${a}"><input type="range" id="rg-${a}" min="-2.2" max="2.2" step="0.02" value="0"> <span class="mono" style="grid-column:1/-1;color:var(--faint);font-size:9.5px">${lbl}</span></div>`).join('');
+  slices.forEach(([a])=>{const cb=document.getElementById('sl-'+a),rg=document.getElementById('rg-'+a);
+    const upd=()=>twinApi.setSlice(a,cb.checked,parseFloat(rg.value)); cb.onchange=upd; rg.oninput=upd;});
+  const hb=document.getElementById('c-hemo'); let hon=true; hb.onclick=()=>{hon=!hon;hb.textContent='Hemorrhage: '+(hon?'on':'off');hb.classList.toggle('on',hon);twinApi.setHemorrhage(hon);};
+  document.getElementById('c-time').oninput=e=>twinApi.setTime(parseFloat(e.target.value));
+}
+function wireCellControls(){
+  if(!cellApi)return;
+  const cc=document.getElementById('c-cells');
+  Object.keys(CELLS).forEach(k=>{const b=document.createElement('button');b.textContent=CELLS[k][0];
+    b.onclick=()=>{[...cc.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');cellApi.highlight(k);
+      document.getElementById('cellinfo').innerHTML=`<div class="row"><b>${esc(CELLS[k][0])}</b> <span class="tag bio">🔵 established biology</span></div><div class="lead" style="margin-top:6px">${esc(CELLS[k][1])}</div>`;};cc.appendChild(b);});
+  document.getElementById('c-flow').oninput=e=>cellApi.setFlow(parseFloat(e.target.value));
+  document.getElementById('c-act').oninput=e=>cellApi.setActivity(parseFloat(e.target.value));
+}
+
+function mountMol(pdb){const host=document.getElementById('mol');if(!host)return;
+  if(typeof $3Dmol==='undefined'){host.innerHTML='<div class="hint">structure viewer needs network</div>';return;}
+  const v=$3Dmol.createViewer(host,{backgroundColor:'#131417'});$3Dmol.download('pdb:'+pdb,v,{},()=>{v.setStyle({},{cartoon:{color:'spectrum'}});v.zoomTo();v.render();v.spin(true);});}
+function initCT(){const c=document.getElementById('ct');if(!c)return;const ctx=c.getContext('2d');const lvl=document.getElementById('ctlvl');
+  function draw(){if(!document.getElementById('ct'))return;const W=c.width=c.clientWidth,H=c.height=360,cx=W/2,cy=H/2,L=(lvl?+lvl.value:52)/100;
+    ctx.clearRect(0,0,W,H);ctx.fillStyle='#04070e';ctx.fillRect(0,0,W,H);
+    const rw=W*0.34*(0.7+0.5*Math.sin(L*Math.PI)),rh=H*0.4*(0.7+0.5*Math.sin(L*Math.PI));
+    ctx.strokeStyle='#33517a';ctx.lineWidth=6;ctx.beginPath();ctx.ellipse(cx,cy,rw+10,rh+10,0,0,7);ctx.stroke();
+    const g=ctx.createRadialGradient(cx,cy,10,cx,cy,rw);g.addColorStop(0,'#243449');g.addColorStop(1,'#161f30');ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(cx,cy,rw,rh,0,0,7);ctx.fill();
+    ctx.fillStyle='#0a1120';ctx.beginPath();ctx.ellipse(cx,cy-4,rw*0.3,rh*0.16,0,0,7);ctx.fill();
+    const vis=Math.max(0,1-Math.abs(L-0.52)*4);if(vis>0){const hx=cx-rw*0.28,hy=cy+rh*0.08;
+      ctx.fillStyle=`rgba(217,164,65,${0.16*vis})`;ctx.beginPath();ctx.arc(hx,hy,rw*0.28,0,7);ctx.fill();
+      const hg=ctx.createRadialGradient(hx,hy,2,hx,hy,rw*0.18);hg.addColorStop(0,`rgba(165,32,46,${0.95*vis})`);hg.addColorStop(1,`rgba(120,20,32,${0.5*vis})`);ctx.fillStyle=hg;ctx.beginPath();ctx.arc(hx,hy,rw*0.17,0,7);ctx.fill();}
+    ctx.fillStyle='#5cd0ff';ctx.font='11px "JetBrains Mono",monospace';ctx.fillText('AXIAL · illustrative level '+Math.round(L*100),12,22);
+    ctx.fillStyle='#93a2c4';ctx.fillText('synthetic — not a scan',12,H-12);}
+  if(lvl)lvl.oninput=draw;draw();window.addEventListener('resize',draw);}
+function initWaves(){const c=document.getElementById('eeg');if(!c)return;const ctx=c.getContext('2d');let t=0;const chans=['Fp1','C3','O1','T4'],cols=['#5cd0ff','#22d3a6','#e0a441','#b79bff'];
+  (function loop(){if(!document.getElementById('eeg'))return;requestAnimationFrame(loop);const W=c.width=c.clientWidth,H=c.height=180;ctx.clearRect(0,0,W,H);t+=0.03;
+    chans.forEach((ch,i)=>{const y0=(i+0.5)*H/chans.length;ctx.strokeStyle=cols[i];ctx.lineWidth=1.4;ctx.beginPath();
+      for(let x=0;x<W;x++){const p=x*0.05+t+i;const val=Math.sin(p*3)+0.5*Math.sin(p*7+i)+0.3*Math.sin(p*13)+(Math.random()-0.5)*0.12;ctx.lineTo(x,y0-val*13);}ctx.stroke();
+      ctx.fillStyle='#5f6f92';ctx.font='10px "JetBrains Mono",monospace';ctx.fillText(ch,5,y0-16);});})();}
+function initTrend(id,color,base){const c=document.getElementById(id);if(!c)return;const ctx=c.getContext('2d');const hx='#'+color.toString(16).padStart(6,'0');const data=[];let t=0;
+  (function loop(){if(!document.getElementById(id))return;requestAnimationFrame(loop);t+=0.05;const W=c.width=c.clientWidth,H=c.height=120;
+    data.push(base+Math.sin(t)*base*0.06+(Math.random()-0.5)*base*0.03);if(data.length>W)data.shift();ctx.clearRect(0,0,W,H);ctx.strokeStyle=hx;ctx.lineWidth=1.6;ctx.beginPath();
+    const mn=Math.min(...data),mx=Math.max(...data)+0.001;data.forEach((d,x)=>{const y=H-8-((d-mn)/(mx-mn))*(H-20);x?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
+    ctx.fillStyle=hx;ctx.font='12px "JetBrains Mono",monospace';ctx.fillText(Math.round(data[data.length-1]),8,18);})();}
+
+document.getElementById('disc').innerHTML=`<b>Scope &amp; honesty.</b> The anatomical brain model, imaging slices, vessel network, cellular environment, EEG and physiology traces are <b>illustrative simulations</b> (🟡), clearly labelled — not patient scans, recordings, detections, or measurements, and the hemorrhage indicators are illustrative placeholders. Cell and anatomy functions are <b>established biology</b> (🔵), textbook knowledge, not patient-derived. The molecular structure, evidence graph, pathways, hypotheses, agents, and timeline are <b>live research evidence</b> (🟢) from OpenAlex · Crossref-RetractionWatch · UniProt · RCSB-PDB · ChEMBL · ClinVar · Reactome · ClinicalTrials.gov. Keystone drafts research hypotheses; it does <b>not</b> diagnose, detect hemorrhages on images, read patient signals, or recommend treatment — refused by design in <code>keystone/cv_lab.py</code>.`;
+renderNav(); go('model');
+</script>
+</body>
+</html>

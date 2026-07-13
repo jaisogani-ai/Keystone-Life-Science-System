@@ -1,0 +1,49 @@
+{
+  "message": {
+    "title": [
+      "Biological role of matrix metalloproteinases: a critical balance"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2010,
+          12,
+          22
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          7
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2010,
+          12,
+          22
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2010,
+          12,
+          23
+        ]
+      ],
+      "date-time": "2010-12-23T03:29:00Z",
+      "timestamp": 1293074940000
+    },
+    "container-title": [
+      "European Respiratory Journal"
+    ],
+    "type": "journal-article",
+    "updated-by": []
+  }
+}

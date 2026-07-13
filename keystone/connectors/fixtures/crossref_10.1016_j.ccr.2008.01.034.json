@@ -1,0 +1,40 @@
+{
+  "message": {
+    "title": [
+      "HIF1\u03b1 Induces the Recruitment of Bone Marrow-Derived Vascular Modulatory Cells to Regulate Tumor Angiogenesis and Invasion"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2008,
+          3
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2008,
+          3
+        ]
+      ]
+    },
+    "published-online": null,
+    "created": {
+      "date-parts": [
+        [
+          2008,
+          3,
+          12
+        ]
+      ],
+      "date-time": "2008-03-12T15:56:11Z",
+      "timestamp": 1205337371000
+    },
+    "container-title": [
+      "Cancer Cell"
+    ],
+    "type": "journal-article",
+    "updated-by": []
+  }
+}

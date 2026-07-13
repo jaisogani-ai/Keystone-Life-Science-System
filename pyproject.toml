@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "keystone-workbench"
 version = "0.1.0"
-description = "Keystone — an AI Scientific Research Workbench (glioblastoma demo)"
+description = "Keystone — an agentic scientific discovery workbench for translational biomedical research (evidence integrity + decision engine, provenance-grounded, no fabrication)"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -33,11 +33,14 @@ packages = [
     "keystone.connectors",
     "keystone.artifacts",
     "keystone.calibration",
+    "keystone.ingest",
+    "keystone.ui",
 ]
 
 [tool.setuptools.package-data]
 "keystone.connectors" = ["fixtures/*.json"]
 "keystone.calibration" = ["*.jsonl"]
+"keystone.ui" = ["static/*.html", "static/lib/*.js", "static/lib/*.css"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

@@ -1,0 +1,991 @@
+{
+  "offset": 0,
+  "data": [
+    {
+      "contexts": [
+        "The destruction of the blood-brain barrier by MMP-9 leads to the release of various in \ufb02 ammatory factors by macrophages and neutrophils, causing cerebral vasoconstriction and cerebral edema (Guo et al., 2010; Mehta et al., 2013)."
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "aff212abcfbfa64b20916979c0b6f69bcf711867",
+        "externalIds": {
+          "PubMedCentral": "12689568",
+          "DOI": "10.3389/fphar.2025.1713748",
+          "CorpusId": 283391875,
+          "PubMed": "41383474"
+        },
+        "title": "Targeting the P2X7 receptor in cerebrovascular diseases: from molecular mechanisms to preclinical therapeutic potential",
+        "year": 2025
+      }
+    },
+    {
+      "contexts": [
+        "Inflammatory cytokines and ROS can stimulate the production of MMP-9, which can result in the breakdown of the extracellular matrix surrounding cerebral microvessels and the disruption of TJ proteins between endothelial cells (121).",
+        "Furthermore, laminin\u2014a substrate for MMP-9\u2014decreases at 24 h post-SAH, and endothelial MMP-9 upregulation coincides with reductions in laminin, occludin, and collagen IV (121\u2013123)."
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "1fd710b87e3dedc073dbd13d6c8b1e9b54cc785c",
+        "externalIds": {
+          "PubMedCentral": "12604063",
+          "DOI": "10.3389/fneur.2025.1678839",
+          "CorpusId": 282279768,
+          "PubMed": "41230377"
+        },
+        "title": "Mechanisms and potential therapeutic molecular targets in blood\u2013brain barrier disruption following subarachnoid hemorrhage: a review of early brain injury",
+        "year": 2025
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "b835577b3930ab3521f97f6b5b6598e75e69e9c4",
+        "externalIds": {
+          "PubMedCentral": "12483875",
+          "DOI": "10.3389/fimmu.2025.1643524",
+          "CorpusId": 281465742,
+          "PubMed": "41041330"
+        },
+        "title": "Unveiling the inflammatory messengers after intracerebral hemorrhage: the crosstalk between peripheral NETs and microglia",
+        "year": 2025
+      }
+    },
+    {
+      "contexts": [
+        "77,78 Dual role of glucose in neuronal oxidative stress More than in other organs, the high metabolism level maintained in the brain for generating large amounts of ATP through oxidative phosphorylation 8 generates harmful oxidative species, which are neutralized by reactions using mainly NADPH."
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "489c0a9914b3ad1f273682fa054c63273d72f0e6",
+        "externalIds": {
+          "DOI": "10.1177/0271678X251346277",
+          "CorpusId": 278962865,
+          "PubMed": "40439074"
+        },
+        "title": "Deciphering the brain glucose metabolism: A gateway to innovative stroke therapies",
+        "year": 2025
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "40b0340c9e11d1367b637cf9cd6388f2e34ce663",
+        "externalIds": {
+          "DOI": "10.1016/j.ijbiomac.2024.135967",
+          "CorpusId": 272864878,
+          "PubMed": "39322129"
+        },
+        "title": "Biological significance and pathophysiological role of Matrix Metalloproteinases in the Central Nervous System.",
+        "year": 2024
+      }
+    },
+    {
+      "contexts": [
+        "\u2026effect has been demonstrated in the SAH model, where MMP9 released by neutrophils in the sub-arachnoid space damages the BBB [104], which leads to more peripheral immune cells infiltrating the brain parenchyma, which in turn leads to the production of more MMP9 and thus a vicious cycle [105, 106]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "ec1fb103ee365ed735d7473ce6a28220050dcca3",
+        "externalIds": {
+          "PubMedCentral": "11025216",
+          "DOI": "10.1186/s12974-024-03101-y",
+          "CorpusId": 269215101,
+          "PubMed": "38637850"
+        },
+        "title": "Targeting brain-peripheral immune responses for secondary brain injury after ischemic and hemorrhagic stroke",
+        "year": 2024
+      }
+    },
+    {
+      "contexts": [
+        "MMP-9 also participates in neuroinflammation, promotes EBI, and is associated with apoptosis of hippocampal neurons in rats [78]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "08ffaea387a2318a5b311e702be9da78117fd320",
+        "externalIds": {
+          "PubMedCentral": "10863120",
+          "DOI": "10.1186/s41016-024-00357-4",
+          "CorpusId": 267634789,
+          "PubMed": "38347652"
+        },
+        "title": "Ferroptosis in early brain injury after subarachnoid hemorrhage: review of literature",
+        "year": 2024
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "c2d16b9451f30585c695624161afe019563c558b",
+        "externalIds": {
+          "PubMedCentral": "9683992",
+          "DOI": "10.1155/2022/2406122",
+          "CorpusId": 253528245,
+          "PubMed": "36474712"
+        },
+        "title": "Inflammatory Response and Immune Regulation in Brain-Heart Interaction after Stroke",
+        "year": 2022
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "24a70e93569ad80ee38c1857e6c798da05c88140",
+        "externalIds": {
+          "PubMedCentral": "8733623",
+          "DOI": "10.3389/fnmol.2021.750726",
+          "CorpusId": 245386910,
+          "PubMed": "35002615"
+        },
+        "title": "Exendin-4 Preserves Blood-Brain Barrier Integrity via Glucagon-Like Peptide 1 Receptor/Activated Protein Kinase-Dependent Nuclear Factor-Kappa B/Matrix Metalloproteinase-9 Inhibition After Subarachnoid Hemorrhage in Rat",
+        "year": 2021
+      }
+    },
+    {
+      "contexts": [
+        "The involvement of MMP-9 in post-SAH BBB disruption has been repeatedly reported: MMP-9 degrades extracellular matrix proteins in the basal lamina of capillaries and inter-endothelial tight junction proteins such as ZO-1, causing BBB disruption [4, 31]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "958b2d43af5a138c699c6e8a0caf636af032967c",
+        "externalIds": {
+          "DOI": "10.1007/s13311-021-01050-5",
+          "CorpusId": 233183833,
+          "PubMed": "33829412"
+        },
+        "title": "Clarithromycin Ameliorates Early Brain Injury After Subarachnoid Hemorrhage via Suppressing Periostin-Related Pathways in Mice",
+        "year": 2021
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "b75810cc00b1b37268fd8f8e822fbb2a9637898f",
+        "externalIds": {
+          "DOI": "10.1016/j.jocn.2021.01.005",
+          "CorpusId": 231714330,
+          "PubMed": "33775346"
+        },
+        "title": "Neuroprotective effect of minocycline against acute brain injury in clinical practice: A systematic review.",
+        "year": 2021
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "6bd0cbac12470ebe4fc412361b75c2a2ae5db7be",
+        "externalIds": {
+          "PubMedCentral": "7859104",
+          "DOI": "10.3389/fimmu.2020.607587",
+          "CorpusId": 231654642,
+          "PubMed": "33552066"
+        },
+        "title": "The Role of Tenascin-C in Tissue Injury and Repair After Stroke",
+        "year": 2021
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "9f68e5e1186593ac665b1bd5694f5f0ddedf2804",
+        "externalIds": {
+          "MAG": "3040793371",
+          "PubMedCentral": "7417697",
+          "DOI": "10.1111/jcmm.15641",
+          "CorpusId": 220500303,
+          "PubMed": "32657030"
+        },
+        "title": "Osteopontin as a candidate of therapeutic application for the acute brain injury",
+        "year": 2020
+      }
+    },
+    {
+      "contexts": [
+        "MMP-9 is known as a proteolytic enzyme induced by inflammatory cytokines as well as reactive oxygen species (ROS), and degrades the ECM of cerebral microvessel BM [210, 211].",
+        "In addition, patients with hemorrhagic infarction showed an increase of serum claudin-5 per ZO-1 ratio based on the data on admission, and a decrease of serum VEGF levels compared to patients without hemorrhagic transformation [206].",
+        "Expressions of the tight junction markers, ZO-1, claudin-5, and occludin were downregulated 1 to 3 days\nFig.",
+        "In addition, M2 microglia-induced Ym1/2, IL-10, and TGF-\u03b2 improved stroke outcome via induction of angiogenesis, and suppression of BBB injury [347].",
+        "The expression levels of cytokines such as Ym1/2, IL-10, and TGF-\u03b2 produced by M2 phenotypes were increased between 1 and 3 days with a peak at 3 to 5 days after CI, returning to normal levels within 14 days [347].",
+        "MMP-2 is found in CSF, astrocytes, microglia, macrophages, and is upregulated with hypoxia-inducible factor-1\u03b1 (HIF-1\u03b1) [310, 311], while MMP-3 is produced by microglia, macrophage, and neurons [210, 211, 311-314].",
+        "CI: cerebral infarction, DAMP: damage-associated molecular pattern, ECs: endothelial cells, ICH: intracerebral hemorrhage, ICP: intracranial pressure, IFN-\u03b3: interferon-\u03b3, IL: interleukin, IL-4R: IL-4 receptor, IL-10R: IL-10 receptor, MAPK: mitogen-activated protein kinase, NF-\u03baB: nuclear factor-\u03baB, PPAR\u03b3: peroxisome proliferator activated receptor \u03b3, PRR: pattern recognition receptor, SAH: subarachnoid hemorrhage, STAT: signal transducer and activator of transcription, TGF-\u03b2: transforming growth factor-\u03b2, TNF-\u03b1: tumor necrosis factor-\u03b1.",
+        "LIST OF ABBREVIATIONS 68Ga EDTA = 68Ga ethylenediaminetetraacetic acid 99mTc-DTPA = 99mTc-diethylenetriaminepentaacetic acid\nASL = arterial spin labeling\nATP = adenosine triphosphate\nBBB = blood-brain barrier\nBM = basement membrane\nCI = cerebral infarction\nCNS = central nervous system\nCSF = cerebrospinal fluid\nDAMP = damage-associated molecular pattern\nDCE-CT = dynamic contrast-enhanced computed tomography\nDCE-MRI = dynamic contrast enhanced magnetic resonance imaging\nEC = endothelial cell\nECM = extracellular matrix\nGFAP = glial fibrillary acidic protein\nhCMEC = human cerebral microvascular endothelial cell\nHIF-1\u03b1 = hypoxia-inducible factor-1\u03b1\nHMGB1 = high-mobility group box 1\nICH = intracerebral hemorrhage\nICP = intracranial pressure\nIFN-\u03b3 = interferon-\u03b3\nIg = immunoglobulin\nIL = interleukin\nIL-10R = IL-10 receptor\nIL-4R = IL-4 receptor\nMAPK = mitogen-activated protein kinase\nMMP = matrix metalloproteinase\nMR = magnetic resonance\nNF-\u03baB = nuclear factor-\u03baB\nNLR = nucleotide-binding oligomerization domain-like receptor\nP2X7R = P2X7 receptor\nPPAR\u03b3 = peroxisome proliferator activated receptor \u03b3\nPRR = pattern recognition receptor\nRAGE = receptors for advanced glycation end product\nROS = reactive oxygen species\nSAH = subarachnoid hemorrhage\nSPECT = single photo-emitting computed tomography\nsRAGE = soluble form of RAGE\nSTAT = signal transducer and activator of transcription\nT1WI = T1-weighted imaging\nTEER = transendothelial electrical resistance\nTGF-\u03b2 = transforming growth factor-\u03b2\nTIMPs = tissue inhibitor of metalloproteinases\nTLR = toll-like receptors\nTNF-\u03b1 = tumor necrosis factor \u03b1\nt-PA = tissue plasminogen activator\nUCH-L1 = ubiquitin C-terminal hydrolase L1\nVE-cadherin = vascular endothelial- cadherin\nVEGF = vascular endothelial growth factor\nVEGFR = VEGF receptor\nZO = zonula occludens\nCONSENT FOR PUBLICATION\nNot applicable.",
+        "In addition, MMP-9 inhibitor SB-3CT also reduced SAH-induced brain edema [211].",
+        "IL-4, IL-10, and transforming growth factor (TGF)-\u03b2 induce alternative antiinflammatory microglia/macrophages (M2 phenotype), which provide inhibition of M1 phenotype functions as well as inflammation resolution by releasing anti-inflammatory cytokine such as IL-4, IL-10, and TGF-\u03b2 via mainly STAT3, STAT6 and peroxisome proliferator activated receptor (PPAR)\u03b3 (Fig.",
+        "In contrast, MMP-9 is induced by neutrophils, microglia, and macrophages with ROS as well as inflammatory cytokines such as TNF-\u03b1 and IL-1\u03b2 [210, 211, 312-314].",
+        "In experimental models of stroke, tight junction breakdown has been commonly examined by measuring the expression of ZO-1, claudin-5, occludin, and other junction proteins [45, 58].",
+        "M1 phenotype markers such as TNF-\u03b1, IL-6 and IL-1\u03b2 increased from days 3 to 14 after ischemia [347].",
+        "In contrast, a selective NLRP3 antagonist MCC950 improved post-SAH neurological impairments via the reduction of BBB disruption as measured by albumin levels in the brain tissues as well as suppression of the release of pro-inflammatory cytokines such as TNF-\u03b1, IL-1\u00df, and IL-6 and MMP-9 in SAH [298].",
+        "MMP-9 is a proteolytic enzyme which plays critical roles in regard to BBB disruption due to the effects degrading ECM proteins in cerebral microvessel BM such as collagen IV, laminin, and fibronectin as well as endothelial tight junction proteins such as ZO-1 [210, 211, 243, 317].",
+        "DAMPs bind to TLR4, which in turn activates transcriptional factor nuclear factor-\u03ba\u0392 (NF-\u03baB) as well as mitogen-activated protein kinases (MAPKs) via myeloid differentiation primary response protein 88 and toll receptor\u2013associated activator of interferon dependent signaling pathway leading to the release of pro-inflammatory cytokines and mediators such as IL-1\u03b2, IL-6, IL-8, IL-12, TNF-\u03b1, and MMPs into the brain tissue [244, 275].",
+        "In contrast, MMP-9 is induced by neutrophils, microglia, and macrophages with ROS as well as inflammatory cytokines such as TNF-\u03b1 and IL-1\u03b2 [210,"
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": true,
+      "citingPaper": {
+        "paperId": "4c45dc1270a112f8bcb6ee387b8ab526e87cf962",
+        "externalIds": {
+          "MAG": "3029788680",
+          "PubMedCentral": "7770643",
+          "DOI": "10.2174/1570159X18666200528143301",
+          "CorpusId": 219168792,
+          "PubMed": "32484111"
+        },
+        "title": "The Stroke-Induced Blood-Brain Barrier Disruption: Current Progress of Inspection Technique, Mechanism, and Therapeutic Target",
+        "year": 2020
+      }
+    },
+    {
+      "contexts": [
+        "MMP-9, which is induced by inflammatory cytokines and ROS, can degrade the extracellular matrix of the cerebral microvessel basal lamina, such as collagen IV, fibronectin, laminin, and inter-endothelial tight junction proteins (ZO-1), and thus, cause early BBB disruption after SAH [58, 95]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "073e6009c934ea64124335b83a720e17e56cf97a",
+        "externalIds": {
+          "PubMedCentral": "7770641",
+          "MAG": "2999877312",
+          "DOI": "10.2174/1570159X18666200106154203",
+          "CorpusId": 209894023,
+          "PubMed": "31903882"
+        },
+        "title": "Underlying Mechanisms and Potential Therapeutic Molecular Targets in Blood-Brain Barrier Disruption after Subarachnoid Hemorrhage",
+        "year": 2020
+      }
+    },
+    {
+      "contexts": [
+        "Indeed, a number of previous studies have shown that the blood\u2013brain barrier, including microvessels, pericytes, extracellular collagen matrix and astrocyte projections, are disrupted post SAH (Park et al., 2001, 2014; Badaut et al., 2002; Lo et al., 2003; Kusaka et al., 2004; Ostrowski et al., 2005; Frijns et al., 2006; Naval et al., 2006; Vergouwen et al., 2008; Lee et al., 2009; Guo et al., 2010; Wang et al., 2012; Fagiani and Christofori, 2013; Wong et al., 2013; Li et al., 2015; Liu et al., 2016a).",
+        "\u20262014; Badaut et al., 2002; Lo et al., 2003; Kusaka et al., 2004; Ostrowski et al., 2005; Frijns et al., 2006; Naval et al., 2006; Vergouwen et al., 2008; Lee et al., 2009; Guo et al., 2010; Wang et al., 2012; Fagiani and Christofori, 2013; Wong et al., 2013; Li et al., 2015; Liu et al., 2016a)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "2ebd47b3de8c08ae34b1d866f0a9e1d44bb23f81",
+        "externalIds": {
+          "MAG": "2946870930",
+          "PubMedCentral": "6585561",
+          "DOI": "10.4103/1673-5374.257530",
+          "CorpusId": 174813225,
+          "PubMed": "31169190"
+        },
+        "title": "Vascular endothelial growth factor A promotes platelet adhesion to collagen IV and causes early brain injury after subarachnoid hemorrhage",
+        "year": 2019
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "b47c7952ab1a52b3600e3d61da264e267ce7f0a1",
+        "externalIds": {
+          "MAG": "2887692214",
+          "DOI": "10.1093/NEUROS/NYY201",
+          "CorpusId": 57744938,
+          "PubMed": "31076789"
+        },
+        "title": "SIRT1 Activation: A Potential Strategy for Harnessing Endogenous Protection Against Delayed Cerebral Ischemia After Subarachnoid Hemorrhage.",
+        "year": 2018
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "b4695b1e4e23e90c5b58d2c64f90f9290782d84b",
+        "externalIds": {
+          "MAG": "2881055842",
+          "DOI": "10.1007/s12035-018-1213-7",
+          "CorpusId": 49587521,
+          "PubMed": "29982982"
+        },
+        "title": "Endothelial Cell Dysfunction and Injury in Subarachnoid Hemorrhage",
+        "year": 2018
+      }
+    },
+    {
+      "contexts": [
+        "Accumulating evidence suggests a role for MMP-9 in the early disruption of the BBB after SAH (Sehba et al., 2004; Guo et al., 2010)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "7d486b77299d511c2d6d41072839548f1eec9bbf",
+        "externalIds": {
+          "MAG": "2799856278",
+          "PubMedCentral": "5991135",
+          "DOI": "10.3389/fphys.2018.00592",
+          "CorpusId": 44164560,
+          "PubMed": "29904350"
+        },
+        "title": "Unique Contribution of Haptoglobin and Haptoglobin Genotype in Aneurysmal Subarachnoid Hemorrhage",
+        "year": 2018
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "985280e126c33aa9ed79e385bed022dc63e67004",
+        "externalIds": {
+          "MAG": "2801529879",
+          "DOI": "10.1177/0271678X18774666",
+          "CorpusId": 13689694,
+          "PubMed": "29737222"
+        },
+        "title": "Brain endothelial cell junctions after cerebral hemorrhage: Changes, mechanisms and therapeutic targets",
+        "year": 2018
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "15313b21e9245bc4f906f95ff9b89d6b492ec648",
+        "externalIds": {
+          "MAG": "2607286183",
+          "DOI": "10.1016/j.bbamcr.2017.04.011",
+          "CorpusId": 41124491,
+          "PubMed": "28435009"
+        },
+        "title": "Selective small-molecule inhibitors as chemical tools to define the roles of matrix metalloproteinases in disease.",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "80d9681d6c99eda0010967ec2fc517d776f3554e",
+        "externalIds": {
+          "PubMedCentral": "5740245",
+          "MAG": "2765896288",
+          "DOI": "10.1002/acn3.492",
+          "CorpusId": 6904696,
+          "PubMed": "29296615"
+        },
+        "title": "Minocycline protects against delayed cerebral ischemia after subarachnoid hemorrhage via matrix metalloproteinase\u20109 inhibition",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "08c6988197d74da4755a1599de79335044c11d5d",
+        "externalIds": {
+          "MAG": "2736437110",
+          "PubMedCentral": "5532277",
+          "DOI": "10.1038/s41598-017-06932-3",
+          "CorpusId": 3240322,
+          "PubMed": "28751738"
+        },
+        "title": "ApoE Influences the Blood-Brain Barrier Through the NF-\u03baB/MMP-9 Pathway After Traumatic Brain Injury",
+        "year": 2017
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "0b9fe445a6a81c3612b194d8048dd3b405648bb7",
+        "externalIds": {
+          "MAG": "2552195236",
+          "DOI": "10.1007/s12035-016-0320-6",
+          "CorpusId": 52188385,
+          "PubMed": "27924523"
+        },
+        "title": "Erratum to: LPS Pretreatment Provides Neuroprotective Roles in Rats with Subarachnoid Hemorrhage by Downregulating MMP9 and Caspase3 Associated with TLR4 Signaling Activation",
+        "year": 2016
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "0a80b54a63900f4037dd2554b2a07695ac2ed35c",
+        "externalIds": {
+          "DOI": "10.1007/s12035-016-0259-7",
+          "CorpusId": 6631764,
+          "PubMed": "27844284"
+        },
+        "title": "LPS Pretreatment Provides Neuroprotective Roles in Rats with Subarachnoid Hemorrhage by Downregulating MMP9 and Caspase3 Associated with TLR4 Signaling Activation",
+        "year": 2016
+      }
+    },
+    {
+      "contexts": [
+        "The procedures were according to the protocol of the kit and our previous study.(13) Briefly, the sections were dewaxed in xylene and treated by 1% Triton X-100 for 10 minutes.",
+        "promoting neuronal death in hippocampuses after experimental SAH in rats.(13,15) In the present work, the overexpression of PPAR\u03b2/\u03b4 resulted in reduction of neuronal apoptosis and"
+      ],
+      "intents": [
+        "methodology",
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "b95db977c4512173b0a2e8a96bf979edf206c4a6",
+        "externalIds": {
+          "MAG": "2189138856",
+          "DOI": "10.1161/STROKEAHA.115.011701",
+          "CorpusId": 21812591,
+          "PubMed": "26628385"
+        },
+        "title": "Peroxisome Proliferator\u2013Activated Receptor &bgr;/&dgr; Alleviates Early Brain Injury After Subarachnoid Hemorrhage in Rats",
+        "year": 2016
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "25bbc40306d778ca21ff483cdbd677e87729f927",
+        "externalIds": {
+          "MAG": "2255673114",
+          "DOI": "10.3233/JAD-150759",
+          "CorpusId": 34717601,
+          "PubMed": "26599057"
+        },
+        "title": "Matrix Metalloproteinase in Blood-Brain Barrier Breakdown in Dementia",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [
+        "There is a considerable of evidence indicating that MMP-9 is up-regulated after the onset of SAH insults, associated with the disruption of BBB permeability and the formation of vasogenic edema (Feiler et al., 2011; Guo et al., 2010a; Guo et al., 2010b; Sozen et al., 2009; Suzuki et al., 2010).",
+        "In our present research, we noted that MMP-9 activation occurred in both neural cells and microvascular endothelial cells, which was consistent with previous reports (Guo et al., 2010b; Lee and Lo, 2004; Liu et al., 2012; Tsubokawa et al., 2006).",
+        "Additionally, previous studies have shown that activation of MMP-9 via the microvessel basal lamina protein laminin could lead to cell injury in cerebral ischemia and SAH (Gu et al., 2005; Guo et al., 2010b).",
+        "In addition, activation of MMP-9 could lead to cell death via degradation of the microvessel basal lamina protein laminin, a main component of ECM, after SAH (Gu et al., 2005; Guo et al., 2010b).",
+        "\u2026and activity stabilizes the BBB, reduces leukocyte infiltration, and confers both early and long-term neuroprotection, it suggests that early inhibition of MMP-9 may be a potential therapeutic strategy for SAH (Guo et al., 2010a; Guo et al., 2010b; Sozen et al., 2009; Suzuki et al., 2010)."
+      ],
+      "intents": [
+        "background",
+        "result"
+      ],
+      "isInfluential": true,
+      "citingPaper": {
+        "paperId": "23594ac0deaa1be87c542a61b1f7acb309dfb875",
+        "externalIds": {
+          "MAG": "1034243513",
+          "DOI": "10.1016/j.brainres.2015.07.020",
+          "CorpusId": 3970382,
+          "PubMed": "26210617"
+        },
+        "title": "Astaxanthin reduces matrix metalloproteinase-9 expression and activity in the brain after experimental subarachnoid hemorrhage in rats.",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [
+        "Following the transition from vasospasm to EBI, the number of studies on the mechanisms of EBI remarkably increased [7,20,21]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "da1123793698718b9defad7db090f0ec83a9c281",
+        "externalIds": {
+          "MAG": "2143662498",
+          "DOI": "10.3109/00207454.2014.951442",
+          "CorpusId": 2213233,
+          "PubMed": "25219918"
+        },
+        "title": "Correlation between nitric oxide and early brain injury after subarachnoid hemorrhage",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "98d488eeea5a180ff7072740793a11982fee4c31",
+        "externalIds": {
+          "MAG": "2147408433",
+          "DOI": "10.1179/1743132815Y.0000000045",
+          "CorpusId": 12135466,
+          "PubMed": "25916560"
+        },
+        "title": "Characterisation of DWI-MRI confirmed cerebral infarcts in patients with subarachnoid haemorrhage and their association with MMP-9 levels",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "a2f8512af046915b7afc8974d4381d030cb77bea",
+        "externalIds": {
+          "MAG": "2017370261",
+          "DOI": "10.1007/s10072-015-2092-6",
+          "CorpusId": 25998059,
+          "PubMed": "25627354"
+        },
+        "title": "MMP-9 expression and activity is concurrent with endothelial cell apoptosis in the basilar artery after subarachnoid hemorrhaging in rats",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "2cdc45f7ee10f98e31f72b486713a4cd3d238af3",
+        "externalIds": {
+          "MAG": "2093171381",
+          "DOI": "10.1007/s12975-014-0331-4",
+          "CorpusId": 7214178,
+          "PubMed": "24449486"
+        },
+        "title": "Plasticity of Cerebrovascular Smooth Muscle Cells After Subarachnoid Hemorrhage",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "f99df528d2dc186f5bac9b76479902e4f573a6f1",
+        "externalIds": {
+          "PubMedCentral": "3845861",
+          "MAG": "1997103638",
+          "DOI": "10.1155/2013/827154",
+          "CorpusId": 19802587,
+          "PubMed": "24327930"
+        },
+        "title": "Brain Injury after Transient Global Cerebral Ischemia and Subarachnoid Hemorrhage",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "Other studies have demonstrated that SB-3CT can ameliorate ECM degradation, thus reducing BBB disruption and edema [9,39,41]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "0ac4518a5249dcf58ab9b8c392b25b47eb07d0ab",
+        "externalIds": {
+          "PubMedCentral": "3806745",
+          "MAG": "2098893487",
+          "DOI": "10.1371/journal.pone.0076904",
+          "CorpusId": 16244602,
+          "PubMed": "24194849"
+        },
+        "title": "Selective Inhibition of Matrix Metalloproteinase-9 Attenuates Secondary Damage Resulting from Severe Traumatic Brain Injury",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "a0c3f6999924e1fecfcab1258fd579e10ad76540",
+        "externalIds": {
+          "MAG": "2048502756",
+          "DOI": "10.1021/cn400077d",
+          "CorpusId": 206890049,
+          "PubMed": "23687970"
+        },
+        "title": "Water-soluble mmp-9 inhibitor prodrug generates active metabolites that cross the blood-brain barrier.",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "96f152d69398bcade83668a2887ae5b707e5b229",
+        "externalIds": {
+          "MAG": "2012453230",
+          "DOI": "10.1016/j.neulet.2013.03.005",
+          "CorpusId": 40291075,
+          "PubMed": "23499999"
+        },
+        "title": "Progesterone attenuates early brain injury after subarachnoid hemorrhage in rats.",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "3661ce5d2ff01bda0349c63eb1709eedb8f06ee6",
+        "externalIds": {
+          "PubMedCentral": "3719879",
+          "MAG": "1967866252",
+          "DOI": "10.1007/s12975-013-0257-2",
+          "CorpusId": 13984481,
+          "PubMed": "23894255"
+        },
+        "title": "Early Brain Injury, an Evolving Frontier in Subarachnoid Hemorrhage Research",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "8bddead2f6f42b1f803a5564f46b2c0d942a67ed",
+        "externalIds": {
+          "MAG": "1965669573",
+          "PubMedCentral": "3603523",
+          "DOI": "10.1155/2013/394036",
+          "CorpusId": 14998519,
+          "PubMed": "23533958"
+        },
+        "title": "Early Brain Injury: A Common Mechanism in Subarachnoid Hemorrhage and Global Cerebral Ischemia",
+        "year": 2013
+      }
+    },
+    {
+      "contexts": [
+        "Accumulating evidence suggests a role of matrix metallo-\npeptidase 9 (MMP-9) in the early disruption of BBB after subarachnoid hemorrhage (Guo et al. 2010)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "a16f9ebad2c35134da6d49eff47fe59b77acb431",
+        "externalIds": {
+          "MAG": "2058779913",
+          "DOI": "10.1111/j.1471-4159.2012.07939.x",
+          "CorpusId": 20289957,
+          "PubMed": "23050638"
+        },
+        "title": "Transition of research focus from vasospasm to early brain injury after subarachnoid hemorrhage",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "968da7a7e01841c96561719d39415bb76a434005",
+        "externalIds": {
+          "PubMedCentral": "3500265",
+          "MAG": "2082870917",
+          "DOI": "10.1186/1750-1326-7-21",
+          "CorpusId": 6388425,
+          "PubMed": "22587708"
+        },
+        "title": "Inhibition of MMP-9 by a selective gelatinase inhibitor protects neurovasculature from embolic focal cerebral ischemia",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "6e43b50662e5a01d613bba12f29322e03eab52bd",
+        "externalIds": {
+          "MAG": "2094511972",
+          "PubMedCentral": "3379896",
+          "DOI": "10.1021/ML300050B",
+          "CorpusId": 7378340,
+          "PubMed": "22737278"
+        },
+        "title": "Structure-Activity Relationship for Thiirane-Based Gelatinase Inhibitors",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "f2949dafef2d2db146d9e07ef8bf7a42d445af1c",
+        "externalIds": {
+          "MAG": "2032134195",
+          "PubMedCentral": "3327829",
+          "DOI": "10.1016/j.pneurobio.2012.02.003",
+          "CorpusId": 25587634,
+          "PubMed": "22414893"
+        },
+        "title": "The Importance of Early Brain Injury after Subarachnoid Hemorrhage",
+        "year": 2012
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "1b750bd73bf2934408ff4b2e5b9b007a1212a2ff",
+        "externalIds": {
+          "MAG": "2058644028",
+          "DOI": "10.1089/neu.2011.1864",
+          "CorpusId": 11826662,
+          "PubMed": "22013966"
+        },
+        "title": "Minocycline Improves Functional Outcomes, Memory Deficits, and Histopathology after Endovascular Perforation-Induced Subarachnoid Hemorrhage in Rats",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [
+        "A single recent study has shown upregulation of MMP-9 in rat hippocampus after experimental SAH (Guo et al. 2010)."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "0eed22e43f8d7c7bd1edbae3194736417df0860e",
+        "externalIds": {
+          "MAG": "2085578333",
+          "DOI": "10.1111/j.1748-1716.2010.02227.x",
+          "CorpusId": 24553296,
+          "PubMed": "21087418"
+        },
+        "title": "Late cerebral ischaemia after subarachnoid haemorrhage: Is cerebrovascular receptor upregulation the mechanism behind?",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [
+        "SB-3CT has shown efficacy in several animal models of disease, including stroke [70], vascular permeability [71], vascular remodeling [72], subarachnoid hemorrhage [73], cardiopulmonary resuscitation [74], and SCI [6]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "9b1ba6787f012170e7ab3a0e7d94930d9620c8bb",
+        "externalIds": {
+          "MAG": "2101966356",
+          "PubMedCentral": "3077748",
+          "DOI": "10.1007/s13311-011-0038-0",
+          "CorpusId": 2698711,
+          "PubMed": "21455784"
+        },
+        "title": "Role of Matrix Metalloproteinases and Therapeutic Benefits of Their Inhibition in Spinal Cord Injury",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "f86d7512f4e9ee44dc2ee82f6764104a237a4adc",
+        "externalIds": {
+          "MAG": "2063058869",
+          "PubMedCentral": "3081985",
+          "DOI": "10.1016/j.bmcl.2010.12.076",
+          "CorpusId": 42868431,
+          "PubMed": "21256011"
+        },
+        "title": "Exploration of mild copper-mediated coupling of organotrifluoroborates in the synthesis of thiirane-based inhibitors of matrix metalloproteinases",
+        "year": 2010
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "e766e5f29c52287bc4e0cb5c28f4fd04485c5b35",
+        "externalIds": {
+          "MAG": "2767926250",
+          "DOI": "10.1007/978-3-319-66679-2_20",
+          "CorpusId": 90020909
+        },
+        "title": "The Role of Matricellular Proteins in Experimental Subarachnoid Hemorrhage-Induced Early Brain Injury",
+        "year": 2018
+      }
+    },
+    {
+      "contexts": [],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "d8735702fdaae1bb3d3971d30f7d102d05279605",
+        "externalIds": {
+          "MAG": "2480744202",
+          "DOI": "10.1007/978-1-4939-2313-7_13",
+          "CorpusId": 89394650
+        },
+        "title": "Immunocytochemical Assessment of Blood\u2013Brain Barrier Structure, Function, and Damage",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [
+        "The procedures were according to the protocol of the kit and our previous study.(13) Briefly, the sections were dewaxed in xylene and treated by 1% Triton X-100 for 10 minutes.",
+        "promoting neuronal death in hippocampuses after experimental SAH in rats.(13,15) In the present work, the overexpression of PPAR\u03b2/\u03b4 resulted in reduction of neuronal apoptosis and"
+      ],
+      "intents": [
+        "methodology",
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "7bd0821449610b0a1ff2b360c2771c59e6e0aed0",
+        "externalIds": {
+          "CorpusId": 250278785
+        },
+        "title": "Peroxisome Proliferator\u2013Activated Receptor \u03b2 / \u03b4 Alleviates Early Brain Injury After Subarachnoid Hemorrhage in Rats",
+        "year": 2015
+      }
+    },
+    {
+      "contexts": [
+        "Recently, MMP-9, which belongs to a large family of endopeptidases, has been suggested to contribute to neuronal apoptosis during EBI after SAH (4,5,21)."
+      ],
+      "intents": [],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "81c65e086dc040cdb1c355018a76725b12b52bab",
+        "externalIds": {
+          "MAG": "2396811501",
+          "DOI": "10.5137/1019-5149.JTN.8107-13.1",
+          "CorpusId": 44388986,
+          "PubMed": "25448197"
+        },
+        "title": "Lipopolysaccharide preconditioning induces neuroprotection against early brain injury after experimental subarachnoid hemorrhage.",
+        "year": 2014
+      }
+    },
+    {
+      "contexts": [
+        "MMP-9 is identified as the major collagenase involved in collagen IV destruction after SAH [19, 40,  64 ].",
+        "Basal lamina degradation starts early after SAH [19, 55,  64 , 65].",
+        "Similarly, a significant reduction in laminin is also found at 24 h after SAH [ 64 ]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": true,
+      "citingPaper": {
+        "paperId": "6f0b5c977ae9f712bb4527fe6c5fdcfa793d3195",
+        "externalIds": {
+          "MAG": "1848125354",
+          "DOI": "10.1007/978-3-7091-0353-1_9",
+          "CorpusId": 30898194,
+          "PubMed": "21116914"
+        },
+        "title": "Early micro vascular changes after subarachnoid hemorrhage.",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [
+        "SAH induction was performed as reported previously [ 4 ].",
+        "Results showed that MMP-9 was probably involved in the pathophysiological events of early brain injury after SAH, through degrading laminin, which lead to neuronal death of the hippocampus [ 4 ]."
+      ],
+      "intents": [
+        "methodology",
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "e831bb7100f952c6af1d01ee5fdb0e9792f85946",
+        "externalIds": {
+          "MAG": "66193658",
+          "DOI": "10.1007/978-3-7091-0353-1_15",
+          "CorpusId": 6054397,
+          "PubMed": "21116920"
+        },
+        "title": "Matrix metalloproteinase 9 inhibition reduces early brain injury in cortex after subarachnoid hemorrhage.",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [
+        "This is partly a result of elevated intracranial pressure (ICP) from the initial bleed preventing adequate cerebral blood flow [ 3 ]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "08b7bc56042f98712db401f3dda2b0a602df1fdf",
+        "externalIds": {
+          "MAG": "72146912",
+          "DOI": "10.1007/978-3-7091-0356-2_14",
+          "CorpusId": 37196242,
+          "PubMed": "21125449"
+        },
+        "title": "Treatment with ginsenoside rb1, a component of panax ginseng, provides neuroprotection in rats subjected to subarachnoid hemorrhage-induced brain injury.",
+        "year": 2011
+      }
+    },
+    {
+      "contexts": [
+        "In the previous study, we have observed that MMP-9 was activated in the early phase after SAH and inhibition of MMP-9 decreased the anoikis of neurons, reduced brain edema, and improved behavioral and activities of rats [ 3 ].",
+        "We have also found that matrix metalloproteinase 9 (MMP-9) is involved in the pathological process of EBI after SAH [ 3 ]."
+      ],
+      "intents": [
+        "background"
+      ],
+      "isInfluential": false,
+      "citingPaper": {
+        "paperId": "7e41f052563d33f43d2198c55d2a409ce1fba905",
+        "externalIds": {
+          "MAG": "125615523",
+          "DOI": "10.1007/978-3-7091-0353-1_13",
+          "CorpusId": 12931783,
+          "PubMed": "21116918"
+        },
+        "title": "Protection of minocycline on early brain injury after subarachnoid hemorrhage in rats.",
+        "year": 2011
+      }
+    }
+  ]
+}

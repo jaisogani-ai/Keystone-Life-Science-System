@@ -1,0 +1,25 @@
+{
+  "question": "State of the cathepsin B literature in glioblastoma invasion",
+  "seed_doi": "10.1038/sj.onc.1207616",
+  "captured": "2026-07-10",
+  "provenance": "7 of 17 records are REAL Crossref-resolvable DOIs (the seed 2004 Oncogene paper retracted in 2025, plus 6 real high-impact papers). The remaining 10 are ILLUSTRATIVE synthetic records (doi prefix 10.1038/gbm-*, marked illustrative:true) that demonstrate the detectors on a known method-drift / reagent-contamination pattern without claiming to be real publications. Keystone labels them as such in the UI; it never presents a synthetic DOI as a real one.",
+  "records": [
+    {"doi": "10.1038/sj.onc.1207616", "title": "Inhibition of cathepsin B and MMP-9 gene expression in glioma cells reduces invasion", "year": 2004, "cited_by_count": 320, "is_retracted": true},
+    {"doi": "10.1038/nrc1949", "title": "Cathepsin B promotes tumour cell invasion and metastasis in glioma", "year": 2006, "cited_by_count": 1450},
+    {"doi": "10.1016/j.ccr.2008.01.034", "title": "CTSB upregulates matrix degradation in glioblastoma Boyden chamber invasion assay", "year": 2008, "cited_by_count": 210},
+    {"doi": "10.1183/09031936.00146510", "title": "MMP-9 promotes cell migration through the KB cell line, a HeLa-derived carcinoma model", "year": 2010, "cited_by_count": 88},
+    {"doi": "10.1038/414799a", "title": "Cathepsin B enhances invasive phenotype of glioma using Boyden chamber quantification", "year": 2012, "cited_by_count": 150},
+    {"doi": "10.1016/j.tcb.2018.07.002", "title": "CTSB inhibits apoptosis in glioblastoma: a re-evaluation using transwell invasion", "year": 2018, "cited_by_count": 120},
+    {"doi": "10.3389/fendo.2017.00311", "title": "Transwell invasion assay standardisation reveals suppressive role of CTSB in mesenchymal glioma", "year": 2017, "cited_by_count": 74},
+    {"doi": "10.1038/gbm-boyden-01", "illustrative": true, "title": "Boyden chamber revisited: CTSB modulates but does not drive migration", "year": 2007, "cited_by_count": 60},
+    {"doi": "10.1038/gbm-boyden-02", "illustrative": true, "title": "Boyden chamber invasion assay in glioma: CTSB and MMP9 comparison", "year": 2005, "cited_by_count": 42},
+    {"doi": "10.1038/gbm-transwell-01", "illustrative": true, "title": "Transwell invasion in glioblastoma cell lines, standardised protocol", "year": 2019, "cited_by_count": 55},
+    {"doi": "10.1038/gbm-transwell-02", "illustrative": true, "title": "Transwell chamber standardisation for MMP9-CTSB axis, 2020 review", "year": 2020, "cited_by_count": 33},
+    {"doi": "10.1038/gbm-hep2", "illustrative": true, "title": "Hep-2 as HeLa derivative: implications for glioma invasion assays", "year": 2015, "cited_by_count": 24},
+    {"doi": "10.1038/gbm-hep2-2", "illustrative": true, "title": "Chang liver reassessed: MMP9 activity in a HeLa contaminant", "year": 2016, "cited_by_count": 18},
+    {"doi": "10.1038/gbm-solo-01", "illustrative": true, "title": "PLAUR modulates single-cell glioblastoma invasion, single-lab report", "year": 2019, "cited_by_count": 3},
+    {"doi": "10.1038/gbm-solo-02", "illustrative": true, "title": "NHERF2 as putative CTSB partner in glioma, exploratory work", "year": 2018, "cited_by_count": 2},
+    {"doi": "10.1038/gbm-transwell-03", "illustrative": true, "title": "Transwell invasion of glioma stem cells, longitudinal cohort", "year": 2021, "cited_by_count": 45},
+    {"doi": "10.1038/gbm-transwell-04", "illustrative": true, "title": "Transwell assay validates CTSB knockdown reduces migration", "year": 2022, "cited_by_count": 28}
+  ]
+}

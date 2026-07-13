@@ -21,9 +21,9 @@ import requests
 from keystone.connectors.http_cache import (USER_AGENT, save_fixture,
                                             save_text_fixture)
 from keystone.connectors.clinical import _slug, _CHEMBL, _EUTILS
-from keystone import gbm_spec, insulin_spec
+from keystone import gbm_spec, insulin_spec, ich_spec
 
-_SPECS = {"gbm": gbm_spec, "insulin": insulin_spec}
+_SPECS = {"gbm": gbm_spec, "insulin": insulin_spec, "ich": ich_spec}
 
 _S = requests.Session()
 _S.headers.update({"User-Agent": USER_AGENT})
@@ -144,7 +144,7 @@ def _capture_clinical(spec) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--domain", choices=["gbm", "insulin", "all"], default="all")
+    ap.add_argument("--domain", choices=["gbm", "insulin", "ich", "all"], default="all")
     args = ap.parse_args()
     domains = _SPECS.keys() if args.domain == "all" else [args.domain]
     for name in domains:

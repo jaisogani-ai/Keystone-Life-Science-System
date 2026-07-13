@@ -23,7 +23,7 @@ from dataclasses import replace
 from typing import Optional
 
 from keystone.core import (EvidenceGraph, Hypothesis, ExperimentPlan, Interval,
-                           ReviewResult, ReviewVerdict)
+                           ReviewResult, ReviewVerdict, node_label)
 from keystone.deterministic.stats import sample_size_two_arm
 from keystone.deterministic.protocol import REPRO_CHECKLIST
 from keystone.agents.reasoner import HeuristicReasoner, AGREEMENT_MID, _CI_HALF
@@ -53,6 +53,15 @@ def _extract_json(text: str) -> Optional[dict]:
     return None
 
 
+def _valid_schema(obj, required=()) -> bool:
+    """Structured-output validation: the model's reply must be a dict with every
+    required key present and non-null. Malformed / partial output → the caller
+    falls back to the deterministic reasoner (safe; never a fabricated field)."""
+    if not isinstance(obj, dict):
+        return False
+    return all(k in obj and obj[k] is not None for k in required)
+
+
 class ClaudeReasoner:
     version = "claude-1.0"
 
@@ -79,19 +88,35 @@ class ClaudeReasoner:
             self._client = anthropic.Anthropic()
         return self._client
 
+    def _live_available(self) -> bool:
+        """Live Claude needs a key AND a reachable network — not just a key.
+        Without this guard, a machine (or sandbox) with the key set but no
+        outbound network would block every reasoning call on DNS/connect for
+        minutes before falling back. When unavailable we degrade to the
+        deterministic HeuristicReasoner immediately and honestly."""
+        if os.environ.get("KEYSTONE_OFFLINE") == "1":
+            return False
+        if not os.environ.get("ANTHROPIC_API_KEY"):
+            return False
+        from keystone.connectors.http_cache import _network_reachable
+        return _network_reachable()
+
     def _complete_json(self, system: str, user: str,
-                       max_tokens: int = 1024) -> Optional[dict]:
+                       max_tokens: int = 1024,
+                       required: tuple = ()) -> Optional[dict]:
+        if not self._live_available():
+            return None   # → caller uses the deterministic fallback (no hang)
         for attempt in range(_MAX_RETRIES):
             try:
                 msg = self.client.messages.create(
-                    model=self.model, max_tokens=max_tokens, temperature=0,
+                    model=self.model, max_tokens=max_tokens,
                     system=system,
                     messages=[{"role": "user", "content": user}])
                 text = "".join(b.text for b in msg.content
                                if getattr(b, "type", None) == "text")
                 parsed = _extract_json(text)
-                if parsed is not None:
-                    return parsed
+                if parsed is not None and _valid_schema(parsed, required):
+                    return parsed   # schema-validated → trust it
             except Exception:
                 if attempt == _MAX_RETRIES - 1:
                     return None
@@ -105,7 +130,7 @@ class ClaudeReasoner:
                    "into a bounded plan. Reply ONLY with JSON: "
                    '{"scope": str, "connectors": [str], "depth": int, '
                    '"intent": str}.',
-            user=question)
+            user=question, required=("intent",))
         if not out:
             return self._fallback.plan(question)
         out.setdefault("intent", "hypothesis-generation")
@@ -124,7 +149,7 @@ class ClaudeReasoner:
                 "Reply ONLY with JSON: {\"load_bearing\": float in [0,1], "
                 "\"rationale\": str}. Be strict: general associations and "
                 "multi-reference bundles are incidental."),
-            user=f"Citing sentence:\n{context}")
+            user=f"Citing sentence:\n{context}", required=("load_bearing",))
         if not out or "load_bearing" not in out:
             return self._fallback.classify_load_bearing(context)
         try:
@@ -158,7 +183,7 @@ class ClaudeReasoner:
                 "Do NOT invent numbers."),
             user=f"Evidence graph:\n{summary}\nContradictions: "
                  f"{[[e.src, e.dst] for e in contra]}",
-            max_tokens=1400)
+            max_tokens=1400, required=("statement", "mechanism_path"))
         if not out or "statement" not in out:
             return self._fallback.generate_hypothesis(graph)
 
@@ -193,7 +218,8 @@ class ClaudeReasoner:
                 "\"effect_size_source\": str, \"assumed_effect_size\": float|null}. "
                 "assumed_effect_size MUST be null unless grounded in a cited prior "
                 "result — never invent it."),
-            user=f"Hypothesis: {hyp.statement}\nExpected: {hyp.expected_outcome}")
+            user=f"Hypothesis: {hyp.statement}\nExpected: {hyp.expected_outcome}",
+            required=("perturbation",))
         if not out:
             return self._fallback.design_experiment(hyp, graph)
         d = out.get("assumed_effect_size")
@@ -216,6 +242,46 @@ class ClaudeReasoner:
             alpha=0.05, power=0.80, required_n_per_arm=n,
             reproducibility_checklist=list(REPRO_CHECKLIST), stats_notes=note)
 
+    # -- Integrity summary (semantic prose over a deterministic triage) ---
+    def integrity_summary(self, triage: dict) -> dict:
+        """Write a 2-4 sentence natural-language interpretation of the triage.
+        Numbers stay deterministic — they are read straight off the triage
+        dict passed in and are NOT invented by the model. Claude is asked only
+        for prose (the interpretive glue). On any failure, falls back to the
+        deterministic template."""
+        from keystone.integrity_report import integrity_summary_template
+        total = triage.get("total", 0)
+        counts = triage.get("counts", {})
+        # Pass the model only the fields it may reason over — no fabricated
+        # invitation to invent counts or DOIs.
+        digest = {
+            "total": total, "counts": counts,
+            "flagged": [
+                {"doi": r.get("doi"), "status": r.get("status"),
+                 "doubt": r.get("doubt"),
+                 "retraction_date": r.get("retraction_date"),
+                 "inexcusable": r.get("inexcusable")}
+                for r in (triage.get("rows") or [])
+                if r.get("status") in ("retracted", "cites_retraction",
+                                       "high_doubt", "unresolved")
+            ][:8],
+        }
+        out = self._complete_json(
+            system=(
+                "You are a translational biomedical research assistant "
+                "reading a reference-integrity triage. Write 2-4 sentences of "
+                "plain-language interpretation for a busy scientist. Use ONLY "
+                "the counts and DOIs I give you — never invent a number, DOI, "
+                "or date. Cite at least one real DOI from the input. Reply "
+                'ONLY with JSON: {"paragraph": str}. End the paragraph with '
+                '"AI proposes, scientists decide, experiments verify."'),
+            user=str(digest),
+            max_tokens=500)
+        if out and isinstance(out.get("paragraph"), str) \
+                and out["paragraph"].strip():
+            return {"paragraph": out["paragraph"].strip(), "source": "claude"}
+        return integrity_summary_template(triage)   # honest fallback
+
     # -- Reviewer (semantic critique; deterministic downgrade) ------------
     def review(self, hyp: Hypothesis, graph: EvidenceGraph) -> ReviewResult:
         # The downgrade arithmetic stays deterministic (doubt-driven). Claude
@@ -226,8 +292,9 @@ class ClaudeReasoner:
                    "single strongest reason to distrust this hypothesis. Reply "
                    "ONLY with JSON: {\"weakness\": str}.",
             user=f"Hypothesis: {hyp.statement}\nGrounding doubts: " +
-                 ", ".join(f"{nid}={graph.nodes[nid].doubt.point:.2f}"
-                           for nid in hyp.mechanism_path if nid in graph.nodes))
+                 ", ".join(f"“{node_label(graph.nodes[nid])}”={graph.nodes[nid].doubt.point:.2f}"
+                           for nid in hyp.mechanism_path if nid in graph.nodes),
+            required=("weakness",))
         if out and out.get("weakness"):
             det = replace(det, weakness=str(out["weakness"]))
         return det
@@ -249,7 +316,7 @@ class PathwayFigureAgent:
         import base64
         try:
             msg = self._reasoner.client.messages.create(
-                model=self.model, max_tokens=700, temperature=0,
+                model=self.model, max_tokens=700,
                 system=("You read scientific pathway/mechanism figures. Judge "
                         "whether the named result is STRUCTURALLY CENTRAL to the "
                         "depicted pathway (a hub whose removal breaks the model) "

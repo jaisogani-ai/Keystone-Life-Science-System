@@ -1,0 +1,42 @@
+{
+  "message": {
+    "title": [
+      "Mechanisms of Insulin Action and Insulin Resistance"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          10,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2018,
+          10,
+          1
+        ]
+      ]
+    },
+    "published-online": null,
+    "created": {
+      "date-parts": [
+        [
+          2018,
+          8,
+          1
+        ]
+      ],
+      "date-time": "2018-08-01T14:01:12Z",
+      "timestamp": 1533132072000
+    },
+    "container-title": [
+      "Physiological Reviews"
+    ],
+    "type": "journal-article",
+    "updated-by": []
+  }
+}

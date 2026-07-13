@@ -1,0 +1,19 @@
+{
+  "question": "State of the biological-aging-clock literature (acceleration in disease)",
+  "seed_doi": "",
+  "captured": "2026-07-10",
+  "provenance": "ALL 11 records are ILLUSTRATIVE synthetic records (doi prefix 10.9999/*, marked illustrative:true) that demonstrate the evidence-scan detectors on realistic aging-clock themes. None is a real publication; Keystone badges every one as illustrative and never presents it as a real DOI. The published-clock BENCHMARK table (Horvath, Hannum, PhenoAge, GrimAge, scRNA) cites the REAL clock papers separately.",
+  "records": [
+    {"doi": "10.9999/aging-horvath-01", "illustrative": true, "title": "Epigenetic age acceleration promotes tumour progression across DNAm clocks", "year": 2019, "cited_by_count": 210},
+    {"doi": "10.9999/aging-clock-02", "illustrative": true, "title": "PhenoAge acceleration inhibits survival in a matched-control cohort", "year": 2020, "cited_by_count": 130},
+    {"doi": "10.9999/aging-scrna-03", "illustrative": true, "title": "Single-cell transcriptomic clock reveals accelerated aging in diseased cells", "year": 2022, "cited_by_count": 95},
+    {"doi": "10.9999/aging-scrna-04", "illustrative": true, "title": "scRNA aging clock promotes identification of senescent subpopulations", "year": 2023, "cited_by_count": 60},
+    {"doi": "10.9999/aging-batch-05", "illustrative": true, "title": "Batch effects confound biological-age-acceleration estimates in scRNA-seq", "year": 2021, "cited_by_count": 88},
+    {"doi": "10.9999/aging-tissue-06", "illustrative": true, "title": "Tissue-mismatched clocks inhibit accurate age-acceleration calls", "year": 2022, "cited_by_count": 44},
+    {"doi": "10.9999/aging-control-07", "illustrative": true, "title": "Healthy-control matching promotes reproducible acceleration signals", "year": 2020, "cited_by_count": 72},
+    {"doi": "10.9999/aging-grimage-08", "illustrative": true, "title": "GrimAge acceleration and mortality in chronic disease, longitudinal", "year": 2021, "cited_by_count": 140},
+    {"doi": "10.9999/aging-target-09", "illustrative": true, "title": "Anti-aging target discovery from age-acceleration pathway analysis", "year": 2023, "cited_by_count": 33},
+    {"doi": "10.9999/aging-solo-10", "illustrative": true, "title": "SIRT6 promotes reversal of age acceleration in single-cohort study", "year": 2023, "cited_by_count": 4},
+    {"doi": "10.9999/aging-review-11", "illustrative": true, "title": "Reproducibility standards for epigenetic and transcriptomic aging clocks", "year": 2023, "cited_by_count": 58}
+  ]
+}

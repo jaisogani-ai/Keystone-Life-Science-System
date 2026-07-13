@@ -1,0 +1,69 @@
+% Retrospective positive-control set — the "if only they'd known" case.
+%
+% Included:
+%   * Nature Reviews Cancer 2006 (Mohamed & Sloane, 1246 citations)
+%   * Cancer Cell 2008 (Du et al., 1109 citations)
+%   * European Respiratory Journal 2010 (MMPs review, 739 citations)
+%   * The 2004 Oncogene paper they all cited on cathepsin B / MMP-9 in glioblastoma
+%     - which was RETRACTED on 2025-04-29 (Retraction Watch record 64194)
+%   * A 2001 clean control on insulin signalling.
+%
+% Every citer was published BEFORE the retraction (pre_retraction temporal), so
+% at the time each author had no way to know. Drop this into the Keystone front
+% door and press "Check integrity" — it flags **4 of 5 references as
+% compromised**, with 3 high-impact reviews (combined ~3,100 citations across
+% Nature Reviews / Cancer Cell / Eur Respir J) inheriting doubt from the 2004
+% retraction. The retrospective story: had Keystone existed and been run against
+% these reference lists in 2019, the authors would have seen the load-bearing
+% weight given to a paper whose foundation is now compromised.
+%
+% This example ships as an offline fixture; it works with KEYSTONE_OFFLINE=1
+% (no network needed).
+
+@article{mohamed2006cysteine,
+  title   = {Cysteine cathepsins: multifunctional enzymes in cancer},
+  author  = {Mohamed, M. M. and Sloane, B. F.},
+  journal = {Nature Reviews Cancer},
+  year    = 2006,
+  doi     = {10.1038/nrc1949},
+  note    = {1246 citations; cites the 2004 Gondi paper (now retracted).}
+}
+
+@article{du2008hif1a,
+  title   = {HIF1 alpha induces the recruitment of bone marrow-derived vascular
+             modulatory cells to regulate tumor angiogenesis and invasion},
+  author  = {Du, R. and Lu, K. V. and Petritsch, C. and others},
+  journal = {Cancer Cell},
+  year    = 2008,
+  doi     = {10.1016/j.ccr.2008.01.034},
+  note    = {1109 citations; cites the 2004 Gondi paper (now retracted).}
+}
+
+@article{gialeli2010mmp,
+  title   = {Biological role of matrix metalloproteinases: a critical balance},
+  author  = {Loffek, S. and Schilling, O. and Franzke, C. W.},
+  journal = {European Respiratory Journal},
+  year    = 2010,
+  doi     = {10.1183/09031936.00146510},
+  note    = {739 citations; cites the 2004 Gondi paper (now retracted).}
+}
+
+@article{gondi2004retracted,
+  title   = {Inhibition of cathepsin B and MMP-9 gene expression in glioblastoma
+             cell line via RNA interference reduces tumor cell invasion, tumor
+             growth and angiogenesis},
+  author  = {Gondi, C. S. and others},
+  journal = {Oncogene},
+  year    = 2004,
+  doi     = {10.1038/sj.onc.1207616},
+  note    = {RETRACTED 2025-04-29 (Retraction Watch record 64194).}
+}
+
+@article{saltiel2001insulin,
+  title   = {Insulin signalling and the regulation of glucose and lipid metabolism},
+  author  = {Saltiel, A. R. and Kahn, C. R.},
+  journal = {Nature},
+  year    = 2001,
+  doi     = {10.1038/414799a},
+  note    = {Clean control — negative case for the retraction check.}
+}

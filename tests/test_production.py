@@ -43,6 +43,49 @@ def test_orchestrate_returns_trace_and_ledger():
     assert trace and ledger.graph_hash
 
 
+# --- deepened agents: every seat is a structured scientific artifact --------
+_ARTIFACT_KEYS = ["evidence", "sources", "source_datasets", "supporting_publications",
+                  "contradictions", "assumptions", "remaining_uncertainty",
+                  "proposed_experiment", "failure_modes", "provenance", "artifacts"]
+
+
+def test_every_seat_exposes_the_structured_artifact_schema():
+    g, ledger, hyp, review = _run()
+    trace = build_trace("Q", g, ledger, hyp, review)
+    for s in trace:
+        for k in _ARTIFACT_KEYS:
+            assert k in s, f"{s['actor']} missing artifact field {k}"
+
+
+def test_reviewer_visibly_reduces_confidence_and_states_its_challenge():
+    g, ledger, hyp, review = _run()
+    trace = build_trace("Q", g, ledger, hyp, review)
+    rev = next(s for s in trace if s["actor"] == "Reviewer Agent")
+    assert rev["confidence_before"] is not None and rev["confidence_after"] is not None
+    assert rev["confidence_after"] < rev["confidence_before"]        # confidence removed
+    assert round(rev["confidence_after"] - rev["confidence_before"], 3) == rev["confidence_delta"]
+    assert rev["challenged_assumption"] and rev["why_disagrees"]     # challenge is explicit
+
+
+def test_pi_synthesizes_last_without_fabricating():
+    g, ledger, hyp, review = _run()
+    trace = build_trace("Q", g, ledger, hyp, review)
+    pi = trace[-1]
+    assert pi["actor"] == "Principal Investigator" and pi["actor_type"] == "agent"
+    # synthesis uses the reviewed confidence — no number the engine didn't produce
+    assert pi["confidence_after"] == round(review.adjusted_confidence.point, 3)
+    assert pi["proposed_experiment"] and pi["provenance"]
+
+
+def test_decision_enriches_hypothesis_and_pi_with_expected_information_gain():
+    from keystone.decision_engine import decide
+    d, g, ledger, hyp, review = decide("gbm")
+    trace = build_trace(d["question"], g, ledger, hyp, review, decision=d)
+    hstep = next(s for s in trace if s["actor"] == "Hypothesis Agent")
+    assert hstep["information_gain"] is not None                     # EIG cited when ranked
+    assert trace[-1]["information_gain"] is not None
+
+
 def test_provenance_has_no_orphan_values():
     g, ledger, hyp, review = _run()
     prov = build_provenance(g, ledger, hyp)

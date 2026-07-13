@@ -1,7 +1,13 @@
 # Contributing to Keystone
 
-Keystone is a scientific-integrity tool first and a demo second. One rule governs
-every contribution, and it is the reason a lab could trust this system:
+Keystone is an agentic scientific discovery workbench for biomedical research — a tool a
+scientist installs on Monday and still relies on six months later. One rule
+governs every contribution, and it is the reason a lab could trust this
+system:
+
+**Keystone recommends experiments and drafts artifacts; it never replaces
+laboratory validation or scientific judgment.** AI proposes, scientists decide,
+experiments verify.
 
 ## The semantic / deterministic boundary (do not blur it)
 
@@ -34,7 +40,7 @@ There are exactly two layers. Every function belongs to one of them.
 
 ## Definition of done
 
-- `python -m pytest` is green (17 tests and counting).
+- `python -m pytest` is green (109 tests and counting).
 - The reproducibility hash is stable across re-runs (`run_workbench.py` asserts it).
 - New capability ships with a test. New semantic behavior ships with a
   calibration measurement (`calibrate.py`), not a claim.

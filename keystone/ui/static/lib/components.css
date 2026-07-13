@@ -1,0 +1,112 @@
+/* Keystone shared component styles — the single source of truth for the visual
+   language of the reusable components in components.js and the living-graph
+   interaction in graph.js. Pages link this once; page-specific <style> blocks
+   (loaded after) may override. Colours come from tokens.css variables. */
+
+/* --- accessibility: a visible keyboard-focus ring on every interactive
+       element (WCAG 2.4.7). Mouse users never see it (:focus-visible). -------- */
+:focus-visible{outline:2px solid var(--violet);outline-offset:2px;border-radius:4px}
+.tab:focus-visible{outline-offset:0}
+.tab.more-toggle{background:transparent;border:1px dashed var(--line);color:var(--dim);cursor:pointer}
+.tab.more-toggle:hover{color:var(--tx);border-color:var(--violet)}
+
+/* --- pill severity modifiers (shared by nodeInspect across every page) ---- */
+.pill.high{color:var(--red);border-color:var(--red)}
+.pill.medium{color:var(--amber);border-color:var(--amber)}
+.pill.low{color:var(--green);border-color:var(--green)}
+
+/* --- structured artifact chips (multi-agent trace) ----------------------- */
+.tmeta{font-size:10.5px;color:var(--dim);margin-top:2px;overflow-wrap:anywhere}
+.tmeta .k{color:var(--violet)}
+.tev{font-size:10.5px;color:var(--dim);margin-top:2px;
+  font-family:ui-monospace,monospace;overflow-wrap:anywhere}
+
+/* --- confidence delta: the visible "confidence changed under criticism" beat */
+.cdelta{margin-top:6px;font-size:12px;display:inline-flex;gap:6px;align-items:center;
+  padding:3px 9px;border-radius:20px;border:1px solid var(--line);background:var(--panel2)}
+.cdelta b{font-variant-numeric:tabular-nums}
+.cdelta .dd{font-weight:700;font-variant-numeric:tabular-nums}
+.cdelta.down{border-color:var(--red)} .cdelta.down .dd{color:var(--red)}
+.cdelta.up{border-color:var(--green)} .cdelta.up .dd{color:var(--green)}
+.cdelta.flat{color:var(--dim)}
+
+/* --- Principal Investigator synthesis seat (the closing recommendation) --- */
+.tstep.pi{background:rgba(166,139,255,.09);border-left-color:var(--violet);
+  border-radius:0 8px 8px 0}
+.tstep.pi .tout{color:var(--violet);font-weight:600}
+
+/* --- shared "Why did Keystone reach this?" reasoning chain ---------------- */
+.why-h{font-style:italic;font-size:13.5px;margin-bottom:10px}
+.why-grid{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.why-grid>div{flex:1;min-width:240px}
+.why-row{font-size:12.5px;margin:6px 0;overflow-wrap:anywhere}
+.why-row .k{color:var(--violet);font-weight:600;margin-right:4px}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.04em;font-weight:700;margin-bottom:2px}
+.lbl.green{color:var(--green)} .lbl.amber{color:var(--amber)}
+.why-row.red .k{color:var(--red)} .why-row.green .k{color:var(--green)}
+.ks-dim{color:var(--dim)}
+
+/* --- living evidence graph: selection illuminates, propagation traces ----- */
+.ks-graph svg{max-width:100%;height:auto}
+.ks-graph .ks-node,.ks-graph .ks-edge{transition:opacity .28s ease}
+/* when a node is selected, everything not connected dims back */
+.ks-graph.sel .ks-node{opacity:.16}
+.ks-graph.sel .ks-edge{opacity:.06}
+.ks-graph.sel .ks-node.on{opacity:1}
+.ks-graph.sel .ks-edge.on{opacity:.9}
+/* the selected node itself */
+.ks-graph .ks-node.sel-root circle:last-of-type{stroke:var(--violet);stroke-width:3}
+/* edges carrying inherited doubt from the selected source */
+.ks-graph.sel .ks-edge.prop{opacity:1;stroke:var(--amber)!important;stroke-width:4!important}
+.ks-inspect{font-size:12.5px;min-height:56px}
+.ks-prop{font-size:12px;color:var(--amber);margin-top:6px}
+
+/* --- workflow stages: capabilities emerge from imported evidence, not from a
+       dashboard of products. Each stage expands to reveal what carries the
+       work. Scientific software, not enterprise software. -------------------- */
+.wf-stages{display:flex;flex-direction:column;gap:0}
+.wf-stage{border-top:1px solid var(--line);padding:0}
+.wf-stage:first-child{border-top:0}
+.wf-stage>summary{list-style:none;cursor:pointer;display:grid;
+  grid-template-columns:32px auto 1fr;gap:10px;align-items:baseline;
+  padding:14px 4px;transition:background .18s ease}
+.wf-stage>summary::-webkit-details-marker{display:none}
+.wf-stage>summary:hover{background:rgba(166,139,255,.04)}
+.wf-stage>summary:focus-visible{outline:2px solid var(--violet);outline-offset:2px;border-radius:6px}
+.wf-num{font-family:ui-monospace,monospace;font-size:12px;color:var(--dim);
+  font-variant-numeric:tabular-nums;padding-top:1px}
+.wf-name{font-size:14.5px;font-weight:700;color:var(--tx);letter-spacing:-.01em}
+.wf-caps{font-size:12px;color:var(--dim);line-height:1.5;overflow-wrap:anywhere}
+.wf-stage[open]>summary{background:rgba(166,139,255,.06)}
+.wf-stage[open] .wf-name{color:var(--violet)}
+.wf-body{padding:2px 4px 14px 46px;font-size:13px;color:var(--tx);
+  line-height:1.6;max-width:760px}
+.wf-body code{color:var(--amber);font-size:12px}
+@media (max-width:640px){
+  .wf-stage>summary{grid-template-columns:28px 1fr;row-gap:4px}
+  .wf-caps{grid-column:1 / -1;padding-left:0}
+  .wf-body{padding-left:34px}
+}
+
+/* --- workflow spine: the 8-stage pillbeat under every header. Renders
+       through lib/spine.js reading <body data-stage="…"> ---------------------- */
+.wf-spine{display:flex;gap:4px;flex-wrap:wrap;padding:8px 22px;
+  border-bottom:1px solid var(--line);background:var(--bg);
+  align-items:center;font-size:11px}
+.wf-spine .pb{padding:4px 10px;border-radius:20px;border:1px solid var(--line);
+  color:var(--dim);white-space:nowrap;line-height:1.4;
+  font-variant-numeric:tabular-nums}
+.wf-spine .pb.done{color:var(--green);border-color:var(--green)}
+.wf-spine .pb.now{color:var(--violet);border-color:var(--violet);
+  background:rgba(166,139,255,.09);font-weight:600}
+.wf-spine .sep{color:var(--dim);font-size:10px;opacity:.6}
+@media (max-width:720px){.wf-spine{padding:8px 14px} .wf-spine .sep{display:none}}
+
+/* --- connected workbench: genome variant selection syncs with the panels ---- */
+.ks-genome .ks-variant{transition:opacity .2s ease}
+.ks-genome.sel .ks-variant{opacity:.28}
+.ks-genome.sel .ks-variant.on{opacity:1}
+.ks-genome .ks-variant.on circle{r:6}
+.connected{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.connected .col{min-width:0;display:flex;flex-direction:column;gap:12px}
+@media (max-width:900px){.connected{grid-template-columns:1fr}}

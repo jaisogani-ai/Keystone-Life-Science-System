@@ -1,0 +1,151 @@
+{
+  "mechanisms": [
+    {
+      "action_type": "INHIBITOR",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 3,
+      "mec_id": 5895,
+      "mechanism_comment": "Inhibits matrix metalloproteinase (MMP) activity by specifically interacting with the Zn2+ in their catalytic site. This compound inhibits MMPs potently and specifically with 50% inhibitory concentrations (IC50S) against most members of the MMP family in the nanomolar range.",
+      "mechanism_of_action": "Matrix metalloproteinase 9 inhibitor",
+      "mechanism_refs": [
+        {
+          "ref_id": "11979428",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/11979428"
+        },
+        {
+          "ref_id": "15975049",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/15975049"
+        },
+        {
+          "ref_id": "9626215",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/9626215"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL279785",
+      "parent_molecule_chembl_id": "CHEMBL279785",
+      "record_id": 1700027,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL321",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "INHIBITOR",
+      "binding_site_comment": "See structure of the complex in PDBe under accession codes: 5TH6 (apo) 5TH9 (GS-5745 complex)",
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 3,
+      "mec_id": 5968,
+      "mechanism_comment": "GS-5745 inhibits MMP9 by two mechanisms: 1) inhibiting the catalytic activity of MMP9 by sterically interfering with proteolysis of substrates 2) inhibiting the processing of MMP9 to an active form by sterically preventing accessibility of activating proteases. This results in an inhibition of extracellular matrix protein degradation and, potentially, the inhibition of angiogenesis, tumor growth, invasion, and metastasis. ",
+      "mechanism_of_action": "Matrix metalloproteinase 9 inhibitor",
+      "mechanism_refs": [
+        {
+          "ref_id": "28235803",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/28235803"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL3833374",
+      "parent_molecule_chembl_id": "CHEMBL3833374",
+      "record_id": 2794249,
+      "selectivity_comment": "GS-5745 binds to active-MMP9 with ~150\u2013400 lower affinity compared to pro-MMP9 (PMID:28235803)",
+      "site_id": null,
+      "target_chembl_id": "CHEMBL321",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "INHIBITOR",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 2,
+      "mec_id": 8317,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Matrix metalloproteinase 9 inhibitor",
+      "mechanism_refs": [
+        {
+          "ref_id": "https://openinnovation.astrazeneca.com/azd1236.html",
+          "ref_type": "Other",
+          "ref_url": "https://openinnovation.astrazeneca.com/azd1236.html"
+        },
+        {
+          "ref_id": "22306193",
+          "ref_type": "PubMed",
+          "ref_url": "http://europepmc.org/abstract/MED/22306193"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL4297352",
+      "parent_molecule_chembl_id": "CHEMBL4297352",
+      "record_id": 3132919,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL321",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "INHIBITOR",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 2,
+      "mec_id": 9264,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Matrix metalloproteinase 9 inhibitor",
+      "mechanism_refs": [
+        {
+          "ref_id": "15837997",
+          "ref_type": "PubMed",
+          "ref_url": "https://pubmed.ncbi.nlm.nih.gov/15837997/"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL76222",
+      "parent_molecule_chembl_id": "CHEMBL76222",
+      "record_id": 1699228,
+      "selectivity_comment": "Lower potency against MMP-3",
+      "site_id": null,
+      "target_chembl_id": "CHEMBL321",
+      "variant_sequence": null
+    },
+    {
+      "action_type": "INHIBITOR",
+      "binding_site_comment": null,
+      "direct_interaction": 1,
+      "disease_efficacy": 1,
+      "max_phase": 2,
+      "mec_id": 9416,
+      "mechanism_comment": null,
+      "mechanism_of_action": "Matrix metalloproteinase 9 inhibitor",
+      "mechanism_refs": [
+        {
+          "ref_id": "19624765",
+          "ref_type": "PubMed",
+          "ref_url": "https://pubmed.ncbi.nlm.nih.gov/19624765/"
+        }
+      ],
+      "molecular_mechanism": 1,
+      "molecule_chembl_id": "CHEMBL440498",
+      "parent_molecule_chembl_id": "CHEMBL440498",
+      "record_id": 3132386,
+      "selectivity_comment": null,
+      "site_id": null,
+      "target_chembl_id": "CHEMBL321",
+      "variant_sequence": null
+    }
+  ],
+  "page_meta": {
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total_count": 5
+  }
+}

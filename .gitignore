@@ -12,3 +12,11 @@ keystone/connectors/cache/
 demo_out/
 browser_out/
 .DS_Store
+# local secrets — API keys live in .env and are NEVER committed
+.env
+.env.*
+!.env.example
+# design-tool exports (Figma/handoff bundles — not source code)
+*.zip
+# internal strategy note — working doc, not part of the public deliverable
+docs/top3-strategy.md

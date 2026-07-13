@@ -83,6 +83,17 @@ class Node:
     meta: dict = field(default_factory=dict)
 
 
+def node_label(node, max_len: int = 52) -> str:
+    """A short, human-readable label for a node — its finding/title, NEVER the
+    internal id (e.g. ``N_foundation``). Use this anywhere a node is named in
+    scientist-facing text so internal ids never surface in the UI
+    (spec: human-readable nodes only)."""
+    text = (getattr(node, "text", "") or "").strip()
+    if not text:
+        return "a grounding source"
+    return text if len(text) <= max_len else text[: max_len - 1].rstrip() + "…"
+
+
 @dataclass(frozen=True)
 class Edge:
     src: str

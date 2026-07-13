@@ -3,15 +3,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Keystone — AI Scientific Research Workbench</title>
+<title>Keystone — Reasoning Loop · an agentic scientific discovery workbench</title>
 <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<link rel="stylesheet" href="/static/lib/tokens.css?v=2"/>
+<link rel="stylesheet" href="/static/lib/components.css?v=2"/>
 <style>
-  :root{--bg:#0f1117;--panel:#161a24;--panel2:#1a1f2b;--line:#26304a;
-    --tx:#e6e6e6;--dim:#8d99ae;--cyan:#4cc9f0;--green:#06d6a0;--red:#ff5d5d;
-    --amber:#ffd166;}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--tx);
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5}
   header{padding:16px 22px;border-bottom:1px solid var(--line);
     display:flex;gap:16px;align-items:center;flex-wrap:wrap;
     position:sticky;top:0;background:var(--bg);z-index:5}
@@ -57,14 +53,16 @@
   .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 </style>
 </head>
-<body>
+<body data-stage="reasoning">
 <header>
-  <h1>Keystone <small>AI Scientific Research Workbench</small></h1>
+  <h1>Keystone <small>Reasoning Loop · an agentic scientific discovery workbench</small></h1>
   <div class="qbar">
     <input id="q" type="text" placeholder="Ask a research question…"/>
     <button id="runbtn" onclick="runLoop()">Run loop</button>
   </div>
 </header>
+<div class="wf-spine" id="spine"></div>
+<script type="module" src="/static/lib/spine.js"></script>
 
 <div class="pipe" id="pipe"></div>
 
@@ -75,9 +73,14 @@
     then let you inspect and approve.</div></div>
 </main>
 
-<script>
+<script type="module">
+import { esc, whyPanel, nodeInspect } from '/static/lib/components.js';
+import { mountGraph } from '/static/lib/graph.js';
 const STAGES=["PLAN","COLLECT","ANALYZE","HYPOTHESIS","EXPERIMENT","REVIEW","LEDGER"];
-let BUNDLE=null, STEP=0;
+let BUNDLE=null, STEP=0, GRAPH=null;
+// map an internal node id -> its real human-readable name (never show "N_contra")
+function nodeName(id){ const n=(BUNDLE&&BUNDLE.nodes||[]).find(x=>x.id===id);
+  return n ? ((n.text||id).split(" — ")[0].slice(0,42)) : id; }
 const $=id=>document.getElementById(id);
 
 function drawPipe(active){
@@ -97,21 +100,30 @@ async function loadDefault(){
 }
 loadDefault();
 
+// honest run-log labels — a resolved source is "retrieved / metadata matched",
+// NEVER "verified" (which would imply the claim is true) right after retrieval.
+const RUNLOG_LABEL={
+  PLAN:'Planned retrieval', COLLECT:'Retrieved · metadata matched',
+  ANALYZE:'Claims extracted · integrity reviewed', HYPOTHESIS:'Working inference drafted (AI · flagged for review)',
+  EXPERIMENT:'Validation experiment designed', REVIEW:'Adversarial review · include / exclude',
+  LEDGER:'Recorded to append-only ledger'};
 function runLoop(){
   const q=$("q").value.trim();
   $("runbtn").disabled=true; drawPipe("PLAN");
-  $("main").innerHTML=`<div class="card wide"><div class="empty">Running the loop…</div></div>`;
+  $("main").innerHTML=`<div class="card wide"><div style="font-size:11px;letter-spacing:.08em;color:var(--dim);text-transform:uppercase;margin-bottom:10px">Run log</div><div id="runlog" style="display:flex;flex-direction:column;gap:7px;font-size:12.5px"></div></div>`;
+  const log=$("runlog");
   const es=new EventSource("/api/stream?question="+encodeURIComponent(q));
   es.onmessage=(ev)=>{
     const m=JSON.parse(ev.data);
-    if(m.type==="stage"){ drawPipe(m.stage); }
+    if(m.type==="stage"){ drawPipe(m.stage);
+      if(log){ const lbl=RUNLOG_LABEL[m.stage]||m.stage;
+        log.insertAdjacentHTML('beforeend',`<div style="animation:ks-up .2s ease both"><span style="color:var(--green)">✓</span> <b>${esc(lbl)}</b>${m.summary?` <span class="muted">— ${esc(m.summary)}</span>`:''}</div>`);
+        log.scrollTop=log.scrollHeight; } }
     else if(m.type==="done"){ drawPipe("DONE"); BUNDLE=m.data; STEP=0; render(); es.close(); $("runbtn").disabled=false; }
   };
   es.onerror=()=>{ es.close(); $("runbtn").disabled=false;
     $("main").innerHTML=`<div class="card wide"><div class="empty red">Stream error. Is the server running?</div></div>`; };
 }
-
-function esc(s){return (s==null?"":String(s)).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
 
 function render(){
   const b=BUNDLE, h=b.hypothesis, r=b.review, wp=b.why_panel, rd=b.readiness;
@@ -124,8 +136,8 @@ function render(){
     <div class="row" style="margin-top:10px">
       <span class="pill">confidence ${ci}</span>
       <span class="pill ${verdictColor}">reviewer: ${esc(r.verdict)} → ${r.adjusted_confidence}</span>
-      <span class="pill">support ${h.supporting_evidence.join(", ")}</span>
-      <span class="pill red">contra ${h.contradicting_evidence.join(", ")}</span>
+      <span class="pill">support ${h.supporting_evidence.map(nodeName).join(", ")}</span>
+      <span class="pill red">contra ${h.contradicting_evidence.map(nodeName).join(", ")}</span>
     </div>
   </div>
 
@@ -137,16 +149,7 @@ function render(){
 
   <div class="card">
     <h2>Why did Keystone reach this?</h2>
-    ${evList("Supporting", wp.supporting_evidence, "green")}
-    ${evList("Contradicting", wp.contradicting_evidence, "amber")}
-    <div class="kv"><span>Confidence</span><span>${wp.confidence.point} [${wp.confidence.interval.join(", ")}]</span></div>
-    <div style="margin-top:8px"><span class="red">Reviewer (${esc(wp.reviewer_objection.verdict)}):</span> ${esc(wp.reviewer_objection.weakness)}
-      <span class="muted">→ adj ${wp.reviewer_objection.adjusted_confidence}</span></div>
-    <div style="margin-top:8px"><span class="muted">Remaining uncertainty:</span> ${esc(wp.remaining_uncertainty)}</div>
-    <div style="margin-top:8px" class="muted">Failure modes:</div>
-    <ul>${wp.failure_modes.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>
-    <div class="green" style="margin-top:6px">Next experiment: ${esc(wp.suggested_next_experiment.perturbation)}</div>
-    <div class="muted" style="font-size:12px">kill: ${esc(wp.suggested_next_experiment.kill_condition)} · n/arm ${wp.suggested_next_experiment.required_n_per_arm}</div>
+    ${whyPanel(wp)}
   </div>
 
   <div class="card">
@@ -160,13 +163,14 @@ function render(){
   </div>
 
   <div class="card">
-    <h2>Future experiments — decision tree</h2>
+    <h2>Experiment planner — decision tree</h2>
+    <div class="muted" style="font-size:12px;margin:-4px 0 10px">Draft protocol · requires scientist approval before any experiment is run.</div>
     ${b.future_tree.map(br=>`<div class="branch">
       <b>${esc(br.node_id)}</b> — ${esc(br.description)}
       <div class="muted" style="font-size:12px">
         ${br.on_positive?`<span class="green">＋ positive → ${esc(br.on_positive)}</span>`:""}
         ${br.on_negative?`&nbsp;&nbsp;<span class="red">－ negative → ${esc(br.on_negative)}</span>`:""}
-        &nbsp;· grounding ${(br.grounding||[]).join(", ")}</div></div>`).join("")}
+        &nbsp;· grounding ${(br.grounding||[]).map(nodeName).join(", ")}</div></div>`).join("")}
   </div>
 
   <div class="card">
@@ -211,35 +215,23 @@ function render(){
     <h2>Provenance — sources cited (rule 6)</h2>
     <div class="row">${b.ledger.sources.map(s=>`<span class="pill">${esc(s)}</span>`).join(" ")}</div>
   </div>`;
-  wireGraph(); renderStep();
+  mountWbGraph(); renderStep();
 }
 
-function evList(title,items,color){
-  if(!items||!items.length) return `<div class="muted">${title}: none</div>`;
-  return `<div class="${color}" style="margin-top:4px">${title}</div><ul>`+
-    items.map(e=>`<li><b>${esc(e.id)}</b> <span class="muted">(doubt ${e.doubt})</span> — ${esc((e.text||"").slice(0,110))}</li>`).join("")+`</ul>`;
-}
-
-function wireGraph(){
-  const g=$("graph");
-  g.querySelectorAll("[data-node]").forEach(el=>{
-    el.addEventListener("click",()=>{
-      const n=BUNDLE.nodes[el.getAttribute("data-node")];
-      if(!n) return;
-      const doi=/^10\./.test(n.source)?`<a href="https://doi.org/${esc(n.source)}" target="_blank">${esc(n.source)}</a>`:esc(n.source);
-      $("nodebox").innerHTML=`<b>${esc(n.id)}</b> <span class="pill">${esc(n.type)}</span>
-        ${n.retracted?'<span class="pill red">RETRACTED</span>':""}
-        ${n.inexcusable?'<span class="pill amber">post-retraction</span>':""}
-        <div style="margin-top:6px">${esc(n.text)}</div>
-        <div class="kv"><span>source</span><span>${doi}</span></div>
-        <div class="kv"><span>doubt</span><span>${n.doubt} [${n.doubt_interval.join(", ")}]</span></div>`;
-    });
-  });
+// living evidence graph — shared module; selecting a node illuminates its
+// connections and traces inherited doubt (replaces the old per-page wireGraph).
+function mountWbGraph(){
+  const gc=$("graph");
+  if(gc && BUNDLE.nodes && BUNDLE.edges){
+    GRAPH=mountGraph(gc,{nodes:BUNDLE.nodes,edges:BUNDLE.edges},{
+      inspectEl:$("nodebox"),
+      emptyHint:'Click a node to illuminate its connections and trace inherited doubt.'});
+  }
 }
 
 function renderStep(){
   const s=BUNDLE.session; STEP=Math.max(0,Math.min(STEP,s.length-1));
-  $("stepchips").innerHTML=s.map((st,i)=>`<span class="stage ${i===STEP?'active':(i<STEP?'done':'')}" onclick="STEP=${i};renderStep()">${st.stage}</span>`).join("");
+  $("stepchips").innerHTML=s.map((st,i)=>`<span class="stage ${i===STEP?'active':(i<STEP?'done':'')}" onclick="setStep(${i})">${st.stage}</span>`).join("");
   const st=s[STEP];
   $("stepbody").textContent=`[${st.index}] ${st.stage}\n${st.summary}\n\n`+JSON.stringify(st.detail,null,2);
   $("stepcount").textContent=`step ${STEP+1} / ${s.length}`;
@@ -254,6 +246,10 @@ async function approve(decision){
   const col={approved:"green",rejected:"red",override:"amber"}[j.human_decision]||"cyan";
   $("signoff").innerHTML=`<span class="${col}">● ${esc(j.human_decision)}</span> <span class="muted">— ${esc(j.human_signoff)}</span>`;
 }
+
+// bridge the module's controls to the page's inline handlers (module scope isn't
+// global; expose exactly the entry points the markup calls).
+Object.assign(window,{runLoop,stepMove,approve,setStep:i=>{STEP=i;renderStep();}});
 </script>
 </body>
 </html>

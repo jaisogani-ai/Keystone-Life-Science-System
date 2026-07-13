@@ -1,0 +1,26 @@
+# Borderline 24-well plate — standard curve too noisy (R^2 < 0.98), rest OK (DOWNGRADED)
+# expected_wells: 24
+standard,B2,0,0.130
+standard,C2,2,0.110
+standard,D2,4,0.250
+standard,E2,8,0.240
+standard,F2,16,0.560
+standard,G2,32,0.790
+sample,C3,S1,0.400
+sample,C4,S1,0.440
+sample,C5,S1,0.380
+sample,D3,S2,0.600
+sample,D4,S2,0.640
+sample,D5,S2,0.580
+sample,E3,S3,0.250
+sample,E4,S3,0.270
+sample,E5,S3,0.238
+sample,C6,S4,0.700
+sample,C7,S4,0.740
+sample,C8,S4,0.680
+sample,D6,S5,0.350
+sample,D7,S5,0.372
+sample,D8,S5,0.338
+sample,E6,S6,0.500
+sample,E7,S6,0.530
+sample,E8,S6,0.482

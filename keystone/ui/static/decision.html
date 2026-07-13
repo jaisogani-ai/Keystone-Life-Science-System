@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Keystone — Scientific Decision Engine</title>
-<link rel="stylesheet" href="/static/lib/tokens.css"/>
-<link rel="stylesheet" href="/static/lib/anim.css"/>
+<title>Keystone — an agentic scientific discovery workbench</title>
+<link rel="stylesheet" href="/static/lib/tokens.css?v=2"/>
+<link rel="stylesheet" href="/static/lib/anim.css?v=2"/>
+<link rel="stylesheet" href="/static/lib/components.css?v=2"/>
 <style>
   header{padding:14px 22px;border-bottom:1px solid var(--line);display:flex;gap:16px;
-    align-items:center;flex-wrap:wrap;background:linear-gradient(180deg,#131826,#0c0e15);
+    align-items:center;flex-wrap:wrap;background:linear-gradient(180deg,#1b1c20,#131417);
     position:sticky;top:0;z-index:10}
   .brand{font-size:16px;font-weight:700} .brand span{color:var(--violet)}
   .brand small{display:block;color:var(--dim);font-weight:400;font-size:11px}
@@ -20,13 +21,13 @@
   .flow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
   .fl{font-size:11px;color:var(--dim);padding:5px 10px;border:1px solid var(--line);
     border-radius:8px;max-width:100%;overflow-wrap:anywhere} .fl b{color:var(--tx)} .fl.k{color:var(--violet);border-color:var(--violet)}
-  .hero{background:linear-gradient(135deg,#1a2136,#141824);border:1px solid var(--violet);
+  .hero{background:linear-gradient(135deg,#1f2126,#1b1c20);border:1px solid var(--violet);
     border-radius:16px;padding:20px 22px;margin-bottom:20px;box-shadow:var(--shadow)}
   .hero .tag{color:var(--violet);font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
   .hero h1{font-size:20px;margin:6px 0 4px} .hero .st{font-size:14px;color:var(--tx)}
   .hero .grid{display:flex;gap:22px;flex-wrap:wrap;margin-top:14px}
   .hero .g .k{font-size:10px;color:var(--dim);text-transform:uppercase} .hero .g .v{font-size:17px;font-weight:700}
-  .hero .kill{margin-top:12px;padding:10px 12px;background:rgba(6,214,160,.08);border-left:3px solid var(--green);border-radius:6px;font-size:13px}
+  .hero .kill{margin-top:12px;padding:10px 12px;background:rgba(87,180,140,.08);border-left:3px solid var(--green);border-radius:6px;font-size:13px}
   .hero .over{margin-top:8px;color:var(--dim);font-size:12.5px}
   .actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
   .actions button{background:var(--violet);color:#12081f;font-weight:600;border:0}
@@ -39,12 +40,12 @@
   .hrow{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
   .rank{font-size:18px;font-weight:800;color:var(--violet);min-width:34px}
   .kind{font-size:10.5px;padding:2px 8px;border-radius:20px;border:1px solid var(--line);color:var(--dim)}
-  .pri{margin-left:auto;font-size:13px} .bar{height:6px;background:#0a0c12;border-radius:4px;overflow:hidden;width:120px;display:inline-block;vertical-align:middle;margin-left:6px}
+  .pri{margin-left:auto;font-size:13px} .bar{height:6px;background:#131417;border-radius:4px;overflow:hidden;width:120px;display:inline-block;vertical-align:middle;margin-left:6px}
   .bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--violet));width:0}
   .stmt{font-size:13.5px;margin:8px 0}
   .mgrid{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
   .m{font-size:12px} .m .k{color:var(--dim)} .m sup{font-size:8px;padding:0 3px;border-radius:3px;margin-left:2px}
-  sup.c{background:rgba(6,214,160,.2);color:var(--green)} sup.e{background:rgba(76,201,240,.2);color:var(--cyan)} sup.q{background:rgba(255,209,102,.2);color:var(--amber)}
+  sup.c{background:rgba(87,180,140,.2);color:var(--green)} sup.e{background:rgba(157,176,202,.2);color:var(--cyan)} sup.q{background:rgba(211,165,82,.2);color:var(--amber)}
   .why{margin-top:6px;font-size:12px;color:var(--violet)}
   .pill{font-size:10.5px;padding:2px 8px;border-radius:20px;border:1px solid var(--line)}
   .pill.low{color:var(--green);border-color:var(--green)} .pill.medium{color:var(--amber);border-color:var(--amber)} .pill.high{color:var(--red);border-color:var(--red)}
@@ -64,46 +65,305 @@
   .tbody{flex:1;min-width:0} .trole{font-size:11.5px;color:var(--dim)} .tout{font-size:12.5px;margin-top:2px;overflow-wrap:anywhere}
   .tev{font-size:10.5px;color:var(--dim);margin-top:2px;font-family:ui-monospace,monospace;overflow-wrap:anywhere}
   .tmeta{font-size:10.5px;color:var(--dim);margin-top:1px;overflow-wrap:anywhere} .tmeta .k{color:var(--violet)}
-  .tstep.downgrade{background:rgba(255,93,93,.07);border-left-color:var(--red);border-radius:0 8px 8px 0}
+  .tstep.downgrade{background:rgba(226,117,108,.07);border-left-color:var(--red);border-radius:0 8px 8px 0}
   .tstep.downgrade .tout{color:var(--red);font-weight:600}
   .livehint{color:var(--violet);font-size:12px;margin-bottom:8px}
   .hyp,.hero{overflow-wrap:anywhere} .mgrid,.hrow{min-width:0}
   .empty{color:var(--dim);text-align:center;padding:40px}
+  /* single-instrument panels: living graph, reasoning chain, approval */
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+  .graphwrap{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;align-items:start}
+  .ks-inspect{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:12px}
+  .hyp.sync{cursor:pointer} .hyp.sync.lit{border-color:var(--cyan)}
+  .approve .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .approve input{background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:8px 10px;font-size:12.5px}
+  .approve .go{color:#03251c;background:var(--green);border:0;font-weight:600}
+  .approve .no{color:#2b0606;background:var(--red);border:0;font-weight:600}
+  #signoff{margin-top:10px;font-size:12.5px}
+  .synchint{font-size:11.5px;color:var(--dim);margin:0 0 8px}
   /* responsive: desktop-first, graceful narrow layout */
   @media (max-width:720px){
     main{padding:14px} .hero .grid{gap:14px} .hero h1{font-size:18px}
     .mgrid{gap:8px} .debate>div{min-width:100%} .bucket{min-width:100%}
-    .pri{margin-left:0;width:100%}
+    .pri{margin-left:0;width:100%} .graphwrap{grid-template-columns:1fr}
   }
 </style>
 </head>
-<body>
+<body data-stage="integrity">
 <header>
-  <div class="brand">Key<span>stone</span> — Scientific Decision Engine
-    <small>what should the scientist do next — and why, over every alternative</small></div>
+  <div class="brand">Key<span>stone</span> — an agentic scientific discovery workbench
+    <small>Check what you build on; draft the rigor and methods artifacts you must submit. Keystone recommends experiments and drafts artifacts; it never replaces laboratory validation or scientific judgment.</small></div>
   <div class="grow"></div>
+  <span style="font-size:11px;color:var(--dim)">example libraries</span>
   <select id="domain">
     <option value="gbm">Glioblastoma (cathepsin B axis)</option>
     <option value="insulin">Insulin resistance (IRS-1 axis)</option>
+    <option value="ich">Brain hemorrhage · NeuroHem (MMP-9 axis)</option>
   </select>
-  <a href="/labs"><button>Life-science labs</button></a>
+  <button id="runExample">Run decision engine ▸</button>
+  <a href="/labs"><button>Scientific Workspaces</button></a>
   <a href="/workspace"><button>Evidence workspace</button></a>
   <a href="/workbench"><button>Reasoning loop</button></a>
+  <a href="/neurohem"><button>NeuroHem · brain hemorrhage</button></a>
 </header>
-<main id="main"><div class="empty">Reasoning over the evidence…</div></main>
+<div class="wf-spine" id="spine"></div>
+<main id="main" role="main" aria-live="polite"><div class="empty">Reasoning over the evidence…</div></main>
 
 <script type="module">
 import { streamDecision, reportUrl } from '/static/lib/api.js';
-import { esc, flowStrip, hypCard, agentTrace, traceStep } from '/static/lib/components.js';
+import { esc, flowStrip, hypCard, agentTrace, traceStep, whyPanel, nodeInspect } from '/static/lib/components.js';
+import { mountGraph } from '/static/lib/graph.js';
+import '/static/lib/spine.js';
 
-let D = null;
+let D = null, GRAPH = null, IMPORT = null;
 const $ = id => document.getElementById(id);
 const domainSel = $('domain');
-domainSel.addEventListener('change', load);
+$('runExample').addEventListener('click', runExample);
 
-// Live: stream the agents reasoning; the Reviewer's self-downgrade appears in
-// real time. When the run completes, render the full decision board.
+// ENTRY WORKFLOW — Research Integrity on the scientist's OWN references.
 function load(){
+  $('main').innerHTML = `
+    <h2>Step 1 — Research Integrity <span class="ks-dim" style="font-weight:400;font-size:12.5px">· first station on the discovery spine</span></h2>
+    <div class="synchint">Modern labs jump between PubMed, Zotero, UniProt, Reactome, ClinVar, ChEMBL, notebooks, and grant tools — scientific context is lost at every switch. Keystone keeps the whole discovery process in one reproducible workspace. Start here: paste a reference list. Keystone resolves each DOI against Crossref / Retraction Watch, flags what's compromised, and propagates doubt — every claim traceable, nothing fabricated. Then flow into evidence, decision, experiment, and publication without leaving the workbench.</div>
+    <div class="panel">
+      <textarea id="refs" placeholder="Paste .bib / .ris / DOIs here…" style="width:100%;min-height:120px;background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:10px;font-size:12.5px;font-family:ui-monospace,monospace"></textarea>
+      <div class="actions" style="margin-top:10px">
+        <button id="checkBtn">Check integrity</button>
+        <button id="sampleBtn" style="background:var(--panel2);color:var(--tx);border:1px solid var(--line)">Load sample (Dr. Maya Chen)</button>
+        <button id="retroBtn" style="background:var(--panel2);color:var(--tx);border:1px solid var(--line)">Load retrospective (Nature Reviews 2006 — GBM)</button>
+        <button id="retroInsBtn" style="background:var(--panel2);color:var(--tx);border:1px solid var(--line)">Load retrospective (Physiological Reviews 2018 — insulin)</button>
+      </div>
+      <div id="importErr" style="color:var(--red);font-size:12px;margin-top:8px"></div>
+    </div>
+    <div id="importResult"></div>
+    <h2>Measured accuracy — planted-flaw self-test</h2>
+    <div class="synchint">Before you paste anything: here's what Keystone catches, measured. A live self-test plants known flaws in the evidence graph (false retractions, corrupted citing contexts, hidden post-retraction timing, cleared cell-line problems) alongside benign controls. Numbers stated exactly; higher with Claude live.</div>
+    <div id="validationPanel" class="panel"><div class="empty">Running self-test…</div></div>
+    <h2>The scientific workflow — evidence flows through eight stages</h2>
+    <div class="synchint">Everything Keystone does emerges naturally from imported evidence. Each stage builds on the last; every capability appears as part of one journey — not as a separate product. The engine is calibrated at 0.818 agreement with a hand-labelled reference set (single-annotator baseline, not an inter-annotator ceiling) across two independent domains (glioblastoma and insulin signalling). Expand a stage to see the capabilities that carry the work.</div>
+    <div class="panel"><div class="wf-stages">
+      <details class="wf-stage" open><summary><span class="wf-num">1</span><span class="wf-name">Evidence</span><span class="wf-caps">Import References · Biology Chain · Genome Track · 3D Protein Viewer</span></summary>
+        <div class="wf-body">Paste a <code>.bib</code>, <code>.ris</code>, or DOI list. Keystone resolves each reference against real databases and builds the evidence graph. Biology Chain follows the target through Cell → Protein → Mutation → Drug → Pathway → Disease → Trial. Genome Track places real ClinVar variants on GRCh38. 3D structures render from real PDB IDs.</div></details>
+      <details class="wf-stage"><summary><span class="wf-num">2</span><span class="wf-name">Provenance</span><span class="wf-caps">Evidence Graph · Connector Badges · Literature Pattern Miner</span></summary>
+        <div class="wf-body">Every claim traces to a real source: Crossref, UniProt, Cellosaurus, ClinVar, ChEMBL, Reactome, ClinicalTrials.gov, Semantic Scholar. A failed lookup is marked <code>unresolved</code> — never fabricated. The <b>Literature Pattern Miner</b> extends provenance across a corpus of 50-100 papers: it surfaces contradiction clusters, assay method drift over time, flagged reagent contamination trends, and consensus-vs-outlier claim clusters. Every pattern cites real DOIs; out-of-scope scans (causal inference, patient outcome, drug efficacy) are refused by design.</div></details>
+      <details class="wf-stage"><summary><span class="wf-num">3</span><span class="wf-name">Integrity</span><span class="wf-caps">Research Integrity Center · Retraction Detection · Blast Radius · Scientific Safety Boundary · Frontier Guard</span></summary>
+        <div class="wf-body">References are triaged against Crossref + Retraction Watch. Doubt propagates from a retracted paper to every downstream claim that relies on it — the blast radius. The Scientific Safety Boundary refuses tasks outside its validated scope (microscopy diagnosis, histopathology, clinical radiology) rather than fabricate a measurement. <b>Frontier Guard</b> extends that discipline to two AI-bio frontiers: it vets a phage-genome candidate for biosafety (toxin / lysogeny / AMR gene screen → go/no-go) and scores an organoid study's reproducibility risk — while refusing to generate a sequence or predict a patient's outcome.</div></details>
+      <details class="wf-stage"><summary><span class="wf-num">4</span><span class="wf-name">Reasoning</span><span class="wf-caps">Multi-Agent Scientific Reasoning · Live AI Debate</span></summary>
+        <div class="wf-body">Planner ▸ Evidence-Quality ▸ Hypothesis ▸ Experiment-Design ▸ Statistics + Protocol ▸ Reviewer (self-downgrades confidence when grounding is doubtful) ▸ Principal Investigator (synthesizes one recommendation). Live AI Debate reaches consensus by explicit evidence, not by voting.</div></details>
+      <details class="wf-stage"><summary><span class="wf-num">5</span><span class="wf-name">Hypothesis</span><span class="wf-caps">Decision Engine</span></summary>
+        <div class="wf-body">The Decision Engine ranks competing hypotheses over your imported graph. Every ranking value is labelled <code>computed</code>, <code>estimate</code>, or <code>qualitative</code> — never fabricated. The recommendation includes <b>why first</b>, <b>over alternatives</b>, and <b>how to falsify</b>.</div></details>
+      <details class="wf-stage"><summary><span class="wf-num">6</span><span class="wf-name">Experiment</span><span class="wf-caps">Recommendation · Lab Notebook · Laboratory Agent</span></summary>
+        <div class="wf-body">The recommendation carries a falsifiable kill-condition. Power analysis refuses to fabricate <code>n</code> when there is no grounded effect size. The Lab Notebook is the Ledger's ordered timestamped stages — every entry is a real reasoning step. The <b>Laboratory Agent</b> closes the loop from bench data: it ingests plate-reader output, runs deterministic QC (standard-curve R², replicate CV, edge effect, missing wells), and downgrades confidence when the data fails — the same self-challenge, now on experimental results. Instruments without a validated model are refused, not guessed.</div></details>
+      <details class="wf-stage"><summary><span class="wf-num">7</span><span class="wf-name">Publication</span><span class="wf-caps">NIH R&amp;R Rigor · STAR Methods</span></summary>
+        <div class="wf-body">Two drafts from the same imported evidence: the NIH R&amp;R Rigor Report (grant side) and the STAR Methods paragraph (publication side). Real DOIs, real doubt intervals, real reproducibility hash. Slots Keystone cannot infer (antibodies, sex-as-a-variable) are labelled <b>provide your own</b>.</div></details>
+      <details class="wf-stage"><summary><span class="wf-num">8</span><span class="wf-name">Reproducibility</span><span class="wf-caps">Content-Hashed Ledger · Claude Desktop (MCP)</span></summary>
+        <div class="wf-body">Every session is a content-hashed Ledger with human sign-off; the same input reproduces to the same hash. The same tools are invocable inside Claude Desktop via the MCP server + Agent Skill — the check answers with real evidence without the app open.</div></details>
+    </div></div>`;
+  $('checkBtn').addEventListener('click', runImport);
+  $('sampleBtn').addEventListener('click', () => loadSample('maya'));
+  $('retroBtn').addEventListener('click', () => loadSample('retrospective'));
+  $('retroInsBtn').addEventListener('click', () => loadSample('insulin'));
+  loadValidation();
+}
+
+async function loadSample(kind){
+  const s = await (await fetch('/api/import/sample?kind=' + encodeURIComponent(kind || 'maya'))).json();
+  $('refs').value = s.bibtex;
+}
+
+async function runImport(){
+  const text = $('refs').value.trim();
+  $('importErr').textContent = '';
+  if(!text){ $('importErr').textContent = 'Paste a .bib/.ris export or a DOI list first.'; return; }
+  $('importResult').innerHTML = '<div class="empty">Resolving references against Crossref / Retraction Watch…</div>';
+  try{
+    const r = await fetch('/api/import', { method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ question: 'Imported reference set', text }) });
+    const d = await r.json();
+    if(d.error){ $('importErr').textContent = d.error; $('importResult').innerHTML=''; return; }
+    IMPORT = d; renderImport();
+  }catch(e){ $('importErr').textContent = 'Import failed — is the server running?'; $('importResult').innerHTML=''; }
+}
+
+const STATUS = {
+  retracted:{cls:'high', label:'RETRACTED'}, cites_retraction:{cls:'high', label:'cites a retraction'},
+  expression_of_concern:{cls:'medium', label:'expression of concern'},
+  corrected:{cls:'medium', label:'corrected'},
+  high_doubt:{cls:'medium', label:'elevated doubt'}, unresolved:{cls:'medium', label:'unresolved'},
+  clean:{cls:'low', label:'clean'} };
+
+function renderImport(){
+  const t = IMPORT.integrity, c = t.counts;
+  const badge = (k,n)=> n ? `<span class="pill ${STATUS[k].cls}">${n} ${STATUS[k].label}</span>` : '';
+  let h = `<div class="hero reveal"><div class="tag">▶ Research Integrity</div>
+    <h1>${esc(t.verdict)}</h1>
+    <div class="st">${IMPORT.requested} reference(s) submitted · resolved against Crossref / Retraction Watch · reproduces to hash <code>${esc(t.graph_hash)}</code></div>
+    <div class="actions" style="margin-top:10px">${badge('retracted',c.retracted)} ${badge('cites_retraction',c.cites_retraction)} ${badge('expression_of_concern',c.expression_of_concern)} ${badge('corrected',c.corrected)} ${badge('high_doubt',c.high_doubt)} ${badge('unresolved',c.unresolved)} ${badge('clean',c.clean)}</div>
+  </div>`;
+
+  // FIELD INTEGRITY SCORE — the org-level "is this set safe to build on?" number,
+  // computed from this scientist's OWN references (not a demo corpus).
+  const H = t.health;
+  if (H && H.resolved) {
+    const bandCls = H.band==='high'?'low':H.band==='medium'?'medium':'high';
+    const sens = H.sensitivity;
+    h += `<div class="panel reveal" style="border-left:3px solid var(--violet)">
+      <div style="font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Field Integrity Score · your reference set</div>
+      <div class="hrow" style="align-items:baseline;gap:10px">
+        <span class="pill ${bandCls}" style="font-size:13.5px;font-weight:700;padding:3px 11px">${esc(H.band)} integrity</span>
+        <span style="font-size:22px;font-weight:700">${H.score}</span><span class="ks-dim" style="font-size:12px">/100 · range ${sens.score_range[0]}–${sens.score_range[1]} · ${H.n} references</span></div>
+      <div style="font-size:13px;margin:6px 0">${esc(H.interpretation)}</div>
+      <div class="ks-dim" style="font-size:11.5px">Sensitivity: <b>${sens.band_robust?'band robust':'band shifts'}</b> across alternative priors (range ${sens.score_range[0]}–${sens.score_range[1]}). Weighted composite of real signals: retraction ${H.weights.retraction} · contamination ${H.weights.contamination} · post-publication ${H.weights.post_pub}.</div>
+      <div class="actions" style="margin-top:8px"><button id="healthAuditBtn" style="background:var(--green);color:#03251c;font-weight:600;border:0;padding:8px 14px;border-radius:8px;font-size:12.5px;cursor:pointer">Download Research Integrity Audit ▸</button></div>
+    </div>`;
+  }
+
+  // plain-language interpretation — Claude when live, deterministic template
+  // otherwise. Numbers in the paragraph are read straight off the triage rows;
+  // nothing is fabricated. The source badge is honest about which mode ran.
+  if (t.summary && t.summary.paragraph) {
+    const src = t.summary.source === 'claude' ? 'Claude' : 'deterministic';
+    h += `<div class="panel reveal" style="border-left:3px solid var(--violet)">
+      <div style="font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Integrity summary <span class="ks-dim">· ${esc(src)}</span></div>
+      <div style="font-size:13.5px;line-height:1.55">${esc(t.summary.paragraph)}</div>
+    </div>`;
+  }
+
+  // triage table — worst first, every row verifiable
+  h += `<h2>Reference triage</h2><div class="panel"><table style="width:100%;border-collapse:collapse;font-size:12.5px">
+    <tr style="text-align:left;color:var(--dim)"><th style="padding:6px">Status</th><th>Reference</th><th>Doubt</th><th>Source</th></tr>` +
+    t.rows.map(r=>{
+      const s = STATUS[r.status];
+      const src = r.url ? `<a href="${esc(r.url)}" target="_blank">${esc(r.doi||'')}</a>` : esc(r.doi||'unresolved');
+      // full post-publication change timeline (retraction + corrections + concerns)
+      const changes = (r.post_pub_updates||[]).map(u=>`${esc(u.label)}${u.date?' '+esc(u.date):''}`).join(' · ');
+      const note = changes ? ` · ${changes}` : (r.inexcusable ? ' · post-retraction' : '');
+      return `<tr style="border-top:1px solid var(--line)">
+        <td style="padding:6px"><span class="pill ${s.cls}">${s.label}</span></td>
+        <td>${esc((r.title||'').slice(0,90))}${note}</td>
+        <td>${r.doubt} <span style="color:var(--dim)">[${r.doubt_interval.join(', ')}]</span></td>
+        <td>${src}</td></tr>`;
+    }).join('') + `</table></div>`;
+
+  // Decision Engine card — ranked competing hypotheses on the scientist's
+  // OWN imported references. When the imported graph is too thin to rank
+  // (all-unresolved, etc.), the card honestly says so and does NOT fabricate.
+  const dec = t.decision;
+  if (dec && dec.recommendation) {
+    const rec = dec.recommendation;
+    h += `<h2>Decision Engine — on your imported refs</h2>
+      <div class="synchint">Competing hypotheses derived from the structure of your imported graph — nothing fabricated. Every ranking value is computed / estimate / qualitative. Kill-conditions are draft; replace with your grounded effect size before running.</div>
+      <div class="panel">
+        <div class="hero" style="margin:0"><div class="tag">▶ Recommended</div>
+          <h1 style="font-size:16px">${esc(rec.hypothesis_id)} · ${esc(rec.kind)}</h1>
+          <div class="st">${esc((rec.statement || '').slice(0, 260))}${(rec.statement||'').length > 260 ? '…' : ''}</div>
+          ${rec.why_first && rec.why_first.length ? `<div class="over"><b>Why first:</b> ${esc(rec.why_first.join(', '))}</div>` : ''}
+          ${rec.over_alternatives ? `<div class="over"><b>Over alternatives:</b> ${esc(rec.over_alternatives)}</div>` : ''}
+          ${rec.how_to_falsify ? `<div class="kill"><b>How to falsify:</b> ${esc(rec.how_to_falsify)}</div>` : ''}
+        </div>
+        ${dec.ranked.length > 1 ? `<h2 style="font-size:12px;margin-top:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim)">Competing (${dec.ranked.length} total)</h2>
+          <ul style="font-size:12.5px;padding-left:20px;margin:6px 0 0">${dec.ranked.slice(1, 5).map(h_ => `<li><b>${esc(h_.id)}</b> [${esc(h_.kind)}] — priority ${h_.priority} · ${esc((h_.statement||'').slice(0,130))}${(h_.statement||'').length > 130 ? '…' : ''}</li>`).join('')}</ul>` : ''}
+      </div>`;
+  } else if (dec && dec.error) {
+    h += `<h2>Decision Engine — on your imported refs</h2>
+      <div class="panel" style="border-left:3px solid var(--amber)">
+        <div style="font-size:12.5px;color:var(--dim)"><b>Not ranked.</b> ${esc(dec.error)}</div>
+      </div>`;
+  }
+
+  // living graph on the imported set + inspector
+  h += `<h2>Evidence graph — your references</h2>
+    <div class="synchint">Select any reference to illuminate its connections and trace inherited doubt. A retracted paper's doubt propagates to everything that cites it — the blast radius.</div>
+    <div class="panel"><div class="graphwrap">
+      <div id="ksgraph">${IMPORT.evidence_graph_svg || ''}</div>
+      <div class="ks-inspect" id="ksinspect">Select a reference to inspect its source and doubt.</div>
+    </div></div>`;
+
+  // (validation panel is rendered up-front by load() — don't duplicate here)
+
+  // NIH R&R + STAR Methods rigor report — the mandatory grant-submission artifact,
+  // projected from *this* import (real DOIs, doubt intervals, reproducibility hash).
+  h += `<h2>Submission-ready artifacts</h2>
+    <div class="synchint">Two drafts from the same imported reference set. Retraction status, doubt intervals, cell-line slots (Cellosaurus), and reproducibility hash are all real; sections the scientist must fill in are labelled "provide your own." Open each as print-ready HTML in a new tab (Cmd/Ctrl-P → Save as PDF).</div>
+    <div class="panel" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <button id="openRigorBtn" style="background:var(--green);color:#03251c;font-weight:600;border:0;padding:10px 16px;border-radius:8px;font-size:13px;cursor:pointer">Open NIH R&amp;R rigor statement ▸</button>
+      <button id="openMethodsBtn" style="background:var(--cyan);color:#04202b;font-weight:600;border:0;padding:10px 16px;border-radius:8px;font-size:13px;cursor:pointer">Draft STAR Methods paragraph ▸</button>
+      <span class="ks-dim" style="font-size:12px">Grant-side + publication-side artifacts, drafted from the same real evidence.</span></div>`;
+
+  // human sign-off on the integrity assessment (rule 1)
+  h += `<h2>Human decision</h2>
+    <div class="panel approve reveal">
+      <div style="font-size:12.5px;color:var(--dim)">Rule 1 — the scientist decides. Your sign-off is written into the Ledger with attribution and reproduces to hash <code>${esc(t.graph_hash)}</code>.</div>
+      <div class="row"><input id="who" placeholder="your name"/><input id="note" placeholder="optional note" style="flex:1"/></div>
+      <div class="row">
+        <button class="go" data-dec="approved">Accept assessment</button>
+        <button data-dec="override">Override</button>
+      </div>
+      <div id="signoff"></div>
+    </div>`;
+
+  $('importResult').innerHTML = h;
+  // wire the living graph + approval on the imported session
+  const gc = $('ksgraph');
+  if(gc && IMPORT.nodes && IMPORT.edges){
+    GRAPH = mountGraph(gc, { nodes: IMPORT.nodes, edges: IMPORT.edges }, {
+      inspectEl: $('ksinspect'),
+      emptyHint: 'Select a reference to illuminate its connections and trace inherited doubt.' });
+  }
+  document.querySelectorAll('#importResult .approve [data-dec]').forEach(
+    b => b.addEventListener('click', () => approveImport(b.getAttribute('data-dec'))));
+  const rigor = document.getElementById('openRigorBtn');
+  if (rigor) rigor.addEventListener('click',
+    () => window.open('/api/artifacts/rigor?session_id=' + encodeURIComponent(IMPORT.session_id), '_blank'));
+  const methods = document.getElementById('openMethodsBtn');
+  if (methods) methods.addEventListener('click',
+    () => window.open('/api/artifacts/methods?session_id=' + encodeURIComponent(IMPORT.session_id), '_blank'));
+  const healthBtn = document.getElementById('healthAuditBtn');
+  if (healthBtn) healthBtn.addEventListener('click',
+    () => window.open('/api/artifacts/health?session_id=' + encodeURIComponent(IMPORT.session_id), '_blank'));
+}
+
+// Load the validation self-test (proof-of-trust) alongside the import result.
+async function loadValidation(){
+  const el = document.getElementById('validationPanel'); if(!el) return;
+  try{
+    const v = await (await fetch('/api/validation?domain=gbm')).json();
+    const pct = (v.n_planted ? (v.caught / v.n_planted * 100) : 0).toFixed(0);
+    el.innerHTML = `<div class="hrow" style="gap:16px;flex-wrap:wrap">
+        <div><div style="font-size:26px;font-weight:800;color:var(--green)">${v.caught}/${v.n_planted}</div>
+          <div style="font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em">planted flaws caught</div></div>
+        <div><div style="font-size:20px;font-weight:700">${v.false_alarms}<span style="color:var(--dim);font-weight:400"> / ${v.n_benign}</span></div>
+          <div style="font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em">false alarms on benign controls</div></div>
+        <div><div style="font-size:20px;font-weight:700">${v.precision}</div>
+          <div style="font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em">precision</div></div>
+        <div><div style="font-size:20px;font-weight:700">${v.recall}</div>
+          <div style="font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em">recall</div></div>
+        <div><div style="font-size:20px;font-weight:700">${v.load_bearing_calibration.agreement}</div>
+          <div style="font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em">load-bearing agreement (calibrated)</div></div>
+      </div>
+      <details style="margin-top:12px"><summary style="cursor:pointer;color:var(--cyan);font-size:12.5px">Per-flaw catalogue (${v.catalogue.length} test cases)</summary>
+        <ul style="margin-top:6px">${v.catalogue.map(c => {
+          const label = c.flawed ? (c.detected ? 'CAUGHT' : 'MISSED') : (c.detected ? 'FALSE ALARM' : 'ok');
+          const cls = c.flawed ? (c.detected ? 'low' : 'high') : (c.detected ? 'high' : 'low');
+          return `<li style="font-size:12px;margin:3px 0"><span class="pill ${cls}">${label}</span> <b>${esc(c.name)}</b> — <span style="color:var(--dim)">${esc((c.description||'').slice(0,140))}</span></li>`;
+        }).join('')}</ul></details>`;
+  }catch(e){
+    el.innerHTML = '<div class="empty" style="color:var(--dim)">validation unavailable</div>';
+  }
+}
+
+async function approveImport(decision){
+  const r = await fetch('/api/approve', { method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ session_id: IMPORT.session_id, decision, who:($('who')||{}).value||'', note:($('note')||{}).value||'' }) });
+  const j = await r.json();
+  if(j.error){ $('signoff').innerHTML = `<span style="color:var(--red)">${esc(j.error)}</span>`; return; }
+  const col = { approved:'var(--green)', override:'var(--amber)' }[j.human_decision] || 'var(--cyan)';
+  $('signoff').innerHTML = `<span style="color:${col}">● ${esc(j.human_decision)}</span> <span style="color:var(--dim)">— ${esc(j.human_signoff)}</span>`;
+}
+
+// EXAMPLE LIBRARIES — the full Decision Engine on a curated domain (the depth
+// behind the entry). Streams the multi-agent reasoning live.
+function runExample(){
   $('main').innerHTML = `<h2>Multi-agent reasoning pipeline <span class="livehint">● live</span></h2>
     <div class="livehint">A central planner coordinates specialist agents; watch the Reviewer challenge and downgrade the hypothesis in real time.</div>
     <div class="hyp"><div class="trace" id="livetrace"></div></div>`;
@@ -113,6 +373,31 @@ function load(){
               lt.lastElementChild.scrollIntoView({ block: 'nearest' }); },
     data => { D = data; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); },
     () => { $('main').innerHTML = '<div class="empty" style="color:var(--red)">Stream error — is the server running?</div>'; });
+}
+
+// pre-filled demo topic per domain so the prior-art check resolves offline from
+// the pinned OpenAlex fixture; a scientist edits it to their own claim.
+const PRIOR_ART_DEMO = { gbm: 'cathepsin B glioblastoma invasion',
+                         insulin: 'CDK4 insulin beta cell regeneration' };
+
+async function runPriorArt(){
+  const q = ($('pa-q') || {}).value || '';
+  const out = $('pa-out'); if (!out) return;
+  out.textContent = 'Searching OpenAlex…';
+  try {
+    const d = await (await fetch('/api/prior_art?q=' + encodeURIComponent(q))).json();
+    if (!d.matches || !d.matches.length) {
+      out.innerHTML = `<span class="pill medium">no match</span> ${esc(d.note)}`; return;
+    }
+    out.innerHTML = `<div style="margin-bottom:6px">${esc(d.note)}</div>`
+      + `<table style="width:100%;border-collapse:collapse;font-size:12px">
+         <tr style="color:var(--dim);text-align:left"><th style="padding:4px">Closest existing work</th><th>Year</th><th>Cited</th><th>DOI</th></tr>`
+      + d.matches.map(m => `<tr style="border-top:1px solid var(--line)">
+          <td style="padding:4px">${m.is_retracted ? '<span class="pill high">RETRACTED</span> ' : ''}${esc((m.title||'').slice(0,80))}</td>
+          <td>${m.year||''}</td><td>${m.cited_by_count ?? ''}</td>
+          <td>${m.url ? `<a href="${esc(m.url)}" target="_blank">${esc(m.doi)}</a>` : '—'}</td></tr>`).join('')
+      + `</table>`;
+  } catch (e) { out.textContent = 'prior-art search unavailable — is the server running?'; }
 }
 
 function render(){
@@ -138,6 +423,31 @@ function render(){
       <button onclick="window.open('${reportUrl(domainSel.value)}','_blank')">Generate publication report</button>
     </div>
   </div>`;
+
+  // HAS THIS BEEN DONE? — prior-art check (Q3) right where "what next" (Q2) is answered
+  h += `<h2>Has this been done? <span class="ks-dim" style="font-weight:400;font-size:12.5px">· closest existing work</span></h2>
+    <div class="synchint">Before you run it, see the closest published work. Keystone surfaces overlap so you don't re-run a done experiment — it never judges novelty (that's your call). Retracted matches are flagged so you don't build on one.</div>
+    <div class="panel">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+        <input id="pa-q" style="flex:1;min-width:280px;background:var(--panel2);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:8px 10px;font-size:12.5px" value="${esc(PRIOR_ART_DEMO[domainSel.value]||'')}"/>
+        <button id="pa-btn">Search prior art</button>
+      </div>
+      <div id="pa-out" class="ks-dim" style="font-size:12.5px">Searching OpenAlex…</div>
+    </div>`;
+
+  // LIVING EVIDENCE GRAPH — select a node to illuminate connections + trace doubt
+  h += `<h2>Living evidence graph</h2>
+    <div class="synchint">Select any node to illuminate every connected paper, target, mutation and dataset, and watch inherited doubt propagate along load-bearing reliance. Selecting a competing hypothesis below lights its grounding here — no page change.</div>
+    <div class="panel"><div class="graphwrap">
+      <div id="ksgraph">${D.evidence_graph_svg || ''}</div>
+      <div class="ks-inspect" id="ksinspect">Select a node to illuminate its connected evidence and trace inherited doubt.</div>
+    </div></div>`;
+
+  // WHY — the reasoning chain behind the recommendation (computed before, never shown)
+  if (D.why_panel) {
+    h += `<h2>Why Keystone reached this</h2>
+      <div class="panel reveal">${whyPanel(D.why_panel)}</div>`;
+  }
 
   // MULTI-AGENT PIPELINE — the reasoning made visible, provenance per step
   if (D.agent_trace) {
@@ -166,7 +476,57 @@ function render(){
     <div class="hyp reveal"><div class="legend">Blocking publication: ${(D.knowledge_gaps.blocking_publication||[]).map(esc).join(', ')||'none flagged'}</div>
     <ul class="gaps">${D.knowledge_gaps.gaps.map(g=>`<li><b>${esc(g.type)}</b> — ${esc(g.detail)}</li>`).join('')}</ul></div>`;
 
+  // HUMAN APPROVAL GATE — rule 1: the scientist decides, written back to the ledger
+  h += `<h2>Human decision</h2>
+    <div class="panel approve reveal">
+      <div style="font-size:12.5px;color:var(--dim)">Rule 1 — the scientist decides. Your decision is written into the Ledger with attribution and reproduces to hash <code>${esc(D.graph_hash||'')}</code>.</div>
+      <div class="row"><input id="who" placeholder="your name"/><input id="note" placeholder="optional note / override reason" style="flex:1"/></div>
+      <div class="row">
+        <button class="go" data-dec="approved">Approve next experiment</button>
+        <button class="no" data-dec="rejected">Reject</button>
+        <button data-dec="override">Override</button>
+      </div>
+      <div id="signoff"></div>
+    </div>`;
+
   $('main').innerHTML = h;
+  wireInstrument();
+}
+
+// Post-render wiring: the living graph, the decision-board ↔ graph sync, and the
+// human approval gate — the pieces that make this one synchronized instrument.
+function wireInstrument(){
+  const gc = $('ksgraph');
+  if (gc && D.nodes && D.edges) {
+    GRAPH = mountGraph(gc, { nodes: D.nodes, edges: D.edges }, {
+      inspectEl: $('ksinspect'),
+      emptyHint: 'Select a node to illuminate its connected evidence and trace inherited doubt.'
+    });
+  }
+  document.querySelectorAll('.hyp.sync').forEach(card => card.addEventListener('click', ev => {
+    if (ev.target.closest('summary')) return;   // let the debate <details> toggle
+    document.querySelectorAll('.hyp.sync').forEach(c => c.classList.remove('lit'));
+    card.classList.add('lit');
+    const grounds = (card.getAttribute('data-grounds') || '').split(',').filter(Boolean);
+    if (GRAPH) GRAPH.highlightNodes(grounds);
+    if (gc) gc.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }));
+  document.querySelectorAll('.approve [data-dec]').forEach(
+    b => b.addEventListener('click', () => approve(b.getAttribute('data-dec'))));
+  // "Has this been done?" — wire the prior-art search and auto-run it once
+  const paBtn = $('pa-btn');
+  if (paBtn) { paBtn.addEventListener('click', runPriorArt); runPriorArt(); }
+}
+
+async function approve(decision){
+  if (!D || !D.session_id){ $('signoff').innerHTML = '<span style="color:var(--red)">no active session</span>'; return; }
+  const who = ($('who') || {}).value || '', note = ($('note') || {}).value || '';
+  const r = await fetch('/api/approve', { method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ session_id: D.session_id, decision, who, note }) });
+  const j = await r.json();
+  if (j.error){ $('signoff').innerHTML = `<span style="color:var(--red)">${esc(j.error)}</span>`; return; }
+  const col = { approved:'var(--green)', rejected:'var(--red)', override:'var(--amber)' }[j.human_decision] || 'var(--cyan)';
+  $('signoff').innerHTML = `<span style="color:${col}">● ${esc(j.human_decision)}</span> <span style="color:var(--dim)">— ${esc(j.human_signoff)}</span>`;
 }
 load();
 </script>

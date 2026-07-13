@@ -1,0 +1,30 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "519",
+    "retmax": "6",
+    "retstart": "0",
+    "idlist": [
+      "4811368",
+      "4809717",
+      "4803540",
+      "4799163",
+      "4781436",
+      "4778251"
+    ],
+    "translationset": [],
+    "translationstack": [
+      {
+        "term": "MMP9[gene]",
+        "field": "gene",
+        "count": "519",
+        "explode": "N"
+      },
+      "GROUP"
+    ],
+    "querytranslation": "MMP9[gene]"
+  }
+}

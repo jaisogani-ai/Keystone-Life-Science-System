@@ -1,0 +1,20 @@
+{
+  "question": "State of the phage-therapy literature for Pseudomonas aeruginosa",
+  "seed_doi": "",
+  "captured": "2026-07-10",
+  "provenance": "ALL 12 records are ILLUSTRATIVE synthetic records (doi prefix 10.9999/*, marked illustrative:true) that demonstrate the evidence-scan detectors on realistic phage-therapy themes. None is a real publication; Keystone badges every one as illustrative and never presents it as a real DOI. The frontier vet screens real user-provided gene annotations, not these DOIs.",
+  "records": [
+    {"doi": "10.9999/phage-pao1-01", "illustrative": true, "title": "Phage cocktail promotes clearance of Pseudomonas PAO1 biofilm in vivo", "year": 2019, "cited_by_count": 120},
+    {"doi": "10.9999/phage-pao1-02", "illustrative": true, "title": "Phage monotherapy inhibits PAO1 growth but resistance emerges rapidly", "year": 2021, "cited_by_count": 90},
+    {"doi": "10.9999/phage-pao1-03", "illustrative": true, "title": "Lytic phage promotes eradication of PAO1 in a murine lung model", "year": 2020, "cited_by_count": 75},
+    {"doi": "10.9999/phage-pao1-04", "illustrative": true, "title": "Receptor OprD mediates phage adsorption in PAO1", "year": 2018, "cited_by_count": 60},
+    {"doi": "10.9999/phage-pao1-05", "illustrative": true, "title": "LPS modification promotes phage resistance in Pseudomonas", "year": 2022, "cited_by_count": 45},
+    {"doi": "10.9999/phage-pao1-06", "illustrative": true, "title": "LPS truncation inhibits phage binding and confers resistance", "year": 2023, "cited_by_count": 30},
+    {"doi": "10.9999/phage-cocktail-07", "illustrative": true, "title": "Phage-antibiotic synergy against Pseudomonas clinical isolates", "year": 2021, "cited_by_count": 140},
+    {"doi": "10.9999/phage-cocktail-08", "illustrative": true, "title": "Personalized phage cocktail for compassionate-use Pseudomonas infection", "year": 2022, "cited_by_count": 110},
+    {"doi": "10.9999/phage-safety-09", "illustrative": true, "title": "Genome screening for lysogeny and toxin genes in therapeutic phage candidates", "year": 2020, "cited_by_count": 85},
+    {"doi": "10.9999/phage-solo-10", "illustrative": true, "title": "Depolymerase engineering expands phage host range in Pseudomonas", "year": 2023, "cited_by_count": 4},
+    {"doi": "10.9999/phage-solo-11", "illustrative": true, "title": "Endotoxin removal protocol for clinical phage preparations", "year": 2024, "cited_by_count": 3},
+    {"doi": "10.9999/phage-review-12", "illustrative": true, "title": "Regulatory pathways for phage therapy under FDA eIND", "year": 2023, "cited_by_count": 52}
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "count": 59,
+    "db_response_time_ms": 17,
+    "page": 1,
+    "per_page": 25,
+    "groups_count": null,
+    "x_query": {
+      "oql": "works where it cites (W1973210660)",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "referenced_works",
+            "value": "W1973210660"
+          }
+        ],
+        "sort_by": [
+          {
+            "column_id": "cited_by_count",
+            "direction": "desc"
+          }
+        ],
+        "select": [
+          "id",
+          "doi",
+          "title",
+          "publication_year",
+          "publication_date",
+          "cited_by_count",
+          "is_retracted"
+        ],
+        "per_page": 25
+      },
+      "url": "/works?filter=referenced_works:W1973210660&sort=cited_by_count:desc&select=id,doi,title,publication_year,publication_date,cited_by_count,is_retracted&per_page=25"
+    },
+    "cost_usd": 0.0001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W2032134195",
+      "doi": "https://doi.org/10.1016/j.pneurobio.2012.02.003",
+      "title": "The importance of early brain injury after subarachnoid hemorrhage",
+      "publication_year": 2012,
+      "publication_date": "2012-03-10",
+      "cited_by_count": 593,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1967866252",
+      "doi": "https://doi.org/10.1007/s12975-013-0257-2",
+      "title": "Early Brain Injury, an Evolving Frontier in Subarachnoid Hemorrhage Research",
+      "publication_year": 2013,
+      "publication_date": "2013-03-07",
+      "cited_by_count": 505,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2801529879",
+      "doi": "https://doi.org/10.1177/0271678x18774666",
+      "title": "Brain endothelial cell junctions after cerebral hemorrhage: Changes, mechanisms and therapeutic targets",
+      "publication_year": 2018,
+      "publication_date": "2018-05-08",
+      "cited_by_count": 185,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2101966356",
+      "doi": "https://doi.org/10.1007/s13311-011-0038-0",
+      "title": "Role of Matrix Metalloproteinases and Therapeutic Benefits of Their Inhibition in Spinal Cord Injury",
+      "publication_year": 2011,
+      "publication_date": "2011-03-31",
+      "cited_by_count": 162,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2058779913",
+      "doi": "https://doi.org/10.1111/j.1471-4159.2012.07939.x",
+      "title": "Transition of research focus from vasospasm to early brain injury after subarachnoid hemorrhage",
+      "publication_year": 2012,
+      "publication_date": "2012-10-11",
+      "cited_by_count": 152,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1965669573",
+      "doi": "https://doi.org/10.1155/2013/394036",
+      "title": "Early Brain Injury: A Common Mechanism in Subarachnoid Hemorrhage and Global Cerebral Ischemia",
+      "publication_year": 2013,
+      "publication_date": "2013-01-01",
+      "cited_by_count": 133,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2082870917",
+      "doi": "https://doi.org/10.1186/1750-1326-7-21",
+      "title": "Inhibition of MMP-9 by a selective gelatinase inhibitor protects neurovasculature from embolic focal cerebral ischemia",
+      "publication_year": 2012,
+      "publication_date": "2012-05-15",
+      "cited_by_count": 127,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W3029788680",
+      "doi": "https://doi.org/10.2174/1570159x18666200528143301",
+      "title": "The Stroke-Induced Blood-Brain Barrier Disruption: Current Progress of Inspection Technique, Mechanism, and Therapeutic Target",
+      "publication_year": 2020,
+      "publication_date": "2020-05-28",
+      "cited_by_count": 126,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2098893487",
+      "doi": "https://doi.org/10.1371/journal.pone.0076904",
+      "title": "Selective Inhibition of Matrix Metalloproteinase-9 Attenuates Secondary Damage Resulting from Severe Traumatic Brain Injury",
+      "publication_year": 2013,
+      "publication_date": "2013-10-23",
+      "cited_by_count": 117,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2255673114",
+      "doi": "https://doi.org/10.3233/jad-150759",
+      "title": "Matrix Metalloproteinase in Blood-Brain Barrier Breakdown in Dementia",
+      "publication_year": 2015,
+      "publication_date": "2015-11-21",
+      "cited_by_count": 105,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2881055842",
+      "doi": "https://doi.org/10.1007/s12035-018-1213-7",
+      "title": "Endothelial Cell Dysfunction and Injury in Subarachnoid Hemorrhage",
+      "publication_year": 2018,
+      "publication_date": "2018-07-07",
+      "cited_by_count": 100,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W4223562306",
+      "doi": "https://doi.org/10.1186/s12987-022-00312-4",
+      "title": "The blood\u2013brain barrier and the neurovascular unit in subarachnoid hemorrhage: molecular events and potential treatments",
+      "publication_year": 2022,
+      "publication_date": "2022-04-11",
+      "cited_by_count": 98,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2562104683",
+      "doi": "https://doi.org/10.1007/s12028-016-0354-7",
+      "title": "Mechanisms of Global Cerebral Edema Formation in Aneurysmal Subarachnoid Hemorrhage",
+      "publication_year": 2016,
+      "publication_date": "2016-12-19",
+      "cited_by_count": 87,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2058644028",
+      "doi": "https://doi.org/10.1089/neu.2011.1864",
+      "title": "Minocycline Improves Functional Outcomes, Memory Deficits, and Histopathology after Endovascular Perforation-Induced Subarachnoid Hemorrhage in Rats",
+      "publication_year": 2011,
+      "publication_date": "2011-10-20",
+      "cited_by_count": 71,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W4394931855",
+      "doi": "https://doi.org/10.1186/s12974-024-03101-y",
+      "title": "Targeting brain-peripheral immune responses for secondary brain injury after ischemic and hemorrhagic stroke",
+      "publication_year": 2024,
+      "publication_date": "2024-04-18",
+      "cited_by_count": 67,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2736437110",
+      "doi": "https://doi.org/10.1038/s41598-017-06932-3",
+      "title": "ApoE Influences the Blood-Brain Barrier Through the NF-\u03baB/MMP-9 Pathway After Traumatic Brain Injury",
+      "publication_year": 2017,
+      "publication_date": "2017-07-21",
+      "cited_by_count": 66,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2322876472",
+      "doi": "https://doi.org/10.5137/1019-5149.jtn.5731-12.1",
+      "title": "Early brain injury following aneurysmal subarachnoid hemorrhage: emphasis on cellular apoptosis",
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "cited_by_count": 64,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2917788843",
+      "doi": "https://doi.org/10.4103/1673-5374.251190",
+      "title": "Potential therapeutic molecular targets for blood-brain barrier disruption after subarachnoid hemorrhage",
+      "publication_year": 2019,
+      "publication_date": "2019-02-26",
+      "cited_by_count": 59,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W3121882185",
+      "doi": "https://doi.org/10.3389/fimmu.2020.607587",
+      "title": "The Role of Tenascin-C in Tissue Injury and Repair After Stroke",
+      "publication_year": 2021,
+      "publication_date": "2021-01-21",
+      "cited_by_count": 58,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1986621762",
+      "doi": "https://doi.org/10.1021/jm200566e",
+      "title": "Selective Water-Soluble Gelatinase Inhibitor Prodrugs",
+      "publication_year": 2011,
+      "publication_date": "2011-08-25",
+      "cited_by_count": 52,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2999877312",
+      "doi": "https://doi.org/10.2174/1570159x18666200106154203",
+      "title": "Underlying Mechanisms and Potential Therapeutic Molecular Targets in Blood-Brain Barrier Disruption after Subarachnoid Hemorrhage",
+      "publication_year": 2020,
+      "publication_date": "2020-01-06",
+      "cited_by_count": 51,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1034243513",
+      "doi": "https://doi.org/10.1016/j.brainres.2015.07.020",
+      "title": "Astaxanthin reduces matrix metalloproteinase-9 expression and activity in the brain after experimental subarachnoid hemorrhage in rats",
+      "publication_year": 2015,
+      "publication_date": "2015-07-23",
+      "cited_by_count": 48,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W1848125354",
+      "doi": "https://doi.org/10.1007/978-3-7091-0353-1_9",
+      "title": "Early Micro Vascular Changes After Subarachnoid Hemorrhage",
+      "publication_year": 2011,
+      "publication_date": "2011-01-01",
+      "cited_by_count": 39,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W3040793371",
+      "doi": "https://doi.org/10.1111/jcmm.15641",
+      "title": "Osteopontin as a candidate of therapeutic application for the acute brain injury",
+      "publication_year": 2020,
+      "publication_date": "2020-07-13",
+      "cited_by_count": 39,
+      "is_retracted": false
+    },
+    {
+      "id": "https://openalex.org/W2094511972",
+      "doi": "https://doi.org/10.1021/ml300050b",
+      "title": "Structure\u2013Activity Relationship for Thiirane-Based Gelatinase Inhibitors",
+      "publication_year": 2012,
+      "publication_date": "2012-05-02",
+      "cited_by_count": 38,
+      "is_retracted": false
+    }
+  ],
+  "group_by": []
+}

@@ -3,18 +3,25 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Keystone — Scientific Discovery OS</title>
+<title>Keystone — an agentic scientific discovery workbench</title>
 <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<link rel="stylesheet" href="/static/lib/tokens.css?v=2"/>
+<link rel="stylesheet" href="/static/lib/components.css?v=2"/>
 <style>
-  :root{--bg:#0d0f16;--panel:#151925;--panel2:#1b2130;--line:#27314c;--tx:#e8ecf3;
-    --dim:#8d99ae;--cyan:#4cc9f0;--green:#06d6a0;--red:#ff5d5d;--amber:#ffd166;--violet:#a68bff;}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--tx);line-height:1.5;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-  a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
+  /* Light "paper" Claude-design palette — flips this page to match the front door.
+     Overrides tokens.css (same :root selector, later in source order wins). */
+  :root{
+    --bg:#fcf8f9;--panel:#ffffff;--panel2:#f0edee;--line:#e2dfe0;
+    --tx:#1c1b1c;--dim:#505f76;--cyan:#3c4b62;--green:#1f6f52;--red:#ba1a1a;
+    --amber:#9a6a1e;--violet:#6b4bd6;--paper:#fcf8f9;--ink:#1c1b1c;--ink2:#45464c;
+    --secondary:#505f76;--outline:#76777c;--hairline:#e2dfe0;--lowest:#ffffff;
+    --container:#f0edee;--claude-live:#6b4bd6;--accent:#6b4bd6;--primary:#6b4bd6;
+    --on-primary:#ffffff;--ok:#1f6f52;--warn:#9a6a1e;--risk:#ba1a1a}
+  body{background:var(--bg);color:var(--tx);font-family:'Inter Tight',system-ui,sans-serif}
+  h2,.brand{font-family:'Newsreader',Georgia,serif;font-weight:500}
   header{padding:14px 22px;border-bottom:1px solid var(--line);display:flex;gap:16px;
-    align-items:center;flex-wrap:wrap;background:linear-gradient(180deg,#141a28,#0d0f16)}
-  .brand{font-size:16px;font-weight:700} .brand span{color:var(--cyan)}
+    align-items:center;flex-wrap:wrap;background:var(--lowest)}
+  .brand{font-size:16px;font-weight:700} .brand span{color:var(--violet)}
   .brand small{display:block;color:var(--dim);font-weight:400;font-size:11px}
   .grow{flex:1}
   select,button{background:var(--panel2);border:1px solid var(--line);color:var(--tx);
@@ -46,7 +53,7 @@
   .pill{font-size:10.5px;padding:2px 8px;border-radius:20px;border:1px solid var(--line);color:var(--dim);white-space:nowrap}
   .pill.g{color:var(--green);border-color:var(--green)} .pill.r{color:var(--red);border-color:var(--red)}
   .pill.a{color:var(--amber);border-color:var(--amber)}
-  .scaffold{border:1px dashed var(--amber);border-radius:12px;padding:20px;color:var(--amber);background:rgba(255,209,102,.05)}
+  .scaffold{border:1px dashed var(--amber);border-radius:12px;padding:20px;color:var(--amber);background:rgba(211,165,82,.05)}
   .empty{color:var(--dim);padding:30px;text-align:center}
   svg{max-width:100%;height:auto}
   .flex{display:flex;gap:14px;flex-wrap:wrap} .flex>*{flex:1;min-width:260px}
@@ -54,17 +61,22 @@
   code{color:var(--amber);font-size:11.5px}
 </style>
 </head>
-<body>
+<body data-stage="evidence">
 <header>
-  <div class="brand">Key<span>stone</span> — Scientific Discovery OS
-    <small>evidence-grounded discovery · every field tier-tagged · nothing fabricated</small></div>
+  <a href="/" title="Back to the Keystone workbench" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:9px">
+    <span style="font-size:20px;color:var(--violet);line-height:1">←</span>
+    <div class="brand">Key<span>stone</span> — an agentic scientific discovery workbench
+      <small>evidence-grounded discovery · every field tier-tagged · nothing fabricated</small></div></a>
   <div class="grow"></div>
   <select id="domain" onchange="load()">
     <option value="gbm">Glioblastoma (cathepsin B axis)</option>
     <option value="insulin">Insulin resistance (IRS-1 axis)</option>
+    <option value="ich">Brain hemorrhage · NeuroHem (MMP-9 axis)</option>
   </select>
   <a href="/workbench"><button>Open reasoning workbench →</button></a>
 </header>
+<div class="wf-spine" id="spine"></div>
+<script type="module" src="/static/lib/spine.js"></script>
 
 <div class="q"><b>Research question</b><div class="qt" id="question">…</div></div>
 <div class="loop" id="loop"></div>
@@ -76,15 +88,17 @@
   <main id="main"><div class="empty">Loading Disease Workspace…</div></main>
 </div>
 
-<script>
-let WS=null, TAB='clinical_trials';
+<script type="module">
+import { esc, whyPanel, nodeInspect } from '/static/lib/components.js';
+import { mountGraph } from '/static/lib/graph.js';
+import { focus } from '/static/lib/selection.js';
+let WS=null, TAB='connected';
 const $=id=>document.getElementById(id);
-const esc=s=>(s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const HOT=new Set(['Contradiction Mining','Gap Detection']);
-const TAB_ORDER=['overview','clinical_trials','known_drugs','chemistry','pathways','mutations',
+const TAB_ORDER=['connected','overview','clinical_trials','known_drugs','chemistry','pathways','mutations',
   'proteins','retractions','contradictions','current_hypotheses','future_experiments',
   'gaps','readiness','knowledge_graph','notebook','genes','datasets'];
-const LABEL={overview:'Disease Overview',clinical_trials:'Clinical Trials',known_drugs:'Known Drugs',
+const LABEL={connected:'Connected View',overview:'Disease Overview',clinical_trials:'Clinical Trials',known_drugs:'Known Drugs',
   chemistry:'Chemical Structure',pathways:'Pathways',mutations:'Mutations',proteins:'Proteins',retractions:'Retractions',
   contradictions:'Contradictions',current_hypotheses:'Current Hypotheses',
   future_experiments:'Future Experiments',gaps:'Missing Evidence',readiness:'Research Readiness',
@@ -92,11 +106,21 @@ const LABEL={overview:'Disease Overview',clinical_trials:'Clinical Trials',known
 
 async function load(){
   const dom=$('domain').value;
-  $('main').innerHTML='<div class="empty">Assembling real evidence…</div>';
-  WS=await (await fetch('/api/workspace?domain='+dom)).json();
-  $('question').textContent=WS.question;
-  $('loop').innerHTML=WS.reasoning_loop.map(s=>`<span class="st ${HOT.has(s)?'hot':''}">${esc(s)}</span>`).join('');
-  renderDash(); renderMem(); renderSide(); renderTab();
+  $('main').innerHTML='<div class="empty">Assembling real evidence from live connectors — running the multi-agent reasoning loop…</div>';
+  try{
+    const r=await fetch('/api/workspace?domain='+dom);
+    if(!r.ok) throw new Error('workspace API returned HTTP '+r.status);
+    WS=await r.json();
+    $('question').textContent=WS.question;
+    $('loop').innerHTML=WS.reasoning_loop.map(s=>`<span class="st ${HOT.has(s)?'hot':''}">${esc(s)}</span>`).join('');
+    renderDash(); renderMem(); renderSide(); renderTab();
+  }catch(e){
+    // Never leave the page silently stuck on the spinner — surface the failure.
+    $('main').innerHTML='<div class="empty">Could not assemble the workspace — '
+      +esc(String(e && e.message || e))
+      +'. <button onclick="load()" style="margin-left:8px;padding:6px 12px;border:1px solid var(--line);'
+      +'background:var(--panel2);color:var(--tx);border-radius:8px;cursor:pointer">Retry</button></div>';
+  }
 }
 
 function metric(k,v,cls){return `<div class="metric"><div class="k">${k}</div><div class="v ${cls||''}">${v}</div></div>`;}
@@ -121,21 +145,23 @@ function renderMem(){
 }
 function renderSide(){
   $('side').innerHTML=TAB_ORDER.map(t=>{
+    if(t==='connected') return `<div class="tab ${t===TAB?'on':''}" onclick="selectTab('connected')">${LABEL.connected} <span class="b t1">T1</span></div>`;
     const tab=WS.tabs[t]; if(!tab) return '';
-    return `<div class="tab ${t===TAB?'on':''}" onclick="TAB='${t}';renderSide();renderTab()">
+    return `<div class="tab ${t===TAB?'on':''}" onclick="selectTab('${t}')">
       ${LABEL[t]} <span class="b t${tab.tier}">${tab.tier===2?'not wired':'T1'}</span></div>`;
   }).join('');
 }
 
 function tierNote(tab){return `<div class="sub">Tier ${tab.tier} · ${esc(tab.note)}</div>`;}
 function renderTab(){
+  if(TAB==='connected'){ $('main').innerHTML=`<h2>Connected View</h2>`+renderConnected(); mountConnected(); return; }
   const tab=WS.tabs[TAB], d=tab.data;
   let html=`<h2>${LABEL[TAB]}</h2>`+tierNote(tab);
   if(tab.tier===2){ $('main').innerHTML=html+`<div class="scaffold"><b>Not yet wired.</b><br>${esc(tab.note)}<br><br>This slot is intentionally empty — Keystone never fabricates a value to fill it.</div>`; return; }
   html+=(RENDER[TAB]||(()=>`<pre>${esc(JSON.stringify(d,null,2))}</pre>`))(d);
   $('main').innerHTML=html;
   if(TAB==='proteins') mountViewer(d);
-  if(TAB==='knowledge_graph') wireGraph();
+  if(TAB==='knowledge_graph') mountKgGraph();
 }
 
 const RENDER={
@@ -203,33 +229,89 @@ const RENDER={
     <div class="card"><b>Timeline</b>${WS.timeline_svg}</div>`,
 };
 
+// CONNECTED VIEW — one screen, one selection. Protein + genome + pathways +
+// trials + evidence graph for the focus target, composed from the workspace data
+// (no new fetch). Selecting a genome variant or a graph node updates in place.
+function renderConnected(){
+  const p=WS.tabs.proteins.data, m=WS.tabs.mutations.data,
+        pw=WS.tabs.pathways.data, tr=WS.tabs.clinical_trials.data;
+  const placed=(m.variants||[]).filter(v=>v.coord);
+  return `<div class="sub">One screen, one selection. Pick a variant on the genome track or a node in the evidence graph — the panels update together. Every value ties to a real source; nothing fabricated.</div>
+  <div class="connected">
+    <div class="col">
+      <div class="card"><b>${esc(p.gene||'target')}</b> — ${esc(p.name||'')}
+        <div class="sub">UniProt ${esc(p.accession||'')} · PDB ${(p.pdb_ids||[]).slice(0,4).join(', ')||'—'}</div></div>
+      <div class="card"><b>3D structure</b><div id="cv-viewer" style="height:300px;position:relative"></div></div>
+      <div class="card"><b>Evidence graph</b> <span class="sub">— select a node</span>
+        <div id="cv-graph">${WS.evidence_graph_svg}</div>
+        <div class="ks-inspect" id="cv-ginspect">Select a node to illuminate its connections and inherited doubt.</div></div>
+    </div>
+    <div class="col">
+      <div class="card"><b>Genome — ${esc(p.gene||'')}</b> <span class="sub">${Number(m.total||0).toLocaleString()} ClinVar variants · ${placed.length} placed on GRCh38</span>
+        <div class="ks-genome" id="cv-genome">${m.genome_track_svg||''}</div>
+        <div class="ks-inspect" id="cv-variant">Select a variant on the track to inspect its clinical significance.</div></div>
+      <div class="card"><b>Pathways</b> <span class="sub">${pw.count||0} Reactome</span>
+        <ul>${(pw.pathways||[]).slice(0,5).map(x=>`<li><a href="${x.url}" target="_blank">${esc(x.name)}</a></li>`).join('')||'<li class="sub">none resolved</li>'}</ul></div>
+      <div class="card"><b>Clinical trials</b> <span class="sub">${Number(tr.total||0).toLocaleString()} on ClinicalTrials.gov</span>
+        <ul>${(tr.trials||[]).slice(0,4).map(t=>`<li><a href="${t.url}" target="_blank">${esc(t.nct_id)}</a> — ${esc((t.title||'').slice(0,60))}</li>`).join('')||'<li class="sub">none</li>'}</ul></div>
+    </div>
+  </div>`;
+}
+
+function mountConnected(){
+  // 3D protein
+  const el=$('cv-viewer'), pdb=((WS.tabs.proteins.data.pdb_ids||['1HUC'])[0]);
+  if(el && window.$3Dmol){ const v=$3Dmol.createViewer(el,{backgroundColor:'#f6f3f4'});
+    $3Dmol.download('pdb:'+pdb,v,{},()=>{v.setStyle({},{cartoon:{color:'spectrum'}});v.zoomTo();v.render();}); }
+  // evidence graph hub (adapt graph_to_dict nodes to the inspector shape)
+  const kg=WS.tabs.knowledge_graph.data, gc=$('cv-graph');
+  if(gc){ const byId={}; (kg.nodes||[]).forEach(n=>byId[n.id]={id:n.id,type:n.node_type,source:n.source,
+      text:n.text,doubt:n.doubt.point,doubt_interval:[n.doubt.low,n.doubt.high],
+      retracted:n.retracted,inexcusable:n.inexcusable,date:n.date});
+    mountGraph(gc,{nodes:byId,edges:kg.edges},{inspectEl:$('cv-ginspect'),
+      emptyHint:'Select a node to illuminate its connections and inherited doubt.'}); }
+  wireGenome();
+}
+
+function wireGenome(){
+  const placed=(WS.tabs.mutations.data.variants||[]).filter(v=>v.coord);
+  const g=$('cv-genome'); if(!g) return;
+  g.querySelectorAll('.ks-variant').forEach(el=>el.addEventListener('click',()=>{
+    const v=placed[+el.getAttribute('data-variant')]; if(!v) return;
+    g.classList.add('sel'); g.querySelectorAll('.ks-variant').forEach(x=>x.classList.toggle('on',x===el));
+    focus({type:'variant',id:v.title,label:v.title,data:v});
+    const sig=v.significance||'—', sc=/patho/i.test(sig)?'r':/benign/i.test(sig)?'g':'a';
+    $('cv-variant').innerHTML=`<b>${esc(v.title)}</b> <span class="pill ${sc}">${esc(sig)}</span>
+      <div class="sub">chr${esc(v.coord.chr)}:${Number(v.coord.start).toLocaleString()} ${esc(v.coord.band||'')} (GRCh38)</div>`;
+  }));
+}
+
 function mountViewer(d){
   const pdb=(d.pdb_ids||['1HUC'])[0];
   const el=document.getElementById('viewer'); if(!el||!window.$3Dmol) return;
-  const v=$3Dmol.createViewer(el,{backgroundColor:'#0d0f16'});
+  const v=$3Dmol.createViewer(el,{backgroundColor:'#f6f3f4'});
   $3Dmol.download('pdb:'+pdb,v,{},()=>{v.setStyle({},{cartoon:{color:'spectrum'}});v.zoomTo();v.render();});
 }
-function wireGraph(){
-  document.querySelectorAll('#kg [data-node]').forEach(el=>el.addEventListener('click',()=>{
-    const n=(WS.tabs.knowledge_graph.data.nodes||[]).find(x=>x.id===el.getAttribute('data-node')); if(!n)return;
-    const src=/^10\./.test(n.source)?`<a href="https://doi.org/${esc(n.source)}" target="_blank">${esc(n.source)}</a>`:esc(n.source);
-    document.getElementById('kgnode').innerHTML=`<b>${esc(n.id)}</b> <span class="pill">${esc(n.node_type)}</span>
-      ${n.retracted?'<span class="pill r">RETRACTED</span>':''} — ${esc(n.text)} · ${src} · doubt ${n.doubt.point} [${n.doubt.low}, ${n.doubt.high}]`;
-  }));
+// living knowledge graph — shared module. graph_to_dict nodes are adapted to the
+// inspector shape; selecting a node illuminates connections + traces inherited doubt.
+function mountKgGraph(){
+  const kg=WS.tabs.knowledge_graph.data, gc=$('kg'); if(!gc) return;
+  const nodesById={};
+  (kg.nodes||[]).forEach(n=>nodesById[n.id]={
+    id:n.id, type:n.node_type, source:n.source, text:n.text,
+    doubt:n.doubt.point, doubt_interval:[n.doubt.low,n.doubt.high],
+    retracted:n.retracted, inexcusable:n.inexcusable, date:n.date});
+  mountGraph(gc,{nodes:nodesById,edges:kg.edges},{
+    inspectEl:$('kgnode'),
+    emptyHint:'Click a node to illuminate its connections and trace inherited doubt.'});
 }
 function showWhy(){
-  const wp=WS.why_panel;
-  $('main').innerHTML=`<h2>Why did Keystone reach this?</h2><div class="card">
-    <i>${esc(wp.hypothesis)}</i>
-    <h3 style="color:var(--green)">Supporting</h3><ul>${wp.supporting_evidence.map(e=>`<li>${esc(e.id)} (doubt ${e.doubt}) — ${esc((e.text||'').slice(0,90))}</li>`).join('')}</ul>
-    <h3 style="color:var(--amber)">Contradicting</h3><ul>${wp.contradicting_evidence.map(e=>`<li>${esc(e.id)} (doubt ${e.doubt}) — ${esc((e.text||'').slice(0,90))}</li>`).join('')}</ul>
-    <h3>Confidence</h3>${wp.confidence.point} [${wp.confidence.interval.join(', ')}]
-    <h3 style="color:var(--red)">Reviewer objection</h3>${esc(wp.reviewer_objection.weakness)} → ${wp.reviewer_objection.adjusted_confidence}
-    <h3>Remaining uncertainty</h3>${esc(wp.remaining_uncertainty)}
-    <h3>Failure modes</h3><ul>${wp.failure_modes.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
-    <h3 style="color:var(--green)">How to disprove it</h3>${esc(wp.suggested_next_experiment.kill_condition)} (n/arm ${wp.suggested_next_experiment.required_n_per_arm})
+  $('main').innerHTML=`<h2>Why did Keystone reach this?</h2><div class="card">${whyPanel(WS.why_panel)}
     <div style="margin-top:12px"><a href="javascript:renderTab()">← back to workspace</a></div></div>`;
 }
+
+// bridge module controls to the page's inline handlers (module scope isn't global).
+Object.assign(window,{load,renderTab,showWhy,selectTab:t=>{TAB=t;renderSide();renderTab();}});
 load();
 </script>
 </body>

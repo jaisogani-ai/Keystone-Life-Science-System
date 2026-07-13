@@ -15,8 +15,27 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from keystone.core import EvidenceGraph, ExperimentPlan
+from keystone.core import EvidenceGraph, ExperimentPlan, NodeType
 from keystone.deterministic.stats import sample_size_two_arm
+
+
+def _find_by_type(graph: EvidenceGraph, node_type: NodeType):
+    """Return graph nodes of the requested type, ordered by lowest doubt first
+    (most trusted first). Empty list is honest — the imported graph doesn't
+    contain nodes of this type, so hypotheses that require them are simply
+    skipped rather than fabricated against a stand-in."""
+    return sorted((n for n in graph.nodes.values() if n.node_type == node_type),
+                  key=lambda n: n.doubt.point)
+
+
+def _name(node) -> str:
+    """A short human-readable name for a node — used in hypothesis prose so the
+    statement reads 'the retracted cathepsin B paper', never 'N_foundation'."""
+    if node is None:
+        return "the source"
+    t = (node.text or "").split(" — ")[0].strip()
+    t = t.replace("RETRACTED ARTICLE:", "").strip()
+    return (t[:52] + "…") if len(t) > 53 else (t or getattr(node, "id", "the source"))
 
 
 @dataclass(frozen=True)
@@ -51,10 +70,15 @@ def _experiment(perturbation: str, system: str, kill: str, effect: float,
 def generate_candidates(graph: EvidenceGraph, primary,
                         drug_info: dict | None = None) -> list[CandidateHypothesis]:
     """Return the competing hypotheses. ``primary`` is the reasoner's Hypothesis
-    (kind='primary'); the rest are derived from graph structure."""
-    target = graph.nodes.get("N_target")
+    (kind='primary'); the rest are derived from graph structure.
+
+    Nodes are looked up by ``NodeType`` (not by hardcoded id) so this function
+    works on any evidence graph — the curated demo libraries or a scientist's
+    imported ``.bib``. Hypotheses whose grounding is absent from the graph are
+    silently skipped rather than fabricated against a stand-in."""
+    targets = _find_by_type(graph, NodeType.TARGET)
+    target = targets[0] if targets else None
     gene = (target.text.split(" — ")[0] if target else "the target")
-    disease = "the disease"
     cands: list[CandidateHypothesis] = []
 
     # 1. Primary — the reasoner's hypothesis (context-dependence / reconciliation)
@@ -75,7 +99,7 @@ def generate_candidates(graph: EvidenceGraph, primary,
         cands.append(CandidateHypothesis(
             id="H2", kind="null", grounds_on=r.id,
             statement=(f"NULL: the reported effect is an artifact of the "
-                       f"compromised foundation ({r.id}); a clean, independent "
+                       f"compromised foundation ({_name(r)}); a clean, independent "
                        f"replication shows no {gene}-dependent effect."),
             supporting=[], contradicting=list(primary.supporting_evidence),
             mechanism_path=[r.id],
@@ -91,9 +115,12 @@ def generate_candidates(graph: EvidenceGraph, primary,
             assumptions=["a clean replication is feasible without the retracted reagents"],
             failure_modes=["publication bias hides prior failed replications"]))
 
-    # 3. Reagent confound — grounded in a flagged/doubtful reagent
-    reagent = graph.nodes.get("N_reagent")
-    if reagent and (reagent.meta.get("problematic") or reagent.doubt.point >= 0.35):
+    # 3. Reagent confound — grounded in a flagged/doubtful reagent (if any)
+    reagents = _find_by_type(graph, NodeType.REAGENT)
+    reagent = next((r for r in reagents
+                    if r.meta.get("problematic") or r.doubt.point >= 0.35),
+                   None)
+    if reagent:
         cands.append(CandidateHypothesis(
             id="H3", kind="reagent_confound", grounds_on=reagent.id,
             statement=(f"CONFOUND: the effect is driven by the identity problem in "
@@ -119,17 +146,16 @@ def generate_candidates(graph: EvidenceGraph, primary,
         cands.append(CandidateHypothesis(
             id=f"H4{'' if i == 0 else chr(97+i)}", kind="alternative",
             grounds_on=f"{e.src}->{e.dst}",
-            statement=(f"ALTERNATIVE: the mechanism in {e.src} "
-                       f"({(alt.text[:50] if alt else '')}...) is primary; "
+            statement=(f"ALTERNATIVE: the mechanism in {_name(alt)} is primary; "
                        f"blocking it — not {gene} — abolishes the phenotype."),
             supporting=[e.src], contradicting=list(primary.supporting_evidence),
             mechanism_path=[e.src],
             experiment=_experiment(
-                f"epistasis: block the {e.src} mechanism with and without {gene} "
-                f"perturbation",
+                f"epistasis: block the mechanism in {_name(alt)} with and without "
+                f"{gene} perturbation",
                 "isogenic lines, 2x2 factorial", effect=0.7,
-                kill=f"blocking {e.src} does not change the {gene} effect "
-                     f"(refuting the alternative-mechanism hypothesis)",
+                kill=f"blocking the mechanism in {_name(alt)} does not change the "
+                     f"{gene} effect (refuting the alternative-mechanism hypothesis)",
                 controls_pos=["single-pathway blockade"],
                 controls_neg=["vehicle"], readout="factorial functional readout"),
             assumptions=["a specific inhibitor of the alternative mechanism exists"],
@@ -184,7 +210,7 @@ def generate_candidates(graph: EvidenceGraph, primary,
         cands.append(CandidateHypothesis(
             id="H7", kind="biomarker", grounds_on=m.id,
             statement=(f"BIOMARKER: response is stratified by a molecular marker "
-                       f"({m.id}); unstratified trials fail while stratified "
+                       f"({_name(m)}); unstratified trials fail while stratified "
                        f"trials succeed."),
             supporting=[m.id], contradicting=list(primary.contradicting_evidence),
             mechanism_path=[m.id],
