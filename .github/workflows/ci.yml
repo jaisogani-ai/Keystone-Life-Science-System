@@ -1,7 +1,7 @@
 name: keystone-ci
 
 # Keystone runs fully offline and deterministically: no network, no API key.
-# CI proves every push keeps the 167 tests green, recomputes the headline
+# CI proves every push keeps the 267 tests green, recomputes the headline
 # load-bearing metric (0.818) from the committed labelled corpus, and enforces
 # the honesty discipline (no operating-system marketing metaphor re-enters).
 
